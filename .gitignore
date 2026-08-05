@@ -1,0 +1,5 @@
+data/
+ocr-zones/
+tessdata/
+ocr-test-*.txt
+*.part
