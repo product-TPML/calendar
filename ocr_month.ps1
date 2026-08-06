@@ -92,17 +92,17 @@ function Invoke-Ocr([string]$Png, [string]$OutBase, [int]$Psm) {
 }
 function Normalize-EndTime([string]$Raw) {
     $value = ($Raw -replace ',', '.').Trim()
-    if ($value -match '^(?<h>[0-9]{1,2})[.](?<m>[0-9]{1,2})$') {
-        if ([int]$Matches['h'] -gt 23 -or [int]$Matches['m'] -gt 59) { return $null }
-        return $value
+    if ($value -match '^(?<h>[0-9]{1,2})[.:](?<m>[0-9]{1,2})$') {
+        if ([int]$Matches['h'] -gt 30 -or [int]$Matches['m'] -gt 59) { return $null }
+        return [pscustomobject]@{ value = ($Matches['h'] + '.' + $Matches['m']); nextDay = ([int]$Matches['h'] -gt 23) }
     }
     if ($value -match '^(?<h>[0-9]{2})(?<m>[0-9]{2})$') {
-        if ([int]$Matches['h'] -gt 23 -or [int]$Matches['m'] -gt 59) { return $null }
-        return $value.Substring(0, 2) + '.' + $value.Substring(2, 2)
+        if ([int]$Matches['h'] -gt 30 -or [int]$Matches['m'] -gt 59) { return $null }
+        return [pscustomobject]@{ value = ($value.Substring(0, 2) + '.' + $value.Substring(2, 2)); nextDay = ([int]$Matches['h'] -gt 23) }
     }
     if ($value -match '^(?<h>[0-9])(?<m>[0-9]{2})$') {
         if ([int]$Matches['h'] -gt 9 -or [int]$Matches['m'] -gt 59) { return $null }
-        return '0' + $value.Substring(0, 1) + '.' + $value.Substring(1, 2)
+        return [pscustomobject]@{ value = ('0' + $value.Substring(0, 1) + '.' + $value.Substring(1, 2)); nextDay = $false }
     }
     return $null
 }
@@ -116,27 +116,28 @@ function Get-NameTime([string]$Text, [string]$LabelPattern) {
 
         $full = [regex]::Match($rest, '^(?<n>.+?)\s*ಪೂರ್ಣ[\s.]*$')
         if ($full.Success) {
-            return [pscustomobject]@{ name = $full.Groups['n'].Value.Trim(); endsAt = $null; fullDay = $true }
+            return [pscustomobject]@{ name = $full.Groups['n'].Value.Trim(); endsAt = $null; nextDay = $false; fullDay = $true }
         }
 
-        $timed = [regex]::Match($rest, '^(?<n>.+?)(?<t>[0-9]{1,2}[.,][0-9]{1,2}|[0-9]{3,4})\s*$')
+        $timed = [regex]::Match($rest, '^(?<n>.+?)(?<t>[0-9]{1,2}[.:,][0-9]{1,2}|[0-9]{3,4})\s*$')
         if ($timed.Success) {
             $name = ($timed.Groups['n'].Value -replace '^[\s_:.\"]+', '' -replace '[\s_:.\"]+$', '').Trim()
             $time = Normalize-EndTime $timed.Groups['t'].Value
             if ($name -and $time) {
-                return [pscustomobject]@{ name = $name; endsAt = $time; fullDay = $false }
+                return [pscustomobject]@{ name = $name; endsAt = $time.value; nextDay = $time.nextDay; fullDay = $false }
             }
         }
 
         $name = ($rest -replace '^[\s_:.\"]+', '' -replace '[\s_:.\"]+$', '').Trim()
-        if ($name) { return [pscustomobject]@{ name = $name; endsAt = $null; fullDay = $false } }
+        if ($name) { return [pscustomobject]@{ name = $name; endsAt = $null; nextDay = $false; fullDay = $false } }
     }
     return $null
 }
 
 function Normalize-ClockTime([string]$Raw) {
-    $value = ($Raw -replace '\s', '').Trim()
+    $value = ($Raw -replace '\s', '' -replace ',', '.').Trim()
     if ($value -match '^[0-9]{1,2}:[0-9]{2}$') { return $value }
+    if ($value -match '^(?<h>[0-9]{1,2})[.](?<m>[0-9]{2})$') { return $Matches['h'] + ':' + $Matches['m'] }
     if ($value -match '^[0-9]{4}$') { return $value.Substring(0, 2) + ':' + $value.Substring(2, 2) }
     return $null
 }
@@ -165,7 +166,21 @@ function Get-FirstMatchValue([string[]]$Texts, [string]$Pattern) {
 function Get-BestTiming([string]$RowText, [string]$FullText, [string]$LabelPattern) {
     foreach ($text in @($RowText, $FullText)) {
         $m = [regex]::Match($text, $LabelPattern + '\s*(?<v>.+)')
+        if ($m.Success -and $m.Groups['v'].Value -match 'ಇಲ್ಲ') { return 'unavailable' }
         if ($m.Success -and $m.Groups['v'].Value -match '[0-9]') { return $m.Groups['v'].Value.Trim() }
+    }
+    return $null
+}
+
+function Get-Paksha([string[]]$Texts) {
+    foreach ($text in $Texts) {
+        foreach ($value in @('ಕೃಷ್ಣ', 'ಕ್ರಿಷ್ಣ', 'ಶುಕ್ಲ', 'ಶುಕ್ಹ', 'ಬಹುಳ', 'ಶುದ್ಧ')) {
+            if ($text -match [regex]::Escape($value)) {
+                if ($value -eq 'ಶುಕ್ಹ') { return 'ಶುಕ್ಲ' }
+                return 'ಕೃಷ್ಣ'
+                return $value
+            }
+        }
     }
     return $null
 }
@@ -191,8 +206,8 @@ function New-StructuredJson {
     $dlLines = @($Results['date_left'].text -split '\r?\n' | ForEach-Object { $_.Trim() } | Where-Object { $_ })
     $months = @(); $samvatsara = $null; $shakaYear = $null; $monthDone = $false
     foreach ($ln in $dlLines) {
-        if ($ln -match 'ಸಂವತ್ಸರ') {
-            $samvatsara = (($ln -replace '\s*ಸಂವತ್ಸರ\s*$', '')).Trim()
+        if ($ln -match 'ಸಂವತ್ಸ') {
+            $samvatsara = (($ln -replace '\s*ಸಂವತ್ಸ\S*\s*$', '')).Trim()
         }
         elseif ($ln -match 'ಶಕೆ\s*(?<y>[0-9]+)') {
             $parsedShaka = 0
@@ -205,10 +220,17 @@ function New-StructuredJson {
     }
     $headerRashi = if ([string]::IsNullOrWhiteSpace($Results['date_right_1'].text)) { $null } else { $Results['date_right_1'].text.Trim() }
     $sunrise = $null; $sunset = $null
-    $m = [regex]::Match($Results['date_right_2'].text, 'ಸೂರ್ಯೋದಯ\s*[:.]?\s*(?<t>[0-9]{1,2}:[0-9]{2}|[0-9]{4})')
+    $m = [regex]::Match($Results['date_right_2'].text, 'ಸೂರ್ಯೋದಯ\s*[:.]?\s*(?<t>[0-9]{1,2}[:.,][0-9]{2}|[0-9]{4})')
     if ($m.Success) { $sunrise = Normalize-ClockTime $m.Groups['t'].Value }
-    $m = [regex]::Match($Results['date_right_2'].text, 'ಸೂರ್ಯಾಸ್ತ\s*[:.]?\s*(?<t>[0-9]{1,2}:[0-9]{2}|[0-9]{4})')
+    $m = [regex]::Match($Results['date_right_2'].text, 'ಸೂರ್ಯಾಸ್ತ\s*[:.]?\s*(?<t>[0-9]{1,2}[:.,][0-9]{2}|[0-9]{4})')
     if ($m.Success) { $sunset = Normalize-ClockTime $m.Groups['t'].Value }
+    $clockTimes = @()
+    foreach ($match in [regex]::Matches($Results['date_right_2'].text, '[0-9]{1,2}[:.,][0-9]{2}|[0-9]{4}')) {
+        $time = Normalize-ClockTime $match.Value
+        if ($time) { $clockTimes += $time }
+    }
+    if (-not $sunrise -and $clockTimes.Count -ge 1) { $sunrise = $clockTimes[0] }
+    if (-not $sunset -and $clockTimes.Count -ge 2) { $sunset = $clockTimes[1] }
 
     # --- events -------------------------------------------------------------
     $events = @()
@@ -227,35 +249,35 @@ function New-StructuredJson {
     $bt1T = Get-BottomRowText $BottomRows 'bottom_table_1-row-02' $bt1
     $bt1Y = Get-BottomRowText $BottomRows 'bottom_table_1-row-03' $bt1
     $bt1K = Get-BottomRowText $BottomRows 'bottom_table_1-row-04' $bt1
-    $bt1A = Get-BottomRowText $BottomRows 'bottom_table_1-row-05' $bt1
-    $bt1R = Get-BottomRowText $BottomRows 'bottom_table_1-row-06' $bt1
-    $bt1S = Get-BottomRowText $BottomRows 'bottom_table_1-row-07' $bt1
+    # Whole-table psm6 is more reliable than the narrow psm13 crops for rows 5–7.
+    $bt1A = $bt1
+    $bt1R = $bt1
+    $bt1S = $bt1
     $bt2Ra = Get-BottomRowText $BottomRows 'bottom_table_2-row-01' $bt2
     $bt2Gu = Get-BottomRowText $BottomRows 'bottom_table_2-row-02' $bt2
     $bt2Ya = Get-BottomRowText $BottomRows 'bottom_table_2-row-03' $bt2
     $bt2Ar = Get-BottomRowText $BottomRows 'bottom_table_2-row-04' $bt2
-    $bt2Sh = Get-BottomRowText $BottomRows 'bottom_table_2-row-05' $bt2
-    $bt2Pa = Get-BottomRowText $BottomRows 'bottom_table_2-row-06' $bt2
-    $bt2So = Get-BottomRowText $BottomRows 'bottom_table_2-row-07' $bt2
+    $bt2Sh = $bt2
+    $bt2Pa = $bt2
+    $bt2So = $bt2
     $panchanga = [ordered]@{}
     $panchanga['nakshatra'] = Get-BestNameTime $bt1N $bt1 '(?:ನಕ್ಷತ್ರ|ನಕ್ಚತ್ರ)'
     $panchanga['tithi']     = Get-BestNameTime $bt1T $bt1 '(?:ತಿಥಿ|ತಥಿ)'
     $panchanga['yoga']      = Get-BestNameTime $bt1Y $bt1 '(?:ಯೋಗ|ಹೋಗ)'
     $karana = Get-BestNameTime $bt1K $bt1 '(?:ಕರಣ|ರಣ)'
     if ($karana) {
-        $panchanga['karana'] = [ordered]@{ name = $karana.name; endsAt = $karana.endsAt; fullDay = $karana.fullDay; raw = $bt1K.Trim() }
+        $panchanga['karana'] = [ordered]@{ name = $karana.name; endsAt = $karana.endsAt; nextDay = $karana.nextDay; fullDay = $karana.fullDay; raw = $bt1K.Trim() }
     } else {
         $panchanga['karana'] = $null
     }
-    $panchanga['ayana'] = Get-FirstMatchValue @($bt1A, $bt1) '(?<v>ದಕ್ಷಿಣಾಯನ|ಉತ್ತರಾಯಣ)'
-    $panchanga['ritu'] = Get-FirstMatchValue @($bt1R, $bt1) '(?:ಋತು|ಖುತು|ಹುತು|ರಿತು|ರತು)\s*(?<v>.+)'
+    $panchanga['ayana'] = Get-FirstMatchValue @($bt1A, $bt1) '(?<v>ದಕ್ಷಿಣಾಯ(?:ನ|ಣ)?|ಉತ್ತರಾಯಣ)'
+    $panchanga['ritu'] = Get-FirstMatchValue @($bt1R, $bt1) '(?:ಋತು|ಖುತು|ಹುತು|ಹತು|ಯತು|ನಾತು|ಸತು|ಚತು|ರಿತು|ರತು)\s*(?<v>.+)'
     $solarRaw = Get-FirstMatchValue @($bt1S, $bt1) 'ಸೌರ[^\r\n0-9]*?(?<v>[0-9]{1,4})'; $solarYear = $null
     $parsedSolar = 0
     if ($solarRaw -and [int]::TryParse($solarRaw, [ref]$parsedSolar) -and $parsedSolar -ge 1 -and $parsedSolar -le 366) { $solarYear = $parsedSolar }
     $panchanga['solarYear'] = $solarYear
-    $paksha = Get-FirstMatchValue @($bt2Pa, $bt2) 'ಪಕ್ಷ\s*(?<v>ಕೃಷ್ಣ|ಕ್ರಿಷ್ಣ|ಶುಕ್ಲ|ಬಹುಳ|ಶುದ್ಧ|ಶುಕ್ಹ)'
-    if ($paksha -eq 'ಶುಕ್ಹ') { $paksha = 'ಶುಕ್ಲ' }; $panchanga['paksha'] = $paksha
-    $panchanga['solarRashi'] = Get-FirstMatchValue @($bt2So, $bt2) 'ಸೂರ್ಯ\s*ನ?\s*ರಾಶಿ\s*(?<v>\S+)'
+    $panchanga['paksha'] = Get-Paksha @($bt2Pa, $bt2)
+    $panchanga['solarRashi'] = Get-FirstMatchValue @($bt2So, $bt2) 'ಸೂರ್ಯ\S{0,2}ರಾಶಿ\s*(?<v>\S+)'
     $m = [regex]::Match($bt3, 'ಪ್ರವೇಶ\s*(?<v>\S+)');          $panchanga['chandraEntryRashi'] = if ($m.Success) { $m.Groups['v'].Value } else { $null }
 
     # --- timings -------------------------------------------------------------
@@ -264,8 +286,8 @@ function New-StructuredJson {
         @('rahuKala', $bt2Ra, 'ರಾಹುಕಾಲ'),
         @('gulikaKala', $bt2Gu, 'ಗುಳಿಕಕಾಲ'),
         @('yamaganda', $bt2Ya, 'ಯಮಗಂಡ'),
-        @('arthaPrahara', $bt2Ar, '(?:ಅರ್ಥ|ಅರ್ಧ)\s*(?:ಪ್ರಹರ|ಪ್ರಹಕ)'),
-        @('shubhaSamaya', $bt2Sh, 'ಶುಭಸಮಯ')
+        @('arthaPrahara', $bt2Ar, '(?:ಅರ್ಥ|ಅರ್ಧ|ಅರ್ದ)\s*(?:ಪ್ರಹರ|ಪ್ರಹಕ|ಪಹರ)'),
+        @('shubhaSamaya', $bt2Sh, '(?:ಶುಭಸಮಯ|ಶುಭಸಮ\w*|ತಭಸಮ\w*|ತುಭಸಮ\w*|ಕಾಭಸಮ\w*|ಶುಭ\s*ಸಮಯ)')
     )
     foreach ($t in $timeRows) {
         $timings[$t[0]] = Get-BestTiming $t[1] $bt2 $t[2]
