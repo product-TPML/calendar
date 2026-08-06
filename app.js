@@ -1,0 +1,400 @@
+/* ನಿತ್ಯ ಪಂಚಾಂಗ — plain JS, no dependencies.
+   Data source: ocr-zones/06-04-2026/structured-ocr.json (fetched; falls back to FALLBACK inline). */
+(function () {
+  "use strict";
+
+  var REAL_KEY = "06-04-2026";
+
+  /* ---------------- Inline fallback (same day as the JSON) ---------------- */
+  var FALLBACK = {
+    key: REAL_KEY,
+    calendar: {
+      months: ["ಚೈತ್ರ", "ವೈಶಾಖ"],
+      samvatsara: "ಪರಾಭವ",
+      shakaYear: 1948,
+      sunrise: "06:12",
+      sunset: "18:31"
+    },
+    quote: "ಏನಾದರೂ ಆಗು, ಮೊದಲು ಮಾನವನಾಗು",
+    events: [
+      "ಅನಸೂಯಾ ಜಯಂತಿ",
+      "ಇಂಚಗೇರಿ ಗುರುಪುತ್ರೇಶ್ವರ ಮಹಾ ಜಯಂತಿ",
+      "ಖಂಡೋಬಾ ಜಾತ್ರೆ — ಬೋರ-ಗಾಂವ್, ತಾ. ಚಿಕ್ಕೋಡಿ",
+      "ಸುರಪೂರ ಜಾತ್ರೆ — ತಾ. ಹಿಗ್ಗಡಿಹಾಳ",
+      "ಶ್ರೀ ಸದಾನಂದ ಕೃಷ್ಣಮಹಾ ಜಾತ್ರೆ"
+    ],
+    panchanga: {
+      tithi:     { name: "ಚತುರ್ಥಿ", paksha: "ಕೃಷ್ಣ", ends: 14.11, nextDay: false },
+      nakshatra: { name: "ಅನುರಾಧ", ends: 26.57, nextDay: true },
+      yoga:      { name: "ಸಿದ್ಧಿ", ends: 14.44, nextDay: false },
+      karana:    { name: "ಕೌಲವ", ends: 27.22, nextDay: true },
+      ayana: "ಉತ್ತರಾಯಣ", ritu: "ವಸಂತ", solarRashi: "ಮೀನ", chandraRashi: "ವೃಶ್ಚಿಕ"
+    },
+    timings: [
+      { name: "ರಾಹು ಕಾಲ",   from: "07:30", to: "09:00", tone: "bad" },
+      { name: "ಅರ್ಥ ಪ್ರಹರ", from: "09:00", to: "10:30", tone: "mid" },
+      { name: "ಯಮಗಂಡ",      from: "10:30", to: "12:00", tone: "bad" },
+      { name: "ಗುಳಿಕ ಕಾಲ",   from: "13:30", to: "15:00", tone: "bad" },
+      { name: "ಶುಭ ಸಮಯ",     from: "15:19", to: "17:07", tone: "good" }
+    ],
+    jathaka: [
+      ["ಮೇಷ", "ಸಂತೋಷ"], ["ವೃಷಭ", "ಪ್ರತಿರೋಧ"], ["ಮಿಥುನ", "ಯಶಸ್ಸು"], ["ಕರ್ಕಾಟಕ", "ಪ್ರಗತಿ"],
+      ["ಸಿಂಹ", "ಸ್ನೇಹ"], ["ಕನ್ಯಾ", "ನಿರಾಶೆ"], ["ತುಲಾ", "ಲಾಭ"], ["ವೃಶ್ಚಿಕ", "ಪ್ರೋತ್ಸಾಹ"],
+      ["ಧನಸ್ಸು", "ಸಂತೋಷ"], ["ಮಕರ", "ಅನಾರೋಗ್ಯ"], ["ಕುಂಭ", "ಕೀರ್ತಿ"], ["ಮೀನ", "ಅಭಿವೃದ್ಧಿ"]
+    ]
+  };
+
+  /* ---------------- Approx data for dates without a record ---------------- */
+  var TITHIS = ["ಚತುರ್ಥಿ", "ಪಂಚಮಿ", "ಷಷ್ಠಿ", "ಸಪ್ತಮಿ", "ಅಷ್ಟಮಿ", "ನವಮಿ", "ದಶಮಿ"];
+  var NAKSH  = ["ಅನುರಾಧ", "ಜ್ಯೇಷ್ಠ", "ಮೂಲ", "ಪೂರ್ವಾಷಾಢ", "ಉತ್ತರಾಷಾಢ"];
+  var YOGAS  = ["ಸಿದ್ಧಿ", "ಸಾಧ್ಯ", "ಶುಭ", "ಶುಕ್ಲ"];
+  var KARANS = ["ಕೌಲವ", "ತೈತಿಲ", "ಗರ", "ವಣಿಜ"];
+  var EPOCH = new Date(2026, 0, 1);
+
+  function approxDay(key) {
+    var seed = Math.floor((parseKey(key) - EPOCH) / 864e5);
+    var pick = function (a) { return a[((seed % a.length) + a.length) % a.length]; };
+    var c = FALLBACK.calendar;
+    return {
+      key: key, approx: true, quote: null, events: [], timings: [], jathaka: [],
+      calendar: {
+        months: ["—", "—"], samvatsara: c.samvatsara, shakaYear: c.shakaYear,
+        sunrise: c.sunrise, sunset: c.sunset
+      },
+      panchanga: {
+        tithi:     { name: pick(TITHIS), paksha: "ಕೃಷ್ಣ", ends: 14.11, nextDay: false },
+        nakshatra: { name: pick(NAKSH), ends: 26.57, nextDay: true },
+        yoga:      { name: pick(YOGAS), ends: 14.44, nextDay: false },
+        karana:    { name: pick(KARANS), ends: 27.22, nextDay: true },
+        ayana: "ಉತ್ತರಾಯಣ", ritu: "—", solarRashi: "ಮೀನ", chandraRashi: "—"
+      }
+    };
+  }
+
+  /* ---------------- State & helpers ---------------- */
+  var state = { key: REAL_KEY, data: {}, tab: "today", big: false, kn: true };
+
+  var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
+  var MONTHS = ["ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್"];
+  var KN_DIGITS = ["೦", "೧", "೨", "೩", "೪", "೫", "೬", "೭", "೮", "೯"];
+
+  function pad(n) { return (n < 10 ? "0" : "") + n; }
+  function parseKey(k) { var p = k.split("-"); return new Date(+p[2], +p[1] - 1, +p[0]); }
+  function keyFor(d) { return pad(d.getDate()) + "-" + pad(d.getMonth() + 1) + "-" + d.getFullYear(); }
+  function kn(s) { return state.kn ? String(s).replace(/\d/g, function (d) { return KN_DIGITS[+d]; }) : String(s); }
+  function dayData(key) { return state.data[key] || approxDay(key); }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+
+  function fmtEnd(t, next) {
+    var h = Math.floor(t), m = Math.round((t - h) * 100);
+    if (h >= 24) { h -= 24; next = true; }
+    return (next ? '<span class="nd">ಮರುದಿನ ' : "") + pad(h) + ":" + pad(m) + (next ? "</span>" : "");
+  }
+
+  function toMin(t) { var p = t.split(":"); return +p[0] * 60 + +p[1]; }
+
+  /* ---------------- Load & normalize the JSON ---------------- */
+  function load() {
+    fetch("ocr-zones/06-04-2026/structured-ocr.json")
+      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+      .then(function (json) {
+        state.data[REAL_KEY] = normalize(json);
+        renderAll();
+      })
+      .catch(function () { state.data[REAL_KEY] = FALLBACK; renderAll(); });
+  }
+
+  function normalize(json) {
+    var c = (json && json.content) || {};
+    var cal = c.calendar || {}, pan = c.panchanga || {}, tim = c.timings || {};
+    var jathaka = (Array.isArray(c.jathaka) && c.jathaka.length === 12)
+      ? c.jathaka.map(function (j) { return [j.rashi, cleanWord(j.prediction)]; })
+      : FALLBACK.jathaka;
+    return {
+      key: (json && json.source && json.source.date) || REAL_KEY,
+      calendar: {
+        months: (cal.months || []).filter(String),
+        samvatsara: cal.samvatsara || FALLBACK.calendar.samvatsara,
+        shakaYear: cal.shakaYear || FALLBACK.calendar.shakaYear,
+        sunrise: cal.sunrise || FALLBACK.calendar.sunrise,
+        sunset: cal.sunset || FALLBACK.calendar.sunset
+      },
+      quote: FALLBACK.quote, /* fetched OCR quote is garbled; curated copy is cleaner */
+      events: (c.events || []).filter(String).slice(0, 12),
+      panchanga: {
+        tithi:     { name: cleanWord(pan.tithi.name) || "—", paksha: cleanWord(pan.paksha), ends: num(pan.tithi.endsAt), nextDay: !!pan.tithi.nextDay },
+        nakshatra: { name: cleanWord(pan.nakshatra.name) || "—", ends: num(pan.nakshatra.endsAt), nextDay: !!pan.nakshatra.nextDay },
+        yoga:      { name: cleanWord(pan.yoga.name) || "—", ends: num(pan.yoga.endsAt), nextDay: !!pan.yoga.nextDay },
+        karana:    { name: cleanWord(pan.karana.name) || "—", ends: num(pan.karana.endsAt), nextDay: !!pan.karana.nextDay },
+        ayana: cleanWord(pan.ayana) || "—", ritu: "—",
+        solarRashi: cleanWord(pan.solarRashi) || "—", chandraRashi: cleanWord(pan.chandraRashi) || "—"
+      },
+      timings: buildTimings(tim),
+      jathaka: jathaka
+    };
+  }
+
+  /* OCR safety: keep Kannada letters, spaces and combining marks only. */
+  function cleanWord(s) { return String(s || "").replace(/[^\u0C80-\u0CFF\u200C\u200D\s]/g, "").trim(); }
+
+  function num(t) { var n = parseFloat(t); return isNaN(n) ? 0 : n; }
+
+  function buildTimings(raw) {
+    if (!raw || typeof raw !== "object") return FALLBACK.timings;
+    var defs = [
+      { key: "rahuKala", name: "ರಾಹು ಕಾಲ", tone: "bad" },
+      { key: "gulikaKala", name: "ಗುಳಿಕ ಕಾಲ", tone: "bad" },
+      { key: "yamaganda", name: "ಯಮಗಂಡ", tone: "bad" },
+      { key: "arthaPrahara", name: "ಅರ್ಥ ಪ್ರಹರ", tone: "mid" },
+      { key: "shubhaSamaya", name: "ಶುಭ ಸಮಯ", tone: "good" }
+    ];
+    var out = [];
+    defs.forEach(function (x) {
+      var s = String(raw[x.key] || ""), t = s.match(/(\d{1,2})[.:](\d{2})/g);
+      if (!t || t.length < 2) return;
+      out.push({ name: x.name, tone: x.tone, from: fix24(t[0], s), to: fix24(t[1], s) });
+    });
+    /* OCR times are noisy (e.g. "ಮ.01130"); only trust a full clean parse. */
+    return out.length === defs.length ? out : FALLBACK.timings;
+  }
+
+  /* "ಮ." (ಮಧ್ಯಾಹ್ನ) with an early hour means PM. */
+  function fix24(t, raw) {
+    var p = t.split(".").length > 1 ? t.split(".") : t.split(":"), h = +p[0];
+    if (/ಮ/i.test(raw) && h > 0 && h < 9) h += 12;
+    return pad(h) + ":" + p[1];
+  }
+
+  /* ---------------- Render: Today ---------------- */
+  function renderToday() {
+    var d = dayData(state.key);
+    var cal = d.calendar, pan = d.panchanga;
+    var dt = parseKey(state.key);
+    var approx = d.approx ? '<span class="badge-approx">ಅಂದಾಜು</span>' : "";
+    var sun = '<div class="sun-row">' +
+      '<span><span class="sun-ico" aria-hidden="true">☼</span> ಸೂರ್ಯೋದಯ <b>' + kn(cal.sunrise) + '</b></span>' +
+      '<span><span class="sun-ico" aria-hidden="true">☾</span> ಸೂರ್ಯಾಸ್ತ <b>' + kn(cal.sunset) + '</b></span></div>';
+
+    var panga = '<div class="panga-grid">' +
+      pc("ತಿಥಿ", pan.tithi.name, (pan.tithi.paksha ? pan.tithi.paksha + " ಪಕ್ಷ · " : "") + "ಮುಗಿಯುವುದು " + fmtEnd(pan.tithi.ends, pan.tithi.nextDay)) +
+      pc("ನಕ್ಷತ್ರ", pan.nakshatra.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.nakshatra.ends, pan.nakshatra.nextDay)) +
+      pc("ಯೋಗ", pan.yoga.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.yoga.ends, pan.yoga.nextDay)) +
+      pc("ಕರಣ", pan.karana.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.karana.ends, pan.karana.nextDay)) +
+      '</div><p class="panga-detail">' + esc(pan.ayana) + " · ಸೂರ್ಯ: " + esc(pan.solarRashi) + " · ಚಂದ್ರ: " + esc(pan.chandraRashi) + "</p>";
+
+    document.getElementById("todayContent").innerHTML =
+      '<div class="hero">' + approx +
+        '<div class="hero-top">' +
+          '<span class="hero-num">' + kn(dt.getDate()) + '</span>' +
+          '<span class="hero-when">' +
+            '<span class="hero-weekday">' + WEEKDAYS[dt.getDay()] + '</span>' +
+            '<span class="hero-month">' + MONTHS[dt.getMonth()] + ' ' + kn(dt.getFullYear()) + '</span>' +
+          '</span>' +
+        '</div>' +
+        '<p class="hero-meta">' + esc(cal.samvatsara) + ' ನಾಮ ಸಂವತ್ಸರ · ಶಕ ' + kn(cal.shakaYear) +
+          (cal.months.length ? " · " + esc(cal.months.join("–")) : "") + '</p>' +
+        (d.quote ? '<p class="hero-quote">“' + esc(d.quote) + '”</p>' : "") +
+      '</div>' + sun +
+      panga +
+      card("ಇಂದಿನ ಹಬ್ಬಗಳು / ವಿಶೇಷ ದಿನಗಳು", chipsHTML(d.events), "events") +
+      card("ಸಮಯಗಳು — ಕಾಲ", timingsHTML(d), "timings") +
+      card("ರಾಶಿ ಭವಿಷ್ಯ", jathakaHTML(d), "jathaka", true);
+
+    bindToggle("toggle-events");
+    bindToggle("toggle-timings");
+    bindToggle("toggle-jathaka");
+  }
+
+  function pc(label, name, sub) {
+    return '<div class="panga-card">' +
+      '<span class="panga-label">' + label + '</span>' +
+      '<span class="panga-name">' + esc(name) + '</span>' +
+      '<span class="panga-sub">' + sub + '</span></div>';
+  }
+
+  function card(title, body, id, collapsed) {
+    var open = collapsed ? "false" : "true";
+    var bodyHidden = collapsed ? " hidden" : "";
+    return '<section class="card">' +
+      '<button class="card-toggle" id="toggle-' + id + '" type="button" aria-expanded="' + open + '" aria-controls="body-' + id + '">' +
+        '<span class="card-title">' + title + '</span><span class="chev" aria-hidden="true">▾</span>' +
+      '</button>' +
+      '<div class="card-body" id="body-' + id + '"' + bodyHidden + '>' + body + '</div></section>';
+  }
+
+  function chipsHTML(events) {
+    if (!events.length) return '<p class="empty-note">ಈ ದಿನ ಯಾವುದೇ ವಿಶೇಷ ದಿನವಿಲ್ಲ.</p>';
+    var limit = 3, hidden = [];
+    var out = '<div class="chips">';
+    events.slice(0, limit).forEach(function (e) { out += '<span class="chip">' + esc(e) + '</span>'; });
+    if (events.length > limit) {
+      hidden = events.slice(limit);
+      out += '<button class="chip-more" id="btn-events-more" type="button" aria-expanded="false">ಮತ್ತೆ +' + hidden.length + '</button>';
+    }
+    out += '</div>';
+    if (hidden.length) out += '<div class="chips" id="events-extra" hidden>' + hidden.map(function (e) { return '<span class="chip">' + esc(e) + "</span>"; }).join("") + "</div>";
+    return out;
+  }
+
+  function timingsHTML(d) {
+    if (!d.timings.length) return '<p class="empty-note">ಈ ದಿನದ ಕಾಲ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
+    var c = d.calendar;
+    var span = toMin(c.sunset) - toMin(c.sunrise) || 1;
+    var blocks = d.timings.map(function (t) {
+      var l = (toMin(t.from) - toMin(c.sunrise)) / span * 100;
+      var w = (toMin(t.to) - toMin(t.from)) / span * 100;
+      return '<div class="tl-block ' + t.tone + '" style="left:' + l.toFixed(1) + '%;width:' + Math.max(w, 4).toFixed(1) + '%" title="' + esc(t.name) + " " + t.from + "–" + t.to + '">' +
+        "<b>" + esc(t.name) + "</b>" + kn(t.from) + "–" + kn(t.to) + "</div>";
+    }).join("");
+    var rows = d.timings.map(function (t) {
+      return "<li><span class=\"tone-dot " + t.tone + "\" aria-hidden=\"true\"></span>" +
+        "<span>" + esc(t.name) + "</span><span class=\"t-time\">" + kn(t.from) + " – " + kn(t.to) + "</span></li>";
+    }).join("");
+    return '<div class="timeline">' +
+        '<div class="tl-track">' + blocks + '</div>' +
+        '<div class="tl-ends"><span>☼ ' + kn(c.sunrise) + '</span><span>' + kn(c.sunset) + ' ☾</span></div>' +
+      '</div><ul class="timing-list">' + rows + "</ul>";
+  }
+
+  function jathakaHTML(d) {
+    if (!d.jathaka.length) return '<p class="empty-note">ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ.</p>';
+    return '<div class="jathaka-list">' + d.jathaka.map(function (j) {
+      return '<div class="jr"><span class="jr-name">' + esc(j[0]) + '</span><span class="jr-p">' + esc(j[1]) + "</span></div>";
+    }).join("") + "</div>";
+  }
+
+  /* ---------------- Render: Month ---------------- */
+  function renderMonth() {
+    var cur = parseKey(state.key);
+    var y = cur.getFullYear(), m = cur.getMonth();
+    var days = new Date(y, m + 1, 0).getDate();
+    var lead = new Date(y, m, 1).getDay(); /* 0 = ಭಾನುವಾರ */
+    var title = MONTHS[m] + " " + kn(y);
+    document.getElementById("monthTitle").textContent = title;
+    document.getElementById("weekRow").innerHTML = WEEKDAYS.map(function (w) { return "<span>" + w.charAt(0) + "</span>"; }).join("");
+
+    var html = "";
+    for (var i = 0; i < lead; i++) html += '<span class="mday blank" aria-hidden="true"></span>';
+    for (var day = 1; day <= days; day++) {
+      var k = keyFor(new Date(y, m, day));
+      var sel = k === state.key;
+      var fest = state.data[k] && state.data[k].events.length;
+      html += '<button class="mday' + (sel ? " sel" : "") + (fest ? " fest" : "") + '" data-day="' + k + '" type="button">' + kn(day) + "</button>";
+    }
+    document.getElementById("monthGrid").innerHTML = html;
+    document.querySelectorAll("#monthGrid .mday:not(.blank)").forEach(function (b) {
+      b.addEventListener("click", function () { state.key = b.dataset.day; setTab("today"); });
+    });
+  }
+
+  /* ---------------- Render: Rashi ---------------- */
+  function renderRashi() {
+    var d = dayData(state.key);
+    var dt = parseKey(state.key);
+    var sub = WEEKDAYS[dt.getDay()] + ", " + MONTHS[dt.getMonth()] + " " + kn(dt.getDate());
+    document.getElementById("rashiSub").textContent = sub + " ರಾಶಿ ಭವಿಷ್ಯ";
+    var el = document.getElementById("rashiGrid");
+    if (!d.jathaka.length) {
+      el.innerHTML = '<p class="empty-note">ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ.</p>';
+      return;
+    }
+    el.innerHTML = d.jathaka.map(function (j) {
+      return '<div class="rc"><span class="rc-name">' + esc(j[0]) + '</span><span class="rc-p">' + esc(j[1]) + "</span></div>";
+    }).join("");
+  }
+
+  /* ---------------- Masthead ---------------- */
+  function renderMasthead() {
+    var dt = parseKey(state.key);
+    var el = document.getElementById("mastheadDate");
+    el.textContent = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + ", " + kn(dt.getFullYear()) + " · " + WEEKDAYS[dt.getDay()];
+    document.title = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + " — ನಿತ್ಯ ಪಂಚಾಂಗ";
+  }
+
+  /* ---------------- Tab switching ---------------- */
+  var VIEWS = { today: "viewToday", month: "viewMonth", rashi: "viewRashi", more: "viewMore" };
+
+  function setTab(name) {
+    state.tab = name;
+    document.querySelectorAll(".view").forEach(function (v) { v.hidden = v.id !== VIEWS[name]; });
+    document.querySelectorAll(".tab").forEach(function (t) {
+      var on = t.dataset.tab === name;
+      t.classList.toggle("is-active", on);
+      if (on) t.setAttribute("aria-current", "page"); else t.removeAttribute("aria-current");
+    });
+    renderActive();
+    document.querySelector(".main").scrollTop = 0;
+    window.scrollTo(0, 0);
+  }
+
+  function renderActive() {
+    if (state.tab === "today") renderToday();
+    else if (state.tab === "month") renderMonth();
+    else if (state.tab === "rashi") renderRashi();
+  }
+
+  function renderAll() { renderMasthead(); renderActive(); }
+
+  /* ---------------- Toggle helper ---------------- */
+  function bindToggle(prefix) {
+    var btn = document.getElementById(prefix);
+    if (!btn) return;
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      var body = document.getElementById(prefix.replace("toggle-", "body-"));
+      if (body) body.hidden = open;
+    });
+    var extra = document.getElementById("btn-events-more");
+    if (extra && prefix === "toggle-events") {
+      extra.addEventListener("click", function () {
+        var list = document.getElementById("events-extra");
+        var open = list.hidden;
+        list.hidden = !open;
+        extra.setAttribute("aria-expanded", String(open));
+        extra.textContent = open ? "ಮುಚ್ಚು" : "ಮತ್ತೆ +" + (document.querySelectorAll("#events-extra .chip").length);
+      });
+    }
+  }
+
+  /* ---------------- Init ---------------- */
+  function init() {
+    document.querySelectorAll(".tab").forEach(function (t) {
+      t.addEventListener("click", function () { setTab(t.dataset.tab); });
+    });
+    document.getElementById("prevDay").addEventListener("click", function () { shiftDay(-1); });
+    document.getElementById("nextDay").addEventListener("click", function () { shiftDay(1); });
+    document.getElementById("prevMonth").addEventListener("click", function () { shiftMonth(-1); });
+    document.getElementById("nextMonth").addEventListener("click", function () { shiftMonth(1); });
+    document.getElementById("brand").addEventListener("click", function () { state.key = REAL_KEY; setTab("today"); });
+    document.getElementById("fontBig").addEventListener("change", function (e) {
+      state.big = e.target.checked;
+      document.body.classList.toggle("big", state.big);
+    });
+    document.getElementById("knDigits").addEventListener("change", function (e) {
+      state.kn = e.target.checked;
+      renderAll();
+    });
+    load();
+  }
+
+  function shiftDay(n) {
+    var d = parseKey(state.key);
+    d.setDate(d.getDate() + n);
+    state.key = keyFor(d);
+    renderAll();
+  }
+
+  function shiftMonth(n) {
+    var d = parseKey(state.key);
+    var day = Math.min(d.getDate(), 28);
+    d.setDate(1);
+    d.setMonth(d.getMonth() + n);
+    var last = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate();
+    d.setDate(Math.min(day, last));
+    state.key = keyFor(d);
+    renderAll();
+  }
+
+  document.addEventListener("DOMContentLoaded", init);
+})();

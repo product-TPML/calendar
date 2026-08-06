@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#c8402e">
+<meta name="description" content="ಕನ್ನಡ ಪಂಚಾಂಗ — ದೈನಂದಿನ ತಿಥಿ, ನಕ್ಷತ್ರ, ಹಬ್ಬಗಳು, ಶುಭ ಸಮಯ ಮತ್ತು ರಾಶಿ ಭವಿಷ್ಯ">
+<title>ನಿತ್ಯ ಪಂಚಾಂಗ — Kannada Daily Panchanga</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500;700;800&family=Noto+Sans+Kannada:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+
+  <header class="masthead">
+    <button id="prevDay" class="icon-btn" type="button" aria-label="ಹಿಂದಿನ ದಿನ">‹</button>
+    <button id="brand" class="masthead-mid" type="button" title="ನಿಜವಾದ ದತ್ತಾಂಶ ದಿನಕ್ಕೆ ಹೋಗಿ">
+      <span class="brand">ನಿತ್ಯ ಪಂಚಾಂಗ</span>
+      <span id="mastheadDate" class="masthead-date"></span>
+    </button>
+    <button id="nextDay" class="icon-btn" type="button" aria-label="ಮುಂದಿನ ದಿನ">›</button>
+  </header>
+
+  <main class="main">
+
+    <section id="viewToday" class="view">
+      <div id="todayContent"></div>
+    </section>
+
+    <section id="viewMonth" class="view" hidden>
+      <div class="month-head">
+        <button id="prevMonth" class="icon-btn" type="button" aria-label="ಹಿಂದಿನ ತಿಂಗಳು">‹</button>
+        <h2 id="monthTitle" class="month-title"></h2>
+        <button id="nextMonth" class="icon-btn" type="button" aria-label="ಮುಂದಿನ ತಿಂಗಳು">›</button>
+      </div>
+      <div id="weekRow" class="week-row"></div>
+      <div id="monthGrid" class="month-grid"></div>
+      <p class="month-note">ಹಬ್ಬದ ದಿನಗಳನ್ನು <span class="dot-legend" aria-hidden="true"></span> ಕೇಸರಿ ಚುಕ್ಕಿಯಿಂದ ಗುರುತಿಸಲಾಗಿದೆ.</p>
+    </section>
+
+    <section id="viewRashi" class="view" hidden>
+      <h2 class="view-title">ರಾಶಿ ಭವಿಷ್ಯ</h2>
+      <p id="rashiSub" class="view-sub"></p>
+      <div id="rashiGrid" class="rashi-grid"></div>
+    </section>
+
+    <section id="viewMore" class="view" hidden>
+      <h2 class="view-title">ಸೆಟ್ಟಿಂಗ್ಸ್</h2>
+      <div class="card settings">
+        <label class="setting-row" for="fontBig">
+          <span>ದೊಡ್ಡ ಅಕ್ಷರ <small>ಹಿರಿಯ ಓದುಗರಿಗೆ ಅನುಕೂಲ</small></span>
+          <input type="checkbox" id="fontBig" class="switch">
+        </label>
+        <label class="setting-row" for="knDigits">
+          <span>ಕನ್ನಡ ಅಂಕೆಗಳು <small>೦-೯ ಬದಲಿಗೆ 0-9</small></span>
+          <input type="checkbox" id="knDigits" class="switch" checked>
+        </label>
+      </div>
+      <div class="card about">
+        <p>ಇದು ಕನ್ನಡ ಪಂಚಾಂಗದ ದೈನಂದಿನ ಮಾಹಿತಿಯನ್ನು ಸರಳವಾಗಿ ತೋರಿಸುವ ವೆಬ್ ಆ್ಯಪ್.</p>
+        <p>ದತ್ತಾಂಶ ಮೂಲ: <code>ocr-zones/06-04-2026/structured-ocr.json</code> (OCR ಪಡೆದದ್ದು).</p>
+      </div>
+    </section>
+
+  </main>
+
+  <nav class="tabbar" aria-label="ಮುಖ್ಯ ಟ್ಯಾಬ್ಗಳು">
+    <button class="tab is-active" data-tab="today" type="button" aria-current="page">
+      <span class="tab-ico" aria-hidden="true">◐</span><span>ಇಂದು</span>
+    </button>
+    <button class="tab" data-tab="month" type="button">
+      <span class="tab-ico" aria-hidden="true">▦</span><span>ತಿಂಗಳು</span>
+    </button>
+    <button class="tab" data-tab="rashi" type="button">
+      <span class="tab-ico" aria-hidden="true">☉</span><span>ರಾಶಿ</span>
+    </button>
+    <button class="tab" data-tab="more" type="button">
+      <span class="tab-ico" aria-hidden="true">⚙</span><span>ಹೆಚ್ಚು</span>
+    </button>
+  </nav>
+
+</div>
+<noscript><p style="padding:1rem">ಈ ಆ್ಯಪ್ JavaScript ಬಳಸುತ್ತದೆ — ದಯವಿಟ್ಟು ಸಕ್ರಿಯಗೊಳಿಸಿ.</p></noscript>
+<script src="app.js"></script>
+</body>
+</html>
