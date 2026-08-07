@@ -331,7 +331,8 @@
     if (!d.timings.length) return '<p class="empty-note">ಈ ದಿನದ ಕಾಲ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
     var c = d.calendar;
     var span = toMin(c.sunset) - toMin(c.sunrise) || 1;
-    var blocks = d.timings.map(function (t) {
+    var ordered = d.timings.slice().sort(function (a, b) { return toMin(a.from) - toMin(b.from); });
+    var blocks = ordered.map(function (t) {
       var l = (toMin(t.from) - toMin(c.sunrise)) / span * 100;
       var w = (toMin(t.to) - toMin(t.from)) / span * 100;
       return '<div class="tl-block ' + t.tone + '" style="left:' + l.toFixed(1) + '%;width:' + Math.max(w, 4).toFixed(1) + '%" title="' + esc(t.name) + " " + t.from + "–" + t.to + '">' +
@@ -346,7 +347,7 @@
         '<span class="t-time">' + kn(time || "—") + '</span></li>';
     };
     var rows = endRow(ICONS.sunrise, "ಸೂರ್ಯೋದಯ", c.sunrise) +
-      d.timings.map(function (t) {
+      ordered.map(function (t) {
         return '<li class="tl-row"><span class="tone-dot ' + t.tone + '" aria-hidden="true"></span>' +
           '<span class="tl-main"><span class="tl-name">' + esc(t.name) + '</span>' +
           '<span class="t-time">' + kn(t.from) + " – " + kn(t.to) + '</span></span></li>';

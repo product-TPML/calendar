@@ -142,6 +142,8 @@ function assert(cond, msg) {
   assert((els.todayContent.innerHTML.match(/panga-card featured/g) || []).length === 2, "tithi + nakshatra are the featured cards");
   assert((els.todayContent.innerHTML.match(/<svg[^>]*aria-hidden="true"/g) || []).length === 11, "11 svg icons, all aria-hidden");
   assert((els.todayContent.innerHTML.match(/<svg[^>]*focusable="false"/g) || []).length === 11, "11 svg icons, all non-focusable");
+  var initialTimingOrder = ["ರಾಹು ಕಾಲ", "ಅರ್ಥ ಪ್ರಹರ", "ಗುಳಿಕ ಕಾಲ", "ಯಮಗಂಡ", "ಶುಭ ಸಮಯ"].map(function (label) { return els.todayContent.innerHTML.indexOf(label); });
+  assert(initialTimingOrder.every(function (pos, i) { return i === 0 || pos > initialTimingOrder[i - 1]; }), "timeline and list use chronological order");
   assert(els.mastheadDate.textContent.includes(dayNumber(INITIAL)), "masthead uses English digits");
 
   console.log("2) next day fetches & loads its JSON");
