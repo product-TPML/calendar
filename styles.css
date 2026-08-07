@@ -105,10 +105,6 @@ body {
 .hero-weekday { font-weight: 700; font-size: 15px; color: var(--ink-soft); }
 .hero-month { font-family: var(--font-display); font-weight: 700; font-size: 24px; color: var(--ink); }
 .hero-meta { margin-top: 10px; font-size: 13.5px; color: var(--ink-soft); }
-.hero-quote {
-  margin: 10px 0 0; font-size: 15.5px; font-style: italic; color: var(--verm-deep);
-  border-top: 1px dashed var(--line); padding-top: 10px;
-}
 .badge-approx {
   display: inline-block; margin-left: 8px; padding: 1px 8px;
   font-size: 11.5px; font-weight: 700; color: #7a5b12;
@@ -122,6 +118,10 @@ body {
   font-size: 14.5px; font-weight: 600; color: var(--ink-soft);
 }
 .sun-row .sun-ico { color: var(--verm); font-weight: 700; }
+.src-note {
+  margin: 6px 0 0; text-align: center;
+  font-size: 12.5px; color: var(--ink-soft);
+}
 
 /* ---------- Cards ---------- */
 .card {
@@ -150,23 +150,64 @@ body {
 }
 .panga-label { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: .04em; }
 .panga-name { font-family: var(--font-display); font-weight: 700; font-size: 21px; line-height: 1.2; }
+.panga-card.featured .panga-label { font-size: 13px; }
+.panga-card.featured .panga-name { font-size: 26px; }
 .panga-sub { font-size: 12.5px; color: var(--ink-soft); }
 .panga-sub .nd { color: var(--verm); font-weight: 700; }
-.panga-detail { margin: 12px 0 0; font-size: 13.5px; color: var(--ink-soft); text-align: center; }
+/* ---------- Panchanga meta (ಆಯನ · ಸೂರ್ಯ/ಚಂದ್ರ ರಾಶಿ) — matches .panga-card ---------- */
+.panga-meta {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  margin-top: 14px;
+}
+.pm-item {
+  flex: 1 1 140px; max-width: 230px;
+  display: flex; flex-direction: column; align-items: center; gap: 2px;
+  padding: 11px 13px;
+  background: var(--card);
+  border: 1px solid var(--line); border-radius: 14px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+.pm-label { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: .04em; }
+.pm-value {
+  font-family: var(--font-display); font-weight: 700; font-size: 18px;
+  color: var(--ink); line-height: 1.2;
+}
 
-/* ---------- Event chips ---------- */
-.chips { display: flex; flex-wrap: wrap; gap: 8px; }
-.chip {
-  padding: 7px 12px; font-size: 14.5px; font-weight: 500;
-  color: var(--verm-deep); background: var(--red-soft);
-  border: 1px solid rgba(200, 64, 46, .25); border-radius: 999px;
+/* ---------- Events list ---------- */
+.ev-panel {
+  background: #fffcf2;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+}
+.ev-list { list-style: none; margin: 0; padding: 0; }
+.ev-row {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 11px 14px;
+  font-size: .95em; line-height: 1.5; color: var(--ink);
+  transition: background .12s ease;
+}
+.ev-row + .ev-row { border-top: 1px dashed var(--line); }
+.ev-row:hover { background: var(--paper-deep); }
+.ev-mark {
+  flex: none; width: 9px; height: 9px; margin-top: 7px;
+  background: var(--gold);
+  border: 1px solid rgba(168, 52, 36, .45);
+  border-radius: 2px; transform: rotate(45deg);
+}
+.ev-more {
+  display: flex; justify-content: center;
+  padding: 10px 12px 12px;
+  border-top: 1px dashed var(--line);
 }
 .chip-more {
-  padding: 7px 12px; font-size: 14px; font-weight: 700;
+  padding: 9px 18px; font-size: 14px; font-weight: 700;
   color: var(--ink); background: var(--gold-soft);
   border: 1px solid rgba(201, 154, 46, .5); border-radius: 999px;
-  cursor: pointer;
+  cursor: pointer; transition: background .12s ease;
 }
+.chip-more:hover { background: var(--gold-soft); filter: brightness(.97); }
 .empty-note { margin: 0; font-size: 14px; color: var(--ink-soft); font-style: italic; }
 
 /* ---------- Timings + timeline ---------- */
@@ -197,6 +238,13 @@ body {
 .tone-dot.bad { background: var(--verm); }
 .tone-dot.mid { background: var(--gold); }
 .timing-list .t-time { margin-left: auto; font-weight: 700; font-variant-numeric: tabular-nums; }
+.timing-legend {
+  display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px;
+  padding-top: 10px; border-top: 1px dashed var(--line);
+  font-size: 13px; color: var(--ink-soft);
+}
+.timing-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.timing-legend .tone-dot { display: inline-block; }
 
 /* ---------- Jathaka ---------- */
 .jathaka-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
@@ -223,6 +271,8 @@ body {
 .mday:active { transform: scale(.94); }
 .mday.blank { background: transparent; border-color: transparent; cursor: default; }
 .mday.sel { background: var(--verm); color: #fff; border-color: var(--verm); }
+.mday.today { box-shadow: inset 0 0 0 2px var(--gold); }
+.mday.sel.today { box-shadow: inset 0 0 0 2px #fff, 0 0 0 2px var(--gold); }
 .mday.fest::after {
   content: ""; position: absolute; left: 50%; bottom: 4px; transform: translateX(-50%);
   width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
@@ -287,6 +337,9 @@ body {
 /* ---------- Big type (accessibility) ---------- */
 body.big { font-size: 20px; }
 body.big .panga-name { font-size: 24px; }
+body.big .panga-card.featured .panga-name { font-size: 29px; }
+body.big .pm-label { font-size: 13.5px; }
+body.big .pm-value { font-size: 21px; }
 body.big .hero-num { font-size: clamp(64px, 22vw, 96px); }
 body.big .mday { font-size: 19px; }
 

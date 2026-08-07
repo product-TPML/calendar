@@ -93,7 +93,6 @@ function mkJson(key) {
     content: {
       calendar: { months: ["ಚೈತ್ರ"], samvatsara: "S-" + key, shakaYear: 1948, sunrise: "06:12", sunset: "18:31" },
       events: ["event-" + key],
-      quote: "ಏನಾದರೂ ಆಗು",
       panchanga: {
         tithi: { name: "ಚತುರ್ಥಿ", endsAt: "10.5", nextDay: false },
         nakshatra: { name: "ಅನುರಾಧ", endsAt: "11.5", nextDay: false },
@@ -138,7 +137,9 @@ function assert(cond, msg) {
   await tick();
   assert(els.todayContent.innerHTML.includes("S-" + INITIAL), "current-date data rendered");
   assert(els.todayContent.innerHTML.includes("event-" + INITIAL), "current-date events rendered");
-  assert(els.todayContent.innerHTML.includes("hero-quote"), "source quote rendered when present");
+  assert(!els.todayContent.innerHTML.includes("hero-quote"), "quote is not rendered");
+  assert(els.todayContent.innerHTML.includes("ಕನ್ನಡ ಪಂಚಾಂಗದ ಆಧಾರದಲ್ಲಿ"), "source note shown near times");
+  assert((els.todayContent.innerHTML.match(/panga-card featured/g) || []).length === 2, "tithi + nakshatra are the featured cards");
   assert(els.mastheadDate.textContent.includes(dayNumber(INITIAL)), "masthead uses English digits");
 
   console.log("2) next day fetches & loads its JSON");
@@ -195,7 +196,7 @@ function assert(cond, msg) {
   resolveUrl(URL(DAY5), mkPartialTimings(DAY5));
   await tick();
   assert(countIn(els.todayContent.innerHTML, 'class="tl-block') === 2, "only the 2 clean rows are rendered");
-  assert(countIn(els.todayContent.innerHTML, "tone-dot") === 2, "only the 2 clean rows listed");
+  assert(countIn(els.todayContent.innerHTML, "<li>") === 2, "only the 2 clean rows listed");
   assert(els.todayContent.innerHTML.includes("ರಾಹು ಕಾಲ"), "rahu kala rendered");
   assert(els.todayContent.innerHTML.includes("ಶುಭ ಸಮಯ"), "shubha samaya rendered");
   assert(!els.todayContent.innerHTML.includes("ಯಮಗಂಡ"), "malformed yamaganda row absent");
@@ -213,7 +214,7 @@ function assert(cond, msg) {
   els.nextDay.click(); // -> day 7 pending
   resolveUrl(URL(DAY7), mkMinimal(DAY7));
   await tick();
-  assert(!els.todayContent.innerHTML.includes("hero-quote"), "no quote when source has none");
+  assert(!els.todayContent.innerHTML.includes("hero-quote"), "quote remains absent");
   assert(!els.todayContent.innerHTML.includes("ಪರಾಭವ"), "no FALLBACK samvatsara");
   assert(!els.todayContent.innerHTML.includes("1948"), "no FALLBACK shakaYear");
   assert(!els.todayContent.innerHTML.includes("ಅನಸೂಯಾ"), "no FALLBACK events");
