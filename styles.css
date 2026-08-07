@@ -234,12 +234,23 @@ body {
 .tl-block.bad { background: var(--verm); }
 .tl-block.mid { background: var(--gold); }
 .tl-ends { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--ink-soft); margin-top: 3px; }
+.tl-ends .ico { width: 13px; height: 13px; vertical-align: -2px; }
+
+/* Vertical schedule (mobile-first): readable rows, time on its own line */
 .timing-list { list-style: none; margin: 10px 0 0; padding: 0; }
 .timing-list li {
   display: flex; align-items: center; gap: 10px;
-  padding: 8px 0; border-top: 1px dashed var(--line); font-size: 15px;
+  padding: 11px 0; border-top: 1px dashed var(--line); font-size: 15px;
 }
 .timing-list li:first-child { border-top: none; }
+.tl-main { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.tl-name { font-weight: 600; line-height: 1.35; }
+.timing-list .t-time { font-weight: 700; font-variant-numeric: tabular-nums; }
+.timing-list .tone-dot { width: 11px; height: 11px; }
+.tl-end-row { color: var(--ink-soft); }
+.tl-end-row .ico { width: 16px; height: 16px; flex: none; color: var(--verm); }
+.tl-end-row .t-time { margin-left: auto; color: var(--ink); }
+
 .tone-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
 .tone-dot.good { background: var(--green); }
 .tone-dot.bad { background: var(--verm); }
@@ -350,6 +361,13 @@ body.big .pm-value { font-size: 21px; }
 body.big .hero-num { font-size: clamp(64px, 22vw, 96px); }
 body.big .mday { font-size: 19px; }
 
+/* ---------- Mobile: prioritize the vertical schedule ---------- */
+/* The dense horizontal overview is desktop-only; phones get the readable
+   sunrise → kala → sunset list with no text crammed into thin bars. */
+@media (max-width: 759px) {
+  .timeline { display: none; }
+}
+
 /* ---------- Desktop ---------- */
 @media (min-width: 760px) {
   .app { max-width: 760px; }
@@ -357,6 +375,9 @@ body.big .mday { font-size: 19px; }
   .main { padding-left: 20px; padding-right: 20px; }
   .panga-grid { gap: 12px; }
   .tabbar { left: 50%; transform: translateX(-50%); width: 100%; max-width: 760px; border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
+  /* horizontal overview already carries sunrise/sunset in .tl-ends */
+  .tl-end-row { display: none; }
+  .tl-main { flex-direction: row; align-items: baseline; justify-content: space-between; }
 }
 
 /* ---------- Motion ---------- */

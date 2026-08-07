@@ -3,3 +3,4 @@ ocr-zones/
 tessdata/
 ocr-test-*.txt
 *.part
+.playwright-mcp/

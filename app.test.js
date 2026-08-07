@@ -140,8 +140,8 @@ function assert(cond, msg) {
   assert(!els.todayContent.innerHTML.includes("hero-quote"), "quote is not rendered");
   assert(els.todayContent.innerHTML.includes("ಕನ್ನಡ ಪಂಚಾಂಗದ ಆಧಾರದಲ್ಲಿ"), "source note shown near times");
   assert((els.todayContent.innerHTML.match(/panga-card featured/g) || []).length === 2, "tithi + nakshatra are the featured cards");
-  assert((els.todayContent.innerHTML.match(/<svg[^>]*aria-hidden="true"/g) || []).length === 7, "7 svg icons, all aria-hidden");
-  assert((els.todayContent.innerHTML.match(/<svg[^>]*focusable="false"/g) || []).length === 7, "7 svg icons, all non-focusable");
+  assert((els.todayContent.innerHTML.match(/<svg[^>]*aria-hidden="true"/g) || []).length === 11, "11 svg icons, all aria-hidden");
+  assert((els.todayContent.innerHTML.match(/<svg[^>]*focusable="false"/g) || []).length === 11, "11 svg icons, all non-focusable");
   assert(els.mastheadDate.textContent.includes(dayNumber(INITIAL)), "masthead uses English digits");
 
   console.log("2) next day fetches & loads its JSON");
@@ -198,7 +198,7 @@ function assert(cond, msg) {
   resolveUrl(URL(DAY5), mkPartialTimings(DAY5));
   await tick();
   assert(countIn(els.todayContent.innerHTML, 'class="tl-block') === 2, "only the 2 clean rows are rendered");
-  assert(countIn(els.todayContent.innerHTML, "<li>") === 2, "only the 2 clean rows listed");
+  assert(countIn(els.todayContent.innerHTML, 'class="tl-row') === 2, "only the 2 clean rows listed");
   assert(els.todayContent.innerHTML.includes("ರಾಹು ಕಾಲ"), "rahu kala rendered");
   assert(els.todayContent.innerHTML.includes("ಶುಭ ಸಮಯ"), "shubha samaya rendered");
   assert(!els.todayContent.innerHTML.includes("ಯಮಗಂಡ"), "malformed yamaganda row absent");

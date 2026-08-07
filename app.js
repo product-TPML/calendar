@@ -337,13 +337,24 @@
       return '<div class="tl-block ' + t.tone + '" style="left:' + l.toFixed(1) + '%;width:' + Math.max(w, 4).toFixed(1) + '%" title="' + esc(t.name) + " " + t.from + "–" + t.to + '">' +
         "<b>" + esc(t.name) + "</b>" + kn(t.from) + "–" + kn(t.to) + "</div>";
     }).join("");
-    var rows = d.timings.map(function (t) {
-      return "<li><span class=\"tone-dot " + t.tone + "\" aria-hidden=\"true\"></span>" +
-        "<span>" + esc(t.name) + "</span><span class=\"t-time\">" + kn(t.from) + " – " + kn(t.to) + "</span></li>";
-    }).join("");
+    /* Vertical schedule rows: sunrise endpoint, one row per kala (time on its
+       own line below the name), sunset endpoint. Text carries the meaning;
+       the dot is a color+position reinforcement, never color alone. */
+    var endRow = function (icon, label, time) {
+      return '<li class="tl-end-row">' + icon +
+        '<span class="tl-end-name">' + label + '</span>' +
+        '<span class="t-time">' + kn(time || "—") + '</span></li>';
+    };
+    var rows = endRow(ICONS.sunrise, "ಸೂರ್ಯೋದಯ", c.sunrise) +
+      d.timings.map(function (t) {
+        return '<li class="tl-row"><span class="tone-dot ' + t.tone + '" aria-hidden="true"></span>' +
+          '<span class="tl-main"><span class="tl-name">' + esc(t.name) + '</span>' +
+          '<span class="t-time">' + kn(t.from) + " – " + kn(t.to) + '</span></span></li>';
+      }).join("") +
+      endRow(ICONS.sunset, "ಸೂರ್ಯಾಸ್ತ", c.sunset);
     return '<div class="timeline">' +
         '<div class="tl-track">' + blocks + '</div>' +
-        '<div class="tl-ends"><span>☼ ' + kn(c.sunrise) + '</span><span>' + kn(c.sunset) + ' ☾</span></div>' +
+        '<div class="tl-ends"><span>' + ICONS.sunrise + " " + kn(c.sunrise || "—") + '</span><span>' + kn(c.sunset || "—") + " " + ICONS.sunset + '</span></div>' +
       '</div><ul class="timing-list">' + rows + '</ul>' +
       '<div class="timing-legend" aria-label="ಕಾಲಗಳ ಬಣ್ಣದ ಅರ್ಥ">' +
         '<span><i class="tone-dot good" aria-hidden="true"></i> ಶುಭ</span>' +
