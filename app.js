@@ -60,7 +60,7 @@
     return {
       key: key, approx: true, quote: null, events: [], timings: [], jathaka: [],
       calendar: {
-        months: ["—", "—"], samvatsara: c.samvatsara, shakaYear: c.shakaYear,
+        months: [], samvatsara: c.samvatsara, shakaYear: c.shakaYear,
         sunrise: c.sunrise, sunset: c.sunset
       },
       panchanga: {
@@ -134,7 +134,7 @@
     return {
       key: (json && json.source && json.source.date) || FALLBACK_KEY,
       calendar: {
-        months: (cal.months || []).filter(String),
+        months: (cal.months || []).filter(function (m) { return String(m).trim() && String(m).trim() !== "—"; }),
         samvatsara: cal.samvatsara || FALLBACK.calendar.samvatsara,
         shakaYear: cal.shakaYear || FALLBACK.calendar.shakaYear,
         sunrise: cal.sunrise || FALLBACK.calendar.sunrise,
@@ -147,8 +147,9 @@
         nakshatra: { name: cleanWord(pan.nakshatra.name) || "—", ends: num(pan.nakshatra.endsAt), nextDay: !!pan.nakshatra.nextDay },
         yoga:      { name: cleanWord(pan.yoga.name) || "—", ends: num(pan.yoga.endsAt), nextDay: !!pan.yoga.nextDay },
         karana:    { name: cleanWord(pan.karana.name) || "—", ends: num(pan.karana.endsAt), nextDay: !!pan.karana.nextDay },
-        ayana: cleanWord(pan.ayana) || "—", ritu: "—",
-        solarRashi: cleanWord(pan.solarRashi) || "—", chandraRashi: cleanWord(pan.chandraRashi) || "—"
+        ayana: cleanWord(pan.ayana) || "—", ritu: cleanWord(pan.ritu) || "—",
+        solarRashi: cleanWord(pan.solarRashi) || "—",
+        chandraRashi: cleanWord(pan.chandraEntryRashi || pan.chandraRashi) || "—"
       },
       timings: buildTimings(tim),
       jathaka: jathaka
