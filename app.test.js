@@ -140,6 +140,8 @@ function assert(cond, msg) {
   assert(!els.todayContent.innerHTML.includes("hero-quote"), "quote is not rendered");
   assert(els.todayContent.innerHTML.includes("ಕನ್ನಡ ಪಂಚಾಂಗದ ಆಧಾರದಲ್ಲಿ"), "source note shown near times");
   assert((els.todayContent.innerHTML.match(/panga-card featured/g) || []).length === 2, "tithi + nakshatra are the featured cards");
+  assert((els.todayContent.innerHTML.match(/<svg[^>]*aria-hidden="true"/g) || []).length === 7, "7 svg icons, all aria-hidden");
+  assert((els.todayContent.innerHTML.match(/<svg[^>]*focusable="false"/g) || []).length === 7, "7 svg icons, all non-focusable");
   assert(els.mastheadDate.textContent.includes(dayNumber(INITIAL)), "masthead uses English digits");
 
   console.log("2) next day fetches & loads its JSON");

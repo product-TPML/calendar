@@ -68,6 +68,29 @@
   function dayData(key) { return state.data[key] || unavailableDay(key); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
+  /* ---------------- Inline SVG accents (no icon deps, no external assets).
+       aria-hidden + focusable=false: Kannada labels stay the accessible source.
+       Colors come from currentColor via the .ico CSS. ---------------- */
+  var ICO_ATTR = 'viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="ico" stroke-linecap="round" stroke-linejoin="round"';
+  var ICO_STROKE = 'fill="none" stroke="currentColor" stroke-width="1.8"';
+  var ICO_SOLID = 'fill="currentColor" stroke="none"';
+  var ICONS = {
+    sunrise:
+      '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><path d="M4 17.5h16"/><path d="M8.5 17.5a3.5 3.5 0 0 1 7 0"/><path d="M12 5v2.2"/><path d="M6.6 7.6l1.6 1.6"/><path d="M17.4 7.6l-1.6 1.6"/></svg>',
+    sunset:
+      '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><path d="M4 17.5h16"/><path d="M8.5 17.5a3.5 3.5 0 0 1 7 0"/><path d="M12 5v2.2"/><path d="M6.6 7.6l1.6 1.6"/><path d="M17.4 7.6l-1.6 1.6"/></svg>',
+    tithi:
+      '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M15 4A8 8 0 1 0 23 12A6 6 0 0 1 15 4Z"/></svg>',
+    nakshatra:
+      '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>',
+    yoga:
+      '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M14.5 4.5A7.5 7.5 0 1 0 22 12.2 5.8 5.8 0 0 1 14.5 4.5z"/><circle cx="7.6" cy="9.5" r="2.4"/></svg>',
+    karana:
+      '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M12 4a8 8 0 1 0 0 16z"/></svg>',
+    diya:
+      '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><path fill="currentColor" stroke="none" d="M12 2.8c1.5 2 2.5 3.3 2.5 4.9a2.5 2.5 0 1 1-5 0c0-1.6 1-2.9 2.5-4.9z"/><path d="M6 12.5a3.2 3.2 0 0 0 3.2 3.2h5.6A3.2 3.2 0 0 0 18 12.5z"/></svg>'
+  };
+
   function fmtEnd(t, next) {
     var h = Math.floor(t), m = Math.round((t - h) * 100);
     if (h >= 24) { h -= 24; next = true; }
@@ -222,8 +245,8 @@
     }
     var cal = d.calendar, pan = d.panchanga;
     var sun = '<div class="sun-row">' +
-      '<span><span class="sun-ico" aria-hidden="true">☼</span> ಸೂರ್ಯೋದಯ <b>' + kn(cal.sunrise || "—") + '</b></span>' +
-      '<span><span class="sun-ico" aria-hidden="true">☾</span> ಸೂರ್ಯಾಸ್ತ <b>' + kn(cal.sunset || "—") + '</b></span></div>' +
+      '<span class="sun-item sunrise-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunrise + '</span> ಸೂರ್ಯೋದಯ <b>' + kn(cal.sunrise || "—") + '</b></span>' +
+      '<span class="sun-item sunset-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunset + '</span> ಸೂರ್ಯಾಸ್ತ <b>' + kn(cal.sunset || "—") + '</b></span></div>' +
       '<p class="src-note">ಕನ್ನಡ ಪಂಚಾಂಗದ ಆಧಾರದಲ್ಲಿ</p>';
     var meta = [];
     if (cal.samvatsara) meta.push(esc(cal.samvatsara) + " ನಾಮ ಸಂವತ್ಸರ");
@@ -231,10 +254,10 @@
     if (cal.months.length) meta.push(esc(cal.months.join("–")));
 
     var panga = '<div class="panga-grid">' +
-      pc("ತಿಥಿ", pan.tithi.name, (pan.tithi.paksha ? pan.tithi.paksha + " ಪಕ್ಷ · " : "") + "ಮುಗಿಯುವುದು " + fmtEnd(pan.tithi.ends, pan.tithi.nextDay), true) +
-      pc("ನಕ್ಷತ್ರ", pan.nakshatra.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.nakshatra.ends, pan.nakshatra.nextDay), true) +
-      pc("ಯೋಗ", pan.yoga.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.yoga.ends, pan.yoga.nextDay)) +
-      pc("ಕರಣ", pan.karana.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.karana.ends, pan.karana.nextDay)) +
+      pc("ತಿಥಿ", pan.tithi.name, (pan.tithi.paksha ? pan.tithi.paksha + " ಪಕ್ಷ · " : "") + "ಮುಗಿಯುವುದು " + fmtEnd(pan.tithi.ends, pan.tithi.nextDay), true, ICONS.tithi) +
+      pc("ನಕ್ಷತ್ರ", pan.nakshatra.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.nakshatra.ends, pan.nakshatra.nextDay), true, ICONS.nakshatra) +
+      pc("ಯೋಗ", pan.yoga.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.yoga.ends, pan.yoga.nextDay), false, ICONS.yoga) +
+      pc("ಕರಣ", pan.karana.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.karana.ends, pan.karana.nextDay), false, ICONS.karana) +
       '</div>' + pangaMetaHTML(pan);
 
     document.getElementById("todayContent").innerHTML =
@@ -242,7 +265,7 @@
         '<p class="hero-meta">' + meta.join(" · ") + '</p>' +
       '</div>' + sun +
       panga +
-      card("ಇಂದಿನ ಹಬ್ಬಗಳು / ವಿಶೇಷ ದಿನಗಳು", eventsHTML(d.events), "events") +
+      card("ಇಂದಿನ ಹಬ್ಬಗಳು / ವಿಶೇಷ ದಿನಗಳು", eventsHTML(d.events), "events", false, ICONS.diya) +
       card("ಸಮಯಗಳು — ಕಾಲ", timingsHTML(d), "timings") +
       card("ರಾಶಿ ಭವಿಷ್ಯ", jathakaHTML(d), "jathaka", true);
 
@@ -267,19 +290,22 @@
     }).join("") + '</div>';
   }
 
-  function pc(label, name, sub, featured) {
+  function pc(label, name, sub, featured, icon) {
     return '<div class="panga-card' + (featured ? " featured" : "") + '">' +
-      '<span class="panga-label">' + label + '</span>' +
+      '<span class="panga-head">' + icon + '<span class="panga-label">' + label + '</span></span>' +
       '<span class="panga-name">' + esc(name) + '</span>' +
       '<span class="panga-sub">' + sub + '</span></div>';
   }
 
-  function card(title, body, id, collapsed) {
+  function card(title, body, id, collapsed, icon) {
     var open = collapsed ? "false" : "true";
     var bodyHidden = collapsed ? " hidden" : "";
+    var head = icon
+      ? '<span class="card-title">' + icon + " " + title + '</span>'
+      : '<span class="card-title">' + title + '</span>';
     return '<section class="card">' +
       '<button class="card-toggle" id="toggle-' + id + '" type="button" aria-expanded="' + open + '" aria-controls="body-' + id + '">' +
-        '<span class="card-title">' + title + '</span><span class="chev" aria-hidden="true">▾</span>' +
+        head + '<span class="chev" aria-hidden="true">▾</span>' +
       '</button>' +
       '<div class="card-body" id="body-' + id + '"' + bodyHidden + '>' + body + '</div></section>';
   }

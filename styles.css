@@ -117,7 +117,11 @@ body {
   display: flex; justify-content: center; gap: 28px; margin: 12px 0 2px;
   font-size: 14.5px; font-weight: 600; color: var(--ink-soft);
 }
-.sun-row .sun-ico { color: var(--verm); font-weight: 700; }
+.sun-row .sun-item { display: inline-flex; align-items: center; }
+.sun-row .sunrise-item { color: #a86f08; }
+.sun-row .sunset-item { color: #5a527f; }
+.sun-row .sun-ico { color: currentColor; font-weight: 700; }
+.sun-ico .ico { width: 17px; height: 17px; display: inline-block; vertical-align: -3px; margin-right: 3px; }
 .src-note {
   margin: 6px 0 0; text-align: center;
   font-size: 12.5px; color: var(--ink-soft);
@@ -136,6 +140,7 @@ body {
   font: inherit; color: inherit; text-align: left;
 }
 .card-toggle .card-title { margin: 0; }
+.card-title .ico { width: 16px; height: 16px; display: inline-block; vertical-align: -3px; margin-right: 7px; color: var(--verm); }
 .card-toggle .chev { color: var(--verm); transition: transform .18s ease; }
 .card-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
 .card-body { padding: 0 16px 16px; }
@@ -148,6 +153,8 @@ body {
   padding: 11px 13px; box-shadow: var(--shadow);
   display: flex; flex-direction: column; gap: 2px;
 }
+.panga-head { display: flex; align-items: center; gap: 6px; }
+.panga-head .ico { width: 15px; height: 15px; flex: none; color: var(--gold); }
 .panga-label { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: .04em; }
 .panga-name { font-family: var(--font-display); font-weight: 700; font-size: 21px; line-height: 1.2; }
 .panga-card.featured .panga-label { font-size: 13px; }
