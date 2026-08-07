@@ -46,30 +46,12 @@
     ]
   };
 
-  /* ---------------- Approx data for dates without a record ---------------- */
-  var TITHIS = ["ಚತುರ್ಥಿ", "ಪಂಚಮಿ", "ಷಷ್ಠಿ", "ಸಪ್ತಮಿ", "ಅಷ್ಟಮಿ", "ನವಮಿ", "ದಶಮಿ"];
-  var NAKSH  = ["ಅನುರಾಧ", "ಜ್ಯೇಷ್ಠ", "ಮೂಲ", "ಪೂರ್ವಾಷಾಢ", "ಉತ್ತರಾಷಾಢ"];
-  var YOGAS  = ["ಸಿದ್ಧಿ", "ಸಾಧ್ಯ", "ಶುಭ", "ಶುಕ್ಲ"];
-  var KARANS = ["ಕೌಲವ", "ತೈತಿಲ", "ಗರ", "ವಣಿಜ"];
-  var EPOCH = new Date(2026, 0, 1);
-
-  function approxDay(key) {
-    var seed = Math.floor((parseKey(key) - EPOCH) / 864e5);
-    var pick = function (a) { return a[((seed % a.length) + a.length) % a.length]; };
-    var c = FALLBACK.calendar;
+  /* ---------------- Unavailable record (no fabricated data) ---------------- */
+  function unavailableDay(key) {
     return {
-      key: key, approx: true, quote: null, events: [], timings: [], jathaka: [],
-      calendar: {
-        months: [], samvatsara: c.samvatsara, shakaYear: c.shakaYear,
-        sunrise: c.sunrise, sunset: c.sunset
-      },
-      panchanga: {
-        tithi:     { name: pick(TITHIS), paksha: "ಕೃಷ್ಣ", ends: 14.11, nextDay: false },
-        nakshatra: { name: pick(NAKSH), ends: 26.57, nextDay: true },
-        yoga:      { name: pick(YOGAS), ends: 14.44, nextDay: false },
-        karana:    { name: pick(KARANS), ends: 27.22, nextDay: true },
-        ayana: "ಉತ್ತರಾಯಣ", ritu: "—", solarRashi: "ಮೀನ", chandraRashi: "—"
-      }
+      key: key, unavailable: true, quote: null, events: [], timings: [], jathaka: [],
+      calendar: { months: [], samvatsara: null, shakaYear: null, sunrise: null, sunset: null },
+      panchanga: null
     };
   }
 
@@ -84,7 +66,7 @@
   function parseKey(k) { var p = k.split("-"); return new Date(+p[2], +p[1] - 1, +p[0]); }
   function keyFor(d) { return pad(d.getDate()) + "-" + pad(d.getMonth() + 1) + "-" + d.getFullYear(); }
   function kn(s) { return state.kn ? String(s).replace(/\d/g, function (d) { return KN_DIGITS[+d]; }) : String(s); }
-  function dayData(key) { return state.data[key] || approxDay(key); }
+  function dayData(key) { return state.data[key] || unavailableDay(key); }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
   function fmtEnd(t, next) {
@@ -116,40 +98,42 @@
     fetch("ocr-zones/" + key + "/structured-ocr.json")
       .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
       .then(function (json) {
-        state.data[key] = normalize(json);
+        state.data[key] = normalize(json, key);
         if (seq === state.seq) { state.loading = false; renderAll(); }
       })
       .catch(function () {
-        state.data[key] = (key === FALLBACK_KEY) ? FALLBACK : approxDay(key);
+        state.data[key] = (key === FALLBACK_KEY) ? FALLBACK : unavailableDay(key);
         if (seq === state.seq) { state.loading = false; renderAll(); }
       });
   }
 
-  function normalize(json) {
+  function normalize(json, key) {
     var c = (json && json.content) || {};
     var cal = c.calendar || {}, pan = c.panchanga || {}, tim = c.timings || {};
+    var tithi = pan.tithi || {}, nak = pan.nakshatra || {}, yog = pan.yoga || {}, kar = pan.karana || {};
     var jathaka = (Array.isArray(c.jathaka) && c.jathaka.length === 12)
       ? c.jathaka.map(function (j) { return [j.rashi, cleanWord(j.prediction)]; })
-      : FALLBACK.jathaka;
+      : [];
     return {
-      key: (json && json.source && json.source.date) || FALLBACK_KEY,
+      key: key,
       calendar: {
         months: (cal.months || []).filter(function (m) { return String(m).trim() && String(m).trim() !== "—"; }),
-        samvatsara: cal.samvatsara || FALLBACK.calendar.samvatsara,
-        shakaYear: cal.shakaYear || FALLBACK.calendar.shakaYear,
-        sunrise: cal.sunrise || FALLBACK.calendar.sunrise,
-        sunset: cal.sunset || FALLBACK.calendar.sunset
+        samvatsara: String(cal.samvatsara || "").trim() || null,
+        shakaYear: num(cal.shakaYear) || null,
+        sunrise: String(cal.sunrise || "").trim() || null,
+        sunset: String(cal.sunset || "").trim() || null
       },
-      quote: FALLBACK.quote, /* fetched OCR quote is garbled; curated copy is cleaner */
+      quote: String(c.quote || "").trim() || null,
       events: (c.events || []).filter(String).slice(0, 12),
       panchanga: {
-        tithi:     { name: cleanWord(pan.tithi.name) || "—", paksha: cleanWord(pan.paksha), ends: num(pan.tithi.endsAt), nextDay: !!pan.tithi.nextDay },
-        nakshatra: { name: cleanWord(pan.nakshatra.name) || "—", ends: num(pan.nakshatra.endsAt), nextDay: !!pan.nakshatra.nextDay },
-        yoga:      { name: cleanWord(pan.yoga.name) || "—", ends: num(pan.yoga.endsAt), nextDay: !!pan.yoga.nextDay },
-        karana:    { name: cleanWord(pan.karana.name) || "—", ends: num(pan.karana.endsAt), nextDay: !!pan.karana.nextDay },
-        ayana: cleanWord(pan.ayana) || "—", ritu: cleanWord(pan.ritu) || "—",
-        solarRashi: cleanWord(pan.solarRashi) || "—",
-        chandraRashi: cleanWord(pan.chandraEntryRashi || pan.chandraRashi) || "—"
+        tithi:     { name: cleanWord(tithi.name),     paksha: cleanWord(pan.paksha),         ends: num(tithi.endsAt), nextDay: !!tithi.nextDay },
+        nakshatra: { name: cleanWord(nak.name),       ends: num(nak.endsAt), nextDay: !!nak.nextDay },
+        yoga:      { name: cleanWord(yog.name),       ends: num(yog.endsAt), nextDay: !!yog.nextDay },
+        karana:    { name: cleanWord(kar.name),       ends: num(kar.endsAt), nextDay: !!kar.nextDay },
+        ayana: cleanWord(pan.ayana) || "",
+        ritu: cleanWord(pan.ritu) || "",
+        solarRashi: cleanWord(pan.solarRashi) || "",
+        chandraRashi: cleanWord(pan.chandraEntryRashi || pan.chandraRashi) || ""
       },
       timings: buildTimings(tim),
       jathaka: jathaka
@@ -162,7 +146,7 @@
   function num(t) { var n = parseFloat(t); return isNaN(n) ? 0 : n; }
 
   function buildTimings(raw) {
-    if (!raw || typeof raw !== "object") return FALLBACK.timings;
+    if (!raw || typeof raw !== "object") return [];
     var defs = [
       { key: "rahuKala", name: "ರಾಹು ಕಾಲ", tone: "bad" },
       { key: "gulikaKala", name: "ಗುಳಿಕ ಕಾಲ", tone: "bad" },
@@ -176,8 +160,8 @@
       if (!t || t.length < 2) return;
       out.push({ name: x.name, tone: x.tone, from: fix24(t[0], s), to: fix24(t[1], s) });
     });
-    /* OCR times are noisy (e.g. "ಮ.01130"); only trust a full clean parse. */
-    return out.length === defs.length ? out : FALLBACK.timings;
+    /* OCR times are noisy (e.g. "ಮ.01130"); keep only rows that parse cleanly. */
+    return out;
   }
 
   /* "ಮ." (ಮಧ್ಯಾಹ್ನ) with an early hour means PM. */
@@ -194,12 +178,29 @@
       return;
     }
     var d = dayData(state.key);
-    var cal = d.calendar, pan = d.panchanga;
     var dt = parseKey(state.key);
-    var approx = d.approx ? '<span class="badge-approx">ಅಂದಾಜು</span>' : "";
+    var heroTop = '<div class="hero-top">' +
+      '<span class="hero-num">' + kn(dt.getDate()) + '</span>' +
+      '<span class="hero-when">' +
+        '<span class="hero-weekday">' + WEEKDAYS[dt.getDay()] + '</span>' +
+        '<span class="hero-month">' + MONTHS[dt.getMonth()] + ' ' + kn(dt.getFullYear()) + '</span>' +
+      '</span>' +
+    '</div>';
+    if (d.unavailable) {
+      document.getElementById("todayContent").innerHTML =
+        '<div class="hero">' + heroTop +
+          '<p class="empty-note">ಈ ದಿನದ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ</p>' +
+        '</div>';
+      return;
+    }
+    var cal = d.calendar, pan = d.panchanga;
     var sun = '<div class="sun-row">' +
-      '<span><span class="sun-ico" aria-hidden="true">☼</span> ಸೂರ್ಯೋದಯ <b>' + kn(cal.sunrise) + '</b></span>' +
-      '<span><span class="sun-ico" aria-hidden="true">☾</span> ಸೂರ್ಯಾಸ್ತ <b>' + kn(cal.sunset) + '</b></span></div>';
+      '<span><span class="sun-ico" aria-hidden="true">☼</span> ಸೂರ್ಯೋದಯ <b>' + kn(cal.sunrise || "—") + '</b></span>' +
+      '<span><span class="sun-ico" aria-hidden="true">☾</span> ಸೂರ್ಯಾಸ್ತ <b>' + kn(cal.sunset || "—") + '</b></span></div>';
+    var meta = [];
+    if (cal.samvatsara) meta.push(esc(cal.samvatsara) + " ನಾಮ ಸಂವತ್ಸರ");
+    if (cal.shakaYear != null) meta.push("ಶಕ " + kn(cal.shakaYear));
+    if (cal.months.length) meta.push(esc(cal.months.join("–")));
 
     var panga = '<div class="panga-grid">' +
       pc("ತಿಥಿ", pan.tithi.name, (pan.tithi.paksha ? pan.tithi.paksha + " ಪಕ್ಷ · " : "") + "ಮುಗಿಯುವುದು " + fmtEnd(pan.tithi.ends, pan.tithi.nextDay)) +
@@ -209,16 +210,8 @@
       '</div><p class="panga-detail">' + esc(pan.ayana) + " · ಸೂರ್ಯ: " + esc(pan.solarRashi) + " · ಚಂದ್ರ: " + esc(pan.chandraRashi) + "</p>";
 
     document.getElementById("todayContent").innerHTML =
-      '<div class="hero">' + approx +
-        '<div class="hero-top">' +
-          '<span class="hero-num">' + kn(dt.getDate()) + '</span>' +
-          '<span class="hero-when">' +
-            '<span class="hero-weekday">' + WEEKDAYS[dt.getDay()] + '</span>' +
-            '<span class="hero-month">' + MONTHS[dt.getMonth()] + ' ' + kn(dt.getFullYear()) + '</span>' +
-          '</span>' +
-        '</div>' +
-        '<p class="hero-meta">' + esc(cal.samvatsara) + ' ನಾಮ ಸಂವತ್ಸರ · ಶಕ ' + kn(cal.shakaYear) +
-          (cal.months.length ? " · " + esc(cal.months.join("–")) : "") + '</p>' +
+      '<div class="hero">' + heroTop +
+        '<p class="hero-meta">' + meta.join(" · ") + '</p>' +
         (d.quote ? '<p class="hero-quote">“' + esc(d.quote) + '”</p>' : "") +
       '</div>' + sun +
       panga +
@@ -321,6 +314,10 @@
     document.getElementById("rashiSub").textContent = sub + " ರಾಶಿ ಭವಿಷ್ಯ";
     var el = document.getElementById("rashiGrid");
     if (state.loading) { el.innerHTML = LOADING_HTML; return; }
+    if (d.unavailable) {
+      el.innerHTML = '<p class="empty-note">ಈ ದಿನದ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ</p>';
+      return;
+    }
     if (!d.jathaka.length) {
       el.innerHTML = '<p class="empty-note">ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ.</p>';
       return;
