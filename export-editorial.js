@@ -16,7 +16,9 @@ const RASHI_NAMES = ['ಮೇಷ', 'ವೃಷಭ', 'ಮಿಥುನ', 'ಕರ್�
 // Map each rashi to its canonical spelling; unknown names are reported as data loss.
 const RASHI_CANONICAL = new Map(RASHI_NAMES.map((n) => [n, n]));
 
-const TIMING_KEYS = ['rahuKala', 'gulikaKala', 'yamaganda', 'arthaPrahara', 'shubhaSamaya'];
+// Only shubhaSamaya can carry a second range; the other four keys are single-range.
+const TIMING_KEYS = ['rahuKala', 'gulikaKala', 'yamaganda', 'arthaPrahara'];
+const DUAL_TIMING_KEYS = ['shubhaSamaya'];
 // Canonical abbreviated period prefixes (OCR variants -> canonical). Anything else -> UNKNOWN.
 const PREFIX_CANONICAL = {
   ಬೆ: 'ಬೆ.', ಬಿ: 'ಬೆ.', ಬ: 'ಬೆ.', ಭ: 'ಬೆ.', ಚೆ: 'ಬೆ.', ಚ: 'ಬೆ.', // morning
@@ -53,8 +55,9 @@ const HEADERS = [
   'paksha',
   'solarRashi',
   'chandraEntryRashi',
-  // timings: 5 keys x (prefix, from, to, prefix_2, from_2, to_2) — up to two comma/semicolon-separated ranges
-  ...TIMING_KEYS.flatMap((k) => [`${k}_prefix`, `${k}_from`, `${k}_to`, `${k}_prefix_2`, `${k}_from_2`, `${k}_to_2`]),
+  // timings: 4 single-range keys x (prefix, from, to) + shubhaSamaya x (prefix, from, to, prefix_2, from_2, to_2)
+  ...TIMING_KEYS.flatMap((k) => [`${k}_prefix`, `${k}_from`, `${k}_to`]),
+  ...DUAL_TIMING_KEYS.flatMap((k) => [`${k}_prefix`, `${k}_from`, `${k}_to`, `${k}_prefix_2`, `${k}_from_2`, `${k}_to_2`]),
   // jathaka: one fixed column per canonical Kannada rashi name, value = prediction
   ...RASHI_NAMES,
 ];
@@ -137,6 +140,12 @@ function rowFrom(rec) {
   values.solarRashi = pan.solarRashi;
   values.chandraEntryRashi = pan.chandraEntryRashi;
   for (const k of TIMING_KEYS) {
+    const [r1] = parseTiming(tim[k], values.date, k);
+    values[`${k}_prefix`] = r1.prefix;
+    values[`${k}_from`] = r1.from;
+    values[`${k}_to`] = r1.to;
+  }
+  for (const k of DUAL_TIMING_KEYS) {
     const [r1, r2] = parseTiming(tim[k], values.date, k);
     values[`${k}_prefix`] = r1.prefix;
     values[`${k}_from`] = r1.from;

@@ -1,13 +1,15 @@
 /* ನಿತ್ಯ ಪಂಚಾಂಗ — plain JS, no dependencies.
-   Data source: ocr-zones/06-04-2026/structured-ocr.json (fetched; falls back to FALLBACK inline). */
+   Data source: ocr-zones/<DD-MM-YYYY>/structured-ocr.json (per-date fetch,
+   cached in state.data; 06-04 offline/file:// falls back to FALLBACK inline). */
 (function () {
   "use strict";
 
-  var REAL_KEY = "06-04-2026";
+  var FALLBACK_KEY = "06-04-2026";
+  var DEFAULT_KEY = keyFor(new Date());
 
   /* ---------------- Inline fallback (same day as the JSON) ---------------- */
   var FALLBACK = {
-    key: REAL_KEY,
+    key: FALLBACK_KEY,
     calendar: {
       months: ["ಚೈತ್ರ", "ವೈಶಾಖ"],
       samvatsara: "ಪರಾಭವ",
@@ -72,7 +74,7 @@
   }
 
   /* ---------------- State & helpers ---------------- */
-  var state = { key: REAL_KEY, data: {}, tab: "today", big: false, kn: true };
+  var state = { key: DEFAULT_KEY, data: {}, tab: "today", big: false, kn: false, loading: false, seq: 0 };
 
   var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
   var MONTHS = ["ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್"];
@@ -94,14 +96,33 @@
   function toMin(t) { var p = t.split(":"); return +p[0] * 60 + +p[1]; }
 
   /* ---------------- Load & normalize the JSON ---------------- */
-  function load() {
-    fetch("ocr-zones/06-04-2026/structured-ocr.json")
+  var LOADING_HTML = '<p class="empty-note">ದತ್ತಾಂಶ ಲೋಡ್ ಆಗುತ್ತಿದೆ…</p>';
+
+  /* Navigate to a date: update key, show loading immediately, then fetch &
+     cache the record unless it is already cached. */
+  function goto(key) {
+    state.key = key;
+    renderMasthead();
+    if (state.data[key]) { renderActive(); return; }
+    state.loading = true;
+    renderActive();
+    fetchDate(key);
+  }
+
+  /* Per-date fetch. seq guards renders: only the most recent navigation may
+     render, so a slow response can never overwrite a newer selected date. */
+  function fetchDate(key) {
+    var seq = ++state.seq;
+    fetch("ocr-zones/" + key + "/structured-ocr.json")
       .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
       .then(function (json) {
-        state.data[REAL_KEY] = normalize(json);
-        renderAll();
+        state.data[key] = normalize(json);
+        if (seq === state.seq) { state.loading = false; renderAll(); }
       })
-      .catch(function () { state.data[REAL_KEY] = FALLBACK; renderAll(); });
+      .catch(function () {
+        state.data[key] = (key === FALLBACK_KEY) ? FALLBACK : approxDay(key);
+        if (seq === state.seq) { state.loading = false; renderAll(); }
+      });
   }
 
   function normalize(json) {
@@ -111,7 +132,7 @@
       ? c.jathaka.map(function (j) { return [j.rashi, cleanWord(j.prediction)]; })
       : FALLBACK.jathaka;
     return {
-      key: (json && json.source && json.source.date) || REAL_KEY,
+      key: (json && json.source && json.source.date) || FALLBACK_KEY,
       calendar: {
         months: (cal.months || []).filter(String),
         samvatsara: cal.samvatsara || FALLBACK.calendar.samvatsara,
@@ -167,6 +188,10 @@
 
   /* ---------------- Render: Today ---------------- */
   function renderToday() {
+    if (state.loading) {
+      document.getElementById("todayContent").innerHTML = LOADING_HTML;
+      return;
+    }
     var d = dayData(state.key);
     var cal = d.calendar, pan = d.panchanga;
     var dt = parseKey(state.key);
@@ -283,7 +308,7 @@
     }
     document.getElementById("monthGrid").innerHTML = html;
     document.querySelectorAll("#monthGrid .mday:not(.blank)").forEach(function (b) {
-      b.addEventListener("click", function () { state.key = b.dataset.day; setTab("today"); });
+      b.addEventListener("click", function () { goto(b.dataset.day); setTab("today"); });
     });
   }
 
@@ -294,6 +319,7 @@
     var sub = WEEKDAYS[dt.getDay()] + ", " + MONTHS[dt.getMonth()] + " " + kn(dt.getDate());
     document.getElementById("rashiSub").textContent = sub + " ರಾಶಿ ಭವಿಷ್ಯ";
     var el = document.getElementById("rashiGrid");
+    if (state.loading) { el.innerHTML = LOADING_HTML; return; }
     if (!d.jathaka.length) {
       el.innerHTML = '<p class="empty-note">ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ.</p>';
       return;
@@ -366,7 +392,7 @@
     document.getElementById("nextDay").addEventListener("click", function () { shiftDay(1); });
     document.getElementById("prevMonth").addEventListener("click", function () { shiftMonth(-1); });
     document.getElementById("nextMonth").addEventListener("click", function () { shiftMonth(1); });
-    document.getElementById("brand").addEventListener("click", function () { state.key = REAL_KEY; setTab("today"); });
+    document.getElementById("brand").addEventListener("click", function () { goto(DEFAULT_KEY); setTab("today"); });
     document.getElementById("fontBig").addEventListener("change", function (e) {
       state.big = e.target.checked;
       document.body.classList.toggle("big", state.big);
@@ -375,14 +401,13 @@
       state.kn = e.target.checked;
       renderAll();
     });
-    load();
+    goto(DEFAULT_KEY);
   }
 
   function shiftDay(n) {
     var d = parseKey(state.key);
     d.setDate(d.getDate() + n);
-    state.key = keyFor(d);
-    renderAll();
+    goto(keyFor(d));
   }
 
   function shiftMonth(n) {
@@ -392,8 +417,7 @@
     d.setMonth(d.getMonth() + n);
     var last = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate();
     d.setDate(Math.min(day, last));
-    state.key = keyFor(d);
-    renderAll();
+    goto(keyFor(d));
   }
 
   document.addEventListener("DOMContentLoaded", init);

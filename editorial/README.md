@@ -56,13 +56,14 @@ raw text.
 
 ## Timing columns
 
-The five Kala timings (`rahuKala`, `gulikaKala`, `yamaganda`,
-`arthaPrahara`, `shubhaSamaya`) are split into up to two time ranges.
-Each key contributes six columns: `<key>_prefix`, `<key>_from`,
-`<key>_to` (first range) and `<key>_prefix_2`, `<key>_from_2`,
-`<key>_to_2` (second range, blank when absent). `ಶುಭ ಸಮಯ`
-(`shubhaSamaya`) has **two ranges on some dates** — the second range is
-only filled there; the other four keys have one range.
+The Kala timings are split into ranges. `rahuKala`, `gulikaKala`,
+`yamaganda`, and `arthaPrahara` each have one range and contribute three
+columns: `<key>_prefix`, `<key>_from`, `<key>_to`.
+
+`shubhaSamaya` (ಶುಭ ಸಮಯ) is the only field with **two ranges on some
+dates**, so it contributes six columns: `<key>_prefix`, `<key>_from`,
+`<key>_to` (first range) plus `<key>_prefix_2`, `<key>_from_2`,
+`<key>_to_2` (second range, blank when absent).
 
 `_from`/`_to` hold the printed time tokens exactly as OCR'd (e.g.
 `06:00`, `0731`). The `_prefix` cell holds a canonical abbreviated period:
