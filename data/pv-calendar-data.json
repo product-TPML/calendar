@@ -88,19 +88,19 @@
         "date": "2026-09-07",
         "name_of_festival": "ಶ್ರೀ ಗುರುಕಟ್ಟೆ ಬಸವೇಶ್ವರ ಸ್ವಾಮಿ ಮಹಾ ರಥೋತ್ಸವ ಮತ್ತು  ಶ್ರೀಕುಮಾರಸ್ವಾಮಿ ದೇಗುಲದಲ್ಲಿ ಶ್ರಾವಣ ಸೋಮವಾರ ಆಚರಣೆ",
         "place": "ಬಳ್ಳಾರಿ ತಾಲ್ಲೂಕಿನ ಎತ್ತಿನಬೂದಿಹಾಳು ಮತ್ತು ಸಂಡೂರು ತಾಲ್ಲೂಕಿನ ಕುಮಾರಸ್ವಾಮಿ ದೇಗುಲ",
-        "relevance": "ಇಡೀ ಜಿಲ್ಲೆಯ ಭಕ್ತರು ಈ ಉತ್ಸವದಲ್ಲಿ ಭಾಗವಹಿಸುತ್ತಾರೆ."
+        "relevance": "Relevant for District"
       },
       {
         "date": "2026-09-08",
         "name_of_festival": "ಶ್ರೀ ಗುರುಕಟ್ಟೆ ಬಸವೇಶ್ವರ ಸ್ವಾಮಿ ಭಜನೆ, ಪುರವಂತಿಕೆ ಹಾಗೂ ಶ್ರೀ ಸ್ವಾಮಿಯ ಭವ್ಯ ಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ",
         "place": "ಬಳ್ಳಾರಿ ತಾಲ್ಲೂಕಿನ ಎತ್ತಿನಬೂದಿಹಾಳು",
-        "relevance": "ಇಡೀ ಜಿಲ್ಲೆಯ ಭಕ್ತರು ಈ ಉತ್ಸವದಲ್ಲಿ ಭಾಗವಹಿಸುತ್ತಾರೆ."
+        "relevance": "Relevant for District"
       },
       {
         "date": "2026-09-09",
         "name_of_festival": "ಶ್ರೀ ಗುರುಕಟ್ಟೆ ಬಸವೇಶ್ವರ ಸ್ವಾಮಿ ಮಹಾ ರಥೋತ್ಸವ",
         "place": "ಬಳ್ಳಾರಿ ತಾಲ್ಲೂಕಿನ ಎತ್ತಿನಬೂದಿಹಾಳು",
-        "relevance": "ಇಡೀ ಜಿಲ್ಲೆಯ ಭಕ್ತರು ಈ ಉತ್ಸವದಲ್ಲಿ ಭಾಗವಹಿಸುತ್ತಾರೆ."
+        "relevance": "Relevant for District"
       }
     ],
     "Belagavi": [
@@ -156,13 +156,13 @@
         "date": "2026-09-04",
         "name_of_festival": "ದಹಿ ಹಂಡಿ ಕಾರ್ಯಕ್ರಮ",
         "place": "ಔರಾದ್‌",
-        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+        "relevance": "Relevant for District"
       },
       {
         "date": "2026-09-09",
         "name_of_festival": "ಲಿಂಗೈಕ್ಯ ಪರ್ವತಲಿಂಗ ಶಿವಾಚಾರ್ಯರ ಸ್ಮರಣೋತ್ಸವ",
         "place": "ಲಾಡಗೇರಿ, ಬೀದರ್‌",
-        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+        "relevance": "Relevant for District"
       },
       {
         "date": "2026-09-10",
@@ -174,7 +174,7 @@
         "date": null,
         "name_of_festival": "ಜಿಲ್ಲೆಯಾದ್ಯಂತ ಗಣೇಶನ ಮೂರ್ತಿಗಳ ಪ್ರತಿಷ್ಠಾಪನೆ",
         "place": "ಜಿಲ್ಲೆಯಾದ್ಯಂತ",
-        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+        "relevance": "Relevant for District"
       },
       {
         "date": "2026-09-11",
@@ -192,31 +192,31 @@
         "date": "2026-09-13",
         "name_of_festival": "ಚೌತಿ ಹಾಗೂ ಶಂಭುಲಿಂಗ ಶಿವಾಚಾರ್ಯರ ಆಶೀರ್ವಚನ",
         "place": "ಹಾವಗಿಸ್ವಾಮಿ ಮಠ, ಡೋಣಗಾಂವ್‌, ಕಮಲನಗರ ತಾಲ್ಲೂಕು",
-        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+        "relevance": "Relevant for District"
       },
       {
         "date": "2026-09-14",
         "name_of_festival": "ವಚನ ಸಾಹಿತ್ಯ ದರ್ಶನ ಪ್ರವಚನ ಸಮಾರೋಪ",
         "place": "ಬಸವ ಮಂಟಪ, ಮನ್ನಳ್ಳಿ, ಬೀದರ್‌ ತಾಲ್ಲೂಕು",
-        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+        "relevance": "Relevant for District"
       },
       {
         "date": "2026-09-14",
         "name_of_festival": "ಹಾವಗಿ ಸ್ವಾಮಿ ಪಲ್ಲಕ್ಕಿ ಮಹೋತ್ಸವ",
         "place": "ಹಾವಗಿಸ್ವಾಮಿ ಮಠ, ಡೋಣಗಾಂವ್‌, ಕಮಲನಗರ ತಾಲ್ಲೂಕು",
-        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+        "relevance": "Relevant for District"
       },
       {
         "date": "2026-09-14",
         "name_of_festival": "ಮಡಿವಾಳೇಶ್ವರ ಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ",
         "place": "ಮಡಿವಾಳೇಶ್ವರ ಮಂದಿರ, ಬೀದರ್‌",
-        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+        "relevance": "Relevant for District"
       },
       {
         "date": "2026-09-14",
         "name_of_festival": "ಜಿಲ್ಲೆಯಾದ್ಯಂತ ಗಣೇಶನ ಮೂರ್ತಿಗಳ ಪ್ರತಿಷ್ಠಾಪನೆ",
         "place": "ಜಿಲ್ಲೆಯಾದ್ಯಂತ",
-        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+        "relevance": "Relevant for District"
       },
       {
         "date": "2026-09-17",
@@ -228,13 +228,13 @@
         "date": "2026-09-18",
         "name_of_festival": "ಗಣೇಶ್‌ನ ಮೂರ್ತಿಗಳ ಮೆರವಣಿಗೆ, ವಿಸರ್ಜನೆ",
         "place": "ಬೀದರ್‌",
-        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+        "relevance": "Relevant for District"
       },
       {
         "date": "2026-09-28",
         "name_of_festival": "ಅಭಿನವ ಘನಲಿಂಗ ರುದ್ರಮನಿ ಶಿವಾಚಾರ್ಯ ವರ್ಧಂತಿ",
         "place": "ಬಸವಕಲ್ಯಾಣ",
-        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+        "relevance": "Relevant for District"
       }
     ],
     "Chamarajanagar": [],
@@ -909,7 +909,7 @@
         "date": "2026-09-04",
         "name_of_festival": "ಶ್ರೀ ವೇಣುಗೋಪಾಲ ಸ್ವಾಮಿ ದೇವಸ್ಥಾನದ ಜಾತ್ರೆ",
         "place": "ಸುರಪುರ",
-        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟ"
+        "relevance": "Relevant for District"
       },
       {
         "date": "2026-09-14",
