@@ -1,0 +1,169 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\10\\11-10-2026.jpg",
+                   "date":  "11-10-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "11-10-2026",
+                                   "quote":  "ಕಷ್ಟಬಂದಾಗ ನಿನ್ನಗುರಿ ನೆನಪಿಸಿಕೊ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕನ್ಯಾ/ ತುಲಾ",
+                                     "sunrise":  "06:09",
+                                     "sunset":  "18:03"
+                                 },
+                    "events":  [
+                                   "ಶಾರದೀಯ ನವರಾತ್ರಾರಂಭ",
+                                   "ಮಾತಾಮಹ ಶ್ರಾದ್ಧ",
+                                   "ಇಷ್ಟಿ",
+                                   "ಜಯಲಕ್ಷ್ಮೀ ವ್ರತ",
+                                   "ಸಂತ ಮುಕ್ತಾಬಾಯಿ ಜಯಂತಿ",
+                                   "ಮುರಡಿ",
+                                   "ಶ್ರೀ ಶರಣಬಸವೇಶ್ವರ ರಥ",
+                                   "ಬನಶಂಕರಿದೇವಿ ರಥ ಶಿರೋಳ",
+                                   "ತಾ. ಮುಧೋಳ",
+                                   "ಮಹಾರಾಜ ಅಗ್ರಸೇನ ಜಯಂತಿ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಚಿತ್ರಾ",
+                                                        "endsAt":  "22.33",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಪ್ರತಿಪದಾ",
+                                                    "endsAt":  "21.32",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವೈಧೃತಿ",
+                                                   "endsAt":  "21.06",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಕಿಂಸ್ತುಘ್ನ 09.2)",
+                                                     "endsAt": "09.22",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಕಂಸ್ತುಘ್ನ 09.2)"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  25,
+                                      "paksha": "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಕನ್ನಾ",
+                                      "chandraEntryRashi":  "ಕನ್ಯಾ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಸ, 04:30 - 06:00.",
+                                    "gulikaKala":  "ಮ.5:00- 64:30",
+                                    "yamaganda":  "ಮ.12:00 - 01:30",
+                                    "arthaPrahara":  "ಚ 1136 - 17:೫5",
+                                    "shubhaSamaya":  "ಮ. 03:55 - 05:34"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಮೇಷ » ಪ್ರೋತ್ಸಾಹ."
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಅನಾರೋಗ್ಯ",
+                                        "raw":  "ವೃಷಭ »ಅನಾರೋಗ್ಯ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ತೊಂದರೆ `",
+                                        "raw":  "ಮಿಥುನ » ತೊಂದರೆ `"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಲಾಭ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಸಿಂಹ » ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಕನ್ಯಾ »ಸಂತೋಷ."
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಕರ್ತವ್ಯ",
+                                        "raw":  "ತುಲಾ» ಕರ್ತವ್ಯ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಯಶಸ್ಸು :"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಧನಸ್ಸು » ಅನುಕೂಲ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಮಕರ ೫ ಭಯ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಪಶ್ಚಾತ್ತಾಪ",
+                                        "raw":  "ಕುಂಭ » ಪಶ್ಚಾತ್ತಾಪ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಸಮಸ್ಯೆ",
+                                        "raw":  "ಮೀನ » ಸಮಸ್ಯೆ"
+                                    }
+                                ]
+                }
+}

@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\24-03-2026.jpg",
+    "date": "24-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ. ದ ಬದು ಶುಕ್ಲ ರಾಮ ವವ",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "24-03-2026",
+      "quote": "ತ್ನಗುಟ್ಟಾಗಿರಲಿ ಗೆದ್ದಮೇಲೆ ಸಂಭ್ರಮ ಜಗತ್ತಿಗೆ ಮುಟ್ಟು"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:21",
+      "sunset": "18:30"
+    },
+    "events": [
+      "ಜಾಗತಿಕ ಕ್ಷಯರೋಗ ದಿನ",
+      "ಕಾತ್ರಿಕ ಸ್ವಾಮಿಗೆ",
+      "ದವರ್ಣಾಪಣ",
+      "ಪುತ್ತೂರು ಮಹಾಲಿಂಗೇಶ್ವೆರ ರಥ",
+      "ಜನಪುರಿ ತಾ. ಪಾಟಣ ಜಿ. ಸಾತಾರಾ ಶ್ರೀನಾಈಕಬಾ ಜಾತ್ರೆ",
+      "ಶ್ರೀಮಾತಾಜಿ ಪುಣ್ಯತಿಥಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ರೋಹಿಣಿ",
+        "endsAt": "19.05",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಷಷ್ಠಿ",
+        "endsAt": "16.08",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಒಪ ಗ",
+        "endsAt": "09.07",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಗರಜ",
+        "endsAt": "26.58",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ  ಗರಜ2658"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 10,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ವೃಷಭ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ. 12:00 - 01:30",
+      "yamaganda": "ಬೆ. 09:00 - 10130",
+      "arthaPrahara": "ಬೆ.07:30- 09:00",
+      "shubhaSamaya": "ಸ. 06:37 - 08:05"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "* ಅಲೆದಾಟ",
+        "raw": "ಮೇಷ »* ಅಲೆದಾಟ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ವೃಷಭ » ಸ್ನೇಹ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮಿಹುನ » ಸಂತೋಷ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಅಭಿವೃದ್ಧಿ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಸಿಂಹ ೫» ಶಾಂತಿ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕನ್ಯಾ »ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ದೃಢ ನಿರ್ಧಾರ",
+        "raw": "ತುಲಾ.» ದೃಢ ನಿರ್ಧಾರ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ವೃಶ್ಚಿಕ » \"ಪ್ರೀತಿ ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಆಸೆ",
+        "raw": "ಧನಸ್ಸು » ಆಸೆ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಪತಿರೋದ",
+        "raw": "ಮಕರ » ಪತಿರೋದ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಕುಂಭ » ಸಾಲ..."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮೀನ ೫ ಲಾಭ :"
+      }
+    ]
+  }
+}

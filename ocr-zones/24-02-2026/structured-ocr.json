@@ -1,0 +1,166 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\02\\24-02-2026.jpg",
+                   "date":  "24-02-2026",
+                   "dimensions":  {
+                                      "width":  1514,
+                                      "height":  1060
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "24-02-2026",
+                                   "quote":  "ಯತ್ನಾಗಿ ಇರ್ತಿವೋ ಅಲ್ಲೇ ತುಂಬಾ ನೋವು ಸಿಗೆ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಮಕರ/ ಕುಂಭ",
+                                     "sunrise":  "06:38",
+                                     "sunset":  "18:27"
+                                 },
+                    "events":  [
+                                   "ಜಾಗತಿಕ ಮುದ್ರಣ ದಿನ",
+                                   "ದುರ್ಗಷ್ಟಮಿ",
+                                   "ಕಣಗಲಾ",
+                                   "ತಾ.ಹುಕ್ಕೇರಿ ಶ್ರೀ ಮಹಾಲಕ್ಷ್ಮೀ ಹೇಡಗಿ ಜಾತ್ರೆ",
+                                   "ಸೋಗಲ ಸೋಮೇಶ್ವರ ರಥೋತ್ಸವ",
+                                   "ಅಷ್ಟುನ್ಹಿಕ",
+                                   "ಪರ್ವಾರಂಭ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಕೃತ್ತಿಕಾ",
+                                                        "endsAt":  "15.07",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಹೆ",
+                                                    "endsAt": "07.03",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಕಥಜಜ",
+                                                   "endsAt": "07.24",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ವಿಷ್ಟಿ",
+                                                     "endsAt":  "17.58",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ  ಬಿಷ್ಟಿ 17.58 _"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ವಸಂತ",
+                                      "solarYear":  12,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಕುಂಭ",
+                                      "chandraEntryRashi":  "ವೃಷಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 03:00 - 04:30",
+                                    "gulikaKala":  "ಮ. 12:00 - 01:30",
+                                    "yamaganda":  "ಬೆ. 09:00 10:30",
+                                    "arthaPrahara":  "ಬ. 07:30 - 09:00",
+                                    "shubhaSamaya":  "ಸ. 12:51 - 02:22"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಕರುಣೆ",
+                                        "raw":  "ಮೇಷ » ಕರುಣೆ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಆನಂದ",
+                                        "raw":  "ವೃಷಭ » ಆನಂದ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಭಕಿ",
+                                        "raw":  "\u0027ಮಿಥುನ » ಭಕಿ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಕಾಟರ್ಕ ಕೀರ್ತಿ",
+                                        "raw":  "ಕರ್ಕಾಟರ್ಕ ಕೀರ್ತಿ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಶ್ರೇಷತೆ",
+                                        "raw":  "ಸಿಂಹ » ಶ್ರೇಷತೆ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಗೌರವ",
+                                        "raw":  "ಕನ್ಯಾ ೫ ಗೌರವ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಚಿಂತೆ",
+                                        "raw":  "ತುಲಾ » ಚಿಂತೆ \u0027"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ವಿಶ್ರಾಂತಿ",
+                                        "raw":  "ಧನಸ್ಸು »: ವಿಶ್ರಾಂತಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಮಕರ ೫ ಭಯ 1"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಆಸಕ್ತಿ",
+                                        "raw":  "ಕುಂಭ » ಆಸಕ್ತಿ ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಪ್ರಗತಿ",
+                                        "raw":  "ಮೀನ » ಪ್ರಗತಿ"
+                                    }
+                                ]
+                }
+}

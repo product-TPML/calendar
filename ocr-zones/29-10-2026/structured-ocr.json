@@ -1,0 +1,169 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\10\\29-10-2026.jpg",
+                   "date":  "29-10-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "red-channel-4x-psm7",
+                                       "raw":  "ಪಕ್ಷ... ಕೃಷ್ಣ",
+                                       "value":  "ಕೃಷ್ಣ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "29-10-2026",
+                                   "quote":  "ವನದಲ್ಲಿ ಶಾಂತವಾಗಿರು, ಆದರೆ ಗುರಿಯಲ್ಲಿ ಹಠ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕನ್ಯಾ/ ತುಲಾ",
+                                     "sunrise":  "06:12",
+                                     "sunset":  "17:54"
+                                 },
+                    "events":  [
+                                   "ದಾಶರಥಿ ಚತುರ್ಥಿ (ಚಂ. 8.೨1)",
+                                   "ಕರವಾ",
+                                   "ಚೌಥ",
+                                   "ಪುನೀತ್‌ ರಾಜಕುಮಾರಸ್ಮೃತಿದಿನ",
+                                   "ಹಾಸನಾಂಬಾ ದರ್ಶನಾರಂಭ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ರೋಹಿಣಿ",
+                                                        "endsAt":  "11.12",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಚತುರ್ಥಿ",
+                                                    "endsAt":  "22.11",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಪರಿಘ",
+                                                   "endsAt":  "24.06",
+                                                   "nextDay":  true,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಬವ",
+                                                     "endsAt":  "11.38",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬವ 11.38"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯ",
+                                      "ritu":  "ರ್ಥಿ 22.11",
+                                      "solarYear":  13,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ತುಲಾ",
+                                      "chandraEntryRashi":  "ವೃಷಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 01:30 - 03:00",
+                                    "gulikaKala":  "ಬೆ.9:00 - 10:30.",
+                                    "yamaganda":  "ಬೆ.06:00 - 07:30",
+                                    "arthaPrahara":  "ಮ. 03:06 - 5:31",
+                                    "shubhaSamaya":  "ಬೆ. 08:17 - 09:44"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಸರ್ಧೆ",
+                                        "raw":  "ಮೇಷ ». ಸರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ತೊಂದರೆ",
+                                        "raw":  "ವೃಷಭ » ತೊಂದರೆ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಉತ್ಸಾಹ",
+                                        "raw":  "ಮಿಥುನ » ಉತ್ಸಾಹ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಕಾಟರ್ಕು ಸಮಸ್ಯೆ",
+                                        "raw":  "ಕರ್ಕಾಟರ್ಕು ಸಮಸ್ಯೆ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ಸಿಂಹ » ಪ್ರಯತ್ನ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಕನ್ಯಾ ಖರ್ಚು:"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಅಭಿವದ್ಧಿ",
+                                        "raw":  "ತುಲಾ. » ಅಭಿವದ್ಧಿ."
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಅನಂದ”",
+                                        "raw":  "ವೃಶ್ಚಿಕ». ಅನಂದ”"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಧನಸ್ಸು » ಪ್ರೀತಿ ."
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಮರೆವ",
+                                        "raw":  "ಮಕರ ೫». ಮರೆವ \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಕುಂಭ » ಲಾಭ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಶಾಂತಿ",
+                                        "raw":  "ಮೀನ ». ಶಾಂತಿ"
+                                    }
+                                ]
+                }
+}

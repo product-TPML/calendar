@@ -1,0 +1,168 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\01\\22-01-2026.jpg",
+                   "date":  "22-01-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "existing-paksha-ocr",
+                                       "raw":  "ರ್ಸ್‌ ಶುಕ್ಷ ರ”",
+                                       "value":  "ಶುಕ್ಲ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "22-01-2026",
+                                   "quote":  "ಾಧಿಸೋದಕ್ಕೆ ಪ್ರತಿದಿನದ ಪರಿಶ್ರಮ ಅತ್ಯವ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಪುಷ್ಯ/ಮಾಘ"
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಧನು/ಮಕರ",
+                                     "sunrise":  "06:46",
+                                     "sunset":  "18:16"
+                                 },
+                    "events":  [
+                                   "ಶ್ರೀ ಗಣೇಶ ಜಯಂತಿ",
+                                   "ಹೊಸಹೊಳಲು ಶ್ರೀ",
+                                   "ಲಕ್ಷೀನಾರಾಯಣ ಸ್ವಾಮಿ ಕಲ್ಯಾಣೋತ್ಸವ",
+                                   "ಬೆಟಗೆರಿ ಗದಗ ಶ್ರೀ ಮಾರ್ಕಂಡೇಶ್ವರ ರಥ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಶತಭಿಷಾ",
+                                                        "endsAt":  "14.27",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಚತುರ್ಥಿ",
+                                                    "endsAt":  "26.29",
+                                                    "nextDay":  true,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವರೀಯಾ",
+                                                   "endsAt":  "17.38",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ವಣಿಜ",
+                                                     "endsAt":  "14.41",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ವಣಿಜ 14.41"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ರ್ಥಿ 26.29",
+                                      "solarYear":  9,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಮಕರ",
+                                      "chandraEntryRashi":  "ಕುಂಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 01:30 - 03:00",
+                                    "gulikaKala":  "ಬೆ. 09:00 - 10:30",
+                                    "yamaganda":  "ಬೆ.06:00- 07:30",
+                                    "arthaPrahara":  "ಮ. 03:00 ೨ 04:30",
+                                    "shubhaSamaya":  "ಬೆ. 07:06 - 08:44"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಮೇಷ » ಲಾಭ :"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ವೃಷಭ » ಅನುಕೂಲ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಮಿಥುನ » ಪ್ರೀತಿ .:"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಸೌಮ್ಯತೆ",
+                                        "raw":  "ಕರ್ಕಾಟಕ: ಸೌಮ್ಯತೆ ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ನಷ್ಟ",
+                                        "raw":  "ಸಿಂಹ » ನಷ್ಟ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಸಹಾಯ",
+                                        "raw":  "ಕನ್ಯಾ» ಸಹಾಯ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ತುಲಾ» ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಆಸೆ",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಆಸೆ."
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಆಸಕ್ತಿ",
+                                        "raw":  "ಧನಸ್ಸು ». ಆಸಕ್ತಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಉಡುಗೊರೆ",
+                                        "raw":  "ಮಕರ *» ಉಡುಗೊರೆ:"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಕುಂಭ » ಭಯ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಬಲ",
+                                        "raw":  "ಮೀನ ». ಬಲ"
+                                    }
+                                ]
+                }
+}

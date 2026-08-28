@@ -1,0 +1,166 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\10\\12-10-2026.jpg",
+                   "date":  "12-10-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "12-10-2026",
+                                   "quote":  "ಯಶಸ್ಪುವೇಗದಲಿಲ, ಸಿರತೆಯಲ್ಲಿ ಇ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕನ್ಯಾ/ ತುಲಾ",
+                                     "sunrise":  "06:09",
+                                     "sunset":  "18:02"
+                                 },
+                    "events":  [
+                                   "ತಿರುಪತಿ ಶ್ರೀವೆಂಕಟೇಶ ದೇವರ ಬ್ರಹ್ಮೋತ್ಸವ ಆರಂಭ",
+                                   "ಚಂದ್ರದರ್ಶನ",
+                                   "ಕಾವೇರಿ ಅಮ್ಮನ ತೆಪ್ಪೋತ್ಸವ",
+                                   "ಶ್ರೀ ಕಾಶಿ ಶ್ರೀ",
+                                   "ವಿಶ್ವೇಶ್ವರ ಜಗದ್ಗುರುಗಳ ಪುಣ್ಯದಿನ",
+                                   "ಕುಂಗೋಳ ತಾ. ಬು.",
+                                   "ಕೊಪ್ಪ ಶ್ರೀ ಮೈಲಾರ ಲಿಂಗೇಶ್ವರ ಜಾತ್ರೆ ಹಾಗೂ ಕಾರಣಿಕೆ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಸ್ವಾತಿ",
+                                                        "endsAt":  "23.52",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ದ್ವಿತೀಯಾ",
+                                                    "endsAt":  "22.14",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವಿಷ್ಕಂಭ 20.3)",
+                                                   "endsAt": "20.32",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಬಾಲವ",
+                                                     "endsAt":  "0.49",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬಾಲವ 0.49"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  26,
+                                      "paksha": "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಕನ್ನಾ",
+                                      "chandraEntryRashi":  "ತುಲಾ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 07:30 - 09:00.",
+                                    "gulikaKala":  "ಮ.01130 - 03:00",
+                                    "yamaganda":  "ಚೆ.1630 12:",
+                                    "arthaPrahara":  "ಚೆ. 09:00 - 10:30",
+                                    "shubhaSamaya":  "ಮ. 02:35 - 04:16"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಮೇಷ » ಸಂತೋಷ."
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ವೃಷಭ » ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ಮಿಥುನ » ಪ್ರಯತ್ನ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಗೌರವ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಗೌರವ :"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಸಿಂಹ. » ಅನುಕೂಲ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ಕನ್ಯಾ »ಒಳ್ಳೆಯದು"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಪ್ರತಿರೋಧ",
+                                        "raw":  "ತುಲಾ.» ಪ್ರತಿರೋಧ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "“ಮರೆವು",
+                                        "raw":  "ವೃಶ್ಚಿಕ» “ಮರೆವು"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಧನಸ್ಸು » ಭಯ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ಮಕರ » ಒಳ್ಳೆಯದು"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸ್ಪರ್ಧೆ",
+                                        "raw":  "ಕುಂಭ » ಸ್ಪರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಭಕ್ತಿ",
+                                        "raw":  "ಮೀನ ». ಭಕ್ತಿ"
+                                    }
+                                ]
+                }
+}

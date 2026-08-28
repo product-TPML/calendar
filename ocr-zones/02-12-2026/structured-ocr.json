@@ -1,0 +1,168 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\12\\02-12-2026.jpg",
+                   "date":  "02-12-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "red-channel-4x-psm7",
+                                       "raw":  "ಪಕ್ಷ ಕೃಷ್ಣ .",
+                                       "value":  "ಕೃಷ್ಣ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "02-12-2026",
+                                   "quote":  "ಶಿಲ್ಲಎಂಬುದು ಕೇವಲ ಒಂದು ಮಾತು"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಕಾರ್ತಿಕ/ಮಾರ್ಗಶಿರ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ವೃಶ್ಚಿಕ/ಧನು",
+                                     "sunrise":  "06:26",
+                                     "sunset":  "17:51"
+                                 },
+                    "events":  [
+                                   "ರಾಜೀವಭಾಯಿ ದೀಕ್ಷಿತ ಪುಣ್ಯತಿಥಿ",
+                                   "ಹುಬ್ಬಳ್ಳಿ ರುದ್ರಾಕ್ಷಿ",
+                                   "ಮಠದಲ್ಲಿ ನಿಜಗುಣ ಶಿವಯೋಗಿಗಳ ಜಯಂತಿ",
+                                   "ರಾಷ್ಟ್ರೀಯ ಪ್ರದೋಷಣ ನಿಯಂತ್ರಣ ದಿನ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಪೂರ್ವಾ",
+                                                        "endsAt":  "08.55",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ನವಮಿ",
+                                                    "endsAt":  "22.53",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವಿಷ್ಕಂಭ",
+                                                   "endsAt":  "10.32",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ತೈತಿಲ",
+                                                     "endsAt":  "10.59",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ _ ತೈತಿಲ 10.59"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯ",
+                                      "ritu":  "ಸೌರ ಹೇಮಂತ",
+                                      "solarYear":  17,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ವಶಿಕ",
+                                      "chandraEntryRashi":  "ಸಿಂಹ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 12:00 - 01:30",
+                                    "gulikaKala":  "ಬೆ. 10:30 - 12:00",
+                                    "yamaganda":  "ಬೆ.07:30-09:00",
+                                    "arthaPrahara":  "ಬ. 06:00 - 07:30",
+                                    "shubhaSamaya":  "ಬೆ. 02:32 - 04:08"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮೇಷ » ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ವೃಷಭ » ಭಯ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ಮಿಥುನ » ಪ್ರಯತ್ನ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ದಯೆ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ದಯೆ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ವಿಶ್ರಾಂತಿ",
+                                        "raw":  "ಸಿಂಹ » ವಿಶ್ರಾಂತಿ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಕನ್ಯಾ» ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ತುಲಾ » ಅನುಕೂಲ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಆಲೋಚನೆ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಆಲೋಚನೆ."
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಧನಸ್ಸು ». ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಶಾಂತಿ",
+                                        "raw":  "ಮಕರ ೫» ಶಾಂತಿ \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಕುಂಭ » ಸಾಲ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಸಾಧನೆ",
+                                        "raw":  "ಮೀನ » ಸಾಧನೆ"
+                                    }
+                                ]
+                }
+}

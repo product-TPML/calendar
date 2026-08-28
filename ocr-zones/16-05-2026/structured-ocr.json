@@ -1,0 +1,169 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\05\\16-05-2026.jpg",
+                   "date":  "16-05-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "16-05-2026",
+                                   "quote":  "ಹಾಸಿಗೆ ಇದ್ದಷ್ಟು ಕಾಲು ಚಾಚು"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ವೈಶಾಖ",
+                                                    "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮೇಷ/ವೃಷಭ",
+                                     "sunrise":  "05:54",
+                                     "sunset":  "18:38"
+                                 },
+                    "events":  [
+                                   "ಬಾದ್ಮಿ ಅಮಾವಾಸ್ಯೆ",
+                                   "ಅಂತರಾಷ್ಟ್ರೀಯ ಬೆಳಕಿನ",
+                                   "ದಿನ",
+                                   "ಶನೈಶ್ಚರ ಜಯಂತಿ ಅನ್ವಾಧಾನ",
+                                   "ಸಿಂದಗಿ",
+                                   "ಚೌಡೇಶ್ವರಿ",
+                                   "ಧಾರವಾಡಾ ತಾ. ಲಕ್ಕಮ್ಮನ ಹಳ್ಳಿ",
+                                   "ಶನೈಶ್ಚರ",
+                                   "ಹೊರನಾಡು ಬನಶಂಕರಿ ರಥಗಳು"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಭರಣಿ",
+                                                        "endsAt":  "17.30",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಅಮಾವಾಸ್ಯ",
+                                                    "endsAt":  "25.31",
+                                                    "nextDay":  true,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಸೌಭಾಗ್ಯ",
+                                                   "endsAt":  "10.26",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಚತುಷ್ಪಾದ",
+                                                     "endsAt":  "15.23",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಚತುಷ್ಪಾದ 15.23"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಷ್ಪಾದ 15.23",
+                                      "solarYear":  2,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ವೃಷಭ",
+                                      "chandraEntryRashi":  "ಮೇಷರಾ."
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 09:00 - 10:30",
+                                    "gulikaKala":  "ಬೆ.06:00 - 07:30",
+                                    "yamaganda":  "ಮ.01:30- 05:00",
+                                    "arthaPrahara":  "ಮ. 12:00 - 01:30",
+                                    "shubhaSamaya":  "ಮ. 01:15 - 02:40"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಮೇಷ » ಲಾಭ :"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ವೃಷಭ » ಅನುಕೂಲ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಪರಿಶ್ರಮ",
+                                        "raw":  "ಮಿಥುನ » ಪರಿಶ್ರಮ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಗಮನ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಗಮನ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಸಿಂಹ » ಪ್ರೀತಿ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಪ ಕೀರ್ತಿ",
+                                        "raw":  "ಕನ್ಯಾ ಪ ಕೀರ್ತಿ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ತುಲಾ» ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಶಾಂತಿ",
+                                        "raw":  "ವೃಶ್ಚಿಕ». ಶಾಂತಿ."
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಆತಂಕ",
+                                        "raw":  "ಧನಸ್ಸು » ಆತಂಕ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ವಿಶ್ರಾಂತಿ",
+                                        "raw":  "ಮಕರ ೫ ವಿಶ್ರಾಂತಿ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "* ಕೀರ್ತಿ",
+                                        "raw":  "ಕುಂಭ * ಕೀರ್ತಿ ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮೀನ ». ಯಶಸ್ಸು"
+                                    }
+                                ]
+                }
+}

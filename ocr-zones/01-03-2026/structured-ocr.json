@@ -1,0 +1,165 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\01-03-2026.jpg",
+    "date": "01-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "01-03-2026",
+      "quote": "ಾಧಸೋದಕ್ಕೆಪ್ರತಿದಿನದ ಪರಿಶ್ರಮ ಅವ"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:35",
+      "sunset": "18:28"
+    },
+    "events": [
+      "ಗರಗದ ಚಂದ್ರ ಮೌಳೇಶ್ವರ ರಥ",
+      "ರಂಭಾಪುರಿ ಪೀಠ",
+      "ಬಾಳೆಹೊನ್ನುರು ಶ್ರೀ ಜಗದ್ಗುರು ರೇಣುಕಾಚಾರ್ಯ",
+      "ಜಯಂತಿ",
+      "ಪಟ್ಟದಕಲ್ಲು ಪ್ರಲ್ಹಾದಾ ಉತ್ಸವ",
+      "ಚಿತ್ರದುರ್ಗ",
+      "ತಾ. ಕೊಂಡ್ಲೆಹಳ್ಳಿ ಚೌಡೇಶ್ವರಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪುಷ್ಯ",
+        "endsAt": "08.34",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತ್ರಯೋದಶಿ",
+        "endsAt": "19.10",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶಾಸ",
+        "endsAt": "13.35",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೈಲಜ",
+        "endsAt": "07.54",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 17,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ಕರ್ಕ"
+    },
+    "timings": {
+      "rahuKala": "ಸ, 04:30 - 06:00",
+      "gulikaKala": "ಮ. 03:00 - 04:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಭೆ. 10:30 - 12:00",
+      "shubhaSamaya": "ಸ. 07:57 - 09:23"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ಮೇಷ » ತೊಂದರೆ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಮಸ್ಯೆ",
+        "raw": "ವೃಷಭ » ಸಮಸ್ಯೆ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮಿಥುನ » ಅನುಕೂಲ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಕರ್ಕಾಟಕ: ಸಂತೋಷ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ನಿರಾಶೆ",
+        "raw": "ಸಿಂಹ ೨» ನಿರಾಶೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ದುಃಖ",
+        "raw": "ಕನ್ಯಾ » ದುಃಖ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ತುಲಾ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ವೃಶ್ಚಿಕ » ಖರ್ಚು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಭಯ",
+        "raw": "ಮಕರ ೫ ಭಯ :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಕುಂಭ » ಆತಂಕ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮೀನ » ಲಾಭ"
+      }
+    ]
+  }
+}

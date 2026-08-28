@@ -1,0 +1,168 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\03\\22-03-2026.jpg",
+                   "date":  "22-03-2026",
+                   "dimensions":  {
+                                      "width":  1136,
+                                      "height":  795
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "22-03-2026",
+                                   "quote":  "ಕೆಲಸವೇ ಸಿನ್ನಗುರುತು, ನಿನ್ನಪರಿಶ್ರಮವೇ ಸಿನ್ನ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+                                                ],
+                                     "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಕುಂಭ/ಮೀನ",
+                                     "sunrise":  "06:22",
+                                     "sunset":  "18:30"
+                                 },
+                    "events":  [
+                                   "ವಿನಾಯಕ ಚತುರ್ಥಿ",
+                                   "ವಿಶ್ವ ಜಲ ದಿನ",
+                                   "ನಾಗನೂರು",
+                                   "ಬೃಹನ್ಮಠ ಮಹಾದೇವಯ್ಯ ಪುಣ್ಯ ತಿಥಿ",
+                                   "ಸಾಗರ ಗಣಪತಿ",
+                                   "ರಥ",
+                                   "ಶಕ್ತಿ ಗಣಪತಿ ವ್ರತ",
+                                   "ಭೌರತೀಯ ಚೈತ್ರ ಮಾಸಾರಂಭ",
+                                   "ಭಾರತೀಯ ಶಕೆ 1948 ಆರಂಭ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಭರಣಿ",
+                                                        "endsAt":  "22.43",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಚತುರ್ಥಿ",
+                                                    "endsAt":  "21.17",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವೈಧೃತಿ",
+                                                   "endsAt":  "5.20",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ವಣಿಜ",
+                                                     "endsAt":  "15.37",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "ಕರಣ ವಣಿಜ 1537"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ರ್ಥಿ 21.17",
+                                      "solarYear":  8,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಮೀನ",
+                                      "chandraEntryRashi":  "ಮೇಷ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಸ, 04:30 - 06:00",
+                                    "gulikaKala":  "ಮ. 03:00 - 04:30",
+                                    "yamaganda":  "ಮ. 12:00 - 01:30",
+                                    "arthaPrahara":  "ಬೆ.10130 : 12:00",
+                                    "shubhaSamaya":  "ಸ. 06:17 -07:46"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "* ಸಂತೋಷ",
+                                        "raw":  "ಮೇಷ »* ಸಂತೋಷ."
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಪ್ರತಿಭೆ",
+                                        "raw":  "ವೃಷಭ » ಪ್ರತಿಭೆ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಮಿಥುನ » ಲಾಭ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಸಹಾಯ",
+                                        "raw":  "ಕರ್ಕಾಟಕ: ಸಹಾಯ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಅಭಿವೃದ್ಧಿ",
+                                        "raw":  "ಸಿಂಹ » ಅಭಿವೃದ್ಧಿ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಕನ್ಯಾ» ಪ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ತುಲಾ » ಸಾಲ ."
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಪರಿಶ್ರಮ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಪರಿಶ್ರಮ."
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಧನಸ್ಸು » ಪ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಅಬಿವದಿ",
+                                        "raw":  "ಮಕರ ೫ ಅಬಿವದಿ."
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಕುಂಭ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ತಾಳ್ಮೆ",
+                                        "raw":  "ಮೀನ ». ತಾಳ್ಮೆ"
+                                    }
+                                ]
+                }
+}

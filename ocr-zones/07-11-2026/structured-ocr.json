@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\07-11-2026.jpg",
+    "date": "07-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಕೃಷ್ಣ ಹ ಹ",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "07-11-2026",
+      "quote": "ಕೈ ಕೆಸರಾದರೆ ಬಾಯಿ ಮೂಸರು"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:15",
+      "sunset": "17:51"
+    },
+    "events": [
+      "ಮಾಸ ಶಿವರಾತ್ರಿ",
+      "ರಾಷ್ಟ್ರೀಯ ಕ್ಯಾನ್ಸರ್‌ ಜಾಗೃತಿ ದಿನ",
+      "ಬ. ಬಾಗೇವಾಡಿ ಕಾಡಸಿದ್ದೇಶ್ವರ ಸಪ್ತಾಹ ಸಮಾಪ್ತಿ",
+      "ಎಡತೊರೆ ಶ್ರೀ ಮಾಧವಾನಂದ ಸರಸ್ವತಿ ಆರಾಧನೆ.",
+      "ಬಿಪಿನಚಂದ್ರ ಪಾಲ ಜನ್ಮದಿನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಚಿತ್ರಾ",
+        "endsAt": "29.53",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತ್ರಯೋದಶಿ",
+        "endsAt": "10.48",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶ್ರೀತಿ",
+        "endsAt": "02.28",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಿಷ್ಟಿ",
+        "endsAt": "23.05",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ  ವಿಷ್ಟಿ 23.05"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 22,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ತುಲಾ",
+      "chandraEntryRashi": "ಕನ್ಯಾ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ.06:00 - 07:30",
+      "yamaganda": "ಮ.01:30- 03:00",
+      "arthaPrahara": "ಮ. 12:60 - 01:30",
+      "shubhaSamaya": "ಅ. 11:10 - 12:50 (ಮರುದಿನ)"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರತಿಭೆ",
+        "raw": "ಮೇಷ » ಪ್ರತಿಭೆ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಮರವು",
+        "raw": "ವೃಷಭ » ಮರವು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಮಿಥುನ » ಪ್ರತಿರೋಧ."
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕರ್ಕಾಟಕ ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಸಿಂಹ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ಕನ್ಯಾ ೫0 ಪ್ರಗತಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಆಸೆ",
+        "raw": "ತುಲಾ ೫». ಆಸೆ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ವೃಶ್ಚಿಕ » ಸ್ನೇಹ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ದಾನ",
+        "raw": "ಧನಸ್ಸು ». ದಾನ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ಮಕರ » ತೊಂದರೆ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಕುಂಭ » ಸಾಲ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ಮೀನ » ಉಡುಗೊರೆ"
+      }
+    ]
+  }
+}

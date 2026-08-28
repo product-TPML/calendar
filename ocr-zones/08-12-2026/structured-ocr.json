@@ -1,0 +1,174 @@
+{
+  "source": {
+    "image": "data\\2026\\12\\08-12-2026.jpg",
+    "date": "08-12-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಕೃಷ್ಣ .",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "08-12-2026",
+      "quote": "`ವೊಂದಿದರೆ ಸಾಕು, ಜಗತ್ತನ್ನೇ ಗೆಲ್ಲಬ"
+    },
+    "calendar": {
+      "months": [
+        "ಕಾರ್ತಿಕ/ಮಾರ್ಗಶಿರ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಶ್ಚಿಕ/ಧನು",
+      "sunrise": "06:29",
+      "sunset": "17:53"
+    },
+    "events": [
+      "ಛಟ್ಟಿ ಅಮಾವಾಸ್ಯೆ",
+      "ಚಿಕ್ಕೋಡಿ ಚಿನ್ಮಯ ಸ್ವಾಮಿ ಪು.ತಿ",
+      "ಅರಕೇರಿ",
+      "ಆಮೋಘ ಸಿದ್ದೇಶ್ವರ ಜಾತ್ರೆ",
+      "ಶಿಲ್ತಿಭಾಂವಿ ತಾ. ಗೋಕಾಕ ಶ್ರೀ",
+      "ಮಾರುತಿ ಕಾರ್ತಿಕೋತ್ಸವ",
+      "ನೀಲಕೋಡವನ ದುರ್ಗಾ",
+      "ವಾರಿಗಳಲ್ಲಿ",
+      "ದೀಪೋತ್ಸವಗಳು",
+      "ಗುಡ್ಡಾಪೂರ ತಾ.ಜತ ಶ್ರೀ ದಾನಮ್ಮಾದೇವಿ ಜಾತ್ರೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಅನುರಾಧಾ",
+        "endsAt": "18.16",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಅಮಾವಾಸ್ಯೆ",
+        "endsAt": "30.22",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸುಕರ್ಮಾ",
+        "endsAt": "08.07",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಚತುಷ್ಪಾದ",
+        "endsAt": "17.15",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಚತುಷ್ಪಾದ 17.15"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 23,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವಶಿಕ",
+      "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ. 12:00 - 01:30",
+      "yamaganda": "ಬೆ. 09:00 - 10:30",
+      "arthaPrahara": "ಬಿ. 07:30 - 09:00",
+      "shubhaSamaya": "ಚೆ. 06:48 - 08:34"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಆಸೆ",
+        "raw": "ಮೇಷ » ಆಸೆ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಷಭ » ಯಶಸ್ಸು ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮಿಥುನ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸೌಮ್ಯತೆ",
+        "raw": "ಕರ್ಕಾಟಕ ಸೌಮ್ಯತೆ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಶುಭಸಮಾಚಾರ",
+        "raw": "ಸಿಂಹ» ಶುಭಸಮಾಚಾರ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಕನ್ಯಾ ಶಾಂತಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ತುಲಾ »ಉಡುಗೊರೆ :"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ವೃಶ್ಚಿಕ » ಪ್ರಯತ್ನ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಮೆಚ್ಚುಗೆ",
+        "raw": "ಧನಸ್ಸು » ಮೆಚ್ಚುಗೆ :"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಆಸಕ್ತ",
+        "raw": "ಮಕರ ೫ ಆಸಕ್ತ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ಕುಂಭ » ಸಹಾಯ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಮೀನ » ಭಕ್ತಿ"
+      }
+    ]
+  }
+}

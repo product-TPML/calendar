@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\08\\19-08-2026.jpg",
+    "date": "19-08-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಶುಕ್ಲ.",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "19-08-2026",
+      "quote": "ನಿನ್ನಮನಸ್ಸುನಿನ್ನಮಿತ್ರ"
+    },
+    "calendar": {
+      "months": [
+        "ಆಷಾಢ",
+        "ಶ್ರಾವಣ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಕರ್ಕ/ಸಿಂಹ",
+      "sunrise": "06:08",
+      "sunset": "18:38"
+    },
+    "events": [
+      "ಸೀತಲಾ ಸಪ್ತಮಿ. ಬುಧ ಪೂಜೆ. ವಿಶ್ವ ಛಾಯಾಚಿತ್ರಣ",
+      "ದಿನ. ಗೋ ಸ್ವಾಮಿ ತುಲಸಿದಾಸ ಜಯಂತಿ",
+      "ಶ್ರೀ",
+      "ಪಾರ್ಶ್ವನಾಥ ನಿರ್ವಾಣ ದಿನ. ಸಾವಳಗಿಮಠ ತಾ.",
+      "ಚಿಕ್ಕೋಡಿ ಶ್ರೀ ಚಿನ್ನಯ್ಯ ಸ್ವಾಮಿ ಆರಾಧನೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಸ್ವಾತಿ",
+        "endsAt": "06.47",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಸಪ್ತಮಿ",
+        "endsAt": "19.20",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಇಹ್ಮಾ",
+        "endsAt": "2.44",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಗರಜ",
+        "endsAt": "06.31",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಗರಜ 06.31 _"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 3,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಸಿಂಹ",
+      "chandraEntryRashi": "ತುಲಾ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಚೆ.10130- 12:00",
+      "yamaganda": "ಬೆ.07:30-09:00",
+      "arthaPrahara": "ಚೆ.06:00 - 07:30",
+      "shubhaSamaya": "ಠಾ.11328 -01:13 (ಮರುದಿನ)"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ಮೇಷ » ಸಂಪತ್ತು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ವೃಷಭ » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಪೋತಾಹ",
+        "raw": "ಮಿಥುನ » ಪೋತಾಹ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಕೇರ್ತಿ",
+        "raw": "ಕರ್ಕಾಟಕ. ಕೇರ್ತಿ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಸಿಂಹ » ಲಾಭ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಕನ್ಯಾ ೫ ಗೌರವ :"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಕುತೂಹಲ",
+        "raw": "ತುಲಾ. » ಕುತೂಹಲ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ವೃಶ್ಚಿಕ» ಸಂತೋಷ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಗಮನ",
+        "raw": "ಧನಸ್ಸು » ಗಮನ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಮರೆವು",
+        "raw": "ಮಕರ » ಮರೆವು :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅನಂದ",
+        "raw": "ಕುಂಭ » ಅನಂದ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಕರುಣೆ",
+        "raw": "ಮೀನ ». ಕರುಣೆ"
+      }
+    ]
+  }
+}

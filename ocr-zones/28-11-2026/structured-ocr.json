@@ -1,0 +1,166 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\28-11-2026.jpg",
+    "date": "28-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "28-11-2026",
+      "quote": "ಬೆಳ್ಳಗಿರುವುದಲ್ಲ ಹಾಲಲ್ಲ"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:24",
+      "sunset": "17:50"
+    },
+    "events": [
+      "4ನೇ ಶನಿವಾರ",
+      "ಅಗರಖೇಡ ಕೃಷ್ಣದ್ವೈಪಾಯನಾಚಾರ್ಯ",
+      "ಪುಣ್ಯತಿಥಿ. ಕಟೀಲು",
+      "ಚಂಡಿ",
+      "ಮುಂಡಾಜೆ ಸನ್ಯಾಸಿಕಟ್ಟೆ",
+      "ಪರಶುರಾಮ ದೀಪೋತ್ಸವಗಳು."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪುನರ್ವಸು",
+        "endsAt": "12.50",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಅಕೆ",
+        "endsAt": "06.40",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶುಕ್ಲ",
+        "endsAt": "20.18",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌಲವ",
+        "endsAt": "17.15",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೌಲವ 17.15"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 13,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವೃಶ್ಚಿಕ",
+      "chandraEntryRashi": "ಮಿಥುನ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": ". ಬೆ.06:00 - 07:30",
+      "yamaganda": "ಮ. 01:30 - 03:00",
+      "arthaPrahara": "ಮ. 12:00 - 01:30",
+      "shubhaSamaya": "ಬೆ. 10:39 - 12:06"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಮೇಷ ». ಗೌರವ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸ್ಪರ್ಧ",
+        "raw": "ವೃಷಭ » ಸ್ಪರ್ಧ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಅಬಿವೃದ್ದಿ",
+        "raw": "'ಮಿಥುನ » ಅಬಿವೃದ್ದಿ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕರ್ಕಾಟಕ: ಅನುಕೂಲ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಸಿಂಹ » ಸಂತೋಷ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕನ್ಯಾ» ಯಶಸ್ಸು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ತುಲಾ» ಯಶಸ್ಸು"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ವೃಶ್ಚಿಕ» ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಧನಸ್ಸು » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಮಕರ » ಶಾಂತಿ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಶ್ರೀತಿ",
+        "raw": "ಕುಂಭ ೫ ಶ್ರೀತಿ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಮೀನ ». ಕೋಪ"
+      }
+    ]
+  }
+}

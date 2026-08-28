@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\09-03-2026.jpg",
+    "date": "09-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "09-03-2026",
+      "quote": "'ಒಂಟಿತನವು ಕೆಲವೊಮ್ಮೆಉತ್ತಮ ಗುರ"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:31",
+      "sunset": "18:29"
+    },
+    "events": [
+      "ಶ್ರೀ ಏಕನಾಥ ಷಯ ಶ್ರೀ ಕೃಷ್ಣಾನಂದಸ್ವಾಮಿ ಚರಣಾಃ",
+      "ಧಾರವಾಡ",
+      "ಭದ್ರಾವತಿ ತಾ. ಸುಣ್ಣದೆಹಳ್ಳಿ ಶ್ರೀ",
+      "ವೀರಾಂಜನೇಯ ರಥ",
+      "ಬೆವನೂರ ತಾ. ಜತ ಮ್ಹಸೋಬಾ",
+      "ಜಾತ್ರೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ವಿಶಾಖಾ",
+        "endsAt": "16.12",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಷಷ್ಠಿ",
+        "endsAt": "23.28",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವ್ಯಾಘಾತ",
+        "endsAt": "07.36",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಗರಜ",
+        "endsAt": "10.17",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಗರಜ 10.17."
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 25,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ತುಲಾ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ. 01:30 - 03:00.",
+      "yamaganda": "ಬೆ. 10:30 - 12:00",
+      "arthaPrahara": "ಬೆ. 09:00 - 10:30",
+      "shubhaSamaya": "ಬೆ. 06:25 - 08:11"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಒಳ್ಳೆಯ ಕೆಲಸ",
+        "raw": "ಮೇಷ » ಒಳ್ಳೆಯ ಕೆಲಸ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಷಭ » ಲಾಭ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮಿಹುನ » ಯಶಸ್ಸು :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರತಿಭೆ",
+        "raw": "ಕರ್ಕಾಟಕ ಪ್ರತಿಭೆ..."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಕುತೂಹಲ",
+        "raw": "ಸಿಂಹ ೫» ಕುತೂಹಲ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕನ್ಯಾ» ಯಶಸ್ಸು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಆನಂದ",
+        "raw": "ತುಲಾ » ಆನಂದ ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ವೃಶ್ಚಿಕ » ತಾಳ್ಮೆ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಮರೆವು",
+        "raw": "ಧನಸ್ಸು » ಮರೆವು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮಕರ » ಸಂತೋಷ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಕುಂಭ » ಕೀರ್ತಿ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ಮೀನ » ಪ್ರಯತ್ನ :"
+      }
+    ]
+  }
+}

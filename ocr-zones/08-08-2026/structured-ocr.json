@@ -1,0 +1,167 @@
+{
+  "source": {
+    "image": "data\\2026\\08\\08-08-2026.jpg",
+    "date": "08-08-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಕೃಷ್ಣ",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "08-08-2026",
+      "quote": "ಇಂದಿನ ಕಷ್ಟವೇ ನಾಳೆಯ ಶಕ್ತಿ"
+    },
+    "calendar": {
+      "months": [
+        "ಆಷಾಢ",
+        "ಶ್ರಾವಣ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಕರ್ಕ/ಸಿಂಹ",
+      "sunrise": "06:06",
+      "sunset": "18:44"
+    },
+    "events": [
+      "2ನೇ ಶನಿವಾರ. ವಿಶ್ವ ಬೆಕ್ಕು ದಿನ",
+      "ಕ್ವಿಟ್‌ ಇಂಡಿಯಾ ಚಳುವಳಿ ದಿನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ರೋಹಿಣಿ",
+        "endsAt": "16.51",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದಶಮಿ",
+        "endsAt": "14.00",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ನಜ",
+        "endsAt": "09.02",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "24.34",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬವ 24.34 _"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 24,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕರ್ಕ",
+      "chandraEntryRashi": "ವೃಷಭ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ.06:00 - 07:30",
+      "yamaganda": "ಮ. 01:30 - 03:00",
+      "arthaPrahara": "ಮ. 12:00 - 01:30",
+      "shubhaSamaya": "ಮ. 01:54 - 03:22"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಆಸಕ್ತಿ",
+        "raw": "ಮೇಷ » ಆಸಕ್ತಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ವಿನಯ",
+        "raw": "ವೃಷಭ » ವಿನಯ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ದಯೆ",
+        "raw": "ಮಿಥುನ » ದಯೆ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಕರ್ಕಾಟಕ ಖರ್ಚು"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಸಿಂಹ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕನ್ಯಾ ೫ ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಗೌರವ",
+        "raw": "ತುಲಾ ೫» ಗೌರವ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸಾಲ",
+        "raw": "ವೃಶ್ಚಿಕ» ಸಾಲ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಕೋಪ",
+        "raw": "ಧನಸ್ಸು » ಕೋಪ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಆಲೋಚನೆ",
+        "raw": "ಮಕರ »ಆಲೋಚನೆ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸೌಮ್ಯತೆ",
+        "raw": "ಕುಂಭ » ಸೌಮ್ಯತೆ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಮೀನ ». ಶಾಂತಿ"
+      }
+    ]
+  }
+}

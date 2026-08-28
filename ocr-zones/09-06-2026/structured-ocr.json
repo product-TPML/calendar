@@ -1,0 +1,165 @@
+{
+  "source": {
+    "image": "data\\2026\\06\\09-06-2026.jpg",
+    "date": "09-06-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "09-06-2026",
+      "quote": "ಮಾತುಗಳಿಗಿಂತ ಮೌನವೇ ಶಕ್ತಿ"
+    },
+    "calendar": {
+      "months": [
+        "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ ನಾಮ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಷಭ/ಮಿಥುನ",
+      "sunrise": "05:52",
+      "sunset": "18:45"
+    },
+    "events": [
+      "3. 1(|ಯ।!"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪೂ.ಭಾ",
+        "endsAt": "09.40",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ನವಮಿ",
+        "endsAt": "26.35",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶ್ರೀತಿ",
+        "endsAt": "08.15",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": "15.06",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ತೈತಿಲ 15,06"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಠ",
+      "solarYear": 26,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವಷಭ",
+      "chandraEntryRashi": "ಮೀನ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ. 12:00 - 01:30",
+      "yamaganda": "ಬೆ.09:00- 10:30",
+      "arthaPrahara": "ಬ. 07:30 - 09:00",
+      "shubhaSamaya": "ಬೆ. 01:29 - 03:07"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಮೇಷ ». ಖರ್ಚು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ವೃಷಭ » ಪ್ರಯತ್ನ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಮಿಥುನ ». ಕೀರ್ತಿ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅಲೆದಾಟ",
+        "raw": "ಕರ್ಕಾಟಕ ಅಲೆದಾಟ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಗೊಂದಲ",
+        "raw": "ಸಿಂಹ » ಗೊಂದಲ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಕನ್ಯಾ ೫ ಕೋಪ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ತುಲಾ » ಉಡುಗೊರೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಅಲೋಚನೆ",
+        "raw": "ವೃಶ್ಚಿಕ » ಅಲೋಚನೆ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಗಮನ",
+        "raw": "ಧನಸ್ಸು » ಗಮನ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ಮಕರ » ಪ್ರಗತಿ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಕುಂಭ » ಭಕ್ತಿ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ವಿಶ್ರಾಂತಿ",
+        "raw": "ಮೀನ ». ವಿಶ್ರಾಂತಿ"
+      }
+    ]
+  }
+}

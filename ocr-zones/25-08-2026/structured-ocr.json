@@ -1,0 +1,166 @@
+{
+  "source": {
+    "image": "data\\2026\\08\\25-08-2026.jpg",
+    "date": "25-08-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "25-08-2026",
+      "quote": "ಬೆವರು ಸುರಿಸಿದವನಿಗೆ ಫಲ ತಪ್ಪದು"
+    },
+    "calendar": {
+      "months": [
+        "ಆಷಾಢ",
+        "ಶ್ರಾವಣ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಕರ್ಕ/ಸಿಂಹ",
+      "sunrise": "06:08",
+      "sunset": "18:25"
+    },
+    "events": [
+      "ತ್ರಯೋದಶಿ ವೃದ್ಧಿ",
+      "ಭೌಮ ಪ್ರದೋಷ. ಮಂಗಳಾ ಗೌರಿ",
+      "ಪೂಜೆ. ಘಬಾಡ ಪ್ರಾರಂಭ",
+      "ಭ. ಜಿವ್ಹೇಶ್ವರ ಜಯಂತಿ.",
+      "ನರಹರಿ ಸೋನಾರ ಜಯಂತಿ. ನಚ್ಚಿಯಾರ ಗುಡಿ ಪುಷ್ಪ",
+      "ಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ. ಶಿವಯೋಗಿ ಪು.ತಿ. ನಿಪ್ಪಾಣಿ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಉ.ಷಾ",
+        "endsAt": "22.51",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಾದಶಿ",
+        "endsAt": "06.21",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಆಯುಪ್ಮಾನ",
+        "endsAt": "07.41",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌಲವ",
+        "endsAt": "19.14",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೌಲವ 19.14"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 9,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಸಿಂಕ್‌",
+      "chandraEntryRashi": "ಮಕರ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ.12:00 - 01:30",
+      "yamaganda": "ಬೆ. 09:00 - 10:30",
+      "arthaPrahara": "ಚೆ.07:30-:00",
+      "shubhaSamaya": "ಮ. 03:49 - 05:34"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮೇಷ ೫ ಲಾಭ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಒಳ್ಳೆಯ ಕೆಲಸ",
+        "raw": "ವೃಷಭ » ಒಳ್ಳೆಯ ಕೆಲಸ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಮಿಥುನ ». ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಕುತೂಹಲ",
+        "raw": "ಕರ್ಕಾಟಕ ಕುತೂಹಲ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಗಮನ",
+        "raw": "ಸಿಂಹ » ಗಮನ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ಕನ್ಯಾ ೫ ಸಹಾಯ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ತುಲಾ ೫» ಸ್ನೇಹ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಉತ್ಸಾಹ",
+        "raw": "ವೃಶ್ಚಿಕ » ಉತ್ಸಾಹ :"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಧನಸ್ಸು » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಮಕರ » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕುಂಭ » ಯಶಸ್ಸು ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮೀನ » ಸಂತೋಷ"
+      }
+    ]
+  }
+}

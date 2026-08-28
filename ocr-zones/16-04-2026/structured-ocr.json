@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\16-04-2026.jpg",
+    "date": "16-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಮಮಾ ಕೃಷ್ಣ ತಾಸ ದರಾ",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "16-04-2026",
+      "quote": "“ಯತ್ನವೇ ಯಶಸ್ತಿಗೆ ದಾರಿ”"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:06",
+      "sunset": "18:32"
+    },
+    "events": [
+      "ಶಿವಸನ್ನಿಧಿಯಲ್ಲಿ ಸ್ನಾನ ವಿಶೇಷ",
+      "ಬಗ್ವಾಡಿ",
+      "ಮಹಿಷಮರ್ಧಿನಿ ರಥ",
+      "ನೇರ್ಲಕಟ್ಟೆ ಉತ್ಸವೆ",
+      "ಸಂತ",
+      "ರೋಹಿದಾಸ ಪುಣ್ಯತಿಥಿ",
+      "ವಿಶ್ವ ಧ್ವನಿ ದಿನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಉಭಾ",
+        "endsAt": "13.59",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಚತುರ್ದಶಿ",
+        "endsAt": "20.12",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಐಂದ್ರ",
+        "endsAt": "10.37",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಿಷ್ಟಿ",
+        "endsAt": "09.26",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ  ವಿಷ್ಟಿ 09.26 _"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ರ್ದಶಿ 20.12",
+      "solarYear": 3,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮೇಷ",
+      "chandraEntryRashi": "ಮೀನ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಬೆ. 09:00 - 10:30",
+      "yamaganda": "ಬೆ. 06:00 - 07:30",
+      "arthaPrahara": "ಮ. 6:06 - %:3",
+      "shubhaSamaya": "ಬೆ. 09:27 - 10:58"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸೌಮ್ಯತೆ",
+        "raw": "ಮೇಷ » ಸೌಮ್ಯತೆ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ವೃಷಭ » ತಾಳ್ಮೆ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಅಲೆದಾಟ",
+        "raw": "ಮಿಥುನ » ಅಲೆದಾಟ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ವಿಶ್ರಾಂತಿ",
+        "raw": "ಕರ್ಕಾಟಕ ವಿಶ್ರಾಂತಿ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಭಯ",
+        "raw": "ಸಿಂಹ » ಭಯ '"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಕನ್ಯಾ ೫ ಸ್ನೇಹ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಗೊಂದಲ",
+        "raw": "ತುಲಾ» ಗೊಂದಲ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಶ್ಚಿಕ» ಲಾಭ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಧನಸ್ಸು » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಯಶಸ",
+        "raw": "ಮಕರ ೫». ಯಶಸ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಕೋರ್ಪ",
+        "raw": "ಕುಂಭ » ಕೋರ್ಪ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮೀನ » ಅನುಕೂಲ"
+      }
+    ]
+  }
+}

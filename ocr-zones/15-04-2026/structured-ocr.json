@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\15-04-2026.jpg",
+    "date": "15-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಭಂ ಕೃಷ್ಣ ಸತ ದಿಯು, ಈ",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "15-04-2026",
+      "quote": "ಮಾತೆ ಮುತ್ತು. , ಮಾತೆ ಮೃತ್ಯು"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:07",
+      "sunset": "18:32"
+    },
+    "events": [
+      "ಮಾಸ ಶಿವರಾತ್ರಿ",
+      "ಪಂಚಕ",
+      "ಶನಿ ಪುರ್ವೊದಯ",
+      "ಧಾರವಾಡ ಮೃತ್ಯುಂಜಯ ಶ್ರೀಗಳ ವರ್ಧಂತಿ",
+      "ಸಾಲೊಟಗಿ ತಾ. ಇಂಡಿ ಶಿವಯೋಗಿ ಜಾತ್ರೆ.",
+      "ತಾಜಾಪೂರ ಮಲ್ಲಿಕಾರ್ಜುನ ರಥ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪೂ.ಭಾ",
+        "endsAt": "15.23",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತ್ರಯೋದಶಿ",
+        "endsAt": "22.32",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಜ್ರಹ್ಮಾ",
+        "endsAt": "13.25",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಗರಜ",
+        "endsAt": "11.28",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಗರಜ 11.28 _"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 2,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮೇಷ",
+      "chandraEntryRashi": "ಕುಂಭ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಬೆ. 10:30 - 12:00",
+      "yamaganda": "ಬೆ. 07:30 - 09:00",
+      "arthaPrahara": "ಚ.5:66 - 7:36",
+      "shubhaSamaya": "ಬೆ. 07:37 -09:10"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೇಷ ». ಯಶಸ್ಸು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ದುರಾಸೆ",
+        "raw": "ವೃಷಭ » ದುರಾಸೆ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ಮಿಥುನ » ಸಂಪತ್ತು"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಭಕ್ತಿ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಕರುಣೆ",
+        "raw": "ಸಿಂಹ » ಕರುಣೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಗೊಂದಲ",
+        "raw": "ಕನ್ಯಾ» ಗೊಂದಲ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ತುಲಾ ೫ ಸಹಾಯ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ವೃಶ್ಚಿಕ» ಅಭಿವೃದ್ಧಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಆಯಾಸೆ",
+        "raw": "ಧನಸ್ಸು » ಆಯಾಸೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸೌಮತೆ",
+        "raw": "ಮಕರ ». ಸೌಮತೆ'"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅನುಕುಿಲ",
+        "raw": "ಕುಂಭ » ಅನುಕುಿಲ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ಮೀನ » ಉಡುಗೊರೆ"
+      }
+    ]
+  }
+}

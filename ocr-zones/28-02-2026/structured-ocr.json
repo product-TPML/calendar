@@ -1,0 +1,165 @@
+{
+  "source": {
+    "image": "data\\2026\\02\\28-02-2026.jpg",
+    "date": "28-02-2026",
+    "dimensions": {
+      "width": 1514,
+      "height": 1060
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "28-02-2026",
+      "quote": "ಉರಿಯುವ ದೀಪದಂತೆ ಆಸಕ್ತಿಅದಕ್ಕೆಹಾಕುವ ಎ"
+    },
+    "calendar": {
+      "months": [],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": "ಮಕರ/ ಕುಂಭ",
+      "sunrise": "06:36",
+      "sunset": "18:28"
+    },
+    "events": [
+      "4ನೇ ಶನಿವಾರ",
+      "ಗೋವಿಂದ ದ್ವಾದಶಿ",
+      "ರಾಷ್ಟ್ರೀಯ",
+      "ವಿಜ್ಞಾನ ದಿನ",
+      "ಹಿರೇಉಳ್ಳಗೇರಿ ತಾ. ಸೌದತ್ತಿಟೆ ಜ್ಞಾನ",
+      "ಸಪ್ತಾಹ ಪ್ರಾರಂಭ",
+      "ಸತ್ಯಗಾಲ ವಿಶ್ವೇಶ್ವರ ರಥ",
+      "ಮಲ್ಲೇಮಠ ದ್ವಜಾರೋಹಣ:"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪುನರ್ವಸು",
+        "endsAt": "09.35",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಾದಶಿ",
+        "endsAt": "20.44",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸಾಭಾಗ್ಯ",
+        "endsAt": "17.02",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "0.37",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬವ 0.37"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 16,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ಕರ್ಕ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ. 06:00 - 07:30:",
+      "yamaganda": "ಮ. 01:30 - 03:00",
+      "arthaPrahara": "ಮ. 12:00 -01:30",
+      "shubhaSamaya": "ಬೆ. 07:18 - 08:49"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "* ಅಲೆದಾಟ",
+        "raw": "ಮೇಷ »* ಅಲೆದಾಟ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಚಿಂತೆ",
+        "raw": "ವೃಷಭ ೫ ಚಿಂತೆ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಮೆಚುಗೆ",
+        "raw": "'ಮಿಥುನ » ಮೆಚುಗೆ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಶಾಂತಿ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಸಿಂಹ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಕನ್ಯಾ ೫ ಲಾಭ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ತುಲಾ » ಖರ್ಚು '"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಶ್ಚಿಕ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಧನಸ್ಸು ». ತಾಳ್ಮೆ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ದಯೆ",
+        "raw": "ಮಕರ » ದಯೆ' '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ವಿನಯ",
+        "raw": "ಕುಂಭ » ವಿನಯ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ವಿಶ್ರಾಂತಿ",
+        "raw": "ಮೀನ ೨». ವಿಶ್ರಾಂತಿ"
+      }
+    ]
+  }
+}

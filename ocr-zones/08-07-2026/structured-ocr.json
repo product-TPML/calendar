@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\07\\08-07-2026.jpg",
+    "date": "08-07-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "08-07-2026",
+      "quote": "ಸುವ ಛಲವಿದರೆ ಹಾದಿ ತಾನೇ ಕಾಣು"
+    },
+    "calendar": {
+      "months": [
+        "ನಿಜ ಜ್ಯೇಷ್ಠ/ಆಷಾಢ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮಿಥುನ/ಕರ್ಕ",
+      "sunrise": "05:59",
+      "sunset": "18:50"
+    },
+    "events": [
+      "ಆಳಂದಿ ಜಿ.ಪೂಣೆ ಸಂತ ಜ್ಞಾನೇಶ್ವರ ಮಾಲಿ ಪಲ್ಹಕ್ಕಿ",
+      "ಪ್ರಸ್ಥಾನ",
+      "ಲಿಂಗಾಬುದಿಶ್ವರ ರಥ",
+      "ಗದಗ ಜಿ. ಹರ್ಲಾಪುರ",
+      "ಶ್ರೀಗುರು ಕೊಟ್ಟೂರೇಶ್ವರ ರಥ",
+      "ಮಲ್ದ್ಹಾರಿ ದಿಕ್ಷೀತರ",
+      "ಪುಣ್ಯದಿನ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ರೇವತಿ",
+        "endsAt": "16.00",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಅಷ್ಟಮಿ",
+        "endsAt": "12.22",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಅತಿಗಂಡ",
+        "endsAt": "12.38",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": "23.35",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ತೈತಿಲ 23.35"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 24,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮಿಹುನ",
+      "chandraEntryRashi": "ಮೀನ"
+    },
+    "timings": {
+      "rahuKala": "_ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಬೆ. 10:30 - 12:00",
+      "yamaganda": "ಬೆ.07:30-09:00",
+      "arthaPrahara": "ಬಿ. 06:00 - 07:30",
+      "shubhaSamaya": "ಮ. 01:38 - 03:13"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಯಶಸ್ತ್ಸು",
+        "raw": "ಮೇಷ » ಯಶಸ್ತ್ಸು :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಚಿಂತೆ",
+        "raw": "ವೃಷಭ ». ಚಿಂತೆ\"."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಮಿಥುನ ». ಕೀರ್ತಿ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಭಯ",
+        "raw": "ಕರ್ಕಾಟಕ ಭಯ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಸಿಂಹ ೫» ಸಾಲ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕನ್ಯಾ» ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಉತ್ಸಾಹ",
+        "raw": "ತುಲಾ» ಉತ್ಸಾಹ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಕುತೂಹಲ",
+        "raw": "ವೃಶ್ಚಿಕ» ಕುತೂಹಲ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಧನಸ್ಸು »: ಅಭಿವೃದ್ದಿ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "*ಪತಿರೋಧ",
+        "raw": "ಮಕರ »*ಪತಿರೋಧ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಕುಂಭ ೫». ಸ್ಪರ್ಧೆ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಮೀನ ೫». ಭಕ್ತಿ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\04\\07-04-2026.jpg",
+                   "date":  "07-04-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "07-04-2026",
+                                   "quote":  "ನಾದಿಯಲ್ಲಿಮುಳ್ಳು ಚೆಲ್ಲಿದವರ, ಹಾದಿಯಲ್ಲಿ ಹೂ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಚೈತ್ರ",
+                                                    "ವೈಶಾಖ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮೀನ/ಮೇಷ",
+                                     "sunrise":  "06:12",
+                                     "sunset":  "18:31"
+                                 },
+                    "events":  [
+                                   "ವಿಶ್ವ ಆರೋಗ್ಯ ದಿನ",
+                                   "ಕನಮಡಿ ವಿಜಾಪುರ ತಾ.",
+                                   "ಶ್ರೀದರೇಪ್ಪದೇವರ ಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ",
+                                   "ಕೂಡಲ",
+                                   "ಸಂಗಮೇಶ್ವರ",
+                                   "ಯಾಳವಾರ ತಾ. ಬಸವನ",
+                                   "ಬಾಗೇವಾಡಿ ಸಂಗಮೇಶ್ವರ ಜಾತ್ರೆಗಳು"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಜ್ಯೇಷ್ಠ",
+                                                        "endsAt":  "29.54",
+                                                        "nextDay":  true,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಪಂಚಮಿ",
+                                                    "endsAt":  "16.35",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವ್ಯಕೀಪಾತ",
+                                                   "endsAt":  "16.16",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಗರಜ",
+                                                     "endsAt":  "29.49",
+                                                     "nextDay":  true,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಗರಜ 29.49"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ವಸಂತ",
+                                      "solarYear":  24,
+                                      "paksha": "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಮೀನ",
+                                      "chandraEntryRashi":  "ವೃಶ್ಚಿಕ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 03:00 - 04:30",
+                                    "gulikaKala":  "ಮ. 12:00 - 01:30",
+                                    "yamaganda":  "ಬೆ.09:00- 10:30",
+                                    "arthaPrahara":  "ಬ. 07:30 - 09:00",
+                                    "shubhaSamaya":  "ಬೆ. 08:01 - 09:46"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಮೇಷ » ಪ್ರೋತ್ಸಾಹ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸಮಸ್ಯೆ",
+                                        "raw":  "ವೃಷಭ » ಸಮಸ್ಯೆ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ತೊಂದರೆ",
+                                        "raw":  "ಮಿಥುನ ». ತೊಂದರೆ:"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಅನಾರೋಗ್ಯ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಅನಾರೋಗ್ಯ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಸಿಂಹ » ಲಾಭ \u0027"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಕನ್ಯಾ» ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ತುಲಾ.» ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಆತಂಕ",
+                                        "raw":  "ವೃಶ್ಚಿಕ». ಆತಂಕ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಧನಸ್ಸು » ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಮಕರ » ಅನುಕೂಲ."
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಕುಂಭ » ಭಯ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಪಶ್ಚಾತ್ತಾಪ",
+                                        "raw":  "ಮೀನ » ಪಶ್ಚಾತ್ತಾಪ"
+                                    }
+                                ]
+                }
+}

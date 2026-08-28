@@ -1,0 +1,165 @@
+{
+  "source": {
+    "image": "data\\2026\\02\\13-02-2026.jpg",
+    "date": "13-02-2026",
+    "dimensions": {
+      "width": 1514,
+      "height": 1060
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "13-02-2026",
+      "quote": "ಸ್ಮಾರಕ್ಕೆತಿರಸ್ಕಾರವೇ ಮದ್ದಲ್ಲ ಪ್ರೀತಿಯೇ ದಿವ್ಕಾ"
+    },
+    "calendar": {
+      "months": [],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": "ಮಕರ/ ಕುಂಭ",
+      "sunrise": "06:42",
+      "sunset": "18:24"
+    },
+    "events": [
+      "ವಿಜಯಾ ಏಕಾದಶಿ",
+      "ಅಗಡಿ ರುದ್ರಮುನಿಸ್ವಾಮಿ",
+      "ಜಯಂತಿ",
+      "ಬಸವೇಶ್ವರ ರಥ",
+      "ಅನಂತಾಡಿ ಶ್ರೀ ಉಳ್ಳಾತ್ತಿ",
+      "ಅಮ್ಮನವರ ತೆಂಬೂಲ ಪೂಜೆ",
+      "ಗುಷದುರು",
+      "ಸಿದ್ದಲಿಂಗೇಶ್ವರ ರಥ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಮೂಲಾ",
+        "endsAt": "16.13",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಏಕಾದಶಿ",
+        "endsAt": "14.26",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವಜ್ರ",
+        "endsAt": "27.23",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌಲವ",
+        "endsAt": "27.18",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೌಲವ 27.18"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಶಿಶಿರ",
+      "solarYear": 1,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ಧನು"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00.",
+      "gulikaKala": "ಬೆ. 07:30 - 09:00",
+      "yamaganda": "ಮ. 03:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 03:00",
+      "shubhaSamaya": "ಬೆ. 09:08 - 10:54"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೇಷ » ಯಶಸ್ಸು :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ವೃಷಭ » ಒಳ್ಳೆಯದು ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಮಿಥುನ » ಆತಂಕ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸಾಧನೆ",
+        "raw": "ಕರ್ಕಾಟಕ ಸಾಧನೆ ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಸಿಂಹ » ಕೋಪ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಗಮನ",
+        "raw": "ಕನ್ಯಾ ೫» ಗಮನ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ತುಲಾ» ಅಭಿವೃದ್ಧಿ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಅಲೆದಾಟ",
+        "raw": "ವೃಶ್ಚಿಕ » ಅಲೆದಾಟ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರಗತಿ :"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಬಳಂಜ",
+        "raw": "ಮಕರ ೫ ಬಳಂಜ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಯಶಸ್ಸ",
+        "raw": "ಕುಂಭ » ಯಶಸ್ಸ. ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಯೋಗ",
+        "raw": "ಮೀನ » ಯೋಗ"
+      }
+    ]
+  }
+}

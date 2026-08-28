@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\07\\17-07-2026.jpg",
+    "date": "17-07-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "17-07-2026",
+      "quote": "ಗುರಿ ಸಷ್ಟವಾಗಿದ್ದರ ಗಲುವು ಸುಲ"
+    },
+    "calendar": {
+      "months": [
+        "ನಿಜ ಜ್ಯೇಷ್ಠ/ಆಷಾಢ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮಿಥುನ/ಕರ್ಕ",
+      "sunrise": "06:01",
+      "sunset": "18:50"
+    },
+    "events": [
+      "ವಿನಾಯಕ ಚತುರ್ಥಿ ನವಲಗುಂದ ನಾಗಲಿಂಗ",
+      "ಸ್ವಾಮಿಗಳ ಪುಣ್ಯದಿನ",
+      "ರಘುನಾಥ ತೀರ್ಥರ ಆರಾಧನೆ",
+      "ಶ್ರೀ ಮುಪ್ಪಿನಾರ್ಯ ಮಹಾಸ್ವಾಮಿಗಳ ರಥೋತ್ಸವ",
+      "ಐರಣಿ ಹೊಳೆಮಠ",
+      "ಸೂಡಿ ಶೀವಾಚಾರ್ಯ ಪುಣ್ಯತಿಥಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಮಘಾ",
+        "endsAt": "18.35",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಬ",
+        "endsAt": "06.28",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಪ್ಯತೀಪಾತ",
+        "endsAt": "22.46",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣಿಜ",
+        "endsAt": "17.30",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ವಣಿಜ 17.30"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 2,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಕರ್ಕ",
+      "chandraEntryRashi": "ಸಿಂಹ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00.",
+      "gulikaKala": "ಬೆ. 07:30 - 09:00.",
+      "yamaganda": "ಮ. 0:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 03:00",
+      "shubhaSamaya": "ಸ, 04:18 - 05:49"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸರ್ಧೆ",
+        "raw": "ಮೇಷ ». ಸರ್ಧೆ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ವೃಷಭ » ಅನುಕೂಲ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಶ್ರೇಷತೆ",
+        "raw": "ಮಿಥುನ ». ಶ್ರೇಷತೆ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಶ್ರೀತಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಶ್ರೀತಿ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಸಿಂಹ » ಸಂತೋಷ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕನ್ಯಾ» ಯಶಸ್ಸು:"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಆಸಕ್ತಿ",
+        "raw": "ತುಲಾ ೫» ಆಸಕ್ತಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ದಯೆ",
+        "raw": "ವೃಶ್ಚಿಕ » ದಯೆ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ನಿಷೇಧ",
+        "raw": "ಧನಸ್ಸು ». ನಿಷೇಧ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮಕರ » ಅನುಕೂಲ."
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಕುಂಭ ». ಕೀರ್ತಿ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಮೀನ » ಅಭಿವೃದ್ದಿ"
+      }
+    ]
+  }
+}

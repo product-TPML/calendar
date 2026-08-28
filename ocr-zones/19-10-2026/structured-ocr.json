@@ -1,0 +1,171 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\10\\19-10-2026.jpg",
+                   "date":  "19-10-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "19-10-2026",
+                                   "quote":  "ಜೀವನದಲ್ಲಿ ಧೈರ್ಯವೇ ದೊಡ್ಡಆಸ್ತಿ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕನ್ಯಾ/ ತುಲಾ",
+                                     "sunrise":  "06:10",
+                                     "sunset":  "17:58"
+                                 },
+                    "events":  [
+                                   "ದುರ್ಗಾಷ್ಟಮಿ",
+                                   "ಮಹಾಷ್ಟಮಿ",
+                                   "ಮಹಾನವಮಿ ಉಪವಾಸ",
+                                   "ಆಯುಧ",
+                                   "ಪೂಜೆ",
+                                   "ಏಕರಾತ್ರೋತ್ಸವಾರಂಭ",
+                                   "ಕೋಲ್ಡ್ದಾಪೂರ ಮಹಾಲಕ್ಷ್ಮೀ",
+                                   "ಜಾಗರ ಸರಸ್ವತಿ ಪೂಜೆ",
+                                   "ಬಳೆಪೇಟೆ ಅಂಬಾಭವಾನಿ ಪೂಜೆ",
+                                   "ಕಶ್ಯಪ",
+                                   "ಮಹರ್ಷಿ ಜಯಂತಿ",
+                                   "ಧಾರವಾಡ ಮೃತ್ಯುಂಜಯ ಶ್ರೀಗಳ ಪುಣ್ಯತಿಥಿ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಉ.ಷಾ",
+                                                        "endsAt":  "15.39",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಅಷ್ಟಮಿ",
+                                                    "endsAt":  "10.52",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಧೃತಿ",
+                                                   "endsAt":  "24.35",
+                                                   "nextDay":  true,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಬಾಲವ",
+                                                     "endsAt":  "23.56",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬಾಲವ 23.56"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  3,
+                                      "paksha": "ಶುಕ್ಲ",
+                                      "solarRashi":  "ತುಲಾ",
+                                      "chandraEntryRashi":  "ಮಕರ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 07:30 - 09:00.",
+                                    "gulikaKala":  "ಮ.01130 - 03:00",
+                                    "yamaganda":  "ಬೆ. 10:30- 12:00",
+                                    "arthaPrahara":  "ಚೆ. 09:00 - 10:30",
+                                    "shubhaSamaya":  "ಬೆ. 08:29 - 10:16"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಮೇಷ » ಅನುಕೂಲ."
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಶಾಂತಿ",
+                                        "raw":  "ವೃಷಭ » ಶಾಂತಿ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಮಿಥುನ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಸಮಸ್ಯೆ",
+                                        "raw":  "ಕರ್ಕಾಟಕ. ಸಮಸ್ಯೆ ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಸಿಂಹ » ಭಯ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ಕನ್ಯಾ» ಮೆಚ್ಚುಗೆ."
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ತುಲಾ» ಯಶಸ್ಸು:"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಉಡುಗೊರೆ",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಉಡುಗೊರೆ."
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಧನಸ್ಸು » ಲಾಭ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ಮಕರ ೫» ಒಳ್ಳೆಯದು."
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಕುಂಭ » ಸಾಲ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಅಭಿವೃದ್ಧಿ",
+                                        "raw":  "ಮೀನ » ಅಭಿವೃದ್ಧಿ"
+                                    }
+                                ]
+                }
+}

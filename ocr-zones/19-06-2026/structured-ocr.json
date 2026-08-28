@@ -1,0 +1,169 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\06\\19-06-2026.jpg",
+                   "date":  "19-06-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "red-channel-4x-psm7",
+                                       "raw":  "ಪಕ್ಷ ಶುಕ್ಲ",
+                                       "value":  "ಶುಕ್ಲ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "19-06-2026",
+                                   "quote":  "\u0027೦ತ ದೊಡ್ಡಗುರುವಿಲ್ಲ, ಅನುಭವಕ್ಕಿಂತ ದೊಡ್ಡಪಾ\nಡಿ ( ೦"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ ನಾಮ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ವೃಷಭ/ಮಿಥುನ",
+                                     "sunrise":  "05:54",
+                                     "sunset":  "18:47"
+                                 },
+                    "events":  [
+                                   "ಬೃಹನ್ಮಠ ಕಾಶಿನಾಥಶಾಸ್ತ್ರಿ ಜಯಂತಿ",
+                                   "ರಾಣೆಬೆನ್ನೂರು",
+                                   "ಸಿದ್ಧಾರೂಢರ ಅಭಿಷೇಕ",
+                                   "ಸಿರಸಂಗಿ ಕಾಳಿಕಾದೇವಿ",
+                                   "ಕಲಶೋತ್ಸವ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಆಶ್ವೇಷಾ",
+                                                        "endsAt":  "10.07",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಪಂಚಮಿ",
+                                                    "endsAt":  "17.00",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಹರ್ಷಣ",
+                                                   "endsAt":  "14.53",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಕೌಲವ",
+                                                     "endsAt":  "28.18",
+                                                     "nextDay":  true,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಕೌಲವ 28.18"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಗ್ರೀಷ್ಠ",
+                                      "solarYear":  5,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಮಿಥುನ",
+                                      "chandraEntryRashi":  "ಕರ್ಕ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 10:30 - 12:00 _",
+                                    "gulikaKala":  "ಬೆ.07:30 - 09:00",
+                                    "yamaganda":  "ಮ. 03:00 - 04:30",
+                                    "arthaPrahara":  "ಮ. 01:30 - 03:00",
+                                    "shubhaSamaya":  "ಬೆ. 08:36 - 10:06"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಮರೆವು",
+                                        "raw":  "\u0027ಮೇಷ » ಮರೆವು"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ನಿರಾಶೆ",
+                                        "raw":  "ವೃಷಭ ». ನಿರಾಶೆ..."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ವಿಬಾಗ",
+                                        "raw":  "\u0027ಮಿಥುನ ». ವಿಬಾಗ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಬುದ್ದಿವಂತಿಕೆ",
+                                        "raw":  "ಕರ್ಕಾಟಕ» ಬುದ್ದಿವಂತಿಕೆ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಶ್ರದ್ದೆ",
+                                        "raw":  "ಸಿಂಹ » ಶ್ರದ್ದೆ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಗೊಂದಲ",
+                                        "raw":  "ಕನ್ಯಾ» ಗೊಂದಲ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಆಸಕ್ತಿ",
+                                        "raw":  "ತುಲಾ ೫» ಆಸಕ್ತಿ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಸಹಾಯ",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಸಹಾಯ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಧನಸ್ಸು » ಪ್ರೋತ್ಸಾಹ."
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ತಾಳ್ಮೆ",
+                                        "raw":  "\u0027ಮಕರ » ತಾಳ್ಮೆ :"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಬಿಶ್ರಾಂತಿ",
+                                        "raw":  "ಕುಂಭ ೫. ಬಿಶ್ರಾಂತಿ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "\u0027ಮೀನ ೫» ಭಯ"
+                                    }
+                                ]
+                }
+}

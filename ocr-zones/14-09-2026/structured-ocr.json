@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\09\\14-09-2026.jpg",
+    "date": "14-09-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "14-09-2026",
+      "quote": "ಕು ನಿನ್ನ ವಿರುದ ಅಲ, ನಿನ್ನನ್ನು ರೂಪಿಸ"
+    },
+    "calendar": {
+      "months": [
+        "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಸಿಂಹ/ಕನ್ಯಾ",
+      "sunrise": "06:08",
+      "sunset": "18:21"
+    },
+    "events": [
+      "ಶ್ರೀ ಗಣೇಶ ಚತುರ್ಥಿ",
+      "ಹರತಾಲಿಕಾ ಪೂಜೆ",
+      "ಸ್ವರ್ಣಗೌರಿ",
+      "ಪ್ರತ",
+      "ಪಿಠಾಪೂರ ಶ್ರೀಪದ ಶ್ರೀವಲ್ಲಭ ಜಯಂತಿ",
+      "ಕುರಗಡ್ಡಿ",
+      "ಶ್ರೀಪಾದ ವಲ್ಲಭ ಜಯಂತಿ ಬಾದಾಮಿ ತಾ. ಕಾಡರಕೊಪ್ಪ",
+      "ಶ್ರೀ ವೀರಾನಂದರ ಪುಣ್ಯಾರಾಧನೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಚಿತ್ರಾ",
+        "endsAt": "13.55",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತೃತೀಯಾ",
+        "endsAt": "07.07",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಬ್ರಹ್ಮಾ",
+        "endsAt": "12.47",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣಿಜ",
+        "endsAt": "19.21",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ವಣಿಜ 19.21 _"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 29,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಸಿಂಹ",
+      "chandraEntryRashi": "ತುಲಾ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ.01130 - 03:00",
+      "yamaganda": "ಬೆ. 10:30- 12:00",
+      "arthaPrahara": "ಬಿ. 09:00 - 10:30",
+      "shubhaSamaya": "ಬೆ. 07:18 - 08:57"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮೇಷ » ಅನುಕೂಲ."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ವೃಷಭ » ಖರ್ಚು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮಿಥುನ » ಲಾಭ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಕಾಟರ್ಕ ವಿಶ್ರಾಂತಿ",
+        "raw": "ಕರ್ಕಾಟರ್ಕ ವಿಶ್ರಾಂತಿ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಆಲೋಚನೆ",
+        "raw": "ಸಿಂಹ » ಆಲೋಚನೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ಕನ್ಯಾ» ತೊಂದರೆ."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ತುಲಾ ೫» ವಿಳಂಬ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಭಯ",
+        "raw": "ವೃಶ್ಚಿಕ » ಭಯ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "“ಕೋಪ",
+        "raw": "ಮಕರ » “ಕೋಪ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ಕುಂಭ » ಶ್ರೇಷ್ಠತೆ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮೀನ ». ಲಾಭ"
+      }
+    ]
+  }
+}

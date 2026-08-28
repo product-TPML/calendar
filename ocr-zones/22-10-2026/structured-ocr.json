@@ -1,0 +1,169 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\10\\22-10-2026.jpg",
+                   "date":  "22-10-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "22-10-2026",
+                                   "quote":  "ಕತ್ತಲೆ ಇದರೆ ಬೆಳಕು ಕೂಡ ಇರುತ್ತದೆ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕನ್ಯಾ/ ತುಲಾ",
+                                     "sunrise":  "06:11",
+                                     "sunset":  "17:57"
+                                 },
+                    "events":  [
+                                   "ಪಾಶಾಂಕುಶಾ ಏಕಾದಶಿ",
+                                   "ಭರತ ಮಿಲನ",
+                                   "ಶ್ರೀ ಜ್ಞಾನೇಶ್ವರಸ್ವಾಮಿ",
+                                   "ಆರಾಧನೆ ಕಾಖಂಡಿಕಿ",
+                                   "ಹೊಸಮುಗಳಗೆರೆ ಶ್ರೀ ಬೀರಲಿಂಗೇಶ್ವರ ದೊಡ್ಡಎಡೆ",
+                                   "ಕಾರ್ಯಕ್ರಮ",
+                                   "ಚಾಮುಂಡಿ ಬೆಟ್ಟದಲ್ಲಿ ಚಾಮರಾಜ ಮುಡೀ ಉತ್ಸವ",
+                                   "ತುಳಜಾಪುರ ಭವಾನೀದೇವಿ ನಿದ್ರಾಕಾಲ ಆರಂಭ",
+                                   "ಶೃಗೇರಿ ಶಾರದಿಯ ರಥ",
+                                   "ಬೇಡಕಿಹಾಳ ತಾ. ಚಿಕ್ಕೋಡಿ ಶ್ರೀ ಸಿದ್ದೇಶ್ವರ ಜಾತ್ರೆ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಶತಭಿಷಾ",
+                                                        "endsAt":  "20.49",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಏಕಾದಶಿ",
+                                                    "endsAt":  "14.49",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವೃದ್ಧಿ",
+                                                   "endsAt":  "23.40",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಬವ",
+                                                     "endsAt":  "26.49",
+                                                     "nextDay":  true,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬವ 26.49"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  6,
+                                      "paksha": "ಶುಕ್ಲ",
+                                      "solarRashi":  "ತುಲಾ",
+                                      "chandraEntryRashi":  "ಕುಂಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "_ಮ. 01:30 - 03:00",
+                                    "gulikaKala":  "ಬೆ.9:00 - 10:30.",
+                                    "yamaganda":  "ಬೆ.06:00 - 07:30",
+                                    "arthaPrahara":  "ಮ. 03:06 - 5:31",
+                                    "shubhaSamaya":  "ಮ. 01:18 - 02:58"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಗೌರವ",
+                                        "raw":  "ಮೇಷ ». ಗೌರವ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಭಕ್ತಿ",
+                                        "raw":  "ವೃಷಭ » ಭಕ್ತಿ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಪರಿಶ್ರಮ",
+                                        "raw":  "ಮಿಥುನ » ಪರಿಶ್ರಮ \u0027"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಕೀರ್ತಿ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಕೀರ್ತಿ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಸಿಂಹ » ಸಾಲ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಸ್ಪರ್ಧೆ",
+                                        "raw":  "ಕನ್ಯಾ ೫ ಸ್ಪರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಕರುಣೆ",
+                                        "raw":  "ತುಲಾ ೫» ಕರುಣೆ \u0027"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಕುತೂಹಲ",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಕುತೂಹಲ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಧನಸ್ಸು » ಪ್ರೋತ್ಸಾಹ."
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಮರೆವು",
+                                        "raw":  "ಮಕರ » ಮರೆವು \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಕುಂಭ » ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಗೌರವ",
+                                        "raw":  "ಮೀನ ». ಗೌರವ"
+                                    }
+                                ]
+                }
+}

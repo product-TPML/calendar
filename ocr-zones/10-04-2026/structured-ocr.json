@@ -1,0 +1,173 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\10-04-2026.jpg",
+    "date": "10-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಕೃಷ್ಣ ರತ್‌ 2",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "10-04-2026",
+      "quote": "ನಿಮ್ಮ ಮೇಲೆ ನಿಮಗೆ ನಂಬಿಕೆಯಿದ್ದರೆ ಎಲ್ಲವೂ ಸಾ!"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:10",
+      "sunset": "18:31"
+    },
+    "events": [
+      "ಕಾಲಾಷ್ನಮಿ",
+      "ಮಂಗಳ ಪುರ್ವೋದಯ",
+      "ಬುಧ",
+      "ಮೀನದಲ್ಲಿ",
+      "ಸವಡಿ ಸಂಗಮೇಶ್ವರ ರಥ. ಪೊಳಲಿ",
+      "ಜಾತ್ರೆ",
+      "ನೋಣವಿನಕೇರೆ ಶ್ರೀ ಬೆಟ್ಟರಾಯ ರಥ",
+      "ವಾಳೇಖಿಂಡಿ ತಾ. ಜತ ಶ್ರೀ ಸಿದ್ದನಾಥ ಜಾತ್ರೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪೂ.ಷಾ",
+        "endsAt": "11.28",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಅಷ್ಟಮಿ",
+        "endsAt": "23.16",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶಿವ",
+        "endsAt": "18.31",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "10.22",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 10.22 _"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 27,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ಧನು"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00.",
+      "gulikaKala": "ಬೆ. 07:30 - 09:00",
+      "yamaganda": "ಮ. 08:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:36 - ೫:06",
+      "shubhaSamaya": "ಬೆ. 06:08 - 07:54"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಮೇಷ ೨». ಕೀರ್ತಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಧೈರ್ಯ",
+        "raw": "ವೃಷಭ » ಧೈರ್ಯ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮಿಥುನ » ಲಾಭ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ಕರ್ಕಾಟಕ: ಉಡುಗೊರೆ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಸಿಂಹ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸಮಸ್ಯೆ",
+        "raw": "ಕನ್ಯಾ ೫ ಸಮಸ್ಯೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ತುಲಾ» ಅನುಕೂಲ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಅನಾರೋಗ್ಯ",
+        "raw": "ವೃಶ್ಚಿಕ» ಅನಾರೋಗ್ಯ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸಾಧನೆ",
+        "raw": "ಧನಸ್ಸು ». ಸಾಧನೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಮಕರ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸೌಮ್ಯತೆ",
+        "raw": "ಕುಂಭ » ಸೌಮ್ಯತೆ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಒಳ್ಳೆಯ ಕೆಲಸ",
+        "raw": "ಮೀನ » ಒಳ್ಳೆಯ ಕೆಲಸ"
+      }
+    ]
+  }
+}

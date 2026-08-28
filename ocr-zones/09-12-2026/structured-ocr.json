@@ -1,0 +1,168 @@
+{
+  "source": {
+    "image": "data\\2026\\12\\09-12-2026.jpg",
+    "date": "09-12-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "09-12-2026",
+      "quote": "ಷ್ನ ಪಡದೆ ಯಾವ ಪ್ರತಿಫಲವೂ ಸಿಗದ"
+    },
+    "calendar": {
+      "months": [
+        "ಕಾರ್ತಿಕ/ಮಾರ್ಗಶಿರ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಶ್ಚಿಕ/ಧನು",
+      "sunrise": "06:30",
+      "sunset": "17:53"
+    },
+    "events": [
+      "ಷಡರಾತ್ರೋತ್ಸವವಾರಂಭ",
+      "ಆಚೇಗಾಚ ತಾ.ದ. ಸೋಲಾಪೂರ",
+      "ಶಾವರಸಿದ್ದ ಮತ್ತು ಸಿಲಿಸಿದ್ದದೇವ ಜಾತ್ರೆ",
+      "ಹೇಮರಿಗಿ ಮಲ್ಲಿಕಾರ್ಜುನ",
+      "ರಥ",
+      "ದೇವ ದೀಪಾವಳಿ",
+      "ಖಂಡೋವಾ ನವರಾತ್ರಾರಂಭ",
+      "ಗೌರಿ ಶಂಕರ",
+      "ಜಾತ್ರೆ ಮುತ್ತಗಿ ತಾ.ಬ. ಬಾಗೇವಾಡಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಜ್ಯೇಷ್ಠಾ",
+        "endsAt": "21.01",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಪ್ರತಿಪದಾ",
+        "endsAt": null,
+        "nextDay": false,
+        "fullDay": true
+      },
+      "yoga": {
+        "name": "ಧೃತಿ",
+        "endsAt": "08.40",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೆಂಸ್ತುಘ್ನ",
+        "endsAt": "19.32",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೆಂಸ್ತುಘ್ನ 19.32"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 24,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ವಶಿಕ",
+      "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಬೆ. 10:30 - 12:00",
+      "yamaganda": "ಬೆ.07:30-09:00",
+      "arthaPrahara": "ಬಿ.06:00 - 07:30",
+      "shubhaSamaya": "ಚೆ. 11:12 - 12:59"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಮೇಷ » ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಮರವು",
+        "raw": "ವೃಷಭ » ಮರವು..."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಮಿಥುನ » ಕೋಪ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಕರ್ಕಾಟಕ ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಸಿಂಹ » ಗೌರವ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ಕನ್ಯಾ» ಅಭಿವೃದ್ಧಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ತುಲಾ.» ಯಶಸ್ಸು\""
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ವೃಶ್ಚಿಕ» ಖರ್ಚು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರೀತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಆನಂದ",
+        "raw": "ಮಕರ ೫» ಆನಂದ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ಕುಂಭ » ಪ್ರಯತ್ನ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಒಳ್ಳೆಯ ಕೆಲಸ",
+        "raw": "ಮೀನ ೫» ಒಳ್ಳೆಯ ಕೆಲಸ."
+      }
+    ]
+  }
+}

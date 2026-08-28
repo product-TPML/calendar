@@ -1,0 +1,168 @@
+{
+  "source": {
+    "image": "data\\2026\\05\\31-05-2026.jpg",
+    "date": "31-05-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "sunsetReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "date_right_2.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "31-05-2026",
+      "quote": "ಮ ಮಾಡಿದ ಪ್ರಯತ್ನವೇ ನಾಳೆಯ ಯಶಸ"
+    },
+    "calendar": {
+      "months": [
+        "ವೈಶಾಖ",
+        "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೇಷ/ವೃಷಭ",
+      "sunrise": "05:52",
+      "sunset": "18:42"
+    },
+    "events": [
+      "ಅಧಿಕ ಕಾರ ಹುಣ್ಣಿಮೆ",
+      "ವಿಶ್ವ ತಂಬಾಕು ರಹಿತ",
+      "ದಿನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಅನುರಾಧಾ",
+        "endsAt": "16.21",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಹುಣ್ಣಿಮೆ",
+        "endsAt": "14.15",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "_ಸಿದ್ಧ",
+        "endsAt": null,
+        "nextDay": false,
+        "fullDay": true
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "27.26",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 27.26"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸಂರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 17,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮೇಷ",
+      "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
+    },
+    "timings": {
+      "rahuKala": "ಸ. 04:30 - 06:00",
+      "gulikaKala": "ಮ. 03:00 - 04:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಚೆ. 10:30 - 12:00",
+      "shubhaSamaya": "ಸ. 04:33 - 06:21"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಆಲೋಚನೆ",
+        "raw": "ಮೇಷ » ಆಲೋಚನೆ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ದಯೆ",
+        "raw": "ವೃಷಭ » ದಯೆ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಯೋಗ",
+        "raw": "ಮಿಥುನ » ಯೋಗ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಗಮನ",
+        "raw": "ಕರ್ಕಾಟಕ ಗಮನ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಸಿಂಹ » ಕೀರ್ತಿ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಕನ್ಯಾ ೫ ತಾಳ್ಮೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಭಯ",
+        "raw": "ತುಲಾ ೫» ಭಯ 1"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಶ್ಚಿಕ » ಲಾಭ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಆನಂದ",
+        "raw": "ಧನಸ್ಸು » ಆನಂದ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಒಳ್ಳೆಯ ಸುದ್ದಿ",
+        "raw": "ಮಕರ » ಒಳ್ಳೆಯ ಸುದ್ದಿ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಮಸ್ಯೆ",
+        "raw": "ಕುಂಭ » ಸಮಸ್ಯೆ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮೀನ » ಅನುಕೂಲ."
+      }
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\11-03-2026.jpg",
+    "date": "11-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "11-03-2026",
+      "quote": "'ವರಿಗಲ್ಲ, ನಿಂತು ಹೋರಾಡಿದವರಿಗೇ ೭"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:29",
+      "sunset": "18:29"
+    },
+    "events": [
+      "ಶಬರಿ ಜಯಂತಿ",
+      "ಉಪ್ಪಿನಂಗಡಿ ಮಖೆ ಜಾತ್ರೆ",
+      "ಕೊಲ್ಲೂರು",
+      "ಮೂಕಾಂಬಿಕಾ ರಥ",
+      "ಕಡಕೋಳ ತಾ. ಜೀವರ್ಗಿ ಶ್ರೀ",
+      "ಮಡಿವಾಳೇಶ್ವರ ಶಾಖಾ ಮಠ ಜಾತ್ರೆ",
+      "ಕೆಲವಡಿ ತಾ.",
+      "ಬಾದಾಮಿ ಶ್ರೀ ರಂಗನಾಥ ರಥ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಜ್ಯೇಷ್ಠಾ",
+        "endsAt": "22.00",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಅಷ್ಟಮಿ",
+        "endsAt": "28.20",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವಜ್ರ",
+        "endsAt": "5.12",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "15.09",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 15.೫"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 27,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಬೆ. 10:30 - 12:00",
+      "yamaganda": "ಬೆ.07:30- 09:00",
+      "arthaPrahara": "ಬೆ.06:00 - 07:30",
+      "shubhaSamaya": "ಸ. 12:08 - 01:55"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮೇಷ » ಸಂತೋಷ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ವೃಷಭ » ಕೀರ್ತಿ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಯಶಸ್ತ್ಸು",
+        "raw": "ಮಿಥುನ » ಯಶಸ್ತ್ಸು :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ದಯೆ",
+        "raw": "ಕರ್ಕಾಟಕ: ದಯೆ..."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಸಿಂಹ » ಸಂತೋಷ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಕನ್ಯಾ» ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ತುಲಾ» ಉಡುಗೊರೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಮೆಚ್ಚುಗೆ",
+        "raw": "ವೃಶ್ಚಿಕ » ಮೆಚ್ಚುಗೆ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಗೊಂದಲ",
+        "raw": "ಧನಸ್ಸು » ಗೊಂದಲ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಶ್ರೇಷತೆ",
+        "raw": "ಮಕರ ೫ ಶ್ರೇಷತೆ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಚಿಂತೆ",
+        "raw": "ಕುಂಭ » ಚಿಂತೆ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ಮೀನ » ತೊಂದರೆ"
+      }
+    ]
+  }
+}

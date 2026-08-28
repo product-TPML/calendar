@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\06\\25-06-2026.jpg",
+    "date": "25-06-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಶುಕ್ಲ '",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "25-06-2026",
+      "quote": "ಸಹಾಯ ಮಾಡುವುದೇ ನಿಜವಾದ"
+    },
+    "calendar": {
+      "months": [
+        "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ ನಾಮ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಷಭ/ಮಿಥುನ",
+      "sunrise": "05:55",
+      "sunset": "18:40"
+    },
+    "events": [
+      "ನಿರ್ಜಲಾ ಏಕಾದಶಿ",
+      "ಭದ್ರಕಾಲಿ ಏಕಾದಶಿ",
+      "ಶ್ರೀ",
+      "ಮಾಧವಾನಂದ ಪ್ರಭು ಪು.ತಿ. ಇಂಚಗೇರಿ ತಾ. ಇಂಡಿ",
+      "ಶ್ರೀರಂಗಪಟ್ಟಣ ನೃಸಿಂಹ ರಥ",
+      "ಗಾಯತ್ರಿ ಜಯಂತಿ",
+      "ಕತ್ತಲ ರಾತ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಸ್ವಾತಿ",
+        "endsAt": "10.29",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಏಕಾದಶಿ",
+        "endsAt": "20.10",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶಿವ",
+        "endsAt": "10.54",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣಿಜ",
+        "endsAt": "07.09",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ವಣಿಜ 07.0."
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 11,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮಿಥುನ",
+      "chandraEntryRashi": "ತುಲಾ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಬೆ.09:00 - 10:30",
+      "yamaganda": "ಬೆ. 06:00 - 07:30.",
+      "arthaPrahara": "ಮ. 03:00 - 04:30",
+      "shubhaSamaya": "ಬೆ. 06:46 - 08:32"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಮೇಷ ». ಪ್ರೀತಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ದುರಾಸೆ",
+        "raw": "ವೃಷಭ » ದುರಾಸೆ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸರ್ಧೆ",
+        "raw": "ಮಿಥುನ ». ಸರ್ಧೆ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕರ್ಕಾಟಕ ಅನುಕೂಲ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಸಿಂಹ » ಅಭಿವೃದ್ದಿ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಬ ಸಾಲ್‌",
+        "raw": "ಕನ್ಯಾ ಬ ಸಾಲ್‌."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ತುಲಾ» ಖರ್ಚು '"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಭರವಸೆ",
+        "raw": "ವೃಶ್ಚಿಕ » ಭರವಸೆ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಆಲೋಚನೆ",
+        "raw": "ಮಕರ »ಆಲೋಚನೆ."
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ಕುಂಭ » ಪ್ರಯತ್ನ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಮೀನ » ಪ್ರೀತಿ"
+      }
+    ]
+  }
+}

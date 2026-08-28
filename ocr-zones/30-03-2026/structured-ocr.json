@@ -1,0 +1,165 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\30-03-2026.jpg",
+    "date": "30-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "30-03-2026",
+      "quote": "ತ ಸಾಧ್ಯ ಎಂಬುವುದು ಸಾಧಿಸುವ ಮೂದಲ ನ"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:17",
+      "sunset": "18:32"
+    },
+    "events": [
+      "ವಾಮನ ದ್ವಾದಶಿ",
+      "ವಿಷ್ಣು ದಮನೋತ್ಸವ",
+      "ಸೋಮಪ್ರದೋಷ",
+      "ಅನಂಗತ್ರಿಯೋದಶಿ",
+      "'ಶಿವರಥ",
+      "ಬೆಂಗಳೂರು ಬೆಂಕನಿಕೋಟೆ ರಥ ವಿಷ್ಣುವಿಗೆ ದವರ್ಣಾಪಣೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಮಘಾ",
+        "endsAt": "14.48",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಾದಶಿ",
+        "endsAt": "07.10",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶೂಲ",
+        "endsAt": "15.31",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌಲವ",
+        "endsAt": "19.00",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೌಲವ 19.0."
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 16,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ಸಿಂಹ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ.01:30 - 03:00",
+      "yamaganda": "ಬೆ. 10:30 - 12:00",
+      "arthaPrahara": "ಬೆ. 09:00 - 1030",
+      "shubhaSamaya": "ಸ. 12:23 - 01:59"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಅನಾರೋಗ್ಗ",
+        "raw": "ಮೇಷ » ಅನಾರೋಗ್ಗ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಕೋಪ *",
+        "raw": "ವೃಷಭ » ಕೋಪ *"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮಿಥುನ » ಸಾಲ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಕರ್ಕಾಟಕ. ಸ್ನೇಹ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಸಿಂಹ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕನ್ಯಾ» ಅನುಕೂಲ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ತುಲಾ» ಪ್ರಯತ್ನ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಶಾರ್ಯ",
+        "raw": "ವೃಶ್ಚಿಕ » ಶಾರ್ಯ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರೀತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಯಶಸು",
+        "raw": "ಮಕರ ೫» ಯಶಸು '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಕುಂಭ » ಆತಂಕ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಮೀನ » ಶಾಂತಿ :"
+      }
+    ]
+  }
+}

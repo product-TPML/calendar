@@ -1,0 +1,172 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\09\\11-09-2026.jpg",
+                   "date":  "11-09-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "existing-paksha-ocr",
+                                       "raw":  "ರರ ಕೃಷ್ಣ",
+                                       "value":  "ಕೃಷ್ಣ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "11-09-2026",
+                                   "quote":  "ವನದಲಿ ತಡವಾದ ಗೆಲುವು ಕೂಡ ಗೆಲು"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಸಿಂಹ/ಕನ್ಯಾ",
+                                     "sunrise":  "06:08",
+                                     "sunset":  "18:23"
+                                 },
+                    "events":  [
+                                   "ಬೆನಕನ ಅಮವಾಸ್ಯೆ",
+                                   "ನಕ್ತವ್ರತ ಮುಕ್ತಾಯ ಹುನಗುಂದಯಲ್ಲಿ",
+                                   "ಸಂಗಮೇಶ್ವರ ಜಾತ್ರೆ",
+                                   "ಇಲಕಲ ಮಹಂತಸ್ವಾಮಿ ಜಾತ್ರೆ",
+                                   "ಜರಾ ಜಿವಂತಿಕಾ ಪೂಜೆ",
+                                   "ಬಸರಕೋಡ ಶ್ರೀ ಪವಾಡ",
+                                   "ಬಸವೇಶ್ವರ ಸಪ್ತ ಭಜನೆ",
+                                   "ದಾಟನಾಳ ಕಲ್ಮೇಶ್ವರ ಜಾತ್ರೆ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಪೂರ್ವಾ",
+                                                        "endsAt":  "13.16",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಅಮಾವಾಸ್ಯೆ",
+                                                    "endsAt":  "08.57",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಸಾಧ್ಯ",
+                                                   "endsAt":  "17.02",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಕಿಂಸ್ತುಘ್ಪ",
+                                                     "endsAt":  "20.18",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ _ಕಿಂಸ್ತುಘ್ಪ 20.18"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  26,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಸಿಂಹ",
+                                      "chandraEntryRashi":  "ಸಿಂಹ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 10:30 - 12:00.",
+                                    "gulikaKala":  "ಬೆ. 07:30 - 09:00",
+                                    "yamaganda":  "ಮ. 03:00 - 04:30",
+                                    "arthaPrahara":  "ಮ. 01:30 - 03:00",
+                                    "shubhaSamaya":  "ಬೆ. 07:05 - 08:37"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಮೇಷ » ಪ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಬುದ್ದಿವಂತಿಕೆ",
+                                        "raw":  "ವೃಷಭ » ಬುದ್ದಿವಂತಿಕೆ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಸಮಸೆ",
+                                        "raw":  "ಮಿಥುನ ೫» ಸಮಸೆ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಕಾಟರ್ಕು ಗಾರಪ",
+                                        "raw":  "ಕರ್ಕಾಟರ್ಕು ಗಾರಪ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಸಿಂಹ ೫» ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಅಸೂಯ",
+                                        "raw":  "ಕನ್ಯಾ» ಅಸೂಯ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ತುಲಾ» ಸಂತೋಷ."
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಕೀರ್ತಿ",
+                                        "raw":  "ವೃಶ್ಚಿಕ». ಕೀರ್ತಿ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಅಭಿವೃದ್ಧಿ",
+                                        "raw":  "ಧನಸ್ಸು » ಅಭಿವೃದ್ಧಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಮಕರ ». ಖರ್ಚು."
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಕುಂಭ » ಯಶಸ್ಸು."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಅಭಿವೃದ್ಧಿ",
+                                        "raw":  "ಮೀನ » ಅಭಿವೃದ್ಧಿ"
+                                    }
+                                ]
+                }
+}

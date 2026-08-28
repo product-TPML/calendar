@@ -1,0 +1,169 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\07\\16-07-2026.jpg",
+                   "date":  "16-07-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "existing-paksha-ocr",
+                                       "raw":  "ಪರ ಶುಕ್ಕ್ಶ್ಷ್ಣ",
+                                       "value":  "ಶುಕ್ಲ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "16-07-2026",
+                                   "quote":  "ರೂ ಏಳುವವನೇ ನಿಜವಾದ ಗದ್ದ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ನಿಜ ಜ್ಯೇಷ್ಠ/ಆಷಾಢ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮಿಥುನ/ಕರ್ಕ",
+                                     "sunrise":  "06:01",
+                                     "sunset":  "18:50"
+                                 },
+                    "events":  [
+                                   "ಗುರು ಪಶ್ಚಿಮಾಸ್ತ. ಜಗನ್ನಾಥ ರಥ ಯಾತ್ರೆ",
+                                   "ಪುರಿ.",
+                                   "ಮಾತಿಕಲ್ಲು ವೆಂಕಟರಮಣ ರಥ",
+                                   "ಓಕ್ಕಲೇರಿ",
+                                   "ಮಾರ್ಕಂಡೇಯ ಜಯಂತಿ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಆಶ್ಚೇಷಾ",
+                                                        "endsAt":  "19.52",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ದ್ವಿತೀಯಾ",
+                                                    "endsAt":  "08.53",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಸಿದ್ಧಿ",
+                                                   "endsAt":  "25.22",
+                                                   "nextDay":  true,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ತೈತಿಲ",
+                                                     "endsAt":  "19.36",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ತೈತಿಲ 19.36"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ಸೌರ ವರ್ಷಾ",
+                                      "solarYear":  1,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಮಿಥುನ",
+                                      "chandraEntryRashi":  "ಕರ್ಕ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "_ಮ. 01:30 - 03:00",
+                                    "gulikaKala":  "ಬೆ.9:00 - 10:30.",
+                                    "yamaganda":  "ಬೆ.06:00-07:30",
+                                    "arthaPrahara":  "ಮ. 03:00 - 04:30",
+                                    "shubhaSamaya":  "ಸ. 06:23 - 07:52"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಕೀರ್ತಿ",
+                                        "raw":  "ಮೇಷ ೨» ಕೀರ್ತಿ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ವೃಷಭ » ಪ್ರೀತಿ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಅಭಬಿವದಿ",
+                                        "raw":  "ಮಿಥುನ » ಅಭಬಿವದಿ."
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಬುದ್ಧಿವಂತಿಕೆ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಬುದ್ಧಿವಂತಿಕೆ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಅಭವೃದ್ಧಿ",
+                                        "raw":  "ಸಿಂಹ » ಅಭವೃದ್ಧಿ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಸ್ಪರ್ಧೆ",
+                                        "raw":  "ಕನ್ಯಾ ಸ್ಪರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಸರಿಪತ್ತು",
+                                        "raw":  "ತುಲಾ» ಸರಿಪತ್ತು"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಪ್ರಯಾಣ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಪ್ರಯಾಣ :"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಪ್ರತಿರೋಧ",
+                                        "raw":  "ಧನಸ್ಸು » ಪ್ರತಿರೋಧ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ವಿಶಾಂತಿ",
+                                        "raw":  "ಮಕರ ೫. ವಿಶಾಂತಿ \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಕುಂಭ » ಸಾಲ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಮೀನ » ಅನುಕೂಲ."
+                                    }
+                                ]
+                }
+}

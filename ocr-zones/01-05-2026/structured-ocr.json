@@ -1,0 +1,175 @@
+{
+  "source": {
+    "image": "data\\2026\\05\\01-05-2026.jpg",
+    "date": "01-05-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "01-05-2026",
+      "quote": "ಶಿಕ್ಷಣ ಇದ್ದವನು ಜಗತ್ತನ್ನೇ ಗೆಲ್ಲಬಲ್ಲ"
+    },
+    "calendar": {
+      "months": [
+        "ವೈಶಾಖ",
+        "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೇಷ/ವೃಷಭ",
+      "sunrise": "05:59",
+      "sunset": "18:34"
+    },
+    "events": [
+      "ಕಾರ್ಮಿಕರ ದಿನಾಚರಣೆ",
+      "ಆಗಿ ಹುಣ್ಣಿಮೆ",
+      "ವ್ರತ",
+      "ಹುಣ್ಣಿಮೆ ಸಮಾಪ್ತಿ ರಾತ್ರಿ 10.52",
+      "ಬುದ್ದ",
+      "ಜಯಂತಿ",
+      "ಕೂರ್ಮ ಜಯಂತಿ",
+      "ವೈಶಾಕ ಸ್ನಾನ",
+      "ಸಮಾಪ್ತಿ",
+      "ಪುಷ್ಟಿಪತಿ ವೈಶಾಕ ಜಯಂತಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಸ್ವಾತಿ",
+        "endsAt": "28.35",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಹುಣ್ಣಿಮೆ",
+        "endsAt": "22.53",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸಿದ್ಧಿ",
+        "endsAt": "21.13",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಿಷ್ಟಿ",
+        "endsAt": "10.01",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ  ವಿಷ್ಟಿ 10.01"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 18,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮೇಷ",
+      "chandraEntryRashi": "ತುಲಾ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00",
+      "gulikaKala": "ಚೆ.07:30- 09:00",
+      "yamaganda": "ಮ. 05:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 03:00",
+      "shubhaSamaya": "ಸ. 06:56 - 08:41"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಮೇಷ » ಸ್ನೇಹ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ವೃಷಭ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಮಿಥುನ » ತಾಳ್ಮೆ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕರ್ಕಾಟಕ: ಅನುಕೂಲ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಸಿಂಹ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಕನ್ಯಾ» ಸಂತೋಷ :"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ತುಲಾ ೫» ಶಾಂತಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಶುಭ",
+        "raw": "ವೃಶ್ಚಿಕ » ಶುಭ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯೋಗ",
+        "raw": "ಧನಸ್ಸು » ಯೋಗ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸೌಮೃತೆ",
+        "raw": "ಮಕರ » ಸೌಮೃತೆ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಾಲೆ",
+        "raw": "ಕುಂಭ » ಸಾಲೆ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಮೀನ » ಪ್ರತಿರೋಧ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "source": {
+    "image": "data\\2026\\12\\13-12-2026.jpg",
+    "date": "13-12-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಶುಕ್ಲ .",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "13-12-2026",
+      "quote": "ದಿನ ಕೆಲಸ ನಾಳಿನ ಯಶಸಿಗೆ ಮೆಟ್ಟಿ"
+    },
+    "calendar": {
+      "months": [
+        "ಕಾರ್ತಿಕ/ಮಾರ್ಗಶಿರ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಶ್ಚಿಕ/ಧನು",
+      "sunrise": "06:32",
+      "sunset": "17:55"
+    },
+    "events": [
+      "ಕದರಮಂಡಲಗಿ ಆಂಜನೇಯಸ್ವಾಮಿ ತೆಪ್ಪೋತ್ಸವ",
+      "ವಿನಾಯಕ",
+      "ಚತುರ್ಥಿ",
+      "ಗುರು ವಕ್ರಿ",
+      "ಸವಡಿ ಸಂಗಮೇಶ್ವರ ಕಾರ್ತಿಕ",
+      "ಎರೇಸಿಗೇಮ್ಮನ",
+      "ಉತ್ಸವ ಹಾಗೂ ವೀರಭದ್ರೇಶ್ವರ ಕಾರ್ತಿಕ",
+      "ತೀರುಚಾನೂರ ಆನೇಗುಡ್ಡ",
+      "ರಥ",
+      "ಆಸುಟಿ ಗಣಪತಿ ರವಳನಾಥ ಉತ್ಸವ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಶ್ರವಣ",
+        "endsAt": null,
+        "nextDay": false,
+        "fullDay": true
+      },
+      "tithi": {
+        "name": "ಚತುರ್ಥಿ",
+        "endsAt": "16.48",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಧ್ರುವ",
+        "endsAt": "12.15",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "30.05",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬವ 36.6 '"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯ",
+      "ritu": "ರ್ಥ 16.35",
+      "solarYear": 28,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ವಶಿಕ",
+      "chandraEntryRashi": "ಮಕರ"
+    },
+    "timings": {
+      "rahuKala": "ಸ, 04:30 - 06:00.",
+      "gulikaKala": "ಮ.5:00- 64:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಬ. 10:30 - 12:00",
+      "shubhaSamaya": "ಸ. 09:30 - 11:18"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ಮೇಷ » ಪ್ರಯತ್ನ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸೌಮ್ಯತ",
+        "raw": "ವೃಷಭ » ಸೌಮ್ಯತ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಗಾರವ",
+        "raw": "ಮಿಥುನ » ಗಾರವ '"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ಕರ್ಕಾಟಕ ಶ್ರೇಷ್ಠತೆ ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಸಿಂಹ » ಯಶಸ್ಸು :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಯೋಗೆ",
+        "raw": "ಕನ್ಯಾ ೫ ಯೋಗೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ತುಲಾ » ಸಹಾಯ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪರಿಶ್ರಮ",
+        "raw": "ವೃಶ್ಚಿಕ » ಪರಿಶ್ರಮ :"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಕರುಣೆ",
+        "raw": "ಧನಸ್ಸು » ಕರುಣೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸ್ಟೇಹ",
+        "raw": "ಮಕರ » ಸ್ಟೇಹ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಕುಂಭ » ಕೋಪ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ಮೀನ » ತೊಂದರೆ"
+      }
+    ]
+  }
+}

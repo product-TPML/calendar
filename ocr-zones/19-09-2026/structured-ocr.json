@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\09\\19-09-2026.jpg",
+    "date": "19-09-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "19-09-2026",
+      "quote": "ಶಿನ್ನ ಉಸಿರು ಇರುವವರೆಗೆ ಆಸೆ ಇರುತದ"
+    },
+    "calendar": {
+      "months": [
+        "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಸಿಂಹ/ಕನ್ಯಾ",
+      "sunrise": "06:08",
+      "sunset": "18:18"
+    },
+    "events": [
+      "ಜ್ಯೇಷ್ಠಾ ಗೌರಿ ವಿಸರ್ಜನೆ",
+      "ದೋರಕ ಧಾರಣಂ",
+      "ದುರ್ಗಾಷ್ಟಮಿ",
+      "ದಧೀಚಿ ಜಯಂತಿ",
+      "ಶ್ರೀಜಗನ್ನಾಥದಾಸರ ಆರಾಧನೆ",
+      "ಲಕ್ಷ್ಮೀಶ್ವರ",
+      "ತಾ. ಗೊಜನೂರು ಬಾಲಲೀಲಾ ಮಹಾಂತ ಶಿವಯೋಗೀಶ್ವರ",
+      "ಮರಿದೇವರ ಮಠದ ಶ್ರೀ ವಿರುಪಾಕ್ಷೇಶ್ವರ ಪು.ತಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ನೂಲಾ",
+        "endsAt": "02.54",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಅಷ್ಟಮಿ",
+        "endsAt": "15.27",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಆಯುಷ್ಕಾನ",
+        "endsAt": "14.29",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "28.41",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 28.41"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 3,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಕನ್ನಾ",
+      "chandraEntryRashi": "ಧನು"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ. 06:00 - 07:30",
+      "yamaganda": "ಮ. 01:30 - 03:00",
+      "arthaPrahara": "ಮ. 12:00 - 01:30",
+      "shubhaSamaya": "ಮ. 06:31 - 08:19"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಮೇಷ ». ಖರ್ಚು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಭಯ",
+        "raw": "ವೃಷಭ » ಭಯ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಮಿಥುನ ». ಆತಂಕ '"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಕರ್ಕಾಟಕ ಪ್ರೋತ್ಸಾಹ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ವಿನಯ",
+        "raw": "ಸಿಂಹ » ವಿನಯ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕನ್ಯಾ ಯಶಸ್ಸು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ತುಲಾ» ಅನುಕೂಲ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ವೃಶ್ಚಿಕ » ಶಾಂತಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಧನಸ್ಸು ». ವಿಳಂಬ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಒಳ್ಳೆಯ ಕೆಲಸ",
+        "raw": "ಮಕರ ೫ ಒಳ್ಳೆಯ ಕೆಲಸ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ಕುಂಭ ». ಶ್ರೇಷ್ಠತೆ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಮೆಚ್ಚುಗೆ",
+        "raw": "ಮೀನ » ಮೆಚ್ಚುಗೆ"
+      }
+    ]
+  }
+}

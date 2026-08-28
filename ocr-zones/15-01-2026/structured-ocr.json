@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\01\\15-01-2026.jpg",
+    "date": "15-01-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "sunsetReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "date_right_2.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "15-01-2026",
+      "quote": "ಎಳ್ಳುಬೆಲ್ಲತಿಂದು ಒಳ್ಳೆ ಮಾತಾಡಿ"
+    },
+    "calendar": {
+      "months": [
+        "ಪುಷ್ಯ/ಮಾಘ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": "ಧನು/ಮಕರ",
+      "sunrise": "06:45",
+      "sunset": "18:12"
+    },
+    "events": [
+      "ಮಕರ ಸಂಕ್ರಾಂತಿ",
+      "ಸಿದ್ದೇಶ್ವರ ಜಾತ್ರೆ",
+      "ಸಮಾಪ್ತಿ",
+      "ವಿಜಯಪುರ ಮತ್ತು ಸೋಲಾಪುರ ಸೊಗಲ",
+      "ಸೋಮೇಶ್ವರ ತೆಪ್ಪೋತ್ಸವ ಕಕ್ಕೇರಿ ತಾ. ಸುರಪುರ",
+      "ಸೋಮನಾಥ ರಥಗಳು."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಜ್ಯೇಷ್ಠಾ",
+        "endsAt": "29.48",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಾದಶಿ",
+        "endsAt": "20.17",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವೃದ್ಧಿ",
+        "endsAt": "02.38",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌಲವ",
+        "endsAt": "07.07",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೌಲವ 07.07"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಶಿಶಿರ",
+      "solarYear": 2,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮಕರ",
+      "chandraEntryRashi": "29.48"
+    },
+    "timings": {
+      "rahuKala": "_ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಚೆ. 59:96 10:36",
+      "yamaganda": "ಚೆ.08:00- 07:30",
+      "arthaPrahara": "ಮ. 03:00 3 04:30",
+      "shubhaSamaya": "ರಾ. 07:59 - 09:46"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಮೇಷ » . ಖರ್ಚು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ದಾನ",
+        "raw": "ವೃಷಭ » ದಾನ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮಿಥುನ » ಯಶಸ್ಸು :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಆನಂದ",
+        "raw": "ಕರ್ಕಾಟರ್ಕ. ಆನಂದ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಸಿಂಹ ೨» ಕೀರ್ತಿ '"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಕನ್ಯಾ» ಅಭಿವೃದ್ದಿ :"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ತುಲಾ ೫ ಪ್ರೀತಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸೌಮ್ಯತೆ",
+        "raw": "ವೃಶ್ಚಿಕ » ಸೌಮ್ಯತೆ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಬಲ",
+        "raw": "ಧನಸ್ಸು » ಬಲ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸಂಪತು",
+        "raw": "ಮಕರ » ಸಂಪತು '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಕುಂಭ » ಸಂತೋಷ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅಲೆದಾಟ",
+        "raw": "ಮೀನ » ಅಲೆದಾಟ"
+      }
+    ]
+  }
+}

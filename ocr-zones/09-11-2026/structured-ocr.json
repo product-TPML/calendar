@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\09-11-2026.jpg",
+    "date": "09-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಕೃಷ್ಣ | |",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "09-11-2026",
+      "quote": "ೋ ದಾರಿಲಿ ನಿಯತ್ತು ಇದ್ದರೆ ತಡಿಯೋ ತಾಕತ್ತು ಯಾರಿ:"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:15",
+      "sunset": "17:51"
+    },
+    "events": [
+      "ದೀಪಾವಳಿ ಅಮಾವಾಸ್ಯೆ",
+      "ಸೋಮವವತಿ ಅಮಾವಾಸ್ಕೆ",
+      "ಸಮಾಪ್ತಿ",
+      "ಇಷ್ಟಿ",
+      "ಕಾನೂನು ಸೇವೆಗಳ ದಿನ.",
+      "ಬಂಗಾರಗುಂಡ ತಾ. ಮುದ್ದೇಬಿಹಾಳ ಮಹಾಲಕ್ಷ್ಮೀ ಜಾತ್ರೆ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಸ್ವಾತಿ",
+        "endsAt": "07.24",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಅಮಾವಾಸ್ಯೆ",
+        "endsAt": "12.32",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸೌಭಾಗ್ಯ",
+        "endsAt": "26.57",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೆಸ್ತುಘ್ತ",
+        "endsAt": "25.13",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೆಸ್ತುಘ್ತ 25.13"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 24,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ತುಲಾ",
+      "chandraEntryRashi": "ತುಲಾ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ.01:30- 03:00",
+      "yamaganda": "ಬೆ. 10:30 - 12:00",
+      "arthaPrahara": "ಚೆ. 0:00 - 10:30",
+      "shubhaSamaya": "ಠಾ. 1149-0132 (ಮರುದಿನ)"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮೇಷ ೫» ಸಾಲ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ವೃಷಭ ». ವಿಳಂಬ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಭಯ",
+        "raw": "ಮಿಥುನ » ಭಯ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಭಯ",
+        "raw": "ಕರ್ಕಾಟಕ ಭಯ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಸಿಂಹ » ಖರ್ಚು"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕನ್ಯಾ ೫ ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ತುಲಾ» ಅನುಕೂಲ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ವೃಶ್ಚಿಕ» ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರೀತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮಕರ ೫ ಲಾಭ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅತಂಕ",
+        "raw": "ಕುಂಭ » ಅತಂಕ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ಮೀನ ». ತೊಂದರೆ"
+      }
+    ]
+  }
+}

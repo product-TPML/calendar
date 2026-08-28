@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\19-04-2026.jpg",
+    "date": "19-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಮುಂ ಶುಕ್ಲ ಮಮ",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "19-04-2026",
+      "quote": "ಇಗಬೇಕು ತಿಳಿದವರ ಮುಂದೆ. ತುಳಿದವರ ಮುಂ!"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:05",
+      "sunset": "18:32"
+    },
+    "events": [
+      "ಅಕ್ಷಯ ತೃತೀಯಾ",
+      "ಪರಶುರಾಮ ಜಯಂತಿ",
+      "ಶ್ರೀ ಬಸವೇಶ್ವರ ಜಯಂತಿ",
+      "ತ್ರೇತಾಯುಗಾದಿ",
+      "ಗದಗ ತಾ. ಬಿಂಕದಕಟ್ಟಿ",
+      "ಶ್ರೀರಾಮ ಕರುಣಾನಂದ ಸ್ವಾಮಿ ಪು.ತಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಮ",
+        "endsAt": "07.10",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಿತೀಯಾ",
+        "endsAt": "10.50",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಆಯುಷ್ಕಾನ",
+        "endsAt": "20.02",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": "21.08",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ತೈಕಿಲ 21.08 _"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 6,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮೇಷ",
+      "chandraEntryRashi": "ಮೇಷ"
+    },
+    "timings": {
+      "rahuKala": "ಸ, 04:30 - 06:00.",
+      "gulikaKala": "ಮ.65:00- 64:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಜೆ. 16:56 12:06",
+      "shubhaSamaya": "ಬೆ. 02:52 - 04:18"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೇಷ ». ಯಶಸ್ಸು '"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ವೃಷಭ » ಆತಂಕ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಭಯ",
+        "raw": "ಮಿಥುನ » ಭಯ '"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಕರ್ಕಾಟಕ. ಸ್ನೇಹ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ಸಿಂಹ » ಪ್ರಗತಿ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಕನ್ಯಾ» ಸಂತೋಷ."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ತುಲಾ» ವಿಳಂಬ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ವೃಶ್ಚಿಕ » ಸಂತೋಷ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸಾಲ",
+        "raw": "ಧನಸ್ಸು ». ಸಾಲ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸಮಸ್ಯೆ",
+        "raw": "ಮಕರ ೫» ಸಮಸ್ಯೆ :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಶುಭ್‌",
+        "raw": "ಕುಂಭ » ಶುಭ್‌ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಮೀನ » ಪ್ರತಿರೋಧ"
+      }
+    ]
+  }
+}

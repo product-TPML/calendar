@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\10-11-2026.jpg",
+    "date": "10-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಶುಕ್ಲ",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "10-11-2026",
+      "quote": "ಹಾಸಿಗೆ ಇದ್ದಷ್ಟು ಕಾಲು ಚಾಚು"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:16",
+      "sunset": "17:50"
+    },
+    "events": [
+      "ಗೋ ಪೂಜೆ",
+      "ದೀಪಾವಳಿ ಪಾಡ್ಯ",
+      "ಬಲಿ ಪ್ರತಿಪದಾ.",
+      "ಅಭ್ಯಂಗ ಸ್ನಾನ. ಅನ್ನಕೂಟ",
+      "ಬುಧ ಪುರ್ವೋದಯ",
+      "ಶ್ರೀ ಚನ್ನಬಸವೇಶ್ವರ ಜಯಂತಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ವಿಶಾಖಾ",
+        "endsAt": "09.19",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಪ್ರತಿಪದಾ",
+        "endsAt": "14.01",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶೋಭನ",
+        "endsAt": "27.16",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "26.54",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 26.54"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 25,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ತುಲಾ",
+      "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ.12:00- 01:30",
+      "yamaganda": "ಬೆ.09:00 - 1030",
+      "arthaPrahara": "ಬೆ. 07:30 - 0:00",
+      "shubhaSamaya": "unavailable"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಮೇಷ ». ವಿಳಂಬ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ವೃಷಭ » ಸಂತೋಷ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸ್ಟೇಹ",
+        "raw": "ಮಿಥುನ » ಸ್ಟೇಹ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಕರ್ಕಾಟಕ: ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಮಸ್ಯ",
+        "raw": "ಸಿಂಹ » ಸಮಸ್ಯ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಕನ್ಯಾ» ಸಂತೋಷ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಾಲ",
+        "raw": "ತುಲಾ ೫ ಸಾಲ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಶುಭ",
+        "raw": "ವೃಶ್ಚಿಕ » ಶುಭ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರತಿಭೆ",
+        "raw": "ಧನಸ್ಸು ». ಪ್ರತಿಭೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಮಕರ ೫». ಆತಂಕ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕುಂಭ » ಯಶಸ್ಸು ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಮೀನ » ಪ್ರತಿರೋಧ"
+      }
+    ]
+  }
+}

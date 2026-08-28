@@ -1,0 +1,166 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\01\\31-01-2026.jpg",
+                   "date":  "31-01-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "31-01-2026",
+                                   "quote":  "ಬೇ ಮೊದಲ ಪಾಠಶಾಲೆ, ತಾಯಿಯೇ ಮೊದ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಪುಷ್ಯ/ಮಾಘ"
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಧನು/ಮಕರ",
+                                     "sunrise":  "06:46",
+                                     "sunset":  "18:20"
+                                 },
+                    "events":  [
+                                   "ವಿಶ್ವಕರ್ಮಾ ಜಯಂತಿ",
+                                   "ಮೂಡಿ ಶ್ರೀ ಶಿವಲಿಂಗೇಶ್ವರ",
+                                   "ತಾ. ಸೊರಬ",
+                                   "ಮುಂಡರಗಿ ಅನ್ನದಾನೇಶ್ವರಿ",
+                                   "ಜಾತ್ರೆಗಳು",
+                                   "ಮುಳಗುಂದ ಬಾಲಲೀಲಾ ಮಹಾಂತ",
+                                   "ಶಿವಯೋಗಿ ರಥ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಪುನರ್ವಸು",
+                                                        "endsAt":  "25.34",
+                                                        "nextDay":  true,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಕ",
+                                                    "endsAt": "08.26",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವಿಷ್ಕಂಭ",
+                                                   "endsAt":  "13.33",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಗರಜ",
+                                                     "endsAt":  "19.08",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಗರಜ 19.08."
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಶಿಶಿರ",
+                                      "solarYear":  18,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಮಕರ",
+                                      "chandraEntryRashi":  "20.01"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 09:00 - 10:30.",
+                                    "gulikaKala":  "ಬೆ. 06:00 - 07:30.",
+                                    "yamaganda":  "ಮ.01:30- 03:00",
+                                    "arthaPrahara":  "ಮ. 12:00 01:30",
+                                    "shubhaSamaya":  "ರಾ. 11:21 - 12:49"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಪ್ರತಿರೋಧ",
+                                        "raw":  "ಮೇಷ » ಪ್ರತಿರೋಧ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸೌಮ್ಯತೆ",
+                                        "raw":  "ವೃಷಭ » ಸೌಮ್ಯತೆ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಪ್ರಗತಿ",
+                                        "raw":  "ಮಿಥುನ » ಪ್ರಗತಿ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಸಾಲ..."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಸಿಂಹ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ದೃಢ ನಿರ್ಧಾರ",
+                                        "raw":  "ಕನ್ಯಾ ದೃಢ ನಿರ್ಧಾರ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಶಾಂತಿ",
+                                        "raw":  "ತುಲಾ ೫» ಶಾಂತಿ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಧನಸ್ಸು » ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ಮಕರ ೫» ಮೆಚ್ಚುಗೆ \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಅಲೆದಾಟ",
+                                        "raw":  "ಕುಂಭ » ಅಲೆದಾಟ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಮೀನ » ಪ್ರೋತ್ಸಾಹ"
+                                    }
+                                ]
+                }
+}

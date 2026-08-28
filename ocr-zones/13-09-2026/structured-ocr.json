@@ -1,0 +1,173 @@
+{
+  "source": {
+    "image": "data\\2026\\09\\13-09-2026.jpg",
+    "date": "13-09-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "13-09-2026",
+      "quote": "ಇ್ಲಹೆಜೆಗಳೂ ದೊಡ್ಡದೂರ ತಲುಪಿಸುತ:"
+    },
+    "calendar": {
+      "months": [
+        "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಸಿಂಹ/ಕನ್ಯಾ",
+      "sunrise": "06:08",
+      "sunset": "18:22"
+    },
+    "events": [
+      "ಚಂದ್ರ ದರ್ಶನ",
+      "ಹರತಾಳಿಕಾ",
+      "ಗಜಗೌರಿ",
+      "ಶ್ರೀಭೂವರಾಹ",
+      "ಜಯಂತಿ",
+      "ಸಾಮವೇದಿ ಉಪಕರ್ಮ",
+      "ತಾಪಸ ಮನ್ವಾದಿ",
+      "ಆಳಂದ ಸದ್ಗುರು ಶರಣಶೀವವಲಿಂಗೇಶ್ವರ ಸಾಧೂ ಮಹಾ.",
+      "ಅಡ್ಡಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಹಸ್ತ",
+        "endsAt": "13.7",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಿತೀಯಾ",
+        "endsAt": "07.09",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶುಕ್ತ",
+        "endsAt": "13.43",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": "19.03",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ತೈತಿಲ 19.03"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 28,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಸಿಂಹ",
+      "chandraEntryRashi": "ಕನ್ಯಾ"
+    },
+    "timings": {
+      "rahuKala": "ಸ, 04:30 - 06:00.",
+      "gulikaKala": "ಮ.65:00- 64:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಬ. 10130 - 12:00",
+      "shubhaSamaya": "ಸ. 07:04 - 08:40"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮೇಷ » ಸಂತೋಷ."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "* ಸಂತೋಷ",
+        "raw": "ವೃಷಭ »* ಸಂತೋಷ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮಿಥುನ ೫ ಅನುಕೂಲ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಕಾಟರ್ಕ ' ಲಾಭ",
+        "raw": "ಕರ್ಕಾಟರ್ಕ ' ಲಾಭ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಅಸೂಯೆ",
+        "raw": "ಸಿಂಹ ೫» ಅಸೂಯೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಕನ್ಯಾ 0 ಕೀರ್ತಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ತುಲಾ ೫» ಸ್ನೇಹ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಶ್ಚಿಕ » ಯಶಸ್ಸು :"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಉತ್ಸಾಹ",
+        "raw": "ಧನಸ್ಸು » ಉತ್ಸಾಹ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮಕರ ೫». ಯಶಸ್ಸು,"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ದೃಢ ನಿರ್ಧಾರ",
+        "raw": "ಕುಂಭ ೫ ದೃಢ ನಿರ್ಧಾರ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಕುತೂಹಲ",
+        "raw": "ಮೀನ » ಕುತೂಹಲ."
+      }
+    ]
+  }
+}

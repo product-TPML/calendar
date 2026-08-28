@@ -1,0 +1,173 @@
+{
+  "source": {
+    "image": "data\\2026\\09\\27-09-2026.jpg",
+    "date": "27-09-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "sunsetReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "date_right_2.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "27-09-2026",
+      "quote": "ೋವು ನಿನ್ನ ಮೌಲ್ಲವನ್ನು ಕಡಿಮೆ ಮಾಡು"
+    },
+    "calendar": {
+      "months": [
+        "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಸಿಂಹ/ಕನ್ಯಾ",
+      "sunrise": "06:08",
+      "sunset": "18:12"
+    },
+    "events": [
+      "ಮಹಾಲಯ (ಪಿತೃಪಕ್ಷ) ಆರಂಭ",
+      "ಪ್ರತಿಪದ ಶ್ರಾದ್ಧ",
+      "ಜಾಗತಿಕ",
+      "ಪರ್ಯಟನ ದಿನ",
+      "ವಿಶ್ವ ಪ್ರವಾಸೋದ್ಯಮ ದಿನಾಚರಣೆ",
+      "ವಿಶ್ವ",
+      "ಕಿವುಡರ ದಿನ",
+      "ಗುಬ್ಬೇವಾಡ ತಾ. ಇಂಡಿ ಏಳುತಲೆ ಸಿದ್ಧಟಗಿ",
+      "ಮಹಾ ಜಾತ್ರೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಉ. ಭಾ",
+        "endsAt": "11.08",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಪ್ರತಿಪದಾ",
+        "endsAt": "20.59",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವೃಡ್ಧಿ",
+        "endsAt": "11.17",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "0.45",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 0.45"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 11,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕನ್ನಾ",
+      "chandraEntryRashi": "ಮೀನ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 04:30 -06:00",
+      "gulikaKala": "ಮ.05:00 - 04:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಬೆ. 1030 - 12:00",
+      "shubhaSamaya": "ಚೆ. 06:24 - 07:59"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಮೇಷ » ಕೋಪ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ವೃಷಭ » ಶಾಂತಿ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಯಶಸ",
+        "raw": "ಮಿಥುನ » ಯಶಸ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಕಾಟರ್ಕ ಖರ್ಚು",
+        "raw": "ಕರ್ಕಾಟರ್ಕ ಖರ್ಚು"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಸಿಂಹ » ಯಶಸ್ಸು:"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಕನ್ಯಾ ೧ ಗೌರವ :"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ತುಲಾ» ಅನುಕೂಲ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ವೃಶ್ಚಿಕ» ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ಧನಸ್ಸು ». ಸಂಪತ್ತು."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮಕರ » ಸಂತೋಷ."
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಕುಂಭ ». ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಮೀನ ». ತಾಳ್ಮೆ"
+      }
+    ]
+  }
+}

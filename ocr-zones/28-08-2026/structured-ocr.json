@@ -1,0 +1,168 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\08\\28-08-2026.jpg",
+                   "date":  "28-08-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "28-08-2026",
+                                   "quote":  "೨ವಸರದಲ್ಲಿಮಾಡಿದ ಕೆಲಸ ಅಳುವಿಗೆ ಕಾರಣ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಆಷಾಢ",
+                                                    "ಶ್ರಾವಣ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕರ್ಕ/ಸಿಂಹ",
+                                     "sunrise":  "06:08",
+                                     "sunset":  "18:33"
+                                 },
+                    "events":  [
+                                   "ನೂಲು ಹುಣ್ಣಿಮೆ",
+                                   "ರಕ್ಷಾಬಂಧನ",
+                                   "ಸಂಪತ್‌ ಶುಕ್ರವಾರ",
+                                   "ಜೀವಂತಿಕಾ ಪೂಜೆ",
+                                   "ಪಂಚಕ. ಹಿರಣ್ಯಕೇಶಿ",
+                                   "ತೈತರೀಯ",
+                                   "ಶ್ರಾವಣಿ. ಖಂಡಗ್ರಾಸ ಚಂದ್ರ ಗ್ರಹಔ (ಭಾರತದಲ್ಲಿ",
+                                   "ಕಾಣಿಸುವುದಿಲ್ಲ)."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಶತಭಿಷಾ",
+                                                        "endsAt":  "27.13",
+                                                        "nextDay":  true,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಹುಣ್ಣಿಮೆ",
+                                                    "endsAt":  "09.49",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಅತಿಗಂಡ",
+                                                   "endsAt":  "07.28",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಬಾಲವ ೫",
+                                                     "endsAt":  "1.37",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬಾಲವ ೫1.37"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  12,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಸಿಂಕ್‌",
+                                      "chandraEntryRashi":  "ಕುಂಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 10:30 - 12:00.",
+                                    "gulikaKala":  "ಬೆ.07:30- 09:00",
+                                    "yamaganda":  "ಮ. 03:00 - 04:30",
+                                    "arthaPrahara":  "ಮ. 01:30 - 03:00",
+                                    "shubhaSamaya":  "ಮ. 07:44 - 09:23"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮೇಷ ೫» ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ವೃಷಭ » ಲಾಭ. ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಮಿಥುನ » ಭಯ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಅಭಿವೃದ್ಧಿ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಅಭಿವೃದ್ಧಿ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಸಿಂಹ » ಸಾಲ:"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ವಿಳಂಬ",
+                                        "raw":  "ಕನ್ಯಾ ೧ ವಿಳಂಬ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಪ್ರತಿರೋಧ",
+                                        "raw":  "ತುಲಾ.» ಪ್ರತಿರೋಧ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಮರೆವು",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಮರೆವು"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಭಕ್ತಿ",
+                                        "raw":  "ಧನಸ್ಸು » ಭಕ್ತಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಕೀರ್ತಿ",
+                                        "raw":  "ಮಕರ ೫». ಕೀರ್ತಿ \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಹಾಯ",
+                                        "raw":  "ಕುಂಭ » ಸಹಾಯ ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ವಿಶ್ರಾಂತಿ",
+                                        "raw":  "ಮೀನ ». ವಿಶ್ರಾಂತಿ"
+                                    }
+                                ]
+                }
+}

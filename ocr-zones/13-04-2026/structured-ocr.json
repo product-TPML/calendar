@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\13-04-2026.jpg",
+    "date": "13-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ 3 ಗದು ಕೃಷ್ಣ ಹು ದುದು",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "13-04-2026",
+      "quote": "ಮ್ಮಸಾಮರ್ಥ್ಯವನ್ನು ನಂಬಿ, ಗೆಲುವು ನಿಮ್ಮೆಡೆಗೆ ಬರು"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:08",
+      "sunset": "18:32"
+    },
+    "events": [
+      "ವರುಧಿನಿ ಏಕಾದಶಿ",
+      "ಪಂಚಕ",
+      "ಮುದ್ದೇಬಿಹಾಳಾ",
+      "ತಾ. ಗೋನಾಳ ಶಿವಶರಣೆ ಸಾವಿತ್ರ್ಯಮ್ಮ",
+      "ಪುಣ್ಯತಿಥಿ",
+      "ವಲ್ಲಭಾಚಾರ್ಯ ಜಯಂತಿ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಧನಿಷ್ಠಾ",
+        "endsAt": "16.04",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಏಕಾದಶಿ",
+        "endsAt": "25.0",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶುಭ",
+        "endsAt": "17.17",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "13.19",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬವ 13.19 _"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 30,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ಕುಂಭ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ.01130 - 03:00",
+      "yamaganda": "ಚೆ. 10:30 - 12:00",
+      "arthaPrahara": "ಚೆ. ೫:66 - 16:36",
+      "shubhaSamaya": "ಬೆ. 05:18 - 06:57"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ಮೇಷ » ಶ್ರೇಷ್ಠತೆ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ರವ",
+        "raw": "ವೃಷಭ » ರವ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಮಿಥುನ » ಪ್ರೋತ್ಸಾಹ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಕರ್ಕಾಟಕ. ಸ್ನೇಹ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ಸಿಂಹ » ಸಹಾಯ:"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ ಮೆಚ್ಚುಗೆ",
+        "raw": "ಕನ್ಯಾ ಪ ಮೆಚ್ಚುಗೆ :"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ತುಲಾ ೫ ಪ್ರೀತಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ವೃಶ್ಚಿಕ » ಭಕ್ತಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಧನಸ್ಸು ». ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಮಕರ ೫» ಪ್ರೀತಿ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಾಧನೆ",
+        "raw": "ಕುಂಭ » ಸಾಧನೆ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಮೀನ » ಅಭಿವೃದ್ದಿ"
+      }
+    ]
+  }
+}

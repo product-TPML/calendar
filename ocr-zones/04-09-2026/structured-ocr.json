@@ -1,0 +1,172 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\09\\04-09-2026.jpg",
+                   "date":  "04-09-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "existing-paksha-ocr",
+                                       "raw":  "ರ್ಸ್‌ ಕೃಷ್ಣ",
+                                       "value":  "ಕೃಷ್ಣ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "04-09-2026",
+                                   "quote":  "ನಿನ್ನಗುರಿ ನೆನಪಿದರೆ ದಾರಿ ಸಿಗುತ್ತದೆ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಸಿಂಹ/ಕನ್ಯಾ",
+                                     "sunrise":  "06:08",
+                                     "sunset":  "18:28"
+                                 },
+                    "events":  [
+                                   "ಶ್ರೀ ಕೃಷ್ಣಜನ್ಮಾಷ್ಟಮಿ",
+                                   "ದಾದಾ ಭಾಯಿ ನೌರೋಜಿ",
+                                   "ಜಯಂತಿ",
+                                   "ಜ್ಞಾನೇಶ್ವರ ಮಾಲಿ ಜನ್ಮಾಷ್ಟಮಿ",
+                                   "ಮಹಾ. ಬಾಳೆಕುಂದ್ರಿ ಜಯಂತಿ",
+                                   "ಜರಾ ಜಿವಂತಿಕಾ",
+                                   "ಪೂಜೆ",
+                                   "ಜೀವಂತಿಕಾ ಪೂಜೆ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ರೋಹಿಣಿ",
+                                                        "endsAt":  "23.04",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಅಷ್ಟಮಿ",
+                                                    "endsAt":  "24.14",
+                                                    "nextDay":  true,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಹರ್ಷಣ",
+                                                   "endsAt":  "15.44",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಬಾಲವ",
+                                                     "endsAt":  "13.21",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬಾಲವ 13.21"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  19,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಸಿಂಹ",
+                                      "chandraEntryRashi":  "ವೃಷಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 10:30 - 12:00.",
+                                    "gulikaKala":  "ಬೆ. 07:30 - 09:00",
+                                    "yamaganda":  "ಮ. 03:00 - 04:3(",
+                                    "arthaPrahara":  "ಮ. 01:30 - 03:0(",
+                                    "shubhaSamaya":  "ಸ. 08:03 - 09:33"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಸೌಮೃತೆ",
+                                        "raw":  "ಮೇಷ » ಸೌಮೃತೆ \u0027"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಶ್ರೇಷ್ಠತೆ",
+                                        "raw":  "ವೃಷಭ » ಶ್ರೇಷ್ಠತೆ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಬುದ್ದಿವಂತಿಕೆ",
+                                        "raw":  "ಮಿಥುನ » ಬುದ್ದಿವಂತಿಕೆ."
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಕಾಟರ್ಕು ಸ್ಪರ್ಧೆ",
+                                        "raw":  "ಕರ್ಕಾಟರ್ಕು ಸ್ಪರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಸಾಧನೆ",
+                                        "raw":  "ಸಿಂಹ » ಸಾಧನೆ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಕನ್ಯಾ» ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ತುಲಾ » ಪ್ರೋತ್ಸಾಹ :"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ತಾಳ್ಮೆ",
+                                        "raw":  "ವೃಶ್ಚಿಕ». ತಾಳ್ಮೆ ."
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಧನಸ್ಸು » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಆಸಕಿ",
+                                        "raw":  "ಮಕರ ೫ ಆಸಕಿ \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಕುಂಭ » ಪ್ರೋತ್ಸಾಹ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ಮೀನ » ಮೆಚ್ಚುಗೆ"
+                                    }
+                                ]
+                }
+}

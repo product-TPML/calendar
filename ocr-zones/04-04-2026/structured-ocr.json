@@ -1,0 +1,165 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\04\\04-04-2026.jpg",
+                   "date":  "04-04-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "04-04-2026",
+                                   "quote":  "ದಯೆಯೇ ಧರ್ಮದ ಮೂಲ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಚೈತ್ರ",
+                                                    "ವೈಶಾಖ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮೀನ/ಮೇಷ",
+                                     "sunrise":  "06:14",
+                                     "sunset":  "18:31"
+                                 },
+                    "events":  [
+                                   "ಸತಿ ಅನುಸಯಾ ಜಯಂತಿ",
+                                   "ಆಲೂರು ತಾ.",
+                                   "ಮುದ್ದೇಬಿಹಾಳ ಮಾರುತೇಶ್ವರದ ಕೆಂಡದ ಉತ್ಸವ.",
+                                   "ಶಿರಹಟ್ಟಿ ತಾ. ಸಂಕದಾಳ ಶ್ರೀ ಹಾಲೇಶ್ವರ ಮುಳ್ಳುಗದ್ದಿಗೆ",
+                                   "ಮಹೋತ್ಸವ"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಸ್ವಾತಿ",
+                                                        "endsAt":  "21.36",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ದ್ವಿತೀಯಾ",
+                                                    "endsAt":  "10.10",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಹರ್ಷಣ",
+                                                   "endsAt":  "14.17",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ವಣಿಜ",
+                                                     "endsAt":  "23.02",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ  ವಣಿಜ 23.02 _"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ವಸಂತ",
+                                      "solarYear":  21,
+                                      "paksha": "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಮೀನ",
+                                      "chandraEntryRashi":  "ತುಲಾ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 09:00 - 10:30.",
+                                    "gulikaKala":  "ಬೆ. 06:00 - 07:30",
+                                    "yamaganda":  "ಮ. 01:30 - 03:0",
+                                    "arthaPrahara":  "ಮ. 12:00 -01:3(",
+                                    "shubhaSamaya":  "ಬೆ. 11:59 - 01:44"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಮೇಷ » ಲಾಭ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ವೃಷಭ » ಸಂತೋಷ,"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಅನಾರೋಗ್ಯ",
+                                        "raw":  "ಮಿಥುನ » ಅನಾರೋಗ್ಯ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಆತಂಕ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಆತಂಕ \u0027"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ವಿಳಂಬ",
+                                        "raw":  "ಸಿಂಹ » ವಿಳಂಬ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಕನ್ಯಾ ೫ ಲಾಭ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಕೀರ್ತಿ",
+                                        "raw":  "ತುಲಾ ೫» ಕೀರ್ತಿ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಅಭಿವೃದ್ದಿ",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಅಭಿವೃದ್ದಿ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಧನಸ್ಸು » ಅನುಕೂಲ."
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಮಕರ ». ಖರ್ಚು \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಆಲೋಚನೆ",
+                                        "raw":  "ಕುಂಭ » ಆಲೋಚನೆ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಉಡುಗೊರೆ",
+                                        "raw":  "ಮೀನ \"ಉಡುಗೊರೆ"
+                                    }
+                                ]
+                }
+}

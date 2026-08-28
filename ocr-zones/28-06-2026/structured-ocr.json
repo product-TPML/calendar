@@ -1,0 +1,168 @@
+{
+  "source": {
+    "image": "data\\2026\\06\\28-06-2026.jpg",
+    "date": "28-06-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "28-06-2026",
+      "quote": "ಖ ನಿರಂತರ ಪಾಠ, ಗೆಲುವು ಅಂತಿಮ"
+    },
+    "calendar": {
+      "months": [
+        "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ ನಾಮ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಷಭ/ಮಿಥುನ",
+      "sunrise": "05:56",
+      "sunset": "18:40"
+    },
+    "events": [
+      "ಕಂಚಿ ಲಕ್ಷ್ಮೀಪೂರದಲ್ಲಿ ಶ್ರೀ ಗುರುಡೋತ್ಸವ",
+      "ಶ್ರೀಪಾದರಾಜರ ಆರಾಧನೆ ಹೊನ್ನುಗ್ಗಿ",
+      "ನರಗುಂ ತಾ||",
+      "ಭೈರನಟ್ಟಿ ಶ್ರೀ ಮಾರುತೇಶ್ವರ ರಥ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಜ್ಯೇಷ್ಠಾ",
+        "endsAt": "25.09",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಚತುರ್ದಶಿ",
+        "endsAt": "27.07",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶುಭ",
+        "endsAt": "13.36",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಗರಜ",
+        "endsAt": "13.56",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಗರಜ 1356"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ರ್ದಶಿ 7.೫7",
+      "solarYear": 14,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮಿಥುನ",
+      "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 04:30 - 06:00",
+      "gulikaKala": "ಮ.03:00 - 04:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಬೆ. 10:30 - 12:00.",
+      "shubhaSamaya": "ಮ. 03:15 - 05:03"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ಮೇಷ ». ಪ್ರಗತಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ವೃಷಭ » ಸಂತೋಷ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ಮಿಥುನ » ಪ್ರಯತ್ನ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಕರ್ಕಾಟಕ ಸಂತೋಷ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಸಿಂಹ » ಸಾಲ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸಮಸ್ಯೆ",
+        "raw": "ಕನ್ಯಾ ಸಮಸ್ಯೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ತುಲಾ » ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಶ್ಚಿಕ» ಯಶಸ್ಸು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಧನಸ್ಸು ». ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಮಕರ ». ಗೌರವ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ಕುಂಭ » ಅಭಿವೃದ್ಧಿ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮೀನ » ಅನುಕೂಲ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,163 @@
+{
+  "source": {
+    "image": "data\\2026\\05\\24-05-2026.jpg",
+    "date": "24-05-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "24-05-2026",
+      "quote": "ಗಳನ್ನು ಬೆನ್ನಟ್ಟಿ, ನಿಮ್ಮಕಲೆಯನ್ನು ಕೊಲೆ ಮಾಡ"
+    },
+    "calendar": {
+      "months": [
+        "ವೈಶಾಖ",
+        "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೇಷ/ವೃಷಭ",
+      "sunrise": "05:52",
+      "sunset": "18:40"
+    },
+    "events": [
+      "ಬೆಟ್ಟಂಪಾಡಿ ಜಾತ್ರೆ",
+      "ಕಾಮನ್‌ವೆಲ್ತ್‌ ದಿನ",
+      "ನವಮಿ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪೂರ್ವಾ",
+        "endsAt": "26.51",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ನವಮಿ",
+        "endsAt": "28.31",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಹರ್ಷಣ",
+        "endsAt": "27.45",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "16.25",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 16.25"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 10,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವಷಭ",
+      "chandraEntryRashi": "ಸಿಂಹ"
+    },
+    "timings": {
+      "rahuKala": "ಸ. 04:30 -06:00",
+      "gulikaKala": "ಮ. 8:00 - 04:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಚೆ. 10130 12:00",
+      "shubhaSamaya": "ರಾ. 08:16 - 09:54"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಮೇಷ ೨» ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಪ್ರಯಾಣ",
+        "raw": "ವೃಷಭ » ಪ್ರಯಾಣ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಪ್ರಯತ್ರ",
+        "raw": "ಮಿಥುನ » ಪ್ರಯತ್ರ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಕರ್ಕಾಟಕ. ಲಾಭ..."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ಸಿಂಹ ೫» ತೊಂದರೆ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ಕನ್ಯಾ» ಉಡುಗೊರೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ತುಲಾ ೫ ಆತಂಕ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಆಸಕ್ತಿ",
+        "raw": "ವೃಶ್ಚಿಕ» ಆಸಕ್ತಿ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಧನಸ್ಸು ». ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮಕರ ೫ ಅನುಕೂಲ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕುಂಭ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಮೀನ ». ತಾಳ್ಮೆ"
+      }
+    ]
+  }
+}

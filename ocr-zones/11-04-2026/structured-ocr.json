@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\11-04-2026.jpg",
+    "date": "11-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಭ್‌ ಕೃಷ್ಣ ಕಾಂಯ)",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "11-04-2026",
+      "quote": "ಬೀಳುವುದು ಸಹಜ, ಎದ್ದುನಿಲ್ಲುವುದು ಕಲೆ"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:09",
+      "sunset": "18:32"
+    },
+    "events": [
+      "2ನೇ ಶನಿವಾರ",
+      "ಮಹಾತ್ಮ ಫುಲೆ ಜನ್ಮದಿನ",
+      "ರಾಷ್ಟ್ರೀಯ ಸುರಕ್ಷಿತ ಮಾತೃತ್ವ ದಿನ",
+      "ತೆಲಕಾಡು",
+      "ಬಾಈಕೃಷ್ಣಾನಂದ ಮಠದಲ್ಲಿ ಶಾಂತಕೃಷ್ಣಾನಂದ",
+      "ಸ್ವಾಮಿ ಆರಾಧನೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಉ.ಷಾ",
+        "endsAt": "13.40",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ನವಮಿ",
+        "endsAt": "24.38",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸಿದ್ದ",
+        "endsAt": "18.39",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": "12.02",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ತೈತಿಲ 1202 _"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 28,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ಮಕರ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ. 06:00 - 07:30",
+      "yamaganda": "ಮ. 01:30 - 05:00",
+      "arthaPrahara": "ಮ. 12:06 - 01:36",
+      "shubhaSamaya": "ಬೆ. 06:40 - 08:25"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಮೇಷ ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ವೃಷಭ ». ಪ್ರೀತಿ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ಮಿಥುನ » ಉಡುಗೊರೆ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಮರೆವು",
+        "raw": "ಕರ್ಕಾಟಕ. ಮರೆವು."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಸಿಂಹ » ಪ್ರೋತ್ಸಾಹ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ ವಿಶ್ರಾಂತಿ",
+        "raw": "ಕನ್ಯಾ ಪ ವಿಶ್ರಾಂತಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ತುಲಾ ೫ ಶಾಂತಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಶ್ಚಿಕ» ಲಾಭ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಧನಸ್ಸು » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಭಯ",
+        "raw": "ಮಕರ ೫ ಭಯ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಕೇರ್ತಿ",
+        "raw": "ಕುಂಭ ». ಕೇರ್ತಿ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಮೀನ ». ಸ್ಪರ್ಧೆ"
+      }
+    ]
+  }
+}

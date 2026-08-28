@@ -1,0 +1,173 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\04\\26-04-2026.jpg",
+                   "date":  "26-04-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "red-channel-4x-psm7",
+                                       "raw":  "ಪಕ್ಷ ಶುಕ್ಲ. ಮ",
+                                       "value":  "ಶುಕ್ಲ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "26-04-2026",
+                                   "quote":  "ಸೋಲು ಗೆಲುವಿನ ಮೊದಲ ಹೆಜ್ಜೆ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಚೈತ್ರ",
+                                                    "ವೈಶಾಖ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮೀನ/ಮೇಷ",
+                                     "sunrise":  "06:01",
+                                     "sunset":  "18:23"
+                                 },
+                    "events":  [
+                                   "ಶ್ರೀ ಗುರುನಾಥ ರೂಢ ಸ್ವಾಮಿ ಪು.ತಿ",
+                                   "ಶ್ರೀ ವಾಸವಿ",
+                                   "ಜಯಂತಿ ಕಲ್ಯಾಣೋತ್ಸವ",
+                                   "ಹುಬ್ಬಳ್ಳಿ",
+                                   "ಶ್ರೀವಾಸವಿ",
+                                   "ನಿಮಿಷಾಂಬಾ",
+                                   "ವಾಸನಾಂಬ ಜಯಂತಿಗಳು. ಶ್ರೀ",
+                                   "ಮಹಾಲಕ್ಷ್ಮೀ ಜಾತ್ರೆ ಉಗಾರ ಖುರ್ದ ತಾ. ಅಥಣಿ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಮಘಾ",
+                                                        "endsAt":  "20.27",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ದಶಮಿ",
+                                                    "endsAt":  "18.07",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವೃಡ್ವಿ",
+                                                   "endsAt":  "2.28",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ತೈತಿಲ",
+                                                     "endsAt":  "06.14",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ _ ತೈಕಿಲ 06.14 _"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಗ್ರೀಷ್ಮ",
+                                      "solarYear":  13,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಮೇ",
+                                      "chandraEntryRashi":  "ಸಿಂಹ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಸ, 04:30 - 06:00.",
+                                    "gulikaKala":  "ಮ.65:00- 64:30",
+                                    "yamaganda":  "ಮ. 12:00 - 01:30",
+                                    "arthaPrahara":  "ಜೆ. 16:56 12:06",
+                                    "shubhaSamaya":  "ಸ. 06:01 - 07:38"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಸಮಸ್ಯೆ",
+                                        "raw":  "ಮೇಷ ». ಸಮಸ್ಯೆ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ವೃಷಭ » ಪ್ರೋತ್ಸಾಹ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ನಿರಾಶೆ",
+                                        "raw":  "ಮಿಥುನ ». ನಿರಾಶೆ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಅಭಿವೃದ್ದಿ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಅಭಿವೃದ್ದಿ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಸಿಂಹ » ಲಾಭ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಕನ್ಯಾ» ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ತುಲಾ.» ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಆತಂಕ",
+                                        "raw":  "ವೃಶ್ಚಿಕ». ಆತಂಕ ."
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಧನಸ್ಸು » ಅನುಕೂಲ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಮಕರ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಯೋಗ",
+                                        "raw":  "ಕುಂಭ *» ಯೋಗ. ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಕೋಪ",
+                                        "raw":  "ಮೀನ ». ಕೋಪ"
+                                    }
+                                ]
+                }
+}

@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\10\\21-10-2026.jpg",
+    "date": "21-10-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "21-10-2026",
+      "quote": "ಇತರರ ಅಭಿಪ್ರಾಯ ನಿನ್ನ ಭವಿಷ್ಯವ'"
+    },
+    "calendar": {
+      "months": [
+        "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಕನ್ಯಾ/ ತುಲಾ",
+      "sunrise": "06:10",
+      "sunset": "17:57"
+    },
+    "events": [
+      "ವಿಜಯ ದಶಮಿ",
+      "ಚಿತ್ರದುರ್ಗದ ವೆಂಕಟೇಶಪುರದ ವೆಂಕಟೇಶ್ವರ ರಥ",
+      "ಸೀಮೋಲ್ಲಂಘನ",
+      "ಶಮಿಪೂಜಾ",
+      "ರಾಜಪಟ್ಟಾಭಿಷೇಕ",
+      "ಶ್ರೀ ಮಧ್ವಜಯಂತಿ",
+      "ಬುದ್ಧಜಯಂತಿ",
+      "ದಿಂಡದಹಳ್ಳಿ ಶಿವಾನಂದ ಶಿವಾಚಾರ್ಯ ಸ್ವಾಮಿಗಳ",
+      "ಲಿಂಗೈಗ್ಯ ದಿನ",
+      "ಶಿರಡಿ ಸಾಯಿಬಾಬಾ ಪುಣ್ಯತಿಥಿ ಉತ್ಸವ",
+      "ಮುಧೋಳ ಮಹಾ",
+      "ಸಿದ್ದೇಶ್ದರ ಜಾತ್ರೆ",
+      "ಬೀದರ ಚಿದಂಬರ ಮಠ ದೇವಿ ಪುರಾಣ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಧನಿಷ್ಠಾ",
+        "endsAt": "19.48",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದಶಮಿ",
+        "endsAt": "14.12",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಗಂಡ",
+        "endsAt": "24.33",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣಿಜ",
+        "endsAt": "26.36",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "[ಕರಣ ವಣಿಜ 26.36"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 5,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ತುಲಾ",
+      "chandraEntryRashi": "ಮಕರ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಚೆ.10136 12:06",
+      "yamaganda": "ಚೆ. 07:36-05:0",
+      "arthaPrahara": "ಬೆ. 06:00 - 07:30",
+      "shubhaSamaya": "ಬೆ. 08:38 - 10:21"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮೇಷ » ಸಂತೋಷ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ವೃಷಭ » ಅಭಿವೃದ್ಧಿ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಮಿಥುನ » ಪ್ರೋತ್ಸಾಹ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅನಂದ",
+        "raw": "ಕರ್ಕಾಟಕ ಅನಂದ ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಸಿಂಹ » ಪ್ರೀತಿ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಕನ್ಯಾ ೫ ಪ್ರೀತಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ತುಲಾ» ತೊಂದರೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ವೃಶ್ಚಿಕ» ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಧನಸ್ಸು » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮಕರ ೫» ಲಾಭ."
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕುಂಭ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪರೀಕ್ಷೆ",
+        "raw": "ಮೀನ » ಪರೀಕ್ಷೆ"
+      }
+    ]
+  }
+}

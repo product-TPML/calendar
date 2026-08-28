@@ -1,0 +1,166 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\12-03-2026.jpg",
+    "date": "12-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "12-03-2026",
+      "quote": "ಸು ದೊಡ್ಡದಾಗಿರಲಿ, ಮನಸ್ಸು ಶಾಂತವಾ"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:29",
+      "sunset": "18:29"
+    },
+    "events": [
+      "ಮೃಗವಧೆ ಮಲ್ಲಿಕಾರ್ಜುನ ರಥ",
+      "ಬ್ಯಾಡಗಿ ತಾ.",
+      "ಕಲ್ಲದೇವರು ಕಲ್ಮೇಶ್ವರ ರಥ",
+      "ಕೊಪ್ಪಳ ಶಾಂತವೀರಸ್ವಾಮಿ",
+      "ಪುದ್ಯಿತಿಥಿ",
+      "ಅನಂತಪೊರ ತಾ.ಅಥಣಿ'ಶ್ರೀ ವಿಠ್ಠಲ ಬಿರದೇವ",
+      "ಜಾತ್ರೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಮೂಲಾ",
+        "endsAt": "24.44",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ನವಮಿ",
+        "endsAt": "30.30",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸಿದ್ಧ ೫.5",
+        "endsAt": "09.59",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಲ",
+        "endsAt": "17.25",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "ಕರಣ ತೈತಲ 1725"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 28,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ದನು"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 01:30 - 03:00",
+      "gulikaKala": ". ಬೆ.09:00 - 10130",
+      "yamaganda": "ಬೆ. 06:00 - 07:30",
+      "arthaPrahara": "ಮ. 05:00 - 0%:3(",
+      "shubhaSamaya": "ಸ. 05:36 - 07:23"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮೇಷ » ಸಂತೋಷ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಷಭ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮಿಥುನ » ಸಾಲ:"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಅಭಿವೃದ್ದಿ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಸಿಂಹ » ಸ್ನೇಹ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಅನಾರೋಗ್ಯ",
+        "raw": "ಕನ್ಯಾ» ಅನಾರೋಗ್ಯ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ತುಲಾ» ವಿಳಂಬ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಶ್ಚಿಕ » ಲಾಭ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಮಕರ » ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ಕುಂಭ » ಪ್ರಯತ್ನ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮೀನ » ಸಂತೋಷ."
+      }
+    ]
+  }
+}

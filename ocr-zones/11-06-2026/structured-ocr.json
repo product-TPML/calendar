@@ -1,0 +1,168 @@
+{
+  "source": {
+    "image": "data\\2026\\06\\11-06-2026.jpg",
+    "date": "11-06-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "11-06-2026",
+      "quote": "ಸಿ೦ಪಲ್‌ ಆಗಿ ಇರಿ, ಖುಷಿಯಾಗಿ ಇರಿ"
+    },
+    "calendar": {
+      "months": [
+        "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ ನಾಮ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಷಭ/ಮಿಥುನ",
+      "sunrise": "05:53",
+      "sunset": "18:45"
+    },
+    "events": [
+      "ಕಮಲಾ ಏಕಾದಶಿ",
+      "ಶ್ರೀ ಸಾನೇಗುರೂಜಿ",
+      "ಸ್ಮೃತಿ ದಿನ",
+      "ಪಾರಶಿ ಬೆಹಮನ ಮಾಸಾರಂಭ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ರೇವತಿ",
+        "endsAt": "08.17",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಏಕಾದಶಿ",
+        "endsAt": "22.37",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶೋಭನ",
+        "endsAt": "25.00",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "11.53",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬವ 11.53"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಠ",
+      "solarYear": 28,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವಷಭ",
+      "chandraEntryRashi": "ಮೀನ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಬೆ. 09:00 - 10:30",
+      "yamaganda": "ಚೆ.06:00- 07:30",
+      "arthaPrahara": "ಬ. 03:00 - 04:30",
+      "shubhaSamaya": "11015111)"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮೇಷ » ಸಂತೋಷ."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ವೃಷಭ » ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಯಶಸ್ತು",
+        "raw": "ಮಿಥುನ » ಯಶಸ್ತು"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಕರ್ಕಾಟಕ ಆತಂಕ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಭಯ",
+        "raw": "ಸಿಂಹ » ಭಯ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಕನ್ಯಾ ೫ ಸ್ನೇಹ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ತುಲಾ ೫» ಪ್ರಗತಿ :"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸ6ತೋಷ",
+        "raw": "ವೃಶ್ಚಿಕ» ಸ6ತೋಷ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಧನಸ್ಸು ». ವಿಳಂಬ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸೌಮೃತೆ",
+        "raw": "ಮಕರ » ಸೌಮೃತೆ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ಕುಂಭ » ಪ್ರಯತ್ನ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಮೀನ ». ತಾಳ್ಮೆ"
+      }
+    ]
+  }
+}

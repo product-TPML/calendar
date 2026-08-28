@@ -1,0 +1,164 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\30-11-2026.jpg",
+    "date": "30-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "30-11-2026",
+      "quote": "ೇಶ ಸುತ್ತಿ ನೋಡು ಕೋಶ ಓದಿ ನೋಡು"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:25",
+      "sunset": "17:51"
+    },
+    "events": [
+      "ಸ್ವದೇಶಿ ಚಳುವಳಿಯ ನೇತಾರ ರಾಜೀವ ದೀಕ್ಷಿತ",
+      "ಪುಣ್ಯಸ್ಮರಣೆ",
+      "ಮರಡಿ ತಾ. ಬೈಲಹೊಂಗಲ",
+      "ಬಸವೇಶ್ವರರ ರಥ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಆಶ್ಲೇಷಾ",
+        "endsAt": "09.42",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಸಪ್ತಮಿ",
+        "endsAt": "24.12",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಐಂದ್ರ",
+        "endsAt": "14.27",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಿಷ್ಟಿ",
+        "endsAt": "12.55",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "ಕರಣ. ವಿಷ್ಟಿ 1255"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 15,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವೃಶ್ಚಿಕ",
+      "chandraEntryRashi": "ಕರ್ಕ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ.01:30- 8:00",
+      "yamaganda": "ಬೆ. 10:30 - 12:00",
+      "arthaPrahara": "ಬೆ.09:00 - 10:30",
+      "shubhaSamaya": "ಬೆ. 08:11 - 09:42"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಆನಂದ",
+        "raw": "ಮೇಷ » ಆನಂದ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಷಭ » ಯಶಸ್ಸು ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "'ಮಿಥುನ » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಭಯ",
+        "raw": "ಕರ್ಕಾಟಕ ಭಯ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಸಿಂಹ » ಕೋಪ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಕನ್ಯಾ ೧ ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಗೌರವ",
+        "raw": "ತುಲಾ ೫» ಗೌರವ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ವೃಶ್ಚಿಕ». ಖರ್ಚು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಧನಸ್ಸು ». ಸಂತೋಷ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮಕರ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕುಂಭ » ಯಶಸ್ಸು."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಮೀನ ೫». ಪ್ರೋತ್ಸಾಹ ."
+      }
+    ]
+  }
+}

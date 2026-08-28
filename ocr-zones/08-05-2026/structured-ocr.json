@@ -1,0 +1,168 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\05\\08-05-2026.jpg",
+                   "date":  "08-05-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "08-05-2026",
+                                   "quote":  "\u0027ವನು ಓದಬೇಕು, ತಿಳಿಯದವನು ಕಲಿಯಬೇ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ವೈಶಾಖ",
+                                                    "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮೇಷ/ವೃಷಭ",
+                                     "sunrise":  "05:56",
+                                     "sunset":  "18:36"
+                                 },
+                    "events":  [
+                                   "ವಿಶ್ವ ರೆಡ್‌ ಕ್ರಾಸ್‌ ದಿನ",
+                                   "ವಿ.ದಾ ಸಾವರಕರ ಜಯಂತಿ",
+                                   "(ತಿಥಿಗನುಸಾರ)",
+                                   "ಸರಗೂರು ಚೌಡೇಶ್ವರಿ ರಥ",
+                                   "ನಾಚ್ಚಿಯಾರನಲ್ಲಿ",
+                                   "ಯದುಗಿರಿಯಲ್ಲಿ ವಸಂತೋತ್ಸವ",
+                                   "ತುಂಬುರರ ಜಯಂತಿ",
+                                   "ಯಡೇಯೂರು ಶಕ್ತಿ ಗಣಪತಿ ಜಯಂತಿ"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಉ.ಷಾ",
+                                                        "endsAt":  "21.20",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಷಷ್ಠಿ",
+                                                    "endsAt":  "01.22",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಶುಭ",
+                                                   "endsAt":  "26.30",
+                                                   "nextDay":  true,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಏಿಷ್ಟಿ",
+                                                     "endsAt":  "25.17",
+                                                     "nextDay":  true,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ  ವಿಷ್ಟಿಚ.7_"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಗ್ರೀಷ್ಮ",
+                                      "solarYear":  25,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಮೇಷ",
+                                      "chandraEntryRashi":  "ಮಕರ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 10:30 - 12:00",
+                                    "gulikaKala":  "ಚೆ.07:30- 09:00",
+                                    "yamaganda":  "ಮ. 05:00 - 04:30",
+                                    "arthaPrahara":  "ಮ. 01:30 - 03:00",
+                                    "shubhaSamaya":  "ಮ. 02:15 - 04:01"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಸಂಪತ್ತು",
+                                        "raw":  "ಮೇಷ » ಸಂಪತ್ತು"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ವೃಷಭ » ಪ್ರಯತ್ನ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮಿಥುನ » ಯಶಸ್ಸು :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ವಿಶ್ರಾಂತಿ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ವಿಶ್ರಾಂತಿ ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಅನಾರೋಗ್ಯ",
+                                        "raw":  "ಸಿಂಹ.» ಅನಾರೋಗ್ಯ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಯೋಗ",
+                                        "raw":  "ಕನ್ಯಾ ೫» ಯೋಗ \u0027"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಕೀರ್ತಿ",
+                                        "raw":  "ತುಲಾ ೫» ಕೀರ್ತಿ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಸ್ನೇಹ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಸ್ನೇಹ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಸ್ಪರ್ಧೆ",
+                                        "raw":  "ಧನಸ್ಸು ». ಸ್ಪರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಮಕರ ೫» ಸಾಲ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಒಳ್ಳೆಯ ಸುದ್ದಿ",
+                                        "raw":  "ಕುಂಭ »ಒಳ್ಳೆಯ ಸುದ್ದಿ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮೀನ » ಯಶಸ್ಸು"
+                                    }
+                                ]
+                }
+}

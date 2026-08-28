@@ -1,0 +1,169 @@
+{
+  "source": {
+    "image": "data\\2026\\06\\01-06-2026.jpg",
+    "date": "01-06-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "sunsetReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "date_right_2.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "01-06-2026",
+      "quote": "ಕೀಳುವುದು ಸಹಜ, ಎದ್ದುಸಿಲ್ಲುವುದು ಕ"
+    },
+    "calendar": {
+      "months": [
+        "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ ನಾಮ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಷಭ/ಮಿಥುನ",
+      "sunrise": "05:52",
+      "sunset": "18:42"
+    },
+    "events": [
+      "ಜಾಗತಿಕ ಪಾಲಕರು ದಿನ",
+      "ಅಧಿಕ ಜ್ಯೇಷ್ಠಮಾಸ",
+      "ಕೃಷ್ಣಪಕ್ಷ ಆರಂಭ",
+      "ಪೋಷಕರ ಜಾಗತಿಕ ದಿನ",
+      "ವಿಶ್ವ ಹಾಲಿನ ದಿನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಜ್ಯೇಷ್ಠಾ",
+        "endsAt": "19.09",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಪ್ರತಿಪದಾ",
+        "endsAt": "16.38",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸಿದ್ಧ",
+        "endsAt": "06.19",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": "29.50",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ತೈತಿಲ 29.50"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 18,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವಷಭ",
+      "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ.01130 - 03:00",
+      "yamaganda": "ಚೆ.10:30- 12:00",
+      "arthaPrahara": "ಬ.09:00 - 10:30",
+      "shubhaSamaya": "ಬೆ. 09:16 - 11:03"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮೇಷ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ವೃಷಭ » ವಿಳಂಬ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಯಶಸ್ತು",
+        "raw": "ಮಿಥುನ »: ಯಶಸ್ತು"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಗೊಂದಲ",
+        "raw": "ಕರ್ಕಾಟಕ ಗೊಂದಲ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಸಿಂಹ ೫» ಭಕ್ತಿ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ದುರಾಸೆ",
+        "raw": "ಕನ್ಯಾ» ದುರಾಸೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಚಿಂತೆ",
+        "raw": "ತುಲಾ ೫» ಚಿಂತೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಶ್ಚಿಕ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಧನಸ್ಸು » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಆಸಕ್ಕಿ",
+        "raw": "ಮಕರ ೫» ಆಸಕ್ಕಿ :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಕುಂಭ » ತಾಳ್ಮೆ\""
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ವಿಶ್ರಾಂತಿ",
+        "raw": "ಮೀನ ». ವಿಶ್ರಾಂತಿ:"
+      }
+    ]
+  }
+}

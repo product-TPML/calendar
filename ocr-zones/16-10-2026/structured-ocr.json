@@ -1,0 +1,172 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\10\\16-10-2026.jpg",
+                   "date":  "16-10-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "existing-paksha-ocr",
+                                       "raw":  "ಪಕ್ಷ ಶುಕ್ಬ್ಚ",
+                                       "value":  "ಶುಕ್ಲ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "16-10-2026",
+                                   "quote":  "ನಿನ್ನ ಮೌಲ್ಯವನ್ನು ನೀನೇ ನಿರ್ಧರಿಸು"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕನ್ಯಾ/ ತುಲಾ",
+                                     "sunrise":  "06:10",
+                                     "sunset":  "18:00"
+                                 },
+                    "events":  [
+                                   "ಸೂಡಿ ಜುಕ್ತಿಮಠ ಉಮಾಪತಿ ಶಿವಾಚಾರ್ಯ ಪುಣ್ಯತಿಥಿ",
+                                   "ಕೊರಕೊಡು ದುರ್ಗಾಲಯ ಮಂಗಲ ಸ್ನಾನ",
+                                   "ತಿರುಪತಿ",
+                                   "ವೆಂಕಟೇಶ್ವರ ರಥ",
+                                   "ವಿಶ್ವ ಆಹಾರ ದಿನ",
+                                   "ಶ್ರೀ ಸರಸ್ವತಿ",
+                                   "ಆವಾಹನ",
+                                   "ಮಂಗಳೂರ ಶ್ರೀ ಮಂಗಲಾದೇವಿ ಚಂಡಿ ಹೋಮ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಜ್ಯೇಷ್ಠಾ",
+                                                        "endsAt":  "06.48",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಷಷ್ಠಿ",
+                                                    "endsAt":  "29.55",
+                                                    "nextDay":  true,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಶೋಭನ",
+                                                   "endsAt":  "22.06",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಕೌಲವ",
+                                                     "endsAt":  "16.39",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಕೌಲವ 16.39"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  30,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಕನ್ನಾ",
+                                      "chandraEntryRashi":  "ವೃಶ್ಚಿಕ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 10:30 - 12:00.",
+                                    "gulikaKala":  "ಬೆ. 0730 - 09:00.",
+                                    "yamaganda":  "ಮ. 08:00 - 04:30",
+                                    "arthaPrahara":  "ಮ. 01:56 - 8:6",
+                                    "shubhaSamaya":  "unavailable"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ಮೇಷ » ಪ್ರಯತ್ನ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ವೃಷಭ » ಅನುಕೂಲ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಭಕ್ತಿ",
+                                        "raw":  "ಮಿಥುನ » ಭಕ್ತಿ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಆರೋಗ್ಯ",
+                                        "raw":  "ಕರ್ಕಾಟಕ: ಆರೋಗ್ಯ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಕೋಪ",
+                                        "raw":  "ಸಿಂಹ » ಕೋಪ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಸಮಸ್ಯೆ",
+                                        "raw":  "ಕನ್ಯಾ ೫ ಸಮಸ್ಯೆ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ವಿನಯ",
+                                        "raw":  "ತುಲಾ » ವಿನಯ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಒಳ್ಳೆಯದು."
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಸ್ನೇಹ",
+                                        "raw":  "ಧನಸ್ಸು » ಸ್ನೇಹ ."
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಕುತೂಹಲ",
+                                        "raw":  "ಮಕರ » ಕುತೂಹಲ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಕುಂಭ » ಪ್ರೀತಿ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಉತ್ಸಾಹ",
+                                        "raw":  "ಮೀನ » ಉತ್ಸಾಹ"
+                                    }
+                                ]
+                }
+}

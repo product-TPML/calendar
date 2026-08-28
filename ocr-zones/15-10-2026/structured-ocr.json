@@ -1,0 +1,166 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\10\\15-10-2026.jpg",
+                   "date":  "15-10-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "15-10-2026",
+                                   "quote":  "ತಪುಮಾಡಿದರೆ ಕಲಿಯು, ನಿಲಬೇಡ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕನ್ಯಾ/ ತುಲಾ",
+                                     "sunrise":  "06:10",
+                                     "sunset":  "18:00"
+                                 },
+                    "events":  [
+                                   "ವಿಶ್ವ ಅಂಧರ(ಕಿರುಡರ) ದಿನ",
+                                   "ಎ.ಪಿ.ಜೆ ಅಬ್ದುಲ್‌",
+                                   "ಕಲಾಂ ಜಯಂತಿ",
+                                   "ಹೆಬ್ಬೂರು ಕೋದಂಡಾಶ್ರಮದಲ್ಲಿ",
+                                   "ಕಾಮಾಕ್ಷಿ ಅಮ್ಮನವರ ವರ್ಧಂತಿ",
+                                   "ಭರತನೂರ ಶ್ರೀ",
+                                   "ಗುರು ನಂಜೇಶ್ವರ ಮಹಾಶಿವಯೋಗಿ ಜಾತ್ರೆ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಜ್ಯೇಷ್ಠಾ",
+                                                        "endsAt":  null,
+                                                        "nextDay":  false,
+                                                        "fullDay":  true
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಪಂಚಮಿ",
+                                                    "endsAt":  "27.26",
+                                                    "nextDay":  true,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಸಾಭಾಗ್ಯ",
+                                                   "endsAt":  "21.15",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಜವ",
+                                                     "endsAt":  "14.17",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಜವ 14.17"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  29,
+                                      "paksha": "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಕನ್ನಾ",
+                                      "chandraEntryRashi":  "ವೃಶ್ಚಿಕ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 01:30 - 03:00",
+                                    "gulikaKala":  "ಬೆ.9:00 - 10:30.",
+                                    "yamaganda":  "ಬೆ.06:00 - 07:30.",
+                                    "arthaPrahara":  "ಮ. 03:06 - 5:31",
+                                    "shubhaSamaya":  "ಸ. 08:59 - 10:46"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಆತಂಕ",
+                                        "raw":  "ಮೇಷ » ಆತಂಕ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ವೃಷಭ » ಭಯ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಗಮನ",
+                                        "raw":  "ಮಿಥುನ » ಗಮನ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಒಳ್ಳೆಯ ಕೆಲಸ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಒಳ್ಳೆಯ ಕೆಲಸ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಅಭಿವೃದ್ದಿ",
+                                        "raw":  "ಸಿಂಹ » ಅಭಿವೃದ್ದಿ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಕನ್ಯಾ ೫» ಭಯ:"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಸರ್ಧೆ",
+                                        "raw":  "ತುಲಾ ೫» ಸರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಲಾಭ :"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಭಕ್ತಿ",
+                                        "raw":  "ಧನಸ್ಸು » ಭಕ್ತಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಗೊಂದಲ",
+                                        "raw":  "ಮಕರ » ಗೊಂದಲ :"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಕುಂಭ » ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಮೀನ » ಪ್ರೋತ್ಸಾಹ"
+                                    }
+                                ]
+                }
+}

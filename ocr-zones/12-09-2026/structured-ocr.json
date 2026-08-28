@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\09\\12-09-2026.jpg",
+    "date": "12-09-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "12-09-2026",
+      "quote": "ಇಂದೆನಿಸಿದ ನೋವು ನಾಳೆಯ ಜಾನವಾ"
+    },
+    "calendar": {
+      "months": [
+        "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಸಿಂಹ/ಕನ್ಯಾ",
+      "sunrise": "06:08",
+      "sunset": "18:23"
+    },
+    "events": [
+      "2ನೇ ಶನಿವಾರ",
+      "ಸಾಮಶ್ರಾವಣಿ",
+      "ಭಾದ್ರಪದ ಶುಕ್ಲ ಆರಂಭ",
+      "ಜಮಖಂಡಿ ತಾ|| ಕಡಪಟ್ಟಿ ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+      "ಸವದತ್ತಿ",
+      "ತಾ. ಗುರ್ಲಹೊಸೂರ ಚರಮೂರ್ತೇಶ್ವರ ಜಾತ್ರೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಉತ್ತರಾ",
+        "endsAt": "12.55",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಪ್ರತಿಪದಾ",
+        "endsAt": "07.47",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶುಭ",
+        "endsAt": "15.0",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "19.24",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 19.24"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 27,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಸಿಂಹ",
+      "chandraEntryRashi": "ಕನ್ಯಾ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ. 06:00 - 07:30",
+      "yamaganda": "ಮ. 01:30 - 03:00",
+      "arthaPrahara": "ಮ. 12:00 - 01:30",
+      "shubhaSamaya": "ಬೆ. 05:49 - 07:24"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರಯಾಣ",
+        "raw": "ಮೇಷ » ಪ್ರಯಾಣ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ವೃಷಭ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮಿಥುನ » ಲಾಭ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಕಾಟರ್ಕು ಖರ್ಚ",
+        "raw": "ಕರ್ಕಾಟರ್ಕು ಖರ್ಚ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ಸಿಂಹ ೫» ಶ್ರೇಷ್ಠತೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ ಬುದ್ದಿವಂತಿಕೆ",
+        "raw": "ಕನ್ಯಾ ಪ ಬುದ್ದಿವಂತಿಕೆ."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ತುಲಾ ೫ ತಾಳ್ಮೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಚಿಂತೆ",
+        "raw": "ವೃಶ್ಚಿಕ». ಚಿಂತೆ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರೀತಿ ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಶುಭ",
+        "raw": "ಮಕರ ೫». ಶುಭ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ಕುಂಭ » ಅಭಿವೃದ್ಧಿ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಮಚ್ಚುಗ",
+        "raw": "ಮೀನ » ಮಚ್ಚುಗ"
+      }
+    ]
+  }
+}

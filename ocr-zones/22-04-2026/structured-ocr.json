@@ -1,0 +1,173 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\04\\22-04-2026.jpg",
+                   "date":  "22-04-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "red-channel-4x-psm7",
+                                       "raw":  "ಪಕ್ಷ ತುಟ ಶುಕ್ಲ ಯ ಕುಸಾಖಿಲು)",
+                                       "value":  "ಶುಕ್ಲ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "22-04-2026",
+                                   "quote":  "ಮಾರಿತನ ಬಿಟ್ಟಾಗಲೇ ಸಿರಿತನದ ಕನಸ್ಸು ನಿಜವಾ?"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಚೈತ್ರ",
+                                                    "ವೈಶಾಖ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮೀನ/ಮೇಷ",
+                                     "sunrise":  "06:03",
+                                     "sunset":  "18:33"
+                                 },
+                    "events":  [
+                                   "ವಿಶ್ವ ಭೂಮಿ ದಿನ",
+                                   "ಷಷ್ಠಿ",
+                                   "ಶ್ರೀ ರಾಮಾನುಜಾಚಾರ್ಯ ಜಯಂತಿ",
+                                   "ಕಂಪ್ಲಿ ಬಸವೇಶ್ವರ ರಥ",
+                                   "ಕೊರಕೊಡು ಆರ್ಯಕಾತ್ಯಾಯಿನಿ ಶ್ರೀ",
+                                   "ಮಹಾದೇವಿ ರಥ",
+                                   "ಬೈಂದೂರು ತಾ. ಕುಂದಾಪುರ ಶ್ರೀ ಶನೈಶ್ಚರ",
+                                   "ರಥ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಆದ್ರಾ",
+                                                        "endsAt":  "22.13",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಷಷ್ಠಿ",
+                                                    "endsAt":  "22.50",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಅತಿಗಂಡ",
+                                                   "endsAt":  "0.0",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಕೌಲವ",
+                                                     "endsAt":  "12.02",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಕೌಲವ 12.0 _"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಗ್ರೀಷ್ಮ",
+                                      "solarYear":  9,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಮೇಷ",
+                                      "chandraEntryRashi":  "ಮಿಥುನ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 12:00 - 01:30",
+                                    "gulikaKala":  "ಬೆ. 10:30 - 12:00",
+                                    "yamaganda":  "ಬೆ. 07:30 - 09:00",
+                                    "arthaPrahara":  "ಬೆ. 06:00 - 07:30",
+                                    "shubhaSamaya":  "ಮ. 12:57 - 02:26"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಆಲೋಚನೆ",
+                                        "raw":  "ಮೇಷ » ಆಲೋಚನೆ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ವೃಷಭ » ಸಾಲ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ವಿಳಂಬ",
+                                        "raw":  "ಮಿಥುನ ». ವಿಳಂಬ \u0027"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಸಿಂಹ » ಪ್ರೋತ್ಸಾಹ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ಕನ್ಯಾ ೫ ಪ್ರಯತ್ನ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ತುಲಾ» ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಶ್ರೇಷ್ಠತೆ",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಶ್ರೇಷ್ಠತೆ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಸ್ಪರ್ಧೆ",
+                                        "raw":  "ಧನಸ್ಸು ». ಸ್ಪರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಅನಾರೋಗ",
+                                        "raw":  "ಮಕರ »ಅನಾರೋಗ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಕುಂಭ » ಪ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಪ್ರಾಮಾಣಿಕತೆ",
+                                        "raw":  "ಮೀನ ಪ್ರಾಮಾಣಿಕತೆ"
+                                    }
+                                ]
+                }
+}

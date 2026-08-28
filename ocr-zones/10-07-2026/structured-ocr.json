@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\07\\10-07-2026.jpg",
+    "date": "10-07-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "10-07-2026",
+      "quote": "೦ದಿನ ಕಠಿಣ ಪರಿಶ್ರಮವೇ ನಾಳಿನ ನೆವ"
+    },
+    "calendar": {
+      "months": [
+        "ನಿಜ ಜ್ಯೇಷ್ಠ/ಆಷಾಢ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮಿಥುನ/ಕರ್ಕ",
+      "sunrise": "05:59",
+      "sunset": "18:50"
+    },
+    "events": [
+      "ಯೋಗಿನಿ ಸ್ಮಾರ್ತ ಏಕಾದಶಿ",
+      "ತ್ರ್ಯಂಬಕೇಶ್ವರ ಸಂತ",
+      "ನಿವೃತ್ತಿನಾಥ ಜಾತ್ರೆ",
+      "ಮಾತೃ ಸುರಕ್ಷಾ ದಿನ",
+      "ಬಿಂಜವಾಡಿಗಿ",
+      "ಕಡಿವಾಲ ಕೊಡಿಹಾಳ ಶಾಂತೇಶ ಶರಣರ ಪುಣ್ಯತಿಥಿ",
+      "ಕೊಪ್ಪಳ ಮರಿ ಶಾಂತವೀರ ಸ್ವಾಮಿ ಪಣ್ಯತಿಥಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಭರಣಿ",
+        "endsAt": "13.15",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಸೆ",
+        "endsAt": "08.17",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "೪",
+        "endsAt": "07.15",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣಿಜ",
+        "endsAt": "21.32",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ  ವಣಿಜ 21.32"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 26,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮಿಹುನ",
+      "chandraEntryRashi": "ಮೇಷ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00.",
+      "gulikaKala": "ಬೆ. 07:30 - 09:00.",
+      "yamaganda": "ಮ. 0:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 03:00",
+      "shubhaSamaya": "ಬೆ. 08:47 - 10:16"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಮೇಷ » ಕೀರ್ತಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಆನಂದ",
+        "raw": "ವೃಷಭ » ಆನಂದ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಮಿಥುನ » ಆತಂಕ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ದಯೆ",
+        "raw": "ಕರ್ಕಾಟಕ ದಯೆ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಚಿಂತೆ",
+        "raw": "ಸಿಂಹ ೫» ಚಿಂತೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ಕನ್ಯಾ ೫ ಸಂಪತ್ತು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ತುಲಾ. » ಯಶಸ್ಸು '"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ನಿರಾಸೆ",
+        "raw": "ವೃಶ್ಚಿಕ». ನಿರಾಸೆ\"."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ಧನಸ್ಸು » ಉಡುಗೊರೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮಕರ » ಸಂತೋಷ."
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕುಂಭ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಮೀನ » ಪ್ರೀತಿ"
+      }
+    ]
+  }
+}

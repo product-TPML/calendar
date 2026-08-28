@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\03-04-2026.jpg",
+    "date": "03-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "03-04-2026",
+      "quote": "ಶಿಸ್ತೇ ಶಿಕ್ಷಣದ ತಳಹದಿ"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:14",
+      "sunset": "18:31"
+    },
+    "events": [
+      "ಗುಡ್‌ ಫ್ರೈಡೇ",
+      "ಛತ್ರಪತಿ ಶಿವಾಜಿ ಮಹಾ ಪುಣ್ಯ ದಿನ.",
+      "ಶಿವಯೋಗಿಶ್ವರ ಪುಣ್ಯ ತಿಥಿ ಅಥಣಿ. ಗೋಕಾಕ ತಾ",
+      "ಶಿಲ್ತಿಭಾವಿ",
+      "ಮಾರುತಿ",
+      "ಶಿಶುನಾಳ ಬಸವೇಶ್ವರ",
+      "ಕುಳ್ಳೂರು ತಾ.",
+      "ರಾಮದುರ್ಗ ಶಿವಯೋಗೇಶ್ವರ",
+      "ಕರಿಕಟ್ಟಿ ತಾ. ಸೌದತ್ತಿ",
+      "ಶಿವಾನಂದಮಠ ಜ್ಞಾನ ಸಪ್ತಾಹ/ಬಸವೇಶ್ವರ ರಥಗಳು"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಚಿತ್ರಾ",
+        "endsAt": "19.25",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಪ್ರತಿಪದಾ",
+        "endsAt": "08.43",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವ್ಯಾಘಾತ",
+        "endsAt": "14.0",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": "21.23",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ತೈತಿಲ21.23 _"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 20,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ಕನ್ಯಾಬೆ."
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00.",
+      "gulikaKala": "ಬೆ. 07:30 - 09:00",
+      "yamaganda": "ಮ. 03:00 - 04:3(",
+      "arthaPrahara": "ಮ. 01:30 - 03:0(",
+      "shubhaSamaya": "ಮ. 12:32 - 02:16"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಮೇಷ » ಅಭಿವೃದ್ದಿ."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ವೃಷಭ » ಕೀರ್ತಿ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮಿಥುನ » ಲಾಭ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಕರ್ಕಾಟಕ ಖರ್ಚು"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಸಿಂಹ » ಸಂತೋಷ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಕನ್ಯಾ ೫ ಆತಂಕ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ತುಲಾ ೫ ಶ್ರೇಷ್ಠತೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಶ್ಚಿಕ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಬುದ್ದಿವಂತಿಕೆ",
+        "raw": "ಧನಸ್ಸು » ಬುದ್ದಿವಂತಿಕೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ತಾಳೆ",
+        "raw": "ಮಕರ ೫». ತಾಳೆ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಗಮನ",
+        "raw": "ಕುಂಭ » ಗಮನ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ಮೀನ » ಸಂಪತ್ತು ."
+      }
+    ]
+  }
+}

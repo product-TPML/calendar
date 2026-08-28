@@ -1,0 +1,169 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\05-04-2026.jpg",
+    "date": "05-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಕೃಷ್ಣ .",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "05-04-2026",
+      "quote": "ತತ್ಮಕ ಆಲೋಚನೆಗಳು ಮನುಷ್ಯನನ್ನು ಬಲಹೀನಗೊಳಿ"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:13",
+      "sunset": "18:31"
+    },
+    "events": [
+      "ಸಂಕಷ್ಟ ಚತುರ್ಥಿ (ಚಂ.09:32) ಈಸ್ಟರ್‌ ಸಂಡೇ",
+      "ಅಕ್ಕಿವಾಟ ತಾ. ಹುಕ್ಕೇರಿ ಶ್ರೀ ಮಲ್ಲಿಕಾರ್ಜುನ ದೇವರ",
+      "ಸರಪಳಿ ಎಳೆಯುವುದು. ಇಂಚಗೇರಿ",
+      "ಗುರುಬಸವೇಶ್ವರ ಮಹಾ ಜಯಂತಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ವಿಶಾಖಾ",
+        "endsAt": "24.08",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತೃತೀಯಾ",
+        "endsAt": "12.00",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವಜ್ರ",
+        "endsAt": "14.44",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "25.4",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬವ 25.4"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 22,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ತುಲಾ"
+    },
+    "timings": {
+      "rahuKala": "ಸಾ. 04:30 - 06:00",
+      "gulikaKala": "ಮ.05:00 - 04:30",
+      "yamaganda": "ಮ. 12:30 -01:3(",
+      "arthaPrahara": "ಬ. 10:30 - 12:00",
+      "shubhaSamaya": "ಮ. 02:24 - 04:1("
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮೇಷ ». ಸಾಲ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ವೃಷಭ » ವಿಳಂಬ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಮಿಥುನ » ಖರ್ಚು"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಕರ್ಕಾಟಕ ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಅನಾರೋಗ್ಯ",
+        "raw": "ಸಿಂಹ » ಅನಾರೋಗ್ಯ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕನ್ಯಾ» ಯಶಸ್ಸು '"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಪಶ್ಚಾತ್ತಾಪ",
+        "raw": "ತುಲಾ.» ಪಶ್ಚಾತ್ತಾಪ :"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ವೃಶ್ಚಿಕ » ಅನುಕೂಲ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಆಸಕ್ತಿ",
+        "raw": "ಧನಸ್ಸು ». ಆಸಕ್ತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸರ್ದೆ",
+        "raw": "ಮಕರ ». ಸರ್ದೆ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಕುಂಭ » ಶಾಂತಿ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಮೀನ » ಅಭಿವೃದ್ದಿ."
+      }
+    ]
+  }
+}

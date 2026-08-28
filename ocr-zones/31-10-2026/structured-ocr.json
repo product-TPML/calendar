@@ -1,0 +1,166 @@
+{
+  "source": {
+    "image": "data\\2026\\10\\31-10-2026.jpg",
+    "date": "31-10-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "31-10-2026",
+      "quote": "ಇಂದಿನ ತ್ನಾಗವೇ ನಾಳೆಯ ಗೌರವ"
+    },
+    "calendar": {
+      "months": [
+        "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಕನ್ಯಾ/ತುಲಾ",
+      "sunrise": "06:13",
+      "sunset": "17:53"
+    },
+    "events": [
+      "ಸಿಂಹಸ್ಥ ಕುಂಭಮೇಳ ಪ್ರಾರಂಭ ತ್ವಂಬಕೇಶ್ವರ ಜಿ.",
+      "ನಾಶಿಕ",
+      "ರಾಷ್ಟ್ರೀಯ ಏಕತಾ ದಿನ",
+      "ಇಂದಿರಾ ಗಾಂಧಿ",
+      "ಪುಣ್ಯದಿನ",
+      "ಸರದಾರ್‌ ವಲ್ಲಭಭಾಯಿ ಪಟೇಲ್‌ ಜಯಂತಿ",
+      "ಕೊಡಗು ತಲಕಾವೇರಿ ಜಾತ್ರೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "2%",
+        "endsAt": "07.12",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಷಷ್ಠಿ",
+        "endsAt": "16.58",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸಿದ್ದ",
+        "endsAt": "17.32",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಿಷ್ಟಿ",
+        "endsAt": "7.32",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ವಿಷ್ಟಿ 7.32"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 15,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ತುಲಾ",
+      "chandraEntryRashi": "ಮಿಥುನ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ. 66:00 - 87:36",
+      "yamaganda": "ಮ. 01:30 - 03:00",
+      "arthaPrahara": "ಮ. 12:00 - 01:30",
+      "shubhaSamaya": "unavailable"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ದುರಾಸೆ",
+        "raw": "ಮೇಷ ». ದುರಾಸೆ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಷಭ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮಿಥುನ » ಸಂತೋಷ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಕರ್ಕಾಟಕ ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಕುತೂಹಲ",
+        "raw": "ಸಿಂಹ » ಕುತೂಹಲ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಗೊಂದಲ",
+        "raw": "ಕನ್ಯಾ» ಗೊಂದಲ."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಪರೀಕ್ಷೆ",
+        "raw": "ತುಲಾ » ಪರೀಕ್ಷೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ದಯ",
+        "raw": "ವೃಶ್ಚಿಕ » ದಯ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಧನಸ್ಸು » ಸ್ನೇಹ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮಕರ ೫ ಸಾಲ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಕುಂಭ » ಲಾಭ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಮೀನ ». ಸ್ಪರ್ಧೆ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\25-11-2026.jpg",
+    "date": "25-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "existing-paksha-ocr",
+      "raw": "್ಕ್ಪಾರ್ಸ ಕೃಷ್ಣರ",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "25-11-2026",
+      "quote": "ತಾಳಿದವನು ಬಾಳಿಯಾನು"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:22",
+      "sunset": "17:50"
+    },
+    "events": [
+      "ಸ್ಪಷ್ಟ ರಾಹು ಮಕರದಲ್ಲಿ",
+      "ಕೇತು ಕರ್ಕದಲ್ಲಿ",
+      "ಇಷ್ಟಿ.",
+      "ಕೊಡೇಕಲ್ಲ ತಾ. ಸುರಪುರ ಬಸವೇಶ್ವರ",
+      "ಚಿಕ್ಕ ಉಪ್ಪೇರಿ",
+      "ತಾ. ಲಿಂಗಸೂಗುರು ಶ್ರೀ ಸದಾನಂದ ಗುರು ಶ್ರೀ",
+      "ಸದಾನಂದ ಜಾತ್ರೆಗಳು."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ರೋಹಿಣಿ",
+        "endsAt": "20.36",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಪ್ರತಿಪದಾ",
+        "endsAt": "16.51",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶಿವ",
+        "endsAt": "12.00",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತ",
+        "endsAt": "06.38",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಪ್ರಧ್ರಾ5ಗಧಷ್ಯಾರ್ಹ್ಯಾರಾ”"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 10,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವೃಶ್ಚಿಕ",
+      "chandraEntryRashi": "ವೃಷಭ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಮ.10130- 12:00",
+      "yamaganda": "ಬೆ. 07:30 -09:00",
+      "arthaPrahara": "ಬೆ.06:00 - 07:30",
+      "shubhaSamaya": "ಸ. 05:46 - 07:11"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೇಷ ». ಯಶಸ್ಸು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಭಯ",
+        "raw": "ವೃಷಭ » ಭಯ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಅಬಿವುದಿ",
+        "raw": "'ಮಿಥುನ » ಅಬಿವುದಿ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕರ್ಕಾಟಕ: ಅನುಕೂಲ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಸಿಂಹ » ಆತಂಕ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಕನ್ಯಾ» ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ತುಲಾ ೫» ಶಾಂತಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ವೃಶ್ಚಿಕ » ತೊಂದರೆ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ನಿರಾಶೆ",
+        "raw": "ಧನಸ್ಸು ». ನಿರಾಶೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಮಕರ ». ಖರ್ಚು"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಕುಂಭ » ವಿಳಂಬ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮೀನ ». ಸಾಲ"
+      }
+    ]
+  }
+}

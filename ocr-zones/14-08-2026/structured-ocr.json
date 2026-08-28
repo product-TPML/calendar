@@ -1,0 +1,168 @@
+{
+  "source": {
+    "image": "data\\2026\\08\\14-08-2026.jpg",
+    "date": "14-08-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ... ಕೃಷ್ಣ .",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "14-08-2026",
+      "quote": "ಸೋಲು ಅಂತ್ಯವಲ್ಲ, ಅದು ಪಾಠ"
+    },
+    "calendar": {
+      "months": [
+        "ಆಷಾಢ",
+        "ಶ್ರಾವಣ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಕರ್ಕ/ಸಿಂಹ",
+      "sunrise": "06:07",
+      "sunset": "18:41"
+    },
+    "events": [
+      "ಶುಭ ದಿನ. ಸಂಪತ್‌ ಶುಕ್ರವಾರ. ಜೀವಂತಿಕಾ ಪೂಜೆ.",
+      "ಮಹಾಲಕ್ಷ್ಮೀ ಸ್ಥಾಪನೆ ಮತ್ತು ಪೂಜೆ",
+      "ಚಂದ್ರದರ್ಶನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪೂರ್ವಾ",
+        "endsAt": "27.43",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಿತೀಯಾ",
+        "endsAt": "18.47",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಪರಿಘ",
+        "endsAt": "9.29",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಡಲ",
+        "endsAt": "30.0",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "ಕಾಣ್ತಾ ಸ ತಾ"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 30,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕರ್ಕ",
+      "chandraEntryRashi": "ಸಿಂಹ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00.",
+      "gulikaKala": "ಬೆ.07:30- 09:00",
+      "yamaganda": "ಮ. 03:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 03:00",
+      "shubhaSamaya": "ಬೆ. 08:53 - 10:29"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪರಿಶ್ರಮ",
+        "raw": "ಮೇಷ » ಪರಿಶ್ರಮ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ವೃಷಭ » ಶ್ರೇಷ್ಠತೆ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸ್ಲೇಹ",
+        "raw": "ಮಿಥುನ » ಸ್ಲೇಹ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಕೀರ್ತಿ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಸಿಂಹ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಕನ್ಯಾ ೫೧ ಪ್ರೀತಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ತುಲಾ» ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ವೃಶ್ಚಿಕ» ಉಡುಗೊರೆ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಲಾಭ",
+        "raw": "ಧನಸ್ಸು ». ಲಾಭ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಮಕರ ೫» ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಬಿಶ್ರಾಂತಿ",
+        "raw": "ಕುಂಭ ೫ ಬಿಶ್ರಾಂತಿ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಮೀನ » ಪ್ರೋತ್ಸಾಹ ."
+      }
+    ]
+  }
+}

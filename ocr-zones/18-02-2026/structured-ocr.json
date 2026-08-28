@@ -1,0 +1,166 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\02\\18-02-2026.jpg",
+                   "date":  "18-02-2026",
+                   "dimensions":  {
+                                      "width":  1514,
+                                      "height":  1060
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "18-02-2026",
+                                   "quote":  "ಒಬ್ಬರ ಬದಲಾವಣೆ, ಜಗತ್ತಿಗೆ ಸೂರ್ತಿ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಮಕರ/ ಕುಂಭ",
+                                     "sunrise":  "06:41",
+                                     "sunset":  "18:26"
+                                 },
+                    "events":  [
+                                   "ಗೋಕರ್ಣ - ಮಹಾಬಳೆಶ್ಚರ ರಥ",
+                                   "ಸಿದ್ದಗಂಗಾ",
+                                   "ಸಿದ್ದಲಿಂಗೇಶ್ವರ ರಥ",
+                                   "ಮುದೇನೂರ ಉಮಾಚಂದ್ರ ಶ್ರೀ",
+                                   "ಮೌಳೇಶ್ವರ ಕಾರ್ತಿಕೋತ್ಸವ",
+                                   "ಮರಡಿ ಶರಣ",
+                                   "ಬಸವೇಶ್ವರ ರಥ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಶತಭಿಷಾ",
+                                                        "endsAt":  "21.16",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಪ್ರತಿಪದಾ",
+                                                    "endsAt":  "16.58",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಶಿವ",
+                                                   "endsAt":  "2.45",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಬಾಲವ",
+                                                     "endsAt":  "28.32",
+                                                     "nextDay":  true,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬಾಲವ 28.32"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ವಸಂತ",
+                                      "solarYear":  6,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಕುಂಭ",
+                                      "chandraEntryRashi":  "ಕುಂಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 12:00 - 01:30",
+                                    "gulikaKala":  "ಮ. 10130 - 12:00",
+                                    "yamaganda":  "ಬೆ. 07:30 09:00",
+                                    "arthaPrahara":  "ಬಿ. 06:00 - 07:30",
+                                    "shubhaSamaya":  "ಮ. 02:04 - 03:40"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಮೇಷ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ವೃಷಭ » ಯಶಸ್ಸು ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಮಿಥುನ » ಸಾಲ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಕಾಟರ್ಕು ಖರ್ಚು",
+                                        "raw":  "ಕರ್ಕಾಟರ್ಕು ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಸ್ನೇಹ",
+                                        "raw":  "ಸಿಂಹ » ಸ್ನೇಹ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ಕನ್ಯಾ» ಒಳ್ಳೆಯದು"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಪ್ರತಿರೋಧ",
+                                        "raw":  "ತುಲಾ »ಪ್ರತಿರೋಧ."
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಅಲೆದಾಟ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಅಲೆದಾಟ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಆಸಕ್ತಿ",
+                                        "raw":  "ಧನಸ್ಸು ». ಆಸಕ್ತಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ದುಃಖ",
+                                        "raw":  "ಮಕರ » ದುಃಖ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಕುತೂಹಲ",
+                                        "raw":  "ಕುಂಭ » ಕುತೂಹಲ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ಮೀನ » ಪ್ರಯತ್ನ"
+                                    }
+                                ]
+                }
+}

@@ -1,0 +1,165 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\03\\17-03-2026.jpg",
+                   "date":  "17-03-2026",
+                   "dimensions":  {
+                                      "width":  1136,
+                                      "height":  795
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "17-03-2026",
+                                   "quote":  "ುನುಜನೇ ದೇವರು, ಮಾನವತೆಯೇ ಧಃ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+                                                ],
+                                     "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಕುಂಭ/ಮೀನ",
+                                     "sunrise":  "06:26",
+                                     "sunset":  "18:30"
+                                 },
+                    "events":  [
+                                   "ಶ್ರೀ ಹಿಂಗುಲಾಂಬಿಕಾ ದೇವಿ ಪ್ರಕಟ ದಿನ",
+                                   "ಶಬ್ಬೆ ಕದರ",
+                                   "ಮಾಸಿಕ ಶಿವರಾತ್ರಿ",
+                                   "ಮಧುಕೃಷ್ಣ ಪ್ರಯೋದಶಿ ವಾರುಣಿ",
+                                   "ಯೋಗ ಬೆ. 09.22 ವರೆಗೆ. ಉಳ್ಳಾಲ ಶ್ರೀ ಲಕ್ಷ್ಮೀನರಸಿಂಹ",
+                                   "ರಥ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಶತಭಿಷಾ",
+                                                        "endsAt":  "30.29",
+                                                        "nextDay":  true,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ತ್ರಯೋದಶಿ",
+                                                    "endsAt":  "09.24",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಸಿಿ್‌",
+                                                   "endsAt": "08.15",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ವಿಷ್ಟಿ",
+                                                     "endsAt":  "20.59",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "ಕರಣ. ವಿಷ್ಟಿ 20.59"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ವಸಂತ",
+                                      "solarYear":  3,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಮೀನ",
+                                      "chandraEntryRashi":  "ಕುಂಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 03:00 - 04:30",
+                                    "gulikaKala":  "ಮ. 12:06 - 61:30",
+                                    "yamaganda":  "ಬೆ. 09:00 - 10:30",
+                                    "arthaPrahara":  "ಬೆ.07:30- 09:00",
+                                    "shubhaSamaya":  "ಸ. 11:01 - 12:36"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "* ಸಂತೋಷ",
+                                        "raw":  "ಮೇಷ »* ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ವೃಷಭ » ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಮಿಥುನ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಕರ್ಕಾಟಕ: ಪ್ರೋತ್ಸಾಹ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಸಹಾಯ",
+                                        "raw":  "ಸಿಂಹ. » ಸಹಾಯ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಅನಾರೋಗ್ಯ",
+                                        "raw":  "ಕನ್ಯಾ » ಅನಾರೋಗ್ಯ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಶಾಂತಿ",
+                                        "raw":  "ತುಲಾ» ಶಾಂತಿ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಅನುಕೂಲ ."
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಆಸೆ",
+                                        "raw":  "ಧನಸ್ಸು » ಆಸೆ."
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಮಕರ ೫ ಭಯ .:"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ತಾಳ್ಮೆ",
+                                        "raw":  "ಕುಂಭ » ತಾಳ್ಮೆ :"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಮೀನ » ಸಾಲ."
+                                    }
+                                ]
+                }
+}

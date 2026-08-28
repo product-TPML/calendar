@@ -1,0 +1,166 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\25-03-2026.jpg",
+    "date": "25-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "25-03-2026",
+      "quote": "ವೀಯತೆಯು ಶತ್ರುವನ್ನುಮಾಡದೆ ಪ್ರೀತಿಯನ್ನುಮಾಃ"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:20",
+      "sunset": "18:30"
+    },
+    "events": [
+      "ಶ್ರೀ ಭವಾನಿಜಯಂತಿ",
+      "ಹೊನ್ನಹಳ್ಳಿ ತಾ. ಹುಕ್ಕೇರಿ",
+      "ಜಂಗಲಿಪೀಥ ಬಾಬಾ ಉರುಸು",
+      "ವಾಸಂತಿ ದುರ್ಗಾ",
+      "ಪೂಜಾರಂಭ",
+      "ಕಿಕ್ಕೇರಿ ಮಹಾಲಕ್ಷ್ಮೀ ಉತ್ಸಾವಾರಂಭ.",
+      "ಆನೇಕಲ್ಲು ತೀಮ್ಮರಾಯ ರಥ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಮೃಗಶಿರಾ",
+        "endsAt": "17.34",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಸಪ್ತಮ",
+        "endsAt": "13.51",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸೌಭಾಗ್ಯ",
+        "endsAt": "27.0",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಿಷ್ಟಿ",
+        "endsAt": "24.45",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ  ವಿಷ್ಟಿ 24.45"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 11,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ಮಿಥನ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಬೆ. 10:30 - 12:00",
+      "yamaganda": "ಬೆ.07:30 - 09:00",
+      "arthaPrahara": "ಬೆ.06:00 - 07:30",
+      "shubhaSamaya": "ಬೆ. 09:19 - 10:49"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "* ಸಂತೋಷ",
+        "raw": "ಮೇಷ »* ಸಂತೋಷ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಷಭ » ಲಾಭ..."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಮಿಹುನ » ಸ್ಲೇಹ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಕರ್ಕಾಟಕ. ಪ್ರೀತಿ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಸಿಂಹ ೫» ಪ್ರೀತಿ ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಆಸೆ",
+        "raw": "ಕನ್ಯಾ ೫» ಆಸೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಪ್ರತಿಭೆ",
+        "raw": "ತುಲಾ» ಪ್ರತಿಭೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಕರ್ತಿ",
+        "raw": "ವೃಶ್ಚಿಕ »  ಕರ್ತಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಧನಸ್ಸು » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಮಕರ ೫». ಶಾಂತಿ :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಕುಂಭ » ಅಭಿವೃದ್ದಿ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಒಳ್ಳೆಯಸುದ್ದಿ",
+        "raw": "ಮೀನ ೫ ಒಳ್ಳೆಯಸುದ್ದಿ"
+      }
+    ]
+  }
+}

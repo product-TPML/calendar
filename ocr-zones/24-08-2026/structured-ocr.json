@@ -1,0 +1,164 @@
+{
+  "source": {
+    "image": "data\\2026\\08\\24-08-2026.jpg",
+    "date": "24-08-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "24-08-2026",
+      "quote": "ಇಂದು ಮಾಡಿದ ಕೆಲಸ ನಾಳೆ ಮಾತಾಡುತ್ತದೆ"
+    },
+    "calendar": {
+      "months": [
+        "ಆಷಾಢ",
+        "ಶ್ರಾವಣ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಕರ್ಕ/ಸಿಂಹ",
+      "sunrise": "06:08",
+      "sunset": "18:25"
+    },
+    "events": [
+      "2ನೇ ಶ್ರಾವಣ ಸೋಮವಾರ",
+      "ಪುತ್ರದಾ ಭಾಗವತ",
+      "ಏಕಾದಶಿ. ಬುದ್ದ ದಾಮೋದರ ದ್ವಾದಶಿ",
+      "ಶಿವಾಮುಷ್ಠಿ ಎಳ್ಳು. ಮೃತ್ಯುಯೋಗ ಪ್ರಾರಂಭ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪೂ.ಷಾ",
+        "endsAt": "20.28",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಾದಶಿ",
+        "endsAt": null,
+        "nextDay": false,
+        "fullDay": true
+      },
+      "yoga": {
+        "name": "ಪ್ರೀತಿ",
+        "endsAt": "07.04",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "17.23",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬವ 17.23 _"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 8,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಸಿಂಹ",
+      "chandraEntryRashi": "ಧನು"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ.01:30 -03:00",
+      "yamaganda": "ಬೆ.10:30- 12:00",
+      "arthaPrahara": "ಚೆ.09:00 - 10:30",
+      "shubhaSamaya": "ಮ. 03:07 - 04:51"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಮೇಷ ೫» ಖರ್ಚು :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ವೃಷಭ » ಪ್ರಯತ್ನ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಮಧುರ ಮಾತು",
+        "raw": "ಮಿಥುನ » ಮಧುರ ಮಾತು"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಕರ್ಕಾಟಕ. ತಾಳ್ಮೆ ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಸಿಂಹ » ಪ್ರೀತಿ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಕನ್ಯಾ ೫ ಗೌರವ :"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ವಿಶ್ರಾಂತಿ",
+        "raw": "ತುಲಾ ೫» ವಿಶ್ರಾಂತಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ವೃಶ್ಚಿಕ». ಕೀರ್ತಿ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಧನಸ್ಸು » ಸಂತೋಷ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಭಯ",
+        "raw": "ಮಕರ ೫ ಭಯ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಒಳ್ಳೆಯ ಕೆಲಸ",
+        "raw": "ಕುಂಭ » ಒಳ್ಳೆಯ ಕೆಲಸ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮೀನ » ಸಂತೋಷ"
+      }
+    ]
+  }
+}

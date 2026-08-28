@@ -1,0 +1,167 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\06\\07-06-2026.jpg",
+                   "date":  "07-06-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "existing-paksha-ocr",
+                                       "raw":  "ಇರ ಕೃಷ್ಣ ನದ",
+                                       "value":  "ಕೃಷ್ಣ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "07-06-2026",
+                                   "quote":  "ದೊಡ್ಡಹೆಜ್ಜೆಗೆ ಸಣ್ಣಪ್ರಾರಂಭ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ ನಾಮ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ವೃಷಭ/ಮಿಥುನ",
+                                     "sunrise":  "05:52",
+                                     "sunset":  "18:44"
+                                 },
+                    "events":  [
+                                   "ಭಾನುಸಪ್ತಮಿ",
+                                   "ವಿಶ್ವ ಆಹಾರ",
+                                   "ಸುರಕ್ಷತಾ ದಿನ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಧನಿಷ್ಠಾ",
+                                                        "endsAt":  "07.56",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಸಪ್ತಮಿ",
+                                                    "endsAt":  "27.25",
+                                                    "nextDay":  true,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವೈಧ್ಯತಿ",
+                                                   "endsAt":  "10.02",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ವಿಷ್ಠಿ",
+                                                     "endsAt":  "15.6",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ  ವಿಷ್ಠಿ 15.6"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಗ್ರೀಷ್ಠ",
+                                      "solarYear":  24,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ವಷಭ",
+                                      "chandraEntryRashi":  "ಕುಂಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 04:30 -06:00",
+                                    "gulikaKala":  "ಮ.05:00 - 04:30",
+                                    "yamaganda":  "ಮ. 12:00 - 01:30",
+                                    "arthaPrahara":  "ಬ. 10:30 - 12:00",
+                                    "shubhaSamaya":  "unavailable"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಸ್ನೇಹ",
+                                        "raw":  "ಮೇಷ ». ಸ್ನೇಹ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ವೃಷಭ » ಭಯ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ತಾಳ್ಮೆ",
+                                        "raw":  "ಮಿಥುನ » ತಾಳ್ಮೆ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಅನುಕೊಲ",
+                                        "raw":  "ಕರ್ಕಾಟಕ: ಅನುಕೊಲ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಸಿಂಹ » ಯಶಸ್ಸು:"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ಕನ್ಯಾ» ಒಳ್ಳೆಯದು"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಶಾಂತಿ",
+                                        "raw":  "ತುಲಾ» ಶಾಂತಿ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಯೋಗ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಯೋಗ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಗೌರವ",
+                                        "raw":  "ಧನಸ್ಸು » ಗೌರವ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಸೌಮೃತೆ",
+                                        "raw":  "ಮಕರ » ಸೌಮೃತೆ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಕುಂಭ » ಸಾಲ..."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಪ್ರತಿರೋಧ",
+                                        "raw":  "ಮೀನ » ಪ್ರತಿರೋಧ"
+                                    }
+                                ]
+                }
+}

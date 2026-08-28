@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\09\\05-09-2026.jpg",
+    "date": "05-09-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "05-09-2026",
+      "quote": "ನಿನನು ನಿಲಿಸಲು ಅಲ, ಬಲಪಡಿಸಲು ಬ"
+    },
+    "calendar": {
+      "months": [
+        "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಸಿಂಹ/ಕನ್ಯಾ",
+      "sunrise": "06:08",
+      "sunset": "18:28"
+    },
+    "events": [
+      "ಶಿಕ್ಷಕರ ದಿನಾಚರಣೆ",
+      "ಡಾ. ರಾಧಾಕೃಷ್ಣ ಜಯಂತಿ",
+      "ಗೊಗಲ್‌",
+      "ತಾ. ದೇವದುರ್ಗ ಪ್ರಭುಲಿಂಗೇಶ್ವರ ತೆಪ್ಪೋತ್ಸವ",
+      "ಕಣಕಗೀರಿ",
+      "ತೊಂಡಿರಪ್ಪಾ ಪಲ್ಲಕ್ಕೆ ಉತ್ಸವ",
+      "ತಂಗಳ ತಾ.'ಜಮಖಂಡಿ ಶ್ರೀ",
+      "ಗೋಪಾಲಕೃಷ್ಣ ಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಮೃಗಶಿರಾ",
+        "endsAt": "21.31",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ನವಮಿ",
+        "endsAt": "21.54",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವಜ್ರ",
+        "endsAt": "12.47",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": "11.05",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ತೈತಿಲ11,05"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 20,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಸಿಂಹ",
+      "chandraEntryRashi": "ವೃಷಭ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ. 06:00 - 07:30",
+      "yamaganda": "ಮ. 01:30 - 03:0",
+      "arthaPrahara": "ಮ. 12:00 -01:3(",
+      "shubhaSamaya": "ಸ. 01:17 - 02:46"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮೇಷ » ಅನುಕೂಲ."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ದಯೆ",
+        "raw": "ವೃಷಭ » ದಯೆ :"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಮಿಥುನ » ಆತಂಕ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಪ್ರಗತಿ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಭಯ",
+        "raw": "ಸಿಂಹ ೫» ಭಯ 1"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸಮಸ್ಯೆ",
+        "raw": "ಕನ್ಯಾ ೫ ಸಮಸ್ಯೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ತುಲಾ» ತೊಂದರೆ :"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ವೃಶ್ಚಿಕ» ಸಂಪತ್ತು :"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಧನಸ್ಸು » ಸ್ನೇಹ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಮೆಚ್ಚುಗೆ",
+        "raw": "ಮಕರ ೫». ಮೆಚ್ಚುಗೆ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಂತೊಷ",
+        "raw": "ಕುಂಭ » ಸಂತೊಷ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಮೀನ » ವಿಳಂಬ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\29-04-2026.jpg",
+    "date": "29-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "29-04-2026",
+      "quote": "ಕಡಿಮೆ ಮಾತು, ಹೆಚ್ಚು ಕೆಲಸ, ಯಶಸ್ಸು ನಿನ್ನದು"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:00",
+      "sunset": "18:34"
+    },
+    "events": [
+      "ಅಂತರರಾಷ್ಟ್ರೀಯ ನೃತ್ಯ ದಿನ",
+      "ಚಾಂದ್ರಾ ಸ್ಮಾರ್ತ ನೃಸಿಂಹ",
+      "ಜಯಂತಿ",
+      "ಹೊನ್ನಾಳಿ ತಾ. ರಾಂಪುರದ ಶ್ರೀ ಸದ್ಗುರು ಹಾಲಸ್ವಾಮಿ",
+      "ಪುಣ್ಯ ತಿಥಿ. ಕುಂದಗೋಳ ತಾ. ಕೊಡ್ಲಿವಾಡ ಶ್ರೀ ವೀರಭದ್ರೇಶ್ವರ",
+      "ಜಾತ್ರೆ (ಮರುದಿನ ಅಗ್ನಿಕುಂಡ) ಅಗಡಿ ಆ. ಹಾವೇರಿ ಕೊಳ್ಳದಲ್ಲಿ",
+      "ರಥ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಹಸ್ತ",
+        "endsAt": "24.17",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತ್ರಯೋದಶಿ",
+        "endsAt": "19.52",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಹರ್ಷಣ",
+        "endsAt": "20.15",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌಲವ",
+        "endsAt": "07.19",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೌಲವ 07.19"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 16,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮೇ",
+      "chandraEntryRashi": "ಕನ್ಯಾ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಬೆ. 10:30 - 12:00",
+      "yamaganda": "ಬೆ. 07:30 - 09:00",
+      "arthaPrahara": "ಬೆ. 06:00 - 07:30",
+      "shubhaSamaya": "ಸ. 05:51 - 07:34"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಮೇಷ » ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಷಭ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಮಿಥುನ » ಪ್ರೀತಿ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸೆರಮ್ಯತೆ",
+        "raw": "ಕರ್ಕಾಟಕ ಸೆರಮ್ಯತೆ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಸಿಂಹ » ಸ್ನೇಹ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕನ್ಯಾ» ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ತುಲಾ.» ಸಂತೋಷ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ವೃಶ್ಚಿಕ». ವಿಳಂಬ ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಧನಸ್ಸು » ಸಂತೋಷ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮಕರ ೫». ಸಾಲ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಕುಂಭ » ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಮೀನ ». ತಾಳ್ಮೆ"
+      }
+    ]
+  }
+}

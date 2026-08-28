@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\05-11-2026.jpg",
+    "date": "05-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಕೃಷ್ಣ",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "05-11-2026",
+      "quote": "ಬಲ್ಲವನಿಗೆ ರೋಗವಿಲ್ಲಮಾತು ಬಲ್ಲವನಿಗೆ ಜಗಳ"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:14",
+      "sunset": "17:51"
+    },
+    "events": [
+      "ರಮಾ ಏಕಾದಶಿ",
+      "ಗೋವತ್ಸ ದ್ವಾದಶಿ. ವಿಶ್ವ ಸುನಾಮಿ",
+      "ಜಾಗ್ರತೆ ದಿನ",
+      "ಶುಕ್ರ ವಕ್ರಿ ಕನ್ಯಾದಲ್ಲಿ",
+      "ಶ್ರೀ ಸಿದ್ರಾಮೇಶ್ವರ",
+      "ಸಪ್ತಾಹ ಸಮಾಪ್ತಿ ಬ.ಬಾಗೇವಾಡಿ ಚಿತ್ರದುರ್ಗ ಶ್ರೀ",
+      "ಮುರುಘಾರಾಜೇಂದ್ರ ಮಠದಲ್ಲಿ ಸಾಮೂಹಿಕ ವಿವಾಹ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಉತ್ತರಾ",
+        "endsAt": "27.56",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಏಕಾದಶಿ",
+        "endsAt": "10.36",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "%2",
+        "endsAt": "06.26",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "5ಲವ",
+        "endsAt": "22.31",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _5ಲವ 22.31"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಲಾ 20",
+      "solarYear": 20,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ತುಲಾ",
+      "chandraEntryRashi": "ಸಿಂಹ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಚೆ.09:00 - 10:30",
+      "yamaganda": "ಬೆ.06:00 - 07:30",
+      "arthaPrahara": "ಮ. 05:00 - 04:30",
+      "shubhaSamaya": "ರಾ. 08:36 - 10:13"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಮರೆವು",
+        "raw": "ಮೇಷ » ಮರೆವು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ವೃಷಭ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮಿಥುನ » ಸಾಲ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕರ್ಕಾಟಕ ಯಶಸ್ಸು ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಸಿಂಹ » ಗೌರವ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಕನ್ಯಾ ೫ ಕೋಪ :"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಲಾಭ",
+        "raw": "ತುಲಾ ೫ ಲಾಭ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ವೃಶ್ಚಿಕ» ಪ್ರೀತಿ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ಧನಸ್ಸು » ಅಭಿವೃದ್ಧಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಮಕರ » ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ಕುಂಭ *». ಪ್ರಗತಿ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಧೈರ್ಯ",
+        "raw": "ಮೀನ » ಧೈರ್ಯ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\09\\24-09-2026.jpg",
+    "date": "24-09-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "24-09-2026",
+      "quote": "ಪರಿಪೂರ್ಣವಾಗಬೇಕಿಲ್ಲ, ಅರ್ಥಪೂರ್ಣವಾಗಿದ್ದ"
+    },
+    "calendar": {
+      "months": [
+        "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಸಿಂಹ/ಕನ್ಯಾ",
+      "sunrise": "06:08",
+      "sunset": "18:14"
+    },
+    "events": [
+      "ಹೃದಯ ವಿಕಾರ ಜಾಗೃತಿ ದಿನ",
+      "ಶ್ರೀ ಶೈಲವಾಗೀಶ",
+      "ಪಂಡಿತರಾಧ್ಯಸ್ವಾಮಿ ಪುಣ್ಯ ತಿಥಿ",
+      "ಗೋವಿಂದಪ್ರಭೂ ಜಯಂತಿ",
+      "ಫತ್ತೆಯಾಜದಹಮ",
+      "ತರಳಬಾಳು ಹಿರಿಯ ಜಗದ್ಗುರುಗಳಾದ",
+      "ಶಿವಕುಮಾರ ಶಿವಾಚಾರ್ಯ ಮಹಾಸ್ವಾಮಿಗಳ ಪುಣ್ಯತಿಥಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಧನಿಷ್ಠಾ",
+        "endsAt": "10.35",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತ್ರಯೋದಶಿ",
+        "endsAt": "23.19",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಧೃತಿ",
+        "endsAt": "15.55",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌಲವ",
+        "endsAt": "11.10",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೌಲವ 11.10."
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 8,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಕನ್ನಾ",
+      "chandraEntryRashi": "ಕುಂಭ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಬೆ.9:00 - 10:30.",
+      "yamaganda": "ಬೆ.06:00-07:30",
+      "arthaPrahara": "ಬೆ. 03:00 - 04:30",
+      "shubhaSamaya": "unavailable"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಮೇಷ » ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ವೃಷಭ » ಪ್ರೀತಿ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಯಶಸ",
+        "raw": "ಮಿಥುನ » ಯಶಸ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅಭಿವೃದಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಅಭಿವೃದಿ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಮಸ್ಯೆ",
+        "raw": "ಸಿಂಹ ೫» ಸಮಸ್ಯೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಕನ್ಯಾ ೫ ಕೋಪ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಬಲ",
+        "raw": "ತುಲಾ ೫» ಬಲ '"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ವೃಶ್ಚಿಕ» ಸಂಪತ್ತು :"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಧನಸ್ಸು » ಸಂತೋಷ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಮಕರ ೫» ಸ್ನೇಹ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕುಂಭ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮೀನ ». ಸಂತೋಷ"
+      }
+    ]
+  }
+}

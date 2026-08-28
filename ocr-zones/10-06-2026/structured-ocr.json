@@ -1,0 +1,165 @@
+{
+  "source": {
+    "image": "data\\2026\\06\\10-06-2026.jpg",
+    "date": "10-06-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "10-06-2026",
+      "quote": "ಪ್ರಯತ್ನ ನಮದು, ಫಲ ದೇವರದ್ದು"
+    },
+    "calendar": {
+      "months": [
+        "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ ನಾಮ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಷಭ/ಮಿಥುನ",
+      "sunrise": "05:52",
+      "sunset": "18:45"
+    },
+    "events": [
+      "ವಿಶ್ವ ದೃಷ್ಠಿದಾನ ದಿನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಉಭಾ",
+        "endsAt": "09.22",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದಶಮಿ",
+        "endsAt": "24.58",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಯ್‌",
+        "endsAt": "06.30",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣೆಜ",
+        "endsAt": "13.35",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ವಣೆಜ 13.35"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 27,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವಷಭ",
+      "chandraEntryRashi": "ಮೀನ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಬೆ. 10:30 - 12:00",
+      "yamaganda": "ಚೆ.07:30-09:00",
+      "arthaPrahara": "ಬ.06:00 - 07:30",
+      "shubhaSamaya": "ಬೆ. 04:37 -06:12"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮೇಷ » ಲಾಭ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಭಯ",
+        "raw": "ವೃಷಭ » ಭಯ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಪ್ರತಿರೋಧದ",
+        "raw": "ಮಿಥುನ » ಪ್ರತಿರೋಧದ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಕಾಟರ್ಕು - ಸಾಲ",
+        "raw": "ಕರ್ಕಾಟರ್ಕು - ಸಾಲ..."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಸಿಂಹ » ಅನುಕೂಲ:"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ಕನ್ಯಾ ೫ ಸಹಾಯ."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ತುಲಾ» ಖರ್ಚು"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಶ್ಚಿಕ» ಲಾಭ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಧನಸ್ಸು » ಆತಂಕ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಮಕರ ೫» ವಿಳಂಬ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಕುಂಭ » ಪ್ರೀತಿ, ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸಮಸ್ಯೆ",
+        "raw": "ಮೀನ ». ಸಮಸ್ಯೆ"
+      }
+    ]
+  }
+}

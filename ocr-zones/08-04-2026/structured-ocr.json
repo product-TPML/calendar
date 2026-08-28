@@ -1,0 +1,167 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\08-04-2026.jpg",
+    "date": "08-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "08-04-2026",
+      "quote": "ನ್ನೋ ಮೆಚ್ಚಿಸುವ ಭರದಲ್ಲಿ ನಮವರನ್ನು ನಿರ್ಲಕ್ಷೀಸ"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:11",
+      "sunset": "18:31"
+    },
+    "events": [
+      "ಬಂಕಿಮಚಂದ್ರ ಚಟರ್ಜಿ ಪುಣ್ಯಸ್ಮರಣೆ",
+      "ಇಂಡಿ",
+      "ತಾಲೂಕು ಹರೇಹಾಗಿ ಶ್ರೀ ಗಿರಿಜಾ ಮಾತಾಜಿ ಪುಣ್ಯ",
+      "ತಿಥಿ",
+      "ಆಕೋಳ ಸೈಯದಬಾಬಾ ಜಾತ್ರೆ",
+      "ಮೌಲಾ",
+      "ಮಾಸ್ತರ ಉರುಸು ತಾರಾಣಾಳ ತಾ. ಮುದ್ದೇಬಿಹಾಳ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಮೂಲಾ",
+        "endsAt": null,
+        "nextDay": false,
+        "fullDay": true
+      },
+      "tithi": {
+        "name": "ಷಷ್ಠಿ",
+        "endsAt": "19.0",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವರೀಯಾನ",
+        "endsAt": "17.10",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "_ ವಿಷ್ಟಿ",
+        "endsAt": null,
+        "nextDay": false,
+        "fullDay": true,
+        "raw": "'ಕರಣ _ ವಿಷ್ಟಿ ಪೂರ್ಣ"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 25,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ಧನು"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಬೆ. 10:30 - 12:00",
+      "yamaganda": "ಬೆ.07:30-09:00",
+      "arthaPrahara": "ಬ. 06:00 - 07:30",
+      "shubhaSamaya": "unavailable"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ಮೇಷ ». ಸಂಪತ್ತು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ವೃಷಭ » ಪ್ರಯತ್ನ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ವಿಶ್ರಾಂತಿ",
+        "raw": "ಮಿಥುನ ». ವಿಶ್ರಾಂತಿ:"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ಕರ್ಕಾಟಕ ಶ್ರೇಷ್ಠತೆ ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಅನಾರೋಗ್ಯ",
+        "raw": "ಸಿಂಹ » ಅನಾರೋಗ್ಯ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಯೋಗ",
+        "raw": "ಕನ್ಯಾ ೫» ಯೋಗ '"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ತುಲಾ ೫» ಕೀರ್ತಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ವೃಶ್ಚಿಕ » ಸ್ನೇಹ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಧನಸ್ಸು ». ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ಮಕರ »: ತೊಂದರೆ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಕುಂಭ » ಸಾಲ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೀನ » ಯಶಸ್ಸು"
+      }
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\27-04-2026.jpg",
+    "date": "27-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ತುತ ` ಶುಕ್ಲ ಕುನಾಲ್‌)",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "27-04-2026",
+      "quote": "ತ್ತಿನಲ್ಲಿ ಯಾವುದು ಶಾಶ್ವತವಲ್ಲ ಅರಿತು ನಡೆ ಇದೆ"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:00",
+      "sunset": "18:34"
+    },
+    "events": [
+      "ಮೋಹಿನಿ ಏಕಾದಶಿ",
+      "ಭರಣಿ ಮಳೆ ಪ್ರಾರಂಭ",
+      "ವರದರಾಜ ಜಯಂತಿ",
+      "ಮೀನಾಕ್ಷಿ ಕಲಾಣ",
+      "ಮೊಳಕಾಲ್ಮೂರು ನುಂಕಮಲೆ ಸಿದ್ದೇಶ್ವರ ರಥ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪೂರ್ವಾ",
+        "endsAt": "21.19",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಏಕಾದಶಿ",
+        "endsAt": "18.16",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಧ್ರುವ",
+        "endsAt": "21.36",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣಿಜ",
+        "endsAt": "06.08",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ವಣಿಜ 06.08 _"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 14,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮೇ",
+      "chandraEntryRashi": "ಸಿಂಹ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ.01130 - 03:00",
+      "yamaganda": "ಚೆ. 10:30 - 12:00",
+      "arthaPrahara": "ಬೆ. 09:00 - 1030",
+      "shubhaSamaya": "ಮ. 02:41 - 04:20"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಚಿಂತೆ",
+        "raw": "ಮೇಷ ». ಚಿಂತೆ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ವೃಷಭ » ಆತಂಕ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಭಯ",
+        "raw": "ಮಿಥುನ » ಭಯ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಕರ್ಕಾಟಕ. ಸಾಲ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಭಯ",
+        "raw": "ಸಿಂಹ » ಭಯ '"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಕನ್ಯಾ ೫0 ಕೀರ್ತಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ತುಲಾ.» ಪ್ರೋತ್ಸಾಹ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ವೃಶ್ಚಿಕ» ಪ್ರತಿರೋಧ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಧನಸ್ಸು ». ಕೀರ್ತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಆನಂದ",
+        "raw": "ಮಕರ ೫». ಆನಂದ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ವಿಶ್ರಾಂತಿ",
+        "raw": "ಕುಂಭ » ವಿಶ್ರಾಂತಿ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಮೀನ ». ಗೌರವ"
+      }
+    ]
+  }
+}

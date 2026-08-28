@@ -1,0 +1,169 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\14-11-2026.jpg",
+    "date": "14-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "14-11-2026",
+      "quote": "ಕುಣಿಯಲು ಬಾರದವರಿಗೆ ನಲ ಡೊಂಕು"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:17",
+      "sunset": "17:50"
+    },
+    "events": [
+      "2ನೇ ಶನಿವಾರ",
+      "ನೆಹರು ಜಯಂತಿ",
+      "ಮಕ್ಕಳ ದಿನಾಚರಣೆ",
+      "ಪಾಂಡವ ಪಂಚಮಿ",
+      "ಲಾಭ",
+      "ಜ್ಞಾನ ಪಂಚಮಿ",
+      "ಕಿತ್ತೂರು",
+      "ಚೆನ್ನಮ್ಮ ಜಯಂತಿ",
+      "ವಿಶ್ವ ಮಧುಮೇಹ ದಿನ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪೂ.ಷಾ",
+        "endsAt": "20.25",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಪಂಚಮಿ",
+        "endsAt": "23.24",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶೂಲ",
+        "endsAt": null,
+        "nextDay": false,
+        "fullDay": true
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "10.0",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬವ 10.0"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಲಾ 29",
+      "solarYear": 29,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ತುಲಾ",
+      "chandraEntryRashi": "ಧನು"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": ". ಬೆ.06:00 - 07:30",
+      "yamaganda": "ಮ. 01:30 - 03:00",
+      "arthaPrahara": "ಮ. 12:66 - 6136",
+      "shubhaSamaya": "ಮ. 02:59 - 04:47"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಮೇಷ » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ವೃಷಭ » ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಮಿಥುನ » ಭಕ್ತಿ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಪ್ರೀತಿ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಸಿಂಹ » ಸಂತೋಷ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ಕನ್ಯಾ 0 ಪ್ರಯತ್ನ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಾಲ",
+        "raw": "ತುಲಾ ೫ ಸಾಲ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ವೃಶ್ಚಿಕ» ಅಭಿವೃದ್ಧಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಧನಸ್ಸು ». ಸ್ನೇಹ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮಕರ ೫ ಲಾಭ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಗಮನ",
+        "raw": "ಕುಂಭ » ಗಮನ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಮೀನ ». ಪ್ರೀತಿ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\07\\13-07-2026.jpg",
+                   "date":  "13-07-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "red-channel-4x-psm7",
+                                       "raw":  "ಪಕ್ಷ 1.18 `` ಕೃಷ್ಣ ೩ 8 ಬಟ]",
+                                       "value":  "ಕೃಷ್ಣ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "13-07-2026",
+                                   "quote":  "\u0027ನಸಿಗಿಂತ ನಿನ್ನ ಭಯ ದೊಡ್ಡದಾಗಬ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ನಿಜ ಜ್ಯೇಷ್ಠ/ಆಷಾಢ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮಿಥುನ/ಕರ್ಕ",
+                                     "sunrise":  "06:00",
+                                     "sunset":  "18:50"
+                                 },
+                    "events":  [
+                                   "ಶ್ರೀ ಎಚ್ಚರ ಸ್ವಾಮಿಗಳ ಲೋಬಾನ ಹಳೇಕೋಟ. ತಾ.",
+                                   "ಸಿರಗುಪ್ಪ ತಿರುಮುರಿ ದೇವರ ಜಾತ್ರೆ",
+                                   "ನೆಲ್ಲಿದಾರ",
+                                   "ಬ್ರಹ್ಮಸ್ತಂಭಾರೋಹಣ",
+                                   "ಸೋಮವತಿ ಅಮವಾಸ್ಯೆ",
+                                   "ಮಾಸ ಶಿವರಾತ್ರಿ",
+                                   "ವಿದ್ಯಾರಣ್ಯರ ಪುಣ್ಯತಿಥಿ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಆದ್ರಾ",
+                                                        "endsAt":  "26.52",
+                                                        "nextDay":  true,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಚತುರ್ದಶಿ",
+                                                    "endsAt":  "18.50",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಧ್ರುವ",
+                                                   "endsAt":  "16.1",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಜಎಷ್ತರೆಯ।",
+                                                     "endsAt": "08.40",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "ಕಾ :: ಫಾ"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ರ್ದಶಿ 18.50",
+                                      "solarYear":  29,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಮಿಹುನ",
+                                      "chandraEntryRashi":  "ಮಿಥುನ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 07:30 - 09:00.",
+                                    "gulikaKala":  "ಮ.01130 - 03:00",
+                                    "yamaganda":  "ಬೆ. 10:30- 12:00",
+                                    "arthaPrahara":  "ಬ.09:00 - 10:30",
+                                    "shubhaSamaya":  "ಸ. 06:02 - 07:27"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ತಾಳ್ಮೆ",
+                                        "raw":  "ಮೇಷ ». ತಾಳ್ಮೆ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಒಳ್ಳೆಯ ಕೆಲಸ",
+                                        "raw":  "ವೃಷಭ » ಒಳ್ಳೆಯ ಕೆಲಸ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಮಿಥುನ » ಲಾಭ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಪ್ರೋತ್ಸಾಹ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಸಿಂಹ » ಸಾಲ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಗಮನ",
+                                        "raw":  "ಕನ್ಯಾ ೫ ಗಮನ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ತುಲಾ» ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಕೀರ್ತಿ",
+                                        "raw":  "ವೃಶ್ಚಿಕ». ಕೀರ್ತಿ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ಧನಸ್ಸು » ಮೆಚ್ಚುಗೆ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಉತ್ಪಾಹ",
+                                        "raw":  "ಮಕರ » ಉತ್ಪಾಹ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಕುಂಭ » ಪ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಭಕ್ತಿ",
+                                        "raw":  "ಮೀನ » ಭಕ್ತಿ"
+                                    }
+                                ]
+                }
+}

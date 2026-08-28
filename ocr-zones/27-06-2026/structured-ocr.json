@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\06\\27-06-2026.jpg",
+    "date": "27-06-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಶುಕ್ಲ",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "27-06-2026",
+      "quote": "ತೆ ಬೆಳಗಬೇಕಾದರೆ, ಮೂದಲು ಸೂರ್ಯನಂತೆ ಸು"
+    },
+    "calendar": {
+      "months": [
+        "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ ನಾಮ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಷಭ/ಮಿಥುನ",
+      "sunrise": "05:56",
+      "sunset": "18:40"
+    },
+    "events": [
+      "4ನೇ ಶನಿವಾರ",
+      "ವಟ ಸಾವಿತ್ರಿ ವ್ರತಾರಂಭ",
+      "ಶನಿ",
+      "ಪ್ರದೋಷ",
+      "ಶಿವ ರಾಜ್ಯಾಭಿಷೇಕ ದಿನ",
+      "ಶ್ರೀ ಬಸವಗೌಡ",
+      "ಬಾಬಾ ಮಹಾ/ ಶ್ರೀ ಸ. ಅದೃಶ್ಯದೇವ ಬಾಬಾ ಮಹಾ.",
+      "ಪು. ದಿ ದತ್ತವಾಡ ತಾ. ಶಿರೋಳ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಅನುರಾಧಾ",
+        "endsAt": "22.11",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತ್ರಯೋದಶಿ",
+        "endsAt": "24.44",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸಾಧ್ಯ",
+        "endsAt": "12.32",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌಲವ",
+        "endsAt": "11.33",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೌಲವ 11.33"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 13,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮಿಥುನ",
+      "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30",
+      "gulikaKala": "ಬೆ. 06:00 - 07:30",
+      "yamaganda": "ಮ. 01:30 - 03:00",
+      "arthaPrahara": "ಮ. 12:00 - 01:30",
+      "shubhaSamaya": "ಬೆ. 10:31 - 12:19"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಮೇಷ » ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಔಂತ",
+        "raw": "ವೃಷಭ » ಔಂತ. ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮಿಥುನ » ಅನುಕೂಲ."
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪರಿಶ್ರಮ",
+        "raw": "ಕರ್ಕಾಟಕ ಪರಿಶ್ರಮ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಸಿಂಹ » ಸಂತೋಷ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕನ್ಯಾ» ಯಶಸ್ಸು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಗೊಂದಲ",
+        "raw": "ತುಲಾ » ಗೊಂದಲ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಶ್ಚಿಕ». ಲಾಭ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಧನಸ್ಸು » ಸಂತೋಷ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮಕರ » ಅನುಕೂಲ :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಭಯ",
+        "raw": "ಕುಂಭ » ಭಯ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಮೀನ ». ಸ್ನೇಹ"
+      }
+    ]
+  }
+}

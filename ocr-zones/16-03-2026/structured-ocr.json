@@ -1,0 +1,165 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\03\\16-03-2026.jpg",
+                   "date":  "16-03-2026",
+                   "dimensions":  {
+                                      "width":  1136,
+                                      "height":  795
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "16-03-2026",
+                                   "quote":  "“ಪ್ರತಿ ಭಾರಿ ಬಿದ್ದಾಗಲೂ ಎದ್ದುನಸಿಲ್ಲು”"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+                                                ],
+                                     "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಕುಂಭ/ಮೀನ",
+                                     "sunrise":  "06:26",
+                                     "sunset":  "18:30"
+                                 },
+                    "events":  [
+                                   "ಮೈಸೂರು ದುರ್ಗಾದೇವಿ ಜಾತ್ರೆ",
+                                   "ನಿಡಗುಂದಿ ಮುದ್ದೇಶ್ವರ",
+                                   "ರೆಥ",
+                                   "ರಾಷ್ಟ್ರೀಯ ಲಸಿಕರಣ ಔನ",
+                                   "ಕಾಂಪ್ರಬೈಲು ಜುತ್ತ\"",
+                                   "ಸೋಮಪ್ರದೋಷ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಧನಿಷ್ಠಾ",
+                                                        "endsAt":  "30.32",
+                                                        "nextDay":  true,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ದ್ವಾದಶಿ",
+                                                    "endsAt":  "0.41",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಶಿವ",
+                                                   "endsAt":  "09.37",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಗರಜ",
+                                                     "endsAt":  "21.38",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಗರಜ 21.38."
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ವಸಂತ",
+                                      "solarYear":  2,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಮೀನ",
+                                      "chandraEntryRashi":  "ಮಕರ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 07:30 - 09:00.",
+                                    "gulikaKala":  "ಮ.01:30 - 5:00",
+                                    "yamaganda":  "ಬೆ. 10:30 - 12:00",
+                                    "arthaPrahara":  "ಬೆ.09:00 - 10:30",
+                                    "shubhaSamaya":  "ಸ. 07:47 - 09:24"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಪ್ರತಿಭೆ",
+                                        "raw":  "ಮೇಷ » ಪ್ರತಿಭೆ:"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಮರವು",
+                                        "raw":  "ವೃಷಭ » ಮರವು."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಪ್ರತಿರೋಧ",
+                                        "raw":  "ಮಿಥುನ » ಪ್ರತಿರೋಧ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ಕರ್ಕಾಟಕ: ಒಳ್ಳೆಯದು"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಸಿಂಹ » ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಪ್ರಗತಿ",
+                                        "raw":  "ಕನ್ಯಾ» ಪ್ರಗತಿ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಆಸೆ",
+                                        "raw":  "ತುಲಾ » ಆಸೆ."
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಸ್ನೇಹ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಸ್ನೇಹ."
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ದಾನ",
+                                        "raw":  "ಧನಸ್ಸು » ದಾನ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಮಕರ » ಸಂತೋಷ."
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಕುಂಭ » ಸಾಲ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಸ್ಪರ್ಧೆ",
+                                        "raw":  "ಮೀನ » ಸ್ಪರ್ಧೆ"
+                                    }
+                                ]
+                }
+}

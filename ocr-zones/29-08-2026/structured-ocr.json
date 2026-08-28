@@ -1,0 +1,164 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\08\\29-08-2026.jpg",
+                   "date":  "29-08-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "29-08-2026",
+                                   "quote":  "ಅತಿಯಾದರೆ ಅಮೃತವೂ ವಿಷ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಆಷಾಢ",
+                                                    "ಶ್ರಾವಣ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕರ್ಕ/ಸಿಂಹ",
+                                     "sunrise":  "06:08",
+                                     "sunset":  "18:32"
+                                 },
+                    "events":  [
+                                   "ಅಶ್ವತ್ಥ ಮಾರುತಿ ಪೂಜೆ. ಪಂಚಕ. ರಾಷ್ಟ್ರೀಯ ಕ್ರೀಡಾ ದಿನ",
+                                   "ಶ್ರಿ*ದ್ದಾರೂಢ ಸ್ವಾಮಿ ಪುಣ್ಯ ತಿಥಿ ಹೆಗೂ ತೆಪ್ಪೋತ್ಸವ",
+                                   "ಹುಬ್ಬಳ್ಳಿ ಸಿದ್ದಾರೂಢ ಸ್ವಾಮಿ ರೆಥ ಮಹಾಲಿಂಗಪೂರ. ಗದಗ",
+                                   "ತಾ. ನಾಗಾವಿ ನಾಗದೇವತೆ ಜಾತ್ರೆ"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಪೂ. ಭಾ",
+                                                        "endsAt":  "27.42",
+                                                        "nextDay":  true,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಪ್ರತಿಪದಾ",
+                                                    "endsAt":  "09.57",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಈಜ್‌",
+                                                   "endsAt": "06.36",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ತೈತಿಲ",
+                                                     "endsAt":  "21.31",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ _ ತೈತಿಲ 21.31"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  13,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಸಿಂಕ್‌",
+                                      "chandraEntryRashi":  "ಕುಂಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 09:00 - 10:30.",
+                                    "gulikaKala":  "ಬೆ.06:00 - 07:30",
+                                    "yamaganda":  "ಮ. 01:30 - 03:00",
+                                    "arthaPrahara":  "ಮ. 12:00 - 01:30",
+                                    "shubhaSamaya":  "ಸ. 07:32 -09:10"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಕೀರ್ತಿ",
+                                        "raw":  "ಮೇಷ ೫» ಕೀರ್ತಿ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ನಿರಾಶೆ",
+                                        "raw":  "ವೃಷಭ ೫». ನಿರಾಶೆ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಆತಂಕ",
+                                        "raw":  "ಮಿಥುನ » ಆತಂಕ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಆನಂದ",
+                                        "raw":  "ಸಿಂಹ » ಆನಂದ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಶಾಂತಿ",
+                                        "raw":  "ಕನ್ಯಾ ೧ ಶಾಂತಿ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ತುಲಾ.» ಮೆಚ್ಚುಗೆ :"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ದಯ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ದಯ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಸಂಪತ್ತು",
+                                        "raw":  "ಧನಸ್ಸು ». ಸಂಪತ್ತು"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಗಮನ",
+                                        "raw":  "ಮಕರ » ಗಮನ \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಪ್ರತಿರೋಧ",
+                                        "raw":  "ಕುಂಭ » ಪ್ರತಿರೋಧ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಮೀನ ». ಸಾಲ"
+                                    }
+                                ]
+                }
+}

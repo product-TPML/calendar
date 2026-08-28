@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\06\\30-06-2026.jpg",
+    "date": "30-06-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "existing-paksha-ocr",
+      "raw": "ಇರರ ಕೃಷ್ಣರ",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "30-06-2026",
+      "quote": "ನ್ನುವುದು ಆಕಸ್ಮಿಕ, ಆದರೆ ಪರಿಶ್ರಮ ಎನ್ನುವುದು"
+    },
+    "calendar": {
+      "months": [
+        "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ ನಾಮ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಷಭ/ಮಿಥುನ",
+      "sunrise": "05:57",
+      "sunset": "18:40"
+    },
+    "events": [
+      "ಪೂರ್ವಾಷಾಢಾ ಪೂರ್ಣ",
+      "ನಿಜಜ್ಯೇಷ್ಠಮಾಸ ಕೃಷ್ಣಪಕ್ಷ",
+      "ಆರಂಭ",
+      "ಕೂಡ್ಲಿ ವಾಲುಕೇಶ್ವರ ಭಾರತೀಸ್ವಾಮಿಗಳ",
+      "ಆರಾಧನೆ",
+      "ಲಿಂಗಾನಂದಸ್ವಾಮಿ ಲಿಂಗೈಕ್ಯ ದಿನ",
+      "ಟಕ್ಕಳಕಿ",
+      "ತಾ. ಮುದ್ದೇಬಿಹಾಳ ಬಸವಲಿಂಗ ಶರಣ ಪುಣ್ಯತಿಥಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪೂ.ಷಾ.",
+        "endsAt": null,
+        "nextDay": false,
+        "fullDay": true
+      },
+      "tithi": {
+        "name": "ಪ್ರತಿಪದಾ",
+        "endsAt": null,
+        "nextDay": false,
+        "fullDay": true
+      },
+      "yoga": {
+        "name": "ಜ್ರಹ್ಮಾ",
+        "endsAt": "15.16",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "18.34",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 18.34"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 16,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮಿಥುನ",
+      "chandraEntryRashi": "ಧನು"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ. 12:00 - 01:30",
+      "yamaganda": "ಬೆ. 09:00- 10:30.",
+      "arthaPrahara": "ಬೆ. 07:30 - 09:00.",
+      "shubhaSamaya": "unavailable"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ಮೇಷ ». ಪ್ರಗತಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ನರಾಶೆ",
+        "raw": "ವೃಷಭ » ನರಾಶೆ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಮಿಥುನ » ಪ್ರೀತಿ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಆನಂದ",
+        "raw": "ಕರ್ಕಾಟಕ ಆನಂದ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಸಿಂಹ » ಪ್ರೀತಿ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕನ್ಯಾ» ಯಶಸ್ಸು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ತುಲಾ» ಕೀರ್ತಿ '"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ವೃಶ್ಚಿಕ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಮೆಚ್ಚುಗೆ",
+        "raw": "ಧನಸ್ಸು » ಮೆಚ್ಚುಗೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಅಭಿವೃದಿ",
+        "raw": "ಮಕರ *» ಅಭಿವೃದಿ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಕುಂಭ » ಪ್ರೋತ್ಸಾಹ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಮೀನ ». ತಾಳ್ಮೆ"
+      }
+    ]
+  }
+}

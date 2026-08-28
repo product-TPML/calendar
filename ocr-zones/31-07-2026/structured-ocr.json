@@ -1,0 +1,166 @@
+{
+  "source": {
+    "image": "data\\2026\\07\\31-07-2026.jpg",
+    "date": "31-07-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "31-07-2026",
+      "quote": "ನವಾಗಿ ದುಡಿ, ಫಲವೇ ಮಾತನ:"
+    },
+    "calendar": {
+      "months": [
+        "ನಿಜ ಜ್ಯೇಷ್ಠ/ಆಷಾಢ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮಿಥುನ/ಕರ್ಕ",
+      "sunrise": "06:05",
+      "sunset": "18:48"
+    },
+    "events": [
+      "ಹೊನ್ನಾಳಿ ತಾ|| ರಾಂಪೂರ ಹಾಲಸ್ವಾಮಿ ಪುಣ್ಯದಿನ",
+      "ನಾನಾ",
+      "ಶರಿಕರರೇಟ ಪುಣ್ಯದಿನ",
+      "ಅಶೂನ್ಯ ಶಯನೆ ವ್ರತ",
+      "ವಿದ್ಯಾತೀರ್ಥರ ಆರಾಧನೆ ಹುಣಸಿ ಹೊಳೆ",
+      "ಮೇಲುಕೋಟೆ",
+      "ಮಹಾಭಿಷೇಕ ಮತ್ತು ಕಲ್ಯಾಣೋತ್ಸವ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಧನಿಷ್ಠಾ",
+        "endsAt": "19.27",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಿತೀಯಾ",
+        "endsAt": "22.32",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸೌಭಾಗ್ಯ",
+        "endsAt": "23.54",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": "10.05",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ತೈತಿಲ 10.05"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 16,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಕರ್ಕ",
+      "chandraEntryRashi": "ಮಕರ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00",
+      "gulikaKala": "ಬೆ. 0:30 - 09:00.",
+      "yamaganda": "ಮ. 03:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 03:00",
+      "shubhaSamaya": "ಬೆ. 08:18 - 10:00"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೇಷ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ವೃಷಭ » ಸಹಾಯ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಭಕಿ",
+        "raw": "ಮಿಥುನ » ಭಕಿ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಕರ್ಕಾಟಕ ಕೋಪ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಸಿಂಹ » ಸಾಲ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಕನ್ಯಾ ೫ ಕೀರ್ತಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಂಪತು",
+        "raw": "ತುಲಾ» ಸಂಪತು"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಶ್ಚಿಕ». ಲಾಭ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಧನಸ್ಸು » ಖರ್ಚು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಅಭಿವದಿ",
+        "raw": "ಮಕರ ೫ ಅಭಿವದಿ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕುಂಭ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೀನ » ಯಶಸ್ಸು"
+      }
+    ]
+  }
+}

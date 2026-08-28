@@ -1,0 +1,169 @@
+{
+  "source": {
+    "image": "data\\2026\\07\\02-07-2026.jpg",
+    "date": "02-07-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "02-07-2026",
+      "quote": "ಕಸಸು ಕಾಣು, ಸನಸು ಮಾಡು"
+    },
+    "calendar": {
+      "months": [
+        "ನಿಜ ಜ್ಯೇಷ್ಠ/ಆಷಾಢ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮಿಥುನ/ಕರ್ಕ",
+      "sunrise": "05:57",
+      "sunset": "18:50"
+    },
+    "events": [
+      "ಮಾಂಜರಿ ತಾ. ಚಿಕ್ಕೋಡಿ ಬಾಬಾಜಿ ಮಹಾ.",
+      "ಪುಣ್ಯತಿಥಿ",
+      "ಕೀರಿಗೇರೆ ಮಠ ಹರಿಹರ ಮಹಾಕವಿ",
+      "ಜಯಂತಿ",
+      "ಮಾರಹಳ್ಳಿ ನೃಸಿಂಹ ರಥ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಉ.ಷಾ",
+        "endsAt": "09.28",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಿತೀಯಾ",
+        "endsAt": "09.38",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವೈಧೃತಿ",
+        "endsAt": "16.39",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣಿಜ",
+        "endsAt": "22.32",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ  ವಣಿಜ 22.32"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 18,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮಿಹುನ",
+      "chandraEntryRashi": "ಮಕರ"
+    },
+    "timings": {
+      "rahuKala": "_ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಬೆ.9:00 - 10:30.",
+      "yamaganda": "ಬೆ.06:00- 07:30",
+      "arthaPrahara": "ಮ. 03:00 - 04:3(",
+      "shubhaSamaya": "ಬೆ. 02:21 - 04:08"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಒಳ್ಳೆಯ ಕೆಲಸ",
+        "raw": "ಮೇಷ ೨» ಒಳ್ಳೆಯ ಕೆಲಸ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಷಭ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸೌಮೃತೆ",
+        "raw": "ಮಿಥುನ » ಸೌಮೃತೆ '"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಕರ್ಕಾಟಕ ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಸಿಂಹ » ಲಾಭ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಅಸೂಯೆ",
+        "raw": "ಕನ್ಯಾ» ಅಸೂಯೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಮಸ್ಯೆ",
+        "raw": "ತುಲಾ» ಸಮಸ್ಯೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ವೃಶ್ಚಿಕ » ಪ್ರಯತ್ನ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಧನಸ್ಸು » ಭಕ್ತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ವಿನಯ",
+        "raw": "ಮಕರ ೫». ವಿನಯ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಬುದ್ಧಿವಂತಿಕೆ",
+        "raw": "ಕುಂಭ » ಬುದ್ಧಿವಂತಿಕೆ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸಂಶತ್ತು",
+        "raw": "ಮೀನ » ಸಂಶತ್ತು"
+      }
+    ]
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "source": {
+    "image": "data\\2026\\12\\05-12-2026.jpg",
+    "date": "05-12-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಕೃಷ್ಣ .",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "05-12-2026",
+      "quote": "ಎದ್ದೇಳುವುದನ್ನು ಕಲಿ, ಅದೇ ಜೀವನದ"
+    },
+    "calendar": {
+      "months": [
+        "ಕಾರ್ತಿಕ/ಮಾರ್ಗಶಿರ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಶ್ಚಿಕ/ಧನು",
+      "sunrise": "06:28",
+      "sunset": "17:52"
+    },
+    "events": [
+      "ಚಿತ್ರದುರ್ಗ ಶ್ರೀ ಮುರುಘರಾಜೇಂದ್ರಮಠದಲ್ಲಿ ಸಾಮೂಹಿಕ",
+      "ವಿವಾಹ",
+      "ಹೆರ್ಗ",
+      "ಕಟಿಯಾಳ",
+      "ಶರವೂ ದೀಪೋತ್ಸವ",
+      "ವಿಶ್ವ",
+      "ಮಣ್ಣಿನ ದಿನಾಚಾರಣೆ",
+      "ಮಹರ್ಷಿ ಆರವಿಂದ ಪುಣ್ಯಸ್ಮರಣಿ",
+      "ಮುಂಡರಗಿ ತಾ.ಬರದೂರ ಶ್ರೀ ಮಾರುತೇಶ್ವರ ಕಾರ್ತಿಕ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಚಿತ್ರಾ",
+        "endsAt": "11.49",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಾದಶಿ",
+        "endsAt": "24.52",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸೌಜಾಗ್ಯ",
+        "endsAt": "07.33",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌಲವ",
+        "endsAt": "12.16",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೌಲವ 12.16"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 20,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವಶಿಕ",
+      "chandraEntryRashi": "ತುಲಾ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ.06:00 - 07:30.",
+      "yamaganda": "ಮ. 01:30 - 03:0",
+      "arthaPrahara": "ಮ. 12:00 - 01:30",
+      "shubhaSamaya": "ಬೆ.65:01 - 06:43"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮೇಷ » ಅನುಕೂಲ."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ವೃಷಭ » ವಿಳಂಬ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮಿಥುನ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಗೊಂದಲ",
+        "raw": "ಕರ್ಕಾಟಕ ಗೊಂದಲ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಸಿಂಹ » ಸಾಲ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಕನ್ಯಾ ೧ ಭಕ್ತಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ದುರಾಸೆ",
+        "raw": "ತುಲಾ» ದುರಾಸೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಚಿಂತೆ",
+        "raw": "ವೃಶ್ಚಿಕ». ಚಿಂತೆ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಧನಸ್ಸು » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಮಕರ » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅಸಕ್ತಿ",
+        "raw": "ಕುಂಭ » ಅಸಕ್ತಿ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅಸೂಯೆ",
+        "raw": "ಮೀನ » ಅಸೂಯೆ."
+      }
+    ]
+  }
+}

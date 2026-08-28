@@ -1,0 +1,168 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\07\\20-07-2026.jpg",
+                   "date":  "20-07-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "existing-paksha-ocr",
+                                       "raw":  "ಪರರು ಶುಕ್ಕ್ಶ್ಷ್ಣ",
+                                       "value":  "ಶುಕ್ಲ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "20-07-2026",
+                                   "quote":  "ಸ್ಸುಸಹನ ಇರುವವನ ಹತ್ತಿರವೇ ಬ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ನಿಜ ಜ್ಯೇಷ್ಠ/ಆಷಾಢ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮಿಥುನ/ಕರ್ಕ",
+                                     "sunrise":  "06:02",
+                                     "sunset":  "18:40"
+                                 },
+                    "events":  [
+                                   "ಮೇಲ್ಕೋಟೆ ಬದರೀನಾರಾಯಣ ಜಯಂತಿ",
+                                   "ವಿವಸ್ವತ ಸಪ್ತಮಿ",
+                                   "ವರ್ಧಮಾನ ತೀರ್ಥಕರ",
+                                   "ಗರ್ಭಕಲ್ಯಾಣ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಹಸ್ತ",
+                                                        "endsAt":  "19.10",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಸಪ್ತಮಿ",
+                                                    "endsAt":  "28.03",
+                                                    "nextDay":  true,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಶಿವ",
+                                                   "endsAt":  "18.37",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಗರಜ",
+                                                     "endsAt":  "15.41",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಗರಜ 15.41"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ಸೌರ ವರ್ಷಾ",
+                                      "solarYear":  5,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಕರ್ಕ",
+                                      "chandraEntryRashi":  "ಕನ್ಯಾ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 07:30 - 09:00.",
+                                    "gulikaKala":  "ಮ.01130 - 03:00",
+                                    "yamaganda":  "ಬೆ. 10:30- 12:00",
+                                    "arthaPrahara":  "ಬ.09:00 - 10:30",
+                                    "shubhaSamaya":  "ಮ. 12:55 - 02:36"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮೇಷ » ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಆತಂಕ",
+                                        "raw":  "ವೃಷಭ » ಆತಂಕ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಮಿಥುನ » ಪ್ರೀತಿ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಕುತೂಹಲ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಕುತೂಹಲ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಸಿಂಹ » ಅನುಕೂಲ."
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ನಿರಾಶೆ",
+                                        "raw":  "ಕನ್ಯಾ ನಿರಾಶೆ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಆಸೆ",
+                                        "raw":  "ತುಲಾ ೫ ಆಸೆ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಗಮನ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಗಮನ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಆಸಕ್ತಿ",
+                                        "raw":  "ಧನಸ್ಸು ». ಆಸಕ್ತಿ :"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "*ಪತಿರೋಧ",
+                                        "raw":  "ಮಕರ *ಪತಿರೋಧ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಕುಂಭ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಮೀನ » ಪ್ರೀತಿ"
+                                    }
+                                ]
+                }
+}

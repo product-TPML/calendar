@@ -1,0 +1,166 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\05\\21-05-2026.jpg",
+                   "date":  "21-05-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "21-05-2026",
+                                   "quote":  "ಅತಿಯಾಸೆ ಗತಿಗೇಡು"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ವೈಶಾಖ",
+                                                    "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮೇಷ/ವೃಷಭ",
+                                     "sunrise":  "05:53",
+                                     "sunset":  "18:39"
+                                 },
+                    "events":  [
+                                   "ಗುರುಪುಷ್ಯಾ ಮೃತಯೋಗ ಪ್ರಾರಂಭ",
+                                   "ದಗ್ದಯೋಗ ಪ್ರಾರಂಭ",
+                                   "ರಾಜೀವ ಗಾಂಧಿ ಸ್ಮತಿ",
+                                   "ದಿನ",
+                                   "ದಹಶತವಾದಿ ವಿರೋದಿ ದಿನ",
+                                   "ಅಂತರಾಷ್ಟ್ರೀಯ ಚಹಾ ದಿನ"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಪುಷ್ಯ",
+                                                        "endsAt":  "26.50",
+                                                        "nextDay":  true,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಪಂಚಮಿ",
+                                                    "endsAt":  "06.27",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಗಂಡ",
+                                                   "endsAt":  "10.59",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಕೌಲವ",
+                                                     "endsAt":  "19.21",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಕೌಲವ 19.21"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಗ್ರೀಷ್ಮ",
+                                      "solarYear":  7,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ವೃಷಭ",
+                                      "chandraEntryRashi":  "ಕರ್ಕ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 01:30 - 03:00",
+                                    "gulikaKala":  "ಬೆ.09:00 - 10:30.",
+                                    "yamaganda":  "ಬೆ.06:00 - 07:30",
+                                    "arthaPrahara":  "ಮ. 03:00 - 04:30",
+                                    "shubhaSamaya": "ಜ. 02:00 - 03:28, ರಾ. 08:47 - 10:18"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಭಕ್ತಿ",
+                                        "raw":  "ಮೇಷ » ಭಕ್ತಿ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸಂಪತ್ತು",
+                                        "raw":  "ವೃಷಭ ೫». ಸಂಪತ್ತು ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಆಸಕ್ತಿ",
+                                        "raw":  "ಮಿಥುನ » ಆಸಕ್ತಿ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಶುಭಸಮಾಚಾರ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಶುಭಸಮಾಚಾರ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಸಹಾಯ",
+                                        "raw":  "ಸಿಂಹ ೫ ಸಹಾಯ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಪ್ರಯಾಣ",
+                                        "raw":  "ಕನ್ಯಾ» ಪ್ರಯಾಣ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಪ್ರಗತಿ",
+                                        "raw":  "ತುಲಾ ೫ ಪ್ರಗತಿ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಉಡುಗೊರೆ",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಉಡುಗೊರೆ."
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ಧನಸ್ಸು » ಮೆಚ್ಚುಗೆ \u0027"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮಕರ ೫» ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಪರಿಶ್ರಮ",
+                                        "raw":  "ಕುಂಭ *» ಪರಿಶ್ರಮ ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಶ್ರೇಷ್ಠತೆ",
+                                        "raw":  "ಮೀನ ». ಶ್ರೇಷ್ಠತೆ ."
+                                    }
+                                ]
+                }
+}

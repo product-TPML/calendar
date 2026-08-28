@@ -1,0 +1,173 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\09\\25-09-2026.jpg",
+                   "date":  "25-09-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "red-channel-4x-psm7",
+                                       "raw":  "ಪಕ್ಷ ಶುಕ್ಲ",
+                                       "value":  "ಶುಕ್ಲ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "25-09-2026",
+                                   "quote":  "ಗೆ ವಿಶ್ರಾಂತಿ ಕೊಡುವುದು ಕೂಡ ಧ್ರೈಯ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಸಿಂಹ/ಕನ್ಯಾ",
+                                     "sunrise":  "06:08",
+                                     "sunset":  "18:13"
+                                 },
+                    "events":  [
+                                   "ಅನಂತಚತುರ್ದಶಿ ವ್ರತ",
+                                   "ಮೃತ್ತಿಕಾ ಗಣಪತಿ ವಿಸರ್ಜನೆ",
+                                   "ಅನಂತನ",
+                                   "ಹುಣ್ಣಿಮೆ",
+                                   "ಚಿದಂಬರನಗರ ಪರಮೇಶ್ವರ ದಿಕ್ಷೀತ ಪುಣ್ಯ ತಿಥಿ",
+                                   "ಚಿಮ್ಮಡ ಪ್ರಭೂದೇವ ಜಾತ್ರೆ",
+                                   "ಯಲಬುರ್ಗಾ ತಾ. ಕಲ್ಲೂರು",
+                                   "ಹಿರೇಮಠದ ಲಿಂ",
+                                   "ಶ್ರೀ ಗುರು ವಿರುಪಾಕ್ಷೇಶ್ವರ ಸ್ವಾಮಿಗಳ ಪು.ದಿ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಶತಭಿಷಾ",
+                                                        "endsAt":  "11.23",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಚುತುರ್ದಶಿ",
+                                                    "endsAt":  "23.07",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಶೂಲ",
+                                                   "endsAt":  "14.51",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಗರಜ",
+                                                     "endsAt":  "11.18",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಗರಜ 11.18 _"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  9,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಕನ್ನಾ",
+                                      "chandraEntryRashi":  "ಕುಂಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 10:30 - 12:00.",
+                                    "gulikaKala":  "ಬೆ. 07:30 - 09:00",
+                                    "yamaganda":  "ಮ. 03:00 - 04:30",
+                                    "arthaPrahara":  "ಮ. 01:30 - 03:00",
+                                    "shubhaSamaya":  "ಬೆ. 03:56 - 05:35"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಕರುಣೆ",
+                                        "raw":  "ಮೇಷ ». ಕರುಣೆ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಅಭಿವೃದ್ದಿ",
+                                        "raw":  "ವೃಷಭ » ಅಭಿವೃದ್ದಿ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ದಯ”",
+                                        "raw":  "ಮಿಥುನ » ದಯ”."
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಕಾಟರ್ಕು ಆಯಾಸ",
+                                        "raw":  "ಕರ್ಕಾಟರ್ಕು ಆಯಾಸ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಸಿಂಹ ೫» ಭಯ \u0027"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಬುದ್ದಿವಂತಿಕೆ",
+                                        "raw":  "ಕನ್ಯಾ» ಬುದ್ದಿವಂತಿಕೆ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಕೋಪ",
+                                        "raw":  "ತುಲಾ ೫» ಕೋಪ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಆನಂದ",
+                                        "raw":  "ವೃಶ್ಚಿಕ». ಆನಂದ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಭಕ್ತಿ",
+                                        "raw":  "ಧನಸ್ಸು » ಭಕ್ತಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮಕರ ೫» ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಂಪತ್ತು",
+                                        "raw":  "ಕುಂಭ » ಸಂಪತ್ತು."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಬಲ",
+                                        "raw":  "ಮೀನ ೫. ಬಲ"
+                                    }
+                                ]
+                }
+}

@@ -1,0 +1,167 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\20-03-2026.jpg",
+    "date": "20-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "20-03-2026",
+      "quote": "“ದಾರಿ ಕಷವಾಗಿದರೂ, ನಿಲ್ಲಬೇಡ”"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:24",
+      "sunset": "18:30"
+    },
+    "events": [
+      "ಸ್ವಾಮಿ ಸಮರ್ಥ ಪ್ರಕಟ ದಿನ",
+      "ಸಂತ ರುಲೇಲಾಲ",
+      "ಜಯಂತಿ",
+      "ಬಾಲಚಂದ್ರಮಾವ್ರತ",
+      "ಪಂಚಕ ಮು ಉ.ರಾ.",
+      "2.27",
+      "ಜಮಾತುಲಾ ಬಿದಾ ಚಂದ್ರದರ್ಶನ",
+      "ರಮಜಾನ್‌."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ರೇವತಿ",
+        "endsAt": "26.28",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಿತೀಯಾ",
+        "endsAt": "26.31",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಬ್ರಹ್ಮಾ",
+        "endsAt": "22.15",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "15.44",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 15.44"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 6,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ಮೀನ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00.",
+      "gulikaKala": "ಬೆ. 07:30 - 09:00",
+      "yamaganda": "ಮ. 03:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 3:0",
+      "shubhaSamaya": "unavailable"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "* ಯಶಸು",
+        "raw": "ಮೇಷ »* ಯಶಸು :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಖಚ್ಚು",
+        "raw": "ವೃಷಭ » ಖಚ್ಚು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಮಿಥುನ » ಪ್ರೀತಿ:"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಕರ್ಕಾಟಕ: ಲಾಭ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ಸಿಂಹ » ಉಡುಗೊರೆ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ದಯೆ",
+        "raw": "ಕನ್ಯಾ » ದಯೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಪರಿಶ್ರಮ",
+        "raw": "ತುಲಾ» ಪರಿಶ್ರಮ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಗಮನ",
+        "raw": "ವೃಶ್ಚಿಕ » ಗಮನ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಧನಸ್ಸು » ಅನುಕೂಲ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಮಕರ ೫» ಭಕ್ತಿ :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕುಂಭ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ಮೀನ » ಸಹಾಯ"
+      }
+    ]
+  }
+}

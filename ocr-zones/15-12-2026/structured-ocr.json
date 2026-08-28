@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\12\\15-12-2026.jpg",
+    "date": "15-12-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಶುಕ್ಲ .",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "15-12-2026",
+      "quote": "ಯಾರಿಗಾಗಿಯೂ ಕಾಯುವುದಿಲ್ಲ, ಅದನ್ನು ಸರಿಯಾ"
+    },
+    "calendar": {
+      "months": [
+        "ಕಾರ್ತಿಕ/ಮಾರ್ಗಶಿರ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಶ್ಚಿಕ/ಧನು",
+      "sunrise": "06:33",
+      "sunset": "17:55"
+    },
+    "events": [
+      "ಸ್ಕಂದ ಷಷ್ಠಿ",
+      "ಕುಕ್ಕೆ ಸುಬ್ರಮಣ್ಯ ಷಷ್ಠಿ",
+      "ಮಾರ್ತಂಡ",
+      "ಭೈರವೋತ್ಥಾಪನ",
+      "ಕುಡುಪು ಮಾಂಚೇಶ್ವರ ಷಷ್ಠಿ ಉತ್ಸವ",
+      "ವ್ಹಸವ್ಹಳಲ್ಲು ಶೇಷವಾಹನ ಉತ್ಸವ",
+      "ಹಾವೇರಿ ತಾ. ಕರಜಗಿ",
+      "ರೈಲ್ವೆ ಸ್ಪೇಶನ್‌ ಶ್ರೀ ದೈವೆ ದೇವತೆ ರಥ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಧನಿಷ್ಠಾ",
+        "endsAt": "11.53",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಷಷ್ಠಿ",
+        "endsAt": "21.20",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಹರ್ಷಣ",
+        "endsAt": "13.38",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌಲವ",
+        "endsAt": "08.22",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೌಲವ 08.22"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 30,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ವಶಿಕ",
+      "chandraEntryRashi": "ಕುಂಭ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ. 12:00 - 01:3(",
+      "yamaganda": "ಬೆ.09:00- 10:30",
+      "arthaPrahara": "ಬಿ. 07:30 - 09:00",
+      "shubhaSamaya": "ಬೆ. 12:19 - 02:06"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಮೇಷ » ಸ್ನೇಹ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ವೃಷಭ » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಮಿಥುನ » ತಾಳ್ಮೆ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕರ್ಕಾಟಕ ಅನುಕೂಲ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಸಿಂಹ » ಯಶಸ್ಸು :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕನ್ಯಾ» ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ತುಲಾ ೫» ಶಾಂತಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ವೃಶ್ಚಿಕ» ಸಂಪತ್ತು :"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯೋಗ",
+        "raw": "ಧನಸ್ಸು » ಯೋಗ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸೌಮೃತೆ",
+        "raw": "ಮಕರ » ಸೌಮೃತೆ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಕುಂಭ » ಸಾಲ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಮೀನ » ಪ್ರತಿರೋಧ"
+      }
+    ]
+  }
+}

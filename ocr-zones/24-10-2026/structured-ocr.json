@@ -1,0 +1,167 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\10\\24-10-2026.jpg",
+                   "date":  "24-10-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "24-10-2026",
+                                   "quote":  "ಸಾಧನೆಗಾಗಿ ತಾಳೆ.ಅತಿ ಮುಖ್ಯ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕನ್ಯಾ/ ತುಲಾ",
+                                     "sunrise":  "06:11",
+                                     "sunset":  "17:56"
+                                 },
+                    "events":  [
+                                   "4ನೇ ಶನಿವಾರ",
+                                   "ವಿಶ್ವಸಂಸ್ಥೆ ದಿನ",
+                                   "ವಿಶ್ವ ಮಾಹಿತಿ ಪ್ರಸಾರ ದಿನ",
+                                   "ಚಾಮುಂಡೀಬೆಟ್ಟದ ಚಾಮುಂಡೇಶ್ವರಿ ರಥ",
+                                   "ಹಿರೇಗುತ್ತಿ ಹರಿನಾಮ",
+                                   "ಸಪ್ತಾಹ",
+                                   "ಕೊಪ್ಪಳ ತಾ. ಭಾಗ್ಯನಗರ ಶಂಕರಾಚಾರ್ಯರ ಮಠದಲ್ಲಿ",
+                                   "ಶ್ರೀ ಶಿವರಾಮಾಧೂತರ ಪುಣ್ಯಾರಾಧನೆ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಉ.ಭಾ",
+                                                        "endsAt":  "20.32",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ತ್ರಯೋದಶಿ",
+                                                    "endsAt":  "13.37",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವ್ಯಾಘಾತ",
+                                                   "endsAt":  "20.01",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಗರಜ",
+                                                     "endsAt":  "24.52",
+                                                     "nextDay":  true,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಗರಜ 24.52"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯ",
+                                      "ritu":  "ಸೌರ ಹೇಮಂತ",
+                                      "solarYear":  8,
+                                      "paksha": "ಶುಕ್ಲ",
+                                      "solarRashi":  "ತುಲಾ",
+                                      "chandraEntryRashi":  "ಮೀನ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 09:00 - 10:30.",
+                                    "gulikaKala":  "ಬೆ.06:00 - 07:30.",
+                                    "yamaganda":  "ಮ. 01:30 - 05:00",
+                                    "arthaPrahara":  "ಮ. 12:86 - 51:31",
+                                    "shubhaSamaya":  "ಮ. 03:50 - 05:24"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಮೇಷ » ಪ್ರೋತ್ಸಾಹ:"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ವೃಷಭ » ಪ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಆತಂಕ",
+                                        "raw":  "ಮಿಥುನ » ಆತಂಕ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಪ್ರಯತ್ನ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "“ಶ್ರದ್ದೆ",
+                                        "raw":  "ಸಿಂಹ » “ಶ್ರದ್ದೆ."
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಪ ಬುದ್ಧಿವಂತಿಕೆ",
+                                        "raw":  "ಕನ್ಯಾ ಪ ಬುದ್ಧಿವಂತಿಕೆ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಉತ್ಸಾಹ",
+                                        "raw":  "ತುಲಾ» ಉತ್ಸಾಹ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಸ್ಪರ್ಧೆ",
+                                        "raw":  "ವೃಶ್ಚಿಕ». ಸ್ಪರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಫ್ರೀತಿ",
+                                        "raw":  "ಧನಸ್ಸು » ಫ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಮರೆವು",
+                                        "raw":  "ಮಕರ » ಮರೆವು \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಶಾಂತಿ",
+                                        "raw":  "ಕುಂಭ » ಶಾಂತಿ ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮೀನ » ಯಶಸ್ಸು"
+                                    }
+                                ]
+                }
+}

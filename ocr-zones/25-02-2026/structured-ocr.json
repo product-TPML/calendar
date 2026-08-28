@@ -1,0 +1,167 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\02\\25-02-2026.jpg",
+                   "date":  "25-02-2026",
+                   "dimensions":  {
+                                      "width":  1514,
+                                      "height":  1060
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "25-02-2026",
+                                   "quote":  "ಕೆಗಳೇ ಸತ್ತು ಹೋದ ಮೇಲೆ, ಅಮೃತ ಸಿಕ್ಕರೇನು ಃ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಮಕರ/ ಕುಂಭ",
+                                     "sunrise":  "06:37",
+                                     "sunset":  "18:27"
+                                 },
+                    "events":  [
+                                   "ಶ್ರೀ ಹರಿ ಜಯಂತಿ",
+                                   "ಅಡವಿಸಿದ್ದೇಶ್ವರ ಜಾತ್ರೆ ಅಂಕಲಗಿ",
+                                   "ತಾ. ಗೋಕಾಕ",
+                                   "ಮುರನಾಳ ತಾ. ಬಾಗಲಕೋಟೆ ಶ್ರೀ",
+                                   "ಮುಳಿಯಪ್ಪ",
+                                   "ಬರಿಯಾರು",
+                                   "ಕೊಗ್ಗೆ ಮಾಡದ",
+                                   "ದುರ್ಗಾಂಬಾ ರಥಗಳು."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ರೋಹಿಣಿ",
+                                                        "endsAt":  "13.39",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ನವಮಿ",
+                                                    "endsAt":  "26.41",
+                                                    "nextDay":  true,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವಿಷ್ಕಂಭ",
+                                                   "endsAt":  "25.25",
+                                                   "nextDay":  true,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಬಾಲವ",
+                                                     "endsAt":  "15.47",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬಾಲವ 15.47"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ವಸಂತ",
+                                      "solarYear":  13,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಕುಂಭ",
+                                      "chandraEntryRashi":  "ವೃಷಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 12:00 - 01:30",
+                                    "gulikaKala":  "ಬೆ. 10130 - 12:00:",
+                                    "yamaganda":  "ಬೆ. 07:30 - 09:00",
+                                    "arthaPrahara":  "ಬಿ. 06:00 - 07:30",
+                                    "shubhaSamaya":  "ಬೆ. 10:38 - 12:08"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಪಗತಿ",
+                                        "raw":  "ಮೇಷ » ಪಗತಿ :"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಕರ್ತಿ",
+                                        "raw":  "ವೃಷಭ ೫ ಕರ್ತಿ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಕುತೂಹಲ",
+                                        "raw":  "\u0027ಮಿಥುನ » ಕುತೂಹಲ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ವಿಳಂಬ",
+                                        "raw":  "ಕರ್ಕಾಟಕ. ವಿಳಂಬ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಸಿಂಹ » ಲಾಭ \u0027"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ದಯ",
+                                        "raw":  "ಕನ್ಯಾ ೫» ದಯ :"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ತುಲಾ » ಭಯ \u0027"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಉಡುಗೊರೆ",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಉಡುಗೊರೆ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಚಿಂತೆ",
+                                        "raw":  "ಧನಸ್ಸು ». ಚಿಂತೆ."
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಅಲೆದಾಟ",
+                                        "raw":  "ಮಕರ » ಅಲೆದಾಟ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಕುಂಭ » ಸಾಲ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮೀನ » ಯಶಸ್ಸು"
+                                    }
+                                ]
+                }
+}

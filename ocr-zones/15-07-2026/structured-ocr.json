@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\07\\15-07-2026.jpg",
+    "date": "15-07-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "15-07-2026",
+      "quote": "ರಮಯ ಯಾರಿಗೂ ಕಾಯುವುದಿ«"
+    },
+    "calendar": {
+      "months": [
+        "ನಿಜ ಜ್ಯೇಷ್ಠ/ಆಷಾಢ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮಿಥುನ/ಕರ್ಕ",
+      "sunrise": "06:01",
+      "sunset": "18:50"
+    },
+    "events": [
+      "ಶ್ರೀ ರಾಮಲಿಂಗ ಚೌಡೇಶ್ವರದೇವ ಸ್ಥಾನದಲ್ಲಿ",
+      "ಅಭಿಷೇಕ",
+      "ವೆಲ್ಡೋರಿ ಜಯಂತಿ",
+      "ನಿಂಗಣ್ಣ ತಾತನವರ",
+      "ಜಾತ್ರೆ ಗರಸಂಗಿ ತಾ. ಮುದ್ದೇಬಿಹಾಳ",
+      "ಕಂದಗಲ",
+      "ಸಂಗನಬಸವ ಸ್ವಾಮಿ ಪು.ತಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪುಷ್ಯ",
+        "endsAt": "21.47",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಪ್ರತಿಪದಾ",
+        "endsAt": "11.51",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಕ್ವ",
+        "endsAt": "08.04",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "22.19",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 22.19"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 31,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮಿಹುನ",
+      "chandraEntryRashi": "ಕರ್ಕ"
+    },
+    "timings": {
+      "rahuKala": "_ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಬೆ. 10:30 - 12:00",
+      "yamaganda": "ಬೆ.07:30-09:00",
+      "arthaPrahara": "ಬಿ. 06:00 - 07:30",
+      "shubhaSamaya": "ಸ. 04:00 - 05:27"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಮೇಷ ». ಖರ್ಚು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಆಸಕ್ತಿ",
+        "raw": "ವೃಷಭ » ಆಸಕ್ತಿ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ವಿನಯ",
+        "raw": "ಮಿಥುನ ». ವಿನಯ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ಕರ್ಕಾಟಕ ಪ್ರಯತ್ನ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಆಲೋಚನೆ",
+        "raw": "ಸಿಂಹ » ಆಲೋಚನೆ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಕನ್ಯಾ ಆತಂಕ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಯೋಗ",
+        "raw": "ತುಲಾ » ಯೋಗ '"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ನಿರಾಶೆ",
+        "raw": "ವೃಶ್ಚಿಕ». ನಿರಾಶೆ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ಧನಸ್ಸು ». ಶ್ರೇಷ್ಠತೆ ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಫ್ರೀತಿ",
+        "raw": "ಮಕರ ೫» ಫ್ರೀತಿ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಕುಂಭ » ಸಂತೋಷ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಮೀನ ». ಶಾಂತಿ"
+      }
+    ]
+  }
+}

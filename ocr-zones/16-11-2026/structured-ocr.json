@@ -1,0 +1,166 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\16-11-2026.jpg",
+    "date": "16-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "16-11-2026",
+      "quote": "ಮನೆಯೇ ಮೊದಲ ಪಾಠಶಾಲೆ"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:18",
+      "sunset": "17:50"
+    },
+    "events": [
+      "ಕಲ್ಪಾದಿ. ವೃಶ್ಚಿಕ ಸಂಕ್ರಮಣ",
+      "ಮಹಾಲಯ ಸಮಾಪ್ತಿ.",
+      "ತ್ರಿವೇದ್ರಂ ಆರ್ಟ್‌",
+      "ವೀರ ಸಹಸ್ರಾರ್ಜುನ",
+      "ಜಲಾರಾಮ",
+      "ಜಯಂತಿಗಳು. ಶ್ರೀ ಪರಮಹಂಸ ಚಂದ್ರಶೇಖರ ಪುಣ್ಯತಿಥಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಶ್ರವಣ",
+        "endsAt": "26.17",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಸಪ್ತಮಿ",
+        "endsAt": "28.20",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಗಂಡ",
+        "endsAt": "07.16",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಗರಜ",
+        "endsAt": "15.14",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಗರಜ 15.14 _"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 1,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ತುಲಾ",
+      "chandraEntryRashi": "ಮಕರ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ.01:30- 8:00",
+      "yamaganda": "ಬೆ. 10:30 - 12:00",
+      "arthaPrahara": "ಚೆ.09:00 - 10:30",
+      "shubhaSamaya": "ಸ. 82:46 - ೫:27"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮೇಷ ». ಸಂತೋಷ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಷಭ » ಲಾಭ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸ್ಟೇಹ",
+        "raw": "ಮಿಥುನ » ಸ್ಟೇಹ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಪ್ರೀತಿ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಸಿಂಹ » ಪ್ರೀತಿ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಅಸೆ",
+        "raw": "ಕನ್ಯಾ ೫೧ ಅಸೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ದೃಢ ನಿರ್ಧಾರ",
+        "raw": "ತುಲಾ» ದೃಢ ನಿರ್ಧಾರ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ವೃಶ್ಚಿಕ». ಕೀರ್ತಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಧನಸ್ಸು » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಮಕರ » ಶಾಂತಿ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ಕುಂಭ » ಅಭಿವೃದ್ಧಿ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "*ಶುಭ ಸಮಾಚಾರ",
+        "raw": "ಮೀನ »*ಶುಭ ಸಮಾಚಾರ"
+      }
+    ]
+  }
+}

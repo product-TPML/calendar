@@ -1,0 +1,166 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\03-03-2026.jpg",
+    "date": "03-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "03-03-2026",
+      "quote": "ಾರಾತಕ ಮನೋಭಾವವೇ ವಿಜಯದ 1"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:34",
+      "sunset": "18:28"
+    },
+    "events": [
+      "ಹೋಳಿ ಹುಣ್ಣಿಮೆ",
+      "ಖಗ್ರಾಸ ಚಂದ್ರಗ್ರಹಣ",
+      "ಧೂಲಿವಂದನ",
+      "ಓಕಳಿ ಹಬ್ಬ",
+      "ಸೊಗಲ ಸೊಮೇಶ್ವರ ವಿವಾಹದ ಜಾತ್ರೆ",
+      "ಧರ್ಮಶ್ರರಿ ಜಿ. ಹೊಸೂರು ಚಿಂದ್ರಚೂಡೇಶ್ವರ",
+      "ಕಲ್ಲುಕುಂಟೆ ಅಗ್ರಹಾರದ ರಂಗನಾಥ ಜಾತ್ರೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಮಘಾ",
+        "endsAt": "07.32",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಹುಣ್ಣಿಮೆ",
+        "endsAt": "17.08",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸುಕರ್ಮಾ",
+        "endsAt": "10.25",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "28.55",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 19,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ಸಿಂಹ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ. 12:00 - 01:30.",
+      "yamaganda": "ಬೆ. 09:00 - 10:30",
+      "arthaPrahara": "ಬೆ. 07:30 - 09:00",
+      "shubhaSamaya": "ಬೆ. 05:09 - 06:44"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಯಶಸ್ತು",
+        "raw": "ಮೇಷ ». ಯಶಸ್ತು :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ವಿಶ್ರಾಂತಿ",
+        "raw": "ವೃಷಭ » ವಿಶ್ರಾಂತಿ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮಿಹುನ » ಅನುಕೂಲ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅಲೆದಾಟ",
+        "raw": "ಕರ್ಕಾಟಕ ಅಲೆದಾಟ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಸಿಂಹ » ಸಾಲ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಕನ್ಯಾ» ಅಭಿವೃದ್ದಿ."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ತುಲಾ» ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ವೃಶ್ಚಿಕ» ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಧನಸ್ಸು » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಮರವ",
+        "raw": "ಮಕರ » ಮರವ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ನಿರಾಶೆ",
+        "raw": "ಕುಂಭ » ನಿರಾಶೆ..."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅನಾರೋಗ್ಯ",
+        "raw": "ಮೀನ » ಅನಾರೋಗ್ಯ"
+      }
+    ]
+  }
+}

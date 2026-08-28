@@ -1,0 +1,163 @@
+{
+  "source": {
+    "image": "data\\2026\\02\\21-02-2026.jpg",
+    "date": "21-02-2026",
+    "dimensions": {
+      "width": 1514,
+      "height": 1060
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "21-02-2026",
+      "quote": "ನು ನೀನಾಗಿರಬೇಕು, ಬೇರೆಯವರ ಸಕಲ"
+    },
+    "calendar": {
+      "months": [],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": "ಮಕರ/ ಕುಂಭ",
+      "sunrise": "06:39",
+      "sunset": "18:27"
+    },
+    "events": [
+      "ಕಿತ್ತೂರ ರಾಣಿ ಚೆನ್ನಮ್ಮ ಪುಣ್ಯದಿನ",
+      "ಜಾಗತಿಕ",
+      "ಮಾತೃಭಾಷಾ ದಿನ",
+      "ಚಿತ್ತಪೂರ ರಥೆ",
+      "ದತ್ತವಾಡ ಬಾಬಾ",
+      "ಮಹಾ ಜ್ಞಾನೆ ಸಪ್ತಾಹ ಮುಕ್ತಯ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ರೇವತಿ",
+        "endsAt": "19.07",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಚತುರ್ಥಿ",
+        "endsAt": "13.01",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶುಭ",
+        "endsAt": "15.51",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "24.07",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬವ 24.07"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ರ್ಥಿ 13.01",
+      "solarYear": 9,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ಮೀನ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ. 06:00 - 07:30:",
+      "yamaganda": "ಮ. 01:30 - 03:00",
+      "arthaPrahara": "ಮ. 12:00 -01:30",
+      "shubhaSamaya": "ಸ. 04:49 - 06:21"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಯಶಸು",
+        "raw": "ಮೇಷ » ಯಶಸು, :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಾಮ್ಯತ",
+        "raw": "ವೃಷಭ » ಸಾಮ್ಯತ' ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಫಯತ",
+        "raw": "'ಮಿಥುನ » ಫಯತ, '"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಕಾಟರ್ಕ ಶಾಂತಿ",
+        "raw": "ಕರ್ಕಾಟರ್ಕ ಶಾಂತಿ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "* ಕರುಣೆ",
+        "raw": "ಸಿಂಹ * ಕರುಣೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕನ್ಯಾ» ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಅಭೆವೃದ್ದಿ",
+        "raw": "ತುಲಾ » ಅಭೆವೃದ್ದಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಆನಂದ",
+        "raw": "ವೃಶ್ಚಿಕ» ಆನಂದ\" ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಧನಸ್ಸು » ಅನುಕೂಲ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಮಕರ ೫». ಕೀರ್ತಿ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಆಶ್ರಯ",
+        "raw": "ಕುಂಭ » ಆಶ್ರಯ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ಮೀನ ». ತೊಂದರೆ"
+      }
+    ]
+  }
+}

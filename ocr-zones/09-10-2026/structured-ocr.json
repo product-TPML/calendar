@@ -1,0 +1,170 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\10\\09-10-2026.jpg",
+                   "date":  "09-10-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "red-channel-4x-psm7",
+                                       "raw":  "ಪಕ್ಷ. ಕೃಷ್ಣ .",
+                                       "value":  "ಕೃಷ್ಣ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "09-10-2026",
+                                   "quote":  "ನ್ನಮೇಲೆ ನಂಬಿಕೆ ಇಟ್ಟ ದಿನದಿಂದ ಜೀವನ ಬದಲಾ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕನ್ಯಾ/ ತುಲಾ",
+                                     "sunrise":  "06:09",
+                                     "sunset":  "18:04"
+                                 },
+                    "events":  [
+                                   "ಚತುರ್ದಶಿ ಮಹಾಲಯ",
+                                   "ಶಸ್ತ್ರದಿಂದ ಮರಣ",
+                                   "ಹೊಂದಿದವರ ಮಹಾಲಯ",
+                                   "ಭಾರತೀಯ ಅಂಚೆ ದಿನ",
+                                   "ಶೋಭೈ ತೀರ್ಥರ ಆರಾಧನೆ",
+                                   "ಬುಧ ಪುರ್ವೊದಯ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಉತ್ತರಾ",
+                                                        "endsAt":  "21.20",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಚತುರ್ದಶಿ",
+                                                    "endsAt":  "21.36",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಬ್ರಹ್ಮಾ",
+                                                   "endsAt":  "23.21",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ವಿಷ್ಟಿ",
+                                                     "endsAt":  "0.54",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ  ವಿಷ್ಟಿ 0.54"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯ",
+                                      "ritu":  "ರ್ದಶಿ 21.36",
+                                      "solarYear":  23,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಕನ್ನಾ",
+                                      "chandraEntryRashi":  "ಕನ್ಯಾ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 10:30 - 12:00.",
+                                    "gulikaKala":  "ಬೆ. 0730 - 09:00.",
+                                    "yamaganda":  "ಮ. 08:00 - 04:30",
+                                    "arthaPrahara":  "ಮ. 1:56 - 8:6",
+                                    "shubhaSamaya":  "ಮ. 02:07 - 03:43"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ಮೇಷ » ಮೆಚ್ಚುಗೆ :"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಕೋಪ",
+                                        "raw":  "ವೃಷಭ » ಕೋಪ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ತಾಳ್ಮೆ",
+                                        "raw":  "ಮಿಥುನ ». ತಾಳ್ಮೆ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ನಿರಾಶೆ",
+                                        "raw":  "ಕರ್ಕಾಟಕ. ನಿರಾಶೆ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಸಿಂಹ » ಪ್ರೋತ್ಸಾಹ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಸರ್ಧೆ",
+                                        "raw":  "ಕನ್ಯಾ ಸರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಗೆಮನ",
+                                        "raw":  "ತುಲಾ » ಗೆಮನ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಸಾಧನೆ",
+                                        "raw":  "ಧನಸ್ಸು ». ಸಾಧನೆ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಕುತೂಹಲ",
+                                        "raw":  "ಮಕರ » ಕುತೂಹಲ."
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "_ಜಕ್ಕಿ",
+                                        "raw":  "ಕುಂಭ » _ಜಕ್ಕಿ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಕರುಣ",
+                                        "raw":  "ಮೀನ ». ಕರುಣ"
+                                    }
+                                ]
+                }
+}

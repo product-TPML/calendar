@@ -1,0 +1,167 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\08\\31-08-2026.jpg",
+                   "date":  "31-08-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "31-08-2026",
+                                   "quote":  "ಅವಸರದಲ್ಲಿ ಮಾಡಿದ ಕೆಲಸ ಅಳುವಿಗೆ ಕಾರ£"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಆಷಾಢ",
+                                                    "ಶ್ರಾವಣ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕರ್ಕ/ಸಿಂಹ",
+                                     "sunrise":  "06:08",
+                                     "sunset":  "18:31"
+                                 },
+                    "events":  [
+                                   "ಸಂಕಷ್ಟ ಚತುರ್ಥಿ (ಚಂ 8.43)",
+                                   "3ನೇ ಶ್ರಾವಣ ಸೋಮವಾರ.",
+                                   "ಶಿವಾಮುಷ್ಠಿ ಹೆಸರು. ಪಂಚಕ ಸಮಾಪ್ತಿ. ಈದೆ ಮೌಲುದ್‌.",
+                                   "ಅಗಡಿ ಶೇಷಾಚಲ ಸದ್ಗುರು ಪುಣ್ಯಸ್ಮರಣೆ",
+                                   "ರಾಘವೇಂದ್ರ",
+                                   "ಸ್ವಾಮಿಗಳ ರಥೋತ್ಸವ",
+                                   "ಮಂತ್ರಾಲಯ"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ರೇವತಿ",
+                                                        "endsAt":  "27.24",
+                                                        "nextDay":  true,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ತೃತೀಯಾ",
+                                                    "endsAt":  "08.52",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಗಂಡ",
+                                                   "endsAt":  "25.51",
+                                                   "nextDay":  true,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಬವ",
+                                                     "endsAt":  "20.20",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬವ 20.20"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  15,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಸಿಂಕು",
+                                      "chandraEntryRashi":  "ಮೀನ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 07:30 - 09:00.",
+                                    "gulikaKala":  "ಮ.01130 - 03:00",
+                                    "yamaganda":  "ಬೆ. 10:30 - 12:00",
+                                    "arthaPrahara":  "ಬೆ. 09:00 - 10:30",
+                                    "shubhaSamaya":  "unavailable"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ಮೇಷ ». ಮೆಚ್ಚುಗೆ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸಮಸ್ಯೆ",
+                                        "raw":  "ವೃಷಭ » ಸಮಸ್ಯೆ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಗಮನ",
+                                        "raw":  "ಮಿಥುನ ೫» ಗಮನ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಸ್ಪರ್ಧೆ",
+                                        "raw":  "ಕರ್ಕಾಟರ್ಕು. ಸ್ಪರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಸ್ನೇಹ",
+                                        "raw":  "ಸಿಂಹ » ಸ್ನೇಹ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಕನ್ಯಾ ೫ ಲಾಭ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ತುಲಾ ೫ ಭಯ 1"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಕೋಪ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಕೋಪ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಆಯಾಸ",
+                                        "raw":  "ಧನಸ್ಸು » ಆಯಾಸ \u0027"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ತಾಳ್ಮೆ",
+                                        "raw":  "ಮಕರ » ತಾಳ್ಮೆ :"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಾಧನೆ",
+                                        "raw":  "ಕುಂಭ » ಸಾಧನೆ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಗೊಂದಲ",
+                                        "raw":  "ಮೀನ » ಗೊಂದಲ"
+                                    }
+                                ]
+                }
+}

@@ -1,0 +1,166 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\05-03-2026.jpg",
+    "date": "05-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "05-03-2026",
+      "quote": "“ಪ್ರತಿ ಸಮಸ್ಥೆಯಲ್ಲೂಪರಿಹಾರವಿದೆ”"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:33",
+      "sunset": "18:29"
+    },
+    "events": [
+      "ಸಂತ ತುಕಾರಾಮ ಬೀಜ",
+      "ವೇಳವಿ ತಾ. ಹುಕ್ಕೇರಿ",
+      "ಸಂಗಮೇಶ್ವರ ಜಾತ್ರೆ",
+      "ಟಿ ನರಸಿಪೂರ ಗುಂಜಾನೃಸಿಂಹ ರಥ",
+      "ಪಡುಬಿದ್ರ ಉಚ್ಚಲ ಮಹಾಲಕ್ಷ್ಮೀ ರಥ",
+      "ನಾಗಭೂಷಣ",
+      "ಶಿವೆಯೋಗಿ ಉತ್ಸವಾರಂಭ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಉತ್ತರಾ",
+        "endsAt": "08.18",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಿತೀಯಾ",
+        "endsAt": "17.04",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶೂಲ",
+        "endsAt": "07.46",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣೆಜ ೫25",
+        "endsAt": "29.25",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ವಣೆಜ ೫25"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 21,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ಕನ್ನಾ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಬೆ. 09:00 - 10:30",
+      "yamaganda": "ಬೆ. 06:00 - 07:30",
+      "arthaPrahara": "ಮ. 03:06 - 04:30",
+      "shubhaSamaya": "ಬೆ. 12:54 - 02:32"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಮೇಷ ». ಖರ್ಚು :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ವೃಷಭ » ಪ್ರಗತಿ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮಿಹುನ » ಸಂತೋಷ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಕರ್ಕಾಟಕ: ಸಾಲ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಸಿಂಹ » ಪ್ರೀತಿ ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಕನ್ಯಾ» ಪ್ರೋತ್ಸಾಹ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ತುಲಾ» ಸಂತೋಷ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ವೃಶ್ಚಿಕ » ಸಂಪತ್ತು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಧನಸ್ಸು » ಸ್ನೇಹ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಮಕರ ೫». ವಿಳಂಬ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಮಸ್ಯೆ",
+        "raw": "ಕುಂಭ » ಸಮಸ್ಯೆ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಆನಂದೆ",
+        "raw": "ಮೀನ » ಆನಂದೆ :"
+      }
+    ]
+  }
+}

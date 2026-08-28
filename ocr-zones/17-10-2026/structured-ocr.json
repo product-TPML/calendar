@@ -1,0 +1,166 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\10\\17-10-2026.jpg",
+                   "date":  "17-10-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "17-10-2026",
+                                   "quote":  "ಇವತ್ತಿನ ಶ್ರಮ ನಾಳೆ ಹೆಮ್ಮೆಆಗುತ್ತದೆ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕನ್ಯಾ/ ತುಲಾ",
+                                     "sunrise":  "06:10",
+                                     "sunset":  "17:59"
+                                 },
+                    "events":  [
+                                   "ಕಾವೇರಿ ಸಂಕ್ರಮಣ ಸ್ನಾನ",
+                                   "ಕೊರಕೊಡು ದುರ್ಗಾಪರಮೇಶ್ವರಿ",
+                                   "ಬಟ್ಟಲು ಸೇವೆ",
+                                   "ಕೊಡಗು ತಲಕಾವೇರಿ ತೀರ್ಥೋದ್ಭವ",
+                                   "ಶ್ರೀ",
+                                   "ಕಾಳಿಕಾಂಬಾ ಜಯಂತಿ",
+                                   "ಶ್ರೀ ಸರಸ್ವತಿ ಪೂಜಾ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಮೂಲಾ",
+                                                        "endsAt":  "09.47",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಸಪ್ತಮಿ",
+                                                    "endsAt":  null,
+                                                    "nextDay":  false,
+                                                    "fullDay":  true
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಅತಿಗಂಡ",
+                                                   "endsAt":  "23.03",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಗರಜ",
+                                                     "endsAt":  "19.12",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಗರಜ 19.12"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  1,
+                                      "paksha": "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಕನ್ನಾಸ.07:57",
+                                      "chandraEntryRashi":  "ಧನು"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 09:00 - 10:30.",
+                                    "gulikaKala":  "ಬೆ.06:00 - 07:30.",
+                                    "yamaganda":  "ಮ. 01:30 - 05:00",
+                                    "arthaPrahara":  "ಪ. 12:06 - 81:30",
+                                    "shubhaSamaya":  "ಚೆ. 02:35 - 6:23"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಮೇಷ » ಲಾಭ :"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಬಲ",
+                                        "raw":  "ವೃಷಭ » ಬಲ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಅಭಿವೃದಿ",
+                                        "raw":  "ಮಿಥುನ » ಅಭಿವೃದಿ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಗಮನ",
+                                        "raw":  "ಕರ್ಕಾಟಕ. ಗಮನ\"."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಸ್ನೇಹ",
+                                        "raw":  "ಸಿಂಹ » ಸ್ನೇಹ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಕೀರ್ತಿ",
+                                        "raw":  "ಕನ್ಯಾ ಕೀರ್ತಿ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ತುಲಾ.» ಪ್ರೋತ್ಸಾಹ."
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ವೃಶ್ಚಿಕ». ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ದಯೆ",
+                                        "raw":  "ಧನಸ್ಸು » ದಯೆ ."
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಕೋಪ",
+                                        "raw":  "ಮಕರ » ಕೋಪ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ಕುಂಭ » ಸಾಲ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಸ೦ತೋಷ",
+                                        "raw":  "ಮೀನ » ಸ೦ತೋಷ"
+                                    }
+                                ]
+                }
+}

@@ -1,0 +1,163 @@
+{
+  "source": {
+    "image": "data\\2026\\05\\20-05-2026.jpg",
+    "date": "20-05-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "20-05-2026",
+      "quote": "ಳ್ನಗೆ ಮತ್ತು ಮೌನ ಇವೆರಡೂ ಅತ್ಯಂತ ಪ್ರಭಾವಿ ಸಾಧ"
+    },
+    "calendar": {
+      "months": [
+        "ವೈಶಾಖ",
+        "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೇಷ/ವೃಷಭ",
+      "sunrise": "05:53",
+      "sunset": "18:39"
+    },
+    "events": [
+      "ವಿನಾಯಕ ಚತುರ್ಥಿ",
+      "ಬಿಪಿನಚಂದ್ರ ಪಾಲ",
+      "ಸ್ಮಖತಿ ದಿನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಆರ್ದ್ರಾ",
+        "endsAt": "06.12",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಚತುರ್ಥಿ",
+        "endsAt": "11.07",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶೂಲ",
+        "endsAt": "14.10",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "21.43",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಜವ 21.43 _"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ರ್ಥಿ 11.07",
+      "solarYear": 6,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವಷಭ",
+      "chandraEntryRashi": "ಮಿಥುನ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಬೆ.1030 - 12:00.",
+      "yamaganda": "ಬೆ.07:30-09:00",
+      "arthaPrahara": "ಚೆ.06:00- 07:30",
+      "shubhaSamaya": "unavailable"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮೇಷ » ಸಾಲ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ವೃಷಭ ೫ ಅನುಕೂಲ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಪ್ರಯತ್ರ",
+        "raw": "ಮಿಥುನ » ಪ್ರಯತ್ರ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಧೈರ್ಯ",
+        "raw": "ಕರ್ಕಾಟಕ ಧೈರ್ಯ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಒಳ್ಳೆಯ ಸುದ್ದಿ",
+        "raw": "ಸಿಂಹ » ಒಳ್ಳೆಯ ಸುದ್ದಿ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ಕನ್ಯಾ ೫ ಶ್ರೇಷ್ಠತೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ತುಲಾ ೫ ಭಕ್ತಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಉತ್ಸಾಹ",
+        "raw": "ವೃಶ್ಚಿಕ» ಉತ್ಸಾಹ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ದುರಾಸೆ",
+        "raw": "ಧನಸ್ಸು » ದುರಾಸೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಮಕರ ೫ ಪ್ರೋತ್ಸಾಹ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಭಯ",
+        "raw": "ಕುಂಭ » ಭಯ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ಮೀನ ೨» ಅಭಿವೃದ್ಧಿ ."
+      }
+    ]
+  }
+}

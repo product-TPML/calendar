@@ -1,0 +1,166 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\06-03-2026.jpg",
+    "date": "06-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "06-03-2026",
+      "quote": "ವನದಲ್ಲಿದುಃಖವಿಲ್ಲದೆ ಸುಖದ ಅರ್ಥವೆ"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:32",
+      "sunset": "18:29"
+    },
+    "events": [
+      "ಸಂಕಷ್ಟ ಚತುರ್ಥಿ (ಚಂ. 09.07)",
+      "ಹೂವಿನಕೆರೆ ಮತ್ತು",
+      "ಸಿರಸಿಯ ಸೊಂದೆ ಮಠದಲ್ಲಿ ವಾದಿರಾಜ ಸ್ವಾಮಿ ಪು.ತಿ.",
+      "ಆರಾಧನೆ",
+      "ಛ. ಶಿವಾಜಿ ಮಹಾ.ಜಯಂತಿ",
+      "ಶ್ರೀ ಮಹಾಲಕ್ಷ್ಮೀ",
+      "ದೇವಿ ಜಾತ್ರೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಹಸ್ತ",
+        "endsAt": "09.30",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತೃತೀಯಾ",
+        "endsAt": "17.54",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಗಂಡ07006",
+        "endsAt": "07.06",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "30.32",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "ಕರಣ ಬವತ032೧"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 22,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "22.19"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00.",
+      "gulikaKala": "ಜೆ.0730 - 09:00",
+      "yamaganda": "ಮ. 03:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:36 - 0:0",
+      "shubhaSamaya": "ಬೆ. 03:11 - 04:52"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ಮೇಷ » ಸಂಪತ್ತು :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಾಲ",
+        "raw": "ವೃಷಭ » ಸಾಲ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಮಿಥುನ » ಕೋಪ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅನಾರೋಗ್ಯ",
+        "raw": "ಕರ್ಕಾಟಕ: ಅನಾರೋಗ್ಯ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ಸಿಂಹ » ಅಭಿವೃದ್ಧಿ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸಾಧನೆ",
+        "raw": "ಕನ್ಯಾ» ಸಾಧನೆ."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಚಿಂತೆ",
+        "raw": "ತುಲಾ» ಚಿಂತೆ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಒಳ್ಳೆಯ ಕೆಲಸ",
+        "raw": "ವೃಶ್ಚಿಕ» ಒಳ್ಳೆಯ ಕೆಲಸ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಆಯಾಸ",
+        "raw": "ಧನಸ್ಸು » ಆಯಾಸ :"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ದಯೆ",
+        "raw": "ಮಕರ » ದಯೆ :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸೌಮ್ಯತೆ",
+        "raw": "ಕುಂಭ » ಸೌಮ್ಯತೆ :"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೀನ » ಯಶಸ್ಸು ."
+      }
+    ]
+  }
+}

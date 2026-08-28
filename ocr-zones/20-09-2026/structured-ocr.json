@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\09\\20-09-2026.jpg",
+    "date": "20-09-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "20-09-2026",
+      "quote": "ಹೆಚ್ಚುಅನ್ನಿಸಿದಾಗಲೇ ಬೆಳಕು ಹತಿರದಲಿ:"
+    },
+    "calendar": {
+      "months": [
+        "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಸಿಂಹ/ಕನ್ಯಾ",
+      "sunrise": "06:08",
+      "sunset": "18:17"
+    },
+    "events": [
+      "ಶ್ರೀ ಹರಿ ಜಯಂತಿ",
+      "ಅದುಃಖ ನವಮಿ",
+      "ಭಾಗವತ ಸಪ್ತಾಹಾರಂಭ",
+      "ನಿಡಶೋಶಿ ತಾ. ಹುಕ್ಕೇರಿ ರೊಟ್ಟಿದಾಸೋಹ",
+      "ಮಮದಾಪೂರ ತಾ.",
+      "ನಿಪ್ಪಾಣಿ ಅಂಬಿಕಾಮಾತಾ ಕೀರಣೋತ್ಸವ ಆ. ನಿಡಸೋಶಿ",
+      "ದೂರದುಂಡೇಶ್ವರ ರಥ",
+      "ಅಕ್ಕನಾಗಲಾಬಿಕಾ ಜಯಂತಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪೂಷಾ,",
+        "endsAt": "28.35",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ನವಮಿ",
+        "endsAt": "17.52",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸೌಭಾಗ್ಯ",
+        "endsAt": "15.23",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": null,
+        "nextDay": false,
+        "fullDay": true,
+        "raw": "'ಕರಣ ತೈತಿಲ ಪೂರ್ಣ."
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 4,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಕನ್ನಾ",
+      "chandraEntryRashi": "ಧನು"
+    },
+    "timings": {
+      "rahuKala": "ಸ, 04:30 - 06:00.",
+      "gulikaKala": "ಮ.65:00- 64:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಬ. 10130 - 12:00",
+      "shubhaSamaya": "ಸ. 11:12 - 12:59"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಮೇಷ » ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "- ಭಯ",
+        "raw": "ವೃಷಭ » - ಭಯ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸ್ರಾಲ್ಪ",
+        "raw": "ಮಿಥುನ ೫» ಸ್ರಾಲ್ಪ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಭಯ",
+        "raw": "ಕರ್ಕಾಟಕ ಭಯ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಸಿಂಹ » ಖರ್ಚು"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕನ್ಯಾ» ಅನುಕೂಲ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಲಾಭ",
+        "raw": "ತುಲಾ ೫» ಲಾಭ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ವೃಶ್ಚಿಕ» ಅಭಿವೃದ್ಧಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಧನಸ್ಸು » ಭಕ್ತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಕೊಪ",
+        "raw": "ಮಕರ ೫ ಕೊಪ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಕುಂಭ » ವಿಳಂಬ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮೀನ ». ಲಾಭ"
+      }
+    ]
+  }
+}

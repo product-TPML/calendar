@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\17-04-2026.jpg",
+    "date": "17-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಮಯ ಕೃಷ್ಣ ಮುಮಂ",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "17-04-2026",
+      "quote": "ದರ್ಯ ಅಡಗಿರುವುದು ಹೃದಯದಲ್ಲಿ, ಮುಖದ"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:06",
+      "sunset": "18:32"
+    },
+    "events": [
+      "ಅಕ್ಷತ್ತದಿಗೆ ಅಮವಾಸ್ಕೆ",
+      "ಅಮೃತಸಿದ್ದಿಯೋಗ",
+      "ಅನ್ಹಾಧಾನ",
+      "ಶಿರಿಯಾಳ ಶೆಟ್ಟೆ",
+      "ನವರಾತ್ರಾರಂಭ",
+      "ಇಂಡಿ ತಾ. ಅಗರಖೇಡ",
+      "ಸಿದ್ದಾರೂಡ ಮಠದಲ್ಲಿ ಜ್ಞಾನ ಸ.ಪ್ರಾ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ರೇವತಿ",
+        "endsAt": "12.02",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಅಮಾವಾಸ್ಯೆ",
+        "endsAt": "17.22",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಪ್ಲೌ್‌ಟಿಿ",
+        "endsAt": "07.22",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಮ",
+        "endsAt": "06.50",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ತ್ರಥ್ರಾ್ರ ನನ ಷ್ಟರಾ”"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 4,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮೇಷ",
+      "chandraEntryRashi": "ಮೀನ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00.",
+      "gulikaKala": "ಬೆ. 07:30 - 09:00",
+      "yamaganda": "ಮ. 08:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:36 - 05:00",
+      "shubhaSamaya": "ಬೆ. 09:50 - 11:18"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಮೇಷ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ವೃಷಭ » ಶ್ರೇಷ್ಠತೆ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಆನಂದ",
+        "raw": "ಮಿಥುನ ». ಆನಂದ '"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ಕರ್ಕಾಟಕ ಸಂಪತ್ತು."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಬಲ",
+        "raw": "ಸಿಂಹ » ಬಲ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಕನ್ಯಾ ೫» ಕೋಪ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ನಿಷೇಧ",
+        "raw": "ತುಲಾ ೫» ನಿಷೇಧ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ವೃಶ್ಚಿಕ » ಪ್ರೀತಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಭಯ",
+        "raw": "ಧನಸ್ಸು » ಭಯ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮಕರ ೫». ಲಾಭ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಕುಂಭ » ಪ್ರೋತ್ಸಾಹ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ಮೀನ » ಅಭಿವೃದ್ಧಿ"
+      }
+    ]
+  }
+}

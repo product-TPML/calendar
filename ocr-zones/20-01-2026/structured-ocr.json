@@ -1,0 +1,169 @@
+{
+  "source": {
+    "image": "data\\2026\\01\\20-01-2026.jpg",
+    "date": "20-01-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "20-01-2026",
+      "quote": "ತರ ಪ್ರಯತ್ನವು ಅಸಾಧ್ಯವನ್ನು ಸಾಧ್ಯವಾಗಿ ಮಾ।"
+    },
+    "calendar": {
+      "months": [
+        "ಪುಷ್ಯ/ಮಾಘ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": "ಧನು/ಮಕರ",
+      "sunrise": "06:46",
+      "sunset": "18:15"
+    },
+    "events": [
+      "ಕಾದರಹಳ್ಳಿ ಹಾಗೂ ಮಹಾಲಿಂಗಪುರ ಜ್ಞಾನಸಪ್ತಾಹ",
+      "ಮುಕ್ತಾಯ. ಶ್ರೀ ವಾಸವಿ ಅಗ್ನಿ ಪ್ರವೇಶ ದಿನ",
+      "ಬೆಟಗೆರಿ",
+      "ಗದಗ ರಂಗಪ್ಪಜ್ಜನ ಜೋಡುಕಳಸದ ಭವ್ಯ ಮೆರವಣಿಗೆ",
+      "ವಾಸವಿ ಅಗ್ನಿ ಪ್ರವೇಶ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಶ್ರವಣ",
+        "endsAt": "13.07",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಿತೀಯಾ",
+        "endsAt": "26.43",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸಿದ್ದಿ",
+        "endsAt": "20.01",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "14.32",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 14.32"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಶಿಶಿರ",
+      "solarYear": 7,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮಕರ",
+      "chandraEntryRashi": "25.36"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ. 12:00 - 01:30",
+      "yamaganda": "ಬೆ.09:00- 10:30",
+      "arthaPrahara": "ಬಿ. 07:30 - 09:00",
+      "shubhaSamaya": "ಬೆ. 02:10 - 03:51"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೇಷ ». ಯಶಸ್ಸು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ವೃಷಭ » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ವಿನಯ",
+        "raw": "ಮಿಥುನ » ವಿನಯ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಭಯ",
+        "raw": "ಕರ್ಕಾಟಕ ಭಯ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ಸಿಂಹ » ಉಡುಗೊರೆ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಆಸೆ",
+        "raw": "ಕನ್ಯಾ ೧ ಆಸೆ ."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಜೀವನ",
+        "raw": "ತುಲಾ» ಜೀವನ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ವೃಶ್ಚಿಕ » ಭಕ್ತಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಧನಸ್ಸು ». ಖರ್ಚು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸಂಪತು",
+        "raw": "ಮಕರ ೫» ಸಂಪತು '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಆಸಕ್ತಿ",
+        "raw": "ಕುಂಭ » ಆಸಕ್ತಿ\"."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಮೀನ ». ಪ್ರೀತಿ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,166 @@
+{
+  "source": {
+    "image": "data\\2026\\05\\15-05-2026.jpg",
+    "date": "15-05-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "15-05-2026",
+      "quote": "ಆಸೆಯೇ ದುಃಖಕ್ಕೆಮೂಲ"
+    },
+    "calendar": {
+      "months": [
+        "ವೈಶಾಖ",
+        "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೇಷ/ವೃಷಭ",
+      "sunrise": "05:54",
+      "sunset": "18:37"
+    },
+    "events": [
+      "ಮಾಸ ಶಿವರಾತ್ರಿ",
+      "ಚತುರ್ದಶಿ ಕ್ಷಯ",
+      "ಅಗಸ್ತಿ ಅಸ್ತ",
+      "ವೃಷಭ ಸಂಕ್ರಾಂತಿ",
+      "ಪುಣ್ಯಕಾಲ",
+      "ಜಾಗತಿಕ ಕುಟುಂಬ ದಿನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಅಶ್ವಿನಿ",
+        "endsAt": "20.15",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತ್ರಯೋದಶಿ",
+        "endsAt": "08.32",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಆಯುಷ್ಠಾನ",
+        "endsAt": "14.21",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಿಷ್ಟಿ",
+        "endsAt": "18.55",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ  ವಿಷ್ಟಿ 18.35 7"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 1,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮೇಷ",
+      "chandraEntryRashi": "ಮೇಷ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00",
+      "gulikaKala": "ಚೆ.07:30- 09:00",
+      "yamaganda": "ಮ. 05:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 03:00",
+      "shubhaSamaya": "ಮ. 01:44 - 03:11"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಉತ್ಸಾಹ",
+        "raw": "ಮೇಷ » ಉತ್ಸಾಹ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ವೃಷಭ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ಮಿಥುನ » ಸಹಾಯ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕರ್ಕಾಟಕ: ಅನುಕೂಲ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ಸಿಂಹ » ಉಡುಗೊರೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ ಮೆಚ್ಚುಗೆ",
+        "raw": "ಕನ್ಯಾ ಪ ಮೆಚ್ಚುಗೆ :"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ತುಲಾ» ಅಭಿವೃದ್ದಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಮಧುರ ಮಾತು",
+        "raw": "ವೃಶ್ಚಿಕ» ಮಧುರ ಮಾತು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಗಮನ",
+        "raw": "ಧನಸ್ಸು » ಗಮನ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಮಕರ ೫ ಕೀರ್ತಿ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಕುಂಭ » ಗೌರವ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಒಳ್ಳೆಯ ಕೆಲಸ",
+        "raw": "ಮೀನ » ಒಳ್ಳೆಯ ಕೆಲಸ"
+      }
+    ]
+  }
+}

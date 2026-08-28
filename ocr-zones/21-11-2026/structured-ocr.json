@@ -1,0 +1,167 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\21-11-2026.jpg",
+    "date": "21-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "21-11-2026",
+      "quote": "ಬಡವನ ಕೋಪ ದವಡೆಗೆ ಮೂಲ"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:20",
+      "sunset": "17:50"
+    },
+    "events": [
+      "ವಿಶ್ವ ದೂರದರ್ಶನ ದಿನ",
+      "ವಿಶ್ವ ಮೀನುಗಾರಿಕಾ ದಿನ",
+      "ತುಳಸಿ ವಿವಾಹ",
+      "ಪ್ರಬೋಧಿನಿ",
+      "ದೇವ ಉಠಿ ಭಾಗವತ",
+      "ಏಕಾದಶಿ. ಚಾತುರ್ಮಾಸ ಸಮಾಪ್ತಿ. ತುಲಸಿ",
+      "ವಿವಾಹಾರಂಭ. ಸಂತ ನಾಮದೇವ ಜಯಂತಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಜ್‌",
+        "endsAt": "06.51",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಬಾ",
+        "endsAt": "06.32",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸಿಡ್ಧಿ",
+        "endsAt": "26.31",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "17.51",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬವ 731 _"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 6,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ವೃಶ್ತಿಕ",
+      "chandraEntryRashi": "ಮೀನ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": ". ಬೆ.06:00 - 07:30",
+      "yamaganda": "ಮ. 01:30 - 03:00",
+      "arthaPrahara": "ಮ. 12:00 - 01:30",
+      "shubhaSamaya": "ಬೆ. 02:03 - 03:39"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮೇಷ ». ಸಂತೋಷ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ವೃಷಭ » ಸ್ನೇಹ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಭಯ",
+        "raw": "ಮಿಥುನ » ಭಯ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಕರ್ಕಾಟಕ: ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಸಿಂಹ » ಅಭಿವೃದ್ದಿ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸ್ಪರ್ಧ",
+        "raw": "ಕನ್ಯಾ ೧ ಸ್ಪರ್ಧ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ತುಲಾ ೫» ಯಶಸ್ಸು"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ವೃಶ್ಚಿಕ». ಕೀರ್ತಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಧನಸ್ಸು ». ಖರ್ಚು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಮಕರ » ಶಾಂತಿ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಕುಂಭ » ಕೋಪ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೀನ ». ಯಶಸ್ಸು"
+      }
+    ]
+  }
+}

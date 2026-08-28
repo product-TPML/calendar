@@ -1,0 +1,171 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\09\\06-09-2026.jpg",
+                   "date":  "06-09-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "existing-paksha-ocr",
+                                       "raw":  "ರ್ಸ್‌ ಕೃಷ್ಣ",
+                                       "value":  "ಕೃಷ್ಣ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "06-09-2026",
+                                   "quote":  "\u0027೦ಟಿತನ ಅಂತ್ಯವಲ, ಆತಶಕಿಯ ಆರಂ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಸಿಂಹ/ಕನ್ಯಾ",
+                                     "sunrise":  "06:08",
+                                     "sunset":  "18:27"
+                                 },
+                    "events":  [
+                                   "ಹೆಮ್ಮರಗ ತಾ.ಬಾಗಲಕೋಟೆ ಸಂತಾನ ವೇಣುಗೋಪಾಲ",
+                                   "ಕಲ್ಯಾಣೋತ್ಸವ",
+                                   "ಕೃಷ್ಣ ಉತ್ಸವಾರಂಭ ಮತ್ತು ಸುದರ್ಶನ ಯಜ್ಞ",
+                                   "ಸಮಾಪ್ತಿ",
+                                   "ಕೋಲ್ಡಾಪೂರ ಶ್ರೀ ಕೃಷ್ಣ ಸರಸ್ವತಿ ಮಹಾರಾಜ",
+                                   "ಪು.ತಿ",
+                                   "ಬಸವಾಪಟ್ಟಣ ಶೀವಶರಣಿ ವೀರಮಾತಾ ಪು.ತಿ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಆರ್ದ್ರಾ",
+                                                        "endsAt":  "19.53",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ದಶಮಿ",
+                                                    "endsAt":  "19.30",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಸಿದ್ಧಿ",
+                                                   "endsAt":  "9.45",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ವಣಿಜ",
+                                                     "endsAt":  "08.42",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ _ ವಣಿಜ 08.42"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  21,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಸಿಂಹ",
+                                      "chandraEntryRashi":  "ಮಿಥುನ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 04:30 -06:00",
+                                    "gulikaKala":  "ಮ.05:00 - 04:30",
+                                    "yamaganda":  "ಮ. 12:00 -01:3(",
+                                    "arthaPrahara":  "ಬ. 10:30 - 12:00",
+                                    "shubhaSamaya":  "ಸ. 10:33 - 12:03"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಮೇಷ ೫» ಭಯ :"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ವೃಷಭ » ಪ್ರಯತ್ನ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಒತೆ ಯದು",
+                                        "raw":  "ಮಿಥುನ » ಒತೆ ಯದು."
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಕರ್ಕಾಟಕ. ಪ್ರೀತಿ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ವಿಶ್ರಾಂತಿ",
+                                        "raw":  "ಸಿಂಹ » ವಿಶ್ರಾಂತಿ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಕನ್ಯಾ» ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ತುಲಾ» ಯಶಸ್ಸು \u0027"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ವೃಶ್ಚಿಕ». ಸಾಲ\""
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಧನಸ್ಸು » ಪ್ರೀತಿ ."
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಶಸ",
+                                        "raw":  "ಮಕರ ೫ ಶಸ :"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ವಿನಯ",
+                                        "raw":  "ಕುಂಭ » ವಿನಯ ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಕೋಪ",
+                                        "raw":  "ಮೀನ » ಕೋಪ"
+                                    }
+                                ]
+                }
+}

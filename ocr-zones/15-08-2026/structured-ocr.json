@@ -1,0 +1,173 @@
+{
+  "source": {
+    "image": "data\\2026\\08\\15-08-2026.jpg",
+    "date": "15-08-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "15-08-2026",
+      "quote": "ಇಂದು ಪ್ರಾರಂಭಿಸಿದವನೇ ನಾಳೆ ಗೆಲ್ಲುವನ"
+    },
+    "calendar": {
+      "months": [
+        "ಆಷಾಢ",
+        "ಶ್ರಾವಣ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಕರ್ಕ/ಸಿಂಹ",
+      "sunrise": "06:07",
+      "sunset": "18:40"
+    },
+    "events": [
+      "ಜ್‌ ೩",
+      "ಭಾರತ ಸ್ವಾತಂತ್ರ್ಯ ದಿನ",
+      "ಕ್ರಾಂತಿವೀರ ಸಂಗೊಳ್ಳಿ ರಾಯಣ್ಣ",
+      "ಅವರ ಜನ್ಮದಿನ",
+      "ಮಧುಶ್ರವಾ ತೃತೀಯಾ. ಅಶ್ವತ್ಥ ಮಾರುತಿ",
+      "ಪೂಜೆ",
+      "ಭದ್ರಾ ಪ್ರಾರಂಭ",
+      "ಪಾರಸಿ ನೂತನ ವರ್ಷಾರಂಭ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಉತ್ತರಾ",
+        "endsAt": "27.26",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತೃತೀಯಾ",
+        "endsAt": "17.29",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶಿವ",
+        "endsAt": "07.09",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣಿಜ",
+        "endsAt": "29.06",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ವಣಿಜ 29.06 _"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 31,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಕರ್ಕ",
+      "chandraEntryRashi": "ಸಿಂಹ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ.06:00 - 07:30",
+      "yamaganda": "ಮ. 01:30 - 03:00",
+      "arthaPrahara": "ಮ. 12:00 - 01:30",
+      "shubhaSamaya": "ರಾ.08:18 - 09:53"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೇಷ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ವೃಷಭ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ವಿನಯ",
+        "raw": "ಮಿಥುನ » ವಿನಯ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಮರೆವು",
+        "raw": "ಕರ್ಕಾಟಕ ಮರೆವು"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಚಿಂತೆ",
+        "raw": "ಸಿಂಹ » ಚಿಂತೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಕನ್ಯಾ ೫ ಸಾಲ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಗೌರವ",
+        "raw": "ತುಲಾ ೫» ಗೌರವ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಶ್ಚಿಕ » ಯಶಸ್ಸು :"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಧನಸ್ಸು ». ಕೀರ್ತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಒಳ್ಳೆಯ ಕೆಲಸ",
+        "raw": "ಮಕರ ೫ ಒಳ್ಳೆಯ ಕೆಲಸ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಗಮನ",
+        "raw": "ಕುಂಭ » ಗಮನ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರತಿರೊಧ",
+        "raw": "ಮೀನ » ಪ್ರತಿರೊಧ ."
+      }
+    ]
+  }
+}

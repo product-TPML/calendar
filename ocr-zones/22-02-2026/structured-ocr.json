@@ -1,0 +1,166 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\02\\22-02-2026.jpg",
+                   "date":  "22-02-2026",
+                   "dimensions":  {
+                                      "width":  1514,
+                                      "height":  1060
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "22-02-2026",
+                                   "quote":  "ಹಸಿರಂತೆ ಹೊಮ್ಮುವ ಆರದ ಬೆಳಕಂತೆ ಮಗುವಿನ ನ:"
+                               },
+                    "calendar":  {
+                                     "months":  [
+
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಮಕರ/ ಕುಂಭ",
+                                     "sunrise":  "06:39",
+                                     "sunset":  "18:27"
+                                 },
+                    "events":  [
+                                   "ಮಹರ್ಷಿ ಯಾಜ್ಞವಲ್ಲ್ಯ ಜಯಂತಿ",
+                                   "ಬ್ಯಾಡಗಿ ಶ್ರೀ",
+                                   "ಚಂದ್ರಗುಪ್ತಮ್ಮ ಜಾತ್ರೆ",
+                                   "ಜಗದಾಳ ತಾ. ಜಮಖಂಡಿ",
+                                   "ಸ.ಸ. ಜಿನ್ಹೇಶ್ವರ ಮಹಾರಾಜ ಪುಣ್ಯತಿಥಿ",
+                                   "ಸಿಂದಗಿ",
+                                   "ಜಕ್ಕಪ್ಪಯ್ಯ ಪುಣ್ಯತಿಥಿ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಅಶ್ವಿನಿ",
+                                                        "endsAt":  "17.55",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಪಂಚಮಿ",
+                                                    "endsAt":  "11.10",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಶುಕ್ಷ",
+                                                   "endsAt":  "13.6",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಕೌಲವ",
+                                                     "endsAt":  "22.11",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಕೌಲವ 22.11"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ವಸಂತ",
+                                      "solarYear":  10,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಕುಂಭ",
+                                      "chandraEntryRashi":  "ಮೇಷ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಸ, 04:30 - 06:00.",
+                                    "gulikaKala":  "ಮ. 03:00 - 04:30",
+                                    "yamaganda":  "ಮ. 12:00 - 01:30",
+                                    "arthaPrahara":  "ಬ. 10:30 - 12:00",
+                                    "shubhaSamaya":  "ಬೆ. 11:04 - 12:35"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಮೇಷ » ಲಾಭ :"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ವೃಷಭ ೫» ಸಂತೋಷ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಸ್ಲೇಹ",
+                                        "raw":  "\u0027ಮಿಥುನ » ಸ್ಲೇಹ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಗಮನ",
+                                        "raw":  "ಕರ್ಕಾಟಕ: ಗಮನ \u0027"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಯಶಸ",
+                                        "raw":  "ಸಿಂಹ » ಯಶಸ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಸರ್ಧ",
+                                        "raw":  "ಕನ್ಯಾ ೧ ಸರ್ಧ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಸೌಲ",
+                                        "raw":  "ತುಲಾ » ಸೌಲ :"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಮರೆವು",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಮರೆವು"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಧನಸ್ಸು » ಪ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಸಮಸ್ಥೆ",
+                                        "raw":  "ಮಕರ » ಸಮಸ್ಥೆ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ಕುಂಭ » ಒಳ್ಳೆಯದು"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಆಸಕ್ತಿ",
+                                        "raw":  "ಮೀನ ೫». ಆಸಕ್ತಿ"
+                                    }
+                                ]
+                }
+}

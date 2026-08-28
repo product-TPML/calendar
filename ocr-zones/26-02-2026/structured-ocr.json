@@ -1,0 +1,168 @@
+{
+  "source": {
+    "image": "data\\2026\\02\\26-02-2026.jpg",
+    "date": "26-02-2026",
+    "dimensions": {
+      "width": 1514,
+      "height": 1060
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "26-02-2026",
+      "quote": "ಯತ್ನಾಗಿ ಇರ್ತಿವೋ ಅಲ್ಲೇ ತುಂಬಾ ನೋವು ಸಿಗೆ"
+    },
+    "calendar": {
+      "months": [],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": "ಮಕರ/ ಕುಂಭ",
+      "sunrise": "06:37",
+      "sunset": "18:28"
+    },
+    "events": [
+      "ಸ್ವಾ.ಸಾವರಕರ ಪುಣ್ಯದಿನ",
+      "ತೊಗರ್ಸಿ ತಾ. ಶಿಕಾರಿಪುರ",
+      "ಶ್ರೀ ಮಲ್ಲಿಕಾರ್ಜುನಸ್ವಾಮಿ ದೊಡ್ಡ ರಥ",
+      "ಸೋಗಲಸೊಳೆಮೇಶ್ವರ ರಥೋತ್ಸವ",
+      "ಸಿರ್ಲಿ ತಾ.",
+      "ಚಿಕ್ಕೋಡಿ ದತ್ತ ಉತ್ಸವ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಮೃಗಶಿರಾ",
+        "endsAt": "12.12",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದಶಮಿ",
+        "endsAt": "24.34",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶ್ರೀತಿ",
+        "endsAt": "02.33",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": "13.37",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ತೈತಿಲ 13.37"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 14,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ಮಿಥುನ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಬೆ. 09:00 - 10:30:",
+      "yamaganda": "ಬೆ. 06:00 - 07:30",
+      "arthaPrahara": "ಮ. 03:00 - 04:30",
+      "shubhaSamaya": "ಬೆ. 03:55 - 05:25"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಯಶಸು",
+        "raw": "ಮೇಷ » ಯಶಸು, :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ವೃಷಭ » ಒಳ್ಳೆಯದು ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸೌಮತೆ",
+        "raw": "'ಮಿಥುನ » ಸೌಮತೆ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರಯತ್ರ",
+        "raw": "ಕರ್ಕಾಟಕ: ಪ್ರಯತ್ರ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಸಿಂಹ » ಪ್ರೀತಿ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಬುದ್ದಿವಂತಿಕ",
+        "raw": "ಕನ್ಯಾ» ಬುದ್ದಿವಂತಿಕ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "* ಸಂತೋಷ",
+        "raw": "ತುಲಾ »* ಸಂತೋಷ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ವೃಶ್ಚಿಕ» ಸ್ನೇಹ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸರ್ಧೆ",
+        "raw": "ಧನಸ್ಸು » ಸರ್ಧೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ೃಾಂತಿ",
+        "raw": "ಮಕರ » ೃಾಂತಿ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ಕುಂಭ » ಅಭಿವೃದ್ಧಿ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಗೊಂದಲೆ",
+        "raw": "ಮೀನ ». ಗೊಂದಲೆ"
+      }
+    ]
+  }
+}

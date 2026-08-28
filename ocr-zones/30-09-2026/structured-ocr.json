@@ -1,0 +1,168 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\09\\30-09-2026.jpg",
+                   "date":  "30-09-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "red-channel-4x-psm7",
+                                       "raw":  "ಪಕ್ಷ ಕೃಷ್ಣ",
+                                       "value":  "ಕೃಷ್ಣ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "30-09-2026",
+                                   "quote":  "ಯಶಸು,ಸಹನೆಯ ಫಲ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಸಿಂಹ/ಕನ್ಯಾ",
+                                     "sunrise":  "06:09",
+                                     "sunset":  "18:10"
+                                 },
+                    "events":  [
+                                   "ಚತುರ್ಥಿ / ಪಂಚಮಿ ಮಹಾಲಯ ಕೃತ್ತಿಕಾ",
+                                   "ಶ್ರಾದ್ಧ",
+                                   "ಲಾಹಿರಿ ಮಹಾಶಯ ಜಯಂತಿ",
+                                   "ಬೃಹದ್‌ ಗೌರಿ ವ್ರತ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಕಿ",
+                                                        "endsAt": "07.37",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಚತುರ್ಥಿ",
+                                                    "endsAt":  "14.56",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವಶ್ರ",
+                                                   "endsAt":  "24.21",
+                                                   "nextDay":  true,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಕೌಲವ",
+                                                     "endsAt":  "25.46",
+                                                     "nextDay":  true,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಕೌಲವ 25.46"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ರ್ಥಿ 14.56",
+                                      "solarYear":  14,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಕನ್ನಾ",
+                                      "chandraEntryRashi":  "ಮೇಷ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 12:00 - 01:30",
+                                    "gulikaKala":  "ಬೆ. 10:30 - 12:00",
+                                    "yamaganda":  "ಬೆ.07:30-09:00",
+                                    "arthaPrahara":  "ಬೆ.06:00 - 07:30",
+                                    "shubhaSamaya":  "ಬೆ. 03:06 - 04:36"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಧೈರ್ಯ",
+                                        "raw":  "ಮೇಷ » ಧೈರ್ಯ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಭಕ್ತಿ",
+                                        "raw":  "ವೃಷಭ » ಭಕ್ತಿ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಪಸ",
+                                        "raw":  "ಮಿಥುನ » ಪಸ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಒಳ್ಳೆಯದು."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಆನಂದ",
+                                        "raw":  "ಸಿಂಹ » ಆನಂದ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಸ್ಪರ್ಧೆ",
+                                        "raw":  "ಕನ್ಯಾ ೧ ಸ್ಪರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ತಾಳ್ಮೆ",
+                                        "raw":  "ತುಲಾ ೫» ತಾಳ್ಮೆ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ವೃಶ್ಚಿಕ». ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಬಲ",
+                                        "raw":  "ಧನಸ್ಸು » ಬಲ .:"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಸಂಪತ್ತು",
+                                        "raw":  "ಮಕರ ೫» ಸಂಪತ್ತು"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಕುಂಭ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಅಭಿವೃದ್ಧಿ",
+                                        "raw":  "ಮೀನ » ಅಭಿವೃದ್ಧಿ"
+                                    }
+                                ]
+                }
+}

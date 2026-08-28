@@ -1,0 +1,165 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\02\\02-02-2026.jpg",
+                   "date":  "02-02-2026",
+                   "dimensions":  {
+                                      "width":  1514,
+                                      "height":  1060
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "02-02-2026",
+                                   "quote":  "ದುಕಿಗೆ ಭಯ ಮುಖ್ಯವಲ್ಲ, ಬರವಸೆ ಮು."
+                               },
+                    "calendar":  {
+                                     "months":  [
+
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಮಕರ/ ಕುಂಭ",
+                                     "sunrise":  "06:45",
+                                     "sunset":  "18:20"
+                                 },
+                    "events":  [
+                                   "ಗುರು ಪ್ರತಿಪದಾ",
+                                   "ಗಾಣಗಾಪುರ ಜಾತ್ರೆ",
+                                   "ಗುರು ಶೈಲ್ಯ ಜಾತ್ರೆ",
+                                   "ಗಮನ ಯಲ್ಲಮ್ಮಾ ಬುದಿಹಾಳ ಶ್ರೀ ಗ್ರಾಮದೇವತೆ",
+                                   "ದ್ಯಾಮವ್ವನ ಜಾತ್ರೆ",
+                                   "ಸಂತ ನಿವೃತ್ತಿನಾಯ ಜಯಂತಿ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಅಶ್ವೇಷಾ",
+                                                        "endsAt":  "22.48",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಪ್ರತಿಪದಾ",
+                                                    "endsAt":  "25.53",
+                                                    "nextDay":  true,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                        "name":  "ಆಯುಷ್ಮಾನ್",
+                                        "endsAt":  "07.21",
+                                        "nextDay":  false,
+                                        "fullDay":  false
+                                      },
+                                      "karana":  {
+                                                     "name":  "ಬಾಲವ",
+                                                     "endsAt":  "14.42",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬಾಲವ 14.42"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಶಿಶಿರ",
+                                      "solarYear":  20,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಮಕರ",
+                                      "chandraEntryRashi":  "ಕರ್ಕ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 07:30 - 09:00.",
+                                    "gulikaKala":  "ಮ. 01:30 - 03:00",
+                                    "yamaganda":  "ಬೆ. 10:30 12:00",
+                                    "arthaPrahara":  "ಬ.09:00 - 10:30",
+                                    "shubhaSamaya":  "ಸ. 09:16 - 10:47"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಸಮಸ್ಸೆ",
+                                        "raw":  "ಮೇಷ ». ಸಮಸ್ಸೆ :"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ವೃಷಭ » ಪ್ರೋತ್ಸಾಹ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ವಿನಯ",
+                                        "raw":  "ಮಿಥುನ » ವಿನಯ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ನಿರಾಶೆ",
+                                        "raw":  "ಕರ್ಕಾಟರ್ಕು. ನಿರಾಶೆ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಸಿಂಹ » ಲಾಭ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಕನ್ಯಾ» ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ತುಲಾ» ಸಂತೋಷ."
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಆತಂಕ",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಆತಂಕ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಧನಸ್ಸು ». ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಪಯತ",
+                                        "raw":  "ಮಕರ » ಪಯತ \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಕುಂಭ » ಅನುಕೂಲ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಮೀನ ೫ ಭಯ"
+                                    }
+                                ]
+                }
+}

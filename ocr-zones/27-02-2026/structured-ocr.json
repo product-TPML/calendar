@@ -1,0 +1,169 @@
+{
+  "source": {
+    "image": "data\\2026\\02\\27-02-2026.jpg",
+    "date": "27-02-2026",
+    "dimensions": {
+      "width": 1514,
+      "height": 1060
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "27-02-2026",
+      "quote": "ಶಿಸ್ನೇ ಜೀವನದ ಮುಖ್ಲತಳಹದಿ"
+    },
+    "calendar": {
+      "months": [],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": "ಮಕರ/ ಕುಂಭ",
+      "sunrise": "06:36",
+      "sunset": "18:28"
+    },
+    "events": [
+      "ಆಮಲಕಿ ಏಕಾದಶಿ",
+      "ಮೇಲ್ಕೋಟೆ ವೈರಮುಡಿ",
+      "ಉತ್ಸವ",
+      "ಜತ್ರಾಟ ತಾ.ಚಿಕ್ಕೋಡಿ ನಾಮಸಪ್ತಾಹ",
+      "ಹುಬ್ಬಳಿ ಶ್ರೀ ವಿಠ್ಠಲ ಜಾತ್ರೆ",
+      "ಹಿರೇಸಿಂದೊಗಿ",
+      "ಚನ್ನಬಸವೇಶ್ವರ ರಥ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಅರ್ದ್ರಾ",
+        "endsAt": "10.49",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಏಕಾದಶಿ",
+        "endsAt": "22.33",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಆಯುಷ್ಠಾನ",
+        "endsAt": "19.44",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣೆಜ",
+        "endsAt": "11.33",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ವಣೆಜ 11.33"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 15,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ಮಿಥುನ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00.",
+      "gulikaKala": "ಬೆ. 07:30 - 09:00",
+      "yamaganda": "ಮ. 03:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 03:00",
+      "shubhaSamaya": "ಬೆ. 01:23 - 02:53"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಮೆಚ್ಚುಗೆ",
+        "raw": "ಮೇಷ » ಮೆಚ್ಚುಗೆ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ವಿಶ್ರಾಂತಿ",
+        "raw": "ವೃಷಭ » ವಿಶ್ರಾಂತಿ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "'ಮಿಥುನ » ಸ್ನೇಹ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಕಾಟರ್ಕ ಕೀರ್ತಿ",
+        "raw": "ಕರ್ಕಾಟರ್ಕ ಕೀರ್ತಿ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ಸಿಂಹ » ತೊಂದರೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಕನ್ಯಾ ೫» ಕೋಪ."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಲಾಭ",
+        "raw": "ತುಲಾ » ಲಾಭ '"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಗಮನ",
+        "raw": "ವೃಶ್ಚಿಕ » ಗಮನ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಫ್ರೀತಿ",
+        "raw": "ಧನಸ್ಸು » ಫ್ರೀತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಪತಿರೋದ",
+        "raw": "ಮಕರ » ಪತಿರೋದ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ಕುಂಭ *» ಸಹಾಯ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೀನ » ಯಶಸ್ಸು"
+      }
+    ]
+  }
+}

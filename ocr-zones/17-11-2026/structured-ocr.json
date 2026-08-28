@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\17-11-2026.jpg",
+    "date": "17-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "existing-paksha-ocr",
+      "raw": "ಪರರ ಶುಕ್ಕ್ಶ್ಣ",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "17-11-2026",
+      "quote": "ಮಾತು ಬೆಳ್ಳಿ ಮೌನ ಬಂಗಾರ"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:19",
+      "sunset": "17:50"
+    },
+    "events": [
+      "ದುರ್ಗಾಷ್ಟಮಿ",
+      "ಗೋಪಾಷ್ಟಮಿ",
+      "ಪಂಚಕ",
+      "ನಂದೀಶ್ವರ",
+      "ಅಷ್ಟಾಹ್ನಿಕ ವ್ರತಾರಂಭ. ಮೇಲುಕೋಟೆ ರಾಜಮುಡಿ",
+      "ಉತ್ಸವ. ರಾಷ್ಟ್ರೀಯ ಅಪಸ್ಮಾರ ದಿನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಧನಿಷ್ಟಾ",
+        "endsAt": "28.35",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಅಷ್ಟಮಿ",
+        "endsAt": "30.06",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವೃದ್ಧಿ",
+        "endsAt": "0.54",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಿಷ್ಟಿ",
+        "endsAt": "17.18",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ವಿಷ್ಟಿ 17.18 _"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 2,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ವೃಶ್ಚಿಕ",
+      "chandraEntryRashi": "ಮಕರ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ.12:00-01:30",
+      "yamaganda": "ಬೆ. 09:00 - 10:30",
+      "arthaPrahara": "ಚೆ.07:30- 9:00",
+      "shubhaSamaya": "ಸ. 05:11 - 06:56"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಆಸೆ",
+        "raw": "ಮೇಷ ೫» ಆಸೆ."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ವೃಷಭ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ಮಿಥುನ » ಅಭಿವೃದ್ಧಿ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಶಾಂತಿ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಸಿಂಹ » ಕೀರ್ತಿ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಕನ್ಯಾ 0೧ ಪ್ರೀತಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಲಾಭ",
+        "raw": "ತುಲಾ ೫ ಲಾಭ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ವೃಶ್ಚಿಕ» ಅಭಿವೃದ್ಧಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮಕರ » ಸಂತೋಷ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಕುಂಭ » ಸಾಲ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಮೀನ » ಪ್ರೀತಿ"
+      }
+    ]
+  }
+}

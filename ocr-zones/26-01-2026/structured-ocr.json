@@ -1,0 +1,165 @@
+{
+  "source": {
+    "image": "data\\2026\\01\\26-01-2026.jpg",
+    "date": "26-01-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "26-01-2026",
+      "quote": "ಲ್ಲರಿಗೂ ಗಣರಾಜ್ಕ್ಯೋತ್ಸವಧ ಶುಭಾಶಯಗಳ"
+    },
+    "calendar": {
+      "months": [
+        "ಪುಷ್ಯ/ಮಾಘ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": ": ಇ ಇದನು/ಮಕರ",
+      "sunrise": "06:46",
+      "sunset": "18:18"
+    },
+    "events": [
+      "ಗಣರಾಜ್ಯೋತ್ಸವ ದಿನ",
+      "ಸಂಗೋಳ್ಳಿ ರಾಯಣ್ಣ",
+      "ಪು.ದಿನ",
+      "ಅದೈಶ್ಯ' ಶಿವಯೋಗಿ ಹಾಗೂ ಶ್ರೀ ರಾಮ",
+      "ಮಂಡಿರ ಬಾಳಪ್ಪಜ್ಜನ ಪ್ರ.ಶ ಗೃದರ್ಲಹಳ್ಳಿ",
+      "ಹೊನ್ನಾವರ ತಾ. ಹೊಸಕುಳಿ -ಈಶರ ಜಾತೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಅಶ್ವಿನಿ ವ",
+        "endsAt": "12.33",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಅಷ್ಟಮಿ 2110",
+        "endsAt": "21.19",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸಾಧ್ಯ",
+        "endsAt": "09.11",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "''ಪಿಷ್ಟಿ",
+        "endsAt": "10.17",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ್‌್‌ಬ್ಬ 10.17 '"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಶಿಶಿರ",
+      "solarYear": 13,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮಕರ",
+      "chandraEntryRashi": "ಮೇಷ"
+    },
+    "timings": {
+      "rahuKala": "ಬಿ. 07:30 - 09:00",
+      "gulikaKala": "ಮ. 01:30 - 03:00",
+      "yamaganda": "ಮ. 10:30 - 12:00",
+      "arthaPrahara": "ಬೆ. 09:00 - 10:30",
+      "shubhaSamaya": "ಬೆ. 05:39 - 07:11"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಮೇಷ ೨» ಅಭಿವೃದ್ದಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ವೃಷಭ » ಸಂಪತ್ತು\"."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಮಿಥುನ » ಭಕ್ತಿ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "'ಕಿಕಾಗಟಕು: ಯಶಸ್ಸು ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ಸಿಂಹ ೫» ಸಹಾಯ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಬಲ",
+        "raw": "ಕನ್ಯಾ ೫ ಬಲ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಮೆಚ್ಚುಗೆ",
+        "raw": "ತುಲಾ.» ಮೆಚ್ಚುಗೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ವಿನಯ",
+        "raw": "ವೃಶ್ಚಿಕ » ವಿನಯ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಆಸಕ್ತಿ",
+        "raw": "ಧನಸ್ಸು » ಆಸಕ್ತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಫ್ರೀತಿ",
+        "raw": "ಮಕರ» ಫ್ರೀತಿ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಕುಂಭ »:. ಸ್ಪರ್ಧೆ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "*», ಸಾಲ",
+        "raw": "'ಮೀನ *», ಸಾಲ"
+      }
+    ]
+  }
+}

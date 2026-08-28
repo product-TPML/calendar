@@ -1,0 +1,165 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\02\\04-02-2026.jpg",
+                   "date":  "04-02-2026",
+                   "dimensions":  {
+                                      "width":  1514,
+                                      "height":  1060
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "04-02-2026",
+                                   "quote":  "ಶಕ್ತಿಯ ಜೀವನ ದೌರ್ಬಲ್ಲವೇ ಮರಣ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಮಕರ/ ಕುಂಭ",
+                                     "sunrise":  "06:45",
+                                     "sunset":  "18:21"
+                                 },
+                    "events":  [
+                                   "ಸಂತ ನರಹರಿ ಸೋನಾರ ಪುಣ್ಯ ತಿಥಿ",
+                                   "ಮೈಲಾರ",
+                                   "ಕಾರುಣೀಕೋತ್ಸವ",
+                                   "ಕ್ಯಾಲೆಂಡರ್‌ ಕರ್ತೃ ಸದಾಶಿವ",
+                                   "ದತ್ತಾತ್ರಯ ಶಿರ್ಕೆ ಪುಣ್ಯದಿನ",
+                                   "ಶಬ-ಏ-ಬರಾತ್‌"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಪೂರ್ವಾ",
+                                                        "endsAt":  "22.13",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ತೃತೀಯಾ",
+                                                    "endsAt":  "24.10",
+                                                    "nextDay":  true,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಅತಿಗಂಡ",
+                                                   "endsAt":  "2.6",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ವಣಿಜ",
+                                                     "endsAt":  "12.20",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "ಕರಣ ವಣಿಜ 1220"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಶಿಶಿರ",
+                                      "solarYear":  22,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಮಕರ",
+                                      "chandraEntryRashi":  "ಸಿಂಹ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 12:00 - 01:30",
+                                    "gulikaKala":  "ಬೆ. 10130 - 12:00:",
+                                    "yamaganda":  "ಬೆ. 07:30 - 09:00",
+                                    "arthaPrahara":  "ಚ. 06:00 - 07:30",
+                                    "shubhaSamaya":  "ಸ. 03:48 - 05:24"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಆಲೋಚನೆ",
+                                        "raw":  "ಮೇಷ » ಆಲೋಚನೆ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ವೃಷಭ » ಸಾಲ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ವಿಳಂಬ",
+                                        "raw":  "ಮಿಥುನ » ವಿಳಂಬ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಖರ್ಚು ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಪ್ರೋತ್ಸಾಹ",
+                                        "raw":  "ಸಿಂಹ » ಪ್ರೋತ್ಸಾಹ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ಕನ್ಯಾ» ಪ್ರಯತ್ನ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ತುಲಾ» ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಶ್ರಷ್ಠತೆ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಶ್ರಷ್ಠತೆ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಧನಸ್ಸು » ಅನುಕೂಲ."
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "*ಅನಾರೋಗ",
+                                        "raw":  "ಮಕರ »*ಅನಾರೋಗ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಕುಂಭ *. ಪ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಪ್ರಾಮಾಣಿಕತೆ",
+                                        "raw":  "ಮೀನ » ಪ್ರಾಮಾಣಿಕತೆ"
+                                    }
+                                ]
+                }
+}

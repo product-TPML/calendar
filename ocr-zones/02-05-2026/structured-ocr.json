@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\05\\02-05-2026.jpg",
+    "date": "02-05-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "existing-paksha-ocr",
+      "raw": "ಪಕ್ಷ” ಕೃಷ್ಣ",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "02-05-2026",
+      "quote": "ಕಲಿಯುವುದನ್ನುನಿಲ್ಲಿಸಿದಾಗ ಬೆಳೆಯುವುದನ್ನು ನಿಲ್ಲಿಸ"
+    },
+    "calendar": {
+      "months": [
+        "ವೈಶಾಖ",
+        "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೇಷ/ವೃಷಭ",
+      "sunrise": "05:58",
+      "sunset": "18:34"
+    },
+    "events": [
+      "ನಾರದ ಜಯಂತಿ",
+      "ಗಂಗಾವತಿ ತಾ. ಕನಕಗಿರಿ",
+      "ದುರ್ಗಮ್ಮದೇವಿ ಜಾತ್ರೆ. ಬಳ್ಳಾರಿ ತಾ. ಕೊಳಗಲ್ಲು ಜಡೆಪ್ಪ",
+      "ತಾತನವರ ಪು.ತಿ. ದೊಡ್ಡಬಳ್ಳಾಪುರ ವೇಣುಗೋಪಾಲ",
+      "ರಥ",
+      "ಮಾಗಡಿ ತಾ. ಸಾನಜದುರ್ಗ ಲಕ್ಷ್ಮೀನರಸಿಂಹ ರಥ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ವಿಶಾಕ",
+        "endsAt": null,
+        "nextDay": false,
+        "fullDay": true
+      },
+      "tithi": {
+        "name": "ಪ್ರತಿಪದಾ",
+        "endsAt": "24.50",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವ್ಯತೀಪಾತ",
+        "endsAt": "21.45",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ 11",
+        "endsAt": "03.56",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 11.356"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 19,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮೇಷ",
+      "chandraEntryRashi": "ತುಲಾ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30",
+      "gulikaKala": "ಬೆ.06:00 - 07:30",
+      "yamaganda": "ಮ.01:30- 05:00",
+      "arthaPrahara": "ಮ. 12:00 - 01:30",
+      "shubhaSamaya": "ಬೆ. 09:25 - 11:11"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಮೇಷ ». ವಿಳಂಬ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಷಭ » ಲಾಭ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಆಲೋಚನೆ",
+        "raw": "ಮಿಥುನ » ಆಲೋಚನೆ."
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪರಿಶ್ರಮ",
+        "raw": "ಕರ್ಕಾಟಕ ಪರಿಶ್ರಮ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ಸಿಂಹ. » ಸಹಾಯ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ದುರಾಸೆ",
+        "raw": "ಕನ್ಯಾ» ದುರಾಸೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ವಿಭಾಗ",
+        "raw": "ತುಲಾ» ವಿಭಾಗ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಬುದ್ದಿವಂತಿಕೆ",
+        "raw": "ವೃಶ್ಚಿಕ » ಬುದ್ದಿವಂತಿಕೆ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಧನಸ್ಸು » ಸಂತೋಷ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ನಿರಾಶೆ",
+        "raw": "ಮಕರ ೫» ನಿರಾಶೆ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸಾಧನೆ",
+        "raw": "ಕುಂಭ » ಸಾಧನೆ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಮೀನ ». ಸ್ನೇಹ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\06\\16-06-2026.jpg",
+    "date": "16-06-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "16-06-2026",
+      "quote": "ಸ ಬೆಳೆಸಲು ವರ್ಷಗಳು ಬೇಕು, ಮುರಿಯಲು ಕ್ಷಣ;"
+    },
+    "calendar": {
+      "months": [
+        "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ ನಾಮ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಷಭ/ಮಿಥುನ",
+      "sunrise": "05:53",
+      "sunset": "18:47"
+    },
+    "events": [
+      "ಚಿಂತಾಮಣಿ ತಾ| ಹಿರೇಕೆರೂರ ನಾರಾಯಣ",
+      "ಯತೀಂದ್ರರ ಆರಾಧನೆ",
+      "ಕರವೀರ ವ್ರತ",
+      "ದಶಹರಾ ವ್ರತ",
+      "ಆರಂಭ",
+      "ಗಂಗಾ ದಶಾಶ್ವಮೇಧ ಸ್ನಾನ ಆರಂಭ",
+      "ಕರಿದಿನ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಆರ್ದ್ರಾ",
+        "endsAt": "16.12",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಡ್ವಿತೀಯಾ",
+        "endsAt": "24.53",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವೃದ್ಧಿ",
+        "endsAt": "24.35",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "14.40",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 14.40"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 2,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮಿಥುನ",
+      "chandraEntryRashi": "ಮಿಥುನ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ. 12:00 - 01:30",
+      "yamaganda": "ಬೆ.09:00- 10:30",
+      "arthaPrahara": "ಬ. 07:30 - 09:00",
+      "shubhaSamaya": "ಬೆ. 07:25 - 08:50"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಮೇಷ ೨» ಅಭಿವೃದ್ದಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಷಭ » ಯಶಸ್ಸು' ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಅಬಿವದಿ",
+        "raw": "ಮಿಥುನ » ಅಬಿವದಿ.'"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕರ್ಕಾಟಕ ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಸಿಂಹ » ಕೋಪ '"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಅನಾರೋಗ್ಯ",
+        "raw": "ಕನ್ಯಾ» ಅನಾರೋಗ್ಯ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ತುಲಾ.» ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "“ದುಃಖ",
+        "raw": "ವೃಶ್ಚಿಕ » “ದುಃಖ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರೀತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಕರುಣೆ",
+        "raw": "ಮಕರ ». ಕರುಣೆ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಗೊಂದಲ",
+        "raw": "ಕುಂಭ » ಗೊಂದಲ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪರೀಕ್ಷೆ",
+        "raw": "ಮೀನ » ಪರೀಕ್ಷೆ"
+      }
+    ]
+  }
+}

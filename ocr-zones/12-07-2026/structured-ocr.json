@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\07\\12-07-2026.jpg",
+    "date": "12-07-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "12-07-2026",
+      "quote": "ೌನವಾಗಿ ದುಡಿ, ಫಲವೇ ಮಾತನಾ!"
+    },
+    "calendar": {
+      "months": [
+        "ನಿಜ ಜ್ಯೇಷ್ಠ/ಆಷಾಢ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮಿಥುನ/ಕರ್ಕ",
+      "sunrise": "06:00",
+      "sunset": "18:50"
+    },
+    "events": [
+      "ಆಲೂರು ವೆಂಕಟರಾವ್‌ ಜಯಂತಿ",
+      "ಬೆಲವಂತರ",
+      "ಹಿರೇಮಠ ಚನ್ನಬಸವ ಶಿವಯೋಗಿಗಳ ಪುಣ್ಯತಿಥಿ",
+      "ಶ್ರೀ",
+      "ವಿದ್ಯಾರಣ್ಯಸ್ವಾಮಿ ಗುಹಾ ಪ್ರವೇಶ",
+      "ವಿಜಯೀಂದ್ರ",
+      "ತೀರ್ಥರ ಆರಾಧನೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಬಸಿ",
+        "endsAt": "08.29",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತ್ರಯೋದಶಿ",
+        "endsAt": "22.30",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವೃದ್ದಿ",
+        "endsAt": "20.06",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಗರಜ",
+        "endsAt": "12.19",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಗರಜ 12.19"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 28,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮಿಹುನ",
+      "chandraEntryRashi": "ವೃಷಭ"
+    },
+    "timings": {
+      "rahuKala": "ಸ. 04:30 - 06:00.",
+      "gulikaKala": "ಮ.5:00- 64:30",
+      "yamaganda": "ಮ. 12:00-01:30",
+      "arthaPrahara": "ಬ. 10:30 - 12:00",
+      "shubhaSamaya": "ಜ. 05:37 - 07:03, ಸ. 09:55 - 11:19"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಮೆಚ್ಚುಗೆ",
+        "raw": "ಮೇಷ » ಮೆಚ್ಚುಗೆ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ವೃಷಭ » ಆತಂಕ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಮಿಥುನ ». ಖರ್ಚು"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಗಮನ",
+        "raw": "ಕರ್ಕಾಟಕ ಗಮನ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಸಿಂಹ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಕನ್ಯಾ» ಗೌರವ :"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ತುಲಾ ೫» ಭಕ್ತಿ :"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ವೃಶ್ಚಿಕ » ಪ್ರೀತಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಧನಸ್ಸು » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮಕರ ೫» ಸಾಲ. :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಕುಂಭ ». ತಾಳ್ಮೆ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಚಿಂತೆ",
+        "raw": "ಮೀನ ». ಚಿಂತೆ"
+      }
+    ]
+  }
+}

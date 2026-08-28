@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\01\\01-01-2026.jpg",
+    "date": "01-01-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "01-01-2026",
+      "quote": "ಇಸ ವರ್ಷದ ಹಾರ್ದಿಕ ಶುಬಾಶಯಗ"
+    },
+    "calendar": {
+      "months": [
+        "ಪುಷ್ಯ/ಮಾಘ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": "ಧನು/ಮಕರ",
+      "sunrise": "06:41",
+      "sunset": "18:04"
+    },
+    "events": [
+      "ಹೊಸ ವರ್ಷಾರಂಭ",
+      "ಕೋಳಿವಾಡ ಕುಮಾರವ್ಯಾಸ",
+      "ಜಯಂತಿ",
+      "ಶ್ರೀ ಶಿವನಸಮುದ್ರ ರಂಗನಾಥ",
+      "ಮಲ್ಲಿಕಾರ್ಜುನ",
+      "ಮಠ ಗಂಗಾವತಿ ಶ್ರೀ ಚನ್ನಬಸವ ಶಿವಯೋಗ ರಥಗಳು",
+      "ಅಮರಶಿಲ್ಪಿ ಶ್ರೀ ಜಕಣಾಚಾರಿಯವರ ಜಯಂತಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ರೋಹಿಣಿ",
+        "endsAt": "22.49",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತ್ರಯೋದಶಿ",
+        "endsAt": "22.23",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "೫೫೪",
+        "endsAt": "17.13",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌಲವ",
+        "endsAt": "12.07",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರೆಣ ಕೌಲವ 12.0"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಶಿಶಿರ",
+      "solarYear": 17,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ದನಸು,",
+      "chandraEntryRashi": "ವೃಷಭ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಬೆ. 09:00 - 10:30",
+      "yamaganda": "ಚೆ.06:00- 0731",
+      "arthaPrahara": "ಮ 03:00 - 04:30",
+      "shubhaSamaya": "ಸ. 07:57 -09:23"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಮೇಷ » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಷಭ » ಲಾಭ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸೌಮೃತೆ",
+        "raw": "ಮಿಥುನ » ಸೌಮೃತೆ '"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಕರ್ಕಾಟಕ ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಸಿಂಹ » ಸ್ನೇಹ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಕನ್ಯಾ» ಪ್ರೋತ್ಸಾಹ :"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಕುತೂಹಲ",
+        "raw": "ತುಲಾ.» ಕುತೂಹಲ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಗಮನ",
+        "raw": "ವೃಶ್ಚಿಕ » ಗಮನ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ಧನಸ್ಸು » ಸಹಾಯ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಯಶಸು",
+        "raw": "ಮಕರ » ಯಶಸು, '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಕುಂಭ *» ಕೀರ್ತಿ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮೀನ » ಅನುಕೂಲ"
+      }
+    ]
+  }
+}

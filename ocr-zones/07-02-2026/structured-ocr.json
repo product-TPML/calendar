@@ -1,0 +1,165 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\02\\07-02-2026.jpg",
+                   "date":  "07-02-2026",
+                   "dimensions":  {
+                                      "width":  1514,
+                                      "height":  1060
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "07-02-2026",
+                                   "quote":  "\u0027ನಮರಣಗಳ ನಡುವಿನ ದಾರಿಯೇ ಜೀ:"
+                               },
+                    "calendar":  {
+                                     "months":  [
+
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಮಕರ/ ಕುಂಭ",
+                                     "sunrise":  "06:44",
+                                     "sunset":  "18:23"
+                                 },
+                    "events":  [
+                                   "ಶ್ರೀ ಯಲಗೊರೇಶ್ವರ ಕಾರ್ತಿಕೋತ್ಸವ ತಾ.",
+                                   "ಮುದ್ದೇಬಿಹಾಳ",
+                                   "ರಾಮೆಕೃಷ್ಣ ಪರಮಹಂಸ ಸ್ವಾಮಿ",
+                                   "ಆರಾಧನೆ ಲೋಕಾಪುರ",
+                                   "ಗುಡಿಬಂಡೆ ತಾ. ಎಲ್ಲೋಡು",
+                                   "ಶ್ರೀ ಲಕ್ಷ್ಮೀ ಆದಿನಾರಾಯಣ ರಥ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಚಿತ್ರಾ",
+                                                        "endsAt":  "26.29",
+                                                        "nextDay":  true,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಷಷ್ಠಿ",
+                                                    "endsAt":  "26.55",
+                                                    "nextDay":  true,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಶೂಲ",
+                                                   "endsAt":  "23.41",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಗರಜ",
+                                                     "endsAt":  "14.02",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಗರಜ 14.02"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಶಿಶಿರ",
+                                      "solarYear":  2,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಮಕರ",
+                                      "chandraEntryRashi":  "ಕನ್ಯಾ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 09:00 - 10:30.",
+                                    "gulikaKala":  "ಬೆ. 06:00 - 07:30:",
+                                    "yamaganda":  "ಮ. 01:30 - 03:00",
+                                    "arthaPrahara":  "ಮ. 12:00 -01:30",
+                                    "shubhaSamaya":  "ಸ. 07:31 - 09:15"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಮೇಷ » ಪ್ರೀತಿ :"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸೌಮ್ಯತೆ",
+                                        "raw":  "ವೃಷಭ » ಸೌಮ್ಯತೆ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಮಿಥುನ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ರ್ಕ ಅಭಿವೃದ್ದಿ",
+                                        "raw":  "ಕರ್ಕಾಟಕರ್ಕ ಅಭಿವೃದ್ದಿ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಸಿಂಹ » ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಪಶ್ಚಾತ್ತಾಪ",
+                                        "raw":  "ಕನ್ಯಾ» ಪಶ್ಚಾತ್ತಾಪ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಪರಿಶ್ರಮ",
+                                        "raw":  "ತುಲಾ » ಪರಿಶ್ರಮ."
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಸಮಸ್ಥೆ",
+                                        "raw":  "ಧನಸ್ಸು ». ಸಮಸ್ಥೆ :"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಕಂ",
+                                        "raw":  "ಮಕರ ೫» ಕಂ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಬಾಬ್‌",
+                                        "raw":  "ಕುಂಭ » ಬಾಬ್‌"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಮೀನ » ಖರ್ಚು ."
+                                    }
+                                ]
+                }
+}

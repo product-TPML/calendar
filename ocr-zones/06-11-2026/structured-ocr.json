@@ -1,0 +1,173 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\06-11-2026.jpg",
+    "date": "06-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಕೃಷ್ಣ | ;",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "06-11-2026",
+      "quote": "ದೇಶ ಸುತ್ತಿ ನೋಡು ಕೋಶ ಓದಿ ನೋಡು"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:14",
+      "sunset": "17:51"
+    },
+    "events": [
+      "ಪ್ರದೋಷ",
+      "ಗುರು ದ್ವಾದಶಿ",
+      "ಧನ ತ್ರಯೋದಶಿ",
+      "ಧನ್ವಂತರಿ ಜಯಂತಿ",
+      "ಯಮದೀಪ ದಾನ. ವಿಶಾಖಾ",
+      "ಮಳೆ ಪ್ರಾರಂಭ",
+      "ಸಾಗರ ಕಾವೇರಮ್ಮನ ತೆಪ್ಪೋತ್ಸವ",
+      "ನರಸೋಬಾ ವಾಡಿಯಲ್ಲಿ ದತ್ತೋತ್ಸವ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಹಸ್ತ",
+        "endsAt": "28.43",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಾದಶಿ",
+        "endsAt": "10.31",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವಿಷ್ಕಂಭ",
+        "endsAt": "28.10",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಗರಜ",
+        "endsAt": "22.37",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಗರಜ ೫.377"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 21,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ತುಲಾ",
+      "chandraEntryRashi": "ಕನ್ನಾ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 01:30 - 12:00.",
+      "gulikaKala": "ಬೆ.07:30- 09:00",
+      "yamaganda": "ಮ. 03:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 05:00",
+      "shubhaSamaya": "ಠಾ.10331 - 12:10 (ಮರುದಿನ)"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ಮೇಷ » ಪ್ರಗತಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಷಭ » ಯಶಸ್ಸು ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಧೈರ್ಯ",
+        "raw": "ಮಿಥುನ » ಧೈರ್ಯ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಕರ್ಕಾಟಕ ಸಾಲ. ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಮರೆವು",
+        "raw": "ಸಿಂಹ » ಮರೆವು"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಕನ್ಯಾ ೧ ಶಾಂತಿ ."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ತುಲಾ ೫» ತೊಂದರೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ವೃಶ್ಚಿಕ» ಪ್ರತಿರೋಧ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಆಸೆ",
+        "raw": "ಧನಸ್ಸು ». ಆಸೆ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಮಕರ » ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಕುಂಭ » ಲಾಭ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ವಿಭಾಗ",
+        "raw": "ಮೀನ ». ವಿಭಾಗ"
+      }
+    ]
+  }
+}

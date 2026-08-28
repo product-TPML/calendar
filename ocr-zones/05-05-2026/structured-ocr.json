@@ -1,0 +1,165 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\05\\05-05-2026.jpg",
+                   "date":  "05-05-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "05-05-2026",
+                                   "quote":  "ಪ್ರಯತ್ನವೇ ಸಾಧನೆಯ ದಾರಿ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ವೈಶಾಖ",
+                                                    "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮೇಷ/ವೃಷಭ",
+                                     "sunrise":  "05:57",
+                                     "sunset":  "18:25"
+                                 },
+                    "events":  [
+                                   "ಅಂಗಾರಕ ಸಂಕಷ್ಟ ಚತುರ್ಥಿ (ಚಂ. ರಾ 10. 03)",
+                                   "ನವಲಗುಂದ ತಾ. ಹುರಕಡ್ಡಿ ಅಜ್ಜನವರ ಜನ್ಮೋತ್ಸವ.",
+                                   "ಮೇಲುಕೋಟೆ ಪಲ್ಲಪೋತ್ಸವ",
+                                   "ಅಂಕೋಲಾ",
+                                   "ಕುಂಡೊದರಿ ಪ್ರತಿಷ್ಠಾ ದಿನ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಜ್ಯೇಷ್ಠಾ",
+                                                        "endsAt":  "12.55",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "__ ಚತುರ್ಥಿ",
+                                                    "endsAt":  null,
+                                                    "nextDay":  false,
+                                                    "fullDay":  true
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಶಿವ",
+                                                   "endsAt":  "24.16",
+                                                   "nextDay":  true,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಬವ",
+                                                     "endsAt":  "15.38",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬವ 15.38"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ರ್ಥಿ ಪೂರ್ಣ",
+                                      "solarYear":  22,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಮೇಷ",
+                                      "chandraEntryRashi":  "ವೃಶ್ಚಿಕ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 03:00 - 04:30",
+                                    "gulikaKala":  "ಮ.12:00 - 01:36",
+                                    "yamaganda":  "ಬೆ.09:00- 10:30",
+                                    "arthaPrahara":  "ಚೆ. 07:30 - 9:0",
+                                    "shubhaSamaya":  "ಬೆ. 03:02 - 04:49"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮೇಷ » ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ವೃಷಭ » ಯಶಸ್ಸು ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಸೌಮೃತೆ",
+                                        "raw":  "ಮಿಥುನ »: ಸೌಮೃತೆ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಗೊಂದಲ",
+                                        "raw":  "ಕರ್ಕಾಟಕ: ಗೊಂದಲ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಸಿಂಹ » ಭಯ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಪ್ರತಿರೋಧ",
+                                        "raw":  "ಕನ್ಯಾ ಪ್ರತಿರೋಧ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಸಹಾಯ",
+                                        "raw":  "ತುಲಾ ೫» ಸಹಾಯ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಪ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ಧನಸ್ಸು » ಪ್ರಯತ್ನ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ತೊಂದರೆ",
+                                        "raw":  "ಮಕರ » ತೊಂದರೆ \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಒಳ್ಳೆಯ ಕೆಲಸ",
+                                        "raw":  "ಕುಂಭ » ಒಳ್ಳೆಯ ಕೆಲಸ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ತಾಳ್ಮೆ",
+                                        "raw":  "ಮೀನ ». ತಾಳ್ಮೆ"
+                                    }
+                                ]
+                }
+}

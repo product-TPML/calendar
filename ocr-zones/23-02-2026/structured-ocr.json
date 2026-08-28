@@ -1,0 +1,163 @@
+{
+  "source": {
+    "image": "data\\2026\\02\\23-02-2026.jpg",
+    "date": "23-02-2026",
+    "dimensions": {
+      "width": 1514,
+      "height": 1060
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "23-02-2026",
+      "quote": "ತ್ತಿನಲ್ಲಿ ಯಾವುದು ಶಾಶ್ಚತವಲ್ಲ. ಅರಿತು ನಡೆ ಇದೆ :"
+    },
+    "calendar": {
+      "months": [],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": "ಮಕರ/ ಕುಂಭ",
+      "sunrise": "06:38",
+      "sunset": "18:27"
+    },
+    "events": [
+      "ಸಂತ ಗಾಡಗೆಬಾಬಾ ಜಯಂತಿ",
+      "ಜನವಾಡ",
+      "ತಾ.ಚಿಕ್ಕೋಡಿ ಶ್ರೀ ಮಹಾದೇವಿ ಜಾತ್ರೆ",
+      "ಸೊಗಲ",
+      "ಸುಕ್ಷೇತ್ರದಲ್ಲಿ ಶಿವಪಾರ್ವತಿ ವಿವಾಹೋತ್ಸವ",
+      "ಹಾಲಗುಂದ ಭಗವತಿ ಉತ್ಸವ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಭರಣಿ",
+        "endsAt": "16.34",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಷಷ್ಠಿ",
+        "endsAt": "0.10",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಜ್ರಹ್ಮಾ",
+        "endsAt": "10.19",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಿ",
+        "endsAt": "16.34",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಗರಜ 20.07 _"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 11,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ಮೇಷ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ. 01:30 - 03:00",
+      "yamaganda": "ಬೆ. 10:30 12:00",
+      "arthaPrahara": "ಬ.09:00 - 10:30",
+      "shubhaSamaya": "ಸ. 12:01 - 01:32"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮೇಷ » ಲಾಭ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಅಲೆದಾಟ",
+        "raw": "ವೃಷಭ ೫» ಅಲೆದಾಟ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಅನಾರೋಗ್ಯ",
+        "raw": "'ಮಿಥುನ » ಅನಾರೋಗ್ಯ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಗೊಂದಲ",
+        "raw": "ಕರ್ಕಾಟಕ ಗೊಂದಲ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಸಿಂಹ » ಸಾಲ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಕನ್ಯಾ ೫ ಸ್ನೇಹ."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ತುಲಾ » ಸಂತೋಷ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಶ್ಚಿಕ» ಯಶಸ್ಸು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಲಾಭ",
+        "raw": "ಧನಸ್ಸು » ಲಾಭ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಮಕರ ೫». ಕೀರ್ತಿ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಆಸೆ",
+        "raw": "ಕುಂಭ » ಆಸೆ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ದಯೆ",
+        "raw": "ಮೀನ ೫» ದಯೆ"
+      }
+    ]
+  }
+}

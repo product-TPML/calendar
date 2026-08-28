@@ -1,0 +1,163 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\02\\10-02-2026.jpg",
+                   "date":  "10-02-2026",
+                   "dimensions":  {
+                                      "width":  1514,
+                                      "height":  1060
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "10-02-2026",
+                                   "quote":  "ಮದ ಬೆಂಕಿಯು ಎಲ್ಲವನ್ನೂ ಪವಿತ್ರವಾಗಿಸು"
+                               },
+                    "calendar":  {
+                                     "months":  [
+
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಮಕರ/ ಕುಂಭ",
+                                     "sunrise":  "06:43",
+                                     "sunset":  "18:24"
+                                 },
+                    "events":  [
+                                   "ಅನ್ವವಷ್ಟಕಾ ಶ್ರಾದ್ಧ » ಬೆಳ್ಳೆ ಮಹಾಲಿಂಗೇಶ್ವರ ರಥ",
+                                   "ವಿಶ್ವ ದ್ವಿದಳ ಧಾನ್ಯಗಳ ದಿನ",
+                                   "ವಿಶ್ವ ಛತ್ರಿ ದಿನ",
+                                   "ಐವರ್ನಾಡು ಶ್ರೀ ಪಂಚಲಿಂಗೇಶ್ವರ ಜಾತ್ರೆ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ವಿಶಾಖಾ",
+                                                        "endsAt":  "07.55",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಅಷ್ಟಮಿ",
+                                                    "endsAt":  "07.28",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಧ್ರುವ",
+                                                   "endsAt":  "25.42",
+                                                   "nextDay":  true,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ತೈತಿಲ",
+                                                     "endsAt":  "20.44",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ _ ತೈತಿಲ 20.44."
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಶಿಶಿರ",
+                                      "solarYear":  28,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಮಕರ",
+                                      "chandraEntryRashi":  "ವೃಶ್ಚಿಕ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 03:00 - 04:30",
+                                    "gulikaKala":  "ಮ. 12:00 - 01:30",
+                                    "yamaganda":  "ಬೆ. 09:00 10:30",
+                                    "arthaPrahara":  "ಬ. 07:30 - 09:00",
+                                    "shubhaSamaya":  "ಸ. 11:12 - 12:59"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಕೀರ್ತಿ",
+                                        "raw":  "ಮೇಷ ೨» ಕೀರ್ತಿ :"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ವೃಷಭ » ಲಾಭ. ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಪತಿಭಬೆ",
+                                        "raw":  "ಮಿಥುನ » ಪತಿಭಬೆ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಕರುಣೆ",
+                                        "raw":  "ಸಿಂಹ » ಕರುಣೆ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಗೊಂದಲ",
+                                        "raw":  "ಕನ್ಯಾ» ಗೊಂದಲ."
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಉಡುಗೊರೆ",
+                                        "raw":  "ತುಲಾ» ಉಡುಗೊರೆ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಅನುಕೂಲ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಸಾಮ್ಯತೆ",
+                                        "raw":  "ಧನಸ್ಸು ». ಸಾಮ್ಯತೆ :"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಅಜಬವದಿ",
+                                        "raw":  "ಮಕರ » ಅಜಬವದಿ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಆತಂಕ",
+                                        "raw":  "ಕುಂಭ » ಆತಂಕ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ಮೀನ ೫ ಭಯ"
+                                    }
+                                ]
+                }
+}

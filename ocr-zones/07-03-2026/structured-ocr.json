@@ -1,0 +1,164 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\07-03-2026.jpg",
+    "date": "07-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "07-03-2026",
+      "quote": "'ಕಷ್ಟಗಳು ಮನುಷ್ಯನನ್ನು ಬಲಪಡಿಸುತ್ತಃ"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:32",
+      "sunset": "18:29"
+    },
+    "events": [
+      "ಪರಮಹಂಸ ಯೋಗಾನಂದ ಪು.ದಿ. ಉಳ್ಳಾಲ್ಲು ಲಕ್ಷ್ಮೀ",
+      "ನರಸಿಂಹ ಉತ್ಸವ ಜೆಊರ ತಾ.ಇಂಡಿ ಕುಳ್ಳವ್ವಾ ಶ್ರೀ",
+      "ವೀಷ್ಣುಮೂರ್ತಿ ಉತ್ಸವ",
+      "ಹಾನಗಲ್‌ ತಾ. ಚಿಕ್ಕಾಂಶಿ",
+      "ಬಸವಲಿಂಗಪ್ಪಯ್ಯ ಸ್ವಾಮಿ ಪುಣ್ಯತಿಥಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಚಿತ್ರಾ",
+        "endsAt": "11.16",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಚತುರ್ಥಿ",
+        "endsAt": "19.18",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವೃದ್ಧಿ",
+        "endsAt": "06.52",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌರವ",
+        "endsAt": null,
+        "nextDay": false,
+        "fullDay": true,
+        "raw": "'ಕರಣ ಕೌರವ ಪೂರ್ಣ"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ರ್ಥಿ 19.18",
+      "solarYear": 23,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "ತುಲಾ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಜೆ.06:00 - ೫730",
+      "yamaganda": "ಮ. 01:30 - 05:00",
+      "arthaPrahara": "ಮ. 12:00 - 01:3(",
+      "shubhaSamaya": "ಬೆ. 04:23 - 06:06"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಗಮನ",
+        "raw": "ಮೇಷ » ಗಮನ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ವೃಷಭ » ತೊಂದರೆ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮಿಥುನ » ಸಂತೋಷ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಶುಭಸಮಾಚಾರ",
+        "raw": "ಕರ್ಕಾಟಕ ಶುಭಸಮಾಚಾರ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಪಶ್ಚಾತ್ತಾಪ",
+        "raw": "ಸಿಂಹ » ಪಶ್ಚಾತ್ತಾಪ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಕನ್ಯಾ» ವಿಳಂಬ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಲಾಭ",
+        "raw": "ತುಲಾ » ಲಾಭ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಅಲೆದಾಟ",
+        "raw": "ವೃಶ್ಚಿಕ» ಅಲೆದಾಟ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಬುದ್ಧಿವಂತಿಕೆ",
+        "raw": "ಧನಸ್ಸು » ಬುದ್ಧಿವಂತಿಕೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮಕರ ೫» ಸಾಲ :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ಕುಂಭ » ಪ್ರಯತ್ನ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮೀನ » ಅನುಕೂಲ"
+      }
+    ]
+  }
+}

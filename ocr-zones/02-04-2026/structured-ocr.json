@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\02-04-2026.jpg",
+    "date": "02-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಮಯ ಶುಕ್ಲ ರಚ ತ",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "02-04-2026",
+      "quote": "'ಯವನ್ನುಗೆದ್ದವನು ಜಗತ್ತನ್ನೇ ಗೆಲ್ಲುತ್ತಾನೆ"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:15",
+      "sunset": "18:31"
+    },
+    "events": [
+      "ದವನದ ಹುಣ್ಣಿಮೆ",
+      "ಶ್ರೀ ಹನುಮಾನ ಜನ್ಮೋತ್ಸವ",
+      "ಹುಣ್ಣಿಮೆ ಸಮಾಪ್ತಿ ಬೆ. ಅಕ್ಕ -ಮಹಾದೇವಿ",
+      "ಜಯಂತಿ",
+      "ಜ್ಯೋತಿರ್ಲೆಂಗ ಯಾತ್ರೆ ಧಾರವಾಡ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಹಸ್ತ",
+        "endsAt": "17.39",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಹುಣ್ಣಿಮೆ",
+        "endsAt": "07.42",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಥುವ",
+        "endsAt": "14.20",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "20.09",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 20.09"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 19,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ಕನ್ನಾ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಬೆ. 09:00 - 10:30",
+      "yamaganda": "ಬೆ.06:00- 07:30",
+      "arthaPrahara": "ಮ. 03:00 - 04:3(",
+      "shubhaSamaya": "ಬೆ. 11:18 - 12:59"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಮೇಷ » ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಅನಾರೋಗ್ಯ",
+        "raw": "ವೃಷಭ » ಅನಾರೋಗ್ಯ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಮಸ್ಥೆ",
+        "raw": "ಮಿಥುನ ». ಸಮಸ್ಥೆ '"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಕರ್ಕಾಟಕ. ಸಾಲ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಶುಭ",
+        "raw": "ಸಿಂಹ » ಶುಭ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಕನ್ಯಾ ೫ ವಿಳಂಬ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ತುಲಾ» ಸಂತೋಷ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ವೃಶ್ಚಿಕ » ಪ್ರಗತಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಧನಸ್ಸು ». ಸ್ನೇಹ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಭಯ",
+        "raw": "ಮಕರ ೫ ಭಯ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಕುಂಭ » ಆತಂಕ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಮೀನ ». ಸ್ಪರ್ಧೆ"
+      }
+    ]
+  }
+}

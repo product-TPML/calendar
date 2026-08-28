@@ -1,0 +1,168 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\04\\24-04-2026.jpg",
+                   "date":  "24-04-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "red-channel-4x-psm7",
+                                       "raw":  "ಪಕ್ಷ ತುತ ` ಶುಕ್ಲ ಕಾಡದ!",
+                                       "value":  "ಶುಕ್ಲ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "24-04-2026",
+                                   "quote":  "ಸಂತೋಷವೇ ನಿಜವಾದ ಸಂಪತ್ತು"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಚೈತ್ರ",
+                                                    "ವೈಶಾಖ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮೀನ/ಮೇಷ",
+                                     "sunrise":  "06:02",
+                                     "sunset":  "18:33"
+                                 },
+                    "events":  [
+                                   "ಹಿರೆಕೇರೂರು ತಾ. ಯೋಗಿಕೊಪ್ಪ ಶ್ರೀ",
+                                   "ಬಸವೇಶ್ವರ ರಥ. ದುರ್ಗಾಷ್ಟಮಿ",
+                                   "ಪ.ಪೂ"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಪುಷ್ಯ",
+                                                        "endsAt":  "20.15",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಅಷ್ಟಮಿ",
+                                                    "endsAt":  "19.22",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಶೂಲ",
+                                                   "endsAt":  "25.24",
+                                                   "nextDay":  true,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಏಿಷ್ಟಿ",
+                                                     "endsAt":  "08.02",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಪಿಷ್ಟ 0802 _"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಗ್ರೀಷ್ಮ",
+                                      "solarYear":  11,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಮೇಷ",
+                                      "chandraEntryRashi":  "ಕರ್ಕ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 10:30 - 12:00.",
+                                    "gulikaKala":  "ಬೆ. 07:30 - 09:00",
+                                    "yamaganda":  "ಮ. 08:00 - 04:30",
+                                    "arthaPrahara":  "ಮ. 01:36 - 05:00",
+                                    "shubhaSamaya":  "ಮ. 02:01 - 03:35"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಮೇಷ » ಪ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಆತಂಕ",
+                                        "raw":  "ವೃಷಭ » ಆತಂಕ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮಿಥುನ » ಯಶಸ್ಸು \u0027"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ದಯೆ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ದಯೆ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ಸಿಂಹ » ಒಳ್ಳೆಯದು"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಸ್ನೇಹ",
+                                        "raw":  "ಕನ್ಯಾ ೫ ಸ್ನೇಹ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ತುಲಾ ೫» ಪ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಒಳ್ಳೆಯ ಸುದ್ದಿ",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಒಳ್ಳೆಯ ಸುದ್ದಿ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಆಸಕ್ತಿ",
+                                        "raw":  "ಧನಸ್ಸು ». ಆಸಕ್ತಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಪೋತಾಹ",
+                                        "raw":  "ಮಕರ » ಪೋತಾಹ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಕುಂಭ » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಮೀನ ೫. ಲಾಭ"
+                                    }
+                                ]
+                }
+}

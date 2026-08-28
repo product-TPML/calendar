@@ -1,0 +1,161 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\05\\19-05-2026.jpg",
+                   "date":  "19-05-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "19-05-2026",
+                                   "quote":  "ಕಲಿಯುವುದನ್ನುನಿಲ್ಲಿಸಿದಾಗ ಬೆಳೆಯುವುದನ್ನು ನಿಲ್ಲಿಸ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ವೈಶಾಖ",
+                                                    "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮೇಷ/ವೃಷಭ",
+                                     "sunrise":  "05:53",
+                                     "sunset":  "18:38"
+                                 },
+                    "events":  [
+                                   "ವಿನಾಯಕ ಚತುರ್ಥಿ (ಅಂಗಾರಕ ಯೋಗ)"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಮೃಗಶಿರಾ",
+                                                        "endsAt":  "08.42",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ತೃತೀಯಾ",
+                                                    "endsAt":  "14.19",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಕಿ",
+                                                   "endsAt":  "7.0",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ವಣಿಜ",
+                                                     "endsAt":  "24.40",
+                                                     "nextDay":  true,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ __ವಣಿಜ 24.40"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಗ್ರೀಷ್ಮ",
+                                      "solarYear":  5,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ವೃಷಭ",
+                                      "chandraEntryRashi":  "ಮಿಥುನ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 03:00 - 04:30",
+                                    "gulikaKala":  "ಮ. 12:00 - 01:30",
+                                    "yamaganda":  "ಬೆ.09:00 - 10:30",
+                                    "arthaPrahara":  "ಬೆ.07130-09:00",
+                                    "shubhaSamaya": "ಮ. 12:56 - ಜ. 02:20, ರಾ. 09:14 - 10:40"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಆನಂದ",
+                                        "raw":  "ಮೇಷ » ಆನಂದ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಶುಭ",
+                                        "raw":  "ವೃಷಭ » ಶುಭ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಅಭಿವುದ್ದಿ",
+                                        "raw":  "ಮಿಥುನ » ಅಭಿವುದ್ದಿ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಯಶಸ್ಸು."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ಸಿಂಹ » ಒಳ್ಳೆಯದು"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಕನ್ಯಾ ೫» ಅನುಕೂಲ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಶುಭಸಮಾಚಾರ",
+                                        "raw":  "ತುಲಾ.» ಶುಭಸಮಾಚಾರ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಸ್ಪರ್ಧೆ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಸ್ಪರ್ಧೆ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ತಾಳ್ಮೆ",
+                                        "raw":  "ಧನಸ್ಸು ». ತಾಳ್ಮೆ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಶ»*ಮಧುರ ಮಾತು",
+                                        "raw":  "ಮಕರ ಶ»*ಮಧುರ ಮಾತು"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಕುಂಭ *» ಲಾಭ ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ಮೀನ ೫». ಮೆಚ್ಚುಗೆ ."
+                                    }
+                                ]
+                }
+}

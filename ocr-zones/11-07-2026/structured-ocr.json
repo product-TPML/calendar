@@ -1,0 +1,169 @@
+{
+  "source": {
+    "image": "data\\2026\\07\\11-07-2026.jpg",
+    "date": "11-07-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "existing-paksha-ocr",
+      "raw": "ಕ್ಷರ ಕೃಷ್ಣ",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "11-07-2026",
+      "quote": "2೦ದು ಮಾಡಿದ ಶ್ರಮವೇ ನಾಳೆಯ ಜಂ"
+    },
+    "calendar": {
+      "months": [
+        "ನಿಜ ಜ್ಯೇಷ್ಠ/ಆಷಾಢ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮಿಥುನ/ಕರ್ಕ",
+      "sunrise": "06:00",
+      "sunset": "18:50"
+    },
+    "events": [
+      "2ನೇ ಶನಿವಾರ",
+      "ವಿಶ್ವ ಜನಸಂಖ್ಯೆ ದಿನ",
+      "ಶ್ರೀ ಸಂತ",
+      "ನಿವೃತ್ತಿ ನಾಥರ ಪುಣ್ಯತಿಥಿ",
+      "ಭಾಗೆವತ ಏಕಾದಶಿ ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಕೃತ್ತಿಕಾ",
+        "endsAt": "11.04",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಾದಶಿ",
+        "endsAt": "26.05",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಗಂಡ",
+        "endsAt": "24.06",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕೌಲವ",
+        "endsAt": "15.47",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಕೌಲವ 15.47"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 27,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮಿಹುನ",
+      "chandraEntryRashi": "ವೃಷಭ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ.06:00 - 07:30.",
+      "yamaganda": "ಮ. 01:30 - 03:00",
+      "arthaPrahara": "ಮ. 12:30 -01:30",
+      "shubhaSamaya": "ಬೆ. 08:52 - 10:19"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಮೇಷ » ಭಕ್ತಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಲಾಭ",
+        "raw": "ವೃಷಭ » ಲಾಭ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮಿಥುನ » ಸಂತೋಷ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಕರ್ಕಾಟಕ ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಸಿಂಹ ೫» ಸ್ನೇಹ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಕನ್ಯಾ ೫» ಕೋಪ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಾಲ",
+        "raw": "ತುಲಾ ೫» ಸಾಲ :"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ವೃಶ್ಚಿಕ» ಪ್ರೋತ್ಸಾಹ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಧನಸ್ಸು » ಅಭಿವೃದ್ದಿ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ದ್ವೇಷ”",
+        "raw": "ಮಕರ » ದ್ವೇಷ”"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಕುಂಭ » ಸ್ಪರ್ಧೆ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಮೀನ ». ಶಾಂತಿ"
+      }
+    ]
+  }
+}

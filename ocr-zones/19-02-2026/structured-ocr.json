@@ -1,0 +1,166 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\02\\19-02-2026.jpg",
+                   "date":  "19-02-2026",
+                   "dimensions":  {
+                                      "width":  1514,
+                                      "height":  1060
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "19-02-2026",
+                                   "quote":  "ುನುಜನೇ ದೇವರು, ಧರ್ಮವೇ ಜೀವನದ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಮಕರ/ ಕುಂಭ",
+                                     "sunrise":  "06:40",
+                                     "sunset":  "18:26"
+                                 },
+                    "events":  [
+                                   "ಛತ್ರಪತಿ. ಶಿವಾಜಿ ಮಹಾ ಜಯಂತಿ",
+                                   "ರಂಜಾನ್‌",
+                                   "ಉಪವಾಸ ಪ್ರಾರಂಭ",
+                                   "ಶ್ರೀ ರಾಮಕೃಷ್ಣ ಪರಮಹಂಸ",
+                                   "ಜಯಂತಿ",
+                                   "ಹುಣಸಿಕಟ್ಟೆ ಶ್ರೀ ರುದ್ರೆಸ್ವಾಮಿ ರಥ",
+                                   "ಹಮ್ಮಗಿ ಸಾಮೊಹಿಕವಿವಾಹ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಪೂ.ಭಾ",
+                                                        "endsAt":  "20.52",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ದ್ವಿತೀಯಾ",
+                                                    "endsAt":  "15.59",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಸಿದ್ಧ",
+                                                   "endsAt":  "20.4",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ತೈತಿಲ",
+                                                     "endsAt":  "27.22",
+                                                     "nextDay":  true,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ತೈತಿಲ 27.22"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ವಸಂತ",
+                                      "solarYear":  7,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಕುಂಭ",
+                                      "chandraEntryRashi":  "ಕುಂಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 01:30 - 03:00",
+                                    "gulikaKala":  "ಬೆ. 09:00 - 10:30:",
+                                    "yamaganda":  "ಬೆ. 06:00 - 07:30",
+                                    "arthaPrahara":  "ಮ. 03:00 - 04:30",
+                                    "shubhaSamaya":  "ಮ. 01:00 - 02:34"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "* ಅಬಿವದಿ",
+                                        "raw":  "ಮೇಷ »* ಅಬಿವದಿ \u0027"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಧೈರ್ಯ”",
+                                        "raw":  "ವೃಷಭ » ಧೈರ್ಯ” ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಆಸಕಿ",
+                                        "raw":  "ಮಿಥುನ » ಆಸಕಿ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಸಮಸ್ಯೆ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಸಮಸ್ಯೆ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "* ಉಡುಗೊರೆ",
+                                        "raw":  "ಸಿಂಹ »* ಉಡುಗೊರೆ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಪ ಪ್ರೀತಿ",
+                                        "raw":  "ಕನ್ಯಾ ಪ ಪ್ರೀತಿ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಗೊಠಿದಲ",
+                                        "raw":  "ತುಲಾ » ಗೊಠಿದಲ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಕೋಪ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಕೋಪ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಧನಸ್ಸು » ಲಾಭ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಶಾಂತಿ",
+                                        "raw":  "ಮಕರ » ಶಾಂತಿ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಪರಿಶ್ರಮ",
+                                        "raw":  "ಕುಂಭ » ಪರಿಶ್ರಮ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಮೀನ » ಅನುಕೂಲ"
+                                    }
+                                ]
+                }
+}

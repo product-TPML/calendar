@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\06\\12-06-2026.jpg",
+    "date": "12-06-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "12-06-2026",
+      "quote": "ಮಾತಿಗಿಂತ ಕೆಲಸ ಮುಖ್ಲ"
+    },
+    "calendar": {
+      "months": [
+        "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ ನಾಮ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಷಭ/ಮಿಥುನ",
+      "sunrise": "05:53",
+      "sunset": "18:45"
+    },
+    "events": [
+      "ಕಮಲಾ ಏಕಾದಶಿ",
+      "ವಿಶ್ವ ಬಾಲಕಾರ್ಮಿಕ",
+      "ವಿರೋಧಿ ದಿನ",
+      "ಶ್ರೀ ಸಾನೇಗುರೂಜಿ ಸ್ಮತಿ",
+      "ದಿನ",
+      "ಪಾರಶಿ ಬೆಹಮನ ಮಾಸಾರಂಭ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಅಶ್ವಿನಿ",
+        "endsAt": "06.29",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಾದಶಿ",
+        "endsAt": "19.37",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಅತಿಗಂಡ",
+        "endsAt": "21.26",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "5ಲವ",
+        "endsAt": "6.11",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _5ಲವ 6.11"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 29,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವಷಭ",
+      "chandraEntryRashi": "ಮೇಷ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00.",
+      "gulikaKala": "ಬೆ.0730 - 09:00",
+      "yamaganda": "ಮ. 03:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 03:0(",
+      "shubhaSamaya": "ಸ. 11:46 - 01:12"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಮೇಷ ». ಗೌರವ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಶುಭ",
+        "raw": "ವೃಷಭ » ಶುಭ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮಿಥುನ » ಸಾಲ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕರ್ಕಾಟಕ ಯಶಸ್ಸು"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಸಿಂಹ » ಯಶಸ್ಸು:"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ಕನ್ಯಾ ಶ್ರೇಷ್ಠತೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ತುಲಾ ೫» ಖರ್ಚು"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸಮಸ್ಯೆ",
+        "raw": "ವೃಶ್ಚಿಕ» ಸಮಸ್ಯೆ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಧನಸ್ಸು » ಸಂತೋಷ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಮಕರ ೫» ವಿಳಂಬ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಕುಂಭ ». ಆತಂಕ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅನಾರೋಗ್ಯ",
+        "raw": "ಮೀನ » ಅನಾರೋಗ್ಯ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\02-03-2026.jpg",
+    "date": "02-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "02-03-2026",
+      "quote": "ಪ್ರತಿ ಸೋಲು ಗೆಲುವಿನ ಕಡೆಗೆ ಒಂದು ಹೆ"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:35",
+      "sunset": "18:28"
+    },
+    "events": [
+      "ಹುತಾಶನಿ ಹುಣ್ಣಿಮೆ ಪ್ರಾರಂಭ",
+      "ಹೋಲಿಕಾ ದಹನ",
+      "ಸೊಗಲ ಸೋಪೀೇಶ್ವರ ರಥ",
+      "ಹಿರೇಉಳ್ಳಿಗೇರಿ ತಾ.",
+      "ಸೌದತ್ತಿ ಅದ್ರಶ್ಯಾನಂದಾಶ್ರಮ ಜ್ಞಾನ ಸಪ್ತಾಹ ಸಮಾಪ್ತಿ",
+      "ತೀರ್ಥಹಳ್ಳಿ ತಾ. ನೊಣಬೂರು ಲಕ್ಷ್ಮೀ ವೆಂಕಟರಮಣ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಆಶ್ಲೇಷಾ",
+        "endsAt": "07.52",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಚತುರ್ದಶಿ",
+        "endsAt": "17.56",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಅತಿಗಂಡ",
+        "endsAt": "12.19",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಏಿಷ್ಟಿ",
+        "endsAt": "29.29",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "ಕರಣ ವಿಷ್ಠಿ ಚ"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ರ್ದಶಿ 1756",
+      "solarYear": 18,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕುಂಭ",
+      "chandraEntryRashi": "07.52"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ.01:30 - ೫:00",
+      "yamaganda": "ಬೆ. 10:30 - 12:00",
+      "arthaPrahara": "ಬೆ. 09:00 - 10:30",
+      "shubhaSamaya": "ಬೆ. 06:18 - 07:51"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "* ಗೊಂದಲ",
+        "raw": "ಮೇಷ »* ಗೊಂದಲ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಮೆಚ್ಚುಗೆ",
+        "raw": "ವೃಷಭ » ಮೆಚ್ಚುಗೆ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸರ್ಧೆ",
+        "raw": "ಮಿಥುನ ». ಸರ್ಧೆ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಒಳ್ಳೆಯ ಕೆಲಸ",
+        "raw": "ಕರ್ಕಾಟಕ ಒಳ್ಳೆಯ ಕೆಲಸ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ದುರಾಸೆ",
+        "raw": "ಸಿಂಹ » ದುರಾಸೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಕನ್ಯಾ» ಗೌರವ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ತುಲಾ » ಅನುಕೂಲ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಆನಂದ",
+        "raw": "ವೃಶ್ಚಿಕ » ಆನಂದ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ದಯೆ",
+        "raw": "ಧನಸ್ಸು » ದಯೆ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ದುಃಖ",
+        "raw": "ಮಕರ » ದುಃಖ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಕುಂಭ » ಖರ್ಚು"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಮೀನ ». ತಾಳ್ಮೆ"
+      }
+    ]
+  }
+}

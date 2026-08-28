@@ -1,0 +1,169 @@
+{
+  "source": {
+    "image": "data\\2026\\05\\22-05-2026.jpg",
+    "date": "22-05-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಶುಕ್ಲ .",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "22-05-2026",
+      "quote": "ಸೋಲೇ ಗೆಲುವಿನ ಮೆಟಿಲು"
+    },
+    "calendar": {
+      "months": [
+        "ವೈಶಾಖ",
+        "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೇಷ/ವೃಷಭ",
+      "sunrise": "05:53",
+      "sunset": "18:39"
+    },
+    "events": [
+      "ಷಷ್ಠಿ",
+      "ರಾಜ ರಾಮ್‌ ಮೋಹನ್‌ ರಾಯ್‌",
+      "ಜನ್ಮದಿನ",
+      "ಸಂತ ರೀಟಾ ಜಯಂತಿ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಆಶ್ಲೇಷಾ",
+        "endsAt": "26.08",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಸತ್ತ",
+        "endsAt": "06.25",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವೃಡ್ಧಿ",
+        "endsAt": "06.19",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಗರಜ",
+        "endsAt": "17.40",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಗರಜ 17.40"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 8,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ವಷಭ",
+      "chandraEntryRashi": "ಕರ್ಕ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00",
+      "gulikaKala": ". ಬೆ.07130 - 09:00.",
+      "yamaganda": "ಮ. 05:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 03:00",
+      "shubhaSamaya": "unavailable"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಆನಂದ",
+        "raw": "ಮೇಷ » ಆನಂದ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಾಲ",
+        "raw": "ವೃಷಭ » ಸಾಲ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮಿಥುನ » ಲಾಭ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಕರ್ಕಾಟಕ: ಸಂತೋಷ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಉತ್ಸಾಹ",
+        "raw": "ಸಿಂಹ ೫» ಉತ್ಸಾಹ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಕನ್ಯಾ ೧ ಆತಂಕ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ತುಲಾ ೫» ತೊಂದರೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ವೃಶ್ಚಿಕ» ಪ್ರೋತ್ಸಾಹ ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಧನಸ್ಸು » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಮಕರ ೫» ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಕುಂಭ » ತಾಳ್ಮೆ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ನಿರಾಶೆ",
+        "raw": "ಮೀನ ».. ನಿರಾಶೆ."
+      }
+    ]
+  }
+}

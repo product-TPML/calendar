@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\10\\18-10-2026.jpg",
+    "date": "18-10-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "18-10-2026",
+      "quote": "್ರನವಾಗಿಯೇ ಹೋರಾಡು, ಫಲಿತಾಂಶವೇಮ"
+    },
+    "calendar": {
+      "months": [
+        "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಕನ್ಯಾ/ ತುಲಾ",
+      "sunrise": "06:10",
+      "sunset": "17:59"
+    },
+    "events": [
+      "ಮಹಾಲಕ್ಷ್ಮೀ ಪೂಜೆ",
+      "ಭಾನು ಸಪ್ತಮಿ",
+      "ಶ್ರೀ ಸರಸ್ವತಿ ವಿಸರ್ಜನ",
+      "ಬಲಿದಾನ",
+      "ತಿರುಪತಿ ಮಹಾರಥೋತ್ಸವ",
+      "ಕಲ್ಲಳ್ಳಿ",
+      "ಜಮಖಂಡಿ",
+      "ಶ್ರೀವೆಂಕಟೇಶ್ವರ ರಥ",
+      "ಕಾವೇರಿ ತೀರ್ಥೋದ್ಭವ",
+      "ಕೋಲ್ಡಾಪೂರ ಶ್ರೀ",
+      "ಜ್ಯೋತಿರ್ಲಿಂಗ ಜಾಗರ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪೂ.ಷಾ",
+        "endsAt": "12.49",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಸಪ್ತಮಿ",
+        "endsAt": "08.29",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸುಕರ್ಮಾ",
+        "endsAt": "23.56",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಪಿಷ್ಟಿ",
+        "endsAt": "21.43",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ  ಪಿಷ್ಟಿ 21.43"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 2,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ತುಲಾ",
+      "chandraEntryRashi": "ಧನು"
+    },
+    "timings": {
+      "rahuKala": "ಸ, 04:30 - 06:00.",
+      "gulikaKala": "ಮ.5:00- 64:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಚೆ. 16:36 - 12:",
+      "shubhaSamaya": "ಬೆ. 07:24 - 09:12"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಮೇಷ ». ಕೀರ್ತಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ವೃಷಭ » ಅನುಕೂಲ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ತೊಂದರೆ",
+        "raw": "ಮಿಥುನ » ತೊಂದರೆ '"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಅಭಿವೃದ್ಧಿ ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಭಯ",
+        "raw": "ಸಿಂಹ » ಭಯ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಕನ್ಯಾ ೫ ಆತಂಕ :"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ತುಲಾ » ಸ್ನೇಹ :"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ವೃಶ್ಚಿಕ». ಪ್ರೀತಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಧನಸ್ಸು » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ವಿಶ್ರಾಂತಿ",
+        "raw": "ಮಕರ ೫ ವಿಶ್ರಾಂತಿ :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "_ಶಾರತಿ",
+        "raw": "ಕುಂಭ » _ಶಾರತಿ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸ೦ತೋಷ",
+        "raw": "ಮೀನ » ಸ೦ತೋಷ"
+      }
+    ]
+  }
+}

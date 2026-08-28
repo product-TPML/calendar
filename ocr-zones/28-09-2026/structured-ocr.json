@@ -1,0 +1,172 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\09\\28-09-2026.jpg",
+                   "date":  "28-09-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "red-channel-4x-psm7",
+                                       "raw":  "ಪಕ್ಷ ಕೃಷ್ಣ",
+                                       "value":  "ಕೃಷ್ಣ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "28-09-2026",
+                                   "quote":  ": ದುರ್ಬಲತೆಯಲ್ಲ, ಗುಣಮುಖವಾಗುವ ಮೂದ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಸಿಂಹ/ಕನ್ಯಾ",
+                                     "sunrise":  "06:08",
+                                     "sunset":  "18:11"
+                                 },
+                    "events":  [
+                                   "ದ್ವಿತೀಯಾ ಮಹಾಲಯ",
+                                   "ಕ್ರಾಂತಿಕಾರಿ ಭಗತ್‌ಸಿಂಗ್‌ ಜಯಂತಿ",
+                                   "ವಾಳಕಿ ಮಹಾದೇವ ಯಾತ್ರೆ",
+                                   "ಗಂಗಾವತಿ ತಾ. ಸಿದ್ದಪುರ",
+                                   "ಹಿರೇಮಠದ ಶ್ರೀ ವೀರಪಯ್ಯ ತಾತನವರ ಪು.ತಿ.",
+                                   "ಬೃಹದ್‌ ಗೌರೀ",
+                                   "ಡೋರ್ಲೀ ವ್ರತ ಗಜಗೌರಿ ವ್ರತ",
+                                   "ಜಾಗತಿಕ ಕರ್ಣಬಧಿರ ದಿನ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ರೇವತಿ",
+                                                        "endsAt":  "10.16",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ದ್ವಿತೀಯಾ",
+                                                    "endsAt":  "19.14",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಧ್ರುವ",
+                                                   "endsAt":  "08.54",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ತೈತಿಲ",
+                                                     "endsAt":  "08.0",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ತೈತಿಲ 08.0"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ಸೌರ ಶರದ",
+                                      "solarYear":  12,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಕನ್ನಾ",
+                                      "chandraEntryRashi":  "ಮೀನ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 07:30 - 09:00.",
+                                    "gulikaKala":  "ಮ.01130 - 03:00",
+                                    "yamaganda":  "ಬೆ. 10:30- 12:00",
+                                    "arthaPrahara":  "ಬೆ.09:00- 10:30",
+                                    "shubhaSamaya":  "ಬೆ. 07:57 - 09:29"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಆನಂದ",
+                                        "raw":  "ಮೇಷ ». ಆನಂದ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಗೌರವ",
+                                        "raw":  "ವೃಷಭ » ಗೌರವ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಉಜ್ಯೂತಿ",
+                                        "raw":  "ಮಿಥುನ ೫» ಉಜ್ಯೂತಿ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಕಾಟರ್ಕು ಯಶಸ್ಸು",
+                                        "raw":  "ಕರ್ಕಾಟರ್ಕು ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಸ್ಪರ್ಧೆ",
+                                        "raw":  "ಸಿಂಹ ೫» ಸ್ಪರ್ಧೆ:"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಅನಾರೋಗ್ಯ",
+                                        "raw":  "ಕನ್ಯಾ» ಅನಾರೋಗ್ಯ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಸೌಮ್ಯತೆ",
+                                        "raw":  "ತುಲಾ. » ಸೌಮ್ಯತೆ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಪ್ರಯತ್ನ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಏಿಶ್ರಾಂತಿ",
+                                        "raw":  "ಧನಸ್ಸು »: ಏಿಶ್ರಾಂತಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಮೆಚ್ಜುಗೆ",
+                                        "raw":  "ಮಕರ ೫ ಮೆಚ್ಜುಗೆ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ವಿನಯ",
+                                        "raw":  "ಕುಂಭ » ವಿನಯ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಮೀನ » ಪ್ರೀತಿ"
+                                    }
+                                ]
+                }
+}

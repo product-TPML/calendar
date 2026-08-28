@@ -1,0 +1,170 @@
+{
+  "source": {
+    "image": "data\\2026\\01\\21-01-2026.jpg",
+    "date": "21-01-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "21-01-2026",
+      "quote": "ನಾದಿ ಮಾತ್ರ ಪ್ರತಿ ಕಷ್ಟದಲ್ಲೂ ಅವಕಾಶವನ್ನು ಕಂಡುಕೊಳ"
+    },
+    "calendar": {
+      "months": [
+        "ಪುಷ್ಯ/ಮಾಘ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": "ಧನು/ಮಕರ",
+      "sunrise": "06:46",
+      "sunset": "18:15"
+    },
+    "events": [
+      "ಶ್ರೀ ಅಂಬಿಗರ ಚೌಡಯ್ಯ ಜಯಂತಿ",
+      "ಶ್ರೀ ರಂಗದಲ್ಲಿ",
+      "ತೆಪ್ಪೋತ್ಸವ ಆರಂಭ",
+      "ಜಮೆಖಂಡಿ ಗಿರಿಮಲ್ಲಿಕಾರ್ಜುನ",
+      "ಪುಣ್ಯ ತಿಥಿ. ಗಂಗಾವತಿ ತಾ. ಗುಂಡೂರು",
+      "ಬಸವೇಶ್ಚರಥ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಧನಿಷ್ಠಾ",
+        "endsAt": "13.58",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತೃತೀಯಾ",
+        "endsAt": "26.48",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವ್ಯತೀಪಾತ",
+        "endsAt": "18.58",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": "14.58",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ತ್ಮತಿಲ 14.58 _"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಶಿಶಿರ",
+      "solarYear": 8,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮಕರ",
+      "chandraEntryRashi": "ಕುಂಭ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಬೆ. 10:30 - 12:00",
+      "yamaganda": "ಬೆ.07:30-09:00",
+      "arthaPrahara": "ಬಿ. 06:00 - 07:30",
+      "shubhaSamaya": "ಬೆ. 03:12 - 04:51"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಮೇಷ » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಮೆಚ್ಚುಗೆ",
+        "raw": "ವೃಷಭ » ಮೆಚ್ಚುಗೆ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಆಸೆ",
+        "raw": "ಮಿಥುನ » ಆಸೆ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ಕರ್ಕಾಟಕ ಉಡುಗೊರೆ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಸಿಂಹ » ಖರ್ಚು"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ಕನ್ಯಾ» ಶ್ರೇಷ್ಠತೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಆಸಕ್ತಿ",
+        "raw": "ತುಲಾ ೫» ಆಸಕ್ತಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ವೃಶ್ಚಿಕ » ಸಹಾಯ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರಯತ್ನ",
+        "raw": "ಧನಸ್ಸು». ಪ್ರಯತ್ನ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಬಲ",
+        "raw": "ಮಕರ ೫». ಬಲ :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಭಕ್ಷಿ",
+        "raw": "ಕುಂಭ » ಭಕ್ಷಿ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ಮೀನ » ಪ್ರಗತಿ"
+      }
+    ]
+  }
+}

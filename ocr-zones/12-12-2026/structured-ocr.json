@@ -1,0 +1,166 @@
+{
+  "source": {
+    "image": "data\\2026\\12\\12-12-2026.jpg",
+    "date": "12-12-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "12-12-2026",
+      "quote": "ಶ್ಲ ಎಂಬುದು ಅದೃಷ್ಟವಲ್ಲ, ಅದು ಕಠಿಣ ಪರಿಶ್ರಮ"
+    },
+    "calendar": {
+      "months": [
+        "ಕಾರ್ತಿಕ/ಮಾರ್ಗಶಿರ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಶ್ಚಿಕ/ಧನು",
+      "sunrise": "06:32",
+      "sunset": "17:54"
+    },
+    "events": [
+      "2ನೇ ಶನಿವಾರ",
+      "ಸ್ವದೇಶಿ ದಿನ",
+      "ಹುತಾತ್ಮಾ ಬಾಬುಗೆನುಸ್ಕೃತಿದಿನ",
+      "ಹುಬ್ಬಳ್ಳಿ ತಾ. ಇಂಗಳಹಳ್ಳಿ ಕರಿಸಿದ್ದೇಶ್ವರ ಜಾತ್ರೆ",
+      "ಬ್ಯಾಡಗಿ ತಾ.",
+      "ಕದರಮಂಡಲಗಿ ಕಾಂತೇಶ್ವರ ಕಾರ್ತಿಕ ಮತ್ತು ತೆಪ್ಪದ ರಥ",
+      "ಕೋಸಹೋಳೆಲು ಮತ್ತು ಮಹಾಕುಟ ಲಕ್ಷ್ಮೀ ದೀಪೋತ್ಸವ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಉ.ಷಾ",
+        "endsAt": "30.12",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತೃತೀಯಾ",
+        "endsAt": "14.07",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವೃದ್ಧಿ",
+        "endsAt": "11.17",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣಿಜ",
+        "endsAt": "27.28",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ ವಣಿಜ 2728"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 27,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ವಶಿಕ",
+      "chandraEntryRashi": "ಧನು"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 09:00 - 10:30.",
+      "gulikaKala": "ಬೆ.06:00 - 07:30.",
+      "yamaganda": "ಮ.01130- 3:00",
+      "arthaPrahara": "ಮ. 12:00 - 01:30",
+      "shubhaSamaya": "ಸ. 10:58 - 12:46"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಮೇಷ ೨» ಅಭಿವೃದ್ದಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ವೃಷಭ » ಸಂತೋಷ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮಿಥುನ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಪ್ರೀತಿ. ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ಸಿಂಹ » ಸಹಾಯ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಕನ್ಯಾ 0 ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಕೋಪ",
+        "raw": "ತುಲಾ ೫» ಕೋಪ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಮರೆವು",
+        "raw": "ವೃಶ್ಚಿಕ » ಮರೆವು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಆಸಕ್ತಿ",
+        "raw": "ಧನಸ್ಸು ». ಆಸಕ್ತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ವಿಶ್ರಾಂತಿ",
+        "raw": "ಮಕರ ೫ ವಿಶ್ರಾಂತಿ :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಭ್ರ",
+        "raw": "ಕುಂಭ » ಭ್ರ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಮೆಚ್ಚುಗೆ",
+        "raw": "ಮೀನ » ಮೆಚ್ಚುಗೆ"
+      }
+    ]
+  }
+}

@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\04\\20-04-2026.jpg",
+    "date": "20-04-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಶುಕ್ಲ",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "20-04-2026",
+      "quote": "ಅರ್ಥವಿಲ್ಲದ ಪ್ರಶ್ನೆಗೆ ಮೌನವೇ ಉತ್ತರ"
+    },
+    "calendar": {
+      "months": [
+        "ಚೈತ್ರ",
+        "ವೈಶಾಖ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮೀನ/ಮೇಷ",
+      "sunrise": "06:04",
+      "sunset": "18:32"
+    },
+    "events": [
+      "ಶ್ರೀ ಬಸವೇಶ್ವರ ಜಯಂತಿ",
+      "ವಿನಾಯಕ ಚತುರ್ಥಿ",
+      "ಕಡಪಟ್ಟಿ ಲೆಂಗೇಶ್ವರ ಜಾತ್ರೆ",
+      "ರಾಣಿಬೆಣ್ಣೂರ",
+      "ಕುಬೇರಾನಂದ ಸ್ವಾಮಿ ಆರಾಧನೆ",
+      "ಪರಶುರಾಮ",
+      "ಜಯಂತಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ರೋಹಿಣಿ",
+        "endsAt": "26.08",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ತೃತೀಯಾ",
+        "endsAt": "07.28",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸೌಭಾಗ್ಯ",
+        "endsAt": "16.11",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣಿಜ",
+        "endsAt": "17.50",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ  ವಣಿಜ 1750 _"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಗ್ರೀಷ್ಮ",
+      "solarYear": 7,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮೇಷ",
+      "chandraEntryRashi": "ವೃಷಭ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ.01130 - 03:00",
+      "yamaganda": "ಚೆ. 10:30 - 12:00",
+      "arthaPrahara": "ಬೆ. 09:00 - 1030",
+      "shubhaSamaya": "ಜ. 12:44 - 03:52, ಮ. 11:16 - ಜ. 12:42 (ಮರುದಿನ)"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಸಮಸ್ಥೆ",
+        "raw": "ಮೇಷ ». ಸಮಸ್ಥೆ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ವೃಷಭ » ಪ್ರೋತ್ಸಾಹ"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಬಿನಯ",
+        "raw": "ಮಿಥುನ » ಬಿನಯ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ನಿರಾಶೆ",
+        "raw": "ಕರ್ಕಾಟಕ ನಿರಾಶೆ ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಸಿಂಹ » ಲಾಭ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಕನ್ಯಾ ಖರ್ಚು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ತುಲಾ» ಸಂತೋಷ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ವೃಶ್ಚಿಕ » ಆತಂಕ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಧನಸ್ಸು » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಪಯತ",
+        "raw": "ಮಕರ » ಪಯತ'"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕುಂಭ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಭಯ",
+        "raw": "ಮೀನ ೫» ಭಯ"
+      }
+    ]
+  }
+}

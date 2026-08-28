@@ -1,0 +1,163 @@
+{
+  "source": {
+    "image": "data\\2026\\02\\08-02-2026.jpg",
+    "date": "08-02-2026",
+    "dimensions": {
+      "width": 1514,
+      "height": 1060
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "08-02-2026",
+      "quote": "ಕಾನವೆಂಬ ಖಜಾನೆಗೆ ಅಭ್ಧಾಸವೇ ಕೀಲಿ"
+    },
+    "calendar": {
+      "months": [],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": "ಮಕರ/ ಕುಂಭ",
+      "sunrise": "06:44",
+      "sunset": "18:23"
+    },
+    "events": [
+      "ಚಿಕ್ಕವಂಕುಲಕುಂಟಾ ಆಂಜನೇಯಸ್ವಾಮಿ ರಥ",
+      "ಹಾನಗಲ ಕುಮಾರ ಸ್ವಾಮಿ ಪುಣ್ಯ ತಿಥಿ",
+      "ಗಜಾನನ",
+      "ಮಹಾರಾಜ ಪ್ರಕಟದಿನ ಶೇಗಾಂವ",
+      "ಬೈರಾಪೂರ",
+      "ತಾ.ಹುಕ್ಕೇರಿ ಭೈರವನಾಥ ಜಾತ್ರೆ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಸ್ವಾತಿ 29",
+        "endsAt": "00.03",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಸಪ್ತಮಿ",
+        "endsAt": "29.02",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಗಂಡ",
+        "endsAt": "24.08",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಿಷ್ಟಿ",
+        "endsAt": "15.55",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "ಕರಣ. ವಿಷ್ಟಿ 15.55"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಶಿಶಿರ",
+      "solarYear": 26,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಮಕರ",
+      "chandraEntryRashi": "ತುಲಾ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 04:30 -06:00",
+      "gulikaKala": "ಮ. 03:00 - 04:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಬ. 10:30 - 12:00",
+      "shubhaSamaya": "ಸ. 07:18 - 09:04"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಮೇಷ » ಶಾಂತಿ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ವೃಷಭ » ಅಭಿವೃದ್ಧಿ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಫಯತ್ತ",
+        "raw": "ಮಿಥುನ » ಫಯತ್ತ'"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ರ್ಕು ಕೀರ್ತಿ",
+        "raw": "ಕರ್ಕಾಟಕರ್ಕು ಕೀರ್ತಿ..."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಸಿಂಹ » ಅನುಕೂಲ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಕನ್ಯಾ ೫ ಗೌರವ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ತುಲಾ ೫» ಕೀರ್ತಿ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ವೃಶ್ಚಿಕ» ಅಭಿವೃದ್ದಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಲಾಭ",
+        "raw": "ಧನಸ್ಸು ». ಲಾಭ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಜಕ್ಬಿ ್ಪಂ",
+        "raw": "ಮಕರ ೫ ಜಕ್ಬಿ ್ಪಂ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "* ಬುದಿಮತಿಕೆ",
+        "raw": "ಕುಂಭ * ಬುದಿಮತಿಕೆ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಶ್ರೆತೆ",
+        "raw": "ಮೀನ ೨». ಶ್ರೆತೆ.."
+      }
+    ]
+  }
+}

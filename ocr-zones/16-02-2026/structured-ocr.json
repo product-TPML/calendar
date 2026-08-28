@@ -1,0 +1,164 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\02\\16-02-2026.jpg",
+                   "date":  "16-02-2026",
+                   "dimensions":  {
+                                      "width":  1514,
+                                      "height":  1060
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "16-02-2026",
+                                   "quote":  "ಗತೇ ನಿನ ಕನಸು, ನೀನು ಜಗತಿನ ಕನ:"
+                               },
+                    "calendar":  {
+                                     "months":  [
+
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಮಕರ/ ಕುಂಭ",
+                                     "sunrise":  "06:41",
+                                     "sunset":  "18:25"
+                                 },
+                    "events":  [
+                                   "ಸೋಮವತಿ ಅಮವಾಸ್ಕೆ",
+                                   "ಕುರುಂದವಾಡ ಜಾತ್ರೆ",
+                                   "ಬುದಿಹಾಳ ತಾ. ಚಿಕ್ಕೋಡಿ ಮಹಾಶಿವರಾತ್ರಿ ಜಾತ್ರೆ",
+                                   "ಪುರದಾಳೂ ತಾ. ಶಿವಮೊಗ್ಗ ಉದ್ಬವ",
+                                   "ಬಸವೇಶ್ವರಸ್ವಾಮಿ ರಥೋತ್ಸವ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಶ್ರವಣ",
+                                                        "endsAt":  "20.48",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಚತುರ್ದಶಿ",
+                                                    "endsAt":  "17.35",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ವರೀಯಾನ",
+                                                   "endsAt":  "25.56",
+                                                   "nextDay":  true,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                      "name":  "ಚತುಷ್ಪಾದ",
+                                                      "endsAt":  "37.29",
+                                                      "nextDay":  true,
+                                                      "fullDay":  false,
+                                                      "raw":  "\u0027ಕರಣ ಚತುಷ್ಪಾದ 37.25"
+                                                  },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ರ್ದಶಿ 17.35",
+                                      "solarYear":  4,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಕುಂಭ",
+                                      "chandraEntryRashi":  "ಮಕರ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 07:30 - 09:00.",
+                                    "gulikaKala":  "ಮ. 01:30 - 03:00",
+                                    "yamaganda":  "ಬೆ. 10:30 12:00",
+                                    "arthaPrahara":  "ಬ.09:00 - 10:30",
+                                    "shubhaSamaya":  "ಬೆ. 09:58 - 11:38"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಮೇಷ » ಅನುಕೂಲ :"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ವೃಷಭ » ಲಾಭ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಗೌರವ",
+                                        "raw":  "ಮಿಥುನ » ಗೌರವ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಶ್ರೇಷ್ಠತೆ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಶ್ರೇಷ್ಠತೆ ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಅಭಿವುದ್ದಿ",
+                                        "raw":  "ಸಿಂಹ » ಅಭಿವುದ್ದಿ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಪ್ರೀತಿ”",
+                                        "raw":  "ಕನ್ಯಾ ೧ ಪ್ರೀತಿ”"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಗಮನ",
+                                        "raw":  "ತುಲಾ ೫» ಗಮನ \u0027"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ತೊಂದರೆ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ತೊಂದರೆ :"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಧನಸ್ಸು » ಸಂತೋಷ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಪರಿಶಮ",
+                                        "raw":  "ಮಕರ » ಪರಿಶಮ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಪ್ರತಿರೋಧ",
+                                        "raw":  "ಕುಂಭ » ಪ್ರತಿರೋಧ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ಮೀನ » ಮೆಚ್ಚುಗೆ"
+                                    }
+                                ]
+                }
+}

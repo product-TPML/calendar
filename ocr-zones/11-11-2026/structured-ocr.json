@@ -1,0 +1,163 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\11-11-2026.jpg",
+    "date": "11-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "11-11-2026",
+      "quote": "ಹಾಸಿಗೆ ಇದ್ದಷ್ಟು ಕಾಲು ಚಾಚು"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:16",
+      "sunset": "17:50"
+    },
+    "events": [
+      "ಯಮ ದ್ವಿತೀಯಾ",
+      "ಸಹೋದರ ಪೂಜೆ. ರಾಷ್ಟ್ರೀಯ",
+      "ಶಿಕ್ಷಣ ದಿನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಅನುರಾಧಾ",
+        "endsAt": "11.38",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಿತೀಯಾ",
+        "endsAt": "15.54",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಅತಿಗಂಡ",
+        "endsAt": "27.40",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ತೈತಿಲ",
+        "endsAt": "28.39",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ತೈತಿಲ 28.39"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 26,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ತುಲಾ",
+      "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 12:00 - 01:30",
+      "gulikaKala": "ಚೆ.1030- 12:0",
+      "yamaganda": "ಬೆ. 07:30 -09:00",
+      "arthaPrahara": "ಚೆ.06:00 - 07:30",
+      "shubhaSamaya": "ಬೆ. 12:14 -01:59"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಮೇಷ » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಷಭ » ಯಶಸ್ಸು ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಮಿಥುನ ». ಖರ್ಚು"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಪ್ರೀತಿ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಸಿಂಹ » ಲಾಭ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಉಡುಗೊರೆ",
+        "raw": "ಕನ್ಯಾ» ಉಡುಗೊರೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ದಯೆ",
+        "raw": "ತುಲಾ ೫» ದಯೆ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪರಿಶ್ರಮ",
+        "raw": "ವೃಶ್ಚಿಕ » ಪರಿಶ್ರಮ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಗಮನ",
+        "raw": "ಧನಸ್ಸು » ಗಮನ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಕುತೂಹಲ",
+        "raw": "ಮಕರ » ಕುತೂಹಲ."
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಕುಂಭ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಭಕ್ತಿ",
+        "raw": "ಮೀನ ». ಭಕ್ತಿ"
+      }
+    ]
+  }
+}

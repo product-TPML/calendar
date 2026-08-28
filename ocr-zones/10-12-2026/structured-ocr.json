@@ -1,0 +1,167 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\12\\10-12-2026.jpg",
+                   "date":  "10-12-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "10-12-2026",
+                                   "quote":  "ವೇಗಕ್ಕಿಂತ ನಿರಂತರತೆ ಮುಖ್ಯ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಕಾರ್ತಿಕ/ಮಾರ್ಗಶಿರ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ವೃಶ್ಚಿಕ/ಧನು",
+                                     "sunrise":  "06:30",
+                                     "sunset":  "17:53"
+                                 },
+                    "events":  [
+                                   "ಗುರುವಾರ ಲಕ್ಷ್ಮೀ ವ್ರತ",
+                                   "ಶ್ರೀ ಕೇತೇಶ್ವರ ಮಹಾರಾಜ",
+                                   "ಜಯಂತಿ ಸಾಂಗ್ಲಿ",
+                                   "ವಿಶ್ವ ಮಾನವ ಹಕ್ಕುಗಳ ದಿನ",
+                                   "ಶಿರಹಟ್ಟಿ",
+                                   "ಬೀರೇಶ್ವರ ಕಾರ್ತಿಕ",
+                                   "ಕೊಪ್ಪಳ ಜಿ. ಕೂಕನಪಳ್ಳಿ ಬೆಟ್ಟದ",
+                                   "ಲಿಂಗೇಶ್ವರ ರಥ."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಮೂಲಾ",
+                                                        "endsAt":  "23.58",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಪ್ರತಿಪದಾ",
+                                                    "endsAt":  "08.47",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಶೂಲ",
+                                                   "endsAt":  "00.25",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಬಾಲವ",
+                                                     "endsAt":  "22.04",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬಾಲವ 22.04"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯ",
+                                      "ritu":  "ಸೌರ ಹೇಮಂತ",
+                                      "solarYear":  25,
+                                      "paksha": "ಶುಕ್ಲ",
+                                      "solarRashi":  "ವಶಿಕ",
+                                      "chandraEntryRashi":  "ಧನು"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 01:30 - 03:00",
+                                    "gulikaKala":  "ಬೆ.9:00 - 10:30.",
+                                    "yamaganda":  "ಬೆ.06:00- 07:30",
+                                    "arthaPrahara":  "ಮ. 03:00 - 04:30",
+                                    "shubhaSamaya":  "ಸ. 04:46 - 06:34"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಗೊಂದಲ",
+                                        "raw":  "ಮೇಷ » ಗೊಂದಲ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸಂತಾಪ",
+                                        "raw":  "ವೃಷಭ » ಸಂತಾಪ"
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಆಯಾಸ",
+                                        "raw":  "ಮಿಥುನ » ಆಯಾಸ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಆತಂಕ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಆತಂಕ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಅನಂದ",
+                                        "raw":  "ಸಿಂಹ ೫» ಅನಂದ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ದುಃಖ",
+                                        "raw":  "ಕನ್ಯಾ ೫ ದುಃಖ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ನೋವು",
+                                        "raw":  "ತುಲಾ» ನೋವು"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಲಾಭ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಧನಸ್ಸು » ಅನುಕೂಲ."
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಕೋಪ",
+                                        "raw":  "ಮಕರ » ಕೋಪ \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಕುಂಭ » ಅನುಕೂಲ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಮೀನ » ಸಂತೋಷ."
+                                    }
+                                ]
+                }
+}

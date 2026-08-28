@@ -1,0 +1,167 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\05\\04-05-2026.jpg",
+                   "date":  "04-05-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "04-05-2026",
+                                   "quote":  "ಪ್ರತಿ ಅಂತ್ಯವೂ ಹೊಸ ಆರಂಭ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ವೈಶಾಖ",
+                                                    "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮೇಷ/ವೃಷಭ",
+                                     "sunrise":  "05:57",
+                                     "sunset":  "18:25"
+                                 },
+                    "events":  [
+                                   "ಅಂತರಾಷ್ಟ್ರೀಯ ಅಗ್ನಿಶಾಮಕ ಸಿಬ್ಬಂದಿ ದಿನ",
+                                   "ಸಂತ",
+                                   "ಚಾಖೋಬಾ ಪಿಹಾ ಪುಣ್ಯ ತಿಥಿ. ನರಕೆ ಮಹಾಲಕ್ಷ್ಮೀ ಪ್ರತಿಷ್ಠಾ",
+                                   "ದಿನ",
+                                   "ರೋಣ ತಾ. ಕೊಕದಾಳ ಶ್ರೀ ಗುರು ಅಡವಿಸಿದ್ದೇಶ್ವರ",
+                                   "ಜಾತ್ರೆ",
+                                   "ಕಲಬುರಗಿ ಬಂದೇನವಾಜ ಉರುಸ"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಅನುರಾಧಾ",
+                                                        "endsAt":  "09.58",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ತೃತೀಯಾ",
+                                                    "endsAt":  "29.25",
+                                                    "nextDay":  true,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಪರಿಘ",
+                                                   "endsAt":  "2.20",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ವಣೆಜ",
+                                                     "endsAt":  "16.13",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ _ವಣೆಜ 16.13"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಗ್ರೀಷ್ಮ",
+                                      "solarYear":  21,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಮೇಷ",
+                                      "chandraEntryRashi":  "ವೃಶ್ಚಿಕ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 07:30 - 09:00",
+                                    "gulikaKala":  "ಮ.01:30 - 03:00",
+                                    "yamaganda":  "ಬೆ. 10:30 - 12:00",
+                                    "arthaPrahara":  "ಚೆ. 09:00 - 10:30",
+                                    "shubhaSamaya":  "unavailable"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಆನಂದ",
+                                        "raw":  "ಮೇಷ » ಆನಂದ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ವೃಷಭ » ಸಾಲ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ತೊಂದರೆ",
+                                        "raw":  "ಮಿಥುನ » ತೊಂದರೆ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ಕರ್ಕಾಟಕ: ಸಂತೋಷ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಗಮನ",
+                                        "raw":  "ಸಿಂಹ » ಗಮನ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಕುತೂಹಲ",
+                                        "raw":  "ಕನ್ಯಾ» ಕುತೂಹಲ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಆಸಕ್ತಿ",
+                                        "raw":  "ತುಲಾ ೫ ಆಸಕ್ತಿ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಸ್ನೇಹ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಸ್ನೇಹ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಧನಸ್ಸು » ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಮಕರ » ಯಶಸ್ಸು \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ಕುಂಭ » ಮೆಚ್ಚುಗೆ ."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಶುಭ",
+                                        "raw":  "ಮೀನ ». ಶುಭ"
+                                    }
+                                ]
+                }
+}

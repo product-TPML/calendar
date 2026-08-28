@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\29-11-2026.jpg",
+    "date": "29-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "existing-paksha-ocr",
+      "raw": "ಇ ಸ ಕೃಷ್ಣರ",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "29-11-2026",
+      "quote": "ೇಶ ಸುತ್ತಿ ನೋಡು ಕೋಶ ಓದಿ ನೋಡು"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:24",
+      "sunset": "17:50"
+    },
+    "events": [
+      "ಷಷ್ಠಿ",
+      "ಸೌದತ್ತಿ ಮತ್ತು ಗುರ್ಲಹೊಸೂರು",
+      "ಚಿದಂಬರೇಶ್ವರ",
+      "ಚಿದಂಬರನಗರ ರಥಗಳು. ಬಿಜರಗಿ ಜಿ. ವಿಜಯಪುರ",
+      "ರೇಣುಕಾ",
+      "ದೇವದುರ್ಗ ಶ್ರೀ ಸಿದ್ದರಾಮೇಶ್ವರ ಜಾತ್ರೆಗಳು"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪುಷ್ಯ",
+        "endsAt": "11.00",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಷಷ್ಠಿ",
+        "endsAt": "02.47",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಹ್ಮಾ",
+        "endsAt": "17.0",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಗರಜ",
+        "endsAt": "14.48",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಗರಜ 14.48 _"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಹೇಮಂತ",
+      "solarYear": 14,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ವೃಶ್ಚಿಕ",
+      "chandraEntryRashi": "ಕರ್ಕ"
+    },
+    "timings": {
+      "rahuKala": "ಸ, 04:30 - 06:00.",
+      "gulikaKala": "ಮ. 03:00 - ೫:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಬೆ. 1030 - 12:00",
+      "shubhaSamaya": "ಬೆ. 05:05 - 06:33"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಮೇಷ ». ಕೀರ್ತಿ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ವೃಷಭ » ಸಂತೋಷ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಭಯ",
+        "raw": "ಮಿಥುನ » ಭಯ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ಕರ್ಕಾಟಕ ಒಳ್ಳೆಯದು"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಸಿಂಹ » ಪ್ರೋತ್ಸಾಹ."
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಬಿಕ್ಕುಗ",
+        "raw": "ನ್ಯಾ ಏರ್ಚು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಕೋಪ",
+        "raw": "ತುಲಾ ೫» ಕೋಪ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಗೌರವ",
+        "raw": "ವೃಶ್ಚಿಕ » ಗೌರವ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಧನಸ್ಸು » ಯಶಸ್ಸು."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸರ್ದೆ",
+        "raw": "ಮಕರ ೫» ಸರ್ದೆ'"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕುಂಭ » ಯಶಸ್ಸು."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಶುಭಸಮಾಚಾರ",
+        "raw": "ಮೀನ» ಶುಭಸಮಾಚಾರ"
+      }
+    ]
+  }
+}

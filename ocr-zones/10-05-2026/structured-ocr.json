@@ -1,0 +1,165 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\05\\10-05-2026.jpg",
+                   "date":  "10-05-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "10-05-2026",
+                                   "quote":  "ಸಾಧನೆ ಇಲ್ಲದೆ ಸತ್ತರೆ ಸಾವಿಗೆ ಅವಮಾನ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ವೈಶಾಖ",
+                                                    "ಅಧಿಕ ಜ್ಯೇಷ್ಠ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಮೇಷ/ವೃಷಭ",
+                                     "sunrise":  "05:55",
+                                     "sunset":  "18:36"
+                                 },
+                    "events":  [
+                                   "ವಿಶ್ವ ಅಮ್ಮಂದಿರ ದಿನ",
+                                   "ಸಂತ ಮುಕ್ತಾಬಾಯಿ",
+                                   "ಪುಣ್ಯತಿಥಿ",
+                                   "ಹೇಮರೆಡ್ಡಿ ಮಲ್ಲಮ್ಮ ಜಯಂತಿ",
+                                   "ತುಂಬರೂ ಜಯಂತಿ"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಧನಿಷ್ಠಾ",
+                                                        "endsAt":  "24.50",
+                                                        "nextDay":  true,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಅಷ್ಟಮಿ",
+                                                    "endsAt":  "15.07",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಅಹ್ಮಾ",
+                                                   "endsAt":  "26.0",
+                                                   "nextDay":  true,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ತೈಕಿಲ",
+                                                     "endsAt":  "07.22",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ _ ತೈಕಿಲ 722"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಗ್ರೀಷ್ಮ",
+                                      "solarYear":  27,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ಮೇಷ",
+                                      "chandraEntryRashi":  "ಮಕರ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಸ. 04:30 -06:00",
+                                    "gulikaKala":  "ಮ. 8:00 - 04:30",
+                                    "yamaganda":  "ಮ. 12:00 - 01:30",
+                                    "arthaPrahara":  "ಚೆ.10136 - 12:00",
+                                    "shubhaSamaya":  "ಮ. 01:49 - 03:30"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಗೊಂದಲ",
+                                        "raw":  "ಮೇಷ » ಗೊಂದಲ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸಾಲ",
+                                        "raw":  "ವೃಷಭ » ಸಾಲ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಗೌರವ",
+                                        "raw":  "ಮಿಥುನ » ಗೌರವ :"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಪ್ರೀತಿ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಪ್ರತಿರೋಧ",
+                                        "raw":  "ಸಿಂಹ » ಪ್ರತಿರೋಧ"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ವಿನಯ",
+                                        "raw":  "ಕನ್ಯಾ» ವಿನಯ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ತುಲಾ» ಅನುಕೂಲ."
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಒಳ್ಳೆಯದು."
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಯಶಸ್ಸು",
+                                        "raw":  "ಧನಸ್ಸು » ಯಶಸ್ಸು"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಅಭಿವದಿ",
+                                        "raw":  "ಮಕರ ೫ ಅಭಿವದಿ."
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "* ಯಶಸ್ಸು",
+                                        "raw":  "ಕುಂಭ * ಯಶಸ್ಸು."
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಮೀನ » ಪ್ರೀತಿ"
+                                    }
+                                ]
+                }
+}

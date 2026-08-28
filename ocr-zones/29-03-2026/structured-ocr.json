@@ -1,0 +1,168 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\29-03-2026.jpg",
+    "date": "29-03-2026",
+    "dimensions": {
+      "width": 1136,
+      "height": 795
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "29-03-2026",
+      "quote": "ೆ! ಪರಿಶ್ರಮದಿಂದ ಏನನ್ನಾದರೂ ಸಾಧಿಸಬ:"
+    },
+    "calendar": {
+      "months": [
+        "ವಿಶ್ವಾವಸು ಪರಾಭವ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು ಪರಾಭವ",
+      "shakaYear": 1947,
+      "rashi": "ಕುಂಭ/ಮೀನ",
+      "sunrise": "06:18",
+      "sunset": "18:32"
+    },
+    "events": [
+      "ಕಾಮದಾ ಏಕಾದಶಿ",
+      "ಶ್ರೀ ಕೃಷ್ಣ ಡೊಡೋತ್ಸವ",
+      "ಮಂಡ್ಯ",
+      "ಜನಾರ್ದನಸ್ವಾಮಿ ರಥ",
+      "ಬೇಲೂರ ಚೆನ್ನಕೇಶವ",
+      "ಗರುಡೋತ್ಸವ",
+      "ನೊಣವಿನಕೆರೆ ರಂಗನಾಥ ರಿಥ",
+      "ಶಿಖರ",
+      "ಶಿಂಗಣಾಪೂರ ಜಿ.ಸಾತಾರಾ ಶ್ರೀ ಶಂಭೂ ಮಹಾದೇವ ಜಾತ್ರೆ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಆಶ್ಲೇಷಾ",
+        "endsAt": "14.38",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಏಕಾದಶಿ",
+        "endsAt": "0.47",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಥೃತಿ",
+        "endsAt": "18.20",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "19.26",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬವ 1926"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ವಸಂತ",
+      "solarYear": 16,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ಕರ್ಕ"
+    },
+    "timings": {
+      "rahuKala": "ಸ. 04:30 - 06:00.",
+      "gulikaKala": "ಮ. 03:00 - 04:30",
+      "yamaganda": "ಮ. 12:00 - 01:30",
+      "arthaPrahara": "ಬೆ.10:30 - 12:00",
+      "shubhaSamaya": "ಮ. 01:02 - 02:38"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಭ್ರಮೆ",
+        "raw": "ಮೇಷ » ಭ್ರಮೆ :"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ವೃಷಭ » ಪ್ರಗತಿ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ಮಿಹುನ » ಸಂತೋಷ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಭಯ",
+        "raw": "ಕರ್ಕಾಟಕ: ಭಯ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಸಿಂಹ ೫» ಆತಂಕ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕನ್ಯಾ» ಯಶಸ್ಸು."
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ದಾನ",
+        "raw": "ತುಲಾ ೫» ದಾನ\"."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ವೃಶ್ಚಿಕ» ಸಂತೋಷ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಲಾಭ",
+        "raw": "ಧನಸ್ಸು » ಲಾಭ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಪೋತ್ಸಾಹ",
+        "raw": "ಮಕರ » ಪೋತ್ಸಾಹ."
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಕುಂಭ » ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಕರ್ಚು",
+        "raw": "ಮೀನ » ಕರ್ಚು"
+      }
+    ]
+  }
+}

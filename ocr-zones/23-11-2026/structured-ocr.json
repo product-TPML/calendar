@@ -1,0 +1,165 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\23-11-2026.jpg",
+    "date": "23-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    }
+  },
+  "content": {
+    "header": {
+      "date": "23-11-2026",
+      "quote": "ಮಾತು ಬೆಳ್ಳಿ ಮೌನ ಬಂಗಾರ"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:21",
+      "sunset": "17:50"
+    },
+    "events": [
+      "ವೈಕುಂಠ ಚತುರ್ದಶಿ",
+      "ಭರಣಿ ದೀಪ",
+      "ಪುಟ್ಟಪೂರ್ತಿ",
+      "ಸಾಯಿಬಾಬಾ ವರ್ಧಂತಿ. ಶ್ರೀ ಜಯಧ್ವಜ ತೀರ್ಥರ ಅರಾ.",
+      "ಯಡಿಯೂರು ಶಕ್ತಿಗಣಪತಿ ಪುಷ್ಪಾಲಂಕಾರೋತ್ಸವ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಭರಣಿ",
+        "endsAt": "26.02",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಚತುರ್ದಶಿ",
+        "endsAt": "23.43",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ನರೀಯಾನ",
+        "endsAt": "19.59",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಿ",
+        "endsAt": "26.02",
+        "nextDay": true,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಗರಜ 13.14 _"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ರ್ದಶಿ 23.43",
+      "solarYear": 8,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ವೃಶ್ಚಿಕ",
+      "chandraEntryRashi": "ಮೇಷ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 07:30 - 09:00.",
+      "gulikaKala": "ಮ.01:30- 8:00",
+      "yamaganda": "ಬೆ. 10:30 - 12:00",
+      "arthaPrahara": "ಬೆ.09:00 - 10:30",
+      "shubhaSamaya": "ರಾ.09:40- 11:08"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಮೇಷ ». ಖರ್ಚು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ವೃಷಭ » ಯಶಸ್ಸು ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸ್ಲೇಹ",
+        "raw": "'ಮಿಥುನ » ಸ್ಲೇಹ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಕರ್ಕಾಟಕ ಕೀರ್ತಿ ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಸಿಂಹ » ಶಾಂತಿ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಕನ್ಯಾ ೫೧ ಪ್ರೀತಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ತುಲಾ» ಅನುಕೂಲ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಒಳ್ಳೆಯದು",
+        "raw": "ವೃಶ್ಚಿಕ » ಒಳ್ಳೆಯದು."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರೀತಿ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರೀತಿ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಅಬಿವದಿ",
+        "raw": "ಮಕರ » ಅಬಿವದಿ'"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಕುಂಭ » ಆತಂಕ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರಗತಿ",
+        "raw": "ಮೀನ ». ಪ್ರಗತಿ"
+      }
+    ]
+  }
+}

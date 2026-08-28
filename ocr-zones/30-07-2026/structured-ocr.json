@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\07\\30-07-2026.jpg",
+    "date": "30-07-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "30-07-2026",
+      "quote": "ಶ್ರಮಕ್ಕಯಾವತೂ ಮೋಸವೀ"
+    },
+    "calendar": {
+      "months": [
+        "ನಿಜ ಜ್ಯೇಷ್ಠ/ಆಷಾಢ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಮಿಥುನ/ಕರ್ಕ",
+      "sunrise": "06:04",
+      "sunset": "18:48"
+    },
+    "events": [
+      "ಇಂಗ್ಲೇಸಿ ತೋಯಲರ ಏಸು ಸಭೆ ಸ್ಥಾಪಿಸಿದ ದಿನ",
+      "ನೆಲವಿಗಿ",
+      "ಪ್ರಾಣದೇವರ ಪಲ್ಲಕಿ ಉತ್ಸವ",
+      "ಬೀದರ ಪಾಂಡುರಂಗ",
+      "ಪುಣ್ಯತಿಥಿ",
+      "ಕಡೇಗಲ್ಲ ಭೀಮಲಿಂಗೇಶ್ವರ ವೀರಾಶಾಸನ",
+      "ಜಯಂತಿ",
+      "ವೃಷಭ ತೀರ್ಥಂಕರ ಗರ್ಭಕಲ್ಯಾಣ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಶ್ರವಣ",
+        "endsAt": "17.44",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಪ್ರತಿಪದಾ",
+        "endsAt": "21.31",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಆಯುಷ್ಕಾನ",
+        "endsAt": "24.05",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಾಲವ",
+        "endsAt": "08.51",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬಾಲವ 08.51"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 15,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಕರ್ಕ",
+      "chandraEntryRashi": "ಮಕರ"
+    },
+    "timings": {
+      "rahuKala": "_ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಬೆ.9:00 - 10:30.",
+      "yamaganda": "ಬೆ.06:00-07:30",
+      "arthaPrahara": "ಮ. 03:00 - 04:30",
+      "shubhaSamaya": "ಬೆ. 06:24 - 08:09"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮೇಷ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಕೋಪ",
+        "raw": "ವೃಷಭ » ಕೋಪ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮಿಥುನ » ಅನುಕೂಲ."
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಮೆಚ್ಚುಗೆ",
+        "raw": "ಕರ್ಕಾಟಕ ಮೆಚ್ಚುಗೆ ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಕೀರ್ತಿ",
+        "raw": "ಸಿಂಹ » ಕೀರ್ತಿ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಕನ್ಯಾ ೫ ಶಾಂತಿ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಫ್ರಯತ್ರ",
+        "raw": "ತುಲಾ» ಫ್ರಯತ್ರ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ವೃಶ್ಚಿಕ» ಪ್ರೋತ್ಸಾಹ :"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಲಾಭ",
+        "raw": "ಧನಸ್ಸು ». ಲಾಭ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಆಸೆ",
+        "raw": "ಮಕರ ೫ ಆಸೆ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಗೌರವ",
+        "raw": "ಕುಂಭ » ಗೌರವ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಮೀನ » ಪ್ರೋತ್ಸಾಹ"
+      }
+    ]
+  }
+}

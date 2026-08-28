@@ -1,0 +1,173 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\10\\30-10-2026.jpg",
+                   "date":  "30-10-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "existing-paksha-ocr",
+                                       "raw":  "ಪಕ್ಷ ಕೃಷ್ಣ",
+                                       "value":  "ಕೃಷ್ಣ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "30-10-2026",
+                                   "quote":  "ನಿನ್ನಮೌನದಲೂ ನಿನ್ನಗುರಿ ಗಟಿಯಾಗಿರ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಭಾದ್ರಪದ/ಅಶ್ವೀನ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕನ್ಯಾ/ ತುಲಾ",
+                                     "sunrise":  "06:12",
+                                     "sunset":  "17:53"
+                                 },
+                    "events":  [
+                                   "ಶ್ರೀ ಮಾಧವಾನಂದಪ್ರಭು ಜಯಂತಿ ಮತ್ತು ಶ್ರೀ ಗಿರೀಶ ಭಾ.",
+                                   "ಪೂಜಾರಿ ಪು.ತಿ. ಇಂಚಗೇರಿ",
+                                   "ಶೃಂಗೇರಿಜ",
+                                   "ಶ್ರೀಮದಭಿನವ",
+                                   "ವಿದ್ರಾತೀರ್ಥಸ್ವಾಮಿ ಪಟ್ಟಾಭಿಷೇಕ",
+                                   "ಹನುಮಟ್ಟಿ",
+                                   "ಶ್ರೀ ಕಾತ್ಯಾಯಿನಿ",
+                                   "ಅಂಕೋಲಾ",
+                                   "ಅವರ್ಸಿ ವಡೆಪಂಚಮಿ"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಮೃಗಶಿರಾ",
+                                                        "endsAt":  "09.05",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ಪಂಚಮಿ",
+                                                    "endsAt":  "19.25",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಶಿವ",
+                                                   "endsAt":  "20.42",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "₹೫೪0೪",
+                                                     "endsAt": "08.46",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ರಣ್ಣ ಕ್ಷ"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯ",
+                                      "ritu":  "ಸೌರ ಹೇಮಂತ",
+                                      "solarYear":  14,
+                                      "paksha":  "ಕೃಷ್ಣ",
+                                      "solarRashi":  "ತುಲಾ",
+                                      "chandraEntryRashi":  "ಮಿಥುನ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 10:30 - 12:00.",
+                                    "gulikaKala":  "ಬೆ. 0730 - 09:00.",
+                                    "yamaganda":  "ಮ. 08:00 - 04:30",
+                                    "arthaPrahara":  "ಮ. 1:56 - 8:6",
+                                    "shubhaSamaya":  "185-118"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ದ್ದೇಷ",
+                                        "raw":  "ಮೇಷ » ದ್ದೇಷ"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸ್ನೇಹ",
+                                        "raw":  "ವೃಷಭ » ಸ್ನೇಹ ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಮಿಥುನ ». ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಉತ್ಸಾಹ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಉತ್ಸಾಹ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಅನುಕೂಲ",
+                                        "raw":  "ಸಿಂಹ » ಅನುಕೂಲ:"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಅಭಿವೃದ್ದಿ",
+                                        "raw":  "ಕನ್ಯಾ» ಅಭಿವೃದ್ದಿ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಪರಿಶಮ",
+                                        "raw":  "ತುಲಾ » ಪರಿಶಮ\u0027"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಒಳ್ಳೆಯ ಕೆಲಸ",
+                                        "raw":  "ವೃಶ್ಚಿಕ» ಒಳ್ಳೆಯ ಕೆಲಸ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಶಾಂತಿ",
+                                        "raw":  "ಧನಸ್ಸು » ಶಾಂತಿ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ಮಕರ ೫» ಲಾಭ :"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ಕುಂಭ » ಮೆಚ್ಚುಗೆ:"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಅಭಿವೃದ್ಧಿ",
+                                        "raw":  "ಮೀನ » ಅಭಿವೃದ್ಧಿ"
+                                    }
+                                ]
+                }
+}

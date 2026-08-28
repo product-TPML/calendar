@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\06\\26-06-2026.jpg",
+    "date": "26-06-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ ಶುಕ್ಲ",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "26-06-2026",
+      "quote": "ಾೀತಾಗ ಕುಗ್ಗಬೇಡ, ಗೆದ್ದಾಗ ಬೀಗಬೇ"
+    },
+    "calendar": {
+      "months": [
+        "ಅ.ಜ್ಯೇಷ್ಠ/ನಿ.ಜ್ಯೇಷ್ಠ"
+      ],
+      "samvatsara": "ಪರಾಭವ ನಾಮ",
+      "shakaYear": 1948,
+      "rashi": "ವೃಷಭ/ಮಿಥುನ",
+      "sunrise": "05:55",
+      "sunset": "18:40"
+    },
+    "events": [
+      "ಮೊಹರಂ ಕೊನೆಯ ದಿನ",
+      "ಸತ್ಯಗಾಲ ವರದರಾಜ",
+      "ರಥೋತ್ಸವ",
+      "ಅಂತರಾಷ್ಟ್ರೀಯ ಅಮಲಿ ಪದಾರ್ಥ",
+      "ಸೇವನ ವಿರೋಧಿ ದಿನ",
+      "ದೊಹರಮ ಕೊನೆಯ ದಿನ",
+      "ಮೈಸೂರು ತಿಲಕ್‌ ನಗರ ಶ್ರೀ ಅಮ್ಮನವರ ವರ್ದಂತಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ವಿಶಾಖಾ",
+        "endsAt": "19.16",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ದ್ವಾದಶಿ",
+        "endsAt": "22.23",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸಿದ್ದ",
+        "endsAt": "11.36",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬವ",
+        "endsAt": "09.15",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಬವ 09.15"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ವರ್ಷಾ",
+      "solarYear": 12,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮಿಥುನ",
+      "chandraEntryRashi": "ತುಲಾ"
+    },
+    "timings": {
+      "rahuKala": "ಬೆ. 10:30 - 12:00 _",
+      "gulikaKala": "ಬೆ.07:30 - 09:00",
+      "yamaganda": "ಮ. 03:00 - 04:30",
+      "arthaPrahara": "ಮ. 01:30 - 03:00",
+      "shubhaSamaya": "ಬೆ. 09:26 - 11:14"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ನಿರಾಶೆ",
+        "raw": "ಮೇಷ ». ನಿರಾಶೆ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಜೀವನ",
+        "raw": "ವೃಷಭ » ಜೀವನ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸೌಮೃ್ಯತೆ",
+        "raw": "ಮಿಥುನ ». ಸೌಮೃ್ಯತೆ'"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಭಯ",
+        "raw": "ಕರ್ಕಾಟಕ ಭಯ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ನಿಷೇಧ",
+        "raw": "ಸಿಂಹ » ನಿಷೇಧ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ಕನ್ಯಾ» ಖರ್ಚು"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಬಲ",
+        "raw": "ತುಲಾ ೫» ಬಲ '"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಕಷ್ಟ",
+        "raw": "ವೃಶ್ಚಿಕ». ಕಷ್ಟ."
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಲಾಭ",
+        "raw": "ಧನಸ್ಸು » ಲಾಭ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮಕರ » ಲಾಭ :"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕುಂಭ » ಯಶಸ್ಸು."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಸಾಲ",
+        "raw": "ಮೀನ ». ಸಾಲ"
+      }
+    ]
+  }
+}

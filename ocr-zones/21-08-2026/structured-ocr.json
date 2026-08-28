@@ -1,0 +1,171 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\08\\21-08-2026.jpg",
+                   "date":  "21-08-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "existing-paksha-ocr",
+                                       "raw":  "ಫರ್‌ ಶುಕ್ಲ",
+                                       "value":  "ಶುಕ್ಲ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "21-08-2026",
+                                   "quote":  "ಶಿಸ್ತು ಇಲ್ಲದ ಪ್ರತಿಭೆ ದಿಕ್ಕಿಲ್ಲದ ಶಕ್ತಿ"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಆಷಾಢ",
+                                                    "ಶ್ರಾವಣ"
+                                                ],
+                                     "samvatsara":  "ಪರಾಭವ",
+                                     "shakaYear":  1948,
+                                     "rashi":  "ಕರ್ಕ/ಸಿಂಹ",
+                                     "sunrise":  "06:08",
+                                     "sunset":  "18:37"
+                                 },
+                    "events":  [
+                                   "ವರಮಹಾಲಕ್ಷೀ ಹಬ್ಬ",
+                                   "ಸಂಪತ್‌ ಶುಕ್ರವಾರ",
+                                   "ಜೀವಂತಿಕಾ",
+                                   "ಪೂಜೆ. ಶ್ರೀ ಹರಿ ಜಯಂತಿ. ಭಾರತೀಯ ಹಿರಿಯರ ದಿನ.",
+                                   "ಧಾರವಾಡ ತಪೋವನ ಕುಮಾರ ಸ್ವಾಮಿ ಜಯಂತಿ.",
+                                   "ಶಂಕರಬಂಡೆ ಜಿ. ಬಳ್ಳಾರಿ ವೀರಾಂಜನೇಯ ಜಾತ್ರೆ"
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಅನುರಾಧಾ",
+                                                        "endsAt":  "11.53",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ನವಮಿ",
+                                                    "endsAt":  "23.37",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಪಶ್ಯ ೫೫",
+                                                   "endsAt": "29.19",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ಬಾಲವ",
+                                                     "endsAt":  "10.26",
+                                                     "nextDay":  false,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ಬಾಲವ 10.26"
+                                                 },
+                                      "ayana":  "ದಕ್ಷಿಣಾಯನ",
+                                      "ritu":  "ಸೌರ ವರ್ಷಾ",
+                                      "solarYear":  5,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಸಿಂಹ",
+                                      "chandraEntryRashi":  "ವೃಶ್ಚಿಕ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಬೆ. 10:30 - 12:00.",
+                                    "gulikaKala":  "ಬೆ.07:30- 09:00",
+                                    "yamaganda":  "ಮ. 03:00 - 04:30",
+                                    "arthaPrahara":  "ಮ. 01:30 - 03:00",
+                                    "shubhaSamaya":  "ಬೆ. 12:17 - 0:04"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಒಳ್ಳೆಯದು",
+                                        "raw":  "ಮೇಷ » ಒಳ್ಳೆಯದು."
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಸಂತೋಷ",
+                                        "raw":  "ವೃಷಭ » ಸಂತೋಷ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಒಳ್ಳೆಯ ಕೆಲಸ",
+                                        "raw":  "ಮಿಥುನ » ಒಳ್ಳೆಯ ಕೆಲಸ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಗಮನ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಗಮನ"
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ಖರ್ಚು",
+                                        "raw":  "ಸಿಂಹ » ಖರ್ಚು"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ಶ್ರೇಷ್ಠತೆ",
+                                        "raw":  "ಕನ್ಯಾ ೫ ಶ್ರೇಷ್ಠತೆ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಸಾಧನೆ",
+                                        "raw":  "ತುಲಾ ೫» ಸಾಧನೆ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಲಾಭ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಸೌಮ್ಯತೆ",
+                                        "raw":  "ಧನಸ್ಸು » ಸೌಮ್ಯತೆ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ದಯೆ",
+                                        "raw":  "ಮಕರ » ದಯೆ \u0027"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಭಕ್ತಿ",
+                                        "raw":  "ಕುಂಭ » ಭಕ್ತಿ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಉತ್ಸಾಹ",
+                                        "raw":  "ಮೀನ » ಉತ್ಸಾಹ"
+                                    }
+                                ]
+                }
+}

@@ -1,0 +1,167 @@
+{
+  "source": {
+    "image": "data\\2026\\11\\03-11-2026.jpg",
+    "date": "03-11-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪಕ್ಷ... ಕೃಷ್ಣ .",
+      "value": "ಕೃಷ್ಣ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "03-11-2026",
+      "quote": "ವಸರದಲ್ಲಿ ಮಾಡಿದ ಕೆಲಸ ಅಳುವಿಗೆ ಕಾರ!"
+    },
+    "calendar": {
+      "months": [
+        "ಅಶ್ವೀನ",
+        "ಕಾರ್ತಿಕ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ತುಲಾ/ವೃಶ್ಚಿಕ",
+      "sunrise": "06:13",
+      "sunset": "17:52"
+    },
+    "events": [
+      "ಹೂವಿನಹಡಗಲಿ ಗವಿಮಠ ಲಿಂಗೇಶ್ವರ ಸ್ವಾಮಿ",
+      "ಪುಣ್ಯತಿಥಿ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಮಘಾ",
+        "endsAt": "27.27",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ನವಮಿ",
+        "endsAt": "11.55",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶುಕ್ಡ",
+        "endsAt": "0.54",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ವಣೆಜ",
+        "endsAt": "23.26",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ವಣೆಜ 23.26"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಲಾ 1",
+      "solarYear": 1,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ತುಲಾ",
+      "chandraEntryRashi": "ಸಿಂಹ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ. 12:00 - 01:30",
+      "yamaganda": "ಬೆ.09:00- 10:30",
+      "arthaPrahara": "ಚೆ. 07:30 - 0:0",
+      "shubhaSamaya": "ಬೆ. 02:13 - 03:46"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಮೇಷ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಂಪತ್ತು",
+        "raw": "ವೃಷಭ » ಸಂಪತ್ತು ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ವಿಶ್ರಾಂತಿ",
+        "raw": "ಮಿಥುನ » ವಿಶ್ರಾಂತಿ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಮರೆವು",
+        "raw": "ಕರ್ಕಾಟಕ ಮರೆವು"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಕೋಪ",
+        "raw": "ಸಿಂಹ » ಕೋಪ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಉತ್ಸಾಹ",
+        "raw": "ಕನ್ಯಾ ಉತ್ಸಾಹ :"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ತುಲಾ ೫» ಯಶಸ್ಸು"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ವೃಶ್ಚಿಕ » ಖರ್ಚು"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಧನಸ್ಸು » ಪ್ರತಿರೋಧ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಅನುಕೂಲ",
+        "raw": "ಮಕರ » ಅನುಕೂಲ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ತಾಳ್ಮೆ",
+        "raw": "ಕುಂಭ » ತಾಳ್ಮೆ ."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಮೀನ ». ಲಾಭ"
+      }
+    ]
+  }
+}

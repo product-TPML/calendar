@@ -1,0 +1,172 @@
+{
+  "source": {
+    "image": "data\\2026\\03\\19-03-2026.jpg",
+    "date": "19-03-2026",
+    "dimensions": {
+      "width": 1514,
+      "height": 1060
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaFallback": {
+      "method": "red-channel-4x-psm7",
+      "raw": "ಪತ್ನಕ್ಚಿ, ಕೃಷ್ಣ ಶುಕ್ಲ",
+      "value": "ಶುಕ್ಲ"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "19-03-2026",
+      "quote": "ುಗಾದಿ ನಿಮ್ಮಮನೆಯಲ್ಲಿ ಸಂತೋಷ ಮತ್ತು ಪ್ರೀತಿಯ"
+    },
+    "calendar": {
+      "months": [
+        "ಪುಷ್ಯ/ಮಾಘ"
+      ],
+      "samvatsara": "ವಿಶ್ವಾವಸು",
+      "shakaYear": 1947,
+      "rashi": "ಧನು/ಮಕರ",
+      "sunrise": "06:24",
+      "sunset": "18:30"
+    },
+    "events": [
+      "ಯುಗಾದಿ ಪಾಡ್ಯ",
+      "ಪರಾಭವ ಸಂವತ್ಸರ. ಶಾಲಿವಾಹನ ಶಕೆ",
+      "1948 ಪ್ರಾ. 311 ಮೂಹೂರ್ತ",
+      "ಉತ್ತಮ ದಿನ",
+      "ಅಭ್ಯಂಗಸ್ನಾನ",
+      "ಇಷ್ಟಿ. ದೇವಿ ಶ್ರೀರಾಮ ನವರಾತ್ರಾರಂಭ",
+      "ಗುಡಿ ಪರ್ವ",
+      "ಘಾತಸ್ಥಾಪಾನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಉ.ಭಾ",
+        "endsAt": "28.05",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಅಮಾವಸ್ಯೆ",
+        "endsAt": "06.54",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಶುಕ್ಷ",
+        "endsAt": "25.17",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಕಿಂಸ್ತುಘ್ನ",
+        "endsAt": "17.56",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "ಕರಣ ಕಿಂಸ್ತುಘ್ನ 17.56"
+      },
+      "ayana": "ಉತ್ತರಾಯಣ",
+      "ritu": "ಸೌರ ಶಿಶಿರ",
+      "solarYear": 5,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಮೀನ",
+      "chandraEntryRashi": "ಮೀನ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 01:00 - 03:00",
+      "gulikaKala": "ಚೆ.09:00 - 10:30.",
+      "yamaganda": "ಬೆ. 06:00 - 07:30",
+      "arthaPrahara": "ೆಮ.-03:00 - 04:36",
+      "shubhaSamaya": "ಸ. 11:32 - 01:03"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ವಿಳಂಬ",
+        "raw": "ಮೇಷ ». ವಿಳಂಬ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ವೃಷಭ » ಸಂತೋಷ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಸ್ನೇಹ",
+        "raw": "ಮಿಥುನ » ಸ್ನೇಹ :"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಶ್ರೇಷ್ಠತೆ",
+        "raw": "ಕರ್ಕಾಟಕ ಶ್ರೇಷ್ಠತೆ ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಸಮಸ್ಯೆ",
+        "raw": "ಸಿಂಹ » ಸಮಸ್ಯೆ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಸ್ಪರ್ಧೆ",
+        "raw": "ಕನ್ಯಾ ಸ್ಪರ್ಧೆ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "`ಸಾಲ",
+        "raw": "ತುಲಾ: » `ಸಾಲ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "್ಠಾಾ ಶುಭ",
+        "raw": "ವೃಶ್ಚಿಕ್ಠಾಾ ಶುಭ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಪ್ರತಿಭೆ",
+        "raw": "ಧನಸ್ಸು! . ಪ್ರತಿಭೆ."
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಭಕರ» ಆತಂಕ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "*-ಯಶಸ್ಸು",
+        "raw": "ಕುಂಭ *-ಯಶಸ್ಸು '"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಪ್ರತಿರೋಧ",
+        "raw": "ಮೀನ». ಪ್ರತಿರೋಧ"
+      }
+    ]
+  }
+}

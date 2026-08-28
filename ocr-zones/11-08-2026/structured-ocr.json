@@ -1,0 +1,171 @@
+{
+  "source": {
+    "image": "data\\2026\\08\\11-08-2026.jpg",
+    "date": "11-08-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "sunsetReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "date_right_2.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "11-08-2026",
+      "quote": "ೇನು ಬದಲಾದರೆ, ನಿನ್ನ ಜೀವನವೂ ಬದಲಾಗುತ"
+    },
+    "calendar": {
+      "months": [
+        "ಆಷಾಢ",
+        "ಶ್ರಾವಣ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಕರ್ಕ/ಸಿಂಹ",
+      "sunrise": "06:07",
+      "sunset": "18:42"
+    },
+    "events": [
+      "ಅಮಾವಾಸ್ಗೆ ಪ್ರಾರಂಭ",
+      "ಮಾಸ ಶಿವರಾತ್ರಿ. ಶ್ರೀ ಸಂತ",
+      "ಸಾವತಾ ಮಾಳ ಪು.ತಿ ಸದಾಶಿವ ನಗರ",
+      "ವಡಗಾಂವ",
+      "ಬೆಳಗಾವಿ ಶ್ರೀ ಮಂಗಾಯಿದೇವಿ ಜಾತ್ರೆ. ಕ್ರಾಂತಿಕಾರಿ",
+      "ಖುದಿರಾಮ ಬೋಸ ಬಲಿದಾನದಿನ"
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಪುನರ್ವಸು",
+        "endsAt": "10.10",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಚತುರ್ದಶಿ",
+        "endsAt": "25.54",
+        "nextDay": true,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ಸಿಡಿ 18",
+        "endsAt": "18.52",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಬಿಷ್ಟಿ",
+        "endsAt": "15.23",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ _ ಬಿಷ್ಟಿ 15.23"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ರ್ದಶಿ 25.54",
+      "solarYear": 27,
+      "paksha": "ಕೃಷ್ಣ",
+      "solarRashi": "ಕರ್ಕ",
+      "chandraEntryRashi": "ಕರ್ಕ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 03:00 - 04:30",
+      "gulikaKala": "ಮ.12:00 - 01:30",
+      "yamaganda": "ಬೆ. 09:00 - 10:30",
+      "arthaPrahara": "ಚೆ.07:30-:00",
+      "shubhaSamaya": "ಬೆ. 07:59 - 09:25"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಧೈರ್ಯ",
+        "raw": "ಮೇಷ » ಧೈರ್ಯ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಖರ್ಚು",
+        "raw": "ವೃಷಭ » ಖರ್ಚು"
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಆನಂದ",
+        "raw": "ಮಿಥುನ ». ಆನಂದ"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ಲಾಭ",
+        "raw": "ಕರ್ಕಾಟಕ ಲಾಭ ."
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಯೋಗ",
+        "raw": "ಸಿಂಹ » ಯೋಗ :"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ದುಃಖ",
+        "raw": "ಕನ್ಯಾ ೫ ದುಃಖ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಉತ್ಸಾಹ",
+        "raw": "ತುಲಾ» ಉತ್ಸಾಹ"
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಅಸೂಯೆ",
+        "raw": "ವೃಶ್ಚಿಕ » ಅಸೂಯೆ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಕೋಪ",
+        "raw": "ಧನಸ್ಸು » ಕೋಪ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ಸೌಮ್ಯತೆ",
+        "raw": "ಮಕರ » ಸೌಮ್ಯತೆ"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕುಂಭ » ಯಶಸ್ಸು"
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಅಭಿವೃದ್ದಿ",
+        "raw": "ಮೀನ » ಅಭಿವೃದ್ದಿ ."
+      }
+    ]
+  }
+}

@@ -1,0 +1,170 @@
+{
+    "source":  {
+                   "image":  "data\\2026\\01\\28-01-2026.jpg",
+                   "date":  "28-01-2026",
+                   "dimensions":  {
+                                      "width":  1325,
+                                      "height":  928
+                                  }
+               },
+    "ocr":  {
+                "language":  "kan",
+                "jathaka":  {
+                                "pageSegmentationMode":  13,
+                                "horizontalRange":  [
+                                                        928,
+                                                        1318
+                                                    ],
+                                "verticalOverlapPx":  8
+                            },
+                "bottomTables":  {
+                                     "rowCount":  7,
+                                     "verticalOverlapPx":  6,
+                                     "scale":  2,
+                                     "pageSegmentationMode":  13
+                                 },
+                "pakshaFallback":  {
+                                       "method":  "existing-paksha-ocr",
+                                       "raw":  "ರ್ಸ್‌ ಶುಕ್ಷ",
+                                       "value":  "ಶುಕ್ಲ"
+                                   }
+            },
+    "content":  {
+                    "header":  {
+                                   "date":  "28-01-2026",
+                                   "quote":  "ಹೊಟ್ಟೆ ಹಾಗೆ ಖಾಲಿ ಜೇಬು ಜೀವನದಲ್ಲಿ ಬಹಳಷ್ಟು ಪಾಠ ಕ!"
+                               },
+                    "calendar":  {
+                                     "months":  [
+                                                    "ಪುಷ್ಯ/ಮಾಘ"
+                                                ],
+                                     "samvatsara":  "ವಿಶ್ವಾವಸು",
+                                     "shakaYear":  1947,
+                                     "rashi":  "ಧನು/ಮಕರ",
+                                     "sunrise":  "06:46",
+                                     "sunset":  "18:19"
+                                 },
+                    "events":  [
+                                   "ಲಾಲಾ ಲಜಪತರಾಯ ಜಯಂತಿ",
+                                   "ಸಂಕೇಶ್ವರ ಶಂಕರ",
+                                   "ಲಿಂಗೇಶ್ವರ ರಥ",
+                                   "ಸಂತುಬಾಯಿ ಜಾತ್ರೆ ಕಾಗವಾಡ .",
+                                   "ಗದಗ ಜಿ. ಹುಲಕೋಟೆಇ ಕೈಲಾಸ ಪರ್ವತ ರಾಜೇಶ್ವರಿ",
+                                   "ಬ್ಯಾಡಗಿ ಚೌಡಿ ಓಣಿ ವೀರಭದ್ರೇಶ್ವರ ರಥಗಳು."
+                               ],
+                    "panchanga":  {
+                                      "nakshatra":  {
+                                                        "name":  "ಕೃತ್ತಿಕಾ",
+                                                        "endsAt":  "0.27",
+                                                        "nextDay":  false,
+                                                        "fullDay":  false
+                                                    },
+                                      "tithi":  {
+                                                    "name":  "ದಶಮಿ",
+                                                    "endsAt":  "16.37",
+                                                    "nextDay":  false,
+                                                    "fullDay":  false
+                                                },
+                                      "yoga":  {
+                                                   "name":  "ಜ್ರಹ್ಮಾ",
+                                                   "endsAt":  "23.54",
+                                                   "nextDay":  false,
+                                                   "fullDay":  false
+                                               },
+                                      "karana":  {
+                                                     "name":  "ವಣೆಜ",
+                                                     "endsAt":  "27.17",
+                                                     "nextDay":  true,
+                                                     "fullDay":  false,
+                                                     "raw":  "\u0027ಕರಣ ವಣೆಜ 27.17"
+                                                 },
+                                      "ayana":  "ಉತ್ತರಾಯಣ",
+                                      "ritu":  "ಸೌರ ಶಿಶಿರ",
+                                      "solarYear":  15,
+                                      "paksha":  "ಶುಕ್ಲ",
+                                      "solarRashi":  "ಮಕರ",
+                                      "chandraEntryRashi":  "ವಷಭ"
+                                  },
+                    "timings":  {
+                                    "rahuKala":  "ಮ. 12:00 - 01:30",
+                                    "gulikaKala":  "ಮ. 10:30 - 12:00",
+                                    "yamaganda":  "ಬೆ.07:30-09:00",
+                                    "arthaPrahara":  "ಬಿ. 06:00 - 07:30",
+                                    "shubhaSamaya":  "ಬೆ. 07:13 - 08:42"
+                                },
+                    "jathaka":  [
+                                    {
+                                        "row":  1,
+                                        "rashi":  "ಮೇಷ",
+                                        "prediction":  "ಸಂಪತ್ತು",
+                                        "raw":  "ಮೇಷ ». ಸಂಪತ್ತು"
+                                    },
+                                    {
+                                        "row":  2,
+                                        "rashi":  "ವೃಷಭ",
+                                        "prediction":  "ಭಯ",
+                                        "raw":  "ವೃಷಭ » ಭಯ."
+                                    },
+                                    {
+                                        "row":  3,
+                                        "rashi":  "ಮಿಥುನ",
+                                        "prediction":  "ಅಲೆದಾಟ",
+                                        "raw":  "ಮಿಥುನ » ಅಲೆದಾಟ"
+                                    },
+                                    {
+                                        "row":  4,
+                                        "rashi":  "ಕರ್ಕಾಟಕ",
+                                        "prediction":  "ಮೆಚ್ಚುಗೆ",
+                                        "raw":  "ಕರ್ಕಾಟಕ ಮೆಚ್ಚುಗೆ ."
+                                    },
+                                    {
+                                        "row":  5,
+                                        "rashi":  "ಸಿಂಹ",
+                                        "prediction":  "ನಷ್ಟ",
+                                        "raw":  "ಸಿಂಹ ೫» ನಷ್ಟ :"
+                                    },
+                                    {
+                                        "row":  6,
+                                        "rashi":  "ಕನ್ಯಾ",
+                                        "prediction":  "ದಯೆ",
+                                        "raw":  "ಕನ್ಯಾ ೫ ದಯೆ"
+                                    },
+                                    {
+                                        "row":  7,
+                                        "rashi":  "ತುಲಾ",
+                                        "prediction":  "ಲಾಭ",
+                                        "raw":  "ತುಲಾ ೫» ಲಾಭ"
+                                    },
+                                    {
+                                        "row":  8,
+                                        "rashi":  "ವೃಶ್ಚಿಕ",
+                                        "prediction":  "ಪ್ರಯತ್ನ",
+                                        "raw":  "ವೃಶ್ಚಿಕ » ಪ್ರಯತ್ನ"
+                                    },
+                                    {
+                                        "row":  9,
+                                        "rashi":  "ಧನಸ್ಸು",
+                                        "prediction":  "ಕೋಪ",
+                                        "raw":  "ಧನಸ್ಸು » ಕೋಪ"
+                                    },
+                                    {
+                                        "row":  10,
+                                        "rashi":  "ಮಕರ",
+                                        "prediction":  "ಆಸೆ",
+                                        "raw":  "ಮಕರ ೫ ಆಸೆ"
+                                    },
+                                    {
+                                        "row":  11,
+                                        "rashi":  "ಕುಂಭ",
+                                        "prediction":  "ಪ್ರಗತಿ",
+                                        "raw":  "ಕುಂಭ » ಪ್ರಗತಿ"
+                                    },
+                                    {
+                                        "row":  12,
+                                        "rashi":  "ಮೀನ",
+                                        "prediction":  "ಪ್ರೀತಿ",
+                                        "raw":  "ಮೀನ ». ಪ್ರೀತಿ"
+                                    }
+                                ]
+                }
+}

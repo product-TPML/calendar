@@ -1,0 +1,173 @@
+{
+  "source": {
+    "image": "data\\2026\\09\\17-09-2026.jpg",
+    "date": "17-09-2026",
+    "dimensions": {
+      "width": 1325,
+      "height": 928
+    }
+  },
+  "ocr": {
+    "language": "kan",
+    "jathaka": {
+      "pageSegmentationMode": 13,
+      "horizontalRange": [
+        928,
+        1318
+      ],
+      "verticalOverlapPx": 8
+    },
+    "bottomTables": {
+      "rowCount": 7,
+      "verticalOverlapPx": 6,
+      "scale": 2,
+      "pageSegmentationMode": 13
+    },
+    "pakshaReview": {
+      "method": "observer-visual",
+      "confidence": "high",
+      "source": "bottom_table_2-row-06.png"
+    }
+  },
+  "content": {
+    "header": {
+      "date": "17-09-2026",
+      "quote": "ೇೀವು ಶಾಶತವಲ, ನೀನು ಶಾಶತ ಶಕಿಯು"
+    },
+    "calendar": {
+      "months": [
+        "ಶ್ರಾವಣ/ಭಾದ್ರಪದ"
+      ],
+      "samvatsara": "ಪರಾಭವ",
+      "shakaYear": 1948,
+      "rashi": "ಸಿಂಹ/ಕನ್ಯಾ",
+      "sunrise": "06:08",
+      "sunset": "18:19"
+    },
+    "events": [
+      "ಸೂರ್ಯ ಷಷ್ಠಿ",
+      "ಜ್ಯೇಷ್ಠಾಗಂರಿ ಆಹ್ವಾನ",
+      "ಕಾರ್ತಿಕಸ್ವಾಮಿ",
+      "ದರ್ಶನ",
+      "ವಿಶ್ವ ಕರ್ಮ ದಿನ",
+      "ಬಲರಾಮ ಜಯಂತಿ",
+      "ನಚ್ಚೀಯಾರಗುಡಿ ಕಲ್ಯಾಣ",
+      "ಬೆಟಗೇರಿ ಗದಗ ಕಡಕೋಳ",
+      "ಅವಧೂತ ಅಯ್ಯಪ್ಪಜ್ಜನವರ ಪುಣ್ಯ ತಿಥಿ."
+    ],
+    "panchanga": {
+      "nakshatra": {
+        "name": "ಅನುರಾಧಾ",
+        "endsAt": "19.54",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "tithi": {
+        "name": "ಷಷ್ಠಿ",
+        "endsAt": "10.4",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "yoga": {
+        "name": "ವಿಷ್ಕಂಭ",
+        "endsAt": "12.51",
+        "nextDay": false,
+        "fullDay": false
+      },
+      "karana": {
+        "name": "ಗರಜ",
+        "endsAt": "2.53",
+        "nextDay": false,
+        "fullDay": false,
+        "raw": "'ಕರಣ ಗರಜ 2.53"
+      },
+      "ayana": "ದಕ್ಷಿಣಾಯನ",
+      "ritu": "ಸೌರ ಶರದ",
+      "solarYear": 1,
+      "paksha": "ಶುಕ್ಲ",
+      "solarRashi": "ಸಿಂಹ",
+      "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
+    },
+    "timings": {
+      "rahuKala": "ಮ. 01:30 - 03:00",
+      "gulikaKala": "ಬೆ.9:00 - 10:30.",
+      "yamaganda": "ಬೆ.06:00-07:30",
+      "arthaPrahara": "ಮ. 03:00 - 04:30",
+      "shubhaSamaya": "ಬೆ. 08:24 - 10:10"
+    },
+    "jathaka": [
+      {
+        "row": 1,
+        "rashi": "ಮೇಷ",
+        "prediction": "ಆತಂಕ",
+        "raw": "ಮೇಷ » ಆತಂಕ"
+      },
+      {
+        "row": 2,
+        "rashi": "ವೃಷಭ",
+        "prediction": "ಸಹಾಯ",
+        "raw": "ವೃಷಭ » ಸಹಾಯ ."
+      },
+      {
+        "row": 3,
+        "rashi": "ಮಿಥುನ",
+        "prediction": "ಗಾರವ",
+        "raw": "ಮಿಥುನ ». ಗಾರವ '"
+      },
+      {
+        "row": 4,
+        "rashi": "ಕರ್ಕಾಟಕ",
+        "prediction": "ದಯೆ ್ಪ",
+        "raw": "ಕರ್ಕಾಟಕ ದಯೆ ್ಪ"
+      },
+      {
+        "row": 5,
+        "rashi": "ಸಿಂಹ",
+        "prediction": "ಶಾಂತಿ",
+        "raw": "ಸಿಂಹ ೫» ಶಾಂತಿ"
+      },
+      {
+        "row": 6,
+        "rashi": "ಕನ್ಯಾ",
+        "prediction": "ಪ್ರೋತ್ಸಾಹ",
+        "raw": "ಕನ್ಯಾ» ಪ್ರೋತ್ಸಾಹ"
+      },
+      {
+        "row": 7,
+        "rashi": "ತುಲಾ",
+        "prediction": "ಸಂತೋಷ",
+        "raw": "ತುಲಾ» ಸಂತೋಷ."
+      },
+      {
+        "row": 8,
+        "rashi": "ವೃಶ್ಚಿಕ",
+        "prediction": "ಅಭಿವೃದ್ಧಿ",
+        "raw": "ವೃಶ್ಚಿಕ» ಅಭಿವೃದ್ಧಿ"
+      },
+      {
+        "row": 9,
+        "rashi": "ಧನಸ್ಸು",
+        "prediction": "ಆನಂದ",
+        "raw": "ಧನಸ್ಸು ». ಆನಂದ"
+      },
+      {
+        "row": 10,
+        "rashi": "ಮಕರ",
+        "prediction": "ನಿರಾಶೆ",
+        "raw": "ಮಕರ ೫». ನಿರಾಶೆ '"
+      },
+      {
+        "row": 11,
+        "rashi": "ಕುಂಭ",
+        "prediction": "ಯಶಸ್ಸು",
+        "raw": "ಕುಂಭ » ಯಶಸ್ಸು."
+      },
+      {
+        "row": 12,
+        "rashi": "ಮೀನ",
+        "prediction": "ಚಿಂತೆ",
+        "raw": "ಮೀನ ». ಚಿಂತೆ"
+      }
+    ]
+  }
+}
