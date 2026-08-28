@@ -539,6 +539,18 @@
     var d = parseKey(key); d.setDate(d.getDate() + weeks * 7); return keyFor(d);
   }
 
+  function streamTopOffset(viewId) {
+    var masthead = document.querySelector(".masthead");
+    var toolbar = document.querySelector(viewId + " .stream-toolbar");
+    return (masthead ? masthead.offsetHeight : 0) + (toolbar ? toolbar.offsetHeight : 0) + 12;
+  }
+
+  function scrollToStreamBlock(block, viewId) {
+    var top = block.getBoundingClientRect ? block.getBoundingClientRect().top : (block.offsetTop || 0);
+    var y = top + (window.pageYOffset || window.scrollY || 0) - streamTopOffset(viewId);
+    window.scrollTo(0, Math.max(0, y));
+  }
+
   function bindWeekStream() {
     var el = document.getElementById("weekAgenda");
     if (!el || el._streamBound) return;
@@ -550,7 +562,7 @@
   }
 
   function updateWeekHeader() {
-    var blocks = document.querySelectorAll("#weekAgenda .week-block"), chosen = null, edge = 120;
+    var blocks = document.querySelectorAll("#weekAgenda .week-block"), chosen = null, edge = streamTopOffset("#viewWeek") + 1;
     blocks.forEach(function (block) {
       if (block.getBoundingClientRect().top <= edge) chosen = block;
     });
@@ -610,10 +622,7 @@
     bindWeekStream();
     if (!state.weekHeader) {
       var selectedBlock = document.querySelector('#weekAgenda .week-block[data-start="' + start + '"]');
-      if (selectedBlock) {
-        window.scrollTo(0, Math.max(0, selectedBlock.offsetTop - 70));
-        if (window.scrollBy && selectedBlock.getBoundingClientRect) window.scrollBy(0, selectedBlock.getBoundingClientRect().top - 70);
-      }
+      if (selectedBlock) scrollToStreamBlock(selectedBlock, "#viewWeek");
     }
     updateWeekHeader();
     bindDistrictSelectors();
@@ -686,8 +695,8 @@
   }
 
   function updateMonthHeader() {
-    var blocks = document.querySelectorAll("#monthScroller .month-block"), chosen = null;
-    blocks.forEach(function (block) { if (block.getBoundingClientRect().top <= 120) chosen = block; });
+    var blocks = document.querySelectorAll("#monthScroller .month-block"), chosen = null, edge = streamTopOffset("#viewMonth") + 1;
+    blocks.forEach(function (block) { if (block.getBoundingClientRect().top <= edge) chosen = block; });
     if (!chosen && blocks.length) chosen = blocks[0];
     if (chosen) {
       state.monthHeader = chosen.dataset.month;
@@ -732,10 +741,7 @@
       bindMonthStream();
       if (!state.monthHeader) {
         var selectedMonth = document.querySelector('#monthScroller .month-block[data-month="' + center + '"]');
-        if (selectedMonth) {
-          window.scrollTo(0, Math.max(0, selectedMonth.offsetTop - 70));
-          if (window.scrollBy && selectedMonth.getBoundingClientRect) window.scrollBy(0, selectedMonth.getBoundingClientRect().top - 70);
-        }
+        if (selectedMonth) scrollToStreamBlock(selectedMonth, "#viewMonth");
       }
       updateMonthHeader();
     }
