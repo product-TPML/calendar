@@ -43,13 +43,23 @@ function makeEl(id) {
 }
 
 const els = {};
+const tabEls = {};
+const viewIds = ["viewDay", "viewWeek", "viewMonth", "viewMore"];
 const documentStub = {
   title: "",
   _init: null,
   addEventListener(type, cb) { if (type === "DOMContentLoaded") documentStub._init = cb; },
   getElementById(id) { return (els[id] = els[id] || makeEl(id)); },
   createElement(tag) { return { tagName: tag, value: "", textContent: "" }; },
-  querySelectorAll() { return []; },
+  querySelectorAll(selector) {
+    if (selector === ".tab") return ["day", "week", "month", "more"].map((name) => {
+      const tab = tabEls[name] || (tabEls[name] = makeEl("tab-" + name));
+      tab.dataset.tab = name;
+      return tab;
+    });
+    if (selector === ".view") return viewIds.map((id) => documentStub.getElementById(id));
+    return [];
+  },
   querySelector() { return { scrollTop: 0 }; },
 };
 
@@ -294,10 +304,23 @@ function assert(cond, msg) {
   await tick();
   assert(els.todayContent.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ವಿಶೇಷ ದಿನವಿಲ್ಲ."), "empty PV events message shown");
 
-  console.log("11) PV load failure shows event-data error (no OCR fallback, no crash)");
+  console.log("11) Day/Week/Month navigation and session date behavior");
+  tabEls.week.click();
+  assert(els.weekTitle.textContent.includes("–"), "week header shows start and end dates");
+  assert((els.weekAgenda.innerHTML.match(/class="week-day"/g) || []).length === 7, "week renders seven vertical days");
+  assert(!els.weekAgenda.innerHTML.includes("event-scope"), "week rows avoid repetitive scope tags");
+  tabEls.month.click();
+  assert(els.mastheadDate.textContent.includes("2026"), "month header uses month and year context");
+  assert(els.monthAgenda.innerHTML.includes("agenda-day"), "month agenda groups events by date");
+  tabEls.day.click();
+  assert(els.mastheadDate.textContent.includes(dayNumber(DAY8)), "Day tab preserves selected date");
+  assert(sessionStore.pvDate === DAY8, "selected date is stored in the session");
+
+  console.log("12) PV load failure shows event-data error (no OCR fallback, no crash)");
   for (const k in els) delete els[k];
   calls.length = 0;
   for (const k in pending) delete pending[k];
+  delete sessionStore.pvDate;
   vm.runInThisContext(fs.readFileSync(APP_PATH, "utf8"), { filename: APP_PATH });
   documentStub._init();
   assert(count(PV_URL) === 1, "PV requested on fresh boot");

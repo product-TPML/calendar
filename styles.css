@@ -58,13 +58,18 @@ body {
 }
 .masthead-mid {
   flex: 1; display: flex; flex-direction: column; align-items: center; gap: 0;
-  background: none; border: none; cursor: pointer; padding: 0; font: inherit; color: inherit;
+  background: none; border: none; padding: 0; font: inherit; color: inherit; touch-action: pan-y;
 }
 .brand {
   font-family: var(--font-display); font-weight: 800; font-size: 19px; letter-spacing: .02em;
   color: var(--verm); line-height: 1.1;
 }
 .masthead-date { font-size: 13.5px; color: var(--ink-soft); margin-top: 1px; }
+.today-btn {
+  flex: none; padding: 9px 12px; border: 1px solid var(--verm); border-radius: 999px;
+  background: var(--verm); color: #fff; font: inherit; font-size: 14px; font-weight: 700; cursor: pointer;
+}
+.today-btn:hover { background: var(--verm-deep); }
 
 .icon-btn {
   width: 42px; height: 42px; flex: none;
@@ -163,11 +168,11 @@ body {
 .panga-sub .nd { color: var(--verm); font-weight: 700; }
 /* ---------- Panchanga meta (ಆಯನ · ಸೂರ್ಯ/ಚಂದ್ರ ರಾಶಿ) — matches .panga-card ---------- */
 .panga-meta {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 10px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
   margin-top: 14px;
 }
 .pm-item {
-  flex: 1 1 140px; max-width: 230px;
+  min-width: 0;
   display: flex; flex-direction: column; align-items: center; gap: 2px;
   padding: 11px 13px;
   background: var(--card);
@@ -197,6 +202,8 @@ body {
 }
 .ev-row + .ev-row { border-top: 1px dashed var(--line); }
 .ev-row:hover { background: var(--paper-deep); }
+.event-link { width: 100%; display: flex; align-items: flex-start; gap: 12px; padding: 0; border: 0; background: none; color: inherit; font: inherit; text-align: left; cursor: pointer; }
+.event-link:focus-visible { outline: 2px solid var(--verm); outline-offset: 3px; border-radius: 6px; }
 .ev-mark {
   flex: none; width: 9px; height: 9px; margin-top: 7px;
   background: var(--gold);
@@ -246,7 +253,7 @@ body {
   flex: 1; min-width: 0; max-width: 260px;
   padding: 8px 32px 8px 12px;
   font: inherit; font-size: 15px; color: var(--ink);
-  background: var(--card) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236f5a43' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center / 14px 14px;
+  background: var(--card);
   border: 1px solid var(--line); border-radius: 12px;
   cursor: pointer;
 }
@@ -260,6 +267,19 @@ body {
   border-radius: 10px;
   padding: 10px 12px;
 }
+.scope-state .ev-mark { background: var(--green); }
+.scope-district .ev-mark { background: var(--verm); }
+.ev-when { display: block; color: var(--ink-soft); font-size: .82em; }
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+.unavailable-day {
+  margin-top: 14px; padding: 20px; text-align: center; background: var(--card);
+  border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+.unavailable-day strong { color: var(--verm-deep); }
+.unavailable-day p { margin: 6px 0 0; color: var(--ink-soft); font-size: 14px; }
 
 /* ---------- Timings + timeline ---------- */
 .timeline { margin: 14px 0 4px; }
@@ -319,6 +339,7 @@ body {
 .jr .jr-p { color: var(--verm-deep); font-weight: 600; }
 
 /* ---------- Month view ---------- */
+.period-head, .month-head { position: sticky; top: 0; z-index: 2; background: var(--paper); }
 .month-head { display: flex; align-items: center; gap: 8px; margin: 2px 0 10px; }
 .month-title { flex: 1; text-align: center; margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 21px; }
 .week-row, .month-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
@@ -335,11 +356,10 @@ body {
 .mday.sel { background: var(--verm); color: #fff; border-color: var(--verm); }
 .mday.today { box-shadow: inset 0 0 0 2px var(--gold); }
 .mday.sel.today { box-shadow: inset 0 0 0 2px #fff, 0 0 0 2px var(--gold); }
-.mday.fest::after {
-  content: ""; position: absolute; left: 50%; bottom: 4px; transform: translateX(-50%);
-  width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
-}
-.mday.sel.fest::after { background: #fff; }
+.mday-dots { position: absolute; left: 0; right: 0; bottom: 4px; display: flex; justify-content: center; gap: 4px; }
+.scope-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--verm); }
+.scope-dot.state { background: var(--green); }
+.mday.sel .scope-dot { box-shadow: 0 0 0 1px #fff; }
 .month-note { text-align: center; font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
 .dot-legend {
   display: inline-block; width: 8px; height: 8px; border-radius: 50%;
@@ -356,6 +376,33 @@ body {
   box-shadow: var(--shadow);
 }
 .month-agenda .ev-section-title { margin-bottom: 10px; }
+.toolbar-row { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; }
+.toolbar-row label { font-size: 13px; font-weight: 700; color: var(--ink-soft); white-space: nowrap; }
+.toolbar-row .district-select { max-width: none; }
+.month-agenda-list { padding: 0 12px; }
+.agenda-day + .agenda-day { border-top: 1px dashed var(--line); }
+.agenda-day h3 { margin: 0; padding: 10px 2px 4px; font-size: 15px; }
+.agenda-scope { margin-top: 4px; }
+.agenda-scope + .agenda-scope { border-top: 1px dashed var(--line); }
+.agenda-scope h4 { margin: 7px 2px 0; color: var(--verm); font-size: 13px; }
+.agenda-scope.statewide h4 { color: var(--green); }
+.agenda-day-link, .week-day-link {
+  padding: 0; border: 0; background: none; color: var(--verm-deep); font: inherit; font-weight: 700; cursor: pointer;
+}
+.agenda-day .ev-row { padding-left: 4px; padding-right: 4px; }
+
+/* ---------- Week view ---------- */
+.week-agenda { display: grid; gap: 12px; }
+.week-day { padding: 12px 14px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+.week-day-title { margin: 0 0 8px; font-family: var(--font-display); font-size: 20px; }
+.week-day-title span { color: var(--ink-soft); }
+.week-scope { margin-top: 10px; border-top: 1px dashed var(--line); }
+.week-scope h4 { margin: 9px 0 2px; font-size: 14px; color: var(--verm); }
+.week-scope.statewide h4 { color: var(--green); }
+.week-scope .ev-row { padding-left: 4px; padding-right: 4px; }
+.scope-legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 12px; color: var(--ink-soft); font-size: 13px; }
+.scope-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.section-fab, .section-menu { display: none; }
 
 /* ---------- Rashi view ---------- */
 .view-title { margin: 4px 0 2px; font-family: var(--font-display); font-weight: 800; font-size: 24px; color: var(--verm); }
@@ -406,6 +453,9 @@ body {
 .tab:focus-visible, .icon-btn:focus-visible, .mday:focus-visible, .card-toggle:focus-visible {
   outline: 2px solid var(--verm); outline-offset: 2px; border-radius: 8px;
 }
+.today-btn:focus-visible, .district-select:focus-visible, .week-day-link:focus-visible, .agenda-day-link:focus-visible, .section-fab:focus-visible, .section-menu button:focus-visible {
+  outline: 2px solid var(--verm); outline-offset: 2px;
+}
 
 /* ---------- Big type (accessibility) ---------- */
 body.big { font-size: 20px; }
@@ -421,6 +471,20 @@ body.big .mday { font-size: 19px; }
    sunrise → kala → sunset list with no text crammed into thin bars. */
 @media (max-width: 759px) {
   .timeline { display: none; }
+  .panga-meta { gap: 6px; }
+  .pm-item { padding: 10px 5px; }
+  .section-fab {
+    display: none; position: fixed; right: 16px; bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom) + 14px);
+    z-index: 25; padding: 10px 14px; border: 1px solid var(--verm); border-radius: 999px;
+    background: var(--verm); color: #fff; font: inherit; font-size: 13px; font-weight: 700; box-shadow: var(--shadow);
+  }
+  .section-fab.is-visible { display: block; }
+  .section-menu {
+    position: fixed; right: 16px; bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom) + 62px);
+    z-index: 25; display: grid; gap: 4px; padding: 8px; background: var(--card);
+    border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow);
+  }
+  .section-menu button { padding: 7px 10px; text-align: left; border: 0; background: none; color: var(--ink); font: inherit; cursor: pointer; }
 }
 
 /* ---------- Desktop ---------- */

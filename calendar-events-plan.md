@@ -59,9 +59,11 @@ is reachable through normal scrolling and the Day section-jump control.
 ### Masthead
 
 - Remove the redundant `ನಿತ್ಯ ಪಂಚಾಂಗ` heading/brand treatment.
-- Make the selected date the visual focus: large day number with weekday and
-  month/year stacked beside it.
-- Keep previous/next day controls and add a prominent `ಇಂದು` button.
+- Use one contextual sticky masthead: Day shows the selected date, Week shows
+  the full Sunday–Saturday date range, and Month shows month/year. Do not render
+  a duplicate period header below it.
+- Make the active period the visual focus and keep previous/next period controls
+  plus a prominent `ಇಂದು` button.
 - Do not turn day number, weekday, and month/year into separate view-navigation
   buttons. Day, Week, and Month are selected through the bottom navigation.
 - Make the date area horizontally swipeable: left advances one day and right
@@ -131,7 +133,7 @@ equal columns for the available values.
 - Use a vermillion left border and dot for district events and green for
   Karnataka-wide events.
 - Preserve grouped headings and text labels so meaning never depends on color.
-- Keep the week header sticky while scrolling.
+- Keep the contextual masthead sticky while scrolling.
 - Clicking a day heading or event selects that date and opens Day.
 - Swipe the week header left/right to move exactly one seven-day week backward
   or forward while retaining the same weekday as the selected date.
@@ -169,6 +171,7 @@ equal columns for the available values.
   to users.
 - Preserve assumed/confirmed relevance internally for editorial review and QA.
 - Add a compact legend where the two event colors are first shown.
+- Use grouped headings instead of repeating scope tags on every event row.
 - Never use color as the only distinction; retain headings, labels, and text.
 
 ### Wireframes

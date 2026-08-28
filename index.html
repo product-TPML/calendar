@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#c8402e">
 <meta name="description" content="ಕನ್ನಡ ಪಂಚಾಂಗ — ದೈನಂದಿನ ತಿಥಿ, ನಕ್ಷತ್ರ, ಹಬ್ಬಗಳು, ಶುಭ ಸಮಯ ಮತ್ತು ರಾಶಿ ಭವಿಷ್ಯ">
-<title>ನಿತ್ಯ ಪಂಚಾಂಗ — Kannada Daily Panchanga</title>
+<title>ಕನ್ನಡ ಪಂಚಾಂಗ — Kannada Panchanga</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500;700;800&family=Noto+Sans+Kannada:wght@400;500;700&display=swap" rel="stylesheet">
@@ -16,28 +16,50 @@
 
   <header class="masthead">
     <button id="prevDay" class="icon-btn" type="button" aria-label="ಹಿಂದಿನ ದಿನ">‹</button>
-    <button id="brand" class="masthead-mid" type="button" title="ನಿಜವಾದ ದತ್ತಾಂಶ ದಿನಕ್ಕೆ ಹೋಗಿ">
-      <span class="brand">ನಿತ್ಯ ಪಂಚಾಂಗ</span>
+    <div id="mastheadDateBlock" class="masthead-mid" aria-live="polite">
+      <span class="brand">ಕನ್ನಡ ಪಂಚಾಂಗ</span>
       <span id="mastheadDate" class="masthead-date"></span>
-    </button>
+    </div>
     <button id="nextDay" class="icon-btn" type="button" aria-label="ಮುಂದಿನ ದಿನ">›</button>
+    <button id="todayBtn" class="today-btn" type="button">ಇಂದು</button>
   </header>
 
   <main class="main">
 
-    <section id="viewToday" class="view">
+    <section id="viewDay" class="view">
       <div id="todayContent"></div>
     </section>
 
+    <section id="viewWeek" class="view" hidden>
+      <div id="weekHead" class="period-head" hidden>
+        <button id="prevWeek" class="icon-btn" type="button" aria-label="ಹಿಂದಿನ ವಾರ">‹</button>
+        <h2 id="weekTitle" class="month-title"></h2>
+        <button id="nextWeek" class="icon-btn" type="button" aria-label="ಮುಂದಿನ ವಾರ">›</button>
+      </div>
+      <div class="toolbar-row">
+        <label for="weekDistrictSelect">ಜಿಲ್ಲೆ</label>
+        <select id="weekDistrictSelect" class="district-select" name="weekDistrict"></select>
+      </div>
+      <div class="scope-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ">
+        <span><i class="scope-dot district"></i> ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span>
+        <span><i class="scope-dot state"></i> ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span>
+      </div>
+      <div id="weekAgenda" class="week-agenda"></div>
+    </section>
+
     <section id="viewMonth" class="view" hidden>
-      <div class="month-head">
+      <div id="monthHead" class="month-head" hidden>
         <button id="prevMonth" class="icon-btn" type="button" aria-label="ಹಿಂದಿನ ತಿಂಗಳು">‹</button>
         <h2 id="monthTitle" class="month-title"></h2>
         <button id="nextMonth" class="icon-btn" type="button" aria-label="ಮುಂದಿನ ತಿಂಗಳು">›</button>
       </div>
+      <div class="toolbar-row">
+        <label for="monthDistrictSelect">ಜಿಲ್ಲೆ</label>
+        <select id="monthDistrictSelect" class="district-select" name="monthDistrict"></select>
+      </div>
       <div id="weekRow" class="week-row"></div>
       <div id="monthGrid" class="month-grid"></div>
-      <p class="month-note">ಹಬ್ಬದ ದಿನಗಳನ್ನು <span class="dot-legend" aria-hidden="true"></span> ಕೇಸರಿ ಚುಕ್ಕಿಯಿಂದ ಗುರುತಿಸಲಾಗಿದೆ.</p>
+      <p class="month-note">ಕೆಂಪು ಚುಕ್ಕೆ: ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು · ಹಸಿರು ಚುಕ್ಕೆ: ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</p>
 
       <section class="month-agenda" aria-labelledby="monthAgendaTitle">
         <h2 class="ev-section-title" id="monthAgendaTitle">ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿ</h2>
@@ -45,15 +67,13 @@
       </section>
     </section>
 
-    <section id="viewRashi" class="view" hidden>
-      <h2 class="view-title">ರಾಶಿ ಭವಿಷ್ಯ</h2>
-      <p id="rashiSub" class="view-sub"></p>
-      <div id="rashiGrid" class="rashi-grid"></div>
-    </section>
-
     <section id="viewMore" class="view" hidden>
       <h2 class="view-title">ಸೆಟ್ಟಿಂಗ್ಸ್</h2>
       <div class="card settings">
+        <label class="setting-row" for="settingsDistrictSelect">
+          <span>ಜಿಲ್ಲೆ <small>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ತೋರಿಸಿ</small></span>
+          <select id="settingsDistrictSelect" class="district-select" name="settingsDistrict"></select>
+        </label>
         <label class="setting-row" for="fontBig">
           <span>ದೊಡ್ಡ ಅಕ್ಷರ <small>ಹಿರಿಯ ಓದುಗರಿಗೆ ಅನುಕೂಲ</small></span>
           <input type="checkbox" id="fontBig" class="switch">
@@ -65,21 +85,30 @@
       </div>
       <div class="card about">
         <p>ಇದು ಕನ್ನಡ ಪಂಚಾಂಗದ ದೈನಂದಿನ ಮಾಹಿತಿಯನ್ನು ಸರಳವಾಗಿ ತೋರಿಸುವ ವೆಬ್ ಆ್ಯಪ್.</p>
-        <p>ದತ್ತಾಂಶ ಮೂಲ: <code>ocr-zones/06-04-2026/structured-ocr.json</code> (OCR ಪಡೆದದ್ದು).</p>
+        <p>ದತ್ತಾಂಶ ಮೂಲ: PV ಕಾರ್ಯಕ್ರಮಗಳ JSON ಮತ್ತು ದಿನದ OCR ದಾಖಲೆಗಳು.</p>
       </div>
     </section>
 
   </main>
 
+  <button id="sectionFab" class="section-fab" type="button" aria-expanded="false" aria-controls="sectionMenu">ವಿಭಾಗಗಳು</button>
+  <div id="sectionMenu" class="section-menu" hidden>
+    <button type="button" data-target="districtEventsTitle">ಹಬ್ಬಗಳು</button>
+    <button type="button" data-target="panchangaSection">ಪಂಚಾಂಗ</button>
+    <button type="button" data-target="toggle-timings">ಸಮಯಗಳು</button>
+    <button type="button" data-target="toggle-jathaka">ರಾಶಿ ಭವಿಷ್ಯ</button>
+    <button type="button" data-target="viewDay">ಮೇಲಕ್ಕೆ</button>
+  </div>
+
   <nav class="tabbar" aria-label="ಮುಖ್ಯ ಟ್ಯಾಬ್ಗಳು">
-    <button class="tab is-active" data-tab="today" type="button" aria-current="page">
-      <span class="tab-ico" aria-hidden="true">◐</span><span>ಇಂದು</span>
+    <button class="tab is-active" data-tab="day" type="button" aria-current="page">
+      <span class="tab-ico" aria-hidden="true">◐</span><span>ದಿನ</span>
+    </button>
+    <button class="tab" data-tab="week" type="button">
+      <span class="tab-ico" aria-hidden="true">☷</span><span>ವಾರ</span>
     </button>
     <button class="tab" data-tab="month" type="button">
       <span class="tab-ico" aria-hidden="true">▦</span><span>ತಿಂಗಳು</span>
-    </button>
-    <button class="tab" data-tab="rashi" type="button">
-      <span class="tab-ico" aria-hidden="true">☉</span><span>ರಾಶಿ</span>
     </button>
     <button class="tab" data-tab="more" type="button">
       <span class="tab-ico" aria-hidden="true">⚙</span><span>ಹೆಚ್ಚು</span>

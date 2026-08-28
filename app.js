@@ -1,49 +1,10 @@
-/* ನಿತ್ಯ ಪಂಚಾಂಗ — plain JS, no dependencies.
+/* ಕನ್ನಡ ಪಂಚಾಂಗ — plain JS, no dependencies.
    Data source: ocr-zones/<DD-MM-YYYY>/structured-ocr.json (per-date fetch,
-   cached in state.data; 06-04 offline/file:// falls back to FALLBACK inline). */
+   cached in state.data). */
 (function () {
   "use strict";
 
-  var FALLBACK_KEY = "06-04-2026";
   var DEFAULT_KEY = keyFor(new Date());
-
-  /* ---------------- Inline fallback (same day as the JSON) ---------------- */
-  var FALLBACK = {
-    key: FALLBACK_KEY,
-    calendar: {
-      months: ["ಚೈತ್ರ", "ವೈಶಾಖ"],
-      samvatsara: "ಪರಾಭವ",
-      shakaYear: 1948,
-      sunrise: "06:12",
-      sunset: "18:31"
-    },
-    events: [
-      "ಅನಸೂಯಾ ಜಯಂತಿ",
-      "ಇಂಚಗೇರಿ ಗುರುಪುತ್ರೇಶ್ವರ ಮಹಾ ಜಯಂತಿ",
-      "ಖಂಡೋಬಾ ಜಾತ್ರೆ — ಬೋರ-ಗಾಂವ್, ತಾ. ಚಿಕ್ಕೋಡಿ",
-      "ಸುರಪೂರ ಜಾತ್ರೆ — ತಾ. ಹಿಗ್ಗಡಿಹಾಳ",
-      "ಶ್ರೀ ಸದಾನಂದ ಕೃಷ್ಣಮಹಾ ಜಾತ್ರೆ"
-    ],
-    panchanga: {
-      tithi:     { name: "ಚತುರ್ಥಿ", paksha: "ಕೃಷ್ಣ", ends: 14.11, nextDay: false },
-      nakshatra: { name: "ಅನುರಾಧ", ends: 26.57, nextDay: true },
-      yoga:      { name: "ಸಿದ್ಧಿ", ends: 14.44, nextDay: false },
-      karana:    { name: "ಕೌಲವ", ends: 27.22, nextDay: true },
-      ayana: "ಉತ್ತರಾಯಣ", ritu: "ವಸಂತ", solarRashi: "ಮೀನ", chandraRashi: "ವೃಶ್ಚಿಕ"
-    },
-    timings: [
-      { name: "ರಾಹು ಕಾಲ",   from: "07:30", to: "09:00", tone: "bad" },
-      { name: "ಅರ್ಥ ಪ್ರಹರ", from: "09:00", to: "10:30", tone: "mid" },
-      { name: "ಯಮಗಂಡ",      from: "10:30", to: "12:00", tone: "bad" },
-      { name: "ಗುಳಿಕ ಕಾಲ",   from: "13:30", to: "15:00", tone: "bad" },
-      { name: "ಶುಭ ಸಮಯ",     from: "15:19", to: "17:07", tone: "good" }
-    ],
-    jathaka: [
-      ["ಮೇಷ", "ಸಂತೋಷ"], ["ವೃಷಭ", "ಪ್ರತಿರೋಧ"], ["ಮಿಥುನ", "ಯಶಸ್ಸು"], ["ಕರ್ಕಾಟಕ", "ಪ್ರಗತಿ"],
-      ["ಸಿಂಹ", "ಸ್ನೇಹ"], ["ಕನ್ಯಾ", "ನಿರಾಶೆ"], ["ತುಲಾ", "ಲಾಭ"], ["ವೃಶ್ಚಿಕ", "ಪ್ರೋತ್ಸಾಹ"],
-      ["ಧನಸ್ಸು", "ಸಂತೋಷ"], ["ಮಕರ", "ಅನಾರೋಗ್ಯ"], ["ಕುಂಭ", "ಕೀರ್ತಿ"], ["ಮೀನ", "ಅಭಿವೃದ್ಧಿ"]
-    ]
-  };
 
   /* ---------------- Unavailable record (no fabricated data) ---------------- */
   function unavailableDay(key) {
@@ -55,8 +16,8 @@
   }
 
   /* ---------------- State & helpers ---------------- */
-  var state = { key: DEFAULT_KEY, data: {}, pending: {}, monthLoads: {}, monthSeq: 0, tab: "today", big: false, kn: false, loading: false, seq: 0,
-    pv: null, pvIndex: {}, pvRecords: [], pvError: false, pvPending: null, district: "" };
+  var state = { key: DEFAULT_KEY, data: {}, pending: {}, tab: "day", big: false, kn: false, loading: false, seq: 0,
+    pv: null, pvIndex: {}, pvRecords: [], pvError: false, pvPending: null, pvQA: [], district: "" };
 
   var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
   var MONTHS = ["ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್"];
@@ -67,6 +28,11 @@
   function keyFor(d) { return pad(d.getDate()) + "-" + pad(d.getMonth() + 1) + "-" + d.getFullYear(); }
   function kn(s) { return state.kn ? String(s).replace(/\d/g, function (d) { return KN_DIGITS[+d]; }) : String(s); }
   function dayData(key) { return state.data[key] || unavailableDay(key); }
+  function validKey(key) {
+    if (!/^\d{2}-\d{2}-\d{4}$/.test(String(key || ""))) return false;
+    var p = String(key).split("-"), d = +p[0], m = +p[1], y = +p[2];
+    return y >= 1900 && m >= 1 && m <= 12 && d >= 1 && d <= daysInMonth(y, m) && keyFor(new Date(y, m - 1, d)) === key;
+  }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
   /* ---------------- PV calendar data (district festival sheets) ----------------
@@ -93,18 +59,35 @@
 
   /* Index every JSON record by the DD-MM-YYYY keys it is active on. date_end is
      inclusive: a record is active on every date from start through end. */
+  function isValidIso(iso) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(iso)) return false;
+    var p = iso.split("-"), y = +p[0], m = +p[1], d = +p[2];
+    return y >= 1900 && m >= 1 && m <= 12 && d >= 1 && d <= daysInMonth(y, m);
+  }
+
+  function isoDistance(start, end) {
+    var count = 0, iso = start;
+    while (iso !== end && count <= 366) { iso = addDaysIso(iso, 1); count++; }
+    return iso === end ? count + 1 : Infinity;
+  }
+
   function indexPV(json) {
-    var index = {}, records = [];
+    var index = {}, records = [], qa = [];
     var sheets = (json && json.sheets) || {};
     Object.keys(sheets).forEach(function (district) {
       (sheets[district] || []).forEach(function (rec) {
         var start = String(rec.date || "").trim();
-        if (!start) return;
+        if (!isValidIso(start)) { qa.push({ district: district, record: rec, reason: "invalid start date" }); return; }
         var end = String(rec.date_end || rec.date || "").trim();
+        if (!isValidIso(end) || end < start || isoDistance(start, end) > 366) {
+          qa.push({ district: district, record: rec, reason: "invalid date range" });
+          return;
+        }
         var r = {
           sourceDistrict: district,
           dateStart: start,
           dateEnd: end,
+          rawDate: rec.date,
           title: String(rec.name_of_festival || ""),
           place: String(rec.place || ""),
           scope: String(rec.relevance || "")
@@ -118,7 +101,7 @@
         }
       });
     });
-    return { index: index, records: records };
+    return { index: index, records: records, qa: qa };
   }
 
   function fetchPV() {
@@ -132,6 +115,7 @@
         state.pv = json;
         state.pvIndex = idx.index;
         state.pvRecords = idx.records;
+        state.pvQA = idx.qa;
         return json;
       })
       .catch(function () { state.pvError = true; return null; })
@@ -158,9 +142,12 @@
       (state.district && r.sourceDistrict === state.district && r.scope !== "Relevant for Karnataka");
   }
 
-  function pvRow(r) {
+  function pvRow(r, when, dayKey) {
     var place = r.place ? ' <span class="ev-place">' + esc(r.place) + '</span>' : "";
-    return '<li class="ev-row"><span class="ev-mark" aria-hidden="true"></span><span class="ev-text">' + esc(r.title) + place + '</span></li>';
+    var scope = r.scope === "Relevant for Karnataka" ? "state" : "district";
+    var open = dayKey ? '<button type="button" class="event-link" data-day="' + dayKey + '">' : "";
+    var close = dayKey ? '</button>' : "";
+    return '<li class="ev-row event-row scope-' + scope + '">' + open + '<span class="ev-mark" aria-hidden="true"></span><span class="ev-text">' + esc(r.title) + place + (when ? ' <span class="ev-when">' + esc(when) + '</span>' : "") + '</span>' + close + '</li>';
   }
 
   /* Compact/expand list for the new district/state containers (unique ids). */
@@ -196,9 +183,9 @@
     }).join("");
   }
 
-  function eventGroupHTML(id, title, records, stateGroup) {
+  function eventGroupHTML(id, title, records, stateGroup, headingExtra) {
     return '<section class="ev-section' + (stateGroup ? " state" : "") + '" aria-labelledby="' + id + 'Title">' +
-      '<h3 class="ev-section-title" id="' + id + 'Title">' + title + '</h3>' +
+      '<div class="ev-section-head"><h3 class="ev-section-title" id="' + id + 'Title">' + title + '</h3>' + (headingExtra || "") + '</div>' +
       '<div id="' + id + '" class="ev-container">' + pvListHTML(records) + '</div></section>';
   }
 
@@ -207,9 +194,8 @@
   function pvEventsHTML(key) {
     if (state.pvError) return PV_ERROR;
     if (!state.pv) return PV_LOADING;
-    return '<div class="district-pick"><label for="districtSelect">ಜಿಲ್ಲೆ</label>' +
-      '<select id="districtSelect" class="district-select" name="district">' + districtOptionsHTML() + '</select></div>' +
-      eventGroupHTML("districtEvents", "ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು", districtEventsFor(key), false) +
+    var selector = '<label class="sr-only" for="districtSelect">ಜಿಲ್ಲೆ ಆಯ್ಕೆ</label><select id="districtSelect" class="district-select" name="district">' + districtOptionsHTML() + '</select>';
+    return eventGroupHTML("districtEvents", "ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು", districtEventsFor(key), false, selector) +
       eventGroupHTML("stateEvents", "ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು", stateEventsFor(key), true);
   }
 
@@ -265,10 +251,13 @@
 
   /* Navigate to a date: update key, show loading immediately, then fetch &
      cache the record unless it is already cached. */
-  function goto(key) {
+  function goto(key, loadDay) {
     state.key = key;
+    saveDate(key);
     renderMasthead();
-    if (state.data[key]) { renderActive(); return; }
+    if (loadDay === undefined) loadDay = state.tab === "day";
+    if (!loadDay) { state.loading = false; renderActive(); return; }
+    if (state.data[key]) { state.loading = false; renderActive(); return; }
     state.loading = true;
     renderActive();
     fetchDate(key);
@@ -282,7 +271,7 @@
     state.pending[key] = fetch("ocr-zones/" + key + "/structured-ocr.json")
       .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
       .then(function (json) { return normalize(json, key); })
-      .catch(function () { return (key === FALLBACK_KEY) ? FALLBACK : unavailableDay(key); })
+      .catch(function () { return unavailableDay(key); })
       .then(function (record) {
         state.data[key] = record;
         delete state.pending[key];
@@ -295,27 +284,6 @@
     var seq = ++state.seq;
     fetchRecord(key).then(function () {
       if (seq === state.seq) { state.loading = false; renderAll(); }
-    });
-  }
-
-  function monthId(year, month) { return year + "-" + month; }
-
-  function preloadMonth(year, month) {
-    var id = monthId(year, month);
-    if (state.monthLoads[id]) return;
-    state.monthLoads[id] = true;
-    var seq = ++state.monthSeq;
-    var days = new Date(year, month + 1, 0).getDate();
-    var keys = [];
-    for (var day = 1; day <= days; day++) {
-      var key = keyFor(new Date(year, month, day));
-      if (!state.data[key]) keys.push(key);
-    }
-    Promise.all(keys.map(fetchRecord)).then(function () {
-      var current = parseKey(state.key);
-      if (seq === state.monthSeq && state.tab === "month" && current.getFullYear() === year && current.getMonth() === month) {
-        renderMonth();
-      }
     });
   }
 
@@ -388,18 +356,10 @@
       document.getElementById("todayContent").innerHTML = LOADING_HTML;
     } else {
       var d = dayData(state.key);
-      var dt = parseKey(state.key);
-      var heroTop = '<div class="hero-top">' +
-        '<span class="hero-num">' + kn(dt.getDate()) + '</span>' +
-        '<span class="hero-when">' +
-          '<span class="hero-weekday">' + WEEKDAYS[dt.getDay()] + '</span>' +
-          '<span class="hero-month">' + MONTHS[dt.getMonth()] + ' ' + kn(dt.getFullYear()) + '</span>' +
-        '</span>' +
-      '</div>';
       if (d.unavailable) {
         document.getElementById("todayContent").innerHTML =
-          '<div class="hero">' + heroTop +
-            '<p class="empty-note">ಈ ದಿನದ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ</p>' +
+          dateContextHTML({}) + '<div class="unavailable-day" role="status">' +
+            '<strong>ಈ ದಿನದ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ</strong><p>ಈ ದಿನದ ಪೂರಕ ಪಂಚಾಂಗ ವಿವರ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</p>' +
           '</div>';
       } else {
         var cal = d.calendar, pan = d.panchanga;
@@ -412,7 +372,7 @@
         if (cal.shakaYear != null) meta.push("ಶಕ " + kn(cal.shakaYear));
         if (cal.months.length) meta.push(esc(cal.months.join("–")));
 
-        var panga = '<div class="panga-grid">' +
+        var panga = '<div id="panchangaSection" class="panga-grid" tabindex="-1">' +
           pc("ತಿಥಿ", pan.tithi.name, (pan.tithi.paksha ? pan.tithi.paksha + " ಪಕ್ಷ · " : "") + "ಮುಗಿಯುವುದು " + fmtEnd(pan.tithi.ends, pan.tithi.nextDay), true, ICONS.tithi) +
           pc("ನಕ್ಷತ್ರ", pan.nakshatra.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.nakshatra.ends, pan.nakshatra.nextDay), true, ICONS.nakshatra) +
           pc("ಯೋಗ", pan.yoga.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.yoga.ends, pan.yoga.nextDay), false, ICONS.yoga) +
@@ -420,11 +380,9 @@
           '</div>' + pangaMetaHTML(pan);
 
         document.getElementById("todayContent").innerHTML =
-          '<div class="hero">' + heroTop +
-            '<p class="hero-meta">' + meta.join(" · ") + '</p>' +
-          '</div>' + sun +
-          panga +
+          dateContextHTML(cal, meta) +
           card("ಇಂದಿನ ಹಬ್ಬಗಳು / ವಿಶೇಷ ದಿನಗಳು", pvEventsHTML(state.key), "events", false, ICONS.diya) +
+          panga + sun +
           card("ಸಮಯಗಳು — ಕಾಲ", timingsHTML(d), "timings") +
           card("ರಾಶಿ ಭವಿಷ್ಯ", jathakaHTML(d), "jathaka", true);
 
@@ -434,6 +392,16 @@
         bindEventCardUI();
       }
     }
+  }
+
+  function dateContextHTML(cal, meta) {
+    var items = meta || [];
+    if (!items.length && cal) {
+      if (cal.samvatsara) items.push(esc(cal.samvatsara) + " ನಾಮ ಸಂವತ್ಸರ");
+      if (cal.shakaYear != null) items.push("ಶಕ " + kn(cal.shakaYear));
+      if (cal.months && cal.months.length) items.push(esc(cal.months.join("–")));
+    }
+    return '<section class="date-context" aria-label="ದಿನದ ಕಾಲದ ಸಂದರ್ಭ"><p>' + (items.join(" · ") || "ದಿನದ ವಿವರ") + '</p></section>';
   }
 
   /* Three labeled panchanga metadata items. Empty values are omitted entirely —
@@ -516,11 +484,63 @@
     }).join("") + "</div>";
   }
 
+  /* ---------------- Render: Week ---------------- */
+  function weekStart(key) {
+    var d = parseKey(key);
+    d.setDate(d.getDate() - d.getDay());
+    return d;
+  }
+
+  function shiftWeek(n) {
+    var d = parseKey(state.key);
+    d.setDate(d.getDate() + n * 7);
+    goto(keyFor(d), false);
+  }
+
+  function weekAgendaHTML(key) {
+    var d = parseKey(key), district = districtEventsFor(key), statewide = stateEventsFor(key);
+    var content = '<h3 class="week-day-title"><button type="button" class="week-day-link" data-day="' + key + '">' +
+      WEEKDAYS[d.getDay()] + ' <span>' + kn(d.getDate()) + '</span></button></h3>';
+    if (!district.length && !statewide.length) return '<section class="week-day" data-day="' + key + '">' + content + '<p class="empty-note">ಈ ದಿನ ಯಾವುದೇ ವಿಶೇಷ ದಿನವಿಲ್ಲ.</p></section>';
+    return '<section class="week-day" data-day="' + key + '">' + content +
+      '<div class="week-scope district"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + (district.length ? district.map(function (r) { return pvRow(r, "", key); }).join("") : '<li class="empty-note">ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.</li>') + '</ul></div>' +
+      '<div class="week-scope statewide"><h4>ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + (statewide.length ? statewide.map(function (r) { return pvRow(r, "", key); }).join("") : '<li class="empty-note">ಈ ದಿನ ಯಾವುದೇ ಕರ್ನಾಟಕ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.</li>') + '</ul></div>' +
+      '</section>';
+  }
+
+  function renderWeek() {
+    var start = weekStart(state.key), end = new Date(start);
+    end.setDate(end.getDate() + 6);
+    var title = MONTHS[start.getMonth()] + " " + kn(start.getFullYear());
+    if (start.getMonth() !== end.getMonth()) title += " – " + MONTHS[end.getMonth()] + " " + kn(end.getFullYear());
+    document.getElementById("weekTitle").textContent = title;
+    if (state.pvError) {
+      document.getElementById("weekAgenda").innerHTML = PV_ERROR;
+      document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML();
+      return;
+    }
+    if (!state.pv) {
+      document.getElementById("weekAgenda").innerHTML = PV_LOADING;
+      document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML();
+      return;
+    }
+    document.getElementById("weekAgenda").innerHTML = Array.from({ length: 7 }, function (_, i) {
+      var d = new Date(start); d.setDate(d.getDate() + i); return weekAgendaHTML(keyFor(d));
+    }).join("");
+    document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML();
+    document.querySelectorAll(".week-day-link").forEach(function (b) {
+      b.addEventListener("click", function () { openDay(b.dataset.day); });
+    });
+    document.querySelectorAll(".event-link").forEach(function (b) {
+      b.addEventListener("click", function () { openDay(b.dataset.day); });
+    });
+    bindDistrictSelectors();
+  }
+
   /* ---------------- Render: Month ---------------- */
   function renderMonth() {
     var cur = parseKey(state.key);
     var y = cur.getFullYear(), m = cur.getMonth();
-    preloadMonth(y, m);
     var days = new Date(y, m + 1, 0).getDate();
     var lead = new Date(y, m, 1).getDay(); /* 0 = ಭಾನುವಾರ */
     var title = MONTHS[m] + " " + kn(y);
@@ -532,15 +552,18 @@
     for (var day = 1; day <= days; day++) {
       var k = keyFor(new Date(y, m, day));
       var sel = k === state.key;
-      var today = k === DEFAULT_KEY;
-      var fest = visibleEventsFor(k).length > 0;
-      html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + (fest ? " fest" : "") + '" data-day="' + k + '" type="button"' + (today ? ' aria-label="ಇಂದು, ' + kn(day) + '" title="ಇಂದು"' : "") + '>' + kn(day) + "</button>";
+      var today = k === keyFor(new Date());
+      var local = districtEventsFor(k).length, statewide = stateEventsFor(k).length;
+      html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + '" data-day="' + k + '" type="button"' + (today ? ' aria-label="ಇಂದು, ' + kn(day) + '" title="ಇಂದು"' : "") + '>' + kn(day) +
+        '<span class="mday-dots" aria-label="' + (local ? "ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು" : "") + (local && statewide ? ", " : "") + (statewide ? "ಕರ್ನಾಟಕ ಕಾರ್ಯಕ್ರಮಗಳು" : "") + '">' + (local ? '<i class="scope-dot district"></i>' : '') + (statewide ? '<i class="scope-dot state"></i>' : '') + '</span></button>';
     }
     document.getElementById("monthGrid").innerHTML = html;
     document.querySelectorAll("#monthGrid .mday:not(.blank)").forEach(function (b) {
-      b.addEventListener("click", function () { goto(b.dataset.day); setTab("today"); });
+      b.addEventListener("click", function () { openDay(b.dataset.day); });
     });
     renderMonthAgenda();
+    document.getElementById("monthDistrictSelect").innerHTML = districtOptionsHTML();
+    bindDistrictSelectors();
   }
 
   /* Month agenda: each PV source record listed once, with its date or inclusive
@@ -558,47 +581,61 @@
       return visibleRecord(r) && r.dateEnd >= monthStart && r.dateStart <= monthEnd;
     }).sort(function (a, b) { return a.dateStart < b.dateStart ? -1 : a.dateStart > b.dateStart ? 1 : 0; });
     if (!list.length) { el.innerHTML = '<p class="empty-note">ಈ ತಿಂಗಳಲ್ಲಿ ಯಾವುದೇ ಘಟನೆ ಇಲ್ಲ.</p>'; return; }
-    el.innerHTML = '<div class="ev-panel"><ul class="ev-list">' + list.map(function (r) {
-      var when = r.dateStart === r.dateEnd ? isoToKey(r.dateStart) : isoToKey(r.dateStart) + " – " + isoToKey(r.dateEnd);
-      var place = r.place ? ' <span class="ev-place">' + esc(r.place) + '</span>' : "";
-      return '<li class="ev-row"><span class="ev-mark" aria-hidden="true"></span><span class="ev-text">' + esc(r.title) + place + ' <span class="ev-when">' + esc(when) + '</span></span></li>';
-    }).join("") + "</ul></div>";
-  }
-
-  /* ---------------- Render: Rashi ---------------- */
-  function renderRashi() {
-    var d = dayData(state.key);
-    var dt = parseKey(state.key);
-    var sub = WEEKDAYS[dt.getDay()] + ", " + MONTHS[dt.getMonth()] + " " + kn(dt.getDate());
-    document.getElementById("rashiSub").textContent = sub + " ರಾಶಿ ಭವಿಷ್ಯ";
-    var el = document.getElementById("rashiGrid");
-    if (state.loading) { el.innerHTML = LOADING_HTML; return; }
-    if (d.unavailable) {
-      el.innerHTML = '<p class="empty-note">ಈ ದಿನದ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ</p>';
-      return;
-    }
-    if (!d.jathaka.length) {
-      el.innerHTML = '<p class="empty-note">ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ.</p>';
-      return;
-    }
-    el.innerHTML = d.jathaka.map(function (j) {
-      return '<div class="rc"><span class="rc-name">' + esc(j[0]) + '</span><span class="rc-p">' + esc(j[1]) + "</span></div>";
-    }).join("");
+    var groups = {};
+    list.forEach(function (r) {
+      var displayDate = r.dateStart < monthStart ? monthStart : r.dateStart;
+      (groups[displayDate] = groups[displayDate] || []).push(r);
+    });
+    el.innerHTML = '<div class="ev-panel month-agenda-list">' + Object.keys(groups).sort().map(function (date) {
+      var local = groups[date].filter(function (r) { return r.scope !== "Relevant for Karnataka"; });
+      var statewide = groups[date].filter(function (r) { return r.scope === "Relevant for Karnataka"; });
+      var rows = function (records) { return records.map(function (r) {
+        var when = r.dateStart === r.dateEnd ? isoToKey(r.dateStart) : isoToKey(r.dateStart) + " – " + isoToKey(r.dateEnd);
+        return pvRow(r, when);
+      }).join(""); };
+      return '<section class="agenda-day"><h3><button type="button" class="agenda-day-link" data-day="' + isoToKey(date) + '">' + isoToKey(date) + '</button></h3>' +
+        (local.length ? '<div class="agenda-scope"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + rows(local) + '</ul></div>' : '') +
+        (statewide.length ? '<div class="agenda-scope statewide"><h4>ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + rows(statewide) + '</ul></div>' : '') + '</section>';
+    }).join("") + "</div>";
+    document.querySelectorAll(".agenda-day-link").forEach(function (b) {
+      b.addEventListener("click", function () { openDay(b.dataset.day); });
+    });
   }
 
   /* ---------------- Masthead ---------------- */
+  function periodLabel(start, end) {
+    var sameYear = start.getFullYear() === end.getFullYear();
+    var left = MONTHS[start.getMonth()] + " " + kn(start.getDate());
+    var right = MONTHS[end.getMonth()] + " " + kn(end.getDate());
+    if (!sameYear) left += ", " + kn(start.getFullYear());
+    return left + " – " + right + ", " + kn(end.getFullYear());
+  }
+
   function renderMasthead() {
     var dt = parseKey(state.key);
     var el = document.getElementById("mastheadDate");
-    el.textContent = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + ", " + kn(dt.getFullYear()) + " · " + WEEKDAYS[dt.getDay()];
-    document.title = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + " — ನಿತ್ಯ ಪಂಚಾಂಗ";
+    var label = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + ", " + kn(dt.getFullYear()) + " · " + WEEKDAYS[dt.getDay()];
+    if (state.tab === "week") {
+      var end = weekStart(state.key); end.setDate(end.getDate() + 6);
+      label = periodLabel(weekStart(state.key), end);
+    } else if (state.tab === "month") {
+      label = MONTHS[dt.getMonth()] + " " + kn(dt.getFullYear());
+    }
+    el.textContent = label;
+    var prev = document.getElementById("prevDay"), next = document.getElementById("nextDay");
+    var unit = state.tab === "week" ? "ವಾರ" : state.tab === "month" ? "ತಿಂಗಳು" : "ದಿನ";
+    prev.setAttribute("aria-label", "ಹಿಂದಿನ " + unit);
+    next.setAttribute("aria-label", "ಮುಂದಿನ " + unit);
+    document.title = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + " — ಕನ್ನಡ ಪಂಚಾಂಗ";
   }
 
   /* ---------------- Tab switching ---------------- */
-  var VIEWS = { today: "viewToday", month: "viewMonth", rashi: "viewRashi", more: "viewMore" };
+  var VIEWS = { day: "viewDay", week: "viewWeek", month: "viewMonth", more: "viewMore" };
 
   function setTab(name) {
     state.tab = name;
+    if (name !== "day") state.loading = false;
+    renderMasthead();
     document.querySelectorAll(".view").forEach(function (v) { v.hidden = v.id !== VIEWS[name]; });
     document.querySelectorAll(".tab").forEach(function (t) {
       var on = t.dataset.tab === name;
@@ -606,14 +643,17 @@
       if (on) t.setAttribute("aria-current", "page"); else t.removeAttribute("aria-current");
     });
     renderActive();
+    if (name === "day" && !state.data[state.key] && !state.pending[state.key]) fetchDate(state.key);
+    updateSectionFab();
     document.querySelector(".main").scrollTop = 0;
     window.scrollTo(0, 0);
   }
 
   function renderActive() {
-    if (state.tab === "today") renderToday();
+    if (state.tab === "day") renderToday();
+    else if (state.tab === "week") renderWeek();
     else if (state.tab === "month") renderMonth();
-    else if (state.tab === "rashi") renderRashi();
+    else if (state.tab === "more") renderSettings();
   }
 
   function renderAll() { renderMasthead(); renderActive(); }
@@ -633,28 +673,111 @@
   /* ---------------- Init ---------------- */
   function loadDistrict() { try { return sessionStorage.getItem("pvDistrict") || ""; } catch (e) { return ""; } }
   function saveDistrict(d) { try { sessionStorage.setItem("pvDistrict", d); } catch (e) {} }
+  function loadDate() { try { var key = sessionStorage.getItem("pvDate"); return validKey(key) ? key : DEFAULT_KEY; } catch (e) { return DEFAULT_KEY; } }
+  function saveDate(key) { try { sessionStorage.setItem("pvDate", key); } catch (e) {} }
+
+  function bindDistrictSelectors() {
+    ["districtSelect", "weekDistrictSelect", "monthDistrictSelect", "settingsDistrictSelect"].forEach(function (id) {
+      var select = document.getElementById(id);
+      if (!select || select._pvBound) return;
+      select._pvBound = true;
+      select.addEventListener("change", function () {
+        state.district = select.value || "";
+        saveDistrict(state.district);
+        renderAll();
+      });
+    });
+  }
+
+  function renderSettings() {
+    document.getElementById("settingsDistrictSelect").innerHTML = districtOptionsHTML();
+    bindDistrictSelectors();
+  }
+
+  function openDay(key) {
+    setTab("day");
+    goto(key, true);
+  }
+
+  function bindSwipe(id, action) {
+    var el = document.getElementById(id);
+    if (!el || el._swipeBound) return;
+    el._swipeBound = true;
+    el.addEventListener("touchstart", function (e) {
+      var target = e.target;
+      if (target && target.closest && target.closest("button, a, select, input, textarea")) return;
+      el._swipeX = e.changedTouches[0].clientX;
+      el._swipeY = e.changedTouches[0].clientY;
+    }, { passive: true });
+    el.addEventListener("touchend", function (e) {
+      if (el._swipeX == null || state.loading) return;
+      var dx = e.changedTouches[0].clientX - el._swipeX;
+      var dy = e.changedTouches[0].clientY - el._swipeY;
+      el._swipeX = null;
+      if (Math.abs(dx) < 48 || Math.abs(dx) <= Math.abs(dy)) return;
+      action(dx < 0 ? 1 : -1);
+    }, { passive: true });
+  }
+
+  function bindSectionJump() {
+    var fab = document.getElementById("sectionFab"), menu = document.getElementById("sectionMenu");
+    if (!fab || fab._pvBound) return;
+    fab._pvBound = true;
+    fab.addEventListener("click", function () {
+      menu.hidden = !menu.hidden;
+      fab.setAttribute("aria-expanded", String(!menu.hidden));
+    });
+    menu.querySelectorAll("button").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var target = document.getElementById(button.dataset.target);
+        menu.hidden = true;
+        fab.setAttribute("aria-expanded", "false");
+        if (target && target.scrollIntoView) target.scrollIntoView({ behavior: "smooth", block: "start" });
+        if (target && target.focus) target.focus();
+      });
+    });
+  }
+
+  function updateSectionFab() {
+    var fab = document.getElementById("sectionFab");
+    if (!fab || !fab.classList) return;
+    var visible = state.tab === "day" && window.scrollY > (window.innerHeight || 700) * 0.75;
+    fab.classList.toggle("is-visible", visible);
+    if (!visible) {
+      var menu = document.getElementById("sectionMenu");
+      if (menu) menu.hidden = true;
+    }
+  }
 
   function init() {
     document.querySelectorAll(".tab").forEach(function (t) {
       t.addEventListener("click", function () {
-        if (t.dataset.tab === "today") goto(DEFAULT_KEY);
         setTab(t.dataset.tab);
       });
     });
-    document.getElementById("prevDay").addEventListener("click", function () { shiftDay(-1); });
-    document.getElementById("nextDay").addEventListener("click", function () { shiftDay(1); });
+    document.getElementById("prevDay").addEventListener("click", function () { shiftPeriod(-1); });
+    document.getElementById("nextDay").addEventListener("click", function () { shiftPeriod(1); });
     document.getElementById("prevMonth").addEventListener("click", function () { shiftMonth(-1); });
     document.getElementById("nextMonth").addEventListener("click", function () { shiftMonth(1); });
-    document.getElementById("brand").addEventListener("click", function () { goto(DEFAULT_KEY); setTab("today"); });
+    document.getElementById("prevWeek").addEventListener("click", function () { shiftWeek(-1); });
+    document.getElementById("nextWeek").addEventListener("click", function () { shiftWeek(1); });
+    document.getElementById("todayBtn").addEventListener("click", function () { openDay(keyFor(new Date())); });
     document.getElementById("fontBig").addEventListener("change", function (e) {
       state.big = e.target.checked;
-      document.body.classList.toggle("big", state.big);
+      if (document.body) document.body.classList.toggle("big", state.big);
     });
     document.getElementById("knDigits").addEventListener("change", function (e) {
       state.kn = e.target.checked;
       renderAll();
     });
+    state.key = loadDate();
     state.district = loadDistrict();
+    bindDistrictSelectors();
+    bindSwipe("mastheadDateBlock", function (n) { shiftPeriod(n); });
+    bindSwipe("weekHead", function (n) { shiftWeek(n); });
+    bindSwipe("monthHead", function (n) { shiftMonth(n); });
+    bindSectionJump();
+    if (window.addEventListener) window.addEventListener("scroll", updateSectionFab, { passive: true });
     fetchPV().then(function () {
       if (state.pv && state.district && !state.pv.sheets[state.district]) {
         state.district = "";
@@ -662,13 +785,19 @@
       }
       renderAll();
     });
-    goto(DEFAULT_KEY);
+    goto(state.key, true);
   }
 
   function shiftDay(n) {
     var d = parseKey(state.key);
     d.setDate(d.getDate() + n);
-    goto(keyFor(d));
+    goto(keyFor(d), true);
+  }
+
+  function shiftPeriod(n) {
+    if (state.tab === "week") shiftWeek(n);
+    else if (state.tab === "month") shiftMonth(n);
+    else shiftDay(n);
   }
 
   function shiftMonth(n) {
@@ -678,7 +807,7 @@
     d.setMonth(d.getMonth() + n);
     var last = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate();
     d.setDate(Math.min(day, last));
-    goto(keyFor(d));
+    goto(keyFor(d), state.tab === "day");
   }
 
   document.addEventListener("DOMContentLoaded", init);
