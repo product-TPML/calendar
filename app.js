@@ -206,7 +206,7 @@
 
   function eventGroupHTML(id, title, records, stateGroup, headingExtra) {
     return '<section class="ev-section' + (stateGroup ? " state" : "") + '" aria-labelledby="' + id + 'Title">' +
-      '<div class="ev-section-head"><h3 class="ev-section-title" id="' + id + 'Title">' + title + '</h3>' + (headingExtra || "") + '</div>' +
+      '<div class="ev-section-head"><h3 class="ev-section-title" id="' + id + 'Title" tabindex="-1">' + title + '</h3>' + (headingExtra || "") + '</div>' +
       '<div id="' + id + '" class="ev-container">' + pvListHTML(records) + '</div></section>';
   }
 
@@ -869,6 +869,13 @@
     var fab = document.getElementById("sectionFab"), menu = document.getElementById("sectionMenu");
     if (!fab || fab._pvBound) return;
     fab._pvBound = true;
+    function jumpTo(target) {
+      var masthead = document.querySelector(".masthead");
+      var offset = masthead ? masthead.offsetHeight + 12 : 12;
+      var top = target.getBoundingClientRect().top + (window.pageYOffset || window.scrollY || 0) - offset;
+      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+      target.focus({ preventScroll: true });
+    }
     fab.addEventListener("click", function () {
       menu.hidden = !menu.hidden;
       fab.setAttribute("aria-expanded", String(!menu.hidden));
@@ -878,8 +885,7 @@
         var target = document.getElementById(button.dataset.target);
         menu.hidden = true;
         fab.setAttribute("aria-expanded", "false");
-        if (target && target.scrollIntoView) target.scrollIntoView({ behavior: "smooth", block: "start" });
-        if (target && target.focus) target.focus();
+        if (target && target.getBoundingClientRect && target.focus) jumpTo(target);
       });
     });
   }
