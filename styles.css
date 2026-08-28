@@ -217,6 +217,50 @@ body {
 .chip-more:hover { background: var(--gold-soft); filter: brightness(.97); }
 .empty-note { margin: 0; font-size: 14px; color: var(--ink-soft); font-style: italic; }
 
+/* ---------- District filter + event sections ----------
+   Injected inside the Today events card body (#body-events): grouped
+   inner sections, not standalone cards. */
+.ev-section {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px dashed var(--line);
+}
+.ev-section-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; flex-wrap: wrap; margin-bottom: 10px;
+}
+.ev-section-title {
+  margin: 0;
+  font-family: var(--font-display); font-weight: 700; font-size: 16px;
+  color: var(--verm);
+}
+.ev-section.state .ev-section-title { color: var(--green); }
+.ev-container { min-height: 48px; }
+
+.district-pick { display: flex; align-items: center; gap: 8px; }
+.district-pick label {
+  font-size: 13px; font-weight: 700; color: var(--ink-soft);
+  white-space: nowrap;
+}
+.district-select {
+  flex: 1; min-width: 0; max-width: 260px;
+  padding: 8px 32px 8px 12px;
+  font: inherit; font-size: 15px; color: var(--ink);
+  background: var(--card) url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236f5a43' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 10px center / 14px 14px;
+  border: 1px solid var(--line); border-radius: 12px;
+  cursor: pointer;
+}
+.district-select:hover { border-color: rgba(43, 27, 18, .3); }
+.district-select:focus-visible { outline: 2px solid var(--verm); outline-offset: 2px; }
+
+.error-note {
+  margin: 0; font-size: 14px; color: var(--verm-deep);
+  background: var(--red-soft);
+  border: 1px solid rgba(200, 64, 46, .25);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
 /* ---------- Timings + timeline ---------- */
 .timeline { margin: 14px 0 4px; }
 .tl-track {
@@ -301,6 +345,17 @@ body {
   display: inline-block; width: 8px; height: 8px; border-radius: 50%;
   background: var(--gold); margin: 0 2px; vertical-align: baseline;
 }
+
+/* ---------- Month agenda ---------- */
+.month-agenda {
+  margin-top: 14px;
+  padding: 14px 16px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.month-agenda .ev-section-title { margin-bottom: 10px; }
 
 /* ---------- Rashi view ---------- */
 .view-title { margin: 4px 0 2px; font-family: var(--font-display); font-weight: 800; font-size: 24px; color: var(--verm); }
