@@ -133,7 +133,10 @@ equal columns for the available values.
 - Use a vermillion left border and dot for district events and green for
   Karnataka-wide events.
 - Preserve grouped headings and text labels so meaning never depends on color.
-- Keep the contextual masthead sticky while scrolling.
+- Render a continuous vertical stream of weeks; initially load a small window and
+  lazily append/prepend adjacent weeks near the scroll edges.
+- Update the contextual masthead automatically to the week nearest the top of the
+  viewport while scrolling.
 - Clicking a day heading or event selects that date and opens Day.
 - Swipe the week header left/right to move exactly one seven-day week backward
   or forward while retaining the same weekday as the selected date.
@@ -161,6 +164,10 @@ equal columns for the available values.
 - Show a range event on every covered date cell but only once in the monthly
   agenda, with its complete date span.
 - Make every day cell open its detailed Day view.
+- Render Month as a continuous vertical stream; initially load a small window and
+  lazily append/prepend adjacent months near the scroll edges.
+- Update the contextual masthead automatically to the month nearest the top of
+  the viewport while scrolling.
 
 ### Event color coding
 
@@ -341,6 +348,8 @@ is the reliable district assignment; text parsing would inherit OCR errors.
 ### Phase 4 — Week view
 
 - Add the Sunday–Saturday agenda containing the selected date.
+- Render a continuous lazy-loaded vertical week stream and auto-update the top
+  date-range header from the week at the viewport.
 - Add grouped district and Karnataka-wide events with full, untruncated names.
 - Show inclusive range events on every covered day.
 - Make day headings and event rows select the date and open Day.
@@ -350,6 +359,8 @@ is the reliable district assignment; text parsing would inherit OCR errors.
 ### Phase 5 — Month view
 
 - Add the direct district selector to the Month toolbar.
+- Render a continuous lazy-loaded vertical month stream and auto-update the top
+  month/year header from the month at the viewport.
 - Add vermillion and green presence dots to date cells.
 - Mark every date covered by an inclusive range.
 - Add the grouped date-wise agenda and list each range only once with its span.

@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500;700;800&family=Noto+Sans+Kannada:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=4">
 </head>
 <body>
 <div class="app">
@@ -20,8 +20,8 @@
       <span class="brand">ಕನ್ನಡ ಪಂಚಾಂಗ</span>
       <span id="mastheadDate" class="masthead-date"></span>
     </div>
-    <button id="nextDay" class="icon-btn" type="button" aria-label="ಮುಂದಿನ ದಿನ">›</button>
     <button id="todayBtn" class="today-btn" type="button">ಇಂದು</button>
+    <button id="nextDay" class="icon-btn" type="button" aria-label="ಮುಂದಿನ ದಿನ">›</button>
   </header>
 
   <main class="main">
@@ -48,23 +48,12 @@
     </section>
 
     <section id="viewMonth" class="view" hidden>
-      <div id="monthHead" class="month-head" hidden>
-        <button id="prevMonth" class="icon-btn" type="button" aria-label="ಹಿಂದಿನ ತಿಂಗಳು">‹</button>
-        <h2 id="monthTitle" class="month-title"></h2>
-        <button id="nextMonth" class="icon-btn" type="button" aria-label="ಮುಂದಿನ ತಿಂಗಳು">›</button>
-      </div>
       <div class="toolbar-row">
         <label for="monthDistrictSelect">ಜಿಲ್ಲೆ</label>
         <select id="monthDistrictSelect" class="district-select" name="monthDistrict"></select>
       </div>
-      <div id="weekRow" class="week-row"></div>
-      <div id="monthGrid" class="month-grid"></div>
       <p class="month-note">ಕೆಂಪು ಚುಕ್ಕೆ: ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು · ಹಸಿರು ಚುಕ್ಕೆ: ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</p>
-
-      <section class="month-agenda" aria-labelledby="monthAgendaTitle">
-        <h2 class="ev-section-title" id="monthAgendaTitle">ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿ</h2>
-        <div id="monthAgenda" class="ev-container" aria-live="polite"></div>
-      </section>
+      <div id="monthScroller" class="month-scroller"></div>
     </section>
 
     <section id="viewMore" class="view" hidden>
@@ -117,6 +106,6 @@
 
 </div>
 <noscript><p style="padding:1rem">ಈ ಆ್ಯಪ್ JavaScript ಬಳಸುತ್ತದೆ — ದಯವಿಟ್ಟು ಸಕ್ರಿಯಗೊಳಿಸಿ.</p></noscript>
-<script src="app.js"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>

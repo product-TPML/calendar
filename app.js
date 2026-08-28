@@ -5,6 +5,7 @@
   "use strict";
 
   var DEFAULT_KEY = keyFor(new Date());
+  var SESSION_VERSION = "4";
 
   /* ---------------- Unavailable record (no fabricated data) ---------------- */
   function unavailableDay(key) {
@@ -17,7 +18,8 @@
 
   /* ---------------- State & helpers ---------------- */
   var state = { key: DEFAULT_KEY, data: {}, pending: {}, tab: "day", big: false, kn: false, loading: false, seq: 0,
-    pv: null, pvIndex: {}, pvRecords: [], pvError: false, pvPending: null, pvQA: [], district: "" };
+    pv: null, pvIndex: {}, pvRecords: [], pvError: false, pvPending: null, pvQA: [], district: "",
+    weekFirst: null, weekLast: null, weekHeader: null, monthFirst: null, monthLast: null, monthHeader: null };
 
   var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
   var MONTHS = ["ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್"];
@@ -389,9 +391,6 @@
           card("ಸಮಯಗಳು — ಕಾಲ", timingsHTML(d), "timings") +
           card("ರಾಶಿ ಭವಿಷ್ಯ", jathakaHTML(d), "jathaka", true);
 
-        bindToggle("toggle-events");
-        bindToggle("toggle-timings");
-        bindToggle("toggle-jathaka");
         bindEventCardUI();
       }
     }
@@ -431,16 +430,12 @@
   }
 
   function card(title, body, id, collapsed, icon) {
-    var open = collapsed ? "false" : "true";
-    var bodyHidden = collapsed ? " hidden" : "";
     var head = icon
       ? '<span class="card-title">' + icon + " " + title + '</span>'
       : '<span class="card-title">' + title + '</span>';
     return '<section class="card">' +
-      '<button class="card-toggle" id="toggle-' + id + '" type="button" aria-expanded="' + open + '" aria-controls="body-' + id + '">' +
-        head + '<span class="chev" aria-hidden="true">▾</span>' +
-      '</button>' +
-      '<div class="card-body" id="body-' + id + '"' + bodyHidden + '>' + body + '</div></section>';
+      '<h2 class="card-heading" id="toggle-' + id + '" tabindex="-1">' + head + '</h2>' +
+      '<div class="card-body" id="body-' + id + '">' + body + '</div></section>';
   }
 
   function timingsHTML(d) {
@@ -493,10 +488,12 @@
     d.setDate(d.getDate() - d.getDay());
     return d;
   }
+  function weekStartKey(key) { return keyFor(weekStart(key)); }
 
   function shiftWeek(n) {
     var d = parseKey(state.key);
     d.setDate(d.getDate() + n * 7);
+    state.weekFirst = state.weekLast = state.weekHeader = null;
     goto(keyFor(d), false);
   }
 
@@ -511,12 +508,65 @@
       '</section>';
   }
 
-  function renderWeek() {
-    var start = weekStart(state.key), end = new Date(start);
+  function weekBlockHTML(startKey) {
+    var start = parseKey(startKey), end = new Date(start);
     end.setDate(end.getDate() + 6);
-    var title = MONTHS[start.getMonth()] + " " + kn(start.getFullYear());
-    if (start.getMonth() !== end.getMonth()) title += " – " + MONTHS[end.getMonth()] + " " + kn(end.getFullYear());
-    document.getElementById("weekTitle").textContent = title;
+    return '<section class="week-block" data-start="' + startKey + '"><h2 class="stream-period-title">' + periodLabel(start, end) + '</h2>' +
+      Array.from({ length: 7 }, function (_, i) {
+        var d = new Date(start); d.setDate(d.getDate() + i); return weekAgendaHTML(keyFor(d));
+      }).join("") + '</section>';
+  }
+
+  function weekKeyShift(key, weeks) {
+    var d = parseKey(key); d.setDate(d.getDate() + weeks * 7); return keyFor(d);
+  }
+
+  function bindWeekStream() {
+    var el = document.getElementById("weekAgenda");
+    if (!el || el._streamBound) return;
+    el._streamBound = true;
+    el.addEventListener("click", function (e) {
+      var target = e.target && e.target.closest ? e.target.closest("[data-day]") : null;
+      if (target && target.dataset.day) openDay(target.dataset.day);
+    });
+  }
+
+  function updateWeekHeader() {
+    var blocks = document.querySelectorAll("#weekAgenda .week-block"), chosen = null, edge = 120;
+    blocks.forEach(function (block) {
+      if (block.getBoundingClientRect().top <= edge) chosen = block;
+    });
+    if (!chosen && blocks.length) chosen = blocks[0];
+    if (chosen) { state.weekHeader = chosen.dataset.start; renderMasthead(); }
+  }
+
+  function lazyWeekScroll() {
+    if (state.tab !== "week" || !state.pv) return;
+    var el = document.getElementById("weekAgenda"), bottom = window.scrollY + window.innerHeight;
+    if (!el || !el.getBoundingClientRect) return;
+    if (bottom > el.getBoundingClientRect().bottom - 500 && state.weekLast) {
+      var next = weekKeyShift(state.weekLast, 1);
+      state.weekLast = next;
+      el.insertAdjacentHTML("beforeend", weekBlockHTML(next));
+    }
+    if (window.scrollY < el.getBoundingClientRect().top + 500 && state.weekFirst) {
+      var previous = weekKeyShift(state.weekFirst, -1), oldHeight = el.offsetHeight;
+      state.weekFirst = previous;
+      el.insertAdjacentHTML("afterbegin", weekBlockHTML(previous));
+      window.scrollBy(0, el.offsetHeight - oldHeight);
+    }
+    updateWeekHeader();
+  }
+
+  function renderWeek() {
+    var start = weekStartKey(state.key);
+    if (!state.weekFirst) {
+      state.weekFirst = weekKeyShift(start, -2);
+      state.weekLast = weekKeyShift(start, 2);
+    }
+    var selectedWeekStart = weekStart(state.key), selectedWeekEnd = new Date(selectedWeekStart);
+    selectedWeekEnd.setDate(selectedWeekEnd.getDate() + 6);
+    document.getElementById("weekTitle").textContent = periodLabel(selectedWeekStart, selectedWeekEnd);
     if (state.pvError) {
       document.getElementById("weekAgenda").innerHTML = PV_ERROR;
       document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML();
@@ -527,69 +577,62 @@
       document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML();
       return;
     }
-    document.getElementById("weekAgenda").innerHTML = Array.from({ length: 7 }, function (_, i) {
-      var d = new Date(start); d.setDate(d.getDate() + i); return weekAgendaHTML(keyFor(d));
-    }).join("");
+    var pages = [], cursor = state.weekFirst;
+    while (true) {
+      pages.push(weekBlockHTML(cursor));
+      if (cursor === state.weekLast) break;
+      cursor = weekKeyShift(cursor, 1);
+    }
+    document.getElementById("weekAgenda").innerHTML = pages.join("");
     document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML();
-    document.querySelectorAll(".week-day-link").forEach(function (b) {
-      b.addEventListener("click", function () { openDay(b.dataset.day); });
-    });
-    document.querySelectorAll(".event-link").forEach(function (b) {
-      b.addEventListener("click", function () { openDay(b.dataset.day); });
-    });
+    bindWeekStream();
+    if (!state.weekHeader) {
+      var selectedBlock = document.querySelector('#weekAgenda .week-block[data-start="' + start + '"]');
+      if (selectedBlock) {
+        window.scrollTo(0, Math.max(0, selectedBlock.offsetTop - 70));
+        if (window.scrollBy && selectedBlock.getBoundingClientRect) window.scrollBy(0, selectedBlock.getBoundingClientRect().top - 70);
+      }
+    }
+    updateWeekHeader();
     bindDistrictSelectors();
   }
 
   /* ---------------- Render: Month ---------------- */
-  function renderMonth() {
-    var cur = parseKey(state.key);
-    var y = cur.getFullYear(), m = cur.getMonth();
-    var days = new Date(y, m + 1, 0).getDate();
-    var lead = new Date(y, m, 1).getDay(); /* 0 = ಭಾನುವಾರ */
-    var title = MONTHS[m] + " " + kn(y);
-    document.getElementById("monthTitle").textContent = title;
-    document.getElementById("weekRow").innerHTML = WEEKDAYS.map(function (w) { return "<span>" + w.charAt(0) + "</span>"; }).join("");
+  function monthKey(y, m) { return y + "-" + m; }
+  function monthKeyShift(key, n) {
+    var p = key.split("-"), d = new Date(+p[0], +p[1] + n, 1);
+    return monthKey(d.getFullYear(), d.getMonth());
+  }
 
-    var html = "";
+  function monthCalendarHTML(y, m) {
+    var days = new Date(y, m + 1, 0).getDate(), lead = new Date(y, m, 1).getDay(), html = "";
     for (var i = 0; i < lead; i++) html += '<span class="mday blank" aria-hidden="true"></span>';
     for (var day = 1; day <= days; day++) {
-      var k = keyFor(new Date(y, m, day));
-      var sel = k === state.key;
-      var today = k === keyFor(new Date());
+      var k = keyFor(new Date(y, m, day)), sel = k === state.key, today = k === keyFor(new Date());
       var local = districtEventsFor(k).length, statewide = stateEventsFor(k).length;
       html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + '" data-day="' + k + '" type="button"' + (today ? ' aria-label="ಇಂದು, ' + kn(day) + '" title="ಇಂದು"' : "") + '>' + kn(day) +
         '<span class="mday-dots" aria-label="' + (local ? "ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು" : "") + (local && statewide ? ", " : "") + (statewide ? "ಕರ್ನಾಟಕ ಕಾರ್ಯಕ್ರಮಗಳು" : "") + '">' + (local ? '<i class="scope-dot district"></i>' : '') + (statewide ? '<i class="scope-dot state"></i>' : '') + '</span></button>';
     }
-    document.getElementById("monthGrid").innerHTML = html;
-    document.querySelectorAll("#monthGrid .mday:not(.blank)").forEach(function (b) {
-      b.addEventListener("click", function () { openDay(b.dataset.day); });
-    });
-    renderMonthAgenda();
-    document.getElementById("monthDistrictSelect").innerHTML = districtOptionsHTML();
-    bindDistrictSelectors();
+    return '<div class="week-row">' + WEEKDAYS.map(function (w) { return "<span>" + w.charAt(0) + "</span>"; }).join("") + '</div><div class="month-grid">' + html + '</div>';
   }
 
   /* Month agenda: each PV source record listed once, with its date or inclusive
      date range. Overlaps the displayed month. */
-  function renderMonthAgenda() {
-    var el = document.getElementById("monthAgenda");
-    if (!el) return;
-    if (state.pvError) { el.innerHTML = PV_ERROR; return; }
-    if (!state.pv) { el.innerHTML = PV_LOADING; return; }
-    var cur = parseKey(state.key);
-    var y = cur.getFullYear(), m = cur.getMonth();
+  function monthAgendaHTML(y, m) {
+    if (state.pvError) return PV_ERROR;
+    if (!state.pv) return PV_LOADING;
     var monthStart = y + "-" + pad(m + 1) + "-01";
     var monthEnd = y + "-" + pad(m + 1) + "-" + pad(daysInMonth(y, m + 1));
     var list = state.pvRecords.filter(function (r) {
       return visibleRecord(r) && r.dateEnd >= monthStart && r.dateStart <= monthEnd;
     }).sort(function (a, b) { return a.dateStart < b.dateStart ? -1 : a.dateStart > b.dateStart ? 1 : 0; });
-    if (!list.length) { el.innerHTML = '<p class="empty-note">ಈ ತಿಂಗಳಲ್ಲಿ ಯಾವುದೇ ಘಟನೆ ಇಲ್ಲ.</p>'; return; }
+    if (!list.length) return '<p class="empty-note">ಈ ತಿಂಗಳಲ್ಲಿ ಯಾವುದೇ ಘಟನೆ ಇಲ್ಲ.</p>';
     var groups = {};
     list.forEach(function (r) {
       var displayDate = r.dateStart < monthStart ? monthStart : r.dateStart;
       (groups[displayDate] = groups[displayDate] || []).push(r);
     });
-    el.innerHTML = '<div class="ev-panel month-agenda-list">' + Object.keys(groups).sort().map(function (date) {
+    return '<div class="ev-panel month-agenda-list">' + Object.keys(groups).sort().map(function (date) {
       var local = groups[date].filter(function (r) { return r.scope !== "Relevant for Karnataka"; });
       var statewide = groups[date].filter(function (r) { return r.scope === "Relevant for Karnataka"; });
       var rows = function (records) { return records.map(function (r) {
@@ -600,9 +643,77 @@
         (local.length ? '<div class="agenda-scope"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + rows(local) + '</ul></div>' : '') +
         (statewide.length ? '<div class="agenda-scope statewide"><h4>ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + rows(statewide) + '</ul></div>' : '') + '</section>';
     }).join("") + "</div>";
-    document.querySelectorAll(".agenda-day-link").forEach(function (b) {
-      b.addEventListener("click", function () { openDay(b.dataset.day); });
+  }
+
+  function monthBlockHTML(key) {
+    var p = key.split("-"), y = +p[0], m = +p[1];
+    return '<section class="month-block" data-month="' + key + '"><h2 class="stream-period-title">' + MONTHS[m] + " " + kn(y) + '</h2>' +
+      monthCalendarHTML(y, m) + '<p class="month-note">ಕೆಂಪು ಚುಕ್ಕೆ: ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು · ಹಸಿರು ಚುಕ್ಕೆ: ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</p>' +
+      '<section class="month-agenda" aria-labelledby="monthAgenda-' + key + '"><h3 class="ev-section-title" id="monthAgenda-' + key + '">ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿ</h3>' + monthAgendaHTML(y, m) + '</section></section>';
+  }
+
+  function bindMonthStream() {
+    var el = document.getElementById("monthScroller");
+    if (!el || el._streamBound) return;
+    el._streamBound = true;
+    el.addEventListener("click", function (e) {
+      var target = e.target && e.target.closest ? e.target.closest("[data-day]") : null;
+      if (target && target.dataset.day) openDay(target.dataset.day);
     });
+  }
+
+  function updateMonthHeader() {
+    var blocks = document.querySelectorAll("#monthScroller .month-block"), chosen = null;
+    blocks.forEach(function (block) { if (block.getBoundingClientRect().top <= 120) chosen = block; });
+    if (!chosen && blocks.length) chosen = blocks[0];
+    if (chosen) { state.monthHeader = chosen.dataset.month; renderMasthead(); }
+  }
+
+  function lazyMonthScroll() {
+    if (state.tab !== "month" || !state.pv) return;
+    var el = document.getElementById("monthScroller"), rect = el && el.getBoundingClientRect ? el.getBoundingClientRect() : null;
+    if (!rect) return;
+    if (window.scrollY + window.innerHeight > rect.bottom - 500 && state.monthLast) {
+      var next = monthKeyShift(state.monthLast, 1); state.monthLast = next; el.insertAdjacentHTML("beforeend", monthBlockHTML(next));
+    }
+    if (window.scrollY < rect.top + 500 && state.monthFirst) {
+      var previous = monthKeyShift(state.monthFirst, -1), oldHeight = el.offsetHeight;
+      state.monthFirst = previous; el.insertAdjacentHTML("afterbegin", monthBlockHTML(previous));
+      window.scrollBy(0, el.offsetHeight - oldHeight);
+    }
+    updateMonthHeader();
+  }
+
+  function renderMonth() {
+    var cur = parseKey(state.key), center = state.monthHeader || monthKey(cur.getFullYear(), cur.getMonth());
+    if (!state.monthFirst) {
+      state.monthFirst = monthKeyShift(center, -2);
+      state.monthLast = monthKeyShift(center, 2);
+    }
+    var pages = [], cursor = state.monthFirst;
+    if (state.pvError) {
+      document.getElementById("monthScroller").innerHTML = PV_ERROR;
+    } else if (!state.pv) {
+      document.getElementById("monthScroller").innerHTML = PV_LOADING;
+    } else {
+      while (true) {
+        pages.push(monthBlockHTML(cursor));
+        if (cursor === state.monthLast) break;
+        cursor = monthKeyShift(cursor, 1);
+      }
+      document.getElementById("monthScroller").innerHTML = pages.join("");
+      bindMonthStream();
+      if (!state.monthHeader) {
+        var selectedMonth = document.querySelector('#monthScroller .month-block[data-month="' + center + '"]');
+        if (selectedMonth) {
+          window.scrollTo(0, Math.max(0, selectedMonth.offsetTop - 70));
+          if (window.scrollBy && selectedMonth.getBoundingClientRect) window.scrollBy(0, selectedMonth.getBoundingClientRect().top - 70);
+        }
+      }
+      updateMonthHeader();
+    }
+    document.getElementById("monthDistrictSelect").innerHTML = districtOptionsHTML();
+    bindDistrictSelectors();
   }
 
   /* ---------------- Masthead ---------------- */
@@ -619,10 +730,12 @@
     var el = document.getElementById("mastheadDate");
     var label = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + ", " + kn(dt.getFullYear()) + " · " + WEEKDAYS[dt.getDay()];
     if (state.tab === "week") {
-      var end = weekStart(state.key); end.setDate(end.getDate() + 6);
-      label = periodLabel(weekStart(state.key), end);
+      var start = parseKey(state.weekHeader || weekStartKey(state.key)), end = new Date(start);
+      end.setDate(end.getDate() + 6);
+      label = periodLabel(start, end);
     } else if (state.tab === "month") {
-      label = MONTHS[dt.getMonth()] + " " + kn(dt.getFullYear());
+      var month = state.monthHeader ? state.monthHeader.split("-") : [dt.getFullYear(), dt.getMonth()];
+      label = MONTHS[+month[1]] + " " + kn(+month[0]);
     }
     el.textContent = label;
     var prev = document.getElementById("prevDay"), next = document.getElementById("nextDay");
@@ -636,7 +749,10 @@
   var VIEWS = { day: "viewDay", week: "viewWeek", month: "viewMonth", more: "viewMore" };
 
   function setTab(name) {
+    var previous = state.tab;
     state.tab = name;
+    if (name === "week" && previous !== "week") state.weekFirst = state.weekLast = state.weekHeader = null;
+    if (name === "month" && previous !== "month") state.monthFirst = state.monthLast = state.monthHeader = null;
     if (name !== "day") state.loading = false;
     renderMasthead();
     document.querySelectorAll(".view").forEach(function (v) { v.hidden = v.id !== VIEWS[name]; });
@@ -648,8 +764,10 @@
     renderActive();
     if (name === "day" && !state.data[state.key] && !state.pending[state.key]) fetchDate(state.key);
     updateSectionFab();
-    document.querySelector(".main").scrollTop = 0;
-    window.scrollTo(0, 0);
+    if (name === "day" || name === "more") {
+      document.querySelector(".main").scrollTop = 0;
+      window.scrollTo(0, 0);
+    }
   }
 
   function renderActive() {
@@ -661,23 +779,20 @@
 
   function renderAll() { renderMasthead(); renderActive(); }
 
-  /* ---------------- Toggle helper ---------------- */
-  function bindToggle(prefix) {
-    var btn = document.getElementById(prefix);
-    if (!btn) return;
-    btn.addEventListener("click", function () {
-      var open = btn.getAttribute("aria-expanded") === "true";
-      btn.setAttribute("aria-expanded", String(!open));
-      var body = document.getElementById(prefix.replace("toggle-", "body-"));
-      if (body) body.hidden = open;
-    });
-  }
-
   /* ---------------- Init ---------------- */
   function loadDistrict() { try { return sessionStorage.getItem("pvDistrict") || ""; } catch (e) { return ""; } }
   function saveDistrict(d) { try { sessionStorage.setItem("pvDistrict", d); } catch (e) {} }
   function loadDate() { try { var key = sessionStorage.getItem("pvDate"); return validKey(key) ? key : DEFAULT_KEY; } catch (e) { return DEFAULT_KEY; } }
   function saveDate(key) { try { sessionStorage.setItem("pvDate", key); } catch (e) {} }
+  function prepareSession() {
+    try {
+      if (sessionStorage.getItem("pvSessionVersion") !== SESSION_VERSION) {
+        sessionStorage.removeItem("pvDate");
+        sessionStorage.removeItem("pvDistrict");
+        sessionStorage.setItem("pvSessionVersion", SESSION_VERSION);
+      }
+    } catch (e) {}
+  }
 
   function bindDistrictSelectors() {
     ["districtSelect", "weekDistrictSelect", "monthDistrictSelect", "settingsDistrictSelect"].forEach(function (id) {
@@ -753,6 +868,7 @@
   }
 
   function init() {
+    prepareSession();
     document.querySelectorAll(".tab").forEach(function (t) {
       t.addEventListener("click", function () {
         setTab(t.dataset.tab);
@@ -760,10 +876,6 @@
     });
     document.getElementById("prevDay").addEventListener("click", function () { shiftPeriod(-1); });
     document.getElementById("nextDay").addEventListener("click", function () { shiftPeriod(1); });
-    document.getElementById("prevMonth").addEventListener("click", function () { shiftMonth(-1); });
-    document.getElementById("nextMonth").addEventListener("click", function () { shiftMonth(1); });
-    document.getElementById("prevWeek").addEventListener("click", function () { shiftWeek(-1); });
-    document.getElementById("nextWeek").addEventListener("click", function () { shiftWeek(1); });
     document.getElementById("todayBtn").addEventListener("click", function () { openDay(keyFor(new Date())); });
     document.getElementById("fontBig").addEventListener("change", function (e) {
       state.big = e.target.checked;
@@ -777,10 +889,15 @@
     state.district = loadDistrict();
     bindDistrictSelectors();
     bindSwipe("mastheadDateBlock", function (n) { shiftPeriod(n); });
+    bindSwipe("viewDay", function (n) { if (state.tab === "day") shiftDay(n); });
     bindSwipe("weekHead", function (n) { shiftWeek(n); });
     bindSwipe("monthHead", function (n) { shiftMonth(n); });
     bindSectionJump();
-    if (window.addEventListener) window.addEventListener("scroll", updateSectionFab, { passive: true });
+    if (window.addEventListener) window.addEventListener("scroll", function () {
+      updateSectionFab();
+      lazyWeekScroll();
+      lazyMonthScroll();
+    }, { passive: true });
     fetchPV().then(function () {
       if (state.pv && state.district && !state.pv.sheets[state.district]) {
         state.district = "";
@@ -810,6 +927,7 @@
     d.setMonth(d.getMonth() + n);
     var last = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate();
     d.setDate(Math.min(day, last));
+    state.monthFirst = state.monthLast = state.monthHeader = null;
     goto(keyFor(d), state.tab === "day");
   }
 

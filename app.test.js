@@ -79,6 +79,7 @@ const sessionStore = {};
 global.sessionStorage = {
   getItem(k) { return k in sessionStore ? sessionStore[k] : null; },
   setItem(k, v) { sessionStore[k] = String(v); },
+  removeItem(k) { delete sessionStore[k]; },
 };
 
 const APP_PATH = path.join(__dirname, "app.js");
@@ -309,11 +310,11 @@ function assert(cond, msg) {
   console.log("11) Day/Week/Month navigation and session date behavior");
   tabEls.week.click();
   assert(els.weekTitle.textContent.includes("–"), "week header shows start and end dates");
-  assert((els.weekAgenda.innerHTML.match(/class="week-day"/g) || []).length === 7, "week renders seven vertical days");
+  assert((els.weekAgenda.innerHTML.match(/class="week-day"/g) || []).length === 35, "week renders five lazy-loadable vertical weeks");
   assert(!els.weekAgenda.innerHTML.includes("event-scope"), "week rows avoid repetitive scope tags");
   tabEls.month.click();
   assert(els.mastheadDate.textContent.includes("2026"), "month header uses month and year context");
-  assert(els.monthAgenda.innerHTML.includes("agenda-day"), "month agenda groups events by date");
+  assert(els.monthScroller.innerHTML.includes("agenda-day"), "month agenda groups events by date");
   tabEls.day.click();
   assert(els.mastheadDate.textContent.includes(dayNumber(DAY8)), "Day tab preserves selected date");
   assert(sessionStore.pvDate === DAY8, "selected date is stored in the session");
