@@ -5,7 +5,7 @@
   "use strict";
 
   var DEFAULT_KEY = keyFor(new Date());
-  var SESSION_VERSION = "4";
+  var SESSION_VERSION = "5";
 
   /* ---------------- Unavailable record (no fabricated data) ---------------- */
   function unavailableDay(key) {
@@ -859,7 +859,7 @@
   function updateSectionFab() {
     var fab = document.getElementById("sectionFab");
     if (!fab || !fab.classList) return;
-    var visible = state.tab === "day" && window.scrollY > (window.innerHeight || 700) * 0.75;
+    var visible = state.tab === "day";
     fab.classList.toggle("is-visible", visible);
     if (!visible) {
       var menu = document.getElementById("sectionMenu");
@@ -893,6 +893,7 @@
     bindSwipe("weekHead", function (n) { shiftWeek(n); });
     bindSwipe("monthHead", function (n) { shiftMonth(n); });
     bindSectionJump();
+    updateSectionFab();
     if (window.addEventListener) window.addEventListener("scroll", function () {
       updateSectionFab();
       lazyWeekScroll();

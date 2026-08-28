@@ -99,8 +99,7 @@ OCR data.
 Add a mobile-only floating action button above the bottom navigation for quick
 section access. It is a section jumper, not continuous automatic scrolling.
 
-- Hide it at the top of Day and reveal it after approximately one viewport of
-  vertical scrolling.
+- Show it throughout the mobile Day view so section access is discoverable.
 - Label it `ವಿಭಾಗಗಳು` and use a list/navigation icon; do not use an ambiguous
   down arrow.
 - Tapping it opens a small sheet or menu with:
