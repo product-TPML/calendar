@@ -365,6 +365,9 @@ body {
 .mday-dots { position: absolute; left: 0; right: 0; bottom: 4px; display: flex; justify-content: center; gap: 4px; }
 .scope-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--verm); }
 .scope-dot.state { background: var(--green); }
+.date-count { font-size: 10px; line-height: 1; color: var(--verm-deep); }
+.date-count.state { color: var(--green); }
+.mday.sel .date-count, .mday.sel .date-count.state { color: #fff; }
 .mday.sel .scope-dot { box-shadow: 0 0 0 1px #fff; }
 .month-note { text-align: center; font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
 .dot-legend {
@@ -412,7 +415,11 @@ body {
 .week-day { padding: 14px 0; }
 .week-day + .week-day { border-top: 1px solid var(--line); }
 .week-day-title { margin: 0 0 8px; font-family: var(--font-display); font-size: 20px; }
-.week-day-title span { color: var(--ink-soft); }
+.week-day-link { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; }
+.week-day-title .week-day-link > span { color: var(--ink-soft); font-size: .85em; font-weight: 500; }
+.week-day-counts { display: inline-flex; gap: 8px; margin-left: auto; font-family: var(--font-body); font-size: 12px; font-weight: 700; }
+.count-district { color: var(--verm-deep); }
+.count-state { color: var(--green); }
 .week-scope { margin-top: 10px; border-top: 1px dashed var(--line); }
 .week-scope h4 { margin: 9px 0 2px; font-size: 14px; color: var(--verm); }
 .week-scope.statewide h4 { color: var(--green); }

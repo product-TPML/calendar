@@ -178,12 +178,28 @@
     });
   }
 
-  function districtOptionsHTML() {
+  function rangeFor(mode) {
+    var selected = parseKey(state.key), start = selected, end = selected;
+    if (mode === "week") { start = weekStart(state.weekHeader || state.key); end = new Date(start); end.setDate(end.getDate() + 6); }
+    if (mode === "month") {
+      var month = state.monthHeader ? state.monthHeader.split("-") : [selected.getFullYear(), selected.getMonth()];
+      start = new Date(+month[0], +month[1], 1); end = new Date(+month[0], +month[1] + 1, 0);
+    }
+    return { start: keyToIso(keyFor(start)), end: keyToIso(keyFor(end)) };
+  }
+
+  function districtEventCount(name, mode) {
+    var range = rangeFor(mode || "all");
+    if (mode === "all") return state.pvRecords.filter(function (r) { return r.sourceDistrict === name && r.scope !== "Relevant for Karnataka"; }).length;
+    return state.pvRecords.filter(function (r) {
+      return r.sourceDistrict === name && r.scope !== "Relevant for Karnataka" && r.dateStart <= range.end && r.dateEnd >= range.start;
+    }).length;
+  }
+
+  function districtOptionsHTML(mode) {
     if (!state.pv) return '<option value="">ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</option>';
     return '<option value="">ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</option>' + Object.keys(state.pv.sheets).map(function (name) {
-      var count = state.pvRecords.filter(function (r) {
-        return r.sourceDistrict === name && r.scope !== "Relevant for Karnataka";
-      }).length;
+      var count = districtEventCount(name, mode);
       return '<option value="' + esc(name) + '"' + (name === state.district ? " selected" : "") + '>' + esc(name) + ' (' + count + ')</option>';
     }).join("");
   }
@@ -199,9 +215,10 @@
   function pvEventsHTML(key) {
     if (state.pvError) return PV_ERROR;
     if (!state.pv) return PV_LOADING;
-    var selector = '<label class="sr-only" for="districtSelect">ಜಿಲ್ಲೆ ಆಯ್ಕೆ</label><select id="districtSelect" class="district-select" name="district">' + districtOptionsHTML() + '</select>';
-    return eventGroupHTML("districtEvents", "ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು", districtEventsFor(key), false, selector) +
-      eventGroupHTML("stateEvents", "ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು", stateEventsFor(key), true);
+    var local = districtEventsFor(key), statewide = stateEventsFor(key);
+    var selector = '<label class="sr-only" for="districtSelect">ಜಿಲ್ಲೆ ಆಯ್ಕೆ</label><select id="districtSelect" class="district-select" name="district">' + districtOptionsHTML("day") + '</select>';
+    return eventGroupHTML("districtEvents", "ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು (" + local.length + ")", local, false, selector) +
+      eventGroupHTML("stateEvents", "ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು (" + statewide.length + ")", statewide, true);
   }
 
   function bindEventCardUI() {
@@ -499,8 +516,9 @@
 
   function weekAgendaHTML(key) {
     var d = parseKey(key), district = districtEventsFor(key), statewide = stateEventsFor(key);
+    var counts = district.length || statewide.length ? '<span class="week-day-counts">' + (district.length ? '<span class="count-district">ಜಿಲ್ಲೆ ' + district.length + '</span>' : '') + (statewide.length ? '<span class="count-state">ಕರ್ನಾಟಕ ' + statewide.length + '</span>' : '') + '</span>' : '';
     var content = '<h3 class="week-day-title"><button type="button" class="week-day-link" data-day="' + key + '">' +
-      WEEKDAYS[d.getDay()] + ' <span>' + kn(d.getDate()) + ' ' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</span></button></h3>';
+      WEEKDAYS[d.getDay()] + ' <span>' + kn(d.getDate()) + ' ' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</span>' + counts + '</button></h3>';
     if (!district.length && !statewide.length) return '<section class="week-day" data-day="' + key + '">' + content + '<p class="empty-note">ಈ ದಿನ ಯಾವುದೇ ವಿಶೇಷ ದಿನವಿಲ್ಲ.</p></section>';
     return '<section class="week-day" data-day="' + key + '">' + content +
       '<div class="week-scope district"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + (district.length ? district.map(function (r) { return pvRow(r, "", key); }).join("") : '<li class="empty-note">ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.</li>') + '</ul></div>' +
@@ -537,7 +555,11 @@
       if (block.getBoundingClientRect().top <= edge) chosen = block;
     });
     if (!chosen && blocks.length) chosen = blocks[0];
-    if (chosen) { state.weekHeader = chosen.dataset.start; renderMasthead(); }
+    if (chosen) {
+      state.weekHeader = chosen.dataset.start;
+      document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML("week");
+      renderMasthead();
+    }
   }
 
   function lazyWeekScroll() {
@@ -569,12 +591,12 @@
     document.getElementById("weekTitle").textContent = periodLabel(selectedWeekStart, selectedWeekEnd);
     if (state.pvError) {
       document.getElementById("weekAgenda").innerHTML = PV_ERROR;
-      document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML();
+      document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML("week");
       return;
     }
     if (!state.pv) {
       document.getElementById("weekAgenda").innerHTML = PV_LOADING;
-      document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML();
+      document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML("week");
       return;
     }
     var pages = [], cursor = state.weekFirst;
@@ -584,7 +606,7 @@
       cursor = weekKeyShift(cursor, 1);
     }
     document.getElementById("weekAgenda").innerHTML = pages.join("");
-    document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML();
+    document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML("week");
     bindWeekStream();
     if (!state.weekHeader) {
       var selectedBlock = document.querySelector('#weekAgenda .week-block[data-start="' + start + '"]');
@@ -610,8 +632,9 @@
     for (var day = 1; day <= days; day++) {
       var k = keyFor(new Date(y, m, day)), sel = k === state.key, today = k === keyFor(new Date());
       var local = districtEventsFor(k).length, statewide = stateEventsFor(k).length;
-      html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + '" data-day="' + k + '" type="button"' + (today ? ' aria-label="ಇಂದು, ' + kn(day) + '" title="ಇಂದು"' : "") + '>' + kn(day) +
-        '<span class="mday-dots" aria-label="' + (local ? "ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು" : "") + (local && statewide ? ", " : "") + (statewide ? "ಕರ್ನಾಟಕ ಕಾರ್ಯಕ್ರಮಗಳು" : "") + '">' + (local ? '<i class="scope-dot district"></i>' : '') + (statewide ? '<i class="scope-dot state"></i>' : '') + '</span></button>';
+      var aria = local || statewide ? ' aria-label="' + kn(day) + ': ' + (local ? "ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು " + local : "") + (local && statewide ? ", " : "") + (statewide ? "ಕರ್ನಾಟಕ ಕಾರ್ಯಕ್ರಮಗಳು " + statewide : "") + '"' : '';
+      html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + '" data-day="' + k + '" type="button"' + (today ? ' title="ಇಂದು"' : "") + aria + '>' + kn(day) +
+        (local || statewide ? '<span class="mday-dots" aria-hidden="true">' + (local ? '<i class="scope-dot district"></i><b class="date-count district">' + local + '</b>' : '') + (statewide ? '<i class="scope-dot state"></i><b class="date-count state">' + statewide + '</b>' : '') + '</span>' : '') + '</button>';
     }
     return '<div class="week-row">' + WEEKDAYS.map(function (w) { return "<span>" + w.charAt(0) + "</span>"; }).join("") + '</div><div class="month-grid">' + html + '</div>';
   }
@@ -666,7 +689,11 @@
     var blocks = document.querySelectorAll("#monthScroller .month-block"), chosen = null;
     blocks.forEach(function (block) { if (block.getBoundingClientRect().top <= 120) chosen = block; });
     if (!chosen && blocks.length) chosen = blocks[0];
-    if (chosen) { state.monthHeader = chosen.dataset.month; renderMasthead(); }
+    if (chosen) {
+      state.monthHeader = chosen.dataset.month;
+      document.getElementById("monthDistrictSelect").innerHTML = districtOptionsHTML("month");
+      renderMasthead();
+    }
   }
 
   function lazyMonthScroll() {
@@ -712,7 +739,7 @@
       }
       updateMonthHeader();
     }
-    document.getElementById("monthDistrictSelect").innerHTML = districtOptionsHTML();
+    document.getElementById("monthDistrictSelect").innerHTML = districtOptionsHTML("month");
     bindDistrictSelectors();
   }
 
@@ -809,7 +836,7 @@
   }
 
   function renderSettings() {
-    document.getElementById("settingsDistrictSelect").innerHTML = districtOptionsHTML();
+    document.getElementById("settingsDistrictSelect").innerHTML = districtOptionsHTML("all");
     bindDistrictSelectors();
   }
 

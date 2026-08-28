@@ -189,7 +189,7 @@ function assert(cond, msg) {
   resolveUrl(URL(INITIAL), mkJson(INITIAL));
   await tick();
   assert(countIn(els.todayContent.innerHTML, "<option") === 3, "district select populated from sheet names");
-  assert(els.todayContent.innerHTML.includes(">Bagalkot (9)</option>"), "district option shows local event count");
+  assert(els.todayContent.innerHTML.includes(">Bagalkot (2)</option>"), "district option shows date-local event count");
   assert(els.todayContent.innerHTML.includes(">Ballari (1)</option>"), "district count excludes Karnataka-wide events");
   assert(els.todayContent.innerHTML.includes('id="districtEvents"'), "district events grouped inside existing card");
   assert(els.todayContent.innerHTML.includes('id="stateEvents"'), "state events grouped inside existing card");
@@ -312,12 +312,15 @@ function assert(cond, msg) {
   assert(els.weekTitle.textContent.includes("–"), "week header shows start and end dates");
   assert((els.weekAgenda.innerHTML.match(/class="week-day"/g) || []).length === 35, "week renders five lazy-loadable vertical weeks");
   assert(els.weekAgenda.innerHTML.includes("ಆಗಸ್ಟ್"), "week day blocks include the month");
+  assert(els.weekAgenda.innerHTML.includes("week-day-counts"), "week rows show contextual event counts");
   assert(!els.weekAgenda.innerHTML.includes("event-scope"), "week rows avoid repetitive scope tags");
   tabEls.month.click();
   assert(els.mastheadDate.textContent.includes("2026"), "month header uses month and year context");
   assert(els.monthScroller.innerHTML.includes("agenda-day"), "month agenda groups events by date");
+  assert(els.monthScroller.innerHTML.includes("date-count"), "month dates show contextual event counts");
   tabEls.day.click();
   assert(els.mastheadDate.textContent.includes(dayNumber(DAY8)), "Day tab preserves selected date");
+  assert(els.todayContent.innerHTML.includes("ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು ("), "Day headings show contextual event counts");
   assert(sessionStore.pvDate === DAY8, "selected date is stored in the session");
 
   console.log("12) PV load failure shows event-data error (no OCR fallback, no crash)");

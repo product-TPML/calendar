@@ -134,6 +134,7 @@ equal columns for the available values.
 - Show an inclusive range event on every covered day.
 - Use a vermillion left border and dot for district events and green for
   Karnataka-wide events.
+- Show the district/Karnataka event count on each date row.
 - Preserve grouped headings and text labels so meaning never depends on color.
 - Render a continuous vertical stream of weeks; initially load a small window and
   lazily append/prepend adjacent weeks near the scroll edges.
@@ -158,8 +159,8 @@ equal columns for the available values.
 - Use two possible presence dots in each date cell:
   - Vermillion dot: one or more selected-district events
   - Green dot: one or more Karnataka-wide events
-- Both dots may appear on the same date. Do not put event counts in the date
-  cells.
+- Both dots may appear on the same date. Show each count next to its corresponding
+  colored dot.
 - Add a dated agenda below the grid so details are not hidden behind dots.
 - Group agenda events by date and then by selected-district/Karnataka-wide scope.
 - Show event title and optional place; omit missing places.
@@ -244,8 +245,10 @@ Mobile Day after scrolling:
 - Populate every selector from all 31 worksheet names, including districts with
   no events.
 - Keep all selector instances synchronized through `state.district`.
-- Show each district's valid district-specific event count beside its name; count
-  each source record once, including a range record once, and exclude Karnataka-wide rows.
+- Show a contextual district-specific count beside each selector name: active date
+  in Day, visible week in Week, visible month in Month, and all data in Settings.
+  Count each source record once, including a range record once, and exclude
+  Karnataka-wide rows.
 - Store the selection in `sessionStorage` as `pvDistrict`.
 - Default to `Select district` / state-only rather than silently choosing a
   district.
