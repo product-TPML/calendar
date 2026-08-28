@@ -231,6 +231,8 @@ Mobile Day after scrolling:
 - Populate every selector from all 31 worksheet names, including districts with
   no events.
 - Keep all selector instances synchronized through `state.district`.
+- Show each district's valid district-specific event count beside its name; count
+  each source record once, including a range record once, and exclude Karnataka-wide rows.
 - Store the selection in `sessionStorage` as `pvDistrict`.
 - Default to `Select district` / state-only rather than silently choosing a
   district.

@@ -179,7 +179,10 @@
   function districtOptionsHTML() {
     if (!state.pv) return '<option value="">ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</option>';
     return '<option value="">ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</option>' + Object.keys(state.pv.sheets).map(function (name) {
-      return '<option value="' + esc(name) + '"' + (name === state.district ? " selected" : "") + '>' + esc(name) + '</option>';
+      var count = state.pvRecords.filter(function (r) {
+        return r.sourceDistrict === name && r.scope !== "Relevant for Karnataka";
+      }).length;
+      return '<option value="' + esc(name) + '"' + (name === state.district ? " selected" : "") + '>' + esc(name) + ' (' + count + ')</option>';
     }).join("");
   }
 

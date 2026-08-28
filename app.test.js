@@ -188,6 +188,8 @@ function assert(cond, msg) {
   resolveUrl(URL(INITIAL), mkJson(INITIAL));
   await tick();
   assert(countIn(els.todayContent.innerHTML, "<option") === 3, "district select populated from sheet names");
+  assert(els.todayContent.innerHTML.includes(">Bagalkot (9)</option>"), "district option shows local event count");
+  assert(els.todayContent.innerHTML.includes(">Ballari (1)</option>"), "district count excludes Karnataka-wide events");
   assert(els.todayContent.innerHTML.includes('id="districtEvents"'), "district events grouped inside existing card");
   assert(els.todayContent.innerHTML.includes('id="stateEvents"'), "state events grouped inside existing card");
   assert(!sectionBody(els.todayContent.innerHTML, "districtEvents").includes("PV-Bagalkot-"), "empty district -> no district events");
