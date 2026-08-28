@@ -1,0 +1,928 @@
+{
+  "source_file": "PV Calendar data.xlsx",
+  "sheet_count": 31,
+  "record_count": 145,
+  "sheets": {
+    "Bagalkot": [
+      {
+        "date": "2026-09-01",
+        "name_of_festival": "ಮಲ್ಲಿಕಾರ್ಜುನ ದೇವರ ರಥೋತ್ಸವ ಅಂಗವಾಗಿ ಜಂಗಿ ನಿಕಾಲಿ ಕುಸ್ತಿ",
+        "place": "ರಬಕವಿ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-02",
+        "name_of_festival": "ಮಲ್ಲಿಿಾರ್ಜುನ ದೇವರ ರಥೋತ್ಸವ ಅಂಗವಾಗಿ ಕಳಸೋತ್ಸವ",
+        "place": "ರಬಕವಿ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-05",
+        "name_of_festival": "ದಿಗಂಬರೇಶ್ವರ ರಥೋತ್ಸವ",
+        "place": "ಹನಗಂಡಿ, ತಾ.ತೆರದಾಳ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಸಂಗಮೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಹುನಗುಂದ",
+        "relevance": null
+      },
+      {
+        "date": "07–092026",
+        "name_of_festival": "ರಾಮೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಜಮಖಂಡಿ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ವಾರಿಮಲ್ಲಯ್ಯನ ದೇವಸ್ಥಾನದ ಜಾತ್ರಾಮಹೋತ್ಸವ",
+        "place": "ಹೆರಕಲ್ ತಾ.ಬೀಳಗಿ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಸಿದ್ಧೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಬೀಳಗಿ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ವಿಜಯ ಮಹಾಂತ ಶಿವಯೋಗಿಗಳ ರಥೋತ್ಸವ",
+        "place": "ಇಳಕಲ್",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಅಲ್ಲಮಪ್ರಭು ಜಾತ್ರೆ",
+        "place": "ತೆರದಾಳ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಹಾದಿ ಬಸವೇಶ್ವರ ರಥೋತ್ಸವ",
+        "place": "ಗುಳೇದಗುಡ್ಡ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಕಲ್ಮೇಶ್ವರ ರಥೋತ್ಸವ",
+        "place": "ಕೊಂಕಣಕೊಪ್ಪ, ತಾ.ಗುಳೇದಗುಡ್ಡ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-08",
+        "name_of_festival": "ವಿಜಯ ಮಹಾಂತ ಶಿವಯೋಗಿಗಳ ಅಡ್ಡಪಲ್ಲಕ್ಕಿ ಮಹೋತ್ಸವ",
+        "place": "ಇಳಕಲ್",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-24",
+        "name_of_festival": "ಪ್ರಭುಲಿಂಗೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಚಿಮ್ಮಡ ತಾ. ಮಹಾಲಿಂಗಪುರ",
+        "relevance": null
+      }
+    ],
+    "Ballari": [
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಶ್ರೀ ಗುರುಕಟ್ಟೆ ಬಸವೇಶ್ವರ ಸ್ವಾಮಿ ಮಹಾ ರಥೋತ್ಸವ ಮತ್ತು  ಶ್ರೀಕುಮಾರಸ್ವಾಮಿ ದೇಗುಲದಲ್ಲಿ ಶ್ರಾವಣ ಸೋಮವಾರ ಆಚರಣೆ",
+        "place": "ಬಳ್ಳಾರಿ ತಾಲ್ಲೂಕಿನ ಎತ್ತಿನಬೂದಿಹಾಳು ಮತ್ತು ಸಂಡೂರು ತಾಲ್ಲೂಕಿನ ಕುಮಾರಸ್ವಾಮಿ ದೇಗುಲ",
+        "relevance": "ಇಡೀ ಜಿಲ್ಲೆಯ ಭಕ್ತರು ಈ ಉತ್ಸವದಲ್ಲಿ ಭಾಗವಹಿಸುತ್ತಾರೆ."
+      },
+      {
+        "date": "2026-09-08",
+        "name_of_festival": "ಶ್ರೀ ಗುರುಕಟ್ಟೆ ಬಸವೇಶ್ವರ ಸ್ವಾಮಿ ಭಜನೆ, ಪುರವಂತಿಕೆ ಹಾಗೂ ಶ್ರೀ ಸ್ವಾಮಿಯ ಭವ್ಯ ಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ",
+        "place": "ಬಳ್ಳಾರಿ ತಾಲ್ಲೂಕಿನ ಎತ್ತಿನಬೂದಿಹಾಳು",
+        "relevance": "ಇಡೀ ಜಿಲ್ಲೆಯ ಭಕ್ತರು ಈ ಉತ್ಸವದಲ್ಲಿ ಭಾಗವಹಿಸುತ್ತಾರೆ."
+      },
+      {
+        "date": "2026-09-09",
+        "name_of_festival": "ಶ್ರೀ ಗುರುಕಟ್ಟೆ ಬಸವೇಶ್ವರ ಸ್ವಾಮಿ ಮಹಾ ರಥೋತ್ಸವ",
+        "place": "ಬಳ್ಳಾರಿ ತಾಲ್ಲೂಕಿನ ಎತ್ತಿನಬೂದಿಹಾಳು",
+        "relevance": "ಇಡೀ ಜಿಲ್ಲೆಯ ಭಕ್ತರು ಈ ಉತ್ಸವದಲ್ಲಿ ಭಾಗವಹಿಸುತ್ತಾರೆ."
+      }
+    ],
+    "Belagavi": [
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಫಡಿಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಹಿರೇಬಾಗೇವಾಡಿ, ಬೆಳಗಾವಿ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಓಘಸಿದ್ದೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಮೋಳೆ, ಕಾಗವಾಡ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಜಡಿಸಿದ್ದೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಬೆಲ್ಲದ ಬಾಗೇವಾಡಿ, ಹುಕ್ಕೇರಿ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಚಿಕ್ಕನಂದಿಹಳ್ಳಿ, ಚನ್ನಮ್ಮನ ಕಿತ್ತೂರು ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-10",
+        "name_of_festival": "ನಾಗಯ್ಯ ಅಜ್ಜನ ಜಾತ್ರೆ",
+        "place": "ಬಡೇಕೊಳ್ಳಮಠ, ಬೆಳಗಾವಿ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "14.09.2026ರಿಂದ",
+        "name_of_festival": "ಗಣೇಶೋತ್ಸವ ಸಂಭ್ರಮ",
+        "place": "ಬೆಳಗಾವಿ",
+        "relevance": null
+      }
+    ],
+    "Bengaluru Rural": [],
+    "Bengaluru South (Ramanagara)": [
+      {
+        "date": "2026-09-04",
+        "name_of_festival": "ಕೃಷ್ಣ ಜನ್ಮಾಷ್ಟಮಿ ವಿಶೇಷ ಆಚರಣೆ",
+        "place": "ಅಪ್ರಮೇಯ ದೇವಸ್ಥಾನ, ಮಳೂರು, ಚನ್ನಪಟ್ಟಣ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for Karnataka"
+      }
+    ],
+    "Bengaluru Urban": [],
+    "Bidar": [
+      {
+        "date": "2026-09-04",
+        "name_of_festival": "ದಹಿ ಹಂಡಿ ಕಾರ್ಯಕ್ರಮ",
+        "place": "ಔರಾದ್‌",
+        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+      },
+      {
+        "date": "2026-09-09",
+        "name_of_festival": "ಲಿಂಗೈಕ್ಯ ಪರ್ವತಲಿಂಗ ಶಿವಾಚಾರ್ಯರ ಸ್ಮರಣೋತ್ಸವ",
+        "place": "ಲಾಡಗೇರಿ, ಬೀದರ್‌",
+        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+      },
+      {
+        "date": "2026-09-10",
+        "name_of_festival": "ಮಾತೆ ಗಂಗಾದೇವಿ ಪ್ರವಚನ ಸಮಾರೋಪ",
+        "place": "ಬಸವೇಶ್ವರ ದೇವಸ್ಥಾನ, ಬಸವಕಲ್ಯಾಣ",
+        "relevance": null
+      },
+      {
+        "date": null,
+        "name_of_festival": "ಜಿಲ್ಲೆಯಾದ್ಯಂತ ಗಣೇಶನ ಮೂರ್ತಿಗಳ ಪ್ರತಿಷ್ಠಾಪನೆ",
+        "place": "ಜಿಲ್ಲೆಯಾದ್ಯಂತ",
+        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+      },
+      {
+        "date": "2026-09-11",
+        "name_of_festival": "ರೈತರ ಹೊಳ ಹಬ್ಬ ಆಚರಣೆ",
+        "place": "ಔರಾದ್‌",
+        "relevance": null
+      },
+      {
+        "date": null,
+        "name_of_festival": "ಕಲ್ಯಾಣ ಕರ್ನಾಟಕ ವಿಮೋಚನಾ ದಿನಾಚರಣೆ",
+        "place": "ಜಿಲ್ಲೆಯಾದ್ಯಂತ ಆಚರಣೆ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-13",
+        "name_of_festival": "ಚೌತಿ ಹಾಗೂ ಶಂಭುಲಿಂಗ ಶಿವಾಚಾರ್ಯರ ಆಶೀರ್ವಚನ",
+        "place": "ಹಾವಗಿಸ್ವಾಮಿ ಮಠ, ಡೋಣಗಾಂವ್‌, ಕಮಲನಗರ ತಾಲ್ಲೂಕು",
+        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+      },
+      {
+        "date": "2026-09-14",
+        "name_of_festival": "ವಚನ ಸಾಹಿತ್ಯ ದರ್ಶನ ಪ್ರವಚನ ಸಮಾರೋಪ",
+        "place": "ಬಸವ ಮಂಟಪ, ಮನ್ನಳ್ಳಿ, ಬೀದರ್‌ ತಾಲ್ಲೂಕು",
+        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+      },
+      {
+        "date": "2026-09-14",
+        "name_of_festival": "ಹಾವಗಿ ಸ್ವಾಮಿ ಪಲ್ಲಕ್ಕಿ ಮಹೋತ್ಸವ",
+        "place": "ಹಾವಗಿಸ್ವಾಮಿ ಮಠ, ಡೋಣಗಾಂವ್‌, ಕಮಲನಗರ ತಾಲ್ಲೂಕು",
+        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+      },
+      {
+        "date": "2026-09-14",
+        "name_of_festival": "ಮಡಿವಾಳೇಶ್ವರ ಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ",
+        "place": "ಮಡಿವಾಳೇಶ್ವರ ಮಂದಿರ, ಬೀದರ್‌",
+        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+      },
+      {
+        "date": "2026-09-14",
+        "name_of_festival": "ಜಿಲ್ಲೆಯಾದ್ಯಂತ ಗಣೇಶನ ಮೂರ್ತಿಗಳ ಪ್ರತಿಷ್ಠಾಪನೆ",
+        "place": "ಜಿಲ್ಲೆಯಾದ್ಯಂತ",
+        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+      },
+      {
+        "date": "2026-09-17",
+        "name_of_festival": "ಕಲ್ಯಾಣ ಕರ್ನಾಟಕ ವಿಮೋಚನಾ ದಿನಾಚರಣೆ",
+        "place": "ಜಿಲ್ಲೆಯಾದ್ಯಂತ ಆಚರಣೆ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-18",
+        "name_of_festival": "ಗಣೇಶ್‌ನ ಮೂರ್ತಿಗಳ ಮೆರವಣಿಗೆ, ವಿಸರ್ಜನೆ",
+        "place": "ಬೀದರ್‌",
+        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+      },
+      {
+        "date": "2026-09-28",
+        "name_of_festival": "ಅಭಿನವ ಘನಲಿಂಗ ರುದ್ರಮನಿ ಶಿವಾಚಾರ್ಯ ವರ್ಧಂತಿ",
+        "place": "ಬಸವಕಲ್ಯಾಣ",
+        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟದ್ದು"
+      }
+    ],
+    "Chamarajanagar": [],
+    "Chikkaballapur": [
+      {
+        "date": "2026-05-09",
+        "name_of_festival": "ವೇಣುಗೋಪಾಲ ಸ್ವಾಮಿ ರಥೋತ್ಸವ",
+        "place": "ಚಿಕ್ಕಬಳ್ಳಾಪುರ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-15",
+        "name_of_festival": "ಸರ್.ಎಂ.ವಿಶ್ವೇಶ್ವರಯ್ಯ ಜಯಂತಿ",
+        "place": "ಚಿಕ್ಕಬಳ್ಳಾಪುರ ತಾಲ್ಲೂಕಿನ ಮುದ್ದೇನಹಳ್ಳಿ",
+        "relevance": "Relevant for Karnataka"
+      }
+    ],
+    "Chikkamagaluru": [
+      {
+        "date": "2026-09-04",
+        "name_of_festival": "ಕೃಷ್ಣ ಜನ್ಮಾಷ್ಠಮಿ",
+        "place": "ಶೃಂಗೇರಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-08",
+        "name_of_festival": "ಸಂತಮೇರಿ ಹಬ್ಬ",
+        "place": "ಜಿಲ್ಲೆಯ ಎಲ್ಲಾ ಚರ್ಚ್‌ಗಳಲ್ಲಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-22",
+        "name_of_festival": "ವಾಮನ ಜಯಂಯತಿ",
+        "place": "ಶೃಂಗೇರಿ",
+        "relevance": "Relevant for Karnataka"
+      },
+      {
+        "date": "2026-09-26",
+        "name_of_festival": "ಉಮಮಹೇಶ್ವರ ವ್ರತ, ಚಾತುರ್ಮಾಸ್ಯ ಸಮಾಪ್ತಿ",
+        "place": "ಶೃಂಗೇರಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-27",
+        "name_of_festival": "ಮಹಾಲಯ ಪಕ್ಷಾ ಆರಂಭ",
+        "place": "ಜಿಲ್ಲೆಯ ಎಲ್ಲೆಡೆ",
+        "relevance": "Relevant for District"
+      }
+    ],
+    "Chitradurga": [],
+    "Dakshina Kannada": [
+      {
+        "date": "2026-03-09",
+        "name_of_festival": "ಇಸ್ಕಾನ್ ಶ್ರೀಕೃಷ್ಣ ಜನ್ಮಾಷ್ಟಮಿ",
+        "place": "ಪಿಲಿಕುಳ ಸ್ಕೌಟ್ಸ್‌ ಭವನ, ಮಂಗಳೂರು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-04-09",
+        "name_of_festival": "ಇಸ್ಕಾನ್ ಶ್ರೀಕೃಷ್ಣ ಜನ್ಮಾಷ್ಟಮಿ",
+        "place": "ಪಿಲಿಕುಳ ಸ್ಕೌಟ್ಸ್‌ ಭವನ, ಮಂಗಳೂರು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-04",
+        "name_of_festival": "ಪಾಂಡೇಶ್ವರದಲ್ಲಿ ಕೃಷ್ಣಾಷ್ಟಮಿ",
+        "place": "ಪಾಂಡೇಶ್ವರ, ಮಂಗಳೂರು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-06",
+        "name_of_festival": "ಉರ್ವ ಬ್ರಹ್ಮಾಕುಮಾರೀಸ್‌ನಲ್ಲಿ ಕೃಷ್ಣ ಜನ್ಮಾಷ್ಠಮಿ, ಶ್ರೀಕೃಷ್ಣ ವೇಷ ಸ್ಪರ್ಧೆ",
+        "place": "ಉರ್ವ ಪೊಲೀಸ್ ಠಾನೆಯ ಹಿಂಭಾಗ, ಉರ್ವಸ್ಟೋರ್, ಮಂಗಳೂರು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-08",
+        "name_of_festival": "ಕುಲಶೇಖರ ಚರ್ಚ್‌ನಲ್ಲಿ ತೆನೆಹಬ್ಬ",
+        "place": "ಕುಲಶೇಖರ, ಮಂಗಳೂರು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-17",
+        "name_of_festival": "ಕೊಲ್ಲಿ ದುರ್ಗಾದೇವಿ ದೇವಸ್ಥಾನದಲ್ಲಿ ಕೊಪ್ಪರಿಗೆ ಇಳಿಸುವುದು",
+        "place": "ಕೊಲ್ಲಿ, ಬೆಳ್ತಂಗಡಿ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-19",
+        "name_of_festival": "ಡೊಂಗರಕೇರಿ ಮೂಲಗಣಪತಿ ದೇವಸ್ಥಾನದಲ್ಲಿ ರಂಗಪೂಜೆ",
+        "place": "ಡೊಂಗರಕೇರಿ, ಮಂಗಳೂರು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-11",
+        "name_of_festival": "ಕೊಡಿಪ್ಪಾಡಿ ಜನಾರ್ದನ ದೇವಸ್ಥಾನದಲ್ಲಿ ತೀರ್ಥೋತ್ಸವ",
+        "place": "ಕೊಡಿಪ್ಪಾಡಿ ಜನಾರ್ದನ ದೇವಸ್ಥಾನ, ಪುತ್ತೂರು",
+        "relevance": "Relevant for Karnataka"
+      },
+      {
+        "date": "2026-09-11",
+        "name_of_festival": "ಪಾಣೆಮಂಗಳೂರು ನರಹರಿ ಪರ್ವತ ದೇವಸ್ಥಾನದಲ್ಲಿ ತೀರ್ಥೋತ್ಸವ",
+        "place": "ಪಾಣೆಮಂಗಳೂರು, ಬಂಟ್ವಾಳ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-15",
+        "name_of_festival": "ಮಿತ್ತಬಾಗಿಲಿನಲ್ಲಿ ಗಣೇಶೋತ್ಸವ",
+        "place": "ಮಿತ್ತಬಾಗಿಲು, ಬೆಳ್ತಂಗಡಿ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      }
+    ],
+    "Davanagere": [],
+    "Dharwad": [
+      {
+        "date": "2026-07-09",
+        "name_of_festival": "ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ನಲವಡಿ, ಸಾಸ್ವಿಹಳ್ಳಿ ಅಣ್ಣಿಗೇರಿ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-07-09",
+        "name_of_festival": "ಕಲ್ಮೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಅಡ್ನೂರು ಅಣ್ಣಿಗೇರಿ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-07-09",
+        "name_of_festival": "ಉಣಕಲ್ ಸಿದ್ದಪ್ಪಜ್ಜನ ರಥೋತ್ಸವ,",
+        "place": "ಕಿತ್ತೂರು ಅಣ್ಣಿಗೇರಿ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-07-09",
+        "name_of_festival": "ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಖನ್ನೂರ,ತಡಹಾಳ ನವಲಗುಂದ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-07-09",
+        "name_of_festival": "ಹಳ್ಳದ ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಹೆಬ್ಬಾಳ ನವಲಗುಂದ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-07-09",
+        "name_of_festival": "ಬಸವಣ್ಣ ದೇವರ ಜಾತ್ರೆ",
+        "place": "ಬಸಾಪೂರ ಗೌಡಗಟ್ಟಿ ಕುಂದಗೋಳ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-07-09",
+        "name_of_festival": "ಕಲ್ಮೇಶ್ವರ ದೇವರ ಜಾತ್ರೆ",
+        "place": "ಚಿಕ್ಕನರ್ತಿ ಕುಂದಗೋಳ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-07-09",
+        "name_of_festival": "ಉಳವಿ ಚನ್ನಬಸವೇಶ್ವರ ರಥೋತ್ಸವ",
+        "place": "ಧಾರವಾಡ",
+        "relevance": null
+      },
+      {
+        "date": "2026-11-09",
+        "name_of_festival": "ಸಿದ್ದಪ್ಪಜ್ಜನವರ ಜಾತ್ರೆ",
+        "place": "ಇಬ್ರಾಹಿಂಪುರ ಅಣ್ಣಿಗೇರಿ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-11-09",
+        "name_of_festival": "ಬಸವಣ್ಣದೇವರ ಜಾತ್ರೆ",
+        "place": "ಗುಮ್ಮಗೋಳ ನವಲಗುಂದ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-15",
+        "name_of_festival": "ವೀರಭದ್ರೇಶ್ವರ ಸ್ವಾಮಿ ಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ",
+        "place": "ಅಳ್ನಾವರ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-22",
+        "name_of_festival": "ಗಣಪತಿ ರಥೋತ್ಸವ",
+        "place": "ನವಲಗುಂದ",
+        "relevance": null
+      }
+    ],
+    "Gadag": [
+      {
+        "date": "2026-09-03",
+        "name_of_festival": "ಲಿಂಗಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಮೆಣಸಗಿ, ರೋಣ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಬಸವಣ್ಣ ಜಾತ್ರೆ",
+        "place": "ಕಲ್ಲಾಪೂರ, ನರಗುಂದ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಗೋಣಿ ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಲಿಂಗದಾಳ, ಗದಗ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಹಾಲಗುಂಡಿ ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಲಕ್ಕುಂಡಿ, ಗದಗ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "07 09.2026",
+        "name_of_festival": "ಗೋಣಿ ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಅಡವಿಸೋಮಾಪೂರ, ಗದಗ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "07 09.2026",
+        "name_of_festival": "ಕ್ವಾರಿ ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಹಳ್ಳಿಕೇರಿ, ಮುಂಡರಗಿ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "07. 09.2026",
+        "name_of_festival": "ಕಂಠಿ ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಅಬ್ಬಿಗೇರಿ, ರೋಣ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "07.909.2026",
+        "name_of_festival": "ವೀರಭದ್ರೇಶ್ವರ ಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ",
+        "place": "ಸಿಂಗಟಾಲೂರು, ಮುಂಡರಗಿ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ವೀರಭದ್ರೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಮಲ್ಲಾಪೂರ, ರೋಣ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ವೀರಭದ್ರೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಹಿರೇವಡ್ಟಟ್ಟಿ, ಮುಂಡರಗಿ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಬಸವೇಶ್ವರ ದೇವಸ್ಥಾನ ರಥೋತ್ಸವ",
+        "place": "ಬೆನಹಾಳ, ರೋಣ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಗೋಣಿ ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ನೀರಲಗಿ, ಗದಗ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-07-10",
+        "name_of_festival": "ವೀರಭದ್ರೇಶ್ವರ–ಬಸವೇಶ್ವರ ರಥೋತ್ಸವ",
+        "place": "ಯಾವಗಲ್, ರೋಣ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-12",
+        "name_of_festival": "ವೀರಭದ್ರೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ನರೇಗಲ್‌, ಗಜೇಂದ್ರಗಡ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-12",
+        "name_of_festival": "ಸಿದ್ಧಯ್ಯಜ್ಜನವರ ಗವಿಮಠ ರುದ್ರಾಭಿಷೇಕ ಮುಕ್ತಾಯ",
+        "place": "ಕಣಗಿಹಾಳ, ಗದಗ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-12",
+        "name_of_festival": "ಅಲ್ಲಮಮಪ್ರಭುಗಳ ರಥೋತ್ಸವ",
+        "place": "ಹದ್ಲಿ, ನರಗುಂದ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಬಸವಣ್ಣ ದೇವರ ರಥೋತ್ಸವ",
+        "place": "ಗಂಗಾಪೂರ,, ನರಗುಂದ ತಾಲಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      }
+    ],
+    "Hassan": [],
+    "Haveri": [
+      {
+        "date": "2026-09-11",
+        "name_of_festival": "ಬೀರಲಿಂಗೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಹುಲಿಕಟ್ಟಿ, ರಾಣೆಬೆನ್ನೂರು ತಾಲ್ಲೂಕು",
+        "relevance": null
+      }
+    ],
+    "Kalaburagi": [],
+    "Kodagu": [
+      {
+        "date": "2026-09-03",
+        "name_of_festival": "ಕೈಲ್ ಮುಹೂರ್ತ",
+        "place": "ಕೊಡಗು ಜಿಲ್ಲೆ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-04",
+        "name_of_festival": "ಶ್ರೀಕೃಷ್ಣ ಜನ್ಮಾಷ್ಟಮಿ",
+        "place": "ಕೊಡಗು ಜಿಲ್ಲ ಮತ್ತು ರಾಜ್ಯ",
+        "relevance": "Relevant for Karnataka"
+      },
+      {
+        "date": "2026-09-14",
+        "name_of_festival": "ಗಣೇಶ ಹಬ್ಬ",
+        "place": "ಕೊಡಗು ಜಿಲ್ಲೆ ಮತ್ತು ರಾಜ್ಯ",
+        "relevance": "Relevant for Karnataka"
+      }
+    ],
+    "Kolar": [
+      {
+        "date": "2026-09-04",
+        "name_of_festival": "ಶ್ರೀಕೃಷ್ಣ ಜಯಂತಿ",
+        "place": "ಕೋಲಾರ ಜಿಲ್ಲೆಯಾದ್ಯಂತ",
+        "relevance": "Relevant for Karnataka"
+      },
+      {
+        "date": "2026-09-13",
+        "name_of_festival": "ಕುರುಡುಮಲೆ ಜಾತ್ರಾಮಹೋತ್ಸವ",
+        "place": "ಮುಳಬಾಗಿಲು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-14",
+        "name_of_festival": "ಗೌರಿ, ಗಣೇಶ ಚತುರ್ಥಿ",
+        "place": "ಕೋಲಾರ ಜಿಲ್ಲೆಯಾದ್ಯಂತ",
+        "relevance": "Relevant for Karnataka"
+      },
+      {
+        "date": "2026-09-15",
+        "name_of_festival": "ಬ್ರಹ್ಮರಥೋತ್ಸವ; ಕುರುಡುಮಲೆ",
+        "place": "ಮುಳಬಾಗಿಲು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-17",
+        "name_of_festival": "ಪುಷ್ಪ ಪಲ್ಲಕ್ಕಿ; ಕುರುಡುಮಲೆ",
+        "place": "ಮುಳಬಾಗಿಲು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-17",
+        "name_of_festival": "ವಿಶ್ವಕರ್ಮ ಜಯಂತಿ",
+        "place": "ಕೋಲಾರ ಜಿಲ್ಲೆಯಾದ್ಯಂತ",
+        "relevance": "Relevant for Karnataka"
+      }
+    ],
+    "Mandya": [],
+    "Mysuru": [
+      {
+        "date": "ಸೆ.4",
+        "name_of_festival": "ಶ್ರೀಕೃಷ್ಣ ಜಯಂತಿ",
+        "place": "ಮೈಸೂರು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "ಸೆ.8",
+        "name_of_festival": "ಮೈಸೂರು ಚೌಡೇಶ್ವರಿ ಮತ್ತು ಲಕ್ಷ್ಮೀನಾರಾಯಣಸ್ವಾಮಿ ಉತ್ಸವ",
+        "place": "ಮೈಸೂರು ಯರಗನಹಳ್ಳಿ, ಕಲ್ಯಾಣಗಿರಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "ಸೆ.9",
+        "name_of_festival": "ಮೈಸೂರು ಚೌಡೇಶ್ವರಿ ಮತ್ತು ಲಕ್ಷ್ಮೀನಾರಾಯಣಸ್ವಾಮಿ ಉತ್ಸವ",
+        "place": "ಮೈಸೂರು ಯರಗನಹಳ್ಳಿ, ಕಲ್ಯಾಣಗಿರಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "ಸೆ.9",
+        "name_of_festival": "ಲಕ್ಷ್ಮೀಕಾಂತ ರಥ",
+        "place": "ಮೈಸೂರಿನ ಕುಂಬಾರಕೊಪ್ಪಲು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "ಸೆ.14",
+        "name_of_festival": "ಗೌರಿ, ಗಣೇಶ ಚತುರ್ಥಿ ಆಚರಣೆ",
+        "place": "ಮೈಸೂರು ಜಿಲ್ಲೆಯಾದ್ಯಂತ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "ಸೆ.17",
+        "name_of_festival": "ವಿಶ್ವಕರ್ಮ ಜಯಂತಿ",
+        "place": "ಮೈಸೂರು, ತಾಲ್ಲೂಕು ಕೇಂದ್ರಗಳು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "ಸೆ.26",
+        "name_of_festival": "ನಾರಾಯಣಗುರು ಜಯಂತಿ",
+        "place": "ಮೈಸೂರು ನಗರ",
+        "relevance": "Relevant for District"
+      }
+    ],
+    "Koppal": [
+      {
+        "date": "2026-09-05",
+        "name_of_festival": "ತೊಂಡೆತೇವರಪ್ಪ ಜಾತ್ರೆ",
+        "place": "ಕನಕಗಿರಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-05",
+        "name_of_festival": "ಹಿರೇಹಳ್ಳಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಕನಕಗಿರಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಸೋಮನಾಥ ದೇವಸ್ಥಾನದ ಜಾತ್ರೆ",
+        "place": "ಕುಷ್ಟಗಿ ತಾಲ್ಲೂಕಿನ ತಾವರಗೇರಾ ಪುರದಲ್ಲಿ",
+        "relevance": "Relevant for Karnataka"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಪತ್ರೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಕುಕನೂರು ತಾಲ್ಲೂಕಿನ ಯರೇಹಂಚಿನಾಳ ಗ್ರಾಮ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಯಲಬುರ್ಗಾ ತಾಲ್ಲೂಕಿನ ಹೊಸಳ್ಳಿ ಗ್ರಾಮ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಸಿದ್ದರಾಮೇಶ್ವರ ಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ",
+        "place": "ಯಲಬುರ್ಗಾ ತಾಲ್ಲೂಕಿನ ಹೊಸಳ್ಳಿ ಗ್ರಾಮ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ನೀಲಕಂಠೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಯಲಬುರ್ಗಾ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಶ್ರೀಧರ ಮುರಡಿ ಹಿರೇಮಠದ ಪುರಾಣ ಮುಕ್ತಾಯ",
+        "place": "ಯಲಬುರ್ಗಾ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-21",
+        "name_of_festival": "ಶರಣಬಸವೇಶ್ವರ ಜೋಡು ರಥೋತ್ಸವ",
+        "place": "ಕಾರಟಗಿ",
+        "relevance": "Relevant for District"
+      }
+    ],
+    "Raichur": [],
+    "Shivamogga": [],
+    "Tumakuru": [],
+    "Udupi": [
+      {
+        "date": "2026-09-05",
+        "name_of_festival": "ಉಡುಪಿಯಲ್ಲಿ ಶ್ರೀಕೃಷ್ಣ ಲೀಲೋತ್ಸವ (ವಿಟ್ಲ ಪಿಂಡಿ)",
+        "place": "ಉಡುಪಿ",
+        "relevance": "Relevant for Karnataka"
+      },
+      {
+        "date": "2026-09-08",
+        "name_of_festival": "ಕಲ್ಯಾಣಪುರ ಮಿಲಾಗ್ರಿಸ್ ಕೆಥಡ್ರಲ್‌ನಲ್ಲಿ ತೆನೆಹಬ್ಬ (ಮೋಂತಿ ಫೆಸ್ಟ್‌)",
+        "place": "ಕಲ್ಯಾಣಪುರ, ಉಡುಪಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-11",
+        "name_of_festival": "ಮಣಿಪಾಲ ನರಸಿಂಗೆ ದೇವಸ್ಥಾನದಲ್ಲಿ ಶ್ರಾವಣ ಪೂಜೆ ಮುಕ್ತಾಯ",
+        "place": "ಮಣಿಪಾಲ, ಉಡುಪಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-17",
+        "name_of_festival": "ಸೂಡ ಸುಬ್ರಹ್ಮಣ್ಯ ಭಜನಾ ಮಂಡಳಿಯಲ್ಲಿ ಭಜನಾ ಮಂಗಳೋತ್ಸವ",
+        "place": "ಸೂಡ, ಕಾರ್ಕಳ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-25",
+        "name_of_festival": "ಮಣಿಪಾಲ ನರಸಿಂಗೆ ದೇವಸ್ಥಾನದಲ್ಲಿ ನೂತನ ಧಾನ್ಯ ಪೂಜೆ, ಕದಿರು ಕಟ್ಟುವುದು",
+        "place": "ಮಣಿಪಾಲ, ಉಡುಪಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-26",
+        "name_of_festival": "ನಂದಿಕೂರು ದುರ್ಗಾಪರಮೇಶ್ವರಿ ದೇವಸ್ಥಾನದಲ್ಲಿ ಭಜನಾ ಮಂಗಳೋತ್ಸವ",
+        "place": "ನಂದಿಕೂರು, ಪಡುಬಿದ್ರಿ",
+        "relevance": "Relevant for District"
+      }
+    ],
+    "Uttara Kannada": [
+      {
+        "date": "2026-09-02",
+        "name_of_festival": "ಮುಗಳಿಕೋಣೆ ಗೋಪಾಲಕೃಷ್ಣ ದೇವಸ್ಥಾನದಲ್ಲಿ ಕೃಷ್ಣಾಷ್ಠಮಿ ಉತ್ಸವ",
+        "place": "ಭಟ್ಕಳ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-04",
+        "name_of_festival": "ಲಕ್ಷ ತುಳಸಿ ಅರ್ಚನೆ, ಸ್ವರ್ಣವಲ್ಲೀ ಮಠ",
+        "place": "ಸ್ವರ್ಣವಲ್ಲಿ ಮಠ, ತಾ:ಶಿರಸಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-05",
+        "name_of_festival": "ದಧಿಶಿಕ್ಯೋತ್ಸವ, ಮಹಾಬಲೇಶ್ವರ ದೇವಸ್ಥಾನ ಗೋಕರ್ಣ",
+        "place": null,
+        "relevance": "Relevant for Karnataka"
+      },
+      {
+        "date": "2026-09-06",
+        "name_of_festival": "ಮಧುಕೇಶ್ವರ ದೇವರ ವರ್ಧಂತಿ ಉತ್ಸವ",
+        "place": "ಬನವಾಸಿ, ತಾ:ಶಿರಸಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-06",
+        "name_of_festival": "ಮಾರಿಕಾಂಬಾ ದೇವಸ್ಥಾನದಲ್ಲಿ ಅಕ್ಷರಾಭ್ಯಾಸ",
+        "place": "ಮುಂಡಗೋಡ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-17",
+        "name_of_festival": "ಸಾತೇರಿ ದೇವಿ ವಾರ್ಷಿಕ ಜಾತ್ರೆ ಆರಂಭ",
+        "place": "ಹಣಕೋಣ, ತಾ:ಕಾರವಾರ",
+        "relevance": "Relevant for Karnataka"
+      },
+      {
+        "date": "2026-09-25",
+        "name_of_festival": "ಗೋಪಾಲಕೃಷ್ಣ ದೇವಸ್ಥಾನದಲ್ಲಿ ಅನಂತನೋಪಿ",
+        "place": "ಶಿರಸಿ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-25",
+        "name_of_festival": "ತಿರುಮಲ ದೇವಸ್ಥಾನದಲ್ಲಿ ಅನಂತ ಚತುರ್ದಶಿ",
+        "place": "ಮೂಡಭಟ್ಕಳ, ತಾ:ಭಟ್ಕಳ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-29",
+        "name_of_festival": "ಶೆಜ್ಜೇಶ್ವರ ದೇವಸ್ಥಾನದ ಗರ್ಭಗುಡಿ ಪ್ರತಿಷ್ಠಾ ಮಹೋತ್ಸವ",
+        "place": "ಶೆಜ್ಜೇಶ್ವರ, ತಾ:ಕಾರವಾರ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-29",
+        "name_of_festival": "ಅಥರ್ವಶೀರ್ಷ ಹವನ, ಸಿದ್ದಿವಿನಾಯಕ ದೇವಸ್ಥಾನ",
+        "place": "ಚಂದಗುಳಿ, ತಾ:ಯಲ್ಲಾಪುರ",
+        "relevance": null
+      }
+    ],
+    "Vijayapura": [
+      {
+        "date": "2026-09-01",
+        "name_of_festival": "ಗುಗ್ಗಳ ಬಸವೇಶ್ವರ ಮತ್ತು ವೀರಭದ್ರೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಮುದ್ದೇಬಿಹಾಳ ಪಟ್ಟಣ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-04",
+        "name_of_festival": "ಬಸವೇಶ್ವರ (ಮೂಲನಂದೀಶ್ವರ) ಜಾತ್ರೆ",
+        "place": "ಬಸವನಬಾಗೇವಾಡಿ ಪಟ್ಟಣ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಕುಂಟೋಜಿ ಗ್ರಾಮ, ಮುದ್ದೇಬಿಹಾಳ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಕೊಟ್ಟರು ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಕೋಳೂರ ಗ್ರಾಮ, ಮುದ್ದೇಬಿಹಾಳ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "01 ರಿಂದ 11.09.2026",
+        "name_of_festival": "ಪವಾಡ ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಬಸರಕೋಡ ಗ್ರಾಮ, ಮುದ್ದೇಬಿಹಾಳ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-04",
+        "name_of_festival": "ಬಸವೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಮನಗೂಳಿ ಪಟ್ಟಣ",
+        "relevance": null
+      },
+      {
+        "date": "08 ರಿಂದ 14.09.2026",
+        "name_of_festival": "ಶಾಂತಿ ಕುಟೀರದ ಗಣಪತರಾವ್ ಮಹಾರಾಜರ 118 ನೇ ಜನ್ಮೋತ್ಸವ ಸಪ್ತಾಹ.",
+        "place": "ವಿಜಯಪುರ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-08",
+        "name_of_festival": "ಸಣ್ಣ ರಥೋತ್ಸವ ಮತ್ತು ಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ",
+        "place": "ಇಂಚಗೇರಿ ಗ್ರಾಮ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಮಲ್ಲಿಕಾರ್ಜುನ ಜಾತ್ರೆ",
+        "place": "ಕೋರಳ್ಳಿ ಗ್ರಾಮ, ಆಲಮೇಲ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಮಲ್ಲಿಕಾರ್ಜುನ ದೇವರ ಜಾತ್ರೆ",
+        "place": "ಇಂಡಿ ಪಟ್ಟಣ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಶಂಕರಲಿಂಗೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಕಪನಿಂಬರಗಿ ಗ್ರಾಮ, ಇಂಡಿ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      },
+      {
+        "date": "2026-07-10",
+        "name_of_festival": "ಶ್ರೀಗೊಲ್ಲಾಳೇಶ್ವರ ಜಾತ್ರೆ",
+        "place": "ಬಂದಾಳ ಗ್ರಾಮ, ಸಿಂದಗಿ ತಾಲ್ಲೂಕು",
+        "relevance": null
+      }
+    ],
+    "Vijayanagara": [
+      {
+        "date": "2026-09-05",
+        "name_of_festival": "ಶ್ರೀಕೃಷ್ಣ ಜನ್ಮಾಷ್ಟಮಿ ಪ್ರಯುಕ್ತ ಮರಿಯಮ್ಮನಹಳ್ಳಿ ಸಮೀಪದ ತಿಮ್ಮಲಾಪುರದ ವೇಣುಗೋಪಾಲಸ್ವಾಮಿ ರಥೋತ್ಸವ",
+        "place": "ತಿಮ್ಮಲಾಪುರ, ಮರಿಯಮ್ಮನಹಳ್ಳಿ ಹೋಬಳಿ, ಹೊಸಪೇಟೆ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-06",
+        "name_of_festival": "ಮೂಡಲಗೆರೆ ಬ್ರಹ್ಮದೇವರ ಪಲ್ಲಕ್ಕಿ ಉತ್ಸವ",
+        "place": "ಮೂಡಲಗೆರೆ, ಹರಪನಹಳ್ಳಿ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-07",
+        "name_of_festival": "ಹಂಪಿ ವಿರೂಪಾಕ್ಷ ದೇವಸ್ಥಾನದಲ್ಲಿ ಶ್ರಾವಣ ಸೋಮವಾರ ವಿಶೇಷ ಪೂಜೆ, ಅಭಿಷೇಕ",
+        "place": "ಹಂಪಿ, ಹೊಸಪೇಟೆ ತಾಲ್ಲೂಕು",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-15",
+        "name_of_festival": "ಗಣೇಶ ಚೌತಿ ಪ್ರಯುಕ್ತ ಹಲವು ಪೆಂಡಾಲ್‌ಗಳಲ್ಲಿ ಬೃಹತ್ ಗಣಪತಿ ವಿಗ್ರಹಗಳ ಸ್ಥಾಪನೆ, ಪೂಜೆ. ಕೆಲವು ಪೆಂಡಾಲ್‌ಗಳಲ್ಲಿ 11 ದಿನಗಳ ತನಕವೂ ಇಲ್ಲಿ ಪೂಜೆ ನೆರವೇರುತ್ತದೆ",
+        "place": "ಹೊಸಪೇಟೆ ನಗರ",
+        "relevance": "Relevant for District"
+      },
+      {
+        "date": "2026-09-29",
+        "name_of_festival": "ಅಂಗಾರಕ ಸಂಕಷ್ಟಿ– ಹೊಸಪೇಟೆ ನಗರದ ವಿನಾಯಕ ದೇವಸ್ಥಾನದಲ್ಲಿ ಗಣಹೋಮ, ವಿಶೇಷ ಪೂಜೆ",
+        "place": "ಹೊಸಪೇಟೆ",
+        "relevance": "Relevant for District"
+      }
+    ],
+    "Yadgir": [
+      {
+        "date": "2026-09-04",
+        "name_of_festival": "ಶ್ರೀ ವೇಣುಗೋಪಾಲ ಸ್ವಾಮಿ ದೇವಸ್ಥಾನದ ಜಾತ್ರೆ",
+        "place": "ಸುರಪುರ",
+        "relevance": "ಜಿಲ್ಲಾಮಟ್ಟ"
+      },
+      {
+        "date": "2026-09-14",
+        "name_of_festival": "ಜಿಲ್ಲೆಯ ಹಲವೆಡೆ ಗಣೇಶನ ಮೂರ್ತಿಗಳ ಪ್ರತಿಷ್ಠಾಪನೆ",
+        "place": "ಜಿಲ್ಲೆಯಾದ್ಯಂತ ಆಚರಣೆ",
+        "relevance": null
+      },
+      {
+        "date": "2026-09-17",
+        "name_of_festival": "ಕಲ್ಯಾಣ ಕರ್ನಾಟಕ ವಿಮೋಚನಾ ದಿನಾಚರಣೆ",
+        "place": "ಜಿಲ್ಲೆಯಾದ್ಯಂತ ಆಚರಣೆ",
+        "relevance": null
+      }
+    ]
+  }
+}
