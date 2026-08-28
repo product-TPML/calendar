@@ -500,7 +500,7 @@
   function weekAgendaHTML(key) {
     var d = parseKey(key), district = districtEventsFor(key), statewide = stateEventsFor(key);
     var content = '<h3 class="week-day-title"><button type="button" class="week-day-link" data-day="' + key + '">' +
-      WEEKDAYS[d.getDay()] + ' <span>' + kn(d.getDate()) + '</span></button></h3>';
+      WEEKDAYS[d.getDay()] + ' <span>' + kn(d.getDate()) + ' ' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</span></button></h3>';
     if (!district.length && !statewide.length) return '<section class="week-day" data-day="' + key + '">' + content + '<p class="empty-note">ಈ ದಿನ ಯಾವುದೇ ವಿಶೇಷ ದಿನವಿಲ್ಲ.</p></section>';
     return '<section class="week-day" data-day="' + key + '">' + content +
       '<div class="week-scope district"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + (district.length ? district.map(function (r) { return pvRow(r, "", key); }).join("") : '<li class="empty-note">ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.</li>') + '</ul></div>' +
@@ -648,7 +648,7 @@
   function monthBlockHTML(key) {
     var p = key.split("-"), y = +p[0], m = +p[1];
     return '<section class="month-block" data-month="' + key + '"><h2 class="stream-period-title">' + MONTHS[m] + " " + kn(y) + '</h2>' +
-      monthCalendarHTML(y, m) + '<p class="month-note">ಕೆಂಪು ಚುಕ್ಕೆ: ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು · ಹಸಿರು ಚುಕ್ಕೆ: ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</p>' +
+      monthCalendarHTML(y, m) + '<div class="scope-legend month-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ"><span><i class="scope-dot district"></i> ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span><span><i class="scope-dot state"></i> ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span></div>' +
       '<section class="month-agenda" aria-labelledby="monthAgenda-' + key + '"><h3 class="ev-section-title" id="monthAgenda-' + key + '">ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿ</h3>' + monthAgendaHTML(y, m) + '</section></section>';
   }
 
@@ -742,6 +742,7 @@
     var unit = state.tab === "week" ? "ವಾರ" : state.tab === "month" ? "ತಿಂಗಳು" : "ದಿನ";
     prev.setAttribute("aria-label", "ಹಿಂದಿನ " + unit);
     next.setAttribute("aria-label", "ಮುಂದಿನ " + unit);
+    if (document.documentElement) document.documentElement.style.setProperty("--masthead-h", document.querySelector(".masthead").offsetHeight + "px");
     document.title = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + " — ಕನ್ನಡ ಪಂಚಾಂಗ";
   }
 

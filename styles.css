@@ -385,6 +385,11 @@ body {
 .toolbar-row { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; }
 .toolbar-row label { font-size: 13px; font-weight: 700; color: var(--ink-soft); white-space: nowrap; }
 .toolbar-row .district-select { max-width: none; }
+.stream-toolbar {
+  position: sticky; top: var(--masthead-h, 64px); z-index: 15;
+  margin: -14px -14px 12px; padding: 10px 14px;
+  background: var(--paper); border-bottom: 1px solid var(--line);
+}
 .month-agenda-list { padding: 0 12px; }
 .agenda-day + .agenda-day { border-top: 1px dashed var(--line); }
 .agenda-day h3 { margin: 0; padding: 10px 2px 4px; font-size: 15px; }
@@ -399,10 +404,13 @@ body {
 
 /* ---------- Week view ---------- */
 .week-agenda, .month-scroller { display: grid; gap: 24px; }
-.week-block, .month-block { display: grid; gap: 12px; }
+.week-block { display: grid; gap: 0; padding: 14px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+.month-block { display: grid; gap: 12px; }
 .stream-period-title { margin: 0; padding: 4px 2px; font-family: var(--font-display); font-size: 21px; color: var(--verm); }
-.month-block + .month-block, .week-block + .week-block { padding-top: 8px; border-top: 2px solid var(--line); }
-.week-day { padding: 12px 14px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); }
+.month-block + .month-block { padding-top: 8px; border-top: 2px solid var(--line); }
+.week-block + .week-block { margin-top: 8px; }
+.week-day { padding: 14px 0; }
+.week-day + .week-day { border-top: 1px solid var(--line); }
 .week-day-title { margin: 0 0 8px; font-family: var(--font-display); font-size: 20px; }
 .week-day-title span { color: var(--ink-soft); }
 .week-scope { margin-top: 10px; border-top: 1px dashed var(--line); }
@@ -411,6 +419,7 @@ body {
 .week-scope .ev-row { padding-left: 4px; padding-right: 4px; }
 .scope-legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 12px; color: var(--ink-soft); font-size: 13px; }
 .scope-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.month-legend { margin: 0; }
 .section-fab, .section-menu { display: none; }
 
 /* ---------- Rashi view ---------- */
@@ -501,6 +510,7 @@ body.big .mday { font-size: 19px; }
   .app { max-width: 760px; }
   .masthead { padding-left: 20px; padding-right: 20px; }
   .main { padding-left: 20px; padding-right: 20px; }
+  .stream-toolbar { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; }
   .panga-grid { gap: 12px; }
   .tabbar { left: 50%; transform: translateX(-50%); width: 100%; max-width: 760px; border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
   /* horizontal overview already carries sunrise/sunset in .tl-ends */

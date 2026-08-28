@@ -311,6 +311,7 @@ function assert(cond, msg) {
   tabEls.week.click();
   assert(els.weekTitle.textContent.includes("–"), "week header shows start and end dates");
   assert((els.weekAgenda.innerHTML.match(/class="week-day"/g) || []).length === 35, "week renders five lazy-loadable vertical weeks");
+  assert(els.weekAgenda.innerHTML.includes("ಆಗಸ್ಟ್"), "week day blocks include the month");
   assert(!els.weekAgenda.innerHTML.includes("event-scope"), "week rows avoid repetitive scope tags");
   tabEls.month.click();
   assert(els.mastheadDate.textContent.includes("2026"), "month header uses month and year context");

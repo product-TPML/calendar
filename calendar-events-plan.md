@@ -127,6 +127,9 @@ equal columns for the available values.
 - Opening Week shows the seven-day week containing the selected date.
 - Show every day vertically, with complete event names and optional places; do
   not truncate event titles.
+- Render one card per week with seven divider-separated day rows and clear text
+  hierarchy instead of one card per day.
+- Include each day's weekday, day number, month, and year in the row heading.
 - Group each day's events into selected-district and Karnataka-wide sections.
 - Show an inclusive range event on every covered day.
 - Use a vermillion left border and dot for district events and green for
@@ -163,6 +166,8 @@ equal columns for the available values.
 - Show a range event on every covered date cell but only once in the monthly
   agenda, with its complete date span.
 - Make every day cell open its detailed Day view.
+- Show the scope legend as visual vermillion and green dots with text labels,
+  not as a text-only note.
 - Render Month as a continuous vertical stream; initially load a small window and
   lazily append/prepend adjacent months near the scroll edges.
 - Update the contextual masthead automatically to the month nearest the top of
@@ -232,6 +237,8 @@ Mobile Day after scrolling:
 
 - Use a native, labelled district `<select>` in the Day events heading and the
   Week and Month toolbars.
+- Keep the Week and Month toolbar directly below the sticky masthead while their
+  infinite feeds scroll.
 - Also expose the same canonical setting under More / Settings, but do not add
   a separate district chip that only redirects users to Settings.
 - Populate every selector from all 31 worksheet names, including districts with
