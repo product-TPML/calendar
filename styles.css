@@ -109,36 +109,66 @@ body {
 .home-switch button.is-active { background: var(--card); color: var(--verm); box-shadow: 0 1px 3px rgba(43, 27, 18, .12); }
 .home-switch button:focus-visible { outline: 2px solid var(--verm); outline-offset: 2px; }
 
-/* ---------- Home Panchanga ---------- */
-.panchanga-view { padding-top: 4px; }
-.panga-context { margin: 0 0 12px; color: var(--ink-soft); font-size: 14px; text-align: center; }
-.panga-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-.panga-card { display: flex; flex-direction: column; gap: 2px; padding: 11px 12px; background: #fffcf2; border: 1px solid var(--line); border-radius: 12px; }
-.panga-card.featured { border-color: rgba(201, 154, 46, .6); background: var(--gold-soft); }
-.panga-label { color: var(--ink-soft); font-size: 12px; font-weight: 700; }
-.panga-name { font-family: var(--font-display); font-size: 19px; line-height: 1.25; }
-.panga-sub { color: var(--ink-soft); font-size: 12px; }
-.panga-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-.panga-meta div { flex: 1 1 30%; min-width: 105px; padding: 8px 10px; border-left: 3px solid var(--gold); background: var(--paper-deep); border-radius: 8px; }
-.panga-meta span, .panga-meta strong { display: block; }
-.panga-meta span { color: var(--ink-soft); font-size: 12px; }
-.panga-meta strong { font-size: 14px; }
-.sun-row { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; padding: 10px 12px; border-top: 1px dashed var(--line); border-bottom: 1px dashed var(--line); color: var(--ink-soft); font-size: 14px; }
-.sun-row b { color: var(--ink); margin-left: 4px; }
-.panga-section { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); }
-.panga-section h3 { margin: 0 0 8px; color: var(--verm); font-family: var(--font-display); font-size: 17px; }
-.timing-list { list-style: none; margin: 0; padding: 0; }
-.timing-list li { display: grid; grid-template-columns: 9px minmax(0, 1fr) auto; align-items: center; gap: 8px; padding: 7px 0; font-size: 14px; }
-.timing-list li + li { border-top: 1px dashed var(--line); }
-.timing-list b { color: var(--ink-soft); font-size: 13px; font-weight: 500; }
-.tone-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+/* ---------- Panchanga ---------- */
+.sun-row { display: flex; justify-content: center; gap: 28px; margin: 12px 0 2px; font-size: 14.5px; font-weight: 600; color: var(--ink-soft); }
+.sun-row .sun-item { display: inline-flex; align-items: center; }
+.sun-row .sunrise-item { color: #a86f08; }
+.sun-row .sunset-item { color: #5a527f; }
+.sun-row .sun-ico { color: currentColor; font-weight: 700; }
+.sun-ico .ico { width: 17px; height: 17px; display: inline-block; vertical-align: -3px; margin-right: 3px; }
+.src-note { margin: 6px 0 0; text-align: center; font-size: 12.5px; color: var(--ink-soft); }
+.panga-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
+.panga-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 11px 13px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 2px; }
+.panga-head { display: flex; align-items: center; gap: 6px; }
+.panga-head .ico { width: 15px; height: 15px; flex: none; color: var(--gold); }
+.panga-label { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: .04em; }
+.panga-name { font-family: var(--font-display); font-weight: 700; font-size: 21px; line-height: 1.2; }
+.panga-card.featured .panga-label { font-size: 13px; }
+.panga-card.featured .panga-name { font-size: 26px; }
+.panga-sub { font-size: 12.5px; color: var(--ink-soft); }
+.panga-sub .nd { color: var(--verm); font-weight: 700; }
+.panga-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+.pm-item { min-width: 0; display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 11px 13px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); text-align: center; }
+.pm-label { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: .04em; }
+.pm-value { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--ink); line-height: 1.2; }
+.date-context { margin-bottom: 14px; padding: 9px 14px; text-align: center; background: var(--card); border: 1px solid var(--line); border-radius: 12px; color: var(--ink-soft); box-shadow: var(--shadow); }
+.date-context p { margin: 0; font-size: 14px; }
+.timeline { margin: 14px 0 4px; }
+.tl-track { position: relative; height: 58px; background: linear-gradient(var(--line), var(--line)) center 50%/100% 3px no-repeat; }
+.tl-block { position: absolute; top: 0; bottom: 0; border-radius: 8px; padding: 4px 5px; overflow: hidden; font-size: 10.5px; line-height: 1.25; text-align: center; color: #fff; display: flex; flex-direction: column; justify-content: center; gap: 1px; }
+.tl-block b { font-weight: 700; display: block; }
+.tl-block.good { background: var(--green); }
+.tl-block.bad { background: var(--verm); }
+.tl-block.mid { background: var(--gold); }
+.tl-ends { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--ink-soft); margin-top: 3px; }
+.tl-ends .ico { width: 13px; height: 13px; vertical-align: -2px; }
+.timing-list { list-style: none; margin: 10px 0 0; padding: 0; }
+.timing-list li { display: flex; align-items: center; gap: 10px; padding: 11px 0; border-top: 1px dashed var(--line); font-size: 15px; }
+.timing-list li:first-child { border-top: none; }
+.tl-main { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
+.tl-name { font-weight: 600; line-height: 1.35; }
+.timing-list .t-time { font-weight: 700; font-variant-numeric: tabular-nums; }
+.timing-list .tone-dot { width: 11px; height: 11px; }
+.tl-end-row { color: var(--ink-soft); }
+.tl-end-row .ico { width: 16px; height: 16px; flex: none; color: var(--verm); }
+.tl-end-row .t-time { margin-left: auto; color: var(--ink); }
+.tone-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
 .tone-dot.good { background: var(--green); }
-.tone-dot.mid { background: var(--gold); }
 .tone-dot.bad { background: var(--verm); }
-.jathaka-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 12px; }
-.jathaka-list div { display: flex; justify-content: space-between; gap: 8px; padding: 5px 0; border-bottom: 1px dashed var(--line); font-size: 13px; }
-.jathaka-list span { color: var(--ink-soft); }
-.jathaka-list strong { font-weight: 600; }
+.tone-dot.mid { background: var(--gold); }
+.timing-legend { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--line); font-size: 13px; color: var(--ink-soft); }
+.timing-legend span { display: inline-flex; align-items: center; gap: 6px; }
+.timing-legend .tone-dot { display: inline-block; }
+.jathaka-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.jr { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 9px 12px; border: 1px solid var(--line); border-radius: 12px; background: #fffcf2; font-size: 15px; }
+.jr .jr-name { font-weight: 700; font-family: var(--font-display); }
+.jr .jr-p { color: var(--verm-deep); font-weight: 600; }
+
+@media (max-width: 759px) {
+  .timeline { display: none; }
+  .panga-meta { gap: 6px; }
+  .pm-item { padding: 10px 5px; }
+}
 
 /* ---------- Cards ---------- */
 .card {
@@ -340,7 +370,6 @@ body {
   .home-controls { align-items: stretch; min-width: 0; }
   .home-switch { align-self: center; }
   .home-district { min-width: 0; }
-  .sun-row { flex-direction: column; gap: 3px; }
 }
 
 /* ---------- Settings / about ---------- */
@@ -389,6 +418,10 @@ body {
 /* ---------- Big type (accessibility) ---------- */
 body.big { font-size: 20px; }
 body.big .mday { font-size: 19px; }
+body.big .panga-name { font-size: 24px; }
+body.big .panga-card.featured .panga-name { font-size: 29px; }
+body.big .pm-label { font-size: 13.5px; }
+body.big .pm-value { font-size: 21px; }
 
 /* ---------- Desktop ---------- */
 @media (min-width: 760px) {
@@ -396,6 +429,9 @@ body.big .mday { font-size: 19px; }
   .masthead { padding-left: 20px; padding-right: 20px; }
   .main { padding-left: 20px; padding-right: 20px; }
   .stream-toolbar { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; }
+  .panga-grid { gap: 12px; }
+  .tl-end-row { display: none; }
+  .tl-main { flex-direction: row; align-items: baseline; justify-content: space-between; }
   .tabbar { left: 50%; transform: translateX(-50%); width: 100%; max-width: 760px; border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
 }
 

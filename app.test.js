@@ -115,8 +115,11 @@ function mkOCR() {
       yoga: { name: "ಗಂಡ", endsAt: "25.51", nextDay: true }, karana: { name: "ಬವ", endsAt: "20.20" },
       paksha: "ಕೃಷ್ಣ", ayana: "ದಕ್ಷಿಣಾಯನ", solarRashi: "ಸಿಂಹ", chandraEntryRashi: "ಮೀನ"
     },
-    timings: { rahuKala: "ಬೆ. 07:30 - 09:00." },
-    jathaka: [{ rashi: "ಮೇಷ", prediction: "ಮೆಚ್ಚುಗೆ" }]
+    timings: {
+      rahuKala: "ಬೆ. 07:30 - 09:00.", gulikaKala: "ಬೆ. 13:30 - 15:00.",
+      yamaganda: "ಬೆ. 10:30 - 12:00.", arthaPrahara: "ಬೆ. 09:00 - 10:30."
+    },
+    jathaka: ["ಮೇಷ", "ವೃಷಭ", "ಮಿಥುನ", "ಕರ್ಕಾಟಕ", "ಸಿಂಹ", "ಕನ್ಯಾ", "ತುಲಾ", "ವೃಶ್ಚಿಕ", "ಧನಸ್ಸು", "ಮಕರ", "ಕುಂಭ", "ಮೀನ"].map((rashi) => ({ rashi, prediction: "ಮೆಚ್ಚುಗೆ" }))
   } };
 }
 
@@ -185,6 +188,12 @@ function assert(cond, msg) {
   resolveUrl(ocrUrl, mkOCR());
   await tick();
   assert(els.todayContent.innerHTML.includes("panga-grid"), "Panchanga cards render after OCR loads");
+  assert((els.todayContent.innerHTML.match(/class="panga-head"/g) || []).length === 4, "all Panchanga cards have legacy SVG headers");
+  assert((els.todayContent.innerHTML.match(/<svg /g) || []).length >= 8, "Panchanga and sun icons render");
+  assert(els.todayContent.innerHTML.includes("src-note"), "Panchanga source note renders");
+  assert(els.todayContent.innerHTML.includes("class=\"timeline\""), "desktop timing timeline renders");
+  assert(els.todayContent.innerHTML.includes("timing-legend"), "timing color legend renders");
+  assert((els.todayContent.innerHTML.match(/class="jr"/g) || []).length === 12, "all twelve horoscope signs render");
   assert(els.todayContent.innerHTML.includes("ರಾಶಿ ಭವಿಷ್ಯ"), "Panchanga includes horoscope details");
   els.homeEventsMode.click();
   assert(els.todayContent.innerHTML.includes("homeReligious"), "Events mode switches back");

@@ -356,7 +356,20 @@
   /* ---------------- Inline SVG accent (no icon dependency). ---------------- */
   var ICO_ATTR = 'viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="ico" stroke-linecap="round" stroke-linejoin="round"';
   var ICO_STROKE = 'fill="none" stroke="currentColor" stroke-width="1.8"';
+  var ICO_SOLID = 'fill="currentColor" stroke="none"';
   var ICONS = {
+    sunrise:
+      '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><path d="M4 17.5h16"/><path d="M8.5 17.5a3.5 3.5 0 0 1 7 0"/><path d="M12 5v2.2"/><path d="M6.6 7.6l1.6 1.6"/><path d="M17.4 7.6l-1.6 1.6"/></svg>',
+    sunset:
+      '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><path d="M4 17.5h16"/><path d="M8.5 17.5a3.5 3.5 0 0 1 7 0"/><path d="M12 5v2.2"/><path d="M6.6 7.6l1.6 1.6"/><path d="M17.4 7.6l-1.6 1.6"/></svg>',
+    tithi:
+      '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M15 4A8 8 0 1 0 23 12A6 6 0 0 1 15 4Z"/></svg>',
+    nakshatra:
+      '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>',
+    yoga:
+      '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M14.5 4.5A7.5 7.5 0 1 0 22 12.2 5.8 5.8 0 0 1 14.5 4.5z"/><circle cx="7.6" cy="9.5" r="2.4"/></svg>',
+    karana:
+      '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M12 4a8 8 0 1 0 0 16z"/></svg>',
     diya:
       '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><path fill="currentColor" stroke="none" d="M12 2.8c1.5 2 2.5 3.3 2.5 4.9a2.5 2.5 0 1 1-5 0c0-1.6 1-2.9 2.5-4.9z"/><path d="M6 12.5a3.2 3.2 0 0 0 3.2 3.2h5.6A3.2 3.2 0 0 0 18 12.5z"/></svg>'
   };
@@ -405,35 +418,49 @@
 
   function panchangaEnd(value, nextDay) {
     if (!value) return "—";
-    var text = String(value).replace(":", "."), parts = text.split("."), hour = Math.floor(+parts[0]), minute = Math.round((+parts[0] - hour) * 100);
+    var number = +value, hour = Math.floor(number), minute = Math.round((number - hour) * 100);
     if (hour >= 24) { hour -= 24; nextDay = true; }
-    return pad(hour) + ":" + pad(minute) + (nextDay ? " (ಮುಂದಿನ ದಿನ)" : "");
+    return (nextDay ? '<span class="nd">ಮರುದಿನ ' : "") + pad(hour) + ":" + pad(minute) + (nextDay ? "</span>" : "");
   }
 
-  function panchangaCard(label, name, sub, featured) {
-    return '<div class="panga-card' + (featured ? " featured" : "") + '"><span class="panga-label">' + label + '</span><strong class="panga-name">' + esc(name || "—") + '</strong><span class="panga-sub">' + sub + '</span></div>';
+  function panchangaCard(label, name, sub, featured, icon) {
+    return '<div class="panga-card' + (featured ? " featured" : "") + '"><span class="panga-head">' + icon + '<span class="panga-label">' + label + '</span></span><span class="panga-name">' + esc(name || "—") + '</span><span class="panga-sub">' + sub + '</span></div>';
   }
 
   function panchangaMetaHTML(pan) {
     var items = [["ಆಯನ", pan.ayana], ["ಸೂರ್ಯ ರಾಶಿ", pan.solarRashi], ["ಚಂದ್ರ ರಾಶಿ", pan.chandraRashi]].filter(function (item) { return item[1]; });
     return items.length ? '<div class="panga-meta">' + items.map(function (item) {
-      return '<div><span>' + item[0] + '</span><strong>' + esc(item[1]) + '</strong></div>';
+      return '<div class="pm-item"><span class="pm-label">' + item[0] + '</span><span class="pm-value">' + esc(item[1]) + '</span></div>';
     }).join("") + '</div>' : '';
   }
 
   function panchangaTimingsHTML(record) {
     if (!record.timings.length) return '<p class="empty-note">ಈ ದಿನದ ಕಾಲ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
-    return '<ul class="timing-list">' + record.timings.map(function (timing) {
-      return '<li><span class="tone-dot ' + timing.tone + '" aria-hidden="true"></span><span>' + esc(timing.name) + '</span><b>' + kn(timing.from) + ' – ' + kn(timing.to) + '</b></li>';
-    }).join('') + '</ul>';
+    var calendar = record.calendar, span = toMin(calendar.sunset) - toMin(calendar.sunrise) || 1;
+    var ordered = record.timings.slice().sort(function (a, b) { return toMin(a.from) - toMin(b.from); });
+    var blocks = ordered.map(function (timing) {
+      var left = (toMin(timing.from) - toMin(calendar.sunrise)) / span * 100;
+      var width = (toMin(timing.to) - toMin(timing.from)) / span * 100;
+      return '<div class="tl-block ' + timing.tone + '" style="left:' + left.toFixed(1) + '%;width:' + Math.max(width, 4).toFixed(1) + '%" title="' + esc(timing.name) + " " + timing.from + "–" + timing.to + '"><b>' + esc(timing.name) + '</b>' + kn(timing.from) + '–' + kn(timing.to) + '</div>';
+    }).join("");
+    var endRow = function (icon, label, time) {
+      return '<li class="tl-end-row">' + icon + '<span class="tl-end-name">' + label + '</span><span class="t-time">' + kn(time || "—") + '</span></li>';
+    };
+    var rows = endRow(ICONS.sunrise, "ಸೂರ್ಯೋದಯ", calendar.sunrise) + ordered.map(function (timing) {
+      return '<li class="tl-row"><span class="tone-dot ' + timing.tone + '" aria-hidden="true"></span><span class="tl-main"><span class="tl-name">' + esc(timing.name) + '</span><span class="t-time">' + kn(timing.from) + ' – ' + kn(timing.to) + '</span></span></li>';
+    }).join("") + endRow(ICONS.sunset, "ಸೂರ್ಯಾಸ್ತ", calendar.sunset);
+    return '<div class="timeline"><div class="tl-track">' + blocks + '</div><div class="tl-ends"><span>' + ICONS.sunrise + " " + kn(calendar.sunrise || "—") + '</span><span>' + kn(calendar.sunset || "—") + " " + ICONS.sunset + '</span></div></div>' +
+      '<ul class="timing-list">' + rows + '</ul><div class="timing-legend" aria-label="ಕಾಲಗಳ ಬಣ್ಣದ ಅರ್ಥ"><span><i class="tone-dot good" aria-hidden="true"></i> ಶುಭ</span><span><i class="tone-dot mid" aria-hidden="true"></i> ಮಧ್ಯಮ</span><span><i class="tone-dot bad" aria-hidden="true"></i> ಅಶುಭ</span></div>';
   }
 
   function panchangaJathakaHTML(record) {
     if (!record.jathaka.length) return '<p class="empty-note">ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ.</p>';
     return '<div class="jathaka-list">' + record.jathaka.map(function (item) {
-      return '<div><span>' + esc(item[0]) + '</span><strong>' + esc(item[1]) + '</strong></div>';
+      return '<div class="jr"><span class="jr-name">' + esc(item[0]) + '</span><span class="jr-p">' + esc(item[1]) + '</span></div>';
     }).join('') + '</div>';
   }
+
+  function toMin(time) { var parts = String(time || "").split(":"); return (+parts[0] || 0) * 60 + (+parts[1] || 0); }
 
   function panchangaHTML(key) {
     if (state.ocrError) return '<p class="error-note">ಪಂಚಾಂಗದ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';
@@ -444,17 +471,21 @@
     var record = state.ocrData[key];
     if (record.unavailable) return '<p class="empty-note">ಈ ದಿನದ ಪಂಚಾಂಗದ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
     var cal = record.calendar, pan = record.panchanga;
-    return '<div class="panchanga-view">' +
-      '<p class="panga-context">' + esc((cal.months || []).join("–")) + (cal.samvatsara ? " · " + esc(cal.samvatsara) + " ನಾಮ ಸಂವತ್ಸರ" : "") + (cal.shakaYear ? " · ಶಕ " + kn(cal.shakaYear) : "") + '</p>' +
-      '<div class="panga-grid">' +
-        panchangaCard("ತಿಥಿ", pan.tithi.name, (pan.tithi.paksha ? esc(pan.tithi.paksha) + " ಪಕ್ಷ · " : "") + "ಮುಗಿಯುವುದು " + panchangaEnd(pan.tithi.ends, pan.tithi.nextDay), true) +
-        panchangaCard("ನಕ್ಷತ್ರ", pan.nakshatra.name, "ಮುಗಿಯುವುದು " + panchangaEnd(pan.nakshatra.ends, pan.nakshatra.nextDay), true) +
-        panchangaCard("ಯೋಗ", pan.yoga.name, "ಮುಗಿಯುವುದು " + panchangaEnd(pan.yoga.ends, pan.yoga.nextDay), false) +
-        panchangaCard("ಕರಣ", pan.karana.name, "ಮುಗಿಯುವುದು " + panchangaEnd(pan.karana.ends, pan.karana.nextDay), false) +
+    var meta = [];
+    if (cal.samvatsara) meta.push(esc(cal.samvatsara) + " ನಾಮ ಸಂವತ್ಸರ");
+    if (cal.shakaYear) meta.push("ಶಕ " + kn(cal.shakaYear));
+    if (cal.months.length) meta.push(esc(cal.months.join("–")));
+    return '<div class="panchanga-view"><section class="date-context" aria-label="ದಿನದ ಕಾಲದ ಸಂದರ್ಭ"><p>' + (meta.join(" · ") || "ದಿನದ ವಿವರ") + '</p></section>' +
+      '<div id="panchangaSection" class="panga-grid" tabindex="-1">' +
+        panchangaCard("ತಿಥಿ", pan.tithi.name, (pan.tithi.paksha ? esc(pan.tithi.paksha) + " ಪಕ್ಷ · " : "") + "ಮುಗಿಯುವುದು " + panchangaEnd(pan.tithi.ends, pan.tithi.nextDay), true, ICONS.tithi) +
+        panchangaCard("ನಕ್ಷತ್ರ", pan.nakshatra.name, "ಮುಗಿಯುವುದು " + panchangaEnd(pan.nakshatra.ends, pan.nakshatra.nextDay), true, ICONS.nakshatra) +
+        panchangaCard("ಯೋಗ", pan.yoga.name, "ಮುಗಿಯುವುದು " + panchangaEnd(pan.yoga.ends, pan.yoga.nextDay), false, ICONS.yoga) +
+        panchangaCard("ಕರಣ", pan.karana.name, "ಮುಗಿಯುವುದು " + panchangaEnd(pan.karana.ends, pan.karana.nextDay), false, ICONS.karana) +
       '</div>' + panchangaMetaHTML(pan) +
-      '<div class="sun-row"><span>ಸೂರ್ಯೋದಯ <b>' + kn(cal.sunrise || "—") + '</b></span><span>ಸೂರ್ಯಾಸ್ತ <b>' + kn(cal.sunset || "—") + '</b></span></div>' +
-      '<section class="panga-section"><h3>ಸಮಯಗಳು — ಕಾಲ</h3>' + panchangaTimingsHTML(record) + '</section>' +
-      '<section class="panga-section"><h3>ರಾಶಿ ಭವಿಷ್ಯ</h3>' + panchangaJathakaHTML(record) + '</section>' +
+      '<div class="sun-row"><span class="sun-item sunrise-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunrise + '</span> ಸೂರ್ಯೋದಯ <b>' + kn(cal.sunrise || "—") + '</b></span><span class="sun-item sunset-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunset + '</span> ಸೂರ್ಯಾಸ್ತ <b>' + kn(cal.sunset || "—") + '</b></span></div>' +
+      '<p class="src-note">ಕನ್ನಡ ಪಂಚಾಂಗದ ಆಧಾರದಲ್ಲಿ</p>' +
+      card("ಸಮಯಗಳು — ಕಾಲ", panchangaTimingsHTML(record), "homeTimings", false) +
+      card("ರಾಶಿ ಭವಿಷ್ಯ", panchangaJathakaHTML(record), "homeJathaka", false) +
       '</div>';
   }
 
