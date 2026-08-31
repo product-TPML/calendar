@@ -103,6 +103,42 @@ body {
 .home-date-line small { color: var(--ink-soft); font-size: 14px; }
 .home-district { display: flex; flex-direction: column; gap: 4px; min-width: 190px; }
 .home-district > span { color: var(--ink-soft); font-size: 13px; font-weight: 700; }
+.home-controls { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; min-width: 190px; }
+.home-switch { display: flex; padding: 3px; background: var(--gold-soft); border: 1px solid rgba(201, 154, 46, .45); border-radius: 999px; }
+.home-switch button { padding: 6px 12px; border: 0; border-radius: 999px; background: transparent; color: var(--ink-soft); font: inherit; font-size: 13px; font-weight: 700; cursor: pointer; }
+.home-switch button.is-active { background: var(--card); color: var(--verm); box-shadow: 0 1px 3px rgba(43, 27, 18, .12); }
+.home-switch button:focus-visible { outline: 2px solid var(--verm); outline-offset: 2px; }
+
+/* ---------- Home Panchanga ---------- */
+.panchanga-view { padding-top: 4px; }
+.panga-context { margin: 0 0 12px; color: var(--ink-soft); font-size: 14px; text-align: center; }
+.panga-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.panga-card { display: flex; flex-direction: column; gap: 2px; padding: 11px 12px; background: #fffcf2; border: 1px solid var(--line); border-radius: 12px; }
+.panga-card.featured { border-color: rgba(201, 154, 46, .6); background: var(--gold-soft); }
+.panga-label { color: var(--ink-soft); font-size: 12px; font-weight: 700; }
+.panga-name { font-family: var(--font-display); font-size: 19px; line-height: 1.25; }
+.panga-sub { color: var(--ink-soft); font-size: 12px; }
+.panga-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.panga-meta div { flex: 1 1 30%; min-width: 105px; padding: 8px 10px; border-left: 3px solid var(--gold); background: var(--paper-deep); border-radius: 8px; }
+.panga-meta span, .panga-meta strong { display: block; }
+.panga-meta span { color: var(--ink-soft); font-size: 12px; }
+.panga-meta strong { font-size: 14px; }
+.sun-row { display: flex; justify-content: space-between; gap: 12px; margin-top: 12px; padding: 10px 12px; border-top: 1px dashed var(--line); border-bottom: 1px dashed var(--line); color: var(--ink-soft); font-size: 14px; }
+.sun-row b { color: var(--ink); margin-left: 4px; }
+.panga-section { margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.panga-section h3 { margin: 0 0 8px; color: var(--verm); font-family: var(--font-display); font-size: 17px; }
+.timing-list { list-style: none; margin: 0; padding: 0; }
+.timing-list li { display: grid; grid-template-columns: 9px minmax(0, 1fr) auto; align-items: center; gap: 8px; padding: 7px 0; font-size: 14px; }
+.timing-list li + li { border-top: 1px dashed var(--line); }
+.timing-list b { color: var(--ink-soft); font-size: 13px; font-weight: 500; }
+.tone-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+.tone-dot.good { background: var(--green); }
+.tone-dot.mid { background: var(--gold); }
+.tone-dot.bad { background: var(--verm); }
+.jathaka-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px 12px; }
+.jathaka-list div { display: flex; justify-content: space-between; gap: 8px; padding: 5px 0; border-bottom: 1px dashed var(--line); font-size: 13px; }
+.jathaka-list span { color: var(--ink-soft); }
+.jathaka-list strong { font-weight: 600; }
 
 /* ---------- Cards ---------- */
 .card {
@@ -301,7 +337,10 @@ body {
 
 @media (max-width: 480px) {
   .home-header { align-items: stretch; flex-direction: column; gap: 14px; }
+  .home-controls { align-items: stretch; min-width: 0; }
+  .home-switch { align-self: center; }
   .home-district { min-width: 0; }
+  .sun-row { flex-direction: column; gap: 3px; }
 }
 
 /* ---------- Settings / about ---------- */

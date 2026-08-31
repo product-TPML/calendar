@@ -10,7 +10,7 @@
   var state = { key: DEFAULT_KEY, tab: "day", big: false, kn: false,
     pv: null, pvIndex: {}, pvRecords: [], pvError: false, pvPending: null, pvQA: [],
     cultural: null, culturalIndex: {}, culturalRecords: [], culturalError: false, culturalPending: null,
-    district: "",
+    ocrData: {}, ocrPending: {}, homeMode: "events", district: "",
     weekFirst: null, weekLast: null, weekHeader: null, monthFirst: null, monthLast: null, monthHeader: null };
 
   var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
@@ -39,6 +39,7 @@
   var PV_ERROR = '<p class="empty-note">ಘಟನೆ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';
   var CULTURAL_LOADING = '<p class="empty-note">ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ…</p>';
   var CULTURAL_ERROR = '<p class="empty-note">ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';
+  var OCR_LOADING = '<p class="empty-note">ಪಂಚಾಂಗದ ವಿವರಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ…</p>';
 
   function daysInMonth(y, m) { /* m 1-12, no Date/timezone involved */
     return [31, (y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m - 1];
@@ -173,6 +174,76 @@
       .catch(function () { state.culturalError = true; return null; })
       .then(function (json) { delete state.culturalPending; return json; });
     return state.culturalPending;
+  }
+
+  function unavailableOCR(key) {
+    return { key: key, unavailable: true, calendar: {}, panchanga: null, timings: [], jathaka: [] };
+  }
+
+  function cleanWord(value) { return String(value || "").replace(/[^\u0C80-\u0CFF\u200C\u200D\s]/g, "").trim(); }
+  function numberValue(value) { var n = parseFloat(value); return isNaN(n) ? 0 : n; }
+
+  function buildOCRTimings(raw) {
+    if (!raw || typeof raw !== "object") return [];
+    var defs = [
+      { key: "rahuKala", name: "ರಾಹು ಕಾಲ", tone: "bad" },
+      { key: "gulikaKala", name: "ಗುಳಿಕ ಕಾಲ", tone: "bad" },
+      { key: "yamaganda", name: "ಯಮಗಂಡ", tone: "bad" },
+      { key: "arthaPrahara", name: "ಅರ್ಥ ಪ್ರಹರ", tone: "mid" },
+      { key: "shubhaSamaya", name: "ಶುಭ ಸಮಯ", tone: "good" }
+    ], out = [];
+    defs.forEach(function (def) {
+      var value = String(raw[def.key] || ""), times = value.match(/(\d{1,2})[.:](\d{2})/g);
+      if (!times || times.length < 2) return;
+      out.push({ name: def.name, tone: def.tone, from: fixOCRTime(times[0], value), to: fixOCRTime(times[1], value) });
+    });
+    return out;
+  }
+
+  function fixOCRTime(value, raw) {
+    var parts = value.split(/[.:]/u), hour = +parts[0];
+    if (/ಮ/u.test(raw) && hour > 0 && hour < 9) hour += 12;
+    return pad(hour) + ":" + parts[1];
+  }
+
+  function normalizeOCR(json, key) {
+    var content = (json && json.content) || {}, calendar = content.calendar || {}, pan = content.panchanga || {}, timings = content.timings || {};
+    var tithi = pan.tithi || {}, nakshatra = pan.nakshatra || {}, yoga = pan.yoga || {}, karana = pan.karana || {};
+    return {
+      key: key,
+      calendar: {
+        months: (calendar.months || []).filter(function (month) { return String(month).trim() && String(month).trim() !== "—"; }),
+        samvatsara: String(calendar.samvatsara || "").trim(),
+        shakaYear: numberValue(calendar.shakaYear),
+        sunrise: String(calendar.sunrise || "").trim(),
+        sunset: String(calendar.sunset || "").trim()
+      },
+      panchanga: {
+        tithi: { name: cleanWord(tithi.name), paksha: cleanWord(pan.paksha), ends: numberValue(tithi.endsAt), nextDay: !!tithi.nextDay },
+        nakshatra: { name: cleanWord(nakshatra.name), ends: numberValue(nakshatra.endsAt), nextDay: !!nakshatra.nextDay },
+        yoga: { name: cleanWord(yoga.name), ends: numberValue(yoga.endsAt), nextDay: !!yoga.nextDay },
+        karana: { name: cleanWord(karana.name), ends: numberValue(karana.endsAt), nextDay: !!karana.nextDay },
+        ayana: cleanWord(pan.ayana), solarRashi: cleanWord(pan.solarRashi), chandraRashi: cleanWord(pan.chandraEntryRashi || pan.chandraRashi)
+      },
+      timings: buildOCRTimings(timings),
+      jathaka: Array.isArray(content.jathaka) && content.jathaka.length === 12
+        ? content.jathaka.map(function (item) { return [item.rashi, cleanWord(item.prediction)]; }) : []
+    };
+  }
+
+  function fetchOCR(key) {
+    if (Object.prototype.hasOwnProperty.call(state.ocrData, key)) return Promise.resolve(state.ocrData[key]);
+    if (state.ocrPending[key]) return state.ocrPending[key];
+    state.ocrPending[key] = fetch("ocr-zones/" + key + "/structured-ocr.json")
+      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+      .then(function (json) { return normalizeOCR(json, key); })
+      .catch(function () { return unavailableOCR(key); })
+      .then(function (record) {
+        state.ocrData[key] = record;
+        delete state.ocrPending[key];
+        return record;
+      });
+    return state.ocrPending[key];
   }
 
   function pvEventsFor(key) { return (state.pvIndex[key] || []).slice(); }
@@ -332,6 +403,61 @@
     return homeCategoryHTML(id, "ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು", body, "cultural");
   }
 
+  function panchangaEnd(value, nextDay) {
+    if (!value) return "—";
+    var text = String(value).replace(":", "."), parts = text.split("."), hour = Math.floor(+parts[0]), minute = Math.round((+parts[0] - hour) * 100);
+    if (hour >= 24) { hour -= 24; nextDay = true; }
+    return pad(hour) + ":" + pad(minute) + (nextDay ? " (ಮುಂದಿನ ದಿನ)" : "");
+  }
+
+  function panchangaCard(label, name, sub, featured) {
+    return '<div class="panga-card' + (featured ? " featured" : "") + '"><span class="panga-label">' + label + '</span><strong class="panga-name">' + esc(name || "—") + '</strong><span class="panga-sub">' + sub + '</span></div>';
+  }
+
+  function panchangaMetaHTML(pan) {
+    var items = [["ಆಯನ", pan.ayana], ["ಸೂರ್ಯ ರಾಶಿ", pan.solarRashi], ["ಚಂದ್ರ ರಾಶಿ", pan.chandraRashi]].filter(function (item) { return item[1]; });
+    return items.length ? '<div class="panga-meta">' + items.map(function (item) {
+      return '<div><span>' + item[0] + '</span><strong>' + esc(item[1]) + '</strong></div>';
+    }).join("") + '</div>' : '';
+  }
+
+  function panchangaTimingsHTML(record) {
+    if (!record.timings.length) return '<p class="empty-note">ಈ ದಿನದ ಕಾಲ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
+    return '<ul class="timing-list">' + record.timings.map(function (timing) {
+      return '<li><span class="tone-dot ' + timing.tone + '" aria-hidden="true"></span><span>' + esc(timing.name) + '</span><b>' + kn(timing.from) + ' – ' + kn(timing.to) + '</b></li>';
+    }).join('') + '</ul>';
+  }
+
+  function panchangaJathakaHTML(record) {
+    if (!record.jathaka.length) return '<p class="empty-note">ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ.</p>';
+    return '<div class="jathaka-list">' + record.jathaka.map(function (item) {
+      return '<div><span>' + esc(item[0]) + '</span><strong>' + esc(item[1]) + '</strong></div>';
+    }).join('') + '</div>';
+  }
+
+  function panchangaHTML(key) {
+    if (state.ocrError) return '<p class="error-note">ಪಂಚಾಂಗದ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';
+    if (!Object.prototype.hasOwnProperty.call(state.ocrData, key)) {
+      fetchOCR(key).then(function () { if (state.key === key && state.homeMode === "panchanga") renderToday(); });
+      return OCR_LOADING;
+    }
+    var record = state.ocrData[key];
+    if (record.unavailable) return '<p class="empty-note">ಈ ದಿನದ ಪಂಚಾಂಗದ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
+    var cal = record.calendar, pan = record.panchanga;
+    return '<div class="panchanga-view">' +
+      '<p class="panga-context">' + esc((cal.months || []).join("–")) + (cal.samvatsara ? " · " + esc(cal.samvatsara) + " ನಾಮ ಸಂವತ್ಸರ" : "") + (cal.shakaYear ? " · ಶಕ " + kn(cal.shakaYear) : "") + '</p>' +
+      '<div class="panga-grid">' +
+        panchangaCard("ತಿಥಿ", pan.tithi.name, (pan.tithi.paksha ? esc(pan.tithi.paksha) + " ಪಕ್ಷ · " : "") + "ಮುಗಿಯುವುದು " + panchangaEnd(pan.tithi.ends, pan.tithi.nextDay), true) +
+        panchangaCard("ನಕ್ಷತ್ರ", pan.nakshatra.name, "ಮುಗಿಯುವುದು " + panchangaEnd(pan.nakshatra.ends, pan.nakshatra.nextDay), true) +
+        panchangaCard("ಯೋಗ", pan.yoga.name, "ಮುಗಿಯುವುದು " + panchangaEnd(pan.yoga.ends, pan.yoga.nextDay), false) +
+        panchangaCard("ಕರಣ", pan.karana.name, "ಮುಗಿಯುವುದು " + panchangaEnd(pan.karana.ends, pan.karana.nextDay), false) +
+      '</div>' + panchangaMetaHTML(pan) +
+      '<div class="sun-row"><span>ಸೂರ್ಯೋದಯ <b>' + kn(cal.sunrise || "—") + '</b></span><span>ಸೂರ್ಯಾಸ್ತ <b>' + kn(cal.sunset || "—") + '</b></span></div>' +
+      '<section class="panga-section"><h3>ಸಮಯಗಳು — ಕಾಲ</h3>' + panchangaTimingsHTML(record) + '</section>' +
+      '<section class="panga-section"><h3>ರಾಶಿ ಭವಿಷ್ಯ</h3>' + panchangaJathakaHTML(record) + '</section>' +
+      '</div>';
+  }
+
   function homeTodayHTML(key) {
     if (state.pvError) return PV_ERROR;
     if (!state.pv) return PV_LOADING;
@@ -363,15 +489,30 @@
     var options = districtOptionsHTML("day");
     return '<section class="home-header" aria-labelledby="homeDateTitle">' +
       '<div class="home-date"><span class="home-kicker">ಆಯ್ದ ದಿನ</span><div class="home-date-line"><strong id="homeDateTitle">' + kn(d.getDate()) + '</strong><span><b>' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</b><small>' + WEEKDAYS[d.getDay()] + '</small></span></div></div>' +
-      '<label class="home-district" for="homeDistrictSelect"><span>ಜಿಲ್ಲೆ</span><select id="homeDistrictSelect" class="district-select" name="homeDistrict">' + options + '</select></label>' +
+      '<div class="home-controls"><div class="home-switch" role="tablist" aria-label="ಮುಖಪುಟದ ವಿಷಯ"><button id="homeEventsMode" type="button" role="tab" aria-selected="' + (state.homeMode === "events") + '" class="' + (state.homeMode === "events" ? "is-active" : "") + '">ಕಾರ್ಯಕ್ರಮಗಳು</button><button id="homePanchangaMode" type="button" role="tab" aria-selected="' + (state.homeMode === "panchanga") + '" class="' + (state.homeMode === "panchanga" ? "is-active" : "") + '">ಪಂಚಾಂಗ</button></div><label class="home-district" for="homeDistrictSelect"><span>ಜಿಲ್ಲೆ</span><select id="homeDistrictSelect" class="district-select" name="homeDistrict">' + options + '</select></label></div>' +
       '</section>';
+  }
+
+  function bindHomeModeUI() {
+    [["homeEventsMode", "events"], ["homePanchangaMode", "panchanga"]].forEach(function (item) {
+      var button = document.getElementById(item[0]);
+      if (!button || button._homeModeBound) return;
+      button._homeModeBound = true;
+      button.addEventListener("click", function () {
+        if (state.homeMode === item[1]) return;
+        state.homeMode = item[1];
+        renderToday();
+      });
+    });
   }
 
   function renderToday() {
     var title = state.key === DEFAULT_KEY ? "ಇಂದಿನ ಕಾರ್ಯಕ್ರಮಗಳು" : "ಈ ದಿನದ ಕಾರ್ಯಕ್ರಮಗಳು";
+    var body = state.homeMode === "panchanga" ? panchangaHTML(state.key) : homeTodayHTML(state.key);
     document.getElementById("todayContent").innerHTML = homeHeaderHTML(state.key) +
-      card(title, homeTodayHTML(state.key), "homeToday", false, ICONS.diya) +
-      card("ಮುಂದಿನ 7 ದಿನಗಳ ಕಾರ್ಯಕ್ರಮಗಳು", upcomingHTML(state.key), "homeUpcoming", false);
+      card(state.homeMode === "panchanga" ? "ಇಂದಿನ ಪಂಚಾಂಗ" : title, body, "homeToday", false, ICONS.diya) +
+      (state.homeMode === "panchanga" ? "" : card("ಮುಂದಿನ 7 ದಿನಗಳ ಕಾರ್ಯಕ್ರಮಗಳು", upcomingHTML(state.key), "homeUpcoming", false));
+    bindHomeModeUI();
     bindEventCardUI();
   }
 

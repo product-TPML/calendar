@@ -1,6 +1,6 @@
 /* Focused event-calendar test for app.js:
    - PV data is the only Day data source
-   - Day works without OCR files
+   - Events mode works without OCR files and Panchanga loads OCR lazily
    - district and Karnataka-wide filtering stays correct
    - date ranges are inclusive
    - Week and Month retain the shared event index
@@ -107,6 +107,18 @@ function mkCultural() {
     { date: iso(INITIAL), title: "Cultural-Bengaluru-" + INITIAL, location: "ಬೆಂಗಳೂರು", startTime: "20:00", source: { edition: "Bengaluru Urban", articleId: "culture-3", siteUrl: "https://example.test/culture-3" } }
   ] };
 }
+function mkOCR() {
+  return { content: {
+    calendar: { months: ["ಶ್ರಾವಣ"], samvatsara: "ಪರಾಭವ", shakaYear: 1948, sunrise: "06:08", sunset: "18:31" },
+    panchanga: {
+      tithi: { name: "ತೃತೀಯಾ", endsAt: "08.52" }, nakshatra: { name: "ರೇವತಿ", endsAt: "27.24", nextDay: true },
+      yoga: { name: "ಗಂಡ", endsAt: "25.51", nextDay: true }, karana: { name: "ಬವ", endsAt: "20.20" },
+      paksha: "ಕೃಷ್ಣ", ayana: "ದಕ್ಷಿಣಾಯನ", solarRashi: "ಸಿಂಹ", chandraEntryRashi: "ಮೀನ"
+    },
+    timings: { rahuKala: "ಬೆ. 07:30 - 09:00." },
+    jathaka: [{ rashi: "ಮೇಷ", prediction: "ಮೆಚ್ಚುಗೆ" }]
+  } };
+}
 
 let pass = 0, fail = 0;
 function assert(cond, msg) {
@@ -134,9 +146,9 @@ function assert(cond, msg) {
   assert(els.todayContent.innerHTML.includes(">Bagalkot (3)</option>"), "Day district count is contextual");
   assert(els.todayContent.innerHTML.includes(">Ballari (1)</option>"), "district count excludes Karnataka-wide rows");
   assert(els.todayContent.innerHTML.includes("ಮುಂದಿನ 7 ದಿನಗಳ ಕಾರ್ಯಕ್ರಮಗಳು"), "seven-day upcoming section shown");
-  assert(!els.todayContent.innerHTML.includes("panga-grid"), "Panchanga UI removed from Day");
-  assert(!els.todayContent.innerHTML.includes("ಸಮಯಗಳು"), "timings UI removed from Day");
-  assert(!els.todayContent.innerHTML.includes("ರಾಶಿ ಭವಿಷ್ಯ"), "horoscope UI removed from Day");
+  assert(els.todayContent.innerHTML.includes('id="homeEventsMode"'), "Events mode is the default Home mode");
+  assert(!els.todayContent.innerHTML.includes("panga-grid"), "Events mode does not render Panchanga UI");
+  assert(!els.todayContent.innerHTML.includes("ಪಂಚಾಂಗದ ವಿವರಗಳು"), "Events mode does not load Panchanga");
 
   console.log("2) district filtering and inclusive ranges");
   els.homeDistrictSelect.value = "Bagalkot";
@@ -165,7 +177,19 @@ function assert(cond, msg) {
   els.nextDay.click();
   assert(els.todayContent.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ."), "empty date shows the event empty state");
 
-  console.log("4) Week and Month use event data");
+  console.log("4) Panchanga mode loads selected-date OCR lazily");
+  const ocrUrl = "ocr-zones/" + DAY8 + "/structured-ocr.json";
+  els.homePanchangaMode.click();
+  assert(count(ocrUrl) === 1, "Panchanga requests OCR for the selected date");
+  assert(els.todayContent.innerHTML.includes("ಪಂಚಾಂಗದ ವಿವರಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ"), "Panchanga loading state shown");
+  resolveUrl(ocrUrl, mkOCR());
+  await tick();
+  assert(els.todayContent.innerHTML.includes("panga-grid"), "Panchanga cards render after OCR loads");
+  assert(els.todayContent.innerHTML.includes("ರಾಶಿ ಭವಿಷ್ಯ"), "Panchanga includes horoscope details");
+  els.homeEventsMode.click();
+  assert(els.todayContent.innerHTML.includes("homeReligious"), "Events mode switches back");
+
+  console.log("5) Week and Month use event data");
   tabEls.week.click();
   assert(els.weekTitle.textContent.includes("–"), "Week header shows a date range");
   assert((els.weekAgenda.innerHTML.match(/class="week-day"/g) || []).length === 35, "Week renders the initial stream");
@@ -178,7 +202,7 @@ function assert(cond, msg) {
   tabEls.day.click();
   assert(els.mastheadDate.textContent.includes(String(parseInt(DAY8.slice(0, 2), 10))), "Day preserves selected date");
 
-  console.log("5) PV load failure is explicit");
+  console.log("6) PV load failure is explicit");
   for (const key in els) delete els[key];
   for (const key in tabEls) delete tabEls[key];
   calls.length = 0;
