@@ -13,6 +13,7 @@
   const PUBLISHER = 'PV';
   const ACCESS_TOKEN_KEY = 'epaperOwnAccessToken';
   const ACCESS_TYPE_TOKEN_KEY = 'jwt_token';
+  const REQUEST_TIMEOUT_MS = 30000;
 
   function compactDate(date) {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) {
@@ -39,6 +40,20 @@
     if (signal?.aborted) throw new DOMException('Collection stopped', 'AbortError');
   }
 
+  async function fetchWithTimeout(url, options, signal) {
+    const controller = new AbortController();
+    const abort = () => controller.abort(signal.reason || new DOMException('Collection stopped', 'AbortError'));
+    if (signal?.aborted) abort();
+    else signal?.addEventListener('abort', abort, { once: true });
+    const timer = setTimeout(() => controller.abort(new DOMException(`Request timed out after ${REQUEST_TIMEOUT_MS / 1000}s`, 'TimeoutError')), REQUEST_TIMEOUT_MS);
+    try {
+      return await fetch(url, { ...options, signal: controller.signal });
+    } finally {
+      clearTimeout(timer);
+      signal?.removeEventListener('abort', abort);
+    }
+  }
+
   async function authHeaders(signal) {
     throwIfAborted(signal);
     const accessToken = localStorage.getItem(ACCESS_TOKEN_KEY);
@@ -47,7 +62,7 @@
 
     if (accessTypeToken && expired(accessTypeToken)) accessTypeToken = null;
     if (!accessTypeToken && accessToken && !expired(accessToken)) {
-      const response = await fetch(`${SSO}/auth/accesstype-pv-token`, {
+      const response = await fetchWithTimeout(`${SSO}/auth/accesstype-pv-token`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${accessToken}`,
@@ -78,7 +93,7 @@
   }
 
   async function requestJson(url, headers, signal) {
-    const response = await fetch(url, { headers, credentials: 'include', signal });
+    const response = await fetchWithTimeout(url, { headers, credentials: 'include' }, signal);
     let body = null;
     try {
       body = await response.json();
@@ -127,7 +142,21 @@
 
   async function collectIssue(edition, date, compact, auth, fetchArticles, includeRawHtml, signal) {
     const url = `${API}/epaper/data?date=${compact}&edition=${edition.edition_number}&publisher=${PUBLISHER}`;
-    const { response, body } = await requestJson(url, auth.headers, signal);
+    let response;
+    let body;
+    try {
+      ({ response, body } = await requestJson(url, auth.headers, signal));
+    } catch (error) {
+      if (error.name === 'AbortError') throw error;
+      return {
+        editionNumber: String(edition.edition_number),
+        name: edition.edition_name,
+        shortCode: edition.edition_short_code,
+        status: 'failed',
+        issueUrl: url,
+        error: error.message,
+      };
+    }
     const result = {
       editionNumber: String(edition.edition_number),
       name: edition.edition_name,
@@ -190,7 +219,7 @@
     const articleResults = await mapLimit(articles, 4, async (article) => {
       const articleUrl = new URL(article.htmlFile, htmlBase).href;
       try {
-        const articleResponse = await fetch(articleUrl, { credentials: 'omit', signal });
+        const articleResponse = await fetchWithTimeout(articleUrl, { credentials: 'omit' }, signal);
         if (!articleResponse.ok) {
           return { id: String(article.id), pageNo: article.pageNo, status: articleResponse.status };
         }

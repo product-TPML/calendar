@@ -1,4 +1,4 @@
-const state = { editions: [], selected: new Set(), totalSelected: 0, completed: 0 };
+const state = { editions: [], selected: new Set(), totalSelected: 0, completed: 0, jobId: null, running: false };
 
 const $ = (id) => document.getElementById(id);
 const send = (message) => chrome.runtime.sendMessage(message);
@@ -44,10 +44,17 @@ function renderEditions() {
 }
 
 function updateCollectButton() {
-  $('collect').disabled = !state.selected.size;
+  $('collect').disabled = state.running || !state.selected.size;
   $('collect').textContent = state.selected.size
     ? `Extract ${state.selected.size} edition${state.selected.size === 1 ? '' : 's'}`
     : 'Select an edition';
+}
+
+function setRunState(running) {
+  state.running = running;
+  $('stop').hidden = !running;
+  $('stop').disabled = !running;
+  updateCollectButton();
 }
 
 function selectEditions(predicate) {
@@ -119,6 +126,12 @@ async function loadStats() {
   const stats = await send({ type: 'GET_STATS' });
   if (stats?.error) throw new Error(stats.error);
   $('article-count').textContent = `${stats?.articleCount || 0} articles`;
+  const activeJob = stats?.jobs?.find((job) => ['starting', 'running'].includes(job.status));
+  if (activeJob && !state.running) {
+    state.jobId = activeJob.id;
+    $('progress-title').textContent = `Collecting ${activeJob.startDate} to ${activeJob.endDate}`;
+    setRunState(true);
+  }
 }
 
 async function search() {
@@ -160,7 +173,22 @@ async function startCollection() {
     editionNumbers: [...state.selected],
   });
   if (response?.error) showError(response.error);
-  else $('collection-note').textContent = `Job ${response.jobId} started. Keep the ePaper tab open.`;
+  else {
+    state.jobId = response.jobId;
+    setRunState(true);
+    $('collection-note').textContent = `Job ${response.jobId} started. Keep the ePaper tab open.`;
+  }
+}
+
+async function stopCollection() {
+  if (!state.jobId) return;
+  $('stop').disabled = true;
+  $('progress-title').textContent = 'Stopping collection...';
+  const response = await send({ type: 'STOP_CRAWL', jobId: state.jobId });
+  if (response?.error) {
+    $('stop').disabled = false;
+    showError(response.error);
+  }
 }
 
 $('date').value = new Date().toISOString().slice(0, 10);
@@ -169,6 +197,7 @@ $('select-all').addEventListener('click', () => selectEditions(() => true));
 $('select-bengaluru').addEventListener('click', () => selectEditions((edition) => edition.edition_number === 4));
 $('select-none').addEventListener('click', () => selectEditions(() => false));
 $('collect').addEventListener('click', () => startCollection().catch((error) => showError(error.message)));
+$('stop').addEventListener('click', () => stopCollection().catch((error) => showError(error.message)));
 $('search').addEventListener('input', () => search().catch((error) => showError(error.message)));
 $('search-from').addEventListener('change', () => search().catch((error) => showError(error.message)));
 $('search-to').addEventListener('change', () => search().catch((error) => showError(error.message)));
@@ -210,8 +239,15 @@ $('import-file').addEventListener('change', async (event) => {
 });
 
 chrome.runtime.onMessage.addListener((message) => {
-  if (message.type === 'EPAPER_PROGRESS') renderProgress(message.edition);
+  if (message.type === 'EPAPER_PROGRESS') {
+    state.jobId = message.jobId;
+    setRunState(true);
+    renderProgress(message.edition);
+  }
   if (message.type === 'EPAPER_DONE') {
+    if (state.jobId && message.jobId !== state.jobId) return;
+    state.jobId = message.jobId;
+    setRunState(false);
     $('progress-title').textContent = message.cancelled ? 'Collection stopped' : message.error ? 'Collection failed' : 'Collection complete';
     if (message.error && !message.cancelled) showError(message.error);
     loadStats().catch((error) => showError(error.message));

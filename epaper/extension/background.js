@@ -244,6 +244,20 @@ async function handle(message) {
     await clearAll();
     return { ok: true };
   }
+  if (message.type === 'STOP_CRAWL') {
+    if (!activeRuns.has(message.jobId)) {
+      const job = (await all('jobs')).find((candidate) => candidate.id === message.jobId);
+      if (!job || !['starting', 'running'].includes(job.status) || !job.tabId) return { error: 'No active collection.' };
+      activeRuns.set(message.jobId, {
+        tabId: job.tabId,
+        startDate: job.startDate,
+        endDate: job.endDate,
+        cancelRequested: false,
+      });
+    }
+    await cancelRun(message.jobId, 'Collection stopped by user.', false);
+    return { ok: true };
+  }
   if (message.type === 'START_CRAWL') return startCrawl(message);
   if (message.type === 'GET_EDITIONS') {
     const tab = await activeTab();

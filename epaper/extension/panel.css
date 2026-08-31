@@ -46,6 +46,7 @@ main { display: grid; gap: 14px; padding: 16px; }
 .card { padding: 16px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); }
 .section-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 14px; }
 .section-heading.compact { margin-bottom: 10px; }
+.run-actions { display: flex; align-items: center; gap: 9px; }
 h2 { margin-top: 3px; font-size: 18px; line-height: 1.15; }
 .muted, .form-note { color: var(--muted); font: 12px/1.4 Arial, sans-serif; }
 .metric { color: var(--accent); font: 700 20px Arial, sans-serif; }
@@ -93,6 +94,8 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgb(159 51 45 /
 .secondary-button, .danger-button { padding: 8px 10px; background: transparent; }
 .secondary-button { color: var(--green); border: 1px solid var(--green); }
 .danger-button { color: var(--accent); border: 1px solid #c98883; }
+.stop-button { padding: 6px 9px; color: var(--accent); background: transparent; border: 1px solid #c98883; border-radius: 7px; font: 700 11px Arial, sans-serif; }
+.stop-button:disabled { cursor: wait; opacity: .55; }
 .error { padding: 10px; color: #76231f; background: #f7dfdc; border: 1px solid #dbaaa5; border-radius: 7px; font: 12px Arial, sans-serif; }
 
 @media (min-width: 650px) {
