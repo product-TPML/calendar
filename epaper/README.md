@@ -98,9 +98,19 @@ Date crawls run with a concurrency limit of two. Within each date, the
 collector limits editions to three concurrent jobs and article HTML requests
 to four per active edition.
 
-Switching away from, navigating away from, or closing the ePaper tab stops the
-active crawl. Completed date/edition records remain in the local shelf, and
-the job is marked `cancelled`.
+Switching to another tab does not stop the active crawl; the ePaper tab can run
+in the background. Navigating away from or closing the ePaper tab still stops
+the crawl. Completed date/edition records remain in the local shelf, and the
+job is marked `cancelled`. The Stop button can be used at any time.
+
+## Debug logging
+
+- ePaper tab DevTools: filter for `[Prajavani collector]` and `[Prajavani bridge]`.
+- Extension service worker inspector at `chrome://extensions`: filter for `[Prajavani background]`.
+- Side-panel DevTools: filter for `[Prajavani panel]`.
+
+Logs include dates, edition numbers, request status, durations, and failures;
+token values and article content are not logged.
 
 ## Safety
 

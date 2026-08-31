@@ -1,24 +1,16 @@
-/* ಕನ್ನಡ ಪಂಚಾಂಗ — plain JS, no dependencies.
-   Data source: ocr-zones/<DD-MM-YYYY>/structured-ocr.json (per-date fetch,
-   cached in state.data). */
+/* ಕನ್ನಡ ಸಾಂಸ್ಕೃತಿಕ ಕ್ಯಾಲೆಂಡರ್ — plain JS, no dependencies.
+   Data source: data/pv-calendar-data.json (one normalized event index). */
 (function () {
   "use strict";
 
   var DEFAULT_KEY = keyFor(new Date());
   var SESSION_VERSION = "5";
 
-  /* ---------------- Unavailable record (no fabricated data) ---------------- */
-  function unavailableDay(key) {
-    return {
-      key: key, unavailable: true, events: [], timings: [], jathaka: [],
-      calendar: { months: [], samvatsara: null, shakaYear: null, sunrise: null, sunset: null },
-      panchanga: null
-    };
-  }
-
   /* ---------------- State & helpers ---------------- */
-  var state = { key: DEFAULT_KEY, data: {}, pending: {}, tab: "day", big: false, kn: false, loading: false, seq: 0,
-    pv: null, pvIndex: {}, pvRecords: [], pvError: false, pvPending: null, pvQA: [], district: "",
+  var state = { key: DEFAULT_KEY, tab: "day", big: false, kn: false,
+    pv: null, pvIndex: {}, pvRecords: [], pvError: false, pvPending: null, pvQA: [],
+    cultural: null, culturalIndex: {}, culturalRecords: [], culturalError: false, culturalPending: null,
+    district: "",
     weekFirst: null, weekLast: null, weekHeader: null, monthFirst: null, monthLast: null, monthHeader: null };
 
   var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
@@ -29,7 +21,6 @@
   function parseKey(k) { var p = k.split("-"); return new Date(+p[2], +p[1] - 1, +p[0]); }
   function keyFor(d) { return pad(d.getDate()) + "-" + pad(d.getMonth() + 1) + "-" + d.getFullYear(); }
   function kn(s) { return state.kn ? String(s).replace(/\d/g, function (d) { return KN_DIGITS[+d]; }) : String(s); }
-  function dayData(key) { return state.data[key] || unavailableDay(key); }
   function validKey(key) {
     if (!/^\d{2}-\d{2}-\d{4}$/.test(String(key || ""))) return false;
     var p = String(key).split("-"), d = +p[0], m = +p[1], y = +p[2];
@@ -37,15 +28,17 @@
   }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
 
-  /* ---------------- PV calendar data (district festival sheets) ----------------
-     Fetched once over HTTP and cached. Kept separate from the per-date OCR
-     fetches (panchanga/timings/rashi). On load failure we show an event-data
-     error — no OCR fallback for PV events. Dates are handled as strings
+  /* ---------------- PV calendar data (district event sheets) ----------------
+     Fetched once over HTTP and cached. On load failure we show an event-data
+     error. Dates are handled as strings
      (ISO "YYYY-MM-DD" in the JSON, DD-MM-YYYY keys in the app) with explicit
      conversion; no Date/timezone parsing of ISO dates. ---------------- */
   var PV_URL = "data/pv-calendar-data.json";
+  var CULTURAL_URL = "epaper/cultural-event-candidates.json";
   var PV_LOADING = '<p class="empty-note">ಘಟನೆ ದತ್ತಾಂಶ ಲೋಡ್ ಆಗುತ್ತಿದೆ…</p>';
   var PV_ERROR = '<p class="empty-note">ಘಟನೆ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';
+  var CULTURAL_LOADING = '<p class="empty-note">ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ…</p>';
+  var CULTURAL_ERROR = '<p class="empty-note">ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';
 
   function daysInMonth(y, m) { /* m 1-12, no Date/timezone involved */
     return [31, (y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m - 1];
@@ -92,7 +85,8 @@
           rawDate: rec.date,
           title: String(rec.name_of_festival || ""),
           place: String(rec.place || ""),
-          scope: String(rec.relevance || "")
+          scope: String(rec.relevance || ""),
+          eventType: "religious"
         };
         records.push(r);
         var iso = start;
@@ -125,6 +119,62 @@
     return state.pvPending;
   }
 
+  var CULTURAL_DISTRICTS = {
+    "ಬೆಂಗಳೂರು ನಗರ": "Bengaluru Urban",
+    "ಮೈಸೂರು ನಗರ": "Mysuru",
+    "ಹುಬ್ಬಳ್ಳಿ-ಧಾರವಾಡ": "Dharwad",
+    "ಕಲಬುರ್ಗಿ ನಗರ": "Kalaburagi",
+    "ತುಮಕೂರು": "Tumakuru",
+    "ಚಿತ್ರದುರ್ಗ": "Chitradurga",
+    "ದಾವಣಗೆರೆ": "Davanagere",
+    "ಕೊಪ್ಪಳ": "Koppal"
+  };
+
+  function indexCultural(json) {
+    var index = {}, records = [];
+    (json && json.records || []).forEach(function (rec) {
+      var start = String(rec.date || "").trim(), source = rec.source || {};
+      if (!isValidIso(start)) return;
+      var sourceDistrict = CULTURAL_DISTRICTS[source.edition] || String(source.edition || "").trim();
+      if (!sourceDistrict) return;
+      var r = {
+        sourceDistrict: sourceDistrict,
+        dateStart: start,
+        dateEnd: start,
+        rawDate: start,
+        title: String(rec.title || ""),
+        place: String(rec.location || ""),
+        scope: "Cultural district",
+        eventType: "cultural",
+        startTime: String(rec.startTime || ""),
+        category: String(rec.category || ""),
+        sourceArticleId: String(source.articleId || ""),
+        sourceUrl: String(source.siteUrl || source.articleUrl || "")
+      };
+      records.push(r);
+      (index[isoToKey(start)] = index[isoToKey(start)] || []).push(r);
+    });
+    return { index: index, records: records };
+  }
+
+  function fetchCultural() {
+    if (state.culturalError) return Promise.resolve(null);
+    if (state.cultural) return Promise.resolve(state.cultural);
+    if (state.culturalPending) return state.culturalPending;
+    state.culturalPending = fetch(CULTURAL_URL)
+      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+      .then(function (json) {
+        var idx = indexCultural(json);
+        state.cultural = json;
+        state.culturalIndex = idx.index;
+        state.culturalRecords = idx.records;
+        return json;
+      })
+      .catch(function () { state.culturalError = true; return null; })
+      .then(function (json) { delete state.culturalPending; return json; });
+    return state.culturalPending;
+  }
+
   function pvEventsFor(key) { return (state.pvIndex[key] || []).slice(); }
   function districtEventsFor(key) {
     return pvEventsFor(key).filter(function (r) {
@@ -135,8 +185,9 @@
     return pvEventsFor(key).filter(function (r) { return r.scope === "Relevant for Karnataka"; });
   }
 
-  function visibleEventsFor(key) {
-    return districtEventsFor(key).concat(stateEventsFor(key));
+  function culturalEventsFor(key) {
+    if (!state.district) return [];
+    return (state.culturalIndex[key] || []).filter(function (r) { return r.sourceDistrict === state.district; });
   }
 
   function visibleRecord(r) {
@@ -190,9 +241,12 @@
 
   function districtEventCount(name, mode) {
     var range = rangeFor(mode || "all");
-    if (mode === "all") return state.pvRecords.filter(function (r) { return r.sourceDistrict === name && r.scope !== "Relevant for Karnataka"; }).length;
-    return state.pvRecords.filter(function (r) {
-      return r.sourceDistrict === name && r.scope !== "Relevant for Karnataka" && r.dateStart <= range.end && r.dateEnd >= range.start;
+    var count = state.pvRecords.filter(function (r) {
+      return r.sourceDistrict === name && r.scope !== "Relevant for Karnataka" && (mode === "all" || (r.dateStart <= range.end && r.dateEnd >= range.start));
+    }).length;
+    if (!state.cultural) return count;
+    return count + state.culturalRecords.filter(function (r) {
+      return r.sourceDistrict === name && (mode === "all" || (r.dateStart <= range.end && r.dateEnd >= range.start));
     }).length;
   }
 
@@ -210,8 +264,7 @@
       '<div id="' + id + '" class="ev-container">' + pvListHTML(records) + '</div></section>';
   }
 
-  /* Today's events card — PV events instead of OCR. District and state groups
-     live inside the existing card body, not in separate page-level blocks. */
+  /* Event card — district and state groups live inside one card. */
   function pvEventsHTML(key) {
     if (state.pvError) return PV_ERROR;
     if (!state.pv) return PV_LOADING;
@@ -222,228 +275,104 @@
   }
 
   function bindEventCardUI() {
-    var sel = document.getElementById("districtSelect");
-    if (sel && !sel._pvBound) {
-      sel._pvBound = true;
-      sel.addEventListener("change", function () {
-        state.district = sel.value || "";
-        saveDistrict(state.district);
-        renderAll();
-      });
-    }
-    ["districtEvents", "stateEvents"].forEach(function (id) {
-      var el = document.getElementById(id);
-      if (el) bindExpand(el);
+    bindDistrictSelectors();
+    ["body-homeToday", "body-homeUpcoming"].forEach(function (id) {
+      var body = document.getElementById(id);
+      if (body) bindExpand(body);
     });
   }
 
-  /* ---------------- Inline SVG accents (no icon deps, no external assets).
-       aria-hidden + focusable=false: Kannada labels stay the accessible source.
-       Colors come from currentColor via the .ico CSS. ---------------- */
+  /* ---------------- Inline SVG accent (no icon dependency). ---------------- */
   var ICO_ATTR = 'viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="ico" stroke-linecap="round" stroke-linejoin="round"';
   var ICO_STROKE = 'fill="none" stroke="currentColor" stroke-width="1.8"';
-  var ICO_SOLID = 'fill="currentColor" stroke="none"';
   var ICONS = {
-    sunrise:
-      '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><path d="M4 17.5h16"/><path d="M8.5 17.5a3.5 3.5 0 0 1 7 0"/><path d="M12 5v2.2"/><path d="M6.6 7.6l1.6 1.6"/><path d="M17.4 7.6l-1.6 1.6"/></svg>',
-    sunset:
-      '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><path d="M4 17.5h16"/><path d="M8.5 17.5a3.5 3.5 0 0 1 7 0"/><path d="M12 5v2.2"/><path d="M6.6 7.6l1.6 1.6"/><path d="M17.4 7.6l-1.6 1.6"/></svg>',
-    tithi:
-      '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M15 4A8 8 0 1 0 23 12A6 6 0 0 1 15 4Z"/></svg>',
-    nakshatra:
-      '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg>',
-    yoga:
-      '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M14.5 4.5A7.5 7.5 0 1 0 22 12.2 5.8 5.8 0 0 1 14.5 4.5z"/><circle cx="7.6" cy="9.5" r="2.4"/></svg>',
-    karana:
-      '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M12 4a8 8 0 1 0 0 16z"/></svg>',
     diya:
       '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><path fill="currentColor" stroke="none" d="M12 2.8c1.5 2 2.5 3.3 2.5 4.9a2.5 2.5 0 1 1-5 0c0-1.6 1-2.9 2.5-4.9z"/><path d="M6 12.5a3.2 3.2 0 0 0 3.2 3.2h5.6A3.2 3.2 0 0 0 18 12.5z"/></svg>'
   };
 
-  function fmtEnd(t, next) {
-    var h = Math.floor(t), m = Math.round((t - h) * 100);
-    if (h >= 24) { h -= 24; next = true; }
-    return (next ? '<span class="nd">ಮರುದಿನ ' : "") + pad(h) + ":" + pad(m) + (next ? "</span>" : "");
-  }
-
-  function toMin(t) { var p = t.split(":"); return +p[0] * 60 + +p[1]; }
-
-  /* ---------------- Load & normalize the JSON ---------------- */
-  var LOADING_HTML = '<p class="empty-note">ದತ್ತಾಂಶ ಲೋಡ್ ಆಗುತ್ತಿದೆ…</p>';
-
-  /* Navigate to a date: update key, show loading immediately, then fetch &
-     cache the record unless it is already cached. */
-  function goto(key, loadDay) {
+  /* ---------------- Date navigation ---------------- */
+  function goto(key) {
     state.key = key;
     saveDate(key);
     renderMasthead();
-    if (loadDay === undefined) loadDay = state.tab === "day";
-    if (!loadDay) { state.loading = false; renderActive(); return; }
-    if (state.data[key]) { state.loading = false; renderActive(); return; }
-    state.loading = true;
     renderActive();
-    fetchDate(key);
-  }
-
-  /* Per-date fetch. seq guards renders: only the most recent navigation may
-     render, so a slow response can never overwrite a newer selected date. */
-  function fetchRecord(key) {
-    if (state.data[key]) return Promise.resolve(state.data[key]);
-    if (state.pending[key]) return state.pending[key];
-    state.pending[key] = fetch("ocr-zones/" + key + "/structured-ocr.json")
-      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
-      .then(function (json) { return normalize(json, key); })
-      .catch(function () { return unavailableDay(key); })
-      .then(function (record) {
-        state.data[key] = record;
-        delete state.pending[key];
-        return record;
-      });
-    return state.pending[key];
-  }
-
-  function fetchDate(key) {
-    var seq = ++state.seq;
-    fetchRecord(key).then(function () {
-      if (seq === state.seq) { state.loading = false; renderAll(); }
-    });
-  }
-
-  function normalize(json, key) {
-    var c = (json && json.content) || {};
-    var cal = c.calendar || {}, pan = c.panchanga || {}, tim = c.timings || {};
-    var tithi = pan.tithi || {}, nak = pan.nakshatra || {}, yog = pan.yoga || {}, kar = pan.karana || {};
-    var jathaka = (Array.isArray(c.jathaka) && c.jathaka.length === 12)
-      ? c.jathaka.map(function (j) { return [j.rashi, cleanWord(j.prediction)]; })
-      : [];
-    return {
-      key: key,
-      calendar: {
-        months: (cal.months || []).filter(function (m) { return String(m).trim() && String(m).trim() !== "—"; }),
-        samvatsara: String(cal.samvatsara || "").trim() || null,
-        shakaYear: num(cal.shakaYear) || null,
-        sunrise: String(cal.sunrise || "").trim() || null,
-        sunset: String(cal.sunset || "").trim() || null
-      },
-      events: (c.events || []).filter(String).slice(0, 12),
-      panchanga: {
-        tithi:     { name: cleanWord(tithi.name),     paksha: cleanWord(pan.paksha),         ends: num(tithi.endsAt), nextDay: !!tithi.nextDay },
-        nakshatra: { name: cleanWord(nak.name),       ends: num(nak.endsAt), nextDay: !!nak.nextDay },
-        yoga:      { name: cleanWord(yog.name),       ends: num(yog.endsAt), nextDay: !!yog.nextDay },
-        karana:    { name: cleanWord(kar.name),       ends: num(kar.endsAt), nextDay: !!kar.nextDay },
-        ayana: cleanWord(pan.ayana) || "",
-        ritu: cleanWord(pan.ritu) || "",
-        solarRashi: cleanWord(pan.solarRashi) || "",
-        chandraRashi: cleanWord(pan.chandraEntryRashi || pan.chandraRashi) || ""
-      },
-      timings: buildTimings(tim),
-      jathaka: jathaka
-    };
-  }
-
-  /* OCR safety: keep Kannada letters, spaces and combining marks only. */
-  function cleanWord(s) { return String(s || "").replace(/[^\u0C80-\u0CFF\u200C\u200D\s]/g, "").trim(); }
-
-  function num(t) { var n = parseFloat(t); return isNaN(n) ? 0 : n; }
-
-  function buildTimings(raw) {
-    if (!raw || typeof raw !== "object") return [];
-    var defs = [
-      { key: "rahuKala", name: "ರಾಹು ಕಾಲ", tone: "bad" },
-      { key: "gulikaKala", name: "ಗುಳಿಕ ಕಾಲ", tone: "bad" },
-      { key: "yamaganda", name: "ಯಮಗಂಡ", tone: "bad" },
-      { key: "arthaPrahara", name: "ಅರ್ಥ ಪ್ರಹರ", tone: "mid" },
-      { key: "shubhaSamaya", name: "ಶುಭ ಸಮಯ", tone: "good" }
-    ];
-    var out = [];
-    defs.forEach(function (x) {
-      var s = String(raw[x.key] || ""), t = s.match(/(\d{1,2})[.:](\d{2})/g);
-      if (!t || t.length < 2) return;
-      out.push({ name: x.name, tone: x.tone, from: fix24(t[0], s), to: fix24(t[1], s) });
-    });
-    /* OCR times are noisy (e.g. "ಮ.01130"); keep only rows that parse cleanly. */
-    return out;
-  }
-
-  /* "ಮ." (ಮಧ್ಯಾಹ್ನ) with an early hour means PM. */
-  function fix24(t, raw) {
-    var p = t.split(".").length > 1 ? t.split(".") : t.split(":"), h = +p[0];
-    if (/ಮ/i.test(raw) && h > 0 && h < 9) h += 12;
-    return pad(h) + ":" + p[1];
   }
 
   /* ---------------- Render: Today ---------------- */
+  function homeListHTML(records, emptyText) {
+    if (!records.length) return '<p class="empty-note">' + emptyText + '</p>';
+    var limit = 3, hidden = records.slice(limit), out = '<div class="ev-panel"><ul class="ev-list">';
+    out += records.slice(0, limit).map(function (r) { return pvRow(r, r.startTime || ""); }).join("") + '</ul>';
+    if (hidden.length) {
+      var id = "homex-" + (++pvSeq);
+      out += '<ul class="ev-list" id="' + id + '" hidden>' + hidden.map(function (r) { return pvRow(r, r.startTime || ""); }).join("") + '</ul>' +
+        '<div class="ev-more"><button class="chip-more" id="btn-' + id + '" type="button" aria-expanded="false">ಮತ್ತೆ +' + hidden.length + '</button></div>';
+    }
+    return out + '</div>';
+  }
+
+  function homeCategoryHTML(id, title, body, className) {
+    return '<section class="home-category ' + (className || '') + '" aria-labelledby="' + id + '"><h3 class="home-category-title" id="' + id + '">' + title + '</h3>' + body + '</section>';
+  }
+
+  function homeReligiousHTML(key, id) {
+    var local = districtEventsFor(key), statewide = stateEventsFor(key);
+    var empty = state.district ? "ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಧಾರ್ಮಿಕ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ." : "ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿದರೆ ಸ್ಥಳೀಯ ಧಾರ್ಮಿಕ ಕಾರ್ಯಕ್ರಮಗಳು ಕಾಣಿಸುತ್ತವೆ.";
+    var body = '<div class="home-scope"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4>' + homeListHTML(local, empty) + '</div>' +
+      '<div class="home-scope statewide"><h4>ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</h4>' + homeListHTML(statewide, "ಈ ದಿನ ಯಾವುದೇ ಕರ್ನಾಟಕದ ಧಾರ್ಮಿಕ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") + '</div>';
+    return homeCategoryHTML(id, "ಧಾರ್ಮಿಕ ಕಾರ್ಯಕ್ರಮಗಳು", body, "religious");
+  }
+
+  function homeCulturalHTML(key, id) {
+    var body;
+    if (!state.district) body = '<p class="empty-note">ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ನೋಡಲು ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ.</p>';
+    else if (state.culturalError) body = CULTURAL_ERROR;
+    else if (!state.cultural) body = CULTURAL_LOADING;
+    else body = homeListHTML(culturalEventsFor(key), "ಈ ದಿನ ಯಾವುದೇ ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.");
+    return homeCategoryHTML(id, "ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು", body, "cultural");
+  }
+
+  function homeTodayHTML(key) {
+    if (state.pvError) return PV_ERROR;
+    if (!state.pv) return PV_LOADING;
+    return homeReligiousHTML(key, "homeReligious") + homeCulturalHTML(key, "homeCultural");
+  }
+
+  function dateLabel(iso) {
+    var d = parseKey(isoToKey(iso));
+    return WEEKDAYS[d.getDay()] + ", " + MONTHS[d.getMonth()] + " " + kn(d.getDate());
+  }
+
+  function upcomingHTML(fromKey) {
+    if (state.pvError) return PV_ERROR;
+    if (!state.pv) return PV_LOADING;
+    var from = keyToIso(fromKey), days = [];
+    for (var i = 1; i <= 7; i++) {
+      var iso = addDaysIso(from, i), key = isoToKey(iso), local = districtEventsFor(key), statewide = stateEventsFor(key), cultural = culturalEventsFor(key);
+      if (!local.length && !statewide.length && !cultural.length) continue;
+      var content = '<section class="upcoming-day"><h3 class="upcoming-date">' + dateLabel(iso) + '</h3>';
+      if (local.length || statewide.length) content += homeReligiousHTML(key, "upcomingReligious" + i);
+      if (cultural.length) content += homeCategoryHTML("upcomingCultural" + i, "ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು", homeListHTML(cultural, ""), "cultural");
+      days.push(content + '</section>');
+    }
+    return days.length ? '<div class="upcoming-list">' + days.join("") + '</div>' : '<p class="empty-note">ಮುಂದಿನ 7 ದಿನಗಳಲ್ಲಿ ಯಾವುದೇ ಕಾರ್ಯಕ್ರಮಗಳಿಲ್ಲ.</p>';
+  }
+
+  function homeHeaderHTML(key) {
+    var d = parseKey(key);
+    var options = districtOptionsHTML("day");
+    return '<section class="home-header" aria-labelledby="homeDateTitle">' +
+      '<div class="home-date"><span class="home-kicker">ಆಯ್ದ ದಿನ</span><div class="home-date-line"><strong id="homeDateTitle">' + kn(d.getDate()) + '</strong><span><b>' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</b><small>' + WEEKDAYS[d.getDay()] + '</small></span></div></div>' +
+      '<label class="home-district" for="homeDistrictSelect"><span>ಜಿಲ್ಲೆ</span><select id="homeDistrictSelect" class="district-select" name="homeDistrict">' + options + '</select></label>' +
+      '</section>';
+  }
+
   function renderToday() {
-    if (state.loading) {
-      document.getElementById("todayContent").innerHTML = LOADING_HTML;
-    } else {
-      var d = dayData(state.key);
-      if (d.unavailable) {
-        document.getElementById("todayContent").innerHTML =
-          dateContextHTML({}) + '<div class="unavailable-day" role="status">' +
-            '<strong>ಈ ದಿನದ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ</strong><p>ಈ ದಿನದ ಪೂರಕ ಪಂಚಾಂಗ ವಿವರ ಇನ್ನೂ ಲಭ್ಯವಿಲ್ಲ.</p>' +
-          '</div>';
-      } else {
-        var cal = d.calendar, pan = d.panchanga;
-        var sun = '<div class="sun-row">' +
-          '<span class="sun-item sunrise-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunrise + '</span> ಸೂರ್ಯೋದಯ <b>' + kn(cal.sunrise || "—") + '</b></span>' +
-          '<span class="sun-item sunset-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunset + '</span> ಸೂರ್ಯಾಸ್ತ <b>' + kn(cal.sunset || "—") + '</b></span></div>' +
-          '<p class="src-note">ಕನ್ನಡ ಪಂಚಾಂಗದ ಆಧಾರದಲ್ಲಿ</p>';
-        var meta = [];
-        if (cal.samvatsara) meta.push(esc(cal.samvatsara) + " ನಾಮ ಸಂವತ್ಸರ");
-        if (cal.shakaYear != null) meta.push("ಶಕ " + kn(cal.shakaYear));
-        if (cal.months.length) meta.push(esc(cal.months.join("–")));
-
-        var panga = '<div id="panchangaSection" class="panga-grid" tabindex="-1">' +
-          pc("ತಿಥಿ", pan.tithi.name, (pan.tithi.paksha ? pan.tithi.paksha + " ಪಕ್ಷ · " : "") + "ಮುಗಿಯುವುದು " + fmtEnd(pan.tithi.ends, pan.tithi.nextDay), true, ICONS.tithi) +
-          pc("ನಕ್ಷತ್ರ", pan.nakshatra.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.nakshatra.ends, pan.nakshatra.nextDay), true, ICONS.nakshatra) +
-          pc("ಯೋಗ", pan.yoga.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.yoga.ends, pan.yoga.nextDay), false, ICONS.yoga) +
-          pc("ಕರಣ", pan.karana.name, "ಮುಗಿಯುವುದು " + fmtEnd(pan.karana.ends, pan.karana.nextDay), false, ICONS.karana) +
-          '</div>' + pangaMetaHTML(pan);
-
-        document.getElementById("todayContent").innerHTML =
-          dateContextHTML(cal, meta) +
-          card("ಇಂದಿನ ಹಬ್ಬಗಳು / ವಿಶೇಷ ದಿನಗಳು", pvEventsHTML(state.key), "events", false, ICONS.diya) +
-          panga + sun +
-          card("ಸಮಯಗಳು — ಕಾಲ", timingsHTML(d), "timings") +
-          card("ರಾಶಿ ಭವಿಷ್ಯ", jathakaHTML(d), "jathaka", true);
-
-        bindEventCardUI();
-      }
-    }
-  }
-
-  function dateContextHTML(cal, meta) {
-    var items = meta || [];
-    if (!items.length && cal) {
-      if (cal.samvatsara) items.push(esc(cal.samvatsara) + " ನಾಮ ಸಂವತ್ಸರ");
-      if (cal.shakaYear != null) items.push("ಶಕ " + kn(cal.shakaYear));
-      if (cal.months && cal.months.length) items.push(esc(cal.months.join("–")));
-    }
-    return '<section class="date-context" aria-label="ದಿನದ ಕಾಲದ ಸಂದರ್ಭ"><p>' + (items.join(" · ") || "ದಿನದ ವಿವರ") + '</p></section>';
-  }
-
-  /* Three labeled panchanga metadata items. Empty values are omitted entirely —
-     no placeholders are invented, so a missing ಚಂದ್ರ ರಾಶಿ simply shows two items. */
-  function pangaMetaHTML(pan) {
-    var items = [
-      ["ಆಯನ", pan.ayana],
-      ["ಸೂರ್ಯ ರಾಶಿ", pan.solarRashi],
-      ["ಚಂದ್ರ ರಾಶಿ", pan.chandraRashi]
-    ].filter(function (x) { return x[1]; });
-    if (!items.length) return "";
-    return '<div class="panga-meta">' + items.map(function (x) {
-      return '<div class="pm-item">' +
-        '<span class="pm-label">' + esc(x[0]) + '</span>' +
-        '<span class="pm-value">' + esc(x[1]) + '</span></div>';
-    }).join("") + '</div>';
-  }
-
-  function pc(label, name, sub, featured, icon) {
-    return '<div class="panga-card' + (featured ? " featured" : "") + '">' +
-      '<span class="panga-head">' + icon + '<span class="panga-label">' + label + '</span></span>' +
-      '<span class="panga-name">' + esc(name) + '</span>' +
-      '<span class="panga-sub">' + sub + '</span></div>';
+    var title = state.key === DEFAULT_KEY ? "ಇಂದಿನ ಕಾರ್ಯಕ್ರಮಗಳು" : "ಈ ದಿನದ ಕಾರ್ಯಕ್ರಮಗಳು";
+    document.getElementById("todayContent").innerHTML = homeHeaderHTML(state.key) +
+      card(title, homeTodayHTML(state.key), "homeToday", false, ICONS.diya) +
+      card("ಮುಂದಿನ 7 ದಿನಗಳ ಕಾರ್ಯಕ್ರಮಗಳು", upcomingHTML(state.key), "homeUpcoming", false);
+    bindEventCardUI();
   }
 
   function card(title, body, id, collapsed, icon) {
@@ -453,50 +382,6 @@
     return '<section class="card">' +
       '<h2 class="card-heading" id="toggle-' + id + '" tabindex="-1">' + head + '</h2>' +
       '<div class="card-body" id="body-' + id + '">' + body + '</div></section>';
-  }
-
-  function timingsHTML(d) {
-    if (!d.timings.length) return '<p class="empty-note">ಈ ದಿನದ ಕಾಲ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
-    var c = d.calendar;
-    var span = toMin(c.sunset) - toMin(c.sunrise) || 1;
-    var ordered = d.timings.slice().sort(function (a, b) { return toMin(a.from) - toMin(b.from); });
-    var blocks = ordered.map(function (t) {
-      var l = (toMin(t.from) - toMin(c.sunrise)) / span * 100;
-      var w = (toMin(t.to) - toMin(t.from)) / span * 100;
-      return '<div class="tl-block ' + t.tone + '" style="left:' + l.toFixed(1) + '%;width:' + Math.max(w, 4).toFixed(1) + '%" title="' + esc(t.name) + " " + t.from + "–" + t.to + '">' +
-        "<b>" + esc(t.name) + "</b>" + kn(t.from) + "–" + kn(t.to) + "</div>";
-    }).join("");
-    /* Vertical schedule rows: sunrise endpoint, one row per kala (time on its
-       own line below the name), sunset endpoint. Text carries the meaning;
-       the dot is a color+position reinforcement, never color alone. */
-    var endRow = function (icon, label, time) {
-      return '<li class="tl-end-row">' + icon +
-        '<span class="tl-end-name">' + label + '</span>' +
-        '<span class="t-time">' + kn(time || "—") + '</span></li>';
-    };
-    var rows = endRow(ICONS.sunrise, "ಸೂರ್ಯೋದಯ", c.sunrise) +
-      ordered.map(function (t) {
-        return '<li class="tl-row"><span class="tone-dot ' + t.tone + '" aria-hidden="true"></span>' +
-          '<span class="tl-main"><span class="tl-name">' + esc(t.name) + '</span>' +
-          '<span class="t-time">' + kn(t.from) + " – " + kn(t.to) + '</span></span></li>';
-      }).join("") +
-      endRow(ICONS.sunset, "ಸೂರ್ಯಾಸ್ತ", c.sunset);
-    return '<div class="timeline">' +
-        '<div class="tl-track">' + blocks + '</div>' +
-        '<div class="tl-ends"><span>' + ICONS.sunrise + " " + kn(c.sunrise || "—") + '</span><span>' + kn(c.sunset || "—") + " " + ICONS.sunset + '</span></div>' +
-      '</div><ul class="timing-list">' + rows + '</ul>' +
-      '<div class="timing-legend" aria-label="ಕಾಲಗಳ ಬಣ್ಣದ ಅರ್ಥ">' +
-        '<span><i class="tone-dot good" aria-hidden="true"></i> ಶುಭ</span>' +
-        '<span><i class="tone-dot mid" aria-hidden="true"></i> ಮಧ್ಯಮ</span>' +
-        '<span><i class="tone-dot bad" aria-hidden="true"></i> ಅಶುಭ</span>' +
-      '</div>';
-  }
-
-  function jathakaHTML(d) {
-    if (!d.jathaka.length) return '<p class="empty-note">ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ.</p>';
-    return '<div class="jathaka-list">' + d.jathaka.map(function (j) {
-      return '<div class="jr"><span class="jr-name">' + esc(j[0]) + '</span><span class="jr-p">' + esc(j[1]) + "</span></div>";
-    }).join("") + "</div>";
   }
 
   /* ---------------- Render: Week ---------------- */
@@ -511,14 +396,13 @@
     var d = parseKey(state.key);
     d.setDate(d.getDate() + n * 7);
     state.weekFirst = state.weekLast = state.weekHeader = null;
-    goto(keyFor(d), false);
+    goto(keyFor(d));
   }
 
   function weekAgendaHTML(key) {
     var d = parseKey(key), district = districtEventsFor(key), statewide = stateEventsFor(key);
-    var counts = district.length || statewide.length ? '<span class="week-day-counts">' + (district.length ? '<span class="count-district">ಜಿಲ್ಲೆ ' + district.length + '</span>' : '') + (statewide.length ? '<span class="count-state">ಕರ್ನಾಟಕ ' + statewide.length + '</span>' : '') + '</span>' : '';
     var content = '<h3 class="week-day-title"><button type="button" class="week-day-link" data-day="' + key + '">' +
-      WEEKDAYS[d.getDay()] + ' <span>' + kn(d.getDate()) + ' ' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</span>' + counts + '</button></h3>';
+      '<span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span><span class="week-day-meta"><span class="week-day-date">' + kn(d.getDate()) + ' ' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</span></span></button></h3>';
     if (!district.length && !statewide.length) return '<section class="week-day" data-day="' + key + '">' + content + '<p class="empty-note">ಈ ದಿನ ಯಾವುದೇ ವಿಶೇಷ ದಿನವಿಲ್ಲ.</p></section>';
     return '<section class="week-day" data-day="' + key + '">' + content +
       '<div class="week-scope district"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + (district.length ? district.map(function (r) { return pvRow(r, "", key); }).join("") : '<li class="empty-note">ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.</li>') + '</ul></div>' +
@@ -776,7 +660,7 @@
     prev.setAttribute("aria-label", "ಹಿಂದಿನ " + unit);
     next.setAttribute("aria-label", "ಮುಂದಿನ " + unit);
     if (document.documentElement) document.documentElement.style.setProperty("--masthead-h", document.querySelector(".masthead").offsetHeight + "px");
-    document.title = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + " — ಕನ್ನಡ ಪಂಚಾಂಗ";
+    document.title = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + " — ಕನ್ನಡ ಸಾಂಸ್ಕೃತಿಕ ಕ್ಯಾಲೆಂಡರ್";
   }
 
   /* ---------------- Tab switching ---------------- */
@@ -787,7 +671,6 @@
     state.tab = name;
     if (name === "week" && previous !== "week") state.weekFirst = state.weekLast = state.weekHeader = null;
     if (name === "month" && previous !== "month") state.monthFirst = state.monthLast = state.monthHeader = null;
-    if (name !== "day") state.loading = false;
     renderMasthead();
     document.querySelectorAll(".view").forEach(function (v) { v.hidden = v.id !== VIEWS[name]; });
     document.querySelectorAll(".tab").forEach(function (t) {
@@ -796,8 +679,6 @@
       if (on) t.setAttribute("aria-current", "page"); else t.removeAttribute("aria-current");
     });
     renderActive();
-    if (name === "day" && !state.data[state.key] && !state.pending[state.key]) fetchDate(state.key);
-    updateSectionFab();
     if (name === "day" || name === "more") {
       document.querySelector(".main").scrollTop = 0;
       window.scrollTo(0, 0);
@@ -829,7 +710,7 @@
   }
 
   function bindDistrictSelectors() {
-    ["districtSelect", "weekDistrictSelect", "monthDistrictSelect", "settingsDistrictSelect"].forEach(function (id) {
+    ["homeDistrictSelect", "districtSelect", "weekDistrictSelect", "monthDistrictSelect", "settingsDistrictSelect"].forEach(function (id) {
       var select = document.getElementById(id);
       if (!select || select._pvBound) return;
       select._pvBound = true;
@@ -848,7 +729,7 @@
 
   function openDay(key) {
     setTab("day");
-    goto(key, true);
+    goto(key);
   }
 
   function bindSwipe(id, action) {
@@ -862,49 +743,13 @@
       el._swipeY = e.changedTouches[0].clientY;
     }, { passive: true });
     el.addEventListener("touchend", function (e) {
-      if (el._swipeX == null || state.loading) return;
+      if (el._swipeX == null) return;
       var dx = e.changedTouches[0].clientX - el._swipeX;
       var dy = e.changedTouches[0].clientY - el._swipeY;
       el._swipeX = null;
       if (Math.abs(dx) < 48 || Math.abs(dx) <= Math.abs(dy)) return;
       action(dx < 0 ? 1 : -1);
     }, { passive: true });
-  }
-
-  function bindSectionJump() {
-    var fab = document.getElementById("sectionFab"), menu = document.getElementById("sectionMenu");
-    if (!fab || fab._pvBound) return;
-    fab._pvBound = true;
-    function jumpTo(target) {
-      var masthead = document.querySelector(".masthead");
-      var offset = masthead ? masthead.offsetHeight + 12 : 12;
-      var top = target.getBoundingClientRect().top + (window.pageYOffset || window.scrollY || 0) - offset;
-      window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
-      target.focus({ preventScroll: true });
-    }
-    fab.addEventListener("click", function () {
-      menu.hidden = !menu.hidden;
-      fab.setAttribute("aria-expanded", String(!menu.hidden));
-    });
-    menu.querySelectorAll("button").forEach(function (button) {
-      button.addEventListener("click", function () {
-        var target = document.getElementById(button.dataset.target);
-        menu.hidden = true;
-        fab.setAttribute("aria-expanded", "false");
-        if (target && target.getBoundingClientRect && target.focus) jumpTo(target);
-      });
-    });
-  }
-
-  function updateSectionFab() {
-    var fab = document.getElementById("sectionFab");
-    if (!fab || !fab.classList) return;
-    var visible = state.tab === "day";
-    fab.classList.toggle("is-visible", visible);
-    if (!visible) {
-      var menu = document.getElementById("sectionMenu");
-      if (menu) menu.hidden = true;
-    }
   }
 
   function init() {
@@ -932,10 +777,7 @@
     bindSwipe("viewDay", function (n) { if (state.tab === "day") shiftDay(n); });
     bindSwipe("weekHead", function (n) { shiftWeek(n); });
     bindSwipe("monthHead", function (n) { shiftMonth(n); });
-    bindSectionJump();
-    updateSectionFab();
     if (window.addEventListener) window.addEventListener("scroll", function () {
-      updateSectionFab();
       lazyWeekScroll();
       lazyMonthScroll();
     }, { passive: true });
@@ -946,13 +788,14 @@
       }
       renderAll();
     });
-    goto(state.key, true);
+    fetchCultural().then(function () { renderAll(); });
+    goto(state.key);
   }
 
   function shiftDay(n) {
     var d = parseKey(state.key);
     d.setDate(d.getDate() + n);
-    goto(keyFor(d), true);
+    goto(keyFor(d));
   }
 
   function shiftPeriod(n) {
@@ -969,7 +812,7 @@
     var last = new Date(d.getFullYear(), d.getMonth() + 1, 0).getDate();
     d.setDate(Math.min(day, last));
     state.monthFirst = state.monthLast = state.monthHeader = null;
-    goto(keyFor(d), state.tab === "day");
+    goto(keyFor(d));
   }
 
   document.addEventListener("DOMContentLoaded", init);

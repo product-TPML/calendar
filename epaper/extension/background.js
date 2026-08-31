@@ -2,6 +2,12 @@ const DB_NAME = 'prajavani-epaper';
 const DB_VERSION = 1;
 const STORES = ['editions', 'issues', 'pages', 'articles', 'jobs'];
 const activeRuns = new Map();
+const shelfExports = new Map();
+const EXPORT_CHUNK_CHARS = 512 * 1024;
+const LOG_PREFIX = '[Prajavani background]';
+
+const log = (event, details = {}) => console.info(LOG_PREFIX, event, details);
+const warn = (event, details = {}) => console.warn(LOG_PREFIX, event, details);
 
 function openDb() {
   return new Promise((resolve, reject) => {
@@ -48,6 +54,15 @@ async function all(store) {
   });
 }
 
+async function count(store) {
+  const db = await openDb();
+  return new Promise((resolve, reject) => {
+    const request = db.transaction(store).objectStore(store).count();
+    request.onsuccess = () => resolve(request.result);
+    request.onerror = () => reject(request.error);
+  });
+}
+
 async function clearAll() {
   const db = await openDb();
   return new Promise((resolve, reject) => {
@@ -68,6 +83,31 @@ async function shelfSnapshot() {
   };
 }
 
+async function startShelfExport() {
+  const exportId = crypto.randomUUID();
+  const data = JSON.stringify(await shelfSnapshot());
+  const chunks = Math.ceil(data.length / EXPORT_CHUNK_CHARS);
+  shelfExports.set(exportId, { data, chunks });
+  log('export:start', { exportId, chars: data.length, chunks });
+  return { exportId, chunks, chunkChars: EXPORT_CHUNK_CHARS };
+}
+
+function shelfExportChunk(exportId, index) {
+  const exportData = shelfExports.get(exportId);
+  if (!exportData) throw new Error('Shelf export has expired.');
+  if (!Number.isInteger(index) || index < 0 || index >= exportData.chunks) throw new Error('Invalid shelf export chunk.');
+  const start = index * EXPORT_CHUNK_CHARS;
+  const chunk = exportData.data.slice(start, start + EXPORT_CHUNK_CHARS);
+  log('export:chunk', { exportId, index: index + 1, chunks: exportData.chunks, chars: chunk.length });
+  return { chunk, index, chunks: exportData.chunks };
+}
+
+function finishShelfExport(exportId) {
+  const removed = shelfExports.delete(exportId);
+  log('export:complete', { exportId, removed });
+  return { ok: removed };
+}
+
 function validSnapshot(snapshot) {
   return snapshot?.format === 'prajavani-epaper-shelf'
     && snapshot.version === 1
@@ -86,28 +126,32 @@ function issueKey(date, editionNumber) {
   return `PV:${date}:${editionNumber}`;
 }
 
-async function saveEdition(jobId, date, edition, startDate, endDate) {
+async function saveEdition(jobId, date, edition, startDate, endDate, chunkIndex = 0, chunkCount = 1) {
   const number = String(edition.editionNumber);
   const key = issueKey(date, number);
-  await put('issues', {
-    key,
-    jobId,
-    publisher: 'PV',
-    date,
-    editionNumber: number,
-    editionName: edition.name,
-    shortCode: edition.shortCode,
-    status: edition.status,
-    error: edition.error || '',
-    pages: edition.pages || 0,
-    structuredArticles: edition.structuredArticles || 0,
-    fetchedAt: new Date().toISOString(),
-  });
-  await putMany('pages', (edition.pageRecords || []).map((page) => ({
-    ...page,
-    key: `${key}:${page.id}`,
-    issueKey: key,
-  })));
+  const finalChunk = chunkIndex === chunkCount - 1;
+  log('edition:save-start', { jobId, date, edition: number, status: edition.status, articles: edition.articleResults?.length || 0, chunk: chunkIndex + 1, chunks: chunkCount });
+  if (chunkIndex === 0) {
+    await put('issues', {
+      key,
+      jobId,
+      publisher: 'PV',
+      date,
+      editionNumber: number,
+      editionName: edition.name,
+      shortCode: edition.shortCode,
+      status: edition.status,
+      error: edition.error || '',
+      pages: edition.pages || 0,
+      structuredArticles: edition.structuredArticles || 0,
+      fetchedAt: new Date().toISOString(),
+    });
+    await putMany('pages', (edition.pageRecords || []).map((page) => ({
+      ...page,
+      key: `${key}:${page.id}`,
+      issueKey: key,
+    })));
+  }
   const articleRecords = (edition.articleResults || [])
     .filter((article) => article.status === 200)
     .map((article) => ({
@@ -120,17 +164,21 @@ async function saveEdition(jobId, date, edition, startDate, endDate) {
     }));
   await putMany('articles', articleRecords);
   const run = activeRuns.get(jobId);
+  if (!finalChunk) return { pending: true };
+  const existingJob = (await all('jobs')).find((job) => job.id === jobId);
+  const terminalStatus = ['cancelled', 'complete', 'failed'].includes(existingJob?.status) ? existingJob.status : null;
   await put('jobs', {
+    ...existingJob,
     id: jobId,
-    tabId: run?.tabId,
-    startDate,
-    endDate,
-    status: run?.cancelRequested ? 'cancelled' : 'running',
+    tabId: run?.tabId || existingJob?.tabId,
+    startDate: startDate || existingJob?.startDate,
+    endDate: endDate || existingJob?.endDate,
+    status: run?.cancelRequested ? 'cancelled' : terminalStatus || 'running',
     updatedAt: new Date().toISOString(),
     lastDate: date,
     lastEdition: number,
   });
-  const articleCount = (await all('articles')).length;
+  const articleCount = await count('articles');
   if (!run?.cancelRequested) chrome.runtime.sendMessage({
       type: 'EPAPER_PROGRESS',
       jobId,
@@ -145,6 +193,7 @@ async function saveEdition(jobId, date, edition, startDate, endDate) {
       },
       articleCount,
     }).catch(() => {});
+  log('edition:save-complete', { jobId, date, edition: number, storedArticles: articleRecords.length, articleCount });
   return { articleCount };
 }
 
@@ -155,11 +204,14 @@ async function activeTab() {
 
 async function startCrawl(message) {
   const jobId = crypto.randomUUID();
+  log('run:start', { jobId, tabId: message.tabId, startDate: message.startDate, endDate: message.endDate, editions: message.editionNumbers?.length || 0 });
   activeRuns.set(jobId, {
     tabId: message.tabId,
     startDate: message.startDate,
     endDate: message.endDate,
     cancelRequested: false,
+    pendingSaves: 0,
+    done: false,
   });
   await put('jobs', { id: jobId, tabId: message.tabId, startDate: message.startDate, endDate: message.endDate, status: 'starting', updatedAt: new Date().toISOString() });
   chrome.tabs.sendMessage(message.tabId, {
@@ -169,6 +221,7 @@ async function startCrawl(message) {
     endDate: message.endDate,
     editionNumbers: message.editionNumbers,
   }).catch(async (error) => {
+    warn('run:start-failed', { jobId, tabId: message.tabId, error: error.message });
     const run = activeRuns.get(jobId);
     const cancelled = run?.cancelRequested;
     activeRuns.delete(jobId);
@@ -181,6 +234,7 @@ async function startCrawl(message) {
 async function cancelRun(jobId, reason, remove) {
   const run = activeRuns.get(jobId);
   if (!run || run.cancelRequested) return;
+  log('run:cancel', { jobId, tabId: run.tabId, reason, remove });
   run.cancelRequested = true;
   if (!remove) chrome.tabs.sendMessage(run.tabId, { type: 'STOP_COLLECT' }).catch(() => {});
   await put('jobs', {
@@ -202,12 +256,6 @@ async function cancelRunsForTab(tabId, reason, remove) {
     .map(([jobId]) => cancelRun(jobId, reason, remove)));
 }
 
-async function cancelRunsExceptTab(tabId, reason) {
-  await Promise.all([...activeRuns.entries()]
-    .filter(([, run]) => run.tabId !== tabId)
-    .map(([jobId]) => cancelRun(jobId, reason, false)));
-}
-
 async function handle(message) {
   if (message.type === 'GET_STATS') {
     const [issues, articles, jobs] = await Promise.all([all('issues'), all('articles'), all('jobs')]);
@@ -222,6 +270,7 @@ async function handle(message) {
       }
     }));
     const staleJobs = candidates.filter((_, index) => !activeAfterRestart[index]);
+    if (staleJobs.length) warn('jobs:stale', { jobs: staleJobs.map((job) => job.id) });
     await Promise.all(staleJobs.map((job) => put('jobs', {
       ...job,
       status: 'cancelled',
@@ -238,7 +287,9 @@ async function handle(message) {
     };
   }
   if (message.type === 'GET_ARTICLES') return all('articles');
-  if (message.type === 'EXPORT_SHELF') return shelfSnapshot();
+  if (message.type === 'EXPORT_SHELF_START') return startShelfExport();
+  if (message.type === 'EXPORT_SHELF_CHUNK') return shelfExportChunk(message.exportId, message.index);
+  if (message.type === 'EXPORT_SHELF_END') return finishShelfExport(message.exportId);
   if (message.type === 'IMPORT_SHELF') return { ok: true, counts: await importShelf(message.snapshot) };
   if (message.type === 'CLEAR_DATA') {
     await clearAll();
@@ -253,6 +304,8 @@ async function handle(message) {
         startDate: job.startDate,
         endDate: job.endDate,
         cancelRequested: false,
+        pendingSaves: 0,
+        done: false,
       });
     }
     await cancelRun(message.jobId, 'Collection stopped by user.', false);
@@ -302,15 +355,27 @@ function searchResult(article) {
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   if (message.type === 'EDITION_RESULT' && sender.tab?.id) {
-    saveEdition(message.jobId, message.date, message.edition, message.startDate, message.endDate)
+    log('edition:received', { jobId: message.jobId, tabId: sender.tab.id, date: message.date, edition: message.edition?.editionNumber, status: message.edition?.status });
+    const run = activeRuns.get(message.jobId);
+    if (run) run.pendingSaves += 1;
+    saveEdition(message.jobId, message.date, message.edition, message.startDate, message.endDate, message.chunkIndex, message.chunkCount)
       .then((result) => sendResponse({ ok: true, ...result }))
-      .catch((error) => sendResponse({ error: error.message }));
+      .catch((error) => sendResponse({ error: error.message }))
+      .finally(() => {
+        if (!run) return;
+        run.pendingSaves -= 1;
+        if (run.done && run.pendingSaves === 0) activeRuns.delete(message.jobId);
+      });
     return true;
   }
   if (message.type === 'COLLECT_DONE' && sender.tab?.id) {
     const run = activeRuns.get(message.jobId);
     const cancelled = message.cancelled || run?.cancelRequested;
-    activeRuns.delete(message.jobId);
+    log('run:done', { jobId: message.jobId, tabId: sender.tab.id, cancelled, error: message.error || '' });
+    if (run) {
+      run.done = true;
+      if (run.pendingSaves === 0) activeRuns.delete(message.jobId);
+    }
     put('jobs', { id: message.jobId, tabId: sender.tab.id, startDate: message.startDate, endDate: message.endDate, status: cancelled ? 'cancelled' : message.error ? 'failed' : 'complete', error: message.error || '', summary: message.summary, updatedAt: new Date().toISOString() })
       .then(() => chrome.runtime.sendMessage({ type: 'EPAPER_DONE', ...message, cancelled }).catch(() => {}))
       .then(() => sendResponse({ ok: true }))
@@ -322,15 +387,17 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 });
 
 chrome.tabs.onActivated.addListener(({ tabId }) => {
-  cancelRunsExceptTab(tabId, 'Collection stopped because you switched tabs.').catch(() => {});
+  log('tab:activated', { tabId });
 });
 
 chrome.tabs.onRemoved.addListener((tabId) => {
+  log('tab:removed', { tabId });
   cancelRunsForTab(tabId, 'Collection stopped because the ePaper tab was closed.', true).catch(() => {});
 });
 
 chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
   if (changeInfo.url && !changeInfo.url.startsWith('https://epaper.prajavani.net/')) {
+    log('tab:navigated-away', { tabId, url: changeInfo.url });
     cancelRunsForTab(tabId, 'Collection stopped because the ePaper tab navigated away.', true).catch(() => {});
   }
 });

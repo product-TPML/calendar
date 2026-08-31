@@ -1,4 +1,9 @@
 const state = { editions: [], selected: new Set(), totalSelected: 0, completed: 0, jobId: null, running: false };
+const LOG_PREFIX = '[Prajavani panel]';
+
+const log = (event, details = {}) => console.info(LOG_PREFIX, event, details);
+const trace = (event, details = {}) => console.debug(LOG_PREFIX, event, details);
+const warn = (event, details = {}) => console.warn(LOG_PREFIX, event, details);
 
 const $ = (id) => document.getElementById(id);
 const send = (message) => chrome.runtime.sendMessage(message);
@@ -113,6 +118,7 @@ function renderResults(results) {
 }
 
 async function loadEditions() {
+  log('editions:load');
   const response = await send({ type: 'GET_EDITIONS' });
   if (response?.error) throw new Error(response.error);
   state.editions = response?.editions || [];
@@ -127,6 +133,7 @@ async function loadStats() {
   if (stats?.error) throw new Error(stats.error);
   $('article-count').textContent = `${stats?.articleCount || 0} articles`;
   const activeJob = stats?.jobs?.find((job) => ['starting', 'running'].includes(job.status));
+  trace('stats:loaded', { articles: stats?.articleCount || 0, jobs: stats?.jobs?.length || 0, activeJob: activeJob?.id || null });
   if (activeJob && !state.running) {
     state.jobId = activeJob.id;
     $('progress-title').textContent = `Collecting ${activeJob.startDate} to ${activeJob.endDate}`;
@@ -135,6 +142,7 @@ async function loadStats() {
 }
 
 async function search() {
+  trace('search:start', { queryLength: $('search').value.length, from: $('search-from').value, to: $('search-to').value });
   const results = await send({
     type: 'SEARCH',
     query: $('search').value,
@@ -142,6 +150,7 @@ async function search() {
     to: $('search-to').value,
   });
   renderResults(Array.isArray(results) ? results : []);
+  trace('search:complete', { results: Array.isArray(results) ? results.length : 0 });
 }
 
 async function startCollection() {
@@ -174,6 +183,7 @@ async function startCollection() {
   });
   if (response?.error) showError(response.error);
   else {
+    log('run:started', { jobId: response.jobId, tabId: tab.id, startDate, endDate, editions: state.selected.size });
     state.jobId = response.jobId;
     setRunState(true);
     $('collection-note').textContent = `Job ${response.jobId} started. Keep the ePaper tab open.`;
@@ -182,10 +192,12 @@ async function startCollection() {
 
 async function stopCollection() {
   if (!state.jobId) return;
+  log('run:stop-requested', { jobId: state.jobId });
   $('stop').disabled = true;
   $('progress-title').textContent = 'Stopping collection...';
   const response = await send({ type: 'STOP_CRAWL', jobId: state.jobId });
   if (response?.error) {
+    warn('run:stop-failed', { jobId: state.jobId, error: response.error });
     $('stop').disabled = false;
     showError(response.error);
   }
@@ -208,17 +220,39 @@ $('clear').addEventListener('click', async () => {
   await loadStats();
 });
 $('export').addEventListener('click', async () => {
-  const shelf = await send({ type: 'EXPORT_SHELF' });
-  if (shelf?.error) {
-    showError(shelf.error);
-    return;
+  const button = $('export');
+  let exportId = null;
+  log('export:clicked');
+  button.disabled = true;
+  try {
+    const details = await send({ type: 'EXPORT_SHELF_START' });
+    if (details?.error) throw new Error(details.error);
+    exportId = details.exportId;
+    const chunks = [];
+    for (let index = 0; index < details.chunks; index += 1) {
+      const result = await send({ type: 'EXPORT_SHELF_CHUNK', exportId, index });
+      if (result?.error) throw new Error(result.error);
+      chunks.push(result.chunk);
+      button.textContent = `Download ${index + 1}/${details.chunks}`;
+    }
+    const blob = new Blob([chunks.join('')], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = `prajavani-epaper-shelf-${new Date().toISOString().slice(0, 10)}.json`;
+    document.body.append(link);
+    link.click();
+    link.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    log('export:download-triggered', { exportId, chunks: details.chunks });
+  } catch (error) {
+    warn('export:error', { exportId, error: error.message });
+    showError(error.message);
+  } finally {
+    if (exportId) send({ type: 'EXPORT_SHELF_END', exportId }).catch(() => {});
+    button.disabled = false;
+    button.textContent = 'Download shelf';
   }
-  const blob = new Blob([JSON.stringify(shelf, null, 2)], { type: 'application/json' });
-  const link = document.createElement('a');
-  link.href = URL.createObjectURL(blob);
-  link.download = `prajavani-epaper-shelf-${new Date().toISOString().slice(0, 10)}.json`;
-  link.click();
-  URL.revokeObjectURL(link.href);
 });
 $('import').addEventListener('click', () => $('import-file').click());
 $('import-file').addEventListener('change', async (event) => {
@@ -240,6 +274,7 @@ $('import-file').addEventListener('change', async (event) => {
 
 chrome.runtime.onMessage.addListener((message) => {
   if (message.type === 'EPAPER_PROGRESS') {
+    trace('run:progress', { jobId: message.jobId, date: message.date, edition: message.edition?.number });
     state.jobId = message.jobId;
     setRunState(true);
     renderProgress(message.edition);
@@ -247,6 +282,7 @@ chrome.runtime.onMessage.addListener((message) => {
   if (message.type === 'EPAPER_DONE') {
     if (state.jobId && message.jobId !== state.jobId) return;
     state.jobId = message.jobId;
+    log('run:done', { jobId: message.jobId, cancelled: Boolean(message.cancelled), error: message.error || '' });
     setRunState(false);
     $('progress-title').textContent = message.cancelled ? 'Collection stopped' : message.error ? 'Collection failed' : 'Collection complete';
     if (message.error && !message.cancelled) showError(message.error);

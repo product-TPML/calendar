@@ -1,5 +1,5 @@
 /* ============================================================
-   ನಿತ್ಯ ಪಂಚಾಂಗ — warm-paper visual system
+   ಕನ್ನಡ ಸಾಂಸ್ಕೃತಿಕ ಕ್ಯಾಲೆಂಡರ್ — warm-paper visual system
    ============================================================ */
 :root {
   --paper: #faf3e7;
@@ -89,48 +89,20 @@ body {
 .view { animation: view-in .28s ease both; }
 @keyframes view-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
-/* ---------- Hero ---------- */
-.hero {
-  position: relative; overflow: hidden;
-  background: linear-gradient(135deg, var(--card) 60%, var(--gold-soft));
-  border: 1px solid var(--line); border-radius: var(--radius);
-  padding: 16px 18px 14px;
-  box-shadow: var(--shadow);
+/* ---------- Home ---------- */
+.home-header {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 18px;
+  padding: 18px 16px; background: var(--card); border: 1px solid var(--line);
+  border-radius: var(--radius); box-shadow: var(--shadow);
 }
-.hero::before {
-  content: "☼"; position: absolute; right: -14px; top: -30px;
-  font-size: 120px; color: rgba(201, 154, 46, .16); line-height: 1;
-}
-.hero-top { display: flex; align-items: flex-start; gap: 14px; }
-.hero-num {
-  font-family: var(--font-display); font-weight: 800;
-  font-size: clamp(54px, 18vw, 84px); line-height: .95; color: var(--verm);
-}
-.hero-when { display: flex; flex-direction: column; padding-top: 6px; }
-.hero-weekday { font-weight: 700; font-size: 15px; color: var(--ink-soft); }
-.hero-month { font-family: var(--font-display); font-weight: 700; font-size: 24px; color: var(--ink); }
-.hero-meta { margin-top: 10px; font-size: 13.5px; color: var(--ink-soft); }
-.badge-approx {
-  display: inline-block; margin-left: 8px; padding: 1px 8px;
-  font-size: 11.5px; font-weight: 700; color: #7a5b12;
-  background: var(--gold-soft); border: 1px solid rgba(201, 154, 46, .5); border-radius: 999px;
-  vertical-align: middle;
-}
-
-/* ---------- Sun row ---------- */
-.sun-row {
-  display: flex; justify-content: center; gap: 28px; margin: 12px 0 2px;
-  font-size: 14.5px; font-weight: 600; color: var(--ink-soft);
-}
-.sun-row .sun-item { display: inline-flex; align-items: center; }
-.sun-row .sunrise-item { color: #a86f08; }
-.sun-row .sunset-item { color: #5a527f; }
-.sun-row .sun-ico { color: currentColor; font-weight: 700; }
-.sun-ico .ico { width: 17px; height: 17px; display: inline-block; vertical-align: -3px; margin-right: 3px; }
-.src-note {
-  margin: 6px 0 0; text-align: center;
-  font-size: 12.5px; color: var(--ink-soft);
-}
+.home-kicker { display: block; color: var(--ink-soft); font-size: 13px; font-weight: 700; }
+.home-date-line { display: flex; align-items: center; gap: 10px; }
+.home-date-line strong { color: var(--verm); font-family: var(--font-display); font-size: 46px; line-height: .95; }
+.home-date-line span { display: flex; flex-direction: column; gap: 1px; }
+.home-date-line b { font-family: var(--font-display); font-size: 21px; line-height: 1.1; }
+.home-date-line small { color: var(--ink-soft); font-size: 14px; }
+.home-district { display: flex; flex-direction: column; gap: 4px; min-width: 190px; }
+.home-district > span { color: var(--ink-soft); font-size: 13px; font-weight: 700; }
 
 /* ---------- Cards ---------- */
 .card {
@@ -140,52 +112,20 @@ body {
 }
 .card-title { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 17px; }
 .card-heading { margin: 0; padding: 14px 16px 10px; font-family: var(--font-display); font-weight: 700; font-size: 17px; }
-.card-toggle {
-  width: 100%; display: flex; align-items: center; justify-content: space-between;
-  padding: 14px 16px; background: none; border: none; cursor: pointer;
-  font: inherit; color: inherit; text-align: left;
-}
-.card-toggle .card-title { margin: 0; }
 .card-title .ico { width: 16px; height: 16px; display: inline-block; vertical-align: -3px; margin-right: 7px; color: var(--verm); }
-.card-toggle .chev { color: var(--verm); transition: transform .18s ease; }
-.card-toggle[aria-expanded="true"] .chev { transform: rotate(180deg); }
 .card-body { padding: 0 16px 16px; }
-.card-body.flush { padding: 0; }
 
-/* ---------- Panchanga 2x2 ---------- */
-.panga-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 14px; }
-.panga-card {
-  background: var(--card); border: 1px solid var(--line); border-radius: 14px;
-  padding: 11px 13px; box-shadow: var(--shadow);
-  display: flex; flex-direction: column; gap: 2px;
-}
-.panga-head { display: flex; align-items: center; gap: 6px; }
-.panga-head .ico { width: 15px; height: 15px; flex: none; color: var(--gold); }
-.panga-label { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: .04em; }
-.panga-name { font-family: var(--font-display); font-weight: 700; font-size: 21px; line-height: 1.2; }
-.panga-card.featured .panga-label { font-size: 13px; }
-.panga-card.featured .panga-name { font-size: 26px; }
-.panga-sub { font-size: 12.5px; color: var(--ink-soft); }
-.panga-sub .nd { color: var(--verm); font-weight: 700; }
-/* ---------- Panchanga meta (ಆಯನ · ಸೂರ್ಯ/ಚಂದ್ರ ರಾಶಿ) — matches .panga-card ---------- */
-.panga-meta {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
-  margin-top: 14px;
-}
-.pm-item {
-  min-width: 0;
-  display: flex; flex-direction: column; align-items: center; gap: 2px;
-  padding: 11px 13px;
-  background: var(--card);
-  border: 1px solid var(--line); border-radius: 14px;
-  box-shadow: var(--shadow);
-  text-align: center;
-}
-.pm-label { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: .04em; }
-.pm-value {
-  font-family: var(--font-display); font-weight: 700; font-size: 18px;
-  color: var(--ink); line-height: 1.2;
-}
+.home-category { padding-top: 14px; }
+.home-category + .home-category { margin-top: 16px; border-top: 1px dashed var(--line); }
+.home-category-title { margin: 0 0 10px; color: var(--verm); font-family: var(--font-display); font-size: 18px; }
+.home-category.cultural .home-category-title { color: var(--gold); }
+.home-scope + .home-scope { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
+.home-scope h4 { margin: 0 0 6px; color: var(--ink-soft); font-size: 13px; }
+.home-scope.statewide h4 { color: var(--green); }
+.upcoming-day + .upcoming-day { margin-top: 16px; padding-top: 16px; border-top: 1px dashed var(--line); }
+.upcoming-date { margin: 0 0 2px; color: var(--verm-deep); font-family: var(--font-display); font-size: 17px; }
+.upcoming-day .home-category { padding-top: 8px; }
+.upcoming-day .home-category + .home-category { margin-top: 10px; padding-top: 10px; }
 
 /* ---------- Events list ---------- */
 .ev-panel {
@@ -275,75 +215,6 @@ body {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
   overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
 }
-.unavailable-day {
-  margin-top: 14px; padding: 20px; text-align: center; background: var(--card);
-  border: 1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow);
-}
-.unavailable-day strong { color: var(--verm-deep); }
-.unavailable-day p { margin: 6px 0 0; color: var(--ink-soft); font-size: 14px; }
-.date-context {
-  margin-bottom: 14px; padding: 9px 14px; text-align: center; background: var(--card);
-  border: 1px solid var(--line); border-radius: 12px; color: var(--ink-soft); box-shadow: var(--shadow);
-}
-.date-context p { margin: 0; font-size: 14px; }
-
-/* ---------- Timings + timeline ---------- */
-.timeline { margin: 14px 0 4px; }
-.tl-track {
-  position: relative; height: 58px;
-  background: linear-gradient(var(--line), var(--line)) center 50%/100% 3px no-repeat;
-}
-.tl-block {
-  position: absolute; top: 0; bottom: 0;
-  border-radius: 8px; padding: 4px 5px; overflow: hidden;
-  font-size: 10.5px; line-height: 1.25; text-align: center; color: #fff;
-  display: flex; flex-direction: column; justify-content: center; gap: 1px;
-}
-.tl-block b { font-weight: 700; display: block; }
-.tl-block.good { background: var(--green); }
-.tl-block.bad { background: var(--verm); }
-.tl-block.mid { background: var(--gold); }
-.tl-ends { display: flex; justify-content: space-between; font-size: 11.5px; color: var(--ink-soft); margin-top: 3px; }
-.tl-ends .ico { width: 13px; height: 13px; vertical-align: -2px; }
-
-/* Vertical schedule (mobile-first): readable rows, time on its own line */
-.timing-list { list-style: none; margin: 10px 0 0; padding: 0; }
-.timing-list li {
-  display: flex; align-items: center; gap: 10px;
-  padding: 11px 0; border-top: 1px dashed var(--line); font-size: 15px;
-}
-.timing-list li:first-child { border-top: none; }
-.tl-main { display: flex; flex-direction: column; gap: 2px; flex: 1; min-width: 0; }
-.tl-name { font-weight: 600; line-height: 1.35; }
-.timing-list .t-time { font-weight: 700; font-variant-numeric: tabular-nums; }
-.timing-list .tone-dot { width: 11px; height: 11px; }
-.tl-end-row { color: var(--ink-soft); }
-.tl-end-row .ico { width: 16px; height: 16px; flex: none; color: var(--verm); }
-.tl-end-row .t-time { margin-left: auto; color: var(--ink); }
-
-.tone-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
-.tone-dot.good { background: var(--green); }
-.tone-dot.bad { background: var(--verm); }
-.tone-dot.mid { background: var(--gold); }
-.timing-list .t-time { margin-left: auto; font-weight: 700; font-variant-numeric: tabular-nums; }
-.timing-legend {
-  display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px;
-  padding-top: 10px; border-top: 1px dashed var(--line);
-  font-size: 13px; color: var(--ink-soft);
-}
-.timing-legend span { display: inline-flex; align-items: center; gap: 6px; }
-.timing-legend .tone-dot { display: inline-block; }
-
-/* ---------- Jathaka ---------- */
-.jathaka-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.jr {
-  display: flex; justify-content: space-between; align-items: center; gap: 8px;
-  padding: 9px 12px; border: 1px solid var(--line); border-radius: 12px;
-  background: #fffcf2; font-size: 15px;
-}
-.jr .jr-name { font-weight: 700; font-family: var(--font-display); }
-.jr .jr-p { color: var(--verm-deep); font-weight: 600; }
-
 /* ---------- Month view ---------- */
 .period-head, .month-head { position: sticky; top: 0; z-index: 2; background: var(--paper); }
 .month-head { display: flex; align-items: center; gap: 8px; margin: 2px 0 10px; }
@@ -412,14 +283,13 @@ body {
 .stream-period-title { margin: 0; padding: 4px 2px; font-family: var(--font-display); font-size: 21px; color: var(--verm); }
 .month-block + .month-block { padding-top: 8px; border-top: 2px solid var(--line); }
 .week-block + .week-block { margin-top: 8px; }
-.week-day { padding: 14px 0; }
+.week-day { padding: 14px 0 16px; }
 .week-day + .week-day { border-top: 1px solid var(--line); }
-.week-day-title { margin: 0 0 8px; font-family: var(--font-display); font-size: 20px; }
-.week-day-link { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px; }
-.week-day-title .week-day-link > span { color: var(--ink-soft); font-size: .85em; font-weight: 500; }
-.week-day-counts { display: inline-flex; gap: 8px; margin-left: auto; font-family: var(--font-body); font-size: 12px; font-weight: 700; }
-.count-district { color: var(--verm-deep); }
-.count-state { color: var(--green); }
+.week-day-title { margin: 0 0 10px; padding: 7px 10px; border-left: 3px solid var(--gold); border-radius: 9px; background: var(--paper-deep); font-family: var(--font-display); font-size: 20px; }
+.week-day-link { width: 100%; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; gap: 12px; text-align: left; }
+.week-day-name { min-width: 0; }
+.week-day-meta { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; min-width: 0; white-space: nowrap; }
+.week-day-date { color: var(--ink-soft); font-size: .85em; font-weight: 500; }
 .week-scope { margin-top: 10px; border-top: 1px dashed var(--line); }
 .week-scope h4 { margin: 9px 0 2px; font-size: 14px; color: var(--verm); }
 .week-scope.statewide h4 { color: var(--green); }
@@ -427,19 +297,12 @@ body {
 .scope-legend { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 12px; color: var(--ink-soft); font-size: 13px; }
 .scope-legend span { display: inline-flex; align-items: center; gap: 6px; }
 .month-legend { margin: 0; }
-.section-fab, .section-menu { display: none; }
-
-/* ---------- Rashi view ---------- */
 .view-title { margin: 4px 0 2px; font-family: var(--font-display); font-weight: 800; font-size: 24px; color: var(--verm); }
-.view-sub { margin: 0 0 12px; font-size: 14px; color: var(--ink-soft); }
-.rashi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 9px; }
-.rc {
-  display: flex; justify-content: space-between; align-items: center; gap: 8px;
-  background: var(--card); border: 1px solid var(--line); border-radius: 13px;
-  padding: 12px 13px; box-shadow: var(--shadow);
+
+@media (max-width: 480px) {
+  .home-header { align-items: stretch; flex-direction: column; gap: 14px; }
+  .home-district { min-width: 0; }
 }
-.rc .rc-name { font-family: var(--font-display); font-weight: 700; font-size: 17px; }
-.rc .rc-p { color: var(--verm-deep); font-weight: 600; font-size: 15px; text-align: right; }
 
 /* ---------- Settings / about ---------- */
 .settings { padding: 4px 16px; }
@@ -475,42 +338,16 @@ body {
 .tab:hover { color: var(--ink); }
 .tab.is-active { color: var(--verm); }
 .tab.is-active .tab-ico { transform: translateY(-1px); }
-.tab:focus-visible, .icon-btn:focus-visible, .mday:focus-visible, .card-toggle:focus-visible, .card-heading:focus-visible {
+.tab:focus-visible, .icon-btn:focus-visible, .mday:focus-visible, .card-heading:focus-visible {
   outline: 2px solid var(--verm); outline-offset: 2px; border-radius: 8px;
 }
-.today-btn:focus-visible, .district-select:focus-visible, .week-day-link:focus-visible, .agenda-day-link:focus-visible, .section-fab:focus-visible, .section-menu button:focus-visible {
+.today-btn:focus-visible, .district-select:focus-visible, .week-day-link:focus-visible, .agenda-day-link:focus-visible {
   outline: 2px solid var(--verm); outline-offset: 2px;
 }
 
 /* ---------- Big type (accessibility) ---------- */
 body.big { font-size: 20px; }
-body.big .panga-name { font-size: 24px; }
-body.big .panga-card.featured .panga-name { font-size: 29px; }
-body.big .pm-label { font-size: 13.5px; }
-body.big .pm-value { font-size: 21px; }
-body.big .hero-num { font-size: clamp(64px, 22vw, 96px); }
 body.big .mday { font-size: 19px; }
-
-/* ---------- Mobile: prioritize the vertical schedule ---------- */
-/* The dense horizontal overview is desktop-only; phones get the readable
-   sunrise → kala → sunset list with no text crammed into thin bars. */
-@media (max-width: 759px) {
-  .timeline { display: none; }
-  .panga-meta { gap: 6px; }
-  .pm-item { padding: 10px 5px; }
-  .section-fab {
-    display: none; position: fixed; right: 16px; bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom) + 14px);
-    z-index: 25; padding: 10px 14px; border: 1px solid var(--verm); border-radius: 999px;
-    background: var(--verm); color: #fff; font: inherit; font-size: 13px; font-weight: 700; box-shadow: var(--shadow);
-  }
-  .section-fab.is-visible { display: block; }
-  .section-menu {
-    position: fixed; right: 16px; bottom: calc(var(--tabbar-h) + env(safe-area-inset-bottom) + 62px);
-    z-index: 25; display: grid; gap: 4px; padding: 8px; background: var(--card);
-    border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow);
-  }
-  .section-menu button { padding: 7px 10px; text-align: left; border: 0; background: none; color: var(--ink); font: inherit; cursor: pointer; }
-}
 
 /* ---------- Desktop ---------- */
 @media (min-width: 760px) {
@@ -518,11 +355,7 @@ body.big .mday { font-size: 19px; }
   .masthead { padding-left: 20px; padding-right: 20px; }
   .main { padding-left: 20px; padding-right: 20px; }
   .stream-toolbar { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; }
-  .panga-grid { gap: 12px; }
   .tabbar { left: 50%; transform: translateX(-50%); width: 100%; max-width: 760px; border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
-  /* horizontal overview already carries sunrise/sunset in .tl-ends */
-  .tl-end-row { display: none; }
-  .tl-main { flex-direction: row; align-items: baseline; justify-content: space-between; }
 }
 
 /* ---------- Motion ---------- */
