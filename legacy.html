@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#c8402e">
-<meta name="description" content="ಕನ್ನಡ ಧಾರ್ಮಿಕ ಮತ್ತು ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳ ಕ್ಯಾಲೆಂಡರ್ — ಹಬ್ಬಗಳು, ಜಾತ್ರೆಗಳು, ಮೇಳಗಳು ಮತ್ತು ಸ್ಥಳೀಯ ಕಾರ್ಯಕ್ರಮಗಳು">
-<title>ಕನ್ನಡ ಸಾಂಸ್ಕೃತಿಕ ಕ್ಯಾಲೆಂಡರ್ — Kannada Cultural Calendar</title>
+<meta name="description" content="ಕನ್ನಡ ಪಂಚಾಂಗ — ದೈನಂದಿನ ತಿಥಿ, ನಕ್ಷತ್ರ, ಹಬ್ಬಗಳು, ಶುಭ ಸಮಯ ಮತ್ತು ರಾಶಿ ಭವಿಷ್ಯ">
+<title>ಕನ್ನಡ ಪಂಚಾಂಗ — Kannada Panchanga</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@500;700;800&family=Noto+Sans+Kannada:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=6">
+<link rel="stylesheet" href="legacy-styles.css?v=1">
 </head>
 <body>
 <div class="app">
@@ -17,7 +17,7 @@
   <header class="masthead">
     <button id="prevDay" class="icon-btn" type="button" aria-label="ಹಿಂದಿನ ದಿನ">‹</button>
     <div id="mastheadDateBlock" class="masthead-mid" aria-live="polite">
-      <span class="brand">ಕನ್ನಡ ಕಾರ್ಯಕ್ರಮಗಳು</span>
+      <span class="brand">ಕನ್ನಡ ಪಂಚಾಂಗ</span>
       <span id="mastheadDate" class="masthead-date"></span>
     </div>
     <button id="todayBtn" class="today-btn" type="button">ಇಂದು</button>
@@ -70,22 +70,31 @@
           <span>ಕನ್ನಡ ಅಂಕೆಗಳು <small>೦-೯ ಬದಲಿಗೆ 0-9</small></span>
           <input type="checkbox" id="knDigits" class="switch">
         </label>
-        <a class="setting-row setting-link" href="legacy.html">
-          <span>ಹಳೆಯ ಕ್ಯಾಲೆಂಡರ್ <small>ಕಡಿಮೆ ಕಾರ್ಯಕ್ರಮ ಕೇಂದ್ರೀಕೃತವಾದ ಹಿಂದಿನ ಆವೃತ್ತಿ</small></span>
+        <a class="setting-row setting-link" href="index.html">
+          <span>ಪ್ರಸ್ತುತ ಕ್ಯಾಲೆಂಡರ್ <small>Home ಕಾರ್ಯಕ್ರಮಗಳ ಆವೃತ್ತಿಗೆ ಹಿಂತಿರುಗಿ</small></span>
           <span aria-hidden="true">›</span>
         </a>
       </div>
       <div class="card about">
-        <p>ಇದು ಕನ್ನಡ ಧಾರ್ಮಿಕ ಮತ್ತು ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ದಿನ, ವಾರ ಮತ್ತು ತಿಂಗಳಂತೆ ಹುಡುಕಲು ಸಹಾಯ ಮಾಡುವ ಕ್ಯಾಲೆಂಡರ್.</p>
-        <p>ದತ್ತಾಂಶ ಮೂಲ: PV ಕಾರ್ಯಕ್ರಮಗಳ JSON.</p>
+        <p>ಇದು ಕನ್ನಡ ಪಂಚಾಂಗದ ದೈನಂದಿನ ಮಾಹಿತಿಯನ್ನು ಸರಳವಾಗಿ ತೋರಿಸುವ ವೆಬ್ ಆ್ಯಪ್.</p>
+        <p>ದತ್ತಾಂಶ ಮೂಲ: PV ಕಾರ್ಯಕ್ರಮಗಳ JSON ಮತ್ತು ದಿನದ OCR ದಾಖಲೆಗಳು.</p>
       </div>
     </section>
 
   </main>
 
+  <button id="sectionFab" class="section-fab" type="button" aria-expanded="false" aria-controls="sectionMenu">ವಿಭಾಗಗಳು</button>
+  <div id="sectionMenu" class="section-menu" hidden>
+    <button type="button" data-target="districtEventsTitle">ಹಬ್ಬಗಳು</button>
+    <button type="button" data-target="panchangaSection">ಪಂಚಾಂಗ</button>
+    <button type="button" data-target="toggle-timings">ಸಮಯಗಳು</button>
+    <button type="button" data-target="toggle-jathaka">ರಾಶಿ ಭವಿಷ್ಯ</button>
+    <button type="button" data-target="viewDay">ಮೇಲಕ್ಕೆ</button>
+  </div>
+
   <nav class="tabbar" aria-label="ಮುಖ್ಯ ಟ್ಯಾಬ್ಗಳು">
     <button class="tab is-active" data-tab="day" type="button" aria-current="page">
-      <span class="tab-ico" aria-hidden="true">◐</span><span>ಹೋಮ್</span>
+      <span class="tab-ico" aria-hidden="true">◐</span><span>ದಿನ</span>
     </button>
     <button class="tab" data-tab="week" type="button">
       <span class="tab-ico" aria-hidden="true">☷</span><span>ವಾರ</span>
@@ -100,6 +109,6 @@
 
 </div>
 <noscript><p style="padding:1rem">ಈ ಆ್ಯಪ್ JavaScript ಬಳಸುತ್ತದೆ — ದಯವಿಟ್ಟು ಸಕ್ರಿಯಗೊಳಿಸಿ.</p></noscript>
-<script src="app.js?v=6"></script>
+<script src="legacy-app.js?v=1"></script>
 </body>
 </html>
