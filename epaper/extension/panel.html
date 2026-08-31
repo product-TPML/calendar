@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prajavani ePaper Search</title>
+    <link rel="stylesheet" href="panel.css">
+  </head>
+  <body>
+    <header class="masthead">
+      <div>
+        <p class="eyebrow">LOCAL RESEARCH DESK</p>
+        <h1>Prajavani <span>ePaper</span></h1>
+      </div>
+      <div id="auth-status" class="status-pill">Checking session</div>
+    </header>
+
+    <main>
+      <section class="card collection-card">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">COLLECT</p>
+            <h2>Build a local issue shelf</h2>
+          </div>
+          <span id="edition-count" class="muted">0 editions</span>
+        </div>
+        <label class="field-label" for="date">Publication date</label>
+        <input id="date" type="date">
+        <div class="edition-toolbar">
+          <span class="field-label">Editions</span>
+          <div class="toolbar-actions">
+            <button id="select-all" class="text-button" type="button">All</button>
+            <button id="select-bengaluru" class="text-button" type="button">Bengaluru</button>
+            <button id="select-none" class="text-button" type="button">None</button>
+          </div>
+        </div>
+        <div id="editions" class="edition-grid" aria-label="ePaper editions">
+          <p class="muted">Open the logged-in Prajavani ePaper tab to load editions.</p>
+        </div>
+        <button id="collect" class="primary-button" type="button" disabled>Extract selected editions</button>
+        <p id="collection-note" class="form-note">Article HTML and normalized text are stored locally.</p>
+      </section>
+
+      <section class="card progress-card">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">RUN STATUS</p>
+            <h2 id="progress-title">No collection running</h2>
+          </div>
+          <span id="progress-count" class="metric">0</span>
+        </div>
+        <div class="progress-track"><div id="progress-bar"></div></div>
+        <div id="progress-list" class="progress-list"><p class="muted">Completed editions will appear here.</p></div>
+      </section>
+
+      <section class="card search-card">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">SEARCH SHELF</p>
+            <h2>Find across collected articles</h2>
+          </div>
+          <span id="article-count" class="muted">0 articles</span>
+        </div>
+        <input id="search" type="search" placeholder="Search Kannada headlines and body text" autocomplete="off">
+        <div id="results" class="results"><p class="muted">Your collected articles will appear here.</p></div>
+      </section>
+
+      <section class="footer-actions">
+        <button id="export" class="secondary-button" type="button">Export JSON</button>
+        <button id="clear" class="danger-button" type="button">Clear local shelf</button>
+      </section>
+      <p id="error" class="error" role="alert" hidden></p>
+    </main>
+
+    <script src="panel.js"></script>
+  </body>
+</html>

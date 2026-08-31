@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Prajavani ePaper Search",
+  "version": "0.1.0",
+  "description": "Collect and search Prajavani ePaper articles locally.",
+  "permissions": ["activeTab", "sidePanel", "storage"],
+  "host_permissions": [
+    "https://epaper.prajavani.net/*",
+    "https://api-epaper-prod.deccanherald.com/*",
+    "https://assets-prod.prajavani.net/*",
+    "https://sso.tpml.in/*"
+  ],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Open Prajavani ePaper Search" },
+  "side_panel": { "default_path": "panel.html" },
+  "content_scripts": [
+    {
+      "matches": ["https://epaper.prajavani.net/*"],
+      "js": ["collect-console.js", "content-bridge.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
