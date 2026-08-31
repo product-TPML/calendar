@@ -24,8 +24,16 @@
           </div>
           <span id="edition-count" class="muted">0 editions</span>
         </div>
-        <label class="field-label" for="date">Publication date</label>
-        <input id="date" type="date">
+        <div class="date-fields">
+          <div>
+            <label class="field-label" for="date">Start date</label>
+            <input id="date" type="date">
+          </div>
+          <div>
+            <label class="field-label" for="end-date">End date</label>
+            <input id="end-date" type="date">
+          </div>
+        </div>
         <div class="edition-toolbar">
           <span class="field-label">Editions</span>
           <div class="toolbar-actions">
@@ -62,11 +70,17 @@
           <span id="article-count" class="muted">0 articles</span>
         </div>
         <input id="search" type="search" placeholder="Search Kannada headlines and body text" autocomplete="off">
+        <div class="search-filters">
+          <label><span>From</span><input id="search-from" type="date"></label>
+          <label><span>To</span><input id="search-to" type="date"></label>
+        </div>
         <div id="results" class="results"><p class="muted">Your collected articles will appear here.</p></div>
       </section>
 
       <section class="footer-actions">
-        <button id="export" class="secondary-button" type="button">Export JSON</button>
+        <button id="export" class="secondary-button" type="button">Download shelf</button>
+        <button id="import" class="secondary-button" type="button">Import shelf</button>
+        <input id="import-file" type="file" accept="application/json,.json" hidden>
         <button id="clear" class="danger-button" type="button">Clear local shelf</button>
       </section>
       <p id="error" class="error" role="alert" hidden></p>

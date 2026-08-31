@@ -3,6 +3,13 @@ const state = { editions: [], selected: new Set(), totalSelected: 0, completed: 
 const $ = (id) => document.getElementById(id);
 const send = (message) => chrome.runtime.sendMessage(message);
 
+function dateCount(start, end) {
+  const from = new Date(`${start}T00:00:00Z`);
+  const to = new Date(`${end}T00:00:00Z`);
+  if (!start || !end || Number.isNaN(from.valueOf()) || Number.isNaN(to.valueOf()) || from > to) return 0;
+  return Math.floor((to - from) / 86400000) + 1;
+}
+
 function showError(message) {
   const element = $('error');
   element.textContent = message || '';
@@ -53,7 +60,7 @@ function renderProgress(edition) {
   const row = document.createElement('div');
   row.className = `progress-row${edition.status !== 'ok' ? ' failed' : ''}`;
   const name = document.createElement('span');
-  name.textContent = edition.name;
+  name.textContent = [edition.date, edition.name].filter(Boolean).join(' · ');
   const status = document.createElement('span');
   status.textContent = edition.status === 'ok' ? `${edition.textArticles + edition.imageOnlyArticles} articles` : edition.status;
   row.append(name, status);
@@ -61,6 +68,11 @@ function renderProgress(edition) {
   state.completed += 1;
   $('progress-count').textContent = `${state.completed}/${state.totalSelected}`;
   $('progress-bar').style.width = `${Math.round((state.completed / state.totalSelected) * 100)}%`;
+  if (typeof edition.articleCount === 'number') {
+    $('article-count').textContent = `${edition.articleCount} articles`;
+  } else {
+    loadStats().catch((error) => showError(error.message));
+  }
 }
 
 function renderResults(results) {
@@ -105,11 +117,17 @@ async function loadEditions() {
 
 async function loadStats() {
   const stats = await send({ type: 'GET_STATS' });
+  if (stats?.error) throw new Error(stats.error);
   $('article-count').textContent = `${stats?.articleCount || 0} articles`;
 }
 
 async function search() {
-  const results = await send({ type: 'SEARCH', query: $('search').value });
+  const results = await send({
+    type: 'SEARCH',
+    query: $('search').value,
+    from: $('search-from').value,
+    to: $('search-to').value,
+  });
   renderResults(Array.isArray(results) ? results : []);
 }
 
@@ -121,16 +139,24 @@ async function startCollection() {
     showError('Open the logged-in Prajavani ePaper tab before collecting.');
     return;
   }
-  state.totalSelected = state.selected.size;
+  const startDate = $('date').value;
+  const endDate = $('end-date').value || startDate;
+  const days = dateCount(startDate, endDate);
+  if (!days) {
+    showError('Choose a valid start and end date.');
+    return;
+  }
+  state.totalSelected = state.selected.size * days;
   state.completed = 0;
-  $('progress-title').textContent = `Collecting ${$('date').value}`;
+  $('progress-title').textContent = startDate === endDate ? `Collecting ${startDate}` : `Collecting ${startDate} to ${endDate}`;
   $('progress-count').textContent = `0/${state.totalSelected}`;
   $('progress-bar').style.width = '0%';
   $('progress-list').replaceChildren();
   const response = await send({
     type: 'START_CRAWL',
     tabId: tab.id,
-    date: $('date').value,
+    startDate,
+    endDate,
     editionNumbers: [...state.selected],
   });
   if (response?.error) showError(response.error);
@@ -138,11 +164,14 @@ async function startCollection() {
 }
 
 $('date').value = new Date().toISOString().slice(0, 10);
+$('end-date').value = $('date').value;
 $('select-all').addEventListener('click', () => selectEditions(() => true));
 $('select-bengaluru').addEventListener('click', () => selectEditions((edition) => edition.edition_number === 4));
 $('select-none').addEventListener('click', () => selectEditions(() => false));
 $('collect').addEventListener('click', () => startCollection().catch((error) => showError(error.message)));
 $('search').addEventListener('input', () => search().catch((error) => showError(error.message)));
+$('search-from').addEventListener('change', () => search().catch((error) => showError(error.message)));
+$('search-to').addEventListener('change', () => search().catch((error) => showError(error.message)));
 $('clear').addEventListener('click', async () => {
   if (!confirm('Delete all locally collected ePaper articles?')) return;
   await send({ type: 'CLEAR_DATA' });
@@ -150,20 +179,41 @@ $('clear').addEventListener('click', async () => {
   await loadStats();
 });
 $('export').addEventListener('click', async () => {
-  const articles = await send({ type: 'GET_ARTICLES' });
-  const blob = new Blob([JSON.stringify(articles, null, 2)], { type: 'application/json' });
+  const shelf = await send({ type: 'EXPORT_SHELF' });
+  if (shelf?.error) {
+    showError(shelf.error);
+    return;
+  }
+  const blob = new Blob([JSON.stringify(shelf, null, 2)], { type: 'application/json' });
   const link = document.createElement('a');
   link.href = URL.createObjectURL(blob);
-  link.download = `prajavani-epaper-${$('date').value || 'export'}.json`;
+  link.download = `prajavani-epaper-shelf-${new Date().toISOString().slice(0, 10)}.json`;
   link.click();
   URL.revokeObjectURL(link.href);
+});
+$('import').addEventListener('click', () => $('import-file').click());
+$('import-file').addEventListener('change', async (event) => {
+  const file = event.target.files[0];
+  event.target.value = '';
+  if (!file) return;
+  try {
+    const snapshot = JSON.parse(await file.text());
+    if (!confirm('Replace the current local shelf with this snapshot?')) return;
+    const result = await send({ type: 'IMPORT_SHELF', snapshot });
+    if (result?.error) throw new Error(result.error);
+    $('collection-note').textContent = `Imported ${result.counts.articles} articles from the shelf snapshot.`;
+    await loadStats();
+    await search();
+  } catch (error) {
+    showError(error.message);
+  }
 });
 
 chrome.runtime.onMessage.addListener((message) => {
   if (message.type === 'EPAPER_PROGRESS') renderProgress(message.edition);
   if (message.type === 'EPAPER_DONE') {
-    $('progress-title').textContent = message.error ? 'Collection failed' : 'Collection complete';
-    if (message.error) showError(message.error);
+    $('progress-title').textContent = message.cancelled ? 'Collection stopped' : message.error ? 'Collection failed' : 'Collection complete';
+    if (message.error && !message.cancelled) showError(message.error);
     loadStats().catch((error) => showError(error.message));
     search().catch((error) => showError(error.message));
   }

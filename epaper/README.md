@@ -69,11 +69,13 @@ the logged-in `https://epaper.prajavani.net/` tab open.
 The side panel provides:
 
 - Date selection.
+- Inclusive start/end date collection.
 - Multi-edition selection with All, Bengaluru, and None shortcuts.
 - One-click article extraction.
 - Per-edition progress and failure status.
 - Local Kannada text search.
-- JSON export and local shelf clearing.
+- Optional From/To date filters across the local shelf.
+- JSON shelf export/import and local shelf clearing.
 
 The extension stores data in the `prajavani-epaper` IndexedDB database:
 
@@ -87,6 +89,18 @@ The extension stores data in the `prajavani-epaper` IndexedDB database:
 Raw HTML is retained for each successful article fetch. Page and article media
 are referenced by URL rather than downloaded as binary files. Access tokens are
 used only in the ePaper page context and are not stored by the extension.
+
+Collection dates are inclusive. The extension runs one manifest/article crawl
+per date and keeps each date/edition as a separate issue record, so rerunning a
+range upserts the same records instead of merging unrelated issues.
+
+Date crawls run with a concurrency limit of two. Within each date, the
+collector limits editions to three concurrent jobs and article HTML requests
+to four per active edition.
+
+Switching away from, navigating away from, or closing the ePaper tab stops the
+active crawl. Completed date/edition records remain in the local shelf, and
+the job is marked `cancelled`.
 
 ## Safety
 

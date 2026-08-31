@@ -53,6 +53,7 @@ h2 { margin-top: 3px; font-size: 18px; line-height: 1.15; }
 .field-label { display: block; margin-bottom: 6px; font: 700 11px Arial, sans-serif; letter-spacing: .04em; text-transform: uppercase; }
 input[type="date"], input[type="search"] { width: 100%; padding: 10px 11px; color: var(--ink); background: #fff; border: 1px solid #c9c5ba; border-radius: 7px; outline: none; }
 input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgb(159 51 45 / 12%); }
+.date-fields, .search-filters { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 .edition-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 17px 0 7px; }
 .edition-toolbar .field-label { margin: 0; }
 .toolbar-actions { display: flex; gap: 8px; }
@@ -77,6 +78,10 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgb(159 51 45 /
 .progress-row.failed span:last-child { color: var(--accent); }
 
 .search-card input { margin-bottom: 11px; }
+.search-filters { margin-top: 1px; margin-bottom: 10px; }
+.search-filters label { color: var(--muted); font: 10px Arial, sans-serif; }
+.search-filters label span { display: block; margin-bottom: 4px; }
+.search-filters input { margin: 0; padding: 8px 9px; }
 .results { display: grid; gap: 8px; max-height: 420px; overflow: auto; }
 .result { padding: 10px; background: #f8f6f0; border-left: 3px solid var(--green); }
 .result h3 { margin: 0 0 3px; font-size: 15px; line-height: 1.25; }
@@ -84,7 +89,7 @@ input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgb(159 51 45 /
 .result-preview { display: -webkit-box; margin-top: 5px; overflow: hidden; color: #4b514c; font-size: 12px; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 .result a { color: inherit; text-decoration: none; }
 .result a:hover { text-decoration: underline; }
-.footer-actions { display: flex; justify-content: space-between; gap: 8px; }
+.footer-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
 .secondary-button, .danger-button { padding: 8px 10px; background: transparent; }
 .secondary-button { color: var(--green); border: 1px solid var(--green); }
 .danger-button { color: var(--accent); border: 1px solid #c98883; }

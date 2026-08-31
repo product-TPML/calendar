@@ -35,7 +35,12 @@
     }
   }
 
-  async function authHeaders() {
+  function throwIfAborted(signal) {
+    if (signal?.aborted) throw new DOMException('Collection stopped', 'AbortError');
+  }
+
+  async function authHeaders(signal) {
+    throwIfAborted(signal);
     const accessToken = localStorage.getItem(ACCESS_TOKEN_KEY);
     let accessTypeToken = localStorage.getItem(ACCESS_TYPE_TOKEN_KEY);
     let fetchedAccessTypeToken = false;
@@ -50,6 +55,7 @@
         },
         credentials: 'include',
         body: '{}',
+        signal,
       });
       if (response.ok) {
         accessTypeToken = (await response.json()).token || null;
@@ -71,8 +77,8 @@
     };
   }
 
-  async function requestJson(url, headers) {
-    const response = await fetch(url, { headers, credentials: 'include' });
+  async function requestJson(url, headers, signal) {
+    const response = await fetch(url, { headers, credentials: 'include', signal });
     let body = null;
     try {
       body = await response.json();
@@ -105,11 +111,12 @@
     return result;
   }
 
-  async function mapLimit(items, limit, worker) {
+  async function mapLimit(items, limit, worker, signal) {
     const results = [];
     let next = 0;
     async function consume() {
       while (next < items.length) {
+        throwIfAborted(signal);
         const index = next++;
         results[index] = await worker(items[index], index);
       }
@@ -118,9 +125,9 @@
     return results;
   }
 
-  async function collectIssue(edition, date, compact, auth, fetchArticles, includeRawHtml) {
+  async function collectIssue(edition, date, compact, auth, fetchArticles, includeRawHtml, signal) {
     const url = `${API}/epaper/data?date=${compact}&edition=${edition.edition_number}&publisher=${PUBLISHER}`;
-    const { response, body } = await requestJson(url, auth.headers);
+    const { response, body } = await requestJson(url, auth.headers, signal);
     const result = {
       editionNumber: String(edition.edition_number),
       name: edition.edition_name,
@@ -183,7 +190,7 @@
     const articleResults = await mapLimit(articles, 4, async (article) => {
       const articleUrl = new URL(article.htmlFile, htmlBase).href;
       try {
-        const articleResponse = await fetch(articleUrl, { credentials: 'omit' });
+        const articleResponse = await fetch(articleUrl, { credentials: 'omit', signal });
         if (!articleResponse.ok) {
           return { id: String(article.id), pageNo: article.pageNo, status: articleResponse.status };
         }
@@ -207,9 +214,10 @@
           ...parseArticle(await articleResponse.text(), articleUrl, includeRawHtml),
         };
       } catch (error) {
+        if (error.name === 'AbortError') throw error;
         return { id: String(article.id), pageNo: article.pageNo, status: 'failed', error: error.message };
       }
-    });
+    }, signal);
 
     result.status = 'ok';
     result.date = String(issue.pubDate);
@@ -227,11 +235,11 @@
 
   window.collectPrajavaniEpaper = async (
     date = new Date().toISOString().slice(0, 10),
-    { fetchArticles = true, editionNumbers = null, includeRawHtml = false, onEdition = null } = {},
+    { fetchArticles = true, editionNumbers = null, includeRawHtml = false, onEdition = null, signal = null } = {},
   ) => {
     const compact = compactDate(date);
-    const auth = await authHeaders();
-    const editionsResponse = await requestJson(`${API}/epaper/editions?publisher=${PUBLISHER}`, auth.headers);
+    const auth = await authHeaders(signal);
+    const editionsResponse = await requestJson(`${API}/epaper/editions?publisher=${PUBLISHER}`, auth.headers, signal);
     if (!editionsResponse.response.ok) {
       throw new Error(`edition list failed: HTTP ${editionsResponse.response.status}`);
     }
@@ -241,10 +249,10 @@
       ? editions.filter((edition) => editionNumbers.map(String).includes(String(edition.edition_number)))
       : editions;
     const results = await mapLimit(selectedEditions, 3, async (edition) => {
-      const result = await collectIssue(edition, date, compact, auth, fetchArticles, includeRawHtml);
+      const result = await collectIssue(edition, date, compact, auth, fetchArticles, includeRawHtml, signal);
       if (onEdition) await onEdition(result);
       return result;
-    });
+    }, signal);
     return {
       date,
       publisher: PUBLISHER,

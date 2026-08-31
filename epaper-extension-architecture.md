@@ -337,6 +337,16 @@ article media. It uses session tokens only in memory in the ePaper page
 context; token values are not sent to the side panel, returned in reports, or
 persisted in IndexedDB.
 
+The implemented side panel accepts an inclusive start and end date. The page
+bridge loops through each date and sends each completed date/edition to the
+background worker, which stores it under `PV:{date}:{editionNumber}`. Search
+accepts optional From and To dates and filters the stored article records before
+matching the query text.
+
+The bridge runs at most two dates concurrently. Each date still limits itself
+to three concurrent editions, and each active edition limits article HTML to
+four concurrent requests.
+
 ## Proposed Data Model
 
 ### Edition
