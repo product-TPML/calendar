@@ -204,10 +204,14 @@ function assert(cond, msg) {
   assert((els.weekAgenda.innerHTML.match(/class="week-day"/g) || []).length === 35, "Week renders the initial stream");
   assert(els.weekAgenda.innerHTML.includes("week-day-date"), "Week rows show complete right-aligned dates");
   assert(!els.weekAgenda.innerHTML.includes("week-day-counts"), "Week rows omit festival counts");
+  assert(els.weekAgenda.innerHTML.includes("Cultural-Bagalkot-" + INITIAL), "Week includes cultural events");
   tabEls.month.click();
   assert(els.mastheadDate.textContent.includes("2026"), "Month masthead shows year");
   assert(els.monthScroller.innerHTML.includes("agenda-day"), "Month renders the dated agenda");
   assert(els.monthScroller.innerHTML.includes("date-count"), "Month shows event counts in cells");
+  assert(els.monthScroller.innerHTML.includes("Cultural-Bagalkot-" + INITIAL), "Month agenda includes cultural events");
+  assert(els.monthScroller.innerHTML.includes('date-count district">3</b>'), "Month date count includes cultural events");
+  assert(els.monthDistrictSelect.innerHTML.includes(">Bagalkot (7)</option>"), "Month district count includes cultural events");
   tabEls.day.click();
   assert(els.mastheadDate.textContent.includes(String(parseInt(DAY8.slice(0, 2), 10))), "Day preserves selected date");
 

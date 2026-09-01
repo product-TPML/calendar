@@ -311,7 +311,8 @@
   }
 
   function districtEventCount(name, mode) {
-    var range = rangeFor(mode || "all");
+    mode = mode || "all";
+    var range = rangeFor(mode);
     var count = state.pvRecords.filter(function (r) {
       return r.sourceDistrict === name && r.scope !== "Relevant for Karnataka" && (mode === "all" || (r.dateStart <= range.end && r.dateEnd >= range.start));
     }).length;
@@ -572,7 +573,7 @@
   }
 
   function weekAgendaHTML(key) {
-    var d = parseKey(key), district = districtEventsFor(key), statewide = stateEventsFor(key);
+    var d = parseKey(key), district = districtEventsFor(key).concat(culturalEventsFor(key)), statewide = stateEventsFor(key);
     var content = '<h3 class="week-day-title"><button type="button" class="week-day-link" data-day="' + key + '">' +
       '<span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span><span class="week-day-meta"><span class="week-day-date">' + kn(d.getDate()) + ' ' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</span></span></button></h3>';
     if (!district.length && !statewide.length) return '<section class="week-day" data-day="' + key + '">' + content + '<p class="empty-note">ಈ ದಿನ ಯಾವುದೇ ವಿಶೇಷ ದಿನವಿಲ್ಲ.</p></section>';
@@ -696,7 +697,7 @@
     for (var i = 0; i < lead; i++) html += '<span class="mday blank" aria-hidden="true"></span>';
     for (var day = 1; day <= days; day++) {
       var k = keyFor(new Date(y, m, day)), sel = k === state.key, today = k === keyFor(new Date());
-      var local = districtEventsFor(k).length, statewide = stateEventsFor(k).length;
+      var local = districtEventsFor(k).length + culturalEventsFor(k).length, statewide = stateEventsFor(k).length;
       var aria = local || statewide ? ' aria-label="' + kn(day) + ': ' + (local ? "ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು " + local : "") + (local && statewide ? ", " : "") + (statewide ? "ಕರ್ನಾಟಕ ಕಾರ್ಯಕ್ರಮಗಳು " + statewide : "") + '"' : '';
       html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + '" data-day="' + k + '" type="button"' + (today ? ' title="ಇಂದು"' : "") + aria + '>' + kn(day) +
         (local || statewide ? '<span class="mday-dots" aria-hidden="true">' + (local ? '<i class="scope-dot district"></i><b class="date-count district">' + local + '</b>' : '') + (statewide ? '<i class="scope-dot state"></i><b class="date-count state">' + statewide + '</b>' : '') + '</span>' : '') + '</button>';
@@ -713,7 +714,9 @@
     var monthEnd = y + "-" + pad(m + 1) + "-" + pad(daysInMonth(y, m + 1));
     var list = state.pvRecords.filter(function (r) {
       return visibleRecord(r) && r.dateEnd >= monthStart && r.dateStart <= monthEnd;
-    }).sort(function (a, b) { return a.dateStart < b.dateStart ? -1 : a.dateStart > b.dateStart ? 1 : 0; });
+    }).concat(state.culturalRecords.filter(function (r) {
+      return r.sourceDistrict === state.district && r.dateEnd >= monthStart && r.dateStart <= monthEnd;
+    })).sort(function (a, b) { return a.dateStart < b.dateStart ? -1 : a.dateStart > b.dateStart ? 1 : 0; });
     if (!list.length) return '<p class="empty-note">ಈ ತಿಂಗಳಲ್ಲಿ ಯಾವುದೇ ಘಟನೆ ಇಲ್ಲ.</p>';
     var groups = {};
     list.forEach(function (r) {
