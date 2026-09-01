@@ -501,21 +501,38 @@
 
   function panchangaTimingsHTML(record) {
     if (!record.timings.length) return '<p class="empty-note">ಈ ದಿನದ ಕಾಲ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
-    var calendar = record.calendar, span = toMin(calendar.sunset) - toMin(calendar.sunrise) || 1;
-    var ordered = record.timings.slice().sort(function (a, b) { return toMin(a.from) - toMin(b.from); });
+    var calendar = record.calendar;
+    /* Keep OCR normalization as-is, but only use complete, real clock ranges
+       for layout. In particular, do not turn an overnight-looking range into
+       a next-day range here. */
+    var ordered = record.timings.map(function (timing) {
+      var from = clockMinutes(timing.from), to = clockMinutes(timing.to);
+      return { source: timing, from: from, to: to };
+    }).filter(function (timing) {
+      return timing.from != null && timing.to != null && timing.to >= timing.from;
+    }).sort(function (a, b) { return a.from - b.from; });
+    var sunStart = clockMinutes(calendar.sunrise), sunEnd = clockMinutes(calendar.sunset);
+    /* ponytail: sunrise/sunset are a fallback only; timing endpoints are the
+       source of truth whenever at least one complete range is usable. */
+    var start = ordered.length ? Math.min.apply(null, ordered.map(function (timing) { return timing.from; })) : sunStart;
+    var end = ordered.length ? Math.max.apply(null, ordered.map(function (timing) { return timing.to; })) : sunEnd;
+    if (start == null && end == null) return '<p class="empty-note">ಈ ದಿನದ ಕಾಲ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
+    if (start == null) start = end;
+    if (end == null) end = start;
+    var span = Math.max(end - start, 0);
     var blocks = ordered.map(function (timing) {
-      var left = (toMin(timing.from) - toMin(calendar.sunrise)) / span * 100;
-      var width = (toMin(timing.to) - toMin(timing.from)) / span * 100;
-      return '<div class="tl-block ' + timing.tone + '" style="left:' + left.toFixed(1) + '%;width:' + Math.max(width, 4).toFixed(1) + '%" title="' + esc(timing.name) + " " + timing.from + "–" + timing.to + '"><b>' + esc(timing.name) + '</b>' + kn(timing.from) + '–' + kn(timing.to) + '</div>';
+      var left = span ? (timing.from - start) / span * 100 : 0;
+      var width = span ? (timing.to - timing.from) / span * 100 : 0;
+      var source = timing.source;
+      return '<div class="tl-block ' + source.tone + '" role="listitem" style="left:' + left.toFixed(1) + '%;width:' + Math.max(width, 4).toFixed(1) + '%" title="' + esc(source.name) + " " + source.from + "–" + source.to + '"><b>' + esc(source.name) + '</b>' + kn(source.from) + '–' + kn(source.to) + '</div>';
     }).join("");
-    var endRow = function (icon, label, time) {
-      return '<li class="tl-end-row">' + icon + '<span class="tl-end-name">' + label + '</span><span class="t-time">' + kn(time || "—") + '</span></li>';
-    };
-    var rows = endRow(ICONS.sunrise, "ಸೂರ್ಯೋದಯ", calendar.sunrise) + ordered.map(function (timing) {
-      return '<li class="tl-row"><span class="tone-dot ' + timing.tone + '" aria-hidden="true"></span><span class="tl-main"><span class="tl-name">' + esc(timing.name) + '</span><span class="t-time">' + kn(timing.from) + ' – ' + kn(timing.to) + '</span></span></li>';
-    }).join("") + endRow(ICONS.sunset, "ಸೂರ್ಯಾಸ್ತ", calendar.sunset);
-    return '<div class="timeline"><div class="tl-track">' + blocks + '</div><div class="tl-ends"><span>' + ICONS.sunrise + " " + kn(calendar.sunrise || "—") + '</span><span>' + kn(calendar.sunset || "—") + " " + ICONS.sunset + '</span></div></div>' +
-      '<ul class="timing-list">' + rows + '</ul><div class="timing-legend" aria-label="ಕಾಲಗಳ ಬಣ್ಣದ ಅರ್ಥ"><span><i class="tone-dot good" aria-hidden="true"></i> ಶುಭ</span><span><i class="tone-dot mid" aria-hidden="true"></i> ಮಧ್ಯಮ</span><span><i class="tone-dot bad" aria-hidden="true"></i> ಅಶುಭ</span></div>';
+    var rows = ordered.map(function (timing) {
+      var source = timing.source;
+      return '<li class="tl-row ' + source.tone + '"><span class="tone-dot timeline-node ' + source.tone + '" aria-hidden="true"></span><span class="tl-main timeline-card"><span class="tl-name">' + esc(source.name) + '</span><span class="t-time">' + kn(source.from) + ' – ' + kn(source.to) + '</span></span></li>';
+    }).join("");
+    var startLabel = clockLabel(start), endLabel = clockLabel(end);
+    return '<div class="timeline" aria-label="ಕಾಲಗಳ ಸಮಯರೇಖೆ"><div class="tl-track" role="list" aria-label="ಕಾಲಗಳ ವ್ಯಾಪ್ತಿಗಳು">' + blocks + '</div><div class="tl-ends"><span class="tl-endpoint"><small>ಆರಂಭ</small><b class="t-time">' + kn(startLabel) + '</b></span><span class="tl-endpoint"><small>ಅಂತ್ಯ</small><b class="t-time">' + kn(endLabel) + '</b></span></div></div>' +
+      '<ul class="timing-list timeline-mobile timeline-rail" aria-label="ಕಾಲಗಳ ವಿವರಗಳು">' + rows + '</ul><div class="timing-legend" aria-label="ಕಾಲಗಳ ಬಣ್ಣದ ಅರ್ಥ"><span><i class="tone-dot good" aria-hidden="true"></i> ಶುಭ</span><span><i class="tone-dot mid" aria-hidden="true"></i> ಮಧ್ಯಮ</span><span><i class="tone-dot bad" aria-hidden="true"></i> ಅಶುಭ</span></div>';
   }
 
   function panchangaJathakaHTML(record) {
@@ -525,7 +542,16 @@
     }).join('') + '</div>';
   }
 
-  function toMin(time) { var parts = String(time || "").split(":"); return (+parts[0] || 0) * 60 + (+parts[1] || 0); }
+  function clockMinutes(time) {
+    var match = String(time || "").trim().match(/^(\d{1,2}):(\d{2})$/);
+    if (!match) return null;
+    var hour = +match[1], minute = +match[2];
+    return hour <= 23 && minute <= 59 ? hour * 60 + minute : null;
+  }
+
+  function clockLabel(minutes) {
+    return minutes == null ? "—" : pad(Math.floor(minutes / 60)) + ":" + pad(minutes % 60);
+  }
 
   function panchangaHTML(key) {
     if (state.ocrError) return '<p class="error-note">ಪಂಚಾಂಗದ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';

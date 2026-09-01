@@ -116,8 +116,9 @@ function mkOCR() {
       paksha: "ಕೃಷ್ಣ", ayana: "ದಕ್ಷಿಣಾಯನ", solarRashi: "ಸಿಂಹ", chandraEntryRashi: "ಮೀನ"
     },
     timings: {
-      rahuKala: "ಬೆ. 07:30 - 09:00.", gulikaKala: "ಬೆ. 13:30 - 15:00.",
-      yamaganda: "ಬೆ. 10:30 - 12:00.", arthaPrahara: "ಬೆ. 09:00 - 10:30."
+      rahuKala: "ಬೆ. 05:30 - 09:00.", gulikaKala: "ಬೆ. 13:30 - 15:00.",
+      yamaganda: "ಬೆ. 10:30 - 99:99.", arthaPrahara: "ಬೆ. 09:00 - 10:30.",
+      shubhaSamaya: "ಬೆ. 18:31 - 20:15."
     },
     jathaka: ["ಮೇಷ", "ವೃಷಭ", "ಮಿಥುನ", "ಕರ್ಕಾಟಕ", "ಸಿಂಹ", "ಕನ್ಯಾ", "ತುಲಾ", "ವೃಶ್ಚಿಕ", "ಧನಸ್ಸು", "ಮಕರ", "ಕುಂಭ", "ಮೀನ"].map((rashi) => ({ rashi, prediction: "ಮೆಚ್ಚುಗೆ" }))
   } };
@@ -195,9 +196,13 @@ function assert(cond, msg) {
   await tick();
   assert(els.todayContent.innerHTML.includes("panga-grid"), "Panchanga cards render after OCR loads");
   assert((els.todayContent.innerHTML.match(/class="panga-head"/g) || []).length === 4, "all Panchanga cards have legacy SVG headers");
-  assert((els.todayContent.innerHTML.match(/<svg /g) || []).length >= 8, "Panchanga and sun icons render");
+  assert((els.todayContent.innerHTML.match(/<svg /g) || []).length >= 6 && els.todayContent.innerHTML.includes("sun-row"), "Panchanga and sun icons render");
   assert(els.todayContent.innerHTML.includes("src-note"), "Panchanga source note renders");
   assert(els.todayContent.innerHTML.includes("class=\"timeline\""), "desktop timing timeline renders");
+  assert(els.todayContent.innerHTML.includes('class="tl-ends"><span class="tl-endpoint"><small>ಆರಂಭ</small><b class="t-time">05:30'), "timeline starts at the first timing before sunrise");
+  assert(els.todayContent.innerHTML.includes('<span class="tl-endpoint"><small>ಅಂತ್ಯ</small><b class="t-time">20:15'), "timeline ends at the last timing after sunset");
+  assert(!els.todayContent.innerHTML.includes("99:99"), "malformed timing endpoints are ignored");
+  assert(els.todayContent.innerHTML.includes("timeline-mobile timeline-rail") && els.todayContent.innerHTML.includes("timeline-node") && els.todayContent.innerHTML.includes("timeline-card"), "mobile timing markup includes a rail, nodes, and event cards");
   assert(els.todayContent.innerHTML.includes("timing-legend"), "timing color legend renders");
   assert((els.todayContent.innerHTML.match(/class="jr"/g) || []).length === 12, "all twelve horoscope signs render");
   assert(els.todayContent.innerHTML.includes("ರಾಶಿ ಭವಿಷ್ಯ"), "Panchanga includes horoscope details");
