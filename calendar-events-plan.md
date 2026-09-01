@@ -1,268 +1,147 @@
-# Calendar Event Integration Plan
+# Kannada Religious and Cultural Event Calendar Plan
 
-## Goal
+## Product direction
 
-Use `data/pv-calendar-data.json` as the user-facing event source while keeping
-the existing OCR records as the required source for the detailed Day view,
-including panchanga, timings, and rashi data.
+Build a Kannada religious and cultural event calendar, not a general-purpose
+daily Panchanga, auspicious-timing, rashi, or horoscope app.
 
-This replaces the event display, not the complete daily OCR record.
+The product's value is helping people discover **what is happening, where, and
+when**: festivals, jatres, fairs, observances, community events, and other
+Kannada cultural dates.
 
-## Locked product decisions
+The PV event dataset is the primary user-facing source. The existing OCR daily
+records remain available as source material, but panchanga details are not a
+dependency for the event calendar MVP.
 
-- The primary navigation has four items: `ದಿನ`, `ವಾರ`, `ತಿಂಗಳು`, and `ಹೆಚ್ಚು`
+## Product decisions
+
+- Primary navigation has four items: `ದಿನ`, `ವಾರ`, `ತಿಂಗಳು`, and `ಹೆಚ್ಚು`
   (Day, Week, Month, More).
-- Week replaces the standalone Rashi tab in the bottom navigation.
-- Rashi remains available as a collapsible section inside Day; there is no
-  separate top-level Rashi view.
-- There is no Karnataka map view in this scope.
-- Day depends on its OCR record. If the selected date has no usable OCR record,
-  show the Day as unavailable rather than rendering a partial Day screen.
-- Week and Month use the PV event index and do not preload OCR records for every
-  date they display.
-- On reload, restore the selected date and district for the browser session, but
-  open on Day.
+- Day, Week, and Month are event-discovery views, not separate astrology tools.
+- The selected date is restored for the browser session, while reload opens on
+  Day.
+- The actual current date is reached only through the `ಇಂದು` control.
+- District is an optional filter. The default is all-district selection plus
+  Karnataka-wide events.
+- Do not silently choose a home district.
+- Keep no Karnataka map, backend, build step, or new dependency in this scope.
+- Remove good timings, rashi, and horoscope from the primary user experience.
+- Panchanga metadata may return later as an optional "day details" section; it
+  is not required to render an event day.
 
-## UI and navigation redesign
+## Core user experience
 
-### Date-wise home behavior
+### Sticky masthead
 
-- Day represents the currently selected date, not always today.
-- On a new browser session, default to the actual current date.
-- Persist the selected date in `sessionStorage` as `pvDate` using
-  `DD-MM-YYYY`.
-- Validate a restored `pvDate`; fall back to the actual current date if it is
-  missing or invalid.
-- Save the selected date after arrow navigation, week/month navigation,
-  month-cell selection, event/day selection, and swipes.
-- The `ಇಂದು` button is the only explicit jump to the actual current date.
-  Compute today when the button is pressed, then open Day.
-- Selecting the Day tab must preserve the selected date; it must not reset to
-  today.
-- Persist the district in `sessionStorage` as `pvDistrict`. If the saved value
-  does not match a current worksheet, reset to `Select district` / state-only.
-- Do not persist the active tab. A reload opens Day using the restored date and
-  district.
+- Show the active date, week range, or month/year in one contextual sticky
+  masthead.
+- Keep previous/next controls and the `ಇಂದು` button.
+- The masthead must not duplicate a second large date header in the content.
+- Day shows the selected date, Week shows the visible Sunday–Saturday range,
+  and Month shows the visible month/year.
+- Keep content and sticky toolbars below the measured masthead height.
+- Use the masthead and toolbar heights, not hard-coded pixel offsets, when
+  positioning content or deciding which stream period is active.
 
-### Bottom navigation
+### Day view
 
-Use four primary items:
+Order the page around events:
 
-1. `ದಿನ` — Day
-2. `ವಾರ` — Week
-3. `ತಿಂಗಳು` — Month
-4. `ಹೆಚ್ಚು` — More / Settings
+1. Selected date context.
+2. Event filter and event summary.
+3. Selected-district events.
+4. Karnataka-wide events.
+5. Optional day details only when that feature is explicitly enabled.
 
-Rashi is not a bottom-navigation destination. It remains a section in Day and
-is reachable through normal scrolling and the Day section-jump control.
+Rules:
 
-### Masthead
+- Show event title, date/range, and optional place.
+- Show an explicit empty state when no event matches the selected date/filter.
+- Keep local and Karnataka-wide events grouped, but do not repeat scope labels
+  on every event row.
+- Keep the district selector inside the event area.
+- Do not require an OCR record for the event view.
+- Do not render good timings, rashi, or horoscope in the MVP.
 
-- Remove the redundant `ನಿತ್ಯ ಪಂಚಾಂಗ` heading/brand treatment.
-- Use one contextual sticky masthead: Day shows the selected date, Week shows
-  the full Sunday–Saturday date range, and Month shows month/year. Do not render
-  a duplicate period header below it.
-- Make the active period the visual focus and keep previous/next period controls
-  plus a prominent `ಇಂದು` button.
-- Do not turn day number, weekday, and month/year into separate view-navigation
-  buttons. Day, Week, and Month are selected through the bottom navigation.
-- Make the date area horizontally swipeable: left advances one day and right
-  goes back one day.
-- Require at least 48px horizontal movement and horizontal dominance over
-  vertical movement.
-- Ignore gestures starting on buttons, links, selects, inputs, or other
-  controls, and preserve vertical scrolling with `touch-action: pan-y`.
+### Mobile section access
 
-### Day-view order
-
-1. Prominent masthead date
-2. Slim date-context card with samvatsara, shaka year, and month names
-3. Events card
-4. Panchanga cards: tithi, nakshatra, yoga, and karana
-5. Full-width panchanga meta strip: ayana, solar rashi, and chandra rashi
-6. Timings
-7. Collapsible Rashi section
-
-District and Karnataka-wide events remain grouped inside the events card. Put a
-native district selector inline beside the `ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು` heading and
-remove the custom CSS arrow so the native select has only one dropdown arrow.
-
-Remove the current duplicate hero date number/weekday/month after the masthead
-is redesigned. Keep its useful calendar metadata in the slim context card.
-
-If the selected date's OCR record is unavailable, retain the masthead and show
-a clear Day-unavailable state. Do not fabricate, borrow, or merge another date's
-OCR data.
-
-### Day section-jump control
-
-Add a mobile-only floating action button above the bottom navigation for quick
-section access. It is a section jumper, not continuous automatic scrolling.
-
-- Show it throughout the mobile Day view so section access is discoverable.
-- Label it `ವಿಭಾಗಗಳು` and use a list/navigation icon; do not use an ambiguous
-  down arrow.
-- Tapping it opens a small sheet or menu with:
-  - `ಹಬ್ಬಗಳು` — Events
-  - `ಪಂಚಾಂಗ`
-  - `ಸಮಯಗಳು` — Timings
-  - `ರಾಶಿ ಭವಿಷ್ಯ`
-  - `ಮೇಲಕ್ಕೆ` — Back to top
-- Selecting an item smoothly scrolls to that section and moves keyboard focus
-  to the section heading.
-- Respect `prefers-reduced-motion` by jumping without animation.
-- Keep the control clear of the bottom navigation and safe-area inset.
-- Do not show this FAB on desktop.
-
-### Panchanga layout
-
-The panchanga area has seven values: four main cards plus the three-item meta
-strip. The meta strip should span the full width of the two-column layout, with
-equal columns for the available values.
+- Keep the mobile `ವಿಭಾಗಗಳು` FAB only if the Day view has enough sections to
+  justify it.
+- The current event-first MVP should prefer normal scrolling unless optional
+  day details create multiple long sections.
+- If retained, the FAB must scroll below the measured masthead and move focus
+  without causing a second scroll.
 
 ### Week view
 
-- Add Week as the second bottom-navigation destination, between Day and Month.
-- Use Sunday through Saturday, matching the existing Month grid.
-- Opening Week shows the seven-day week containing the selected date.
-- Show every day vertically, with complete event names and optional places; do
-  not truncate event titles.
-- Render one card per week with seven divider-separated day rows and clear text
-  hierarchy instead of one card per day.
-- Include each day's weekday, day number, month, and year in the row heading.
-- Group each day's events into selected-district and Karnataka-wide sections.
-- Show an inclusive range event on every covered day.
-- Use a vermillion left border and dot for district events and green for
-  Karnataka-wide events.
-- Show the district/Karnataka event count on each date row.
-- Preserve grouped headings and text labels so meaning never depends on color.
-- Render a continuous vertical stream of weeks; initially load a small window and
-  lazily append/prepend adjacent weeks near the scroll edges.
-- Update the contextual masthead automatically to the week nearest the top of the
-  viewport while scrolling.
-- Clicking a day heading or event selects that date and opens Day.
-- Swipe the week header left/right to move exactly one seven-day week backward
-  or forward while retaining the same weekday as the selected date.
-- Changing the district must not change the selected date or displayed week.
+- Show the Sunday–Saturday week containing the selected date.
+- Render one outer card per week with seven clearly separated day rows.
+- Do not restore a card around every day unless separators fail at real mobile
+  widths.
+- Each date row has a clear header band: weekday on the left, complete date on
+  the right.
+- Do not show inline Karnataka labels or festival counts in the date header.
+- Keep event scope labels only where they clarify the actual event list.
+- Show complete event names and optional places.
+- Show inclusive range events on every covered date.
+- Clicking a day or event opens that date in Day.
+- Continuously append/prepend nearby weeks as the user scrolls.
+- Update the masthead from the week whose content begins below the masthead and
+  Week toolbar.
+- District changes preserve the selected date and visible week.
 
 ### Month view
 
-- Keep the existing Month tab and grid.
-- Add a direct native district selector to the Month toolbar.
-- Make the month header/grid horizontally swipeable: left advances one month
-  and right goes back one month.
-- Keep day-cell taps distinct from swipes; a swipe starting on a day button must
-  not trigger accidental selection.
-- Preserve the selected date and highlight the actual today cell separately.
-- Do not preload the month's OCR daily files. Month markers and agenda content
-  come from the shared PV event index.
-- Use two possible presence dots in each date cell:
-  - Vermillion dot: one or more selected-district events
-  - Green dot: one or more Karnataka-wide events
-- Both dots may appear on the same date. Show each count next to its corresponding
-  colored dot.
-- Add a dated agenda below the grid so details are not hidden behind dots.
-- Group agenda events by date and then by selected-district/Karnataka-wide scope.
-- Show event title and optional place; omit missing places.
-- Show a range event on every covered date cell but only once in the monthly
-  agenda, with its complete date span.
-- Make every day cell open its detailed Day view.
-- Show the scope legend as visual vermillion and green dots with text labels,
-  not as a text-only note.
-- Render Month as a continuous vertical stream; initially load a small window and
-  lazily append/prepend adjacent months near the scroll edges.
-- Update the contextual masthead automatically to the month nearest the top of
-  the viewport while scrolling.
+- Show a continuous vertical stream of month blocks.
+- Keep the native district selector in the sticky Month toolbar.
+- Date cells show event presence using accessible labels and, where useful,
+  compact district/state indicators.
+- Add the dated agenda below the grid so dots are not the only event detail.
+- Group agenda rows by date and event scope.
+- Show a range event on every covered date cell but only once in the agenda,
+  with its complete date span.
+- Every date cell opens the detailed event Day view.
+- Update the masthead from the month whose block begins below the masthead and
+  Month toolbar.
 
-### Event color coding
+### More / Settings
+
+- Keep the canonical district selector here and synchronize it with Day, Week,
+  and Month.
+- Keep accessibility settings such as large text and Kannada digits.
+- Explain the event source and the district/state filtering rule.
+- Do not use More as a dumping ground for horoscope or unrelated religious
+  features.
+
+## Event scope and presentation
 
 - District relevance uses the existing vermillion accent.
-- Karnataka relevance uses the existing green accent.
-- Treat `Assumed district relevance` like other district events in the
-  user-facing interface. Do not show an `Assumed` badge or raw relevance label
-  to users.
-- Preserve assumed/confirmed relevance internally for editorial review and QA.
-- Add a compact legend where the two event colors are first shown.
-- Use grouped headings instead of repeating scope tags on every event row.
-- Never use color as the only distinction; retain headings, labels, and text.
-
-### Wireframes
-
-Desktop:
-
-```text
-┌──────────────────────────────────────────────────────────────┐
-│ ‹   28  ಆಗಸ್ಟ್ 2026 · ಶುಕ್ರವಾರ                         ›  ಇಂದು │
-├──────────────────────────────────────────────────────────────┤
-│ ┌──────────────────────────────────────────────────────────┐ │
-│ │ ಪರಾಭವ ನಾಮ ಸಂವತ್ಸರ · ಶಕ 1948 · ಚೈತ್ರ–ವೈಶಾಖ              │ │
-│ └──────────────────────────────────────────────────────────┘ │
-│ ┌──────────────────────────────────────────────────────────┐ │
-│ │ ಇಂದಿನ ಹಬ್ಬಗಳು / ವಿಶೇಷ ದಿನಗಳು                         ▾ │ │
-│ │ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು                           [ಜಿಲ್ಲೆ ▾] │ │
-│ │ • ಕಾರ್ಯಕ್ರಮ                                              │ │
-│ │ ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು                                   │ │
-│ │ • ಕಾರ್ಯಕ್ರಮ                                              │ │
-│ └──────────────────────────────────────────────────────────┘ │
-│ ┌────────────────────────┬────────────────────────┐         │
-│ │ ತಿಥಿ                   │ ನಕ್ಷತ್ರ                │         │
-│ │ ಯೋಗ                    │ ಕರಣ                    │         │
-│ └────────────────────────┴────────────────────────┘         │
-│ ┌──────────────────────────────────────────────────────────┐ │
-│ │ ಆಯನ              │ ಸೂರ್ಯ ರಾಶಿ       │ ಚಂದ್ರ ರಾಶಿ       │ │
-│ └──────────────────────────────────────────────────────────┘ │
-│ │ ಸಮಯಗಳು — ಕಾಲ                                      ▾   │ │
-│ │ ರಾಶಿ ಭವಿಷ್ಯ                                        ▾   │ │
-├──────────────────────────────────────────────────────────────┤
-│              [ದಿನ]   [ವಾರ]   [ತಿಂಗಳು]   [ಹೆಚ್ಚು]            │
-└──────────────────────────────────────────────────────────────┘
-```
-
-Mobile Day after scrolling:
-
-```text
-┌──────────────────────────────────┐
-│ ‹  28 · ಶುಕ್ರವಾರ          › ಇಂದು │
-│    ಆಗಸ್ಟ್ 2026                  │
-├──────────────────────────────────┤
-│                                  │
-│        Day sections              │
-│                                  │
-│                       [ವಿಭಾಗಗಳು] │
-├──────────────────────────────────┤
-│    ದಿನ      ವಾರ     ತಿಂಗಳು  ಹೆಚ್ಚು │
-└──────────────────────────────────┘
-```
+- Karnataka-wide relevance uses the existing green accent.
+- Retain text headings and accessible labels; color is never the only meaning.
+- Treat `Assumed district relevance` as a district event in the interface.
+- Do not expose raw editorial relevance labels to users.
+- Keep the source district and relevance internally for editorial QA.
+- Use visual legends only where both scopes are actually shown.
 
 ## District selector
 
-- Use a native, labelled district `<select>` in the Day events heading and the
-  Week and Month toolbars.
-- Keep the Week and Month toolbar directly below the sticky masthead while their
-  infinite feeds scroll.
-- Also expose the same canonical setting under More / Settings, but do not add
-  a separate district chip that only redirects users to Settings.
-- Populate every selector from all 31 worksheet names, including districts with
-  no events.
+- Use a native labelled `<select>` in Day, Week, Month, and More.
+- Populate all 31 worksheet names, including districts with no events.
 - Keep all selector instances synchronized through `state.district`.
-- Show a contextual district-specific count beside each selector name: active date
-  in Day, visible week in Week, visible month in Month, and all data in Settings.
-  Count each source record once, including a range record once, and exclude
-  Karnataka-wide rows.
+- Show contextual district counts beside selector options:
+  - Day: selected date.
+  - Week: visible week.
+  - Month: visible month.
+  - More: all valid event data.
+- Count each source record once, including range records, and exclude
+  Karnataka-wide rows from district counts.
 - Store the selection in `sessionStorage` as `pvDistrict`.
-- Default to `Select district` / state-only rather than silently choosing a
-  district.
-- Preserve the selected date, week, and month when the district changes.
-- Show two event sections:
-  - Selected district events
-  - Karnataka-wide events
-- Include assumed district records in the selected-district section without
-  exposing the raw relevance value.
-- Show an explicit empty state when either section has no events.
+- Preserve the selected date and visible period when the district changes.
 
 ## Event data model
 
-Load the PV JSON once and build one in-memory index used by Day, Week, and Month:
+Load the PV JSON once and build one normalized index shared by Day, Week, and
+Month:
 
 ```js
 {
@@ -276,134 +155,102 @@ Load the PV JSON once and build one in-memory index used by Day, Week, and Month
 }
 ```
 
-Persisted JSON maps to this model as follows:
+Possible future field, only when editorial data supports it:
 
-- `date` is the inclusive start date.
-- `date_end` is the optional inclusive end date. When absent, `dateEnd` equals
-  `dateStart`.
-- Keep `rawDate` only in the in-memory model or QA output; do not display it as
-  user-facing copy.
+```js
+eventType // festival, jatre, fair, observance, cultural, public holiday
+```
+
+Do not infer `eventType` from noisy free-form Kannada text in the MVP.
 
 Filtering rules:
 
-- `localEvents`: all dated rows from the selected district worksheet except
-  records whose relevance is exactly `Relevant for Karnataka`. This includes
-  assumed district relevance.
-- `stateEvents`: rows from any worksheet whose relevance is exactly
-  `Relevant for Karnataka`.
+- District events are all dated records from the selected district except rows
+  whose relevance is exactly `Relevant for Karnataka`.
+- Karnataka-wide events are rows from any worksheet with that exact relevance.
 - Render one source record at most once in a view.
-- Treat `dateStart` through `dateEnd` as an inclusive interval for Day, Week,
-  and Month filtering.
-- Keep the source district internally for traceability.
+- Treat `dateStart` through `dateEnd` as an inclusive interval.
 - Escape titles and places with the existing `esc()` helper.
+- Omit missing places instead of displaying null-like placeholders.
 
-Do not parse district names out of free-form Kannada event text. The worksheet
-is the reliable district assignment; text parsing would inherit OCR errors.
+## Data quality
 
-## Data and date handling
-
-- Keep the PV JSON separate from
-  `ocr-zones/<DD-MM-YYYY>/structured-ocr.json`.
-- Accept event dates only as strict, real calendar dates in `YYYY-MM-DD` format.
-- Validate `date_end` using the same rule and require it to be on or after
-  `date`.
-- Bound range expansion so a malformed future record cannot create an infinite
-  loop or freeze the application.
-- Keep malformed, undated, reversed, or unexpectedly long ranges out of the
-  user-facing index and expose them in a review/QA bucket.
-- Normalize valid dates to string keys. Do not use `new Date("YYYY-MM-DD")`,
-  which can introduce timezone shifts.
-- A range event appears on every covered Day/Week/date cell but only once in the
-  monthly agenda with its date span.
-- The current JSON has two ranges: `2026-09-01`–`2026-09-11` and
-  `2026-09-08`–`2026-09-14`.
-- The two formerly empty Bidar dates were filled by carrying forward the
-  immediately preceding dates; retain them as editorial assumptions.
-- Preserve confirmed versus assumed district relevance internally.
-- Keep the current 145 records and all 31 worksheet names intact.
+- Keep PV JSON separate from OCR daily files.
+- Accept only strict, real `YYYY-MM-DD` dates.
+- Validate `date_end` and require it to be on or after `date`.
+- Bound range expansion so malformed data cannot create an infinite loop.
+- Keep malformed, undated, reversed, or excessively long ranges out of the
+  user-facing index and expose them in a QA bucket.
+- Preserve raw dates and confirmed/assumed relevance for editorial review.
+- Do not parse district names from event titles.
+- On PV failure, show an event-data error. Do not substitute OCR events or
+  fabricated data.
 
 ## Implementation phases
 
-### Phase 1 — Data contract and validation
+### Phase 1 — Event-first information architecture
 
-- Implement strict ISO date validation and real-calendar-date checking.
-- Require every `date_end` to be on or after `date`.
-- Add a maximum range guard and a QA bucket for rejected records.
-- Add focused fixtures for single dates, inclusive ranges, malformed dates,
-  reversed ranges, unexpectedly long ranges, and null dates.
+- Make event discovery the primary Day experience.
+- Remove good timings, rashi, and horoscope from the MVP UI.
+- Keep the four-item Day/Week/Month/More navigation.
+- Update product title, description, About copy, and source language to say
+  Kannada religious and cultural events.
 
-### Phase 2 — Shared event index and navigation state
+### Phase 2 — Event contract and index
 
-- Fetch the PV JSON once and cache it in `app.js`.
-- Build the normalized event index and date lookup used by Day, Week, and Month.
-- Keep PV load failure explicit; do not substitute OCR events, fabricated data,
-  or stale event data.
-- Add validated `pvDate` and `pvDistrict` session restoration.
-- Default the active view to Day after a reload.
-- Remove Month's OCR preloading; fetch an OCR record only when a detailed Day
-  view needs it.
+- Fetch PV JSON once and cache it.
+- Normalize valid single-date and range records.
+- Add strict validation, bounded ranges, and a QA rejection bucket.
+- Keep PV load failure explicit.
+- Use one shared event index for all three event views.
 
-### Phase 3 — Masthead and Day redesign
+### Phase 3 — Date and district state
 
-- Remove the redundant brand treatment and duplicate hero date.
-- Make the selected date prominent and add the actual-today button.
-- Rename the Today tab to Day and make it preserve the selected date.
-- Replace the standalone Rashi view/tab with Week in the bottom navigation.
-- Keep Rashi as a collapsible Day section.
-- Move the events card below the date-context card.
-- Put the native district selector beside the district-events heading.
-- Make the panchanga meta strip full width.
+- Restore and validate `pvDate` and `pvDistrict` in session storage.
+- Default to the actual current date and Day on a new/reloaded session.
+- Make `ಇಂದು` the explicit current-date action.
+- Preserve the selected date and period on district changes.
 
-### Phase 4 — Week view
+### Phase 4 — Event-first Day view
 
-- Add the Sunday–Saturday agenda containing the selected date.
-- Render a continuous lazy-loaded vertical week stream and auto-update the top
-  date-range header from the week at the viewport.
-- Add grouped district and Karnataka-wide events with full, untruncated names.
-- Show inclusive range events on every covered day.
-- Make day headings and event rows select the date and open Day.
-- Keep the Week header sticky.
-- Add the direct district selector to the Week toolbar.
+- Render the selected date's event summary and grouped event lists.
+- Keep the native district selector inside the event area.
+- Remove the Panchanga/timings/rashi dependency from Day rendering.
+- Keep an optional extension point for future day details without making it
+  part of the event MVP.
 
-### Phase 5 — Month view
+### Phase 5 — Week view
 
-- Add the direct district selector to the Month toolbar.
-- Render a continuous lazy-loaded vertical month stream and auto-update the top
-  month/year header from the month at the viewport.
-- Add vermillion and green presence dots to date cells.
-- Mark every date covered by an inclusive range.
-- Add the grouped date-wise agenda and list each range only once with its span.
-- Make every day cell select the date and open Day.
+- Render the continuous Sunday–Saturday event stream.
+- Use one outer weekly card with separated day rows.
+- Right-align complete dates in each row header.
+- Omit inline Karnataka labels and festival counts from date headers.
+- Keep full event titles, places, range coverage, and date navigation.
+- Use measured masthead/toolbar offsets for initial positioning and period
+  recognition.
 
-### Phase 6 — Gesture and quick-navigation behavior
+### Phase 6 — Month view
 
-- Add 48px, horizontally dominant Day, Week, and Month swipes.
-- Ignore gestures starting on controls and preserve vertical scrolling.
-- Ignore swipes while required data is loading.
-- Add the mobile Day `ವಿಭಾಗಗಳು` section-jump FAB and reduced-motion behavior.
-- Move keyboard focus to the destination heading after a section jump.
+- Render the continuous month stream and contextual masthead.
+- Add event indicators and the dated agenda.
+- Preserve range coverage and date-to-Day navigation.
+- Keep the district selector contextual to the visible month.
 
-### Phase 7 — Settings, source documentation, and final QA
+### Phase 7 — Settings, accessibility, and QA
 
-- Add the synchronized district selector to Settings.
-- Update About/source text to mention both PV event data and OCR daily data.
-- Document the local-versus-state filtering rule.
-- If future editorial updates require additional district metadata, add CSV
-  columns without renaming existing columns.
-- Complete automated logic tests and manual browser verification.
+- Synchronize the More district selector.
+- Verify keyboard focus, native selectors, large text, and reduced motion.
+- Keep the mobile section FAB only if the final Day content needs it.
+- Complete automated tests and manual desktop/mobile verification.
 
 ## Files likely to change
 
-- `app.js` — loading, validation, indexing, filtering, date/view state, swipes,
-  section jumping, and rendering
-- `index.html` — masthead, Week view, navigation, selectors, agenda, FAB, and
-  source copy
-- `styles.css` — masthead, agenda, event colors, FAB, sticky states, responsive
-  layout, and reduced-motion behavior
-- `app.test.js` — loader, validation, filtering, persistence, navigation, and
-  rendering tests
-- `data/pv-calendar-data.json` — only when editorial data is intentionally
-  updated
+- `app.js` — event index, filtering, date/view state, rendering, navigation
+- `index.html` — event-first navigation, masthead, view structure, source copy
+- `styles.css` — event layout, sticky states, responsive layout, accessibility
+- `app.test.js` — validation, filtering, persistence, navigation, rendering
+- `data/pv-calendar-data.json` — only for intentional editorial updates
+- `calendar-events-plan.md` — this product and implementation plan
 
 No backend or build step is justified for the current 145-record dataset.
 
@@ -411,47 +258,41 @@ No backend or build step is justified for the current 145-record dataset.
 
 ### Automated logic tests
 
-- strict valid/invalid date handling and bounded range expansion
-- selected district plus Karnataka-wide filtering
-- no source record rendered twice in one view
-- empty districts and empty months
-- assumed district records treated as district events without a user-facing
-  assumption label
-- single dates, inclusive ranges, malformed dates, reversed ranges, and null
-  dates
-- PV load failure
-- valid/invalid `pvDate` and `pvDistrict` restoration
-- reload opens Day while retaining the valid selected date and district
-- Today button computes the current date at click time and opens Day
-- Day tab preserves the selected date
-- Sunday–Saturday week boundaries, ordering, and seven-day navigation
+- valid/invalid dates and bounded range handling
+- district plus Karnataka-wide filtering
+- no duplicate source record rendering
+- empty districts, dates, and months
+- assumed district records treated as district events
+- PV load failure without OCR fallback
+- valid/invalid date and district restoration
+- reload opens Day with the selected date and district
+- Today action computes the current date at click time
+- Sunday–Saturday week boundaries and navigation
 - complete Week event names and date-to-Day navigation
-- Month scope dots and grouped agenda contents
-- range events appearing on every covered date but only once in the Month agenda
-- preservation of selected date/week/month after changing district
+- Week date alignment and absence of inline festival counts
+- Month indicators and grouped agenda contents
+- range events on every covered date but once in the agenda
+- district changes preserve date and visible period
 
 ### Manual browser verification
 
-1. Start the app with `serve-calendar.bat`.
+1. Start with `serve-calendar.bat`.
 2. Use `http://localhost:8000/index.html`, not `file://`.
-3. Check Day, Week, Month, and Settings with empty and populated districts.
-4. Confirm the bottom navigation is Day, Week, Month, More and there is no
-   standalone Rashi tab.
-5. Confirm Rashi remains accessible inside Day and through the section-jump FAB.
-6. Verify full event names, range events, scope colors/labels, and clickable
-   dates.
-7. Verify Today reset, session restoration, and day/week/month swipes.
-8. Test vertical-scroll rejection and gestures starting on controls on real
-   touch devices.
-9. Test the mobile FAB appearance threshold, menu, safe-area clearance, focus
-   movement, and reduced-motion behavior.
-10. Verify desktop and mobile layouts, sticky Week header, keyboard navigation,
-    and native district selectors.
+3. Check Day, Week, Month, and More at mobile and desktop widths.
+4. Confirm the event-first Day view does not require OCR data.
+5. Confirm Week dates are right-aligned and date rows are clearly separated.
+6. Confirm Week date headers do not show Karnataka labels or festival counts.
+7. Confirm Month indicators, agenda ranges, and date navigation.
+8. Verify district filtering, empty states, and PV load failure.
+9. Verify sticky masthead content never hides the first visible toolbar or date.
+10. Verify keyboard navigation, large text, reduced motion, and touch scrolling.
 
-## Out of scope
+## Out of scope for the event MVP
 
-- Any Karnataka map view
-- A standalone top-level Rashi view or bottom-navigation item
-- Replacing the OCR panchanga, timings, or rashi source
-- Automatic Kannada spelling/content correction
-- Automatically guessing unresolved or malformed dates
+- Good timings / auspicious-time recommendations
+- Rashi and horoscope content
+- A standalone Panchanga product experience
+- Karnataka map view
+- A backend or build pipeline
+- Automatic Kannada spelling or event-type classification
+- Guessing unresolved or malformed dates

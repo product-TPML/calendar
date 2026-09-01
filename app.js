@@ -335,6 +335,65 @@
     }).join("");
   }
 
+  function districtListboxHTML(mode) {
+    var options = state.pv ? Object.keys(state.pv.sheets).map(function (name, order) {
+      return { name: name, count: districtEventCount(name, mode), order: order };
+    }).sort(function (a, b) {
+      return b.count - a.count || a.order - b.order;
+    }) : [];
+    var placeholder = '<button type="button" class="district-option" role="option" data-district-value="" aria-selected="' + (!state.district) + '"><span class="district-option-name">ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</span></button>';
+    return placeholder + options.map(function (option) {
+      return '<button type="button" class="district-option" role="option" data-district-value="' + esc(option.name) + '" aria-selected="' + (option.name === state.district) + '"><span class="district-option-name">' + esc(option.name) + '</span><span class="district-option-count" aria-label="' + option.count + ' ಕಾರ್ಯಕ್ರಮಗಳು">' + option.count + '</span></button>';
+    }).join("");
+  }
+
+  function districtPickerHTML(id, mode) {
+    var menuId = id + "Menu", triggerId = id + "Trigger";
+    return '<div id="' + id + 'Picker" class="district-picker" data-district-picker="" data-select-id="' + id + '">' +
+      '<button type="button" id="' + triggerId + '" class="district-trigger" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="' + menuId + '" aria-label="ಜಿಲ್ಲೆ ಆಯ್ಕೆ">' +
+        '<span class="district-trigger-text">' + districtPickerLabel() + '</span><span class="district-trigger-chevron" aria-hidden="true">⌄</span>' +
+      '</button>' +
+      '<div id="' + menuId + '" class="district-menu" role="listbox" aria-label="ಜಿಲ್ಲೆ ಆಯ್ಕೆ" hidden>' + districtListboxHTML(mode) + '</div>' +
+    '</div>';
+  }
+
+  function districtControlHTML(id, mode, name) {
+    return '<select id="' + id + '" class="district-select district-native" name="' + name + '" hidden aria-hidden="true" tabindex="-1">' + districtOptionsHTML(mode) + '</select>' + districtPickerHTML(id, mode);
+  }
+
+  function districtPickerLabel() {
+    if (!state.pv || !state.district || !state.pv.sheets[state.district]) return "ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ";
+    return state.district;
+  }
+
+  function syncDistrictPicker(picker, id, mode) {
+    if (!picker || !picker.querySelector) return;
+    var trigger = picker.querySelector(".district-trigger"), menu = picker.querySelector(".district-menu");
+    if (!trigger || !menu) return;
+    trigger.querySelector(".district-trigger-text").textContent = districtPickerLabel();
+    menu.innerHTML = districtListboxHTML(mode);
+    trigger.setAttribute("aria-expanded", "false");
+    menu.hidden = true;
+    picker.classList.remove("is-open");
+  }
+
+  function renderDistrictPicker(id, mode) {
+    var select = document.getElementById(id);
+    if (!select) return;
+    select.innerHTML = districtOptionsHTML(mode);
+    select.hidden = true;
+    select.setAttribute("aria-hidden", "true");
+    select.tabIndex = -1;
+    if (!select.insertAdjacentHTML) return;
+    var picker = document.getElementById(id + "Picker");
+    if (!picker || !picker.dataset || picker.dataset.districtPicker == null) {
+      select.insertAdjacentHTML("afterend", districtPickerHTML(id, mode));
+      picker = document.getElementById(id + "Picker");
+    } else {
+      syncDistrictPicker(picker, id, mode);
+    }
+  }
+
   function eventGroupHTML(id, title, records, stateGroup, headingExtra) {
     return '<section class="ev-section' + (stateGroup ? " state" : "") + '" aria-labelledby="' + id + 'Title">' +
       '<div class="ev-section-head"><h3 class="ev-section-title" id="' + id + 'Title" tabindex="-1">' + title + '</h3>' + (headingExtra || "") + '</div>' +
@@ -346,7 +405,7 @@
     if (state.pvError) return PV_ERROR;
     if (!state.pv) return PV_LOADING;
     var local = districtEventsFor(key), statewide = stateEventsFor(key);
-    var selector = '<label class="sr-only" for="districtSelect">ಜಿಲ್ಲೆ ಆಯ್ಕೆ</label><select id="districtSelect" class="district-select" name="district">' + districtOptionsHTML("day") + '</select>';
+    var selector = '<span class="sr-only" id="districtSelectLabel">ಜಿಲ್ಲೆ ಆಯ್ಕೆ</span>' + districtControlHTML("districtSelect", "day", "district");
     return eventGroupHTML("districtEvents", "ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು (" + local.length + ")", local, false, selector) +
       eventGroupHTML("stateEvents", "ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು (" + statewide.length + ")", statewide, true);
   }
@@ -405,21 +464,21 @@
     return '<section class="home-category ' + (className || '') + '" aria-labelledby="' + id + '"><h3 class="home-category-title" id="' + id + '">' + title + '</h3>' + body + '</section>';
   }
 
-  function homeReligiousHTML(key, id) {
-    var local = districtEventsFor(key), statewide = stateEventsFor(key);
-    var empty = state.district ? "ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಧಾರ್ಮಿಕ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ." : "ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿದರೆ ಸ್ಥಳೀಯ ಧಾರ್ಮಿಕ ಕಾರ್ಯಕ್ರಮಗಳು ಕಾಣಿಸುತ್ತವೆ.";
-    var body = '<div class="home-scope"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4>' + homeListHTML(local, empty) + '</div>' +
-      '<div class="home-scope statewide"><h4>ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</h4>' + homeListHTML(statewide, "ಈ ದಿನ ಯಾವುದೇ ಕರ್ನಾಟಕದ ಧಾರ್ಮಿಕ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") + '</div>';
-    return homeCategoryHTML(id, "ಧಾರ್ಮಿಕ ಕಾರ್ಯಕ್ರಮಗಳು", body, "religious");
-  }
-
-  function homeCulturalHTML(key, id) {
-    var body;
-    if (!state.district) body = '<p class="empty-note">ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ನೋಡಲು ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ.</p>';
-    else if (state.culturalError) body = CULTURAL_ERROR;
-    else if (!state.cultural) body = CULTURAL_LOADING;
-    else body = homeListHTML(culturalEventsFor(key), "ಈ ದಿನ ಯಾವುದೇ ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.");
-    return homeCategoryHTML(id, "ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು", body, "cultural");
+  function homeEventsHTML(key, id) {
+    var local = districtEventsFor(key), statewide = stateEventsFor(key), cultural = culturalEventsFor(key);
+    var districtBody;
+    if (!state.district) {
+      districtBody = '<p class="empty-note">ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ನೋಡಲು ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ.</p>';
+    } else if (state.culturalError) {
+      districtBody = homeListHTML(local, "ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") + CULTURAL_ERROR;
+    } else if (!state.cultural) {
+      districtBody = homeListHTML(local, "ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") + CULTURAL_LOADING;
+    } else {
+      districtBody = homeListHTML(local.concat(cultural), "ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.");
+    }
+    var body = '<div class="home-scope"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4>' + districtBody + '</div>' +
+      '<div class="home-scope statewide"><h4>ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</h4>' + homeListHTML(statewide, "ಈ ದಿನ ಯಾವುದೇ ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") + '</div>';
+    return homeCategoryHTML(id, "ಕಾರ್ಯಕ್ರಮಗಳು", body, "homeEvents");
   }
 
   function panchangaEnd(value, nextDay) {
@@ -498,7 +557,7 @@
   function homeTodayHTML(key) {
     if (state.pvError) return PV_ERROR;
     if (!state.pv) return PV_LOADING;
-    return homeReligiousHTML(key, "homeReligious") + homeCulturalHTML(key, "homeCultural");
+    return homeEventsHTML(key, "homeEvents");
   }
 
   function dateLabel(iso) {
@@ -514,8 +573,7 @@
       var iso = addDaysIso(from, i), key = isoToKey(iso), local = districtEventsFor(key), statewide = stateEventsFor(key), cultural = culturalEventsFor(key);
       if (!local.length && !statewide.length && !cultural.length) continue;
       var content = '<section class="upcoming-day"><h3 class="upcoming-date">' + dateLabel(iso) + '</h3>';
-      if (local.length || statewide.length) content += homeReligiousHTML(key, "upcomingReligious" + i);
-      if (cultural.length) content += homeCategoryHTML("upcomingCultural" + i, "ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು", homeListHTML(cultural, ""), "cultural");
+      if (local.length || statewide.length || cultural.length) content += homeEventsHTML(key, "upcomingEvents" + i);
       days.push(content + '</section>');
     }
     return days.length ? '<div class="upcoming-list">' + days.join("") + '</div>' : '<p class="empty-note">ಮುಂದಿನ 7 ದಿನಗಳಲ್ಲಿ ಯಾವುದೇ ಕಾರ್ಯಕ್ರಮಗಳಿಲ್ಲ.</p>';
@@ -523,10 +581,9 @@
 
   function homeHeaderHTML(key) {
     var d = parseKey(key);
-    var options = districtOptionsHTML("day");
     return '<section class="home-header" aria-labelledby="homeDateTitle">' +
       '<div class="home-date"><span class="home-kicker">ಆಯ್ದ ದಿನ</span><div class="home-date-line"><strong id="homeDateTitle">' + kn(d.getDate()) + '</strong><span><b>' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</b><small>' + WEEKDAYS[d.getDay()] + '</small></span></div></div>' +
-      '<div class="home-controls"><div class="home-switch" role="tablist" aria-label="ಮುಖಪುಟದ ವಿಷಯ"><button id="homeEventsMode" type="button" role="tab" aria-selected="' + (state.homeMode === "events") + '" class="' + (state.homeMode === "events" ? "is-active" : "") + '">ಕಾರ್ಯಕ್ರಮಗಳು</button><button id="homePanchangaMode" type="button" role="tab" aria-selected="' + (state.homeMode === "panchanga") + '" class="' + (state.homeMode === "panchanga" ? "is-active" : "") + '">ಪಂಚಾಂಗ</button></div><label class="home-district" for="homeDistrictSelect"><span>ಜಿಲ್ಲೆ</span><select id="homeDistrictSelect" class="district-select" name="homeDistrict">' + options + '</select></label></div>' +
+      '<div class="home-controls"><div class="home-switch" role="tablist" aria-label="ಮುಖಪುಟದ ವಿಷಯ"><button id="homeEventsMode" type="button" role="tab" aria-selected="' + (state.homeMode === "events") + '" class="' + (state.homeMode === "events" ? "is-active" : "") + '">ಕಾರ್ಯಕ್ರಮಗಳು</button><button id="homePanchangaMode" type="button" role="tab" aria-selected="' + (state.homeMode === "panchanga") + '" class="' + (state.homeMode === "panchanga" ? "is-active" : "") + '">ಪಂಚಾಂಗ</button></div><label class="home-district"><span id="homeDistrictLabel">ಜಿಲ್ಲೆ</span>' + districtControlHTML("homeDistrictSelect", "day", "homeDistrict") + '</label></div>' +
       '</section>';
   }
 
@@ -631,7 +688,7 @@
     if (!chosen && blocks.length) chosen = blocks[0];
     if (chosen) {
       state.weekHeader = chosen.dataset.start;
-      document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML("week");
+      renderDistrictPicker("weekDistrictSelect", "week");
       renderMasthead();
     }
   }
@@ -665,12 +722,12 @@
     document.getElementById("weekTitle").textContent = periodLabel(selectedWeekStart, selectedWeekEnd);
     if (state.pvError) {
       document.getElementById("weekAgenda").innerHTML = PV_ERROR;
-      document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML("week");
+      renderDistrictPicker("weekDistrictSelect", "week");
       return;
     }
     if (!state.pv) {
       document.getElementById("weekAgenda").innerHTML = PV_LOADING;
-      document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML("week");
+      renderDistrictPicker("weekDistrictSelect", "week");
       return;
     }
     var pages = [], cursor = state.weekFirst;
@@ -680,7 +737,7 @@
       cursor = weekKeyShift(cursor, 1);
     }
     document.getElementById("weekAgenda").innerHTML = pages.join("");
-    document.getElementById("weekDistrictSelect").innerHTML = districtOptionsHTML("week");
+    renderDistrictPicker("weekDistrictSelect", "week");
     bindWeekStream();
     if (!state.weekHeader) {
       var selectedBlock = document.querySelector('#weekAgenda .week-block[data-start="' + start + '"]');
@@ -764,7 +821,7 @@
     if (!chosen && blocks.length) chosen = blocks[0];
     if (chosen) {
       state.monthHeader = chosen.dataset.month;
-      document.getElementById("monthDistrictSelect").innerHTML = districtOptionsHTML("month");
+      renderDistrictPicker("monthDistrictSelect", "month");
       renderMasthead();
     }
   }
@@ -809,7 +866,7 @@
       }
       updateMonthHeader();
     }
-    document.getElementById("monthDistrictSelect").innerHTML = districtOptionsHTML("month");
+    renderDistrictPicker("monthDistrictSelect", "month");
     bindDistrictSelectors();
   }
 
@@ -889,21 +946,111 @@
     } catch (e) {}
   }
 
+  var districtGlobalBound = false;
+  function closeDistrictPicker(picker, restoreFocus) {
+    if (!picker || !picker.querySelector) return;
+    var trigger = picker.querySelector(".district-trigger"), menu = picker.querySelector(".district-menu");
+    if (!trigger || !menu) return;
+    trigger.setAttribute("aria-expanded", "false");
+    menu.hidden = true;
+    picker.classList.remove("is-open");
+    if (restoreFocus && trigger.focus) trigger.focus();
+  }
+
+  function bindDistrictPicker(select, picker) {
+    if (!picker || !picker.querySelector || picker._districtBound) return;
+    var trigger = picker.querySelector(".district-trigger"), menu = picker.querySelector(".district-menu");
+    if (!trigger || !menu) return;
+    picker._districtBound = true;
+    var options = function () { return Array.prototype.slice.call(menu.querySelectorAll(".district-option")); };
+    var setOpen = function (open, focusIndex) {
+      trigger.setAttribute("aria-expanded", String(open));
+      menu.hidden = !open;
+      picker.classList.toggle("is-open", open);
+      if (open && focusIndex != null) {
+        var items = options();
+        if (items[focusIndex] && items[focusIndex].focus) items[focusIndex].focus();
+      }
+    };
+    var selectedIndex = function () {
+      var items = options(), index = items.findIndex(function (option) { return option.dataset.districtValue === select.value; });
+      return index < 0 ? 0 : index;
+    };
+    var moveTo = function (index) {
+      var items = options();
+      if (!items.length) return;
+      items[Math.max(0, Math.min(index, items.length - 1))].focus();
+    };
+    var choose = function (option) {
+      var value = option.dataset.districtValue || "";
+      select.value = value;
+      if (state.district === value) {
+        closeDistrictPicker(picker, true);
+        return;
+      }
+      state.district = value;
+      saveDistrict(value);
+      renderAll();
+      var nextTrigger = document.getElementById(select.id + "Trigger");
+      if (nextTrigger && nextTrigger.focus) nextTrigger.focus();
+    };
+    trigger.addEventListener("click", function () {
+      var open = trigger.getAttribute("aria-expanded") === "true";
+      setOpen(!open, open ? null : selectedIndex());
+    });
+    trigger.addEventListener("keydown", function (e) {
+      var key = e.key, open = trigger.getAttribute("aria-expanded") === "true";
+      if (key === "Enter" || key === " ") { e.preventDefault(); if (!open) setOpen(true, selectedIndex()); }
+      else if (key === "ArrowDown") { e.preventDefault(); setOpen(true, open ? selectedIndex() + 1 : selectedIndex()); }
+      else if (key === "ArrowUp") { e.preventDefault(); setOpen(true, open ? selectedIndex() - 1 : selectedIndex()); }
+      else if (key === "Escape" && open) { e.preventDefault(); closeDistrictPicker(picker, false); }
+      else if (key === "Home" && open) { e.preventDefault(); moveTo(0); }
+      else if (key === "End" && open) { e.preventDefault(); moveTo(options().length - 1); }
+    });
+    picker.addEventListener("click", function (e) {
+      var option = e.target && e.target.closest ? e.target.closest(".district-option") : null;
+      if (option) choose(option);
+    });
+    menu.addEventListener("keydown", function (e) {
+      var current = e.target && e.target.closest ? e.target.closest(".district-option") : null;
+      if (!current) return;
+      var items = options(), index = items.indexOf(current);
+      if (e.key === "ArrowDown") { e.preventDefault(); moveTo(index + 1); }
+      else if (e.key === "ArrowUp") { e.preventDefault(); moveTo(index - 1); }
+      else if (e.key === "Home") { e.preventDefault(); moveTo(0); }
+      else if (e.key === "End") { e.preventDefault(); moveTo(items.length - 1); }
+      else if (e.key === "Enter" || e.key === " ") { e.preventDefault(); choose(current); }
+      else if (e.key === "Escape") { e.preventDefault(); closeDistrictPicker(picker, true); }
+    });
+  }
+
   function bindDistrictSelectors() {
+    if (!districtGlobalBound) {
+      districtGlobalBound = true;
+      document.addEventListener("click", function (e) {
+        document.querySelectorAll(".district-picker.is-open").forEach(function (picker) {
+          if (!picker.contains(e.target)) closeDistrictPicker(picker, false);
+        });
+      });
+    }
     ["homeDistrictSelect", "districtSelect", "weekDistrictSelect", "monthDistrictSelect", "settingsDistrictSelect"].forEach(function (id) {
       var select = document.getElementById(id);
-      if (!select || select._pvBound) return;
-      select._pvBound = true;
-      select.addEventListener("change", function () {
-        state.district = select.value || "";
-        saveDistrict(state.district);
-        renderAll();
-      });
+      if (!select) return;
+      if (!select._pvBound) {
+        select._pvBound = true;
+        select.addEventListener("change", function () {
+          state.district = select.value || "";
+          saveDistrict(state.district);
+          renderAll();
+        });
+      }
+      var picker = document.getElementById(id + "Picker");
+      if (picker && picker.dataset && picker.dataset.districtPicker != null) bindDistrictPicker(select, picker);
     });
   }
 
   function renderSettings() {
-    document.getElementById("settingsDistrictSelect").innerHTML = districtOptionsHTML("all");
+    renderDistrictPicker("settingsDistrictSelect", "all");
     bindDistrictSelectors();
   }
 
