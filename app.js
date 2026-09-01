@@ -324,9 +324,14 @@
 
   function districtOptionsHTML(mode) {
     if (!state.pv) return '<option value="">ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</option>';
-    return '<option value="">ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</option>' + Object.keys(state.pv.sheets).map(function (name) {
-      var count = districtEventCount(name, mode);
-      return '<option value="' + esc(name) + '"' + (name === state.district ? " selected" : "") + '>' + esc(name) + ' (' + count + ')</option>';
+    var options = Object.keys(state.pv.sheets).map(function (name, order) {
+      return { name: name, count: districtEventCount(name, mode), order: order };
+    }).sort(function (a, b) {
+      return b.count - a.count || a.order - b.order;
+    });
+    return '<option value="">ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</option>' + options.map(function (option) {
+      var name = option.name;
+      return '<option value="' + esc(name) + '"' + (name === state.district ? " selected" : "") + '>' + esc(name) + ' (' + option.count + ')</option>';
     }).join("");
   }
 
