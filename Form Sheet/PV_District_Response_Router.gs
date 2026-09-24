@@ -234,7 +234,7 @@ function routeFormSubmission(e) {
   try {
     if (sourceSheet.getName() !== ROUTER_CONFIG.masterSheet) return;
 
-    // Give formulas such as Editorial Text time to calculate before copying.
+    // Give response formulas time to calculate before routing values.
     Utilities.sleep(ROUTER_CONFIG.formulaWaitMs);
     SpreadsheetApp.flush();
 
@@ -265,7 +265,11 @@ function routeFormSubmission(e) {
 
     appendDestinationRows_(
       target,
-      [{ values: rowData.values, numberFormats: rowData.numberFormats, sourceRow }],
+      [{
+        values: rowData.values,
+        numberFormats: rowData.numberFormats,
+        sourceRow,
+      }],
       context.masterHeaders.length
     );
     if (mapped) syncOneDistrictPermissions_(context, district);
@@ -348,6 +352,8 @@ function backfillExistingResponses_(context) {
     destinationState.set(name, {
       sheet,
       existing: getExistingSourceRows_(sheet, sourceRowColumn),
+      rowBySource: getSourceRowMap_(sheet, sourceRowColumn),
+      editorialColumn: accessMap.has(name) ? editorialTextColumn_(sheet, columnCount) : undefined,
       pending: [],
     });
   });
@@ -366,8 +372,17 @@ function backfillExistingResponses_(context) {
     const mapped = accessMap.has(district);
     const destinationName = mapped ? district : ROUTER_CONFIG.unmappedSheet;
     const state = destinationState.get(destinationName);
+    const editorialColumn = state.editorialColumn;
 
     if (state.existing.has(String(sourceRow))) {
+      if (mapped && editorialColumn !== undefined) {
+        setDistrictEditorialFormula_(
+          state.sheet,
+          state.rowBySource.get(String(sourceRow)),
+          editorialColumn,
+          editorialTextFormula_(state.rowBySource.get(String(sourceRow)))
+        );
+      }
       skipped += 1;
       return;
     }
@@ -892,8 +907,44 @@ function appendDestinationRows_(sheet, rows, masterColumnCount) {
     .getRange(startRow, 1, outputFormats.length, masterColumnCount)
     .setNumberFormats(outputFormats);
   if (EXPECTED_DISTRICTS.indexOf(sheet.getName()) !== -1) {
+    const editorialColumn = editorialTextColumn_(sheet, masterColumnCount);
+    if (editorialColumn !== undefined) {
+      rows.forEach((row, index) => {
+        setDistrictEditorialFormula_(
+          sheet,
+          startRow + index,
+          editorialColumn,
+          editorialTextFormula_(startRow + index)
+        );
+      });
+    }
     initializeWorkflowRows_(sheet, startRow, rows.length, masterColumnCount);
   }
+}
+
+function editorialTextColumn_(sheet, masterColumnCount) {
+  const headers = sheet.getRange(1, 1, 1, masterColumnCount).getDisplayValues()[0]
+    .map(normalizeText_);
+  const index = headerMap_(headers)['Editorial Text'];
+  return index === undefined ? undefined : index + 1;
+}
+
+function setDistrictEditorialFormula_(sheet, row, column, formula) {
+  if (row) sheet.getRange(row, column).setFormula(formula);
+}
+
+function editorialTextFormula_(row) {
+  return `=LET(t,IF(E${row}="","",IFERROR(MOD(E${row},1),TIMEVALUE(E${row}))),venue,TEXTJOIN(", ",TRUE,H${row},K${row}),daypart,IF(t="","",IFS(HOUR(t)<12,"ಬೆಳಿಗ್ಗೆ",HOUR(t)<16,"ಮಧ್ಯಾಹ್ನ",HOUR(t)<20,"ಸಂಜೆ",TRUE,"ರಾತ್ರಿ")),time12,IF(t="","",(MOD(HOUR(t)-1,12)+1)&"."&TEXT(MINUTE(t),"00")),TEXTJOIN(CHAR(10),TRUE,F${row},G${row},IF(venue<>"","ಸ್ಥಳ: "&venue&".",""),IF(t<>"","ಸಮಯ: "&daypart&" "&time12&".","")))`;
+}
+
+function getSourceRowMap_(sheet, sourceRowColumn) {
+  const rows = new Map();
+  if (!sheet || sheet.getLastRow() < 2) return rows;
+  sheet.getRange(2, sourceRowColumn, sheet.getLastRow() - 1, 1).getValues()
+    .forEach(([sourceRow], index) => {
+      if (sourceRow !== '' && sourceRow !== null) rows.set(String(sourceRow), index + 2);
+    });
+  return rows;
 }
 
 function getExistingSourceRows_(sheet, sourceRowColumn) {
