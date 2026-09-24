@@ -222,25 +222,22 @@ function routeFormSubmission(e) {
     );
   }
 
-  const lock = LockService.getDocumentLock();
-  if (!lock.tryLock(30000)) {
-    throw new Error('Could not obtain the routing lock within 30 seconds.');
-  }
-
   const ss = e.source;
   const sourceSheet = e.range.getSheet();
   const sourceRow = e.range.getRow();
+  if (sourceSheet.getName() !== ROUTER_CONFIG.masterSheet) return;
+
+  // Let response formulas calculate before contending for the routing lock.
+  Utilities.sleep(ROUTER_CONFIG.formulaWaitMs);
+  SpreadsheetApp.flush();
+
+  const lock = LockService.getDocumentLock();
+  if (!lock.tryLock(120000)) {
+    throw new Error('Could not obtain the routing lock within 120 seconds; source row was not routed.');
+  }
 
   try {
-    if (sourceSheet.getName() !== ROUTER_CONFIG.masterSheet) return;
-
-    // Give response formulas time to calculate before routing values.
-    Utilities.sleep(ROUTER_CONFIG.formulaWaitMs);
-    SpreadsheetApp.flush();
-
     const context = getValidatedContext_(ss);
-    ensureAdministrativeSheets_(context);
-    ensureDistrictSheets_(context);
 
     const rowData = readMasterRow_(context, sourceRow);
     const district = normalizeText_(
@@ -249,9 +246,11 @@ function routeFormSubmission(e) {
     const mapped = context.accessMap.has(district);
     const targetName = mapped ? district : ROUTER_CONFIG.unmappedSheet;
     const target = ss.getSheetByName(targetName);
+    if (!target) {
+      throw new Error(`Missing destination sheet: ${targetName}. Run setupDistrictRouting first.`);
+    }
 
     if (destinationContainsSourceRow_(target, context.masterHeaders.length + 1, sourceRow)) {
-      if (mapped) syncOneDistrictPermissions_(context, district);
       appendLog_(ss, {
         action: 'FORM_SUBMIT',
         sourceRow,
@@ -272,7 +271,7 @@ function routeFormSubmission(e) {
       }],
       context.masterHeaders.length
     );
-    if (mapped) syncOneDistrictPermissions_(context, district);
+    if (mapped) syncOneDistrictPermissions_(context, district, false);
 
     appendLog_(ss, {
       action: 'FORM_SUBMIT',
@@ -295,7 +294,11 @@ function routeFormSubmission(e) {
     });
     throw error;
   } finally {
-    lock.releaseLock();
+    try {
+      SpreadsheetApp.flush();
+    } finally {
+      lock.releaseLock();
+    }
   }
 }
 
@@ -334,7 +337,10 @@ function backfillExistingResponses() {
 function backfillExistingResponses_(context) {
   const { master, masterHeaders, masterHeaderMap, accessMap, ss } = context;
   const lastRow = master.getLastRow();
-  if (lastRow < 2) return { added: 0, skipped: 0, unmapped: 0 };
+  if (lastRow < 2) {
+    normalizeDistrictDateTimeFormats_(context);
+    return { added: 0, skipped: 0, unmapped: 0 };
+  }
 
   SpreadsheetApp.flush();
 
@@ -413,7 +419,28 @@ function backfillExistingResponses_(context) {
     });
   });
 
+  normalizeDistrictDateTimeFormats_(context);
+
   return { added, skipped, unmapped };
+}
+
+function normalizeDistrictDateTimeFormats_(context) {
+  const { master, masterHeaders, accessMap, ss } = context;
+  const columns = masterHeaders.reduce((matches, header, index) => {
+    if (/^(date|time)\b/i.test(header)) {
+      matches.push({ column: index + 1, format: master.getRange(2, index + 1).getNumberFormat() });
+    }
+    return matches;
+  }, []);
+  if (!columns.length) return;
+
+  accessMap.forEach((_emails, district) => {
+    const sheet = ss.getSheetByName(district);
+    if (!sheet || sheet.getLastRow() < 2) return;
+    columns.forEach(({ column, format }) => {
+      sheet.getRange(2, column, sheet.getLastRow() - 1, 1).setNumberFormat(format);
+    });
+  });
 }
 
 /** Synchronizes protections using Office Email Address + Bureau Chief. */
@@ -468,12 +495,12 @@ function syncDistrictPermissions_(context) {
 }
 
 /** Only linked rows get exceptions to the owner-only sheet protection. */
-function syncOneDistrictPermissions_(context, district) {
+function syncOneDistrictPermissions_(context, district, initializeRows = true) {
   const sheet = context.ss.getSheetByName(district);
   const fieldCount = context.masterHeaders.length;
   const sourceColumn = fieldCount + 1;
   const statusColumn = fieldCount + 2;
-  if (sheet.getLastRow() > 1) {
+  if (initializeRows && sheet.getLastRow() > 1) {
     initializeWorkflowRows_(sheet, 2, sheet.getLastRow() - 1, fieldCount);
   }
   const description = `${ROUTER_CONFIG.protectionPrefix} ${district}`;
