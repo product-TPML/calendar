@@ -271,7 +271,10 @@ function routeFormSubmission(e) {
       }],
       context.masterHeaders.length
     );
-    if (mapped) syncOneDistrictPermissions_(context, district, false);
+    if (mapped) {
+      applyDistrictDateTimeFormats_(context, target, target.getLastRow(), 1);
+      syncOneDistrictPermissions_(context, district, false);
+    }
 
     appendLog_(ss, {
       action: 'FORM_SUBMIT',
@@ -425,21 +428,36 @@ function backfillExistingResponses_(context) {
 }
 
 function normalizeDistrictDateTimeFormats_(context) {
-  const { master, masterHeaders, accessMap, ss } = context;
-  const columns = masterHeaders.reduce((matches, header, index) => {
-    if (/^(date|time)\b/i.test(header)) {
-      matches.push({ column: index + 1, format: master.getRange(2, index + 1).getNumberFormat() });
-    }
-    return matches;
-  }, []);
-  if (!columns.length) return;
-
+  const { accessMap, ss } = context;
   accessMap.forEach((_emails, district) => {
     const sheet = ss.getSheetByName(district);
     if (!sheet || sheet.getLastRow() < 2) return;
-    columns.forEach(({ column, format }) => {
-      sheet.getRange(2, column, sheet.getLastRow() - 1, 1).setNumberFormat(format);
-    });
+    applyDistrictDateTimeFormats_(context, sheet, 2, sheet.getLastRow() - 1);
+  });
+}
+
+function applyDistrictDateTimeFormats_(context, sheet, firstRow, rowCount) {
+  if (!rowCount || EXPECTED_DISTRICTS.indexOf(sheet.getName()) === -1) return;
+  const columns = context.masterHeaders.reduce((matches, header, index) => {
+    const type = /^(timestamp|date|time)\b/i.exec(header);
+    if (!type) return matches;
+    const kind = type[1].toLowerCase();
+    let format = context.master.getRange(2, index + 1).getNumberFormat();
+    if (kind === 'time') {
+      format = 'h:mm AM/PM';
+    } else if (kind === 'timestamp') {
+      const lowerFormat = (format || '').toLowerCase();
+      const hasDate = /[dy]/.test(lowerFormat);
+      const hasTime = /h|s|am\/pm/.test(lowerFormat);
+      if (!hasDate || !hasTime) format = 'm/d/yyyy h:mm:ss';
+    } else if (!format || format.trim().toLowerCase() === 'general') {
+      format = 'mm/dd/yyyy';
+    }
+    matches.push({ column: index + 1, format });
+    return matches;
+  }, []);
+  columns.forEach(({ column, format }) => {
+    sheet.getRange(firstRow, column, rowCount, 1).setNumberFormat(format);
   });
 }
 
