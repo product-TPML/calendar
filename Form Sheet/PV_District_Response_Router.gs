@@ -352,7 +352,6 @@ function backfillExistingResponses_(context) {
     destinationState.set(name, {
       sheet,
       existing: getExistingSourceRows_(sheet, sourceRowColumn),
-      rowBySource: getSourceRowMap_(sheet, sourceRowColumn),
       editorialColumn: accessMap.has(name) ? editorialTextColumn_(sheet, columnCount) : undefined,
       pending: [],
     });
@@ -372,17 +371,8 @@ function backfillExistingResponses_(context) {
     const mapped = accessMap.has(district);
     const destinationName = mapped ? district : ROUTER_CONFIG.unmappedSheet;
     const state = destinationState.get(destinationName);
-    const editorialColumn = state.editorialColumn;
 
     if (state.existing.has(String(sourceRow))) {
-      if (mapped && editorialColumn !== undefined) {
-        setDistrictEditorialFormula_(
-          state.sheet,
-          state.rowBySource.get(String(sourceRow)),
-          editorialColumn,
-          editorialTextFormula_(state.rowBySource.get(String(sourceRow)))
-        );
-      }
       skipped += 1;
       return;
     }
@@ -401,6 +391,26 @@ function backfillExistingResponses_(context) {
     if (state.pending.length) {
       appendDestinationRows_(state.sheet, state.pending, columnCount);
     }
+  });
+
+  accessMap.forEach((_emails, district) => {
+    const state = destinationState.get(district);
+    if (state.editorialColumn === undefined || state.sheet.getLastRow() < 2) return;
+    const sheet = state.sheet;
+    const firstRow = 2;
+    const rowCount = sheet.getLastRow() - 1;
+    const rows = sheet.getRange(firstRow, 1, rowCount, columnCount).getValues();
+    rows.forEach((row, index) => {
+      if (row.some((value) => value !== '' && value !== null)) {
+        const destinationRow = firstRow + index;
+        setDistrictEditorialFormula_(
+          sheet,
+          destinationRow,
+          state.editorialColumn,
+          editorialTextFormula_(destinationRow)
+        );
+      }
+    });
   });
 
   return { added, skipped, unmapped };
@@ -935,16 +945,6 @@ function setDistrictEditorialFormula_(sheet, row, column, formula) {
 
 function editorialTextFormula_(row) {
   return `=LET(t,IF(E${row}="","",IFERROR(MOD(E${row},1),TIMEVALUE(E${row}))),venue,TEXTJOIN(", ",TRUE,H${row},K${row}),daypart,IF(t="","",IFS(HOUR(t)<12,"ಬೆಳಿಗ್ಗೆ",HOUR(t)<16,"ಮಧ್ಯಾಹ್ನ",HOUR(t)<20,"ಸಂಜೆ",TRUE,"ರಾತ್ರಿ")),time12,IF(t="","",(MOD(HOUR(t)-1,12)+1)&"."&TEXT(MINUTE(t),"00")),TEXTJOIN(CHAR(10),TRUE,F${row},G${row},IF(venue<>"","ಸ್ಥಳ: "&venue&".",""),IF(t<>"","ಸಮಯ: "&daypart&" "&time12&".","")))`;
-}
-
-function getSourceRowMap_(sheet, sourceRowColumn) {
-  const rows = new Map();
-  if (!sheet || sheet.getLastRow() < 2) return rows;
-  sheet.getRange(2, sourceRowColumn, sheet.getLastRow() - 1, 1).getValues()
-    .forEach(([sourceRow], index) => {
-      if (sourceRow !== '' && sourceRow !== null) rows.set(String(sourceRow), index + 2);
-    });
-  return rows;
 }
 
 function getExistingSourceRows_(sheet, sourceRowColumn) {
