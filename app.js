@@ -988,7 +988,7 @@
   function saveDistrict(d) { try { sessionStorage.setItem("pvDistrict", d); } catch (e) {} }
   function loadDate() { try { var key = sessionStorage.getItem("pvDate"); return validKey(key) ? key : DEFAULT_KEY; } catch (e) { return DEFAULT_KEY; } }
   function saveDate(key) { try { sessionStorage.setItem("pvDate", key); } catch (e) {} }
-  function loadPanchangaPvOnly() { try { return sessionStorage.getItem("pvPanchangaPvOnly") === "1"; } catch (e) { return false; } }
+  function loadPanchangaPvOnly() { try { return sessionStorage.getItem("pvPanchangaPvOnly") !== "0"; } catch (e) { return true; } }
   function savePanchangaPvOnly(v) { try { sessionStorage.setItem("pvPanchangaPvOnly", v); } catch (e) {} }
   function prepareSession() {
     try {
