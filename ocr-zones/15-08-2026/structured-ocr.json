@@ -57,14 +57,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಉತ್ತರಾ",
-        "endsAt": "27.26",
-        "nextDay": true,
+        "name": "ಪುಬ್ಬ",
+        "endsAt": "6.29",
+        "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ತೃತೀಯಾ",
-        "endsAt": "17.29",
+        "name": "ತದಿಗೆ",
+        "endsAt": "19.26",
         "nextDay": false,
         "fullDay": false
       },
@@ -89,9 +89,9 @@
       "chandraEntryRashi": "ಸಿಂಹ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 09:00 - 10:30.",
-      "gulikaKala": "ಬೆ.06:00 - 07:30",
-      "yamaganda": "ಮ. 01:30 - 03:00",
+      "rahuKala": "09:00 - 10:30",
+      "gulikaKala": "06:00 - 07:30",
+      "yamaganda": "13:30 - 15:00",
       "arthaPrahara": "ಮ. 12:00 - 01:30",
       "shubhaSamaya": "ರಾ.08:18 - 09:53"
     },
@@ -169,5 +169,16 @@
         "raw": "ಮೀನ » ಪ್ರತಿರೊಧ ."
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

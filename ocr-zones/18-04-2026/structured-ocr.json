@@ -55,13 +55,13 @@
     "panchanga": {
       "nakshatra": {
         "name": "ಅಶ್ವಿನಿ",
-        "endsAt": "09.43",
+        "endsAt": "10.51",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ಪ್ರತಿಪದಾ",
-        "endsAt": "14.11",
+        "name": "ಪಾಡ್ಯ",
+        "endsAt": "15.31",
         "nextDay": false,
         "fullDay": false
       },
@@ -86,9 +86,9 @@
       "chandraEntryRashi": "ಮೇಷ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 09:00 - 10:30.",
-      "gulikaKala": "ಬೆ. 06:00 - 07:30",
-      "yamaganda": "ಮ. 01:30 - 05:00",
+      "rahuKala": "09:00 - 10:30",
+      "gulikaKala": "06:00 - 07:30",
+      "yamaganda": "13:30 - 15:00",
       "arthaPrahara": "ಮ. 12:06 - 01:30",
       "shubhaSamaya": "ಮ. 03:12 - 04:36"
     },
@@ -166,5 +166,16 @@
         "raw": "ಮೀನ ». ಕರುಣೆ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

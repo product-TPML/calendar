@@ -57,13 +57,13 @@
     "panchanga": {
       "nakshatra": {
         "name": "ರೇವತಿ",
-        "endsAt": "12.02",
+        "endsAt": "12.07",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಅಮಾವಾಸ್ಯೆ",
-        "endsAt": "17.22",
+        "endsAt": "17.35",
         "nextDay": false,
         "fullDay": false
       },
@@ -88,9 +88,9 @@
       "chandraEntryRashi": "ಮೀನ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 10:30 - 12:00.",
-      "gulikaKala": "ಬೆ. 07:30 - 09:00",
-      "yamaganda": "ಮ. 08:00 - 04:30",
+      "rahuKala": "10:30 - 12:00",
+      "gulikaKala": "07:30 - 09:00",
+      "yamaganda": "15:00 - 16:30",
       "arthaPrahara": "ಮ. 01:36 - 05:00",
       "shubhaSamaya": "ಬೆ. 09:50 - 11:18"
     },
@@ -168,5 +168,16 @@
         "raw": "ಮೀನ » ಅಭಿವೃದ್ಧಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

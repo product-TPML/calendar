@@ -59,13 +59,13 @@
     "panchanga": {
       "nakshatra": {
         "name": "ಉತ್ತರಾ",
-        "endsAt": "22.36",
+        "endsAt": "23.12",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ದ್ವಾದಶಿ",
-        "endsAt": "18.52",
+        "endsAt": "19.29",
         "nextDay": false,
         "fullDay": false
       },
@@ -90,9 +90,9 @@
       "chandraEntryRashi": "ಕನ್ಯಾ"
     },
     "timings": {
-      "rahuKala": "ಮ. 03:00 - 04:30",
-      "gulikaKala": "ಮ. 12:00 - 01:30",
-      "yamaganda": "ಬೆ. 09:00 - 10:30",
+      "rahuKala": "15:00 - 16:30",
+      "gulikaKala": "12:00 - 13:30",
+      "yamaganda": "09:00 - 10:30",
       "arthaPrahara": "ಬೆ. 07:36 - 09:00",
       "shubhaSamaya": "ಮ. 03:01 - 04:42"
     },
@@ -170,5 +170,16 @@
         "raw": "ಮೀನ » ಒಳ್ಳೆಯದು."
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

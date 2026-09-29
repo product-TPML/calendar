@@ -48,14 +48,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಉ.ಭಾ",
-        "endsAt": "24.18",
-        "nextDay": true,
+        "name": "ಉತ್ತರಾಭಾದ್ರ",
+        "endsAt": "20.47",
+        "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಏಕಾದಶಿ",
-        "endsAt": "13.30",
+        "endsAt": "9.05",
         "nextDay": false,
         "fullDay": false
       },
@@ -80,9 +80,9 @@
       "chandraEntryRashi": "ಮೀನ"
     },
     "timings": {
-      "rahuKala": "ಮ. 12:00 - 01:30",
-      "gulikaKala": "ಚೆ. 10:30 - 12:00,",
-      "yamaganda": "ಬೆ.07:30-09:00",
+      "rahuKala": "12:00 - 13:30",
+      "gulikaKala": "10:30 - 12:00",
+      "yamaganda": "07:30 - 09:00",
       "arthaPrahara": "ಚೆ. 06:00 - 07:30",
       "shubhaSamaya": "ಸ. 07:41- 09:13"
     },
@@ -160,5 +160,16 @@
         "raw": "ಮೀನ ». ಲಾಭ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

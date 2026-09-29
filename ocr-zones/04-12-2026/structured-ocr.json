@@ -57,15 +57,15 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಹಸ್ತ",
-        "endsAt": "10.23",
+        "name": "ಹಸ್ತಾ",
+        "endsAt": "13.19",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಏಕಾದಶಿ",
-        "endsAt": "23.45",
-        "nextDay": false,
+        "endsAt": "25.25",
+        "nextDay": true,
         "fullDay": false
       },
       "yoga": {
@@ -89,9 +89,9 @@
       "chandraEntryRashi": "ಕನ್ಯಾ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 10:30 - 12:00.",
-      "gulikaKala": "ಬೆ. 0730 - 09:00.",
-      "yamaganda": "ಮ. 03:00 - 04:3(",
+      "rahuKala": "10:30 - 12:00",
+      "gulikaKala": "07:30 - 09:00",
+      "yamaganda": "15:00 - 16:30",
       "arthaPrahara": "ಮ. 01:30 - 03:00",
       "shubhaSamaya": "ಚೆ.04:68 - 05:48"
     },
@@ -169,5 +169,16 @@
         "raw": "ಮೀನ » ಅಲೆದಾಟ."
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

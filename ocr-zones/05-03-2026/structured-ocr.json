@@ -51,13 +51,13 @@
     "panchanga": {
       "nakshatra": {
         "name": "ಉತ್ತರಾ",
-        "endsAt": "08.18",
+        "endsAt": "8.21",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ದ್ವಿತೀಯಾ",
-        "endsAt": "17.04",
+        "name": "ಬಿದಿಗೆ",
+        "endsAt": "16.52",
         "nextDay": false,
         "fullDay": false
       },
@@ -82,9 +82,9 @@
       "chandraEntryRashi": "ಕನ್ನಾ"
     },
     "timings": {
-      "rahuKala": "ಮ. 01:30 - 03:00",
-      "gulikaKala": "ಬೆ. 09:00 - 10:30",
-      "yamaganda": "ಬೆ. 06:00 - 07:30",
+      "rahuKala": "13:30 - 15:00",
+      "gulikaKala": "09:00 - 10:30",
+      "yamaganda": "06:00 - 07:30",
       "arthaPrahara": "ಮ. 03:06 - 04:30",
       "shubhaSamaya": "ಬೆ. 12:54 - 02:32"
     },
@@ -162,5 +162,16 @@
         "raw": "ಮೀನ » ಆನಂದೆ :"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

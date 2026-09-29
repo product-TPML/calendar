@@ -48,15 +48,15 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಆಶ್ಲೇಷಾ",
-        "endsAt": "09.42",
+        "name": "ಆಶ್ಲೇಷ",
+        "endsAt": "15.47",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಸಪ್ತಮಿ",
-        "endsAt": "24.12",
-        "nextDay": true,
+        "endsAt": "5.34",
+        "nextDay": false,
         "fullDay": false
       },
       "yoga": {
@@ -80,9 +80,9 @@
       "chandraEntryRashi": "ಕರ್ಕ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 07:30 - 09:00.",
-      "gulikaKala": "ಮ.01:30- 8:00",
-      "yamaganda": "ಬೆ. 10:30 - 12:00",
+      "rahuKala": "07:30 - 09:00",
+      "gulikaKala": "13:30 - 15:00",
+      "yamaganda": "10:30 - 12:00",
       "arthaPrahara": "ಬೆ.09:00 - 10:30",
       "shubhaSamaya": "ಬೆ. 08:11 - 09:42"
     },
@@ -160,5 +160,16 @@
         "raw": "ಮೀನ ೫». ಪ್ರೋತ್ಸಾಹ ."
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

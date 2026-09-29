@@ -53,14 +53,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಶತಭಿಷಾ",
-        "endsAt": "15.13",
+        "name": "ಶತಭಿಷ",
+        "endsAt": "12.32",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಪಂಚಮಿ",
-        "endsAt": "13.31",
+        "endsAt": "9.50",
         "nextDay": false,
         "fullDay": false
       },
@@ -85,9 +85,9 @@
       "chandraEntryRashi": "ಕುಂಭ"
     },
     "timings": {
-      "rahuKala": "ಸ. 04:30 - 06:00.",
-      "gulikaKala": "ಮ.5:00- 64:30",
-      "yamaganda": "ಮ. 12:00-01:30",
+      "rahuKala": "16:30 - 18:00",
+      "gulikaKala": "15:00 - 16:30",
+      "yamaganda": "12:00 - 13:30",
       "arthaPrahara": "ಬ. 10:30 - 12:00",
       "shubhaSamaya": "ಬೆ. 07:34 - 09:16"
     },
@@ -165,5 +165,16 @@
         "raw": "ಮೀನ » ಪ್ರಯತ್ನ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

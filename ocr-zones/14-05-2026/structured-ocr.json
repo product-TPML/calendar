@@ -49,13 +49,13 @@
     "panchanga": {
       "nakshatra": {
         "name": "ರೇವತಿ",
-        "endsAt": "2.34",
+        "endsAt": "20.02",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ದ್ವಾದಶಿ",
-        "endsAt": "11.21",
+        "endsAt": "7.48",
         "nextDay": false,
         "fullDay": false
       },
@@ -80,9 +80,9 @@
       "chandraEntryRashi": "ಮೀನ"
     },
     "timings": {
-      "rahuKala": "ಮ. 01:30 - 03:00",
-      "gulikaKala": "ಬೆ.09:00- 10130",
-      "yamaganda": "ಬೆ.06:00 - 07:30",
+      "rahuKala": "13:30 - 15:00",
+      "gulikaKala": "09:00 - 10:30",
+      "yamaganda": "06:00 - 07:30",
       "arthaPrahara": "ಮ. 05:06 - 04:36",
       "shubhaSamaya": "ರಾ. 08:20 - 09:49"
     },
@@ -160,5 +160,16 @@
         "raw": "ಮೀನ ». ತಾಳ್ಮೆ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

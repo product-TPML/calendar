@@ -54,14 +54,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಪೂರ್ವಾ",
-        "endsAt": "07.39",
+        "name": "ಪುಬ್ಬ",
+        "endsAt": "7.44",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ಪ್ರತಿಪದಾ",
-        "endsAt": "16.49",
+        "name": "ಪಾಡ್ಯ",
+        "endsAt": "16.39",
         "nextDay": false,
         "fullDay": false
       },
@@ -86,9 +86,9 @@
       "chandraEntryRashi": "13:46"
     },
     "timings": {
-      "rahuKala": "ಮ. 12:00 - 01:30",
-      "gulikaKala": "ಬೆ. 10:30 - 12:00",
-      "yamaganda": "ಬೆ. 07:30 -09:00",
+      "rahuKala": "12:00 - 13:30",
+      "gulikaKala": "10:30 - 12:00",
+      "yamaganda": "07:30 - 09:00",
       "arthaPrahara": "ಬೆ. 06:00 - 07:30",
       "shubhaSamaya": "ಬೆ. 01:13 - 02:49"
     },
@@ -166,5 +166,16 @@
         "raw": "ಮೀನ ೫» ಆಸೆ."
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

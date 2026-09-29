@@ -52,14 +52,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಮೃಗಶಿರಾ",
-        "endsAt": "17.47",
+        "name": "ಮೃಗಶಿರ",
+        "endsAt": "22.02",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ದ್ವಿತೀಯಾ",
-        "endsAt": "13.16",
+        "name": "ಬಿದಿಗೆ",
+        "endsAt": "16.47",
         "nextDay": false,
         "fullDay": false
       },
@@ -84,9 +84,9 @@
       "chandraEntryRashi": "ವೃಷಭಬೆ."
     },
     "timings": {
-      "rahuKala": "ಮ. 01:30 - 03:00",
-      "gulikaKala": "ಚೆ.9:00 - 1030",
-      "yamaganda": "ಬೆ. 06:00 - 07:30",
+      "rahuKala": "13:30 - 15:00",
+      "gulikaKala": "09:00 - 10:30",
+      "yamaganda": "06:00 - 07:30",
       "arthaPrahara": "ಬೆ. 03:00 - 04:30",
       "shubhaSamaya": "ಬೆ. 10:01 - 11:26"
     },
@@ -164,5 +164,16 @@
         "raw": "ಮೀನ ». ಶುಭ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

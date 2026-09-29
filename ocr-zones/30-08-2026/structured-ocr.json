@@ -50,14 +50,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಉ. ಭಾ",
-        "endsAt": "27.45",
+        "name": "ಉತ್ತರಾಭಾದ್ರ",
+        "endsAt": "28.42",
         "nextDay": true,
         "fullDay": false
       },
       "tithi": {
-        "name": "ದ್ವಿತೀಯಾ",
-        "endsAt": "09.38",
+        "name": "ಬಿದಿಗೆ",
+        "endsAt": "9.15",
         "nextDay": false,
         "fullDay": false
       },
@@ -82,9 +82,9 @@
       "chandraEntryRashi": "ಮೀನ"
     },
     "timings": {
-      "rahuKala": "ಸ, 04:30 - 06:00.",
-      "gulikaKala": "ಮ.05:00 - 04:30",
-      "yamaganda": "ಮ. 12:00 - 01:30",
+      "rahuKala": "16:30 - 18:00",
+      "gulikaKala": "15:00 - 16:30",
+      "yamaganda": "12:00 - 13:30",
       "arthaPrahara": "ಚೆ.1030 - 12:00",
       "shubhaSamaya": "ಜಿ. 10:56 - 12:32 (ಮರುದಿನ)"
     },
@@ -162,5 +162,16 @@
         "raw": "ಮೀನ » ಅಭಿವೃದ್ಧಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

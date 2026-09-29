@@ -57,13 +57,13 @@
     "panchanga": {
       "nakshatra": {
         "name": "ಶ್ರವಣ",
-        "endsAt": "17.44",
+        "endsAt": "17.47",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ಪ್ರತಿಪದಾ",
-        "endsAt": "21.31",
+        "name": "ಪಾಡ್ಯ",
+        "endsAt": "20.25",
         "nextDay": false,
         "fullDay": false
       },
@@ -88,9 +88,9 @@
       "chandraEntryRashi": "ಮಕರ"
     },
     "timings": {
-      "rahuKala": "_ಮ. 01:30 - 03:00",
-      "gulikaKala": "ಬೆ.9:00 - 10:30.",
-      "yamaganda": "ಬೆ.06:00-07:30",
+      "rahuKala": "13:30 - 15:00",
+      "gulikaKala": "09:00 - 10:30",
+      "yamaganda": "06:00 - 07:30",
       "arthaPrahara": "ಮ. 03:00 - 04:30",
       "shubhaSamaya": "ಬೆ. 06:24 - 08:09"
     },
@@ -168,5 +168,16 @@
         "raw": "ಮೀನ » ಪ್ರೋತ್ಸಾಹ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

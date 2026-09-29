@@ -49,14 +49,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಆಶ್ವೇಷಾ",
-        "endsAt": "27.47",
-        "nextDay": true,
+        "name": "ಪುಷ್ಯ",
+        "endsAt": "9.02",
+        "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಅಷ್ಟಮಿ",
-        "endsAt": "13.11",
+        "endsAt": "16.52",
         "nextDay": false,
         "fullDay": false
       },
@@ -81,9 +81,9 @@
       "chandraEntryRashi": "ಕರ್ಕ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 07:30 - 09:00",
-      "gulikaKala": "ಮ.01:30 - 03:00",
-      "yamaganda": "ಬೆ. 10:30 - 12:00",
+      "rahuKala": "07:30 - 09:00",
+      "gulikaKala": "13:30 - 15:00",
+      "yamaganda": "10:30 - 12:00",
       "arthaPrahara": "ಚೆ. 09:00 - 10:30",
       "shubhaSamaya": "unavailable"
     },
@@ -161,5 +161,16 @@
         "raw": "ಮೀನ ». ಕೀರ್ತಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

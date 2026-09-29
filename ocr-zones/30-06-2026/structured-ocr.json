@@ -56,13 +56,13 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಪೂ.ಷಾ.",
+        "name": "ಪೂರ್ವಾಷಾಢ",
         "endsAt": null,
         "nextDay": false,
         "fullDay": true
       },
       "tithi": {
-        "name": "ಪ್ರತಿಪದಾ",
+        "name": "ಪಾಡ್ಯ",
         "endsAt": null,
         "nextDay": false,
         "fullDay": true
@@ -88,9 +88,9 @@
       "chandraEntryRashi": "ಧನು"
     },
     "timings": {
-      "rahuKala": "ಮ. 03:00 - 04:30",
-      "gulikaKala": "ಮ. 12:00 - 01:30",
-      "yamaganda": "ಬೆ. 09:00- 10:30.",
+      "rahuKala": "15:00 - 16:30",
+      "gulikaKala": "12:00 - 13:30",
+      "yamaganda": "09:00 - 10:30",
       "arthaPrahara": "ಬೆ. 07:30 - 09:00.",
       "shubhaSamaya": "unavailable"
     },
@@ -168,5 +168,16 @@
         "raw": "ಮೀನ ». ತಾಳ್ಮೆ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

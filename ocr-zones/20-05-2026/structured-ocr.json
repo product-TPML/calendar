@@ -47,14 +47,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಆರ್ದ್ರಾ",
-        "endsAt": "06.12",
+        "name": "ಆರಿದ್ರಾ",
+        "endsAt": "11.15",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ಚತುರ್ಥಿ",
-        "endsAt": "11.07",
+        "name": "ಚೌತಿ",
+        "endsAt": "16.23",
         "nextDay": false,
         "fullDay": false
       },
@@ -79,9 +79,9 @@
       "chandraEntryRashi": "ಮಿಥುನ"
     },
     "timings": {
-      "rahuKala": "ಮ. 12:00 - 01:30",
-      "gulikaKala": "ಬೆ.1030 - 12:00.",
-      "yamaganda": "ಬೆ.07:30-09:00",
+      "rahuKala": "12:00 - 13:30",
+      "gulikaKala": "10:30 - 12:00",
+      "yamaganda": "07:30 - 09:00",
       "arthaPrahara": "ಚೆ.06:00- 07:30",
       "shubhaSamaya": "unavailable"
     },
@@ -159,5 +159,16 @@
         "raw": "ಮೀನ ೨» ಅಭಿವೃದ್ಧಿ ."
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

@@ -50,14 +50,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಧನಿಷ್ಠಾ",
-        "endsAt": "19.27",
+        "name": "ಧನಿಷ್ಠ",
+        "endsAt": "19.22",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ದ್ವಿತೀಯಾ",
-        "endsAt": "22.32",
+        "name": "ಬಿದಿಗೆ",
+        "endsAt": "21.18",
         "nextDay": false,
         "fullDay": false
       },
@@ -82,9 +82,9 @@
       "chandraEntryRashi": "ಮಕರ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 10:30 - 12:00",
-      "gulikaKala": "ಬೆ. 0:30 - 09:00.",
-      "yamaganda": "ಮ. 03:00 - 04:30",
+      "rahuKala": "10:30 - 12:00",
+      "gulikaKala": "07:30 - 09:00",
+      "yamaganda": "15:00 - 16:30",
       "arthaPrahara": "ಮ. 01:30 - 03:00",
       "shubhaSamaya": "ಬೆ. 08:18 - 10:00"
     },
@@ -162,5 +162,16 @@
         "raw": "ಮೀನ » ಯಶಸ್ಸು"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

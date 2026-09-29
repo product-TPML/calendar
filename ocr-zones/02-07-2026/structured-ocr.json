@@ -53,14 +53,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಉ.ಷಾ",
-        "endsAt": "09.28",
+        "name": "ಉತ್ತರಾಷಾಢ",
+        "endsAt": "8.36",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ದ್ವಿತೀಯಾ",
-        "endsAt": "09.38",
+        "name": "ಬಿದಿಗೆ",
+        "endsAt": "7.52",
         "nextDay": false,
         "fullDay": false
       },
@@ -85,9 +85,9 @@
       "chandraEntryRashi": "ಮಕರ"
     },
     "timings": {
-      "rahuKala": "_ಮ. 01:30 - 03:00",
-      "gulikaKala": "ಬೆ.9:00 - 10:30.",
-      "yamaganda": "ಬೆ.06:00- 07:30",
+      "rahuKala": "13:30 - 15:00",
+      "gulikaKala": "09:00 - 10:30",
+      "yamaganda": "06:00 - 07:30",
       "arthaPrahara": "ಮ. 03:00 - 04:3(",
       "shubhaSamaya": "ಬೆ. 02:21 - 04:08"
     },
@@ -165,5 +165,16 @@
         "raw": "ಮೀನ » ಸಂಶತ್ತು"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

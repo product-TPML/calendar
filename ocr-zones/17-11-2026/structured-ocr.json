@@ -55,14 +55,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಧನಿಷ್ಟಾ",
-        "endsAt": "28.35",
+        "name": "ಧನಿಷ್ಠ",
+        "endsAt": "24.56",
         "nextDay": true,
         "fullDay": false
       },
       "tithi": {
         "name": "ಅಷ್ಟಮಿ",
-        "endsAt": "30.06",
+        "endsAt": "25.06",
         "nextDay": true,
         "fullDay": false
       },
@@ -87,9 +87,9 @@
       "chandraEntryRashi": "ಮಕರ"
     },
     "timings": {
-      "rahuKala": "ಮ. 03:00 - 04:30",
-      "gulikaKala": "ಮ.12:00-01:30",
-      "yamaganda": "ಬೆ. 09:00 - 10:30",
+      "rahuKala": "15:00 - 16:30",
+      "gulikaKala": "12:00 - 13:30",
+      "yamaganda": "09:00 - 10:30",
       "arthaPrahara": "ಚೆ.07:30- 9:00",
       "shubhaSamaya": "ಸ. 05:11 - 06:56"
     },
@@ -167,5 +167,16 @@
         "raw": "ಮೀನ » ಪ್ರೀತಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

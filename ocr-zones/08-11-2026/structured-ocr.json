@@ -62,7 +62,7 @@
       },
       "tithi": {
         "name": "ಚತುರ್ದಶಿ",
-        "endsAt": "11.28",
+        "endsAt": "10.36",
         "nextDay": false,
         "fullDay": false
       },
@@ -87,9 +87,9 @@
       "chandraEntryRashi": "ತುಲಾ"
     },
     "timings": {
-      "rahuKala": "ಸ, 04:30 - 06:00.",
-      "gulikaKala": "ಮ. 05:00 - 04:30",
-      "yamaganda": "ಮ. 12:00 - 01:30",
+      "rahuKala": "16:30 - 18:00",
+      "gulikaKala": "15:00 - 16:30",
+      "yamaganda": "12:00 - 13:30",
       "arthaPrahara": "ಚೆ. 10130 - 12:00",
       "shubhaSamaya": "ರಾ. 10:02 - 11:44"
     },
@@ -167,5 +167,16 @@
         "raw": "ಮೀನ ». ಸಾಲ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

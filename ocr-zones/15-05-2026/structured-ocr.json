@@ -51,14 +51,14 @@
     "panchanga": {
       "nakshatra": {
         "name": "ಅಶ್ವಿನಿ",
-        "endsAt": "20.15",
+        "endsAt": "19.10",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ತ್ರಯೋದಶಿ",
-        "endsAt": "08.32",
-        "nextDay": false,
+        "name": "ಚತುರ್ದಶಿ",
+        "endsAt": "28.17",
+        "nextDay": true,
         "fullDay": false
       },
       "yoga": {
@@ -82,9 +82,9 @@
       "chandraEntryRashi": "ಮೇಷ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 10:30 - 12:00",
-      "gulikaKala": "ಚೆ.07:30- 09:00",
-      "yamaganda": "ಮ. 05:00 - 04:30",
+      "rahuKala": "10:30 - 12:00",
+      "gulikaKala": "07:30 - 09:00",
+      "yamaganda": "15:00 - 16:30",
       "arthaPrahara": "ಮ. 01:30 - 03:00",
       "shubhaSamaya": "ಮ. 01:44 - 03:11"
     },
@@ -162,5 +162,16 @@
         "raw": "ಮೀನ » ಒಳ್ಳೆಯ ಕೆಲಸ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

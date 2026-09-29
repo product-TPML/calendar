@@ -54,14 +54,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಅಶ್ವಿ",
-        "endsAt": "02.26",
-        "nextDay": false,
+        "name": "ಅಶ್ವಿನಿ",
+        "endsAt": "27.06",
+        "nextDay": true,
         "fullDay": false
       },
       "tithi": {
         "name": "ತ್ರಯೋದಶಿ",
-        "endsAt": "26.38",
+        "endsAt": "24.23",
         "nextDay": true,
         "fullDay": false
       },
@@ -86,9 +86,9 @@
       "chandraEntryRashi": "ಮೇಷ"
     },
     "timings": {
-      "rahuKala": "ಸ, 04:30 - 06:00.",
-      "gulikaKala": "ಮ. 03:00 - ೫:30",
-      "yamaganda": "ಮ. 12:00 - 01:30",
+      "rahuKala": "16:30 - 18:00",
+      "gulikaKala": "15:00 - 16:30",
+      "yamaganda": "12:00 - 13:30",
       "arthaPrahara": "ಬೆ. 1030 - 12:00",
       "shubhaSamaya": "ಜ. 03:36 - 05:08, ರಾ. 09:33 - 11:02"
     },
@@ -166,5 +166,16 @@
         "raw": "ಮೀನ ». ಸಂತೋಷ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

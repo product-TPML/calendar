@@ -48,14 +48,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಚಿತ್ರಾ",
-        "endsAt": "11.16",
+        "name": "ಚಿತ್ತಾ",
+        "endsAt": "11.03",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ಚತುರ್ಥಿ",
-        "endsAt": "19.18",
+        "name": "ಚೌತಿ",
+        "endsAt": "18.41",
         "nextDay": false,
         "fullDay": false
       },
@@ -80,9 +80,9 @@
       "chandraEntryRashi": "ತುಲಾ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 09:00 - 10:30.",
-      "gulikaKala": "ಜೆ.06:00 - ೫730",
-      "yamaganda": "ಮ. 01:30 - 05:00",
+      "rahuKala": "09:00 - 10:30",
+      "gulikaKala": "06:00 - 07:30",
+      "yamaganda": "13:30 - 15:00",
       "arthaPrahara": "ಮ. 12:00 - 01:3(",
       "shubhaSamaya": "ಬೆ. 04:23 - 06:06"
     },
@@ -160,5 +160,16 @@
         "raw": "ಮೀನ » ಅನುಕೂಲ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

@@ -50,14 +50,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಮೃಗಶಿರಾ",
-        "endsAt": "17.34",
+        "name": "ಮೃಗಶಿರ",
+        "endsAt": "20.23",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ಸಪ್ತಮ",
-        "endsAt": "13.51",
+        "name": "ಸಪ್ತಮಿ",
+        "endsAt": "17.01",
         "nextDay": false,
         "fullDay": false
       },
@@ -82,9 +82,9 @@
       "chandraEntryRashi": "ಮಿಥನ"
     },
     "timings": {
-      "rahuKala": "ಮ. 12:00 - 01:30",
-      "gulikaKala": "ಬೆ. 10:30 - 12:00",
-      "yamaganda": "ಬೆ.07:30 - 09:00",
+      "rahuKala": "12:00 - 13:30",
+      "gulikaKala": "10:30 - 12:00",
+      "yamaganda": "07:30 - 09:00",
       "arthaPrahara": "ಬೆ.06:00 - 07:30",
       "shubhaSamaya": "ಬೆ. 09:19 - 10:49"
     },
@@ -162,5 +162,16 @@
         "raw": "ಮೀನ ೫ ಒಳ್ಳೆಯಸುದ್ದಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

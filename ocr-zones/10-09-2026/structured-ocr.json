@@ -56,14 +56,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಮಘಾ",
-        "endsAt": "14.05",
+        "name": "ಮಘ",
+        "endsAt": "14.52",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಚತುರ್ದಶಿ",
-        "endsAt": "10.34",
+        "endsAt": "10.11",
         "nextDay": false,
         "fullDay": false
       },
@@ -88,9 +88,9 @@
       "chandraEntryRashi": "ಸಿಂಹ"
     },
     "timings": {
-      "rahuKala": "ಮ. 01:30 - 03:00",
-      "gulikaKala": "ಬೆ.9:00 - 10:30.",
-      "yamaganda": "ಬೆ.06:00- 07:30",
+      "rahuKala": "13:30 - 15:00",
+      "gulikaKala": "09:00 - 10:30",
+      "yamaganda": "06:00 - 07:30",
       "arthaPrahara": "ಮ. 03:00 - 04:3(",
       "shubhaSamaya": "ಬೆ. 11:47 - 01:18"
     },
@@ -168,5 +168,16 @@
         "raw": "ಮೀನ » ಸಲಮ್ಯತ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

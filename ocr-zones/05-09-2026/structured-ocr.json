@@ -56,14 +56,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಮೃಗಶಿರಾ",
-        "endsAt": "21.31",
+        "name": "ಮೃಗಶಿರ",
+        "endsAt": "22.05",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ನವಮಿ",
-        "endsAt": "21.54",
+        "endsAt": "21.16",
         "nextDay": false,
         "fullDay": false
       },
@@ -88,9 +88,9 @@
       "chandraEntryRashi": "ವೃಷಭ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 09:00 - 10:30.",
-      "gulikaKala": "ಬೆ. 06:00 - 07:30",
-      "yamaganda": "ಮ. 01:30 - 03:0",
+      "rahuKala": "09:00 - 10:30",
+      "gulikaKala": "06:00 - 07:30",
+      "yamaganda": "13:30 - 15:00",
       "arthaPrahara": "ಮ. 12:00 -01:3(",
       "shubhaSamaya": "ಸ. 01:17 - 02:46"
     },
@@ -168,5 +168,16 @@
         "raw": "ಮೀನ » ವಿಳಂಬ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

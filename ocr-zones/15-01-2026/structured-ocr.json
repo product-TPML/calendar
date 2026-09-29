@@ -54,14 +54,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಜ್ಯೇಷ್ಠಾ",
-        "endsAt": "29.48",
-        "nextDay": true,
+        "name": "ಜ್ಯೇಷ್ಠ",
+        "endsAt": "6.14",
+        "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ದ್ವಾದಶಿ",
-        "endsAt": "20.17",
+        "endsAt": "21.15",
         "nextDay": false,
         "fullDay": false
       },
@@ -86,9 +86,9 @@
       "chandraEntryRashi": "29.48"
     },
     "timings": {
-      "rahuKala": "_ಮ. 01:30 - 03:00",
-      "gulikaKala": "ಚೆ. 59:96 10:36",
-      "yamaganda": "ಚೆ.08:00- 07:30",
+      "rahuKala": "13:30 - 15:00",
+      "gulikaKala": "09:00 - 10:30",
+      "yamaganda": "06:00 - 07:30",
       "arthaPrahara": "ಮ. 03:00 3 04:30",
       "shubhaSamaya": "ರಾ. 07:59 - 09:46"
     },
@@ -166,5 +166,16 @@
         "raw": "ಮೀನ » ಅಲೆದಾಟ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

@@ -47,15 +47,15 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಪೂರ್ವಾ",
-        "endsAt": "26.51",
-        "nextDay": true,
+        "name": "ಮಘ",
+        "endsAt": "6.55",
+        "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ನವಮಿ",
-        "endsAt": "28.31",
-        "nextDay": true,
+        "name": "ಅಷ್ಟಮಿ",
+        "endsAt": "9.10",
+        "nextDay": false,
         "fullDay": false
       },
       "yoga": {
@@ -79,9 +79,9 @@
       "chandraEntryRashi": "ಸಿಂಹ"
     },
     "timings": {
-      "rahuKala": "ಸ. 04:30 -06:00",
-      "gulikaKala": "ಮ. 8:00 - 04:30",
-      "yamaganda": "ಮ. 12:00 - 01:30",
+      "rahuKala": "16:30 - 18:00",
+      "gulikaKala": "15:00 - 16:30",
+      "yamaganda": "12:00 - 13:30",
       "arthaPrahara": "ಚೆ. 10130 12:00",
       "shubhaSamaya": "ರಾ. 08:16 - 09:54"
     },
@@ -159,5 +159,16 @@
         "raw": "ಮೀನ ». ತಾಳ್ಮೆ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

@@ -52,13 +52,13 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಜ್ಯೇಷ್ಠಾ",
-        "endsAt": "21.01",
+        "name": "ಜ್ಯೇಷ್ಠ",
+        "endsAt": "20.19",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ಪ್ರತಿಪದಾ",
+        "name": "ಪಾಡ್ಯ",
         "endsAt": null,
         "nextDay": false,
         "fullDay": true
@@ -84,9 +84,9 @@
       "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
     },
     "timings": {
-      "rahuKala": "ಮ. 12:00 - 01:30",
-      "gulikaKala": "ಬೆ. 10:30 - 12:00",
-      "yamaganda": "ಬೆ.07:30-09:00",
+      "rahuKala": "12:00 - 13:30",
+      "gulikaKala": "10:30 - 12:00",
+      "yamaganda": "07:30 - 09:00",
       "arthaPrahara": "ಬಿ.06:00 - 07:30",
       "shubhaSamaya": "ಚೆ. 11:12 - 12:59"
     },
@@ -164,5 +164,16 @@
         "raw": "ಮೀನ ೫» ಒಳ್ಳೆಯ ಕೆಲಸ."
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

@@ -51,15 +51,15 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಅನುರಾಧಾ",
-        "endsAt": "19.05",
+        "name": "ಅನೂರಾಧ",
+        "endsAt": "17.51",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಸಪ್ತಮಿ",
-        "endsAt": "5.55",
-        "nextDay": false,
+        "endsAt": "24.17",
+        "nextDay": true,
         "fullDay": false
       },
       "yoga": {
@@ -83,9 +83,9 @@
       "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
     },
     "timings": {
-      "rahuKala": "ಮ. 03:00 - 04:30",
-      "gulikaKala": "ಮ. 12:00 - 01:30",
-      "yamaganda": "ಬೆ. 09:00 - 10130",
+      "rahuKala": "15:00 - 16:30",
+      "gulikaKala": "12:00 - 13:30",
+      "yamaganda": "09:00 - 10:30",
       "arthaPrahara": "ಬೆ.07:30- 09:00",
       "shubhaSamaya": "ಬೆ. 07:26 - 09:13"
     },
@@ -163,5 +163,16 @@
         "raw": "ಮೀನ » ಅನಾರೋಗ್ಯ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

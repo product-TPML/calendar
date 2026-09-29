@@ -55,15 +55,15 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಪೂ.ಭಾ.",
-        "endsAt": null,
-        "nextDay": false,
-        "fullDay": true
+        "name": "ಪೂರ್ವಾಭಾದ್ರ",
+        "endsAt": "27.19",
+        "nextDay": true,
+        "fullDay": false
       },
       "tithi": {
-        "name": "ನವಮಿ",
-        "endsAt": "07.07",
-        "nextDay": false,
+        "name": "ದಶಮಿ",
+        "endsAt": "26.21",
+        "nextDay": true,
         "fullDay": false
       },
       "yoga": {
@@ -87,9 +87,9 @@
       "chandraEntryRashi": "ಕುಂಭ"
     },
     "timings": {
-      "rahuKala": "ಮ. 01:30 - 03:00",
-      "gulikaKala": "ಚೆ.9:00 - 1030",
-      "yamaganda": "ಬೆ. 06:00 - 07:30",
+      "rahuKala": "13:30 - 15:00",
+      "gulikaKala": "09:00 - 10:30",
+      "yamaganda": "06:00 - 07:30",
       "arthaPrahara": "ಮ. 05:00 - 04:30",
       "shubhaSamaya": "ಅ. 1041 - ಬೆ. 12:20 (ಮರುದಿನ)"
     },
@@ -167,5 +167,16 @@
         "raw": "ಮೀನ ». ಶಾಂತಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

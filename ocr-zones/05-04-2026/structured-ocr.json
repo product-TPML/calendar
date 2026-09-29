@@ -53,14 +53,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ವಿಶಾಖಾ",
-        "endsAt": "24.08",
-        "nextDay": true,
+        "name": "ವಿಶಾಖ",
+        "endsAt": "22.23",
+        "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ತೃತೀಯಾ",
-        "endsAt": "12.00",
+        "name": "ತದಿಗೆ",
+        "endsAt": "10.05",
         "nextDay": false,
         "fullDay": false
       },
@@ -85,9 +85,9 @@
       "chandraEntryRashi": "ತುಲಾ"
     },
     "timings": {
-      "rahuKala": "ಸಾ. 04:30 - 06:00",
-      "gulikaKala": "ಮ.05:00 - 04:30",
-      "yamaganda": "ಮ. 12:30 -01:3(",
+      "rahuKala": "16:30 - 18:00",
+      "gulikaKala": "15:00 - 16:30",
+      "yamaganda": "12:00 - 13:30",
       "arthaPrahara": "ಬ. 10:30 - 12:00",
       "shubhaSamaya": "ಮ. 02:24 - 04:1("
     },
@@ -165,5 +165,16 @@
         "raw": "ಮೀನ » ಅಭಿವೃದ್ದಿ."
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

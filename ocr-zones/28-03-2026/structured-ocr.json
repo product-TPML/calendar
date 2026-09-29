@@ -52,13 +52,13 @@
     "panchanga": {
       "nakshatra": {
         "name": "ಪುಷ್ಯ",
-        "endsAt": "14.50",
+        "endsAt": "16.33",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ದಶಮಿ",
-        "endsAt": "08.46",
+        "endsAt": "10.33",
         "nextDay": false,
         "fullDay": false
       },
@@ -83,9 +83,9 @@
       "chandraEntryRashi": "ಕರ್ಕ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 09:00 - 10:30.",
-      "gulikaKala": "ಬೆ.06:00 - 07:30",
-      "yamaganda": "ಮ. 01:30 - 3:00",
+      "rahuKala": "09:00 - 10:30",
+      "gulikaKala": "06:00 - 07:30",
+      "yamaganda": "13:30 - 15:00",
       "arthaPrahara": "ಮ. 12:00 - 01:30",
       "shubhaSamaya": "ಬೆ. 08:35 - 10:09"
     },
@@ -163,5 +163,16 @@
         "raw": "ಮೀನ ೨». ಕೀರ್ತಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

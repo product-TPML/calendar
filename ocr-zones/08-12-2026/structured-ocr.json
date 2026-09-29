@@ -58,14 +58,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಅನುರಾಧಾ",
-        "endsAt": "18.16",
+        "name": "ಅನೂರಾಧ",
+        "endsAt": "18.03",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಅಮಾವಾಸ್ಯೆ",
-        "endsAt": "30.22",
+        "endsAt": "28.58",
         "nextDay": true,
         "fullDay": false
       },
@@ -90,9 +90,9 @@
       "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
     },
     "timings": {
-      "rahuKala": "ಮ. 03:00 - 04:30",
-      "gulikaKala": "ಮ. 12:00 - 01:30",
-      "yamaganda": "ಬೆ. 09:00 - 10:30",
+      "rahuKala": "15:00 - 16:30",
+      "gulikaKala": "12:00 - 13:30",
+      "yamaganda": "09:00 - 10:30",
       "arthaPrahara": "ಬಿ. 07:30 - 09:00",
       "shubhaSamaya": "ಚೆ. 06:48 - 08:34"
     },
@@ -170,5 +170,16 @@
         "raw": "ಮೀನ » ಭಕ್ತಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

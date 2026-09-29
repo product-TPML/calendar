@@ -50,16 +50,16 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಉ.ಷಾ",
-        "endsAt": "22.51",
+        "name": "ಉತ್ತರಾಷಾಢ",
+        "endsAt": "23.18",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ದ್ವಾದಶಿ",
-        "endsAt": "06.21",
+        "name": "ತ್ರಯೋದಶಿ",
+        "endsAt": null,
         "nextDay": false,
-        "fullDay": false
+        "fullDay": true
       },
       "yoga": {
         "name": "ಆಯುಪ್ಮಾನ",
@@ -82,9 +82,9 @@
       "chandraEntryRashi": "ಮಕರ"
     },
     "timings": {
-      "rahuKala": "ಮ. 03:00 - 04:30",
-      "gulikaKala": "ಮ.12:00 - 01:30",
-      "yamaganda": "ಬೆ. 09:00 - 10:30",
+      "rahuKala": "15:00 - 16:30",
+      "gulikaKala": "12:00 - 13:30",
+      "yamaganda": "09:00 - 10:30",
       "arthaPrahara": "ಚೆ.07:30-:00",
       "shubhaSamaya": "ಮ. 03:49 - 05:34"
     },
@@ -162,5 +162,16 @@
         "raw": "ಮೀನ » ಸಂತೋಷ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

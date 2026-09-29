@@ -51,14 +51,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಜ್ಯೇಷ್ಠಾ",
-        "endsAt": "22.00",
+        "name": "ಜ್ಯೇಷ್ಠ",
+        "endsAt": "20.30",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಅಷ್ಟಮಿ",
-        "endsAt": "28.20",
+        "endsAt": "26.26",
         "nextDay": true,
         "fullDay": false
       },
@@ -83,9 +83,9 @@
       "chandraEntryRashi": "ವೃಶ್ಚಿಕ"
     },
     "timings": {
-      "rahuKala": "ಮ. 12:00 - 01:30",
-      "gulikaKala": "ಬೆ. 10:30 - 12:00",
-      "yamaganda": "ಬೆ.07:30- 09:00",
+      "rahuKala": "12:00 - 13:30",
+      "gulikaKala": "10:30 - 12:00",
+      "yamaganda": "07:30 - 09:00",
       "arthaPrahara": "ಬೆ.06:00 - 07:30",
       "shubhaSamaya": "ಸ. 12:08 - 01:55"
     },
@@ -163,5 +163,16 @@
         "raw": "ಮೀನ » ತೊಂದರೆ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

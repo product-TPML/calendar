@@ -54,14 +54,14 @@
     "panchanga": {
       "nakshatra": {
         "name": "ಕೃತ್ತಿಕಾ",
-        "endsAt": "11.04",
+        "endsAt": "8.44",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ದ್ವಾದಶಿ",
-        "endsAt": "26.05",
-        "nextDay": true,
+        "endsAt": "23.27",
+        "nextDay": false,
         "fullDay": false
       },
       "yoga": {
@@ -85,9 +85,9 @@
       "chandraEntryRashi": "ವೃಷಭ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 09:00 - 10:30.",
-      "gulikaKala": "ಬೆ.06:00 - 07:30.",
-      "yamaganda": "ಮ. 01:30 - 03:00",
+      "rahuKala": "09:00 - 10:30",
+      "gulikaKala": "06:00 - 07:30",
+      "yamaganda": "13:30 - 15:00",
       "arthaPrahara": "ಮ. 12:30 -01:30",
       "shubhaSamaya": "ಬೆ. 08:52 - 10:19"
     },
@@ -165,5 +165,16 @@
         "raw": "ಮೀನ ». ಶಾಂತಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

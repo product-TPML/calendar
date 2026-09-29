@@ -52,13 +52,13 @@
     "panchanga": {
       "nakshatra": {
         "name": "ರೋಹಿಣಿ",
-        "endsAt": "16.51",
+        "endsAt": "15.22",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ದಶಮಿ",
-        "endsAt": "14.00",
+        "endsAt": "11.18",
         "nextDay": false,
         "fullDay": false
       },
@@ -83,9 +83,9 @@
       "chandraEntryRashi": "ವೃಷಭ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 09:00 - 10:30.",
-      "gulikaKala": "ಬೆ.06:00 - 07:30",
-      "yamaganda": "ಮ. 01:30 - 03:00",
+      "rahuKala": "09:00 - 10:30",
+      "gulikaKala": "06:00 - 07:30",
+      "yamaganda": "13:30 - 15:00",
       "arthaPrahara": "ಮ. 12:00 - 01:30",
       "shubhaSamaya": "ಮ. 01:54 - 03:22"
     },
@@ -163,5 +163,16 @@
         "raw": "ಮೀನ ». ಶಾಂತಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

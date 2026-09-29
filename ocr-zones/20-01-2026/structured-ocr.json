@@ -54,13 +54,13 @@
     "panchanga": {
       "nakshatra": {
         "name": "ಶ್ರವಣ",
-        "endsAt": "13.07",
+        "endsAt": "13.19",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ದ್ವಿತೀಯಾ",
-        "endsAt": "26.43",
+        "name": "ಬಿದಿಗೆ",
+        "endsAt": "26.36",
         "nextDay": true,
         "fullDay": false
       },
@@ -85,9 +85,9 @@
       "chandraEntryRashi": "25.36"
     },
     "timings": {
-      "rahuKala": "ಮ. 03:00 - 04:30",
-      "gulikaKala": "ಮ. 12:00 - 01:30",
-      "yamaganda": "ಬೆ.09:00- 10:30",
+      "rahuKala": "15:00 - 16:30",
+      "gulikaKala": "12:00 - 13:30",
+      "yamaganda": "09:00 - 10:30",
       "arthaPrahara": "ಬಿ. 07:30 - 09:00",
       "shubhaSamaya": "ಬೆ. 02:10 - 03:51"
     },
@@ -165,5 +165,16 @@
         "raw": "ಮೀನ ». ಪ್ರೀತಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

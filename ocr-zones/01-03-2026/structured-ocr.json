@@ -51,7 +51,7 @@
     "panchanga": {
       "nakshatra": {
         "name": "ಪುಷ್ಯ",
-        "endsAt": "08.34",
+        "endsAt": "8.43",
         "nextDay": false,
         "fullDay": false
       },
@@ -81,9 +81,9 @@
       "chandraEntryRashi": "ಕರ್ಕ"
     },
     "timings": {
-      "rahuKala": "ಸ, 04:30 - 06:00",
-      "gulikaKala": "ಮ. 03:00 - 04:30",
-      "yamaganda": "ಮ. 12:00 - 01:30",
+      "rahuKala": "16:30 - 18:00",
+      "gulikaKala": "15:00 - 16:30",
+      "yamaganda": "12:00 - 13:30",
       "arthaPrahara": "ಭೆ. 10:30 - 12:00",
       "shubhaSamaya": "ಸ. 07:57 - 09:23"
     },
@@ -161,5 +161,16 @@
         "raw": "ಮೀನ » ಲಾಭ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

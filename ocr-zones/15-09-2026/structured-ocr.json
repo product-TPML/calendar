@@ -55,13 +55,13 @@
     "panchanga": {
       "nakshatra": {
         "name": "ಸ್ವಾತಿ",
-        "endsAt": "15.21",
+        "endsAt": "16.06",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ಚತುರ್ಥಿ",
-        "endsAt": "07.45",
+        "name": "ಚೌತಿ",
+        "endsAt": "7.18",
         "nextDay": false,
         "fullDay": false
       },
@@ -86,9 +86,9 @@
       "chandraEntryRashi": "ತುಲಾ"
     },
     "timings": {
-      "rahuKala": "ಮ. 03:00 - 04:30",
-      "gulikaKala": "ಮ. 12:00 - 01:30",
-      "yamaganda": "ಬೆ.09:00- 10:30",
+      "rahuKala": "15:00 - 16:30",
+      "gulikaKala": "12:00 - 13:30",
+      "yamaganda": "09:00 - 10:30",
       "arthaPrahara": "ಬ. 07:30 - 09:00",
       "shubhaSamaya": "ಬೆ. 06:01 - 07:43"
     },
@@ -166,5 +166,16 @@
         "raw": "ಮೀನ » ಸಂತೋಷ."
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

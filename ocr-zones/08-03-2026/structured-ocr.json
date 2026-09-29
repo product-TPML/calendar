@@ -51,13 +51,13 @@
     "panchanga": {
       "nakshatra": {
         "name": "ಸ್ವಾತಿ",
-        "endsAt": "13.32",
+        "endsAt": "13.02",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಪಂಚಮಿ",
-        "endsAt": "21.12",
+        "endsAt": "20.16",
         "nextDay": false,
         "fullDay": false
       },
@@ -82,9 +82,9 @@
       "chandraEntryRashi": "ತುಲಾ"
     },
     "timings": {
-      "rahuKala": "ಮ. 09:00 - 10:30",
-      "gulikaKala": "ಮ. 03:00 - 04:30.",
-      "yamaganda": "ಮ. 12:00 - 01:30",
+      "rahuKala": "16:30 - 18:00",
+      "gulikaKala": "15:00 - 16:30",
+      "yamaganda": "12:00 - 13:30",
       "arthaPrahara": "ಬೆ. 10:00 - 12:00",
       "shubhaSamaya": "ಬೆ. 08:33 - 09:58"
     },
@@ -162,5 +162,16 @@
         "raw": "ಮೀನ » ಪ್ರೀತಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

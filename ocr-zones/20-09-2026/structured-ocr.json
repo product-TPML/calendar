@@ -56,14 +56,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಪೂಷಾ,",
-        "endsAt": "28.35",
+        "name": "ಪೂರ್ವಾಷಾಢ",
+        "endsAt": "28.05",
         "nextDay": true,
         "fullDay": false
       },
       "tithi": {
         "name": "ನವಮಿ",
-        "endsAt": "17.52",
+        "endsAt": "16.04",
         "nextDay": false,
         "fullDay": false
       },
@@ -88,9 +88,9 @@
       "chandraEntryRashi": "ಧನು"
     },
     "timings": {
-      "rahuKala": "ಸ, 04:30 - 06:00.",
-      "gulikaKala": "ಮ.65:00- 64:30",
-      "yamaganda": "ಮ. 12:00 - 01:30",
+      "rahuKala": "16:30 - 18:00",
+      "gulikaKala": "15:00 - 16:30",
+      "yamaganda": "12:00 - 13:30",
       "arthaPrahara": "ಬ. 10130 - 12:00",
       "shubhaSamaya": "ಸ. 11:12 - 12:59"
     },
@@ -168,5 +168,16 @@
         "raw": "ಮೀನ ». ಲಾಭ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

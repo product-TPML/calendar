@@ -58,13 +58,13 @@
     "panchanga": {
       "nakshatra": {
         "name": "ರೇವತಿ",
-        "endsAt": "13.36",
+        "endsAt": "12.17",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಸಪ್ತಮಿ",
-        "endsAt": "23.11",
+        "endsAt": "21.13",
         "nextDay": false,
         "fullDay": false
       },
@@ -89,9 +89,9 @@
       "chandraEntryRashi": "13.36"
     },
     "timings": {
-      "rahuKala": "ಸ. 04:30 - 06:00.",
-      "gulikaKala": "ಮ.65:08- 04:36",
-      "yamaganda": "ಮ. 12:00-01:30",
+      "rahuKala": "16:30 - 18:00",
+      "gulikaKala": "15:00 - 16:30",
+      "yamaganda": "12:00 - 13:30",
       "arthaPrahara": "ಮ. 10:30 - 12:00",
       "shubhaSamaya": "ಬೆ. 11:15 - 12:49"
     },
@@ -169,5 +169,16 @@
         "raw": "ಮೀನ ». ಪ್ರೀತಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

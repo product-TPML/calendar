@@ -47,15 +47,15 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಸ್ವಾತಿ 29",
-        "endsAt": "00.03",
+        "name": "ಸ್ವಾತಿ",
+        "endsAt": "5.45",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ಸಪ್ತಮಿ",
-        "endsAt": "29.02",
-        "nextDay": true,
+        "endsAt": "5.38",
+        "nextDay": false,
         "fullDay": false
       },
       "yoga": {
@@ -79,9 +79,9 @@
       "chandraEntryRashi": "ತುಲಾ"
     },
     "timings": {
-      "rahuKala": "ಮ. 04:30 -06:00",
-      "gulikaKala": "ಮ. 03:00 - 04:30",
-      "yamaganda": "ಮ. 12:00 - 01:30",
+      "rahuKala": "16:30 - 18:00",
+      "gulikaKala": "15:00 - 16:30",
+      "yamaganda": "12:00 - 13:30",
       "arthaPrahara": "ಬ. 10:30 - 12:00",
       "shubhaSamaya": "ಸ. 07:18 - 09:04"
     },
@@ -159,5 +159,16 @@
         "raw": "ಮೀನ ೨». ಶ್ರೆತೆ.."
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

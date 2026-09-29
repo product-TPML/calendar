@@ -56,14 +56,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಧನಿಷ್ಠಾ",
-        "endsAt": "19.48",
+        "name": "ಧನಿಷ್ಠ",
+        "endsAt": "17.34",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ದಶಮಿ",
-        "endsAt": "14.12",
+        "endsAt": "10.30",
         "nextDay": false,
         "fullDay": false
       },
@@ -88,9 +88,9 @@
       "chandraEntryRashi": "ಮಕರ"
     },
     "timings": {
-      "rahuKala": "ಮ. 12:00 - 01:30",
-      "gulikaKala": "ಚೆ.10136 12:06",
-      "yamaganda": "ಚೆ. 07:36-05:0",
+      "rahuKala": "12:00 - 13:30",
+      "gulikaKala": "10:30 - 12:00",
+      "yamaganda": "07:30 - 09:00",
       "arthaPrahara": "ಬೆ. 06:00 - 07:30",
       "shubhaSamaya": "ಬೆ. 08:38 - 10:21"
     },
@@ -168,5 +168,16 @@
         "raw": "ಮೀನ » ಪರೀಕ್ಷೆ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

@@ -56,14 +56,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ರೋಹಿಣಿ",
-        "endsAt": "26.08",
-        "nextDay": true,
+        "name": "ಕೃತ್ತಿಕಾ",
+        "endsAt": "8.02",
+        "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ತೃತೀಯಾ",
-        "endsAt": "07.28",
+        "name": "ತದಿಗೆ",
+        "endsAt": "11.07",
         "nextDay": false,
         "fullDay": false
       },
@@ -88,9 +88,9 @@
       "chandraEntryRashi": "ವೃಷಭ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 07:30 - 09:00.",
-      "gulikaKala": "ಮ.01130 - 03:00",
-      "yamaganda": "ಚೆ. 10:30 - 12:00",
+      "rahuKala": "07:30 - 09:00",
+      "gulikaKala": "13:30 - 15:00",
+      "yamaganda": "10:30 - 12:00",
       "arthaPrahara": "ಬೆ. 09:00 - 1030",
       "shubhaSamaya": "ಜ. 12:44 - 03:52, ಮ. 11:16 - ಜ. 12:42 (ಮರುದಿನ)"
     },
@@ -168,5 +168,16 @@
         "raw": "ಮೀನ ೫» ಭಯ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

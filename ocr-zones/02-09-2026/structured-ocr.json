@@ -56,14 +56,14 @@
     "panchanga": {
       "nakshatra": {
         "name": "ಭರಣಿ",
-        "endsAt": "25.43",
+        "endsAt": "26.21",
         "nextDay": true,
         "fullDay": false
       },
       "tithi": {
-        "name": "ಸ್ರ?",
-        "endsAt": "06.13",
-        "nextDay": false,
+        "name": "ಷಷ್ಠಿ",
+        "endsAt": "27.50",
+        "nextDay": true,
         "fullDay": false
       },
       "yoga": {
@@ -87,9 +87,9 @@
       "chandraEntryRashi": "ಮೇಷ"
     },
     "timings": {
-      "rahuKala": "ಮ. 12:00 - 01:30",
-      "gulikaKala": "ಬೆ. 10:30 - 12:00",
-      "yamaganda": "ಬೆ.07:30-09:00",
+      "rahuKala": "12:00 - 13:30",
+      "gulikaKala": "10:30 - 12:00",
+      "yamaganda": "07:30 - 09:00",
       "arthaPrahara": "ಬ. 06:00 - 07:30",
       "shubhaSamaya": "ಸ. 09:06 - 10:38"
     },
@@ -167,5 +167,16 @@
         "raw": "ಮೀನ » ಯಶಸ್ಸು"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

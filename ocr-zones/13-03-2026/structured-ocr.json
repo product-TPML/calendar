@@ -48,16 +48,16 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಪೂ.ಷಾ",
-        "endsAt": "27.03",
+        "name": "ಪೂರ್ವಾಷಾಢ",
+        "endsAt": "25.16",
         "nextDay": true,
         "fullDay": false
       },
       "tithi": {
         "name": "ದಶಮಿ",
-        "endsAt": null,
+        "endsAt": "18.06",
         "nextDay": false,
-        "fullDay": true
+        "fullDay": false
       },
       "yoga": {
         "name": "ಪ್ಯಕೀಪಾತ",
@@ -80,9 +80,9 @@
       "chandraEntryRashi": "ದನು"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 10:30 - 12:00.",
-      "gulikaKala": "ಬೆ. 07:30 - 09:00",
-      "yamaganda": "ಮ. 03:00 - 04:30",
+      "rahuKala": "10:30 - 12:00",
+      "gulikaKala": "07:30 - 09:00",
+      "yamaganda": "15:00 - 16:30",
       "arthaPrahara": "ಮ. 01:30 - 3:0",
       "shubhaSamaya": "ಸ. 09:47 - 11:32"
     },
@@ -160,5 +160,16 @@
         "raw": "ಮೀನ » ಉಡುಗೊರೆ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

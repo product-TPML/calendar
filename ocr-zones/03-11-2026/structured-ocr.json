@@ -51,14 +51,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಮಘಾ",
-        "endsAt": "27.27",
-        "nextDay": true,
+        "name": "ಆಶ್ಲೇಷ",
+        "endsAt": "7.42",
+        "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ನವಮಿ",
-        "endsAt": "11.55",
+        "endsAt": "14.53",
         "nextDay": false,
         "fullDay": false
       },
@@ -83,9 +83,9 @@
       "chandraEntryRashi": "ಸಿಂಹ"
     },
     "timings": {
-      "rahuKala": "ಮ. 03:00 - 04:30",
-      "gulikaKala": "ಮ. 12:00 - 01:30",
-      "yamaganda": "ಬೆ.09:00- 10:30",
+      "rahuKala": "15:00 - 16:30",
+      "gulikaKala": "12:00 - 13:30",
+      "yamaganda": "09:00 - 10:30",
       "arthaPrahara": "ಚೆ. 07:30 - 0:0",
       "shubhaSamaya": "ಬೆ. 02:13 - 03:46"
     },
@@ -163,5 +163,16 @@
         "raw": "ಮೀನ ». ಲಾಭ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

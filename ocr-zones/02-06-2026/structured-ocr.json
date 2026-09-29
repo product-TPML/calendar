@@ -49,14 +49,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಮೂಲಾ",
-        "endsAt": "22.06",
+        "name": "ಮೂಲ",
+        "endsAt": "20.32",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ದ್ವಿತೀಯಾ",
-        "endsAt": "19.02",
+        "name": "ಬಿದಿಗೆ",
+        "endsAt": "16.55",
         "nextDay": false,
         "fullDay": false
       },
@@ -81,9 +81,9 @@
       "chandraEntryRashi": "ಧನು"
     },
     "timings": {
-      "rahuKala": "ಮ. 03:00 - 04:30",
-      "gulikaKala": "ಮ. 12:00 - 01:30",
-      "yamaganda": "ಬೆ.09:00- 10:30",
+      "rahuKala": "15:00 - 16:30",
+      "gulikaKala": "12:00 - 13:30",
+      "yamaganda": "09:00 - 10:30",
       "arthaPrahara": "ಬ. 07:30 - 09:00",
       "shubhaSamaya": "ಮ. 02:55 - 04:45"
     },
@@ -161,5 +161,16 @@
         "raw": "ಮೀನ » ಭಕ್ತಿ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

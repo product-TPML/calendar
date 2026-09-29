@@ -54,14 +54,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಉ.ಷಾ",
-        "endsAt": "11.52",
+        "name": "ಉತ್ತರಾಷಾಢ",
+        "endsAt": "12.20",
         "nextDay": false,
         "fullDay": false
       },
       "tithi": {
-        "name": "ಪ್ರತಿಪದಾ",
-        "endsAt": "26.15",
+        "name": "ಪಾಡ್ಯ",
+        "endsAt": "26.19",
         "nextDay": true,
         "fullDay": false
       },
@@ -86,9 +86,9 @@
       "chandraEntryRashi": "ಮಕರ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 07:30 - 09:00.",
-      "gulikaKala": "ಮ. 01:30 - 03:00",
-      "yamaganda": "ಬೆ. 1030- 12:00",
+      "rahuKala": "07:30 - 09:00",
+      "gulikaKala": "13:30 - 15:00",
+      "yamaganda": "10:30 - 12:00",
       "arthaPrahara": "ಬ.09:00 - 10:30",
       "shubhaSamaya": "ಬೆ. 05:02 - 06:44"
     },
@@ -166,5 +166,16 @@
         "raw": "ಮೀನ » ವಿನಯ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }

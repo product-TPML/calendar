@@ -57,14 +57,14 @@
     ],
     "panchanga": {
       "nakshatra": {
-        "name": "ಹಸ್ತ",
-        "endsAt": "28.43",
-        "nextDay": true,
+        "name": "ಹಸ್ತಾ",
+        "endsAt": "5.21",
+        "nextDay": false,
         "fullDay": false
       },
       "tithi": {
         "name": "ದ್ವಾದಶಿ",
-        "endsAt": "10.31",
+        "endsAt": "10.59",
         "nextDay": false,
         "fullDay": false
       },
@@ -89,9 +89,9 @@
       "chandraEntryRashi": "ಕನ್ನಾ"
     },
     "timings": {
-      "rahuKala": "ಬೆ. 01:30 - 12:00.",
-      "gulikaKala": "ಬೆ.07:30- 09:00",
-      "yamaganda": "ಮ. 03:00 - 04:30",
+      "rahuKala": "10:30 - 12:00",
+      "gulikaKala": "07:30 - 09:00",
+      "yamaganda": "15:00 - 16:30",
       "arthaPrahara": "ಮ. 01:30 - 05:00",
       "shubhaSamaya": "ಠಾ.10331 - 12:10 (ಮರುದಿನ)"
     },
@@ -169,5 +169,16 @@
         "raw": "ಮೀನ ». ವಿಭಾಗ"
       }
     ]
+  },
+  "mergeSources": {
+    "pdfOnly": false,
+    "tithi": "pdf",
+    "nakshatra": "pdf",
+    "timings.rahuKala": "pdf",
+    "timings.gulikaKala": "pdf",
+    "timings.yamaganda": "pdf",
+    "timings.arthaPrahara": "ocr",
+    "timings.shubhaSamaya": "ocr",
+    "calendar": "ocr"
   }
 }
