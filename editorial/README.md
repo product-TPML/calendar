@@ -92,3 +92,55 @@ Regenerate the export any time with:
 ```
 node export-editorial.js
 ```
+
+## Panchanga review sheet
+
+`panchanga-review.csv` is a flat, one-row-per-date export of the **Panchanga
+tab data only** (no events), produced by `node export-panchanga-review.js`
+(run from the repo root). It covers all 365 dates of 2026 in chronological
+order.
+
+## Purpose
+
+This sheet is for reviewing the merged panchanga data (OCR + PDF): each row
+mirrors exactly what the app's Panchanga view displays, plus a
+`*_source` column per field group recording where that value came from.
+
+## Source labels
+
+| mergeSources value | Source cell |
+|---|---|
+| `pdf` | `PV Calendar` |
+| `ocr` / `ocr-neighbor` | `kannada calendar.in` |
+
+- `tithi_*` → `mergeSources.tithi`; `nakshatra_*` → `mergeSources.nakshatra`;
+  each timing → `mergeSources["timings.<key>"]`.
+- Calendar fields use the granular key (`calendar.months`,
+  `calendar.samvatsara`, `calendar.shakaYear`) when present, else the plain
+  `calendar` key.
+- paksha / yoga / karana / ayana / solar_rashi / chandra_rashi / sunrise /
+  sunset default to `kannada calendar.in` when the value is present.
+- `jathaka_source` is `kannada calendar.in` when any prediction is present.
+- **A source cell is left blank whenever its value cell is blank** (no data
+  to source). This affects, for example, yoga/karana on the 15 PDF-only
+  dates, and any unparseable OCR timing string that the app drops.
+
+## Column semantics
+
+- `date`: ISO `YYYY-MM-DD`. (Not `DD-MM-YYYY`: Google Sheets/Excel auto-convert
+  `DD-MM-YYYY` inconsistently on import — days 1–12 become dates, day 13+ stay
+  text — so ISO is used to stay unambiguous in every locale.)
+- `months`: OCR months joined with `–` (en dash); empty and `—` items dropped.
+- `*_ends`: app rendering of `endsAt` — `HH:MM`, `ಮರುದಿನ HH:MM` for
+  next-day ends, or `—` for full-day markers / missing data.
+- Timings (`rahu_kala` … `shubha_samaya`): `HH:MM – HH:MM` when the stored
+  string yields two usable time tokens; blank otherwise (the app drops the
+  timing). Values >=24 on endsAt mean next day.
+- Jathaka: 12 fixed columns named after the canonical Kannada rashi names;
+  each holds that day's prediction for the rashi.
+
+Regenerate the sheet any time with:
+
+```
+node export-panchanga-review.js
+```
