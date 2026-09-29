@@ -117,7 +117,7 @@ function mkOCR() {
     },
     timings: {
       rahuKala: "ಬೆ. 05:30 - 09:00.", gulikaKala: "ಬೆ. 13:30 - 15:00.",
-      yamaganda: "ಬೆ. 10:30 - 99:99.", arthaPrahara: "ಬೆ. 09:00 - 10:30.",
+      yamaganda: "ಬೆ. 10:30 - 11:30.", arthaPrahara: "ಬೆ. 09:00 - 99:99.",
       shubhaSamaya: "ಬೆ. 18:31 - 20:15."
     },
     jathaka: ["ಮೇಷ", "ವೃಷಭ", "ಮಿಥುನ", "ಕರ್ಕಾಟಕ", "ಸಿಂಹ", "ಕನ್ಯಾ", "ತುಲಾ", "ವೃಶ್ಚಿಕ", "ಧನಸ್ಸು", "ಮಕರ", "ಕುಂಭ", "ಮೀನ"].map((rashi) => ({ rashi, prediction: "ಮೆಚ್ಚುಗೆ" }))
@@ -206,10 +206,33 @@ function assert(cond, msg) {
   assert(els.todayContent.innerHTML.includes("timing-legend"), "timing color legend renders");
   assert((els.todayContent.innerHTML.match(/class="jr"/g) || []).length === 12, "all twelve horoscope signs render");
   assert(els.todayContent.innerHTML.includes("ರಾಶಿ ಭವಿಷ್ಯ"), "Panchanga includes horoscope details");
+
+  console.log("5) Panchanga PV-only toggle filters OCR content");
+  assert(els.todayContent.innerHTML.includes('id="panchangaPvOnly"'), "PV-only toggle renders");
+  assert(!els.todayContent.innerHTML.includes("ಪಿವಿ ಕ್ಯಾಲೆಂಡರ್ ಆಧಾರದಲ್ಲಿ"), "default source note is not PV text");
+  els.panchangaPvOnly.checked = true;
+  els.panchangaPvOnly.click("change");
+  await tick();
+  assert((els.todayContent.innerHTML.match(/class="panga-head"/g) || []).length === 2, "PV-only mode shows exactly two Panchanga cards");
+  assert(!els.todayContent.innerHTML.includes('id="homeJathaka"'), "PV-only hides jathaka card");
+  assert(!els.todayContent.innerHTML.includes("ರಾಶಿ ಭವಿಷ್ಯ"), "PV-only hides horoscope heading");
+  assert(!els.todayContent.innerHTML.includes("panga-meta"), "PV-only hides panga-meta block");
+  assert(!els.todayContent.innerHTML.includes("sun-row"), "PV-only hides sun-row");
+  var pvTimings = sectionBody(els.todayContent.innerHTML, "body-homeTimings");
+  assert((pvTimings.match(/<li class="tl-row/g) || []).length === 3, "PV-only timings list has exactly three rows");
+  assert(pvTimings.includes("ರಾಹು ಕಾಲ") && pvTimings.includes("ಗುಳಿಕ ಕಾಲ") && pvTimings.includes("ಯಮಗಂಡ"), "PV-only timings include rahu/gulika/yamaganda");
+  assert(!pvTimings.includes("ಅರ್ಥ ಪ್ರಹರ") && !pvTimings.includes("ಶುಭ ಸಮಯ"), "PV-only timings exclude artha/shubha");
+  assert(els.todayContent.innerHTML.includes("ಪಿವಿ ಕ್ಯಾಲೆಂಡರ್ ಆಧಾರದಲ್ಲಿ"), "PV-only source note text");
+  assert(sessionStore.pvPanchangaPvOnly === "1", "PV-only state persisted to sessionStorage");
+  els.panchangaPvOnly.checked = false;
+  els.panchangaPvOnly.click("change");
+  await tick();
+  assert((els.todayContent.innerHTML.match(/class="panga-head"/g) || []).length === 4, "toggling off restores four Panchanga cards");
+
   els.homeEventsMode.click();
   assert(els.todayContent.innerHTML.includes("homeEvents"), "Events mode switches back");
 
-  console.log("5) Week and Month use event data");
+  console.log("6) Week and Month use event data");
   tabEls.week.click();
   assert(els.weekTitle.textContent.includes("–"), "Week header shows a date range");
   assert((els.weekAgenda.innerHTML.match(/class="week-day"/g) || []).length === 35, "Week renders the initial stream");
@@ -226,12 +249,13 @@ function assert(cond, msg) {
   tabEls.day.click();
   assert(els.mastheadDate.textContent.includes(String(parseInt(DAY8.slice(0, 2), 10))), "Day preserves selected date");
 
-  console.log("6) PV load failure is explicit");
+  console.log("7) PV load failure is explicit");
   for (const key in els) delete els[key];
   for (const key in tabEls) delete tabEls[key];
   calls.length = 0;
   for (const key in pending) delete pending[key];
   delete sessionStore.pvDate;
+  delete sessionStore.pvPanchangaPvOnly;
   vm.runInThisContext(fs.readFileSync(APP_PATH, "utf8"), { filename: APP_PATH });
   documentStub._init();
   assert(count("data/pv-calendar-data.json") === 1, "fresh boot requests PV data");
