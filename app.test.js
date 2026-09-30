@@ -179,6 +179,7 @@ function assert(cond, msg) {
   assert(els.homeDistrictSelect.value === "Bagalkot", "district selection persists");
   assert(localStore.pvDistrict === "Bagalkot" && !("pvDistrict" in sessionStore), "district is remembered across visits (localStorage), not per session");
   assert((els.todayContent.innerHTML.match(/class="ds-day/g) || []).length === 7, "Home shows a seven-day strip");
+  assert(els.todayContent.innerHTML.includes('class="scope-legend strip-legend"') && els.todayContent.innerHTML.includes('scope-dot state'), "Home explains the strip dots with a legend");
   assert(els.todayContent.innerHTML.includes("ds-day sel today") || els.todayContent.innerHTML.includes("ds-day today sel") || els.todayContent.innerHTML.includes('class="ds-day sel'), "strip marks the selected day");
   assert(!els.todayContent.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") && !els.todayContent.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ."), "Home no longer repeats per-scope empty notes");
 
