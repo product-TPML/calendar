@@ -740,32 +740,14 @@
       weekScopesHTML(key, district, statewide) + '</section>';
   }
 
-  /* A run of two or more event-free days collapses into one row of tappable day chips. */
-  function weekGapHTML(keys) {
-    return '<section class="week-day week-gap" data-empty="1"><div class="gap-days">' + keys.map(function (k) {
-      var d = parseKey(k);
-      return '<button type="button" class="gap-day" data-day="' + k + '" aria-label="' + WEEKDAYS[d.getDay()] + " " + kn(d.getDate()) + " " + MONTHS[d.getMonth()] + '"><span>' + WEEKDAYS_SHORT[d.getDay()] + '</span><b>' + kn(d.getDate()) + '</b></button>';
-    }).join("") + '</div><span class="gap-note">ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ</span></section>';
-  }
-
   function weekBlockHTML(startKey) {
-    var start = parseKey(startKey), end = new Date(start), todayKey = keyFor(new Date()), rows = [], run = [];
+    var start = parseKey(startKey), end = new Date(start);
     end.setDate(end.getDate() + 6);
-    var flush = function () {
-      if (run.length > 1) rows.push(weekGapHTML(run));
-      else if (run.length === 1) rows.push(weekAgendaHTML(run[0]));
-      run = [];
-    };
-    for (var i = 0; i < 7; i++) {
-      var d = new Date(start); d.setDate(d.getDate() + i);
-      var k = keyFor(d);
-      /* Sundays and today keep their own row even when empty. */
-      var quiet = d.getDay() !== 0 && k !== todayKey && !districtEventsFor(k).length && !culturalEventsFor(k).length && !stateEventsFor(k).length;
-      if (quiet) run.push(k);
-      else { flush(); rows.push(weekAgendaHTML(k)); }
-    }
-    flush();
-    return '<section class="week-block" data-start="' + startKey + '"><h2 class="stream-period-title">' + periodLabel(start, end) + '</h2>' + rows.join("") + '</section>';
+    /* Every day gets the same row; days without events just have no list under them. */
+    return '<section class="week-block" data-start="' + startKey + '"><h2 class="stream-period-title">' + periodLabel(start, end) + '</h2>' +
+      Array.from({ length: 7 }, function (_, i) {
+        var d = new Date(start); d.setDate(d.getDate() + i); return weekAgendaHTML(keyFor(d));
+      }).join("") + '</section>';
   }
 
   function weekKeyShift(key, weeks) {

@@ -260,7 +260,8 @@ function assert(cond, msg) {
   assert(els.viewDay.hidden === false && els.viewMonth.hidden === true, "tapping a Month day redirects to Home");
   assert(sessionStore.pvDate === tapped && els.mastheadDate.textContent.includes(String(parseInt(tapped.slice(0, 2), 10))), "Home opens with the tapped day selected");
   tabEls.week.click();
-  assert(els.weekAgenda.innerHTML.includes('class="week-day week-gap"') && els.weekAgenda.innerHTML.includes('class="gap-day"'), "Week merges runs of event-free days into one row of day chips");
+  assert((els.weekAgenda.innerHTML.match(/class="week-day-title"/g) || []).length === 35, "Week gives every day the same row, empty or not");
+  assert(els.weekAgenda.innerHTML.includes('data-empty="1"') && !els.weekAgenda.innerHTML.includes("gap-day"), "Days without events keep the same row (no merged chips)");
   assert(els.weekAgenda.innerHTML.includes("<b>" + parseInt(INITIAL.slice(0, 2), 10) + "</b>") && els.weekAgenda.innerHTML.includes("data-today=\"1\""), "Week shows a big date number and marks today");
   assert(!els.weekAgenda.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") && !els.weekAgenda.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ವಿಶೇಷ ದಿನವಿಲ್ಲ."), "Week no longer repeats empty-scope notes");
   tabEls.day.click();
