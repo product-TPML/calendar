@@ -58,6 +58,13 @@ global.sessionStorage = {
   removeItem(k) { delete sessionStore[k]; },
 };
 
+const localStore = {};
+global.localStorage = {
+  getItem(k) { return k in localStore ? localStore[k] : null; },
+  setItem(k, v) { localStore[k] = String(v); },
+  removeItem(k) { delete localStore[k]; },
+};
+
 const APP_PATH = path.join(__dirname, "app.js");
 vm.runInThisContext(fs.readFileSync(APP_PATH, "utf8"), { filename: APP_PATH });
 
@@ -143,14 +150,14 @@ function assert(cond, msg) {
   await tick();
   assert(els.todayContent.innerHTML.includes("ಇಂದಿನ ಕಾರ್ಯಕ್ರಮಗಳು"), "Home today heading shown");
   assert(els.todayContent.innerHTML.includes('id="homeDistrictSelect"'), "Home district selector shown below the date");
-  assert(sectionBody(els.todayContent.innerHTML, "homeEvents").includes('id="homeEvents"') && sectionBody(els.todayContent.innerHTML, "homeEvents").includes(">ಕಾರ್ಯಕ್ರಮಗಳು</h3>"), "all Home events use one semantic section");
+  assert(sectionBody(els.todayContent.innerHTML, "homeEvents").includes('id="homeEvents"') && sectionBody(els.todayContent.innerHTML, "homeEvents").includes('aria-label="ಕಾರ್ಯಕ್ರಮಗಳು"'), "all Home events use one semantic section");
   assert(!els.todayContent.innerHTML.includes('id="homeReligious"') && !els.todayContent.innerHTML.includes('id="homeCultural"'), "Home has no separate event-type sections");
   assert(els.todayContent.innerHTML.includes('role="combobox"') && els.todayContent.innerHTML.includes('role="listbox"'), "district picker exposes combobox/listbox semantics");
   assert(els.todayContent.innerHTML.includes('class="district-option-count"'), "district menu includes separated count badges");
   assert(sectionBody(els.todayContent.innerHTML, "homeEvents").includes("PV-Karnataka-" + INITIAL), "Karnataka event shown with empty district");
   assert(sectionBody(els.todayContent.innerHTML, "homeEvents").includes("ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ") && !sectionBody(els.todayContent.innerHTML, "homeEvents").includes("ಧಾರ್ಮಿಕ ಕಾರ್ಯಕ್ರಮಗಳು") && !sectionBody(els.todayContent.innerHTML, "homeEvents").includes("ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು"), "no-district empty state is preserved without event-type headings");
-  assert(els.todayContent.innerHTML.includes(">Bagalkot (3)</option>"), "Day district count is contextual");
-  assert(els.todayContent.innerHTML.includes(">Ballari (1)</option>"), "district count excludes Karnataka-wide rows");
+  assert(els.todayContent.innerHTML.includes(">ಬಾಗಲಕೋಟೆ (3)</option>"), "Day district count is contextual, in Kannada");
+  assert(els.todayContent.innerHTML.includes(">ಬಳ್ಳಾರಿ (1)</option>"), "district count excludes Karnataka-wide rows");
   assert(els.todayContent.innerHTML.includes("ಮುಂದಿನ 7 ದಿನಗಳ ಕಾರ್ಯಕ್ರಮಗಳು"), "seven-day upcoming section shown");
   assert(els.todayContent.innerHTML.includes('id="homeEventsMode"'), "Events mode is the default Home mode");
   assert(!els.todayContent.innerHTML.includes("panga-grid"), "Events mode does not render Panchanga UI");
@@ -164,12 +171,16 @@ function assert(cond, msg) {
   assert(sectionBody(els.todayContent.innerHTML, "homeEvents").includes("Cultural-Bagalkot-" + INITIAL), "selected district cultural event shown in merged section");
   assert(sectionBody(els.todayContent.innerHTML, "homeEvents").includes("ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು") && sectionBody(els.todayContent.innerHTML, "homeEvents").includes("ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು"), "merged section retains scope subheadings");
   assert(!sectionBody(els.todayContent.innerHTML, "homeEvents").includes("ಧಾರ್ಮಿಕ ಕಾರ್ಯಕ್ರಮಗಳು") && !sectionBody(els.todayContent.innerHTML, "homeEvents").includes("ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು"), "selected Home has no separate event-type headings");
-  assert(els.todayContent.innerHTML.includes(">Bengaluru Urban (1)</option>"), "Home district count includes cultural events");
+  assert(els.todayContent.innerHTML.includes(">ಬೆಂಗಳೂರು ನಗರ (1)</option>"), "Home district count includes cultural events");
   assert(els.todayContent.innerHTML.includes("PV-Range"), "range event shown on its start date");
   assert((sectionBody(els.todayContent.innerHTML, "homeEvents").match(/PV-Bagalkot-/g) || []).length === 1, "local event is not duplicated in merged sections");
   assert(sectionBody(els.todayContent.innerHTML, "upcomingEvents1").includes("PV-Bagalkot-" + NEXT) && sectionBody(els.todayContent.innerHTML, "upcomingEvents1").includes("Cultural-Bagalkot-" + NEXT), "upcoming PV and cultural events share one section");
   assert(!sectionBody(els.todayContent.innerHTML, "upcomingEvents1").includes("ધાર್ಮಿಕ ಕಾರ್ಯಕ್ರಮಗಳು") && !sectionBody(els.todayContent.innerHTML, "upcomingEvents1").includes("ಸಾಂસ્કૃતિક ಕಾರ್ಯಕ್ರಮಗಳು"), "upcoming has no separate event-type headings");
   assert(els.homeDistrictSelect.value === "Bagalkot", "district selection persists");
+  assert(localStore.pvDistrict === "Bagalkot" && !("pvDistrict" in sessionStore), "district is remembered across visits (localStorage), not per session");
+  assert((els.todayContent.innerHTML.match(/class="ds-day/g) || []).length === 7, "Home shows a seven-day strip");
+  assert(els.todayContent.innerHTML.includes("ds-day sel today") || els.todayContent.innerHTML.includes("ds-day today sel") || els.todayContent.innerHTML.includes('class="ds-day sel'), "strip marks the selected day");
+  assert(!els.todayContent.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") && !els.todayContent.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ."), "Home no longer repeats per-scope empty notes");
 
   console.log("3) date navigation uses PV without OCR");
   els.nextDay.click();
@@ -185,7 +196,7 @@ function assert(cond, msg) {
   els.nextDay.click();
   els.nextDay.click();
   els.nextDay.click();
-  assert(els.todayContent.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ."), "empty date shows the merged event empty state");
+  assert(els.todayContent.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ."), "empty date shows one collapsed empty state");
 
   console.log("4) Panchanga mode loads selected-date OCR lazily");
   const ocrUrl = "ocr-zones/" + DAY8 + "/structured-ocr.json";
@@ -232,7 +243,7 @@ function assert(cond, msg) {
   console.log("6) Week and Month use event data");
   tabEls.week.click();
   assert(els.weekTitle.textContent.includes("–"), "Week header shows a date range");
-  assert((els.weekAgenda.innerHTML.match(/class="week-day"/g) || []).length === 35, "Week renders the initial stream");
+  assert((els.weekAgenda.innerHTML.match(/class="week-block"/g) || []).length === 5, "Week renders the initial stream of five weeks");
   assert(els.weekAgenda.innerHTML.includes("week-day-date"), "Week rows show complete right-aligned dates");
   assert(!els.weekAgenda.innerHTML.includes("week-day-counts"), "Week rows omit festival counts");
   assert(els.weekAgenda.innerHTML.includes("Cultural-Bagalkot-" + INITIAL), "Week includes cultural events");
@@ -242,9 +253,18 @@ function assert(cond, msg) {
   assert(els.monthScroller.innerHTML.includes("date-count"), "Month shows event counts in cells");
   assert(els.monthScroller.innerHTML.includes("Cultural-Bagalkot-" + INITIAL), "Month agenda includes cultural events");
   assert(els.monthScroller.innerHTML.includes('date-count district">3</b>'), "Month date count includes cultural events");
-  assert(els.monthDistrictSelect.innerHTML.includes(">Bagalkot (7)</option>"), "Month district count includes cultural events");
+  assert(els.monthDistrictSelect.innerHTML.includes(">ಬಾಗಲಕೋಟೆ (7)</option>"), "Month district count includes cultural events");
+  assert(els.monthScroller.innerHTML.includes(">ಶು</span>") && els.monthScroller.innerHTML.includes(">ಶ</span>"), "Month weekday chips tell Friday (ಶು) and Saturday (ಶ) apart");
+  const tapped = INITIAL;
+  els.monthScroller._handlers.click[0]({ target: { closest: () => ({ dataset: { day: tapped } }) } });
+  assert(els.viewDay.hidden === false && els.viewMonth.hidden === true, "tapping a Month day redirects to Home");
+  assert(sessionStore.pvDate === tapped && els.mastheadDate.textContent.includes(String(parseInt(tapped.slice(0, 2), 10))), "Home opens with the tapped day selected");
+  tabEls.week.click();
+  assert(els.weekAgenda.innerHTML.includes('class="week-day week-gap"') && els.weekAgenda.innerHTML.includes('class="gap-day"'), "Week merges runs of event-free days into one row of day chips");
+  assert(els.weekAgenda.innerHTML.includes("<b>" + parseInt(INITIAL.slice(0, 2), 10) + "</b>") && els.weekAgenda.innerHTML.includes("data-today=\"1\""), "Week shows a big date number and marks today");
+  assert(!els.weekAgenda.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") && !els.weekAgenda.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ವಿಶೇಷ ದಿನವಿಲ್ಲ."), "Week no longer repeats empty-scope notes");
   tabEls.day.click();
-  assert(els.mastheadDate.textContent.includes(String(parseInt(DAY8.slice(0, 2), 10))), "Day preserves selected date");
+  assert(els.mastheadDate.textContent.includes(String(parseInt(INITIAL.slice(0, 2), 10))), "Day follows the date chosen in Month");
 
   console.log("7) PV load failure is explicit");
   for (const key in els) delete els[key];

@@ -1,0 +1,16 @@
+{
+  "name": "ಪ್ರಜಾವಾಣಿ ಕ್ಯಾಲೆಂಡರ್",
+  "short_name": "PV ಕ್ಯಾಲೆಂಡರ್",
+  "description": "ಕನ್ನಡ ಧಾರ್ಮಿಕ ಮತ್ತು ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳ ಕ್ಯಾಲೆಂಡರ್",
+  "lang": "kn",
+  "start_url": "index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#942a2a",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

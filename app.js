@@ -14,6 +14,7 @@
     weekFirst: null, weekLast: null, weekHeader: null, monthFirst: null, monthLast: null, monthHeader: null };
 
   var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
+  var WEEKDAYS_SHORT = ["ಭಾ", "ಸೋ", "ಮಂ", "ಬು", "ಗು", "ಶು", "ಶ"];
   var MONTHS = ["ಜನವರಿ", "ಫೆಬ್ರವರಿ", "ಮಾರ್ಚ್", "ಏಪ್ರಿಲ್", "ಮೇ", "ಜೂನ್", "ಜುಲೈ", "ಆಗಸ್ಟ್", "ಸೆಪ್ಟೆಂಬರ್", "ಅಕ್ಟೋಬರ್", "ನವೆಂಬರ್", "ಡಿಸೆಂಬರ್"];
   var KN_DIGITS = ["೦", "೧", "೨", "೩", "೪", "೫", "೬", "೭", "೮", "೯"];
 
@@ -35,11 +36,12 @@
      conversion; no Date/timezone parsing of ISO dates. ---------------- */
   var PV_URL = "data/pv-calendar-data.json";
   var CULTURAL_URL = "epaper/cultural-event-candidates.json";
-  var PV_LOADING = '<p class="empty-note">ಘಟನೆ ದತ್ತಾಂಶ ಲೋಡ್ ಆಗುತ್ತಿದೆ…</p>';
+  var SKELETON = function (text) { return '<div class="skeleton" role="status" aria-live="polite"><span class="sr-only">' + text + '</span><i></i><i></i><i></i></div>'; };
+  var PV_LOADING = SKELETON("ಘಟನೆ ದತ್ತಾಂಶ ಲೋಡ್ ಆಗುತ್ತಿದೆ…");
   var PV_ERROR = '<p class="empty-note">ಘಟನೆ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';
   var CULTURAL_LOADING = '<p class="empty-note">ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ…</p>';
   var CULTURAL_ERROR = '<p class="empty-note">ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';
-  var OCR_LOADING = '<p class="empty-note">ಪಂಚಾಂಗದ ವಿವರಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ…</p>';
+  var OCR_LOADING = SKELETON("ಪಂಚಾಂಗದ ವಿವರಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ…");
 
   function daysInMonth(y, m) { /* m 1-12, no Date/timezone involved */
     return [31, (y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m - 1];
@@ -310,6 +312,21 @@
     return { start: keyToIso(keyFor(start)), end: keyToIso(keyFor(end)) };
   }
 
+  /* Display names only; the English key stays the value used for data lookups. */
+  var DISTRICT_KN = {
+    "Bagalkot": "ಬಾಗಲಕೋಟೆ", "Ballari": "ಬಳ್ಳಾರಿ", "Belagavi": "ಬೆಳಗಾವಿ",
+    "Bengaluru Rural": "ಬೆಂಗಳೂರು ಗ್ರಾಮಾಂತರ", "Bengaluru South (Ramanagara)": "ಬೆಂಗಳೂರು ದಕ್ಷಿಣ (ರಾಮನಗರ)",
+    "Bengaluru Urban": "ಬೆಂಗಳೂರು ನಗರ", "Bidar": "ಬೀದರ್", "Chamarajanagar": "ಚಾಮರಾಜನಗರ",
+    "Chikkaballapur": "ಚಿಕ್ಕಬಳ್ಳಾಪುರ", "Chikkamagaluru": "ಚಿಕ್ಕಮಗಳೂರು", "Chitradurga": "ಚಿತ್ರದುರ್ಗ",
+    "Dakshina Kannada": "ದಕ್ಷಿಣ ಕನ್ನಡ", "Davanagere": "ದಾವಣಗೆರೆ", "Dharwad": "ಧಾರವಾಡ",
+    "Gadag": "ಗದಗ", "Hassan": "ಹಾಸನ", "Haveri": "ಹಾವೇರಿ", "Kalaburagi": "ಕಲಬುರಗಿ",
+    "Kodagu": "ಕೊಡಗು", "Kolar": "ಕೋಲಾರ", "Mandya": "ಮಂಡ್ಯ", "Mysuru": "ಮೈಸೂರು",
+    "Koppal": "ಕೊಪ್ಪಳ", "Raichur": "ರಾಯಚೂರು", "Shivamogga": "ಶಿವಮೊಗ್ಗ", "Tumakuru": "ತುಮಕೂರು",
+    "Udupi": "ಉಡುಪಿ", "Uttara Kannada": "ಉತ್ತರ ಕನ್ನಡ", "Vijayapura": "ವಿಜಯಪುರ",
+    "Vijayanagara": "ವಿಜಯನಗರ", "Yadgir": "ಯಾದಗಿರಿ"
+  };
+  function districtLabel(name) { return DISTRICT_KN[name] || name; }
+
   function districtEventCount(name, mode) {
     mode = mode || "all";
     var range = rangeFor(mode);
@@ -331,7 +348,7 @@
     });
     return '<option value="">ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</option>' + options.map(function (option) {
       var name = option.name;
-      return '<option value="' + esc(name) + '"' + (name === state.district ? " selected" : "") + '>' + esc(name) + ' (' + option.count + ')</option>';
+      return '<option value="' + esc(name) + '"' + (name === state.district ? " selected" : "") + '>' + esc(districtLabel(name)) + (option.count ? ' (' + option.count + ')' : '') + '</option>';
     }).join("");
   }
 
@@ -341,19 +358,27 @@
     }).sort(function (a, b) {
       return b.count - a.count || a.order - b.order;
     }) : [];
-    var placeholder = '<button type="button" class="district-option" role="option" data-district-value="" aria-selected="' + (!state.district) + '"><span class="district-option-name">ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</span></button>';
-    return placeholder + options.map(function (option) {
-      return '<button type="button" class="district-option" role="option" data-district-value="' + esc(option.name) + '" aria-selected="' + (option.name === state.district) + '"><span class="district-option-name">' + esc(option.name) + '</span><span class="district-option-count" aria-label="' + option.count + ' ಕಾರ್ಯಕ್ರಮಗಳು">' + option.count + '</span></button>';
-    }).join("");
+    /* "Clear" only makes sense once a district is chosen. */
+    var clear = state.district ? '<button type="button" class="district-option district-clear" role="option" data-district-value="" aria-selected="false"><span class="district-option-name">ಜಿಲ್ಲೆ ತೆರವುಗೊಳಿಸಿ</span></button>' : "";
+    return clear + options.map(function (option) {
+      return '<button type="button" class="district-option" role="option" data-district-value="' + esc(option.name) + '" aria-selected="' + (option.name === state.district) + '"><span class="district-option-name">' + esc(districtLabel(option.name)) + '</span>' + (option.count ? '<span class="district-option-count" aria-label="' + option.count + ' ಕಾರ್ಯಕ್ರಮಗಳು">' + option.count + '</span>' : '') + '</button>';
+    }).join("") + '<p class="district-empty" role="presentation" hidden>ಯಾವುದೇ ಜಿಲ್ಲೆ ಕಂಡುಬಂದಿಲ್ಲ</p>';
   }
+
+  var ICON_PIN = '<svg class="district-pin" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.1 7-11.5A7 7 0 0 0 5 9.5C5 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>';
+  var ICON_CHEVRON = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>';
 
   function districtPickerHTML(id, mode) {
     var menuId = id + "Menu", triggerId = id + "Trigger";
-    return '<div id="' + id + 'Picker" class="district-picker" data-district-picker="" data-select-id="' + id + '">' +
+    return '<div id="' + id + 'Picker" class="district-picker" data-district-picker="" data-select-id="' + id + '"' + (state.district && state.pv && state.pv.sheets[state.district] ? "" : ' data-empty="1"') + '>' +
       '<button type="button" id="' + triggerId + '" class="district-trigger" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="' + menuId + '" aria-label="ಜಿಲ್ಲೆ ಆಯ್ಕೆ">' +
-        '<span class="district-trigger-text">' + districtPickerLabel() + '</span><span class="district-trigger-chevron" aria-hidden="true">⌄</span>' +
+        ICON_PIN + '<span class="district-trigger-text">' + districtPickerLabel() + '</span><span class="district-trigger-chevron" aria-hidden="true">' + ICON_CHEVRON + '</span>' +
       '</button>' +
-      '<div id="' + menuId + '" class="district-menu" role="listbox" aria-label="ಜಿಲ್ಲೆ ಆಯ್ಕೆ" hidden>' + districtListboxHTML(mode) + '</div>' +
+      '<div class="district-panel">' +
+        '<span class="district-sheet-title">ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</span>' +
+        '<input type="search" class="district-search" placeholder="ಜಿಲ್ಲೆ ಹುಡುಕಿ" aria-label="ಜಿಲ್ಲೆ ಹುಡುಕಿ" autocomplete="off" autocapitalize="off" spellcheck="false">' +
+        '<div id="' + menuId + '" class="district-menu" role="listbox" aria-label="ಜಿಲ್ಲೆ ಆಯ್ಕೆ" hidden>' + districtListboxHTML(mode) + '</div>' +
+      '</div>' +
     '</div>';
   }
 
@@ -363,7 +388,7 @@
 
   function districtPickerLabel() {
     if (!state.pv || !state.district || !state.pv.sheets[state.district]) return "ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ";
-    return state.district;
+    return districtLabel(state.district);
   }
 
   function syncDistrictPicker(picker, id, mode) {
@@ -371,6 +396,10 @@
     var trigger = picker.querySelector(".district-trigger"), menu = picker.querySelector(".district-menu");
     if (!trigger || !menu) return;
     trigger.querySelector(".district-trigger-text").textContent = districtPickerLabel();
+    if (state.district && state.pv && state.pv.sheets[state.district]) picker.removeAttribute("data-empty");
+    else picker.setAttribute("data-empty", "1");
+    var search = picker.querySelector(".district-search");
+    if (search) search.value = "";
     menu.innerHTML = districtListboxHTML(mode);
     trigger.setAttribute("aria-expanded", "false");
     menu.hidden = true;
@@ -448,37 +477,24 @@
   }
 
   /* ---------------- Render: Today ---------------- */
-  function homeListHTML(records, emptyText) {
-    if (!records.length) return '<p class="empty-note">' + emptyText + '</p>';
-    var limit = 3, hidden = records.slice(limit), out = '<div class="ev-panel"><ul class="ev-list">';
-    out += records.slice(0, limit).map(function (r) { return pvRow(r, r.startTime || ""); }).join("") + '</ul>';
-    if (hidden.length) {
-      var id = "homex-" + (++pvSeq);
-      out += '<ul class="ev-list" id="' + id + '" hidden>' + hidden.map(function (r) { return pvRow(r, r.startTime || ""); }).join("") + '</ul>' +
-        '<div class="ev-more"><button class="chip-more" id="btn-' + id + '" type="button" aria-expanded="false">ಮತ್ತೆ +' + hidden.length + '</button></div>';
-    }
-    return out + '</div>';
-  }
-
-  function homeCategoryHTML(id, title, body, className) {
-    return '<section class="home-category ' + (className || '') + '" aria-labelledby="' + id + '"><h3 class="home-category-title" id="' + id + '">' + title + '</h3>' + body + '</section>';
+  /* The card heading already says "events", so the section is labelled for
+     assistive tech only and empty scopes are collapsed into one line. */
+  function homeCategoryHTML(id, body, className) {
+    return '<section class="home-category ' + (className || '') + '" id="' + id + '" aria-label="ಕಾರ್ಯಕ್ರಮಗಳು">' + body + '</section>';
   }
 
   function homeEventsHTML(key, id) {
     var local = districtEventsFor(key), statewide = stateEventsFor(key), cultural = culturalEventsFor(key);
-    var districtBody;
-    if (!state.district) {
-      districtBody = '<p class="empty-note">ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ನೋಡಲು ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ.</p>';
-    } else if (state.culturalError) {
-      districtBody = homeListHTML(local, "ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") + CULTURAL_ERROR;
-    } else if (!state.cultural) {
-      districtBody = homeListHTML(local, "ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") + CULTURAL_LOADING;
-    } else {
-      districtBody = homeListHTML(local.concat(cultural), "ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.");
+    var district = state.district ? local.concat(cultural) : [];
+    var notes = "";
+    if (!state.district) notes += '<p class="empty-note">ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳನ್ನು ನೋಡಲು ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ.</p>';
+    else if (state.culturalError) notes += CULTURAL_ERROR;
+    else if (!state.cultural) notes += CULTURAL_LOADING;
+    var body = weekScopesHTML("", district, statewide);
+    if (!district.length && !statewide.length && state.district && !notes) {
+      body = '<p class="empty-note">ಈ ದಿನ ಯಾವುದೇ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.</p>';
     }
-    var body = '<div class="home-scope"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4>' + districtBody + '</div>' +
-      '<div class="home-scope statewide"><h4>ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</h4>' + homeListHTML(statewide, "ಈ ದಿನ ಯಾವುದೇ ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") + '</div>';
-    return homeCategoryHTML(id, "ಕಾರ್ಯಕ್ರಮಗಳು", body, "homeEvents");
+    return homeCategoryHTML(id, body + notes, "homeEvents");
   }
 
   function panchangaEnd(value, nextDay) {
@@ -602,11 +618,6 @@
     return homeEventsHTML(key, "homeEvents");
   }
 
-  function dateLabel(iso) {
-    var d = parseKey(isoToKey(iso));
-    return WEEKDAYS[d.getDay()] + ", " + MONTHS[d.getMonth()] + " " + kn(d.getDate());
-  }
-
   function upcomingHTML(fromKey) {
     if (state.pvError) return PV_ERROR;
     if (!state.pv) return PV_LOADING;
@@ -614,22 +625,44 @@
     for (var i = 1; i <= 7; i++) {
       var iso = addDaysIso(from, i), key = isoToKey(iso), local = districtEventsFor(key), statewide = stateEventsFor(key), cultural = culturalEventsFor(key);
       if (!local.length && !statewide.length && !cultural.length) continue;
-      var content = '<section class="upcoming-day"><h3 class="upcoming-date">' + dateLabel(iso) + '</h3>';
+      var day = parseKey(key);
+      var content = '<section class="upcoming-day"' + (day.getDay() === 0 ? ' data-sun="1"' : "") + '><h3 class="upcoming-date"><button type="button" class="week-day-link" data-day="' + key + '">' +
+        '<span class="week-day-label"><span class="week-day-name">' + WEEKDAYS[day.getDay()] + '</span></span>' +
+        '<span class="week-day-date"><b>' + kn(day.getDate()) + '</b><small>' + MONTHS[day.getMonth()] + '</small></span></button></h3>';
       if (local.length || statewide.length || cultural.length) content += homeEventsHTML(key, "upcomingEvents" + i);
       days.push(content + '</section>');
     }
     return days.length ? '<div class="upcoming-list">' + days.join("") + '</div>' : '<p class="empty-note">ಮುಂದಿನ 7 ದಿನಗಳಲ್ಲಿ ಯಾವುದೇ ಕಾರ್ಯಕ್ರಮಗಳಿಲ್ಲ.</p>';
   }
 
+  /* Sunday-first week around the selected day, so any date this week is one tap away. */
+  function dayStripHTML(key) {
+    var sel = parseKey(key), start = new Date(sel), todayKey = keyFor(new Date()), out = '<nav class="day-strip" aria-label="ವಾರದ ದಿನಗಳು">';
+    start.setDate(start.getDate() - start.getDay());
+    for (var i = 0; i < 7; i++) {
+      var d = new Date(start); d.setDate(start.getDate() + i);
+      var k = keyFor(d), local = state.pv ? districtEventsFor(k).length + culturalEventsFor(k).length : 0, wide = state.pv ? stateEventsFor(k).length : 0;
+      out += '<button type="button" class="ds-day' + (k === key ? " sel" : "") + (k === todayKey ? " today" : "") + (d.getDay() === 0 ? " sun" : "") + '" data-day="' + k + '"' + (k === key ? ' aria-current="date"' : "") +
+        ' aria-label="' + WEEKDAYS[d.getDay()] + " " + kn(d.getDate()) + " " + MONTHS[d.getMonth()] + '">' +
+        '<span class="ds-wd">' + WEEKDAYS_SHORT[d.getDay()] + '</span><span class="ds-num">' + kn(d.getDate()) + '</span>' +
+        '<span class="ds-dots" aria-hidden="true">' + (local ? '<i class="scope-dot district"></i>' : "") + (wide ? '<i class="scope-dot state"></i>' : "") + '</span></button>';
+    }
+    return out + '</nav>';
+  }
+
   function homeHeaderHTML(key) {
     var d = parseKey(key);
-    return '<section class="home-header" aria-labelledby="homeDateTitle">' +
-      '<div class="home-date"><span class="home-kicker">ಆಯ್ದ ದಿನ</span><div class="home-date-line"><strong id="homeDateTitle">' + kn(d.getDate()) + '</strong><span><b>' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</b><small>' + WEEKDAYS[d.getDay()] + '</small></span></div></div>' +
-      '<div class="home-controls"><div class="home-switch" role="tablist" aria-label="ಮುಖಪುಟದ ವಿಷಯ"><button id="homeEventsMode" type="button" role="tab" aria-selected="' + (state.homeMode === "events") + '" class="' + (state.homeMode === "events" ? "is-active" : "") + '">ಕಾರ್ಯಕ್ರಮಗಳು</button><button id="homePanchangaMode" type="button" role="tab" aria-selected="' + (state.homeMode === "panchanga") + '" class="' + (state.homeMode === "panchanga" ? "is-active" : "") + '">ಪಂಚಾಂಗ</button></div><label class="home-district"><span id="homeDistrictLabel">ಜಿಲ್ಲೆ</span>' + districtControlHTML("homeDistrictSelect", "day", "homeDistrict") + '</label></div>' +
+    return dayStripHTML(key) + '<section class="home-header" aria-labelledby="homeDateTitle">' +
+      '<div class="home-date"' + (d.getDay() === 0 ? ' data-sun="1"' : "") + '><div class="home-day-line"><div class="home-day-label"><span class="home-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (key === keyFor(new Date()) ? '<span class="today-pill">ಇಂದು</span>' : "") + '</div><div class="home-day-date"><strong id="homeDateTitle">' + kn(d.getDate()) + '</strong><small>' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</small></div></div></div>' +
+      '<label class="home-district"><span id="homeDistrictLabel">ಜಿಲ್ಲೆ</span>' + districtControlHTML("homeDistrictSelect", "day", "homeDistrict") + '</label>' +
+      '<div class="home-switch" role="tablist" aria-label="ಮುಖಪುಟದ ವಿಷಯ"><button id="homeEventsMode" type="button" role="tab" aria-selected="' + (state.homeMode === "events") + '" class="' + (state.homeMode === "events" ? "is-active" : "") + '">ಕಾರ್ಯಕ್ರಮಗಳು</button><button id="homePanchangaMode" type="button" role="tab" aria-selected="' + (state.homeMode === "panchanga") + '" class="' + (state.homeMode === "panchanga" ? "is-active" : "") + '">ಪಂಚಾಂಗ</button></div>' +
       '</section>';
   }
 
   function bindHomeModeUI() {
+    document.querySelectorAll(".ds-day, .upcoming-day .week-day-link").forEach(function (button) {
+      button.addEventListener("click", function () { goto(button.dataset.day); });
+    });
     [["homeEventsMode", "events"], ["homePanchangaMode", "panchanga"]].forEach(function (item) {
       var button = document.getElementById(item[0]);
       if (!button || button._homeModeBound) return;
@@ -686,24 +719,53 @@
     goto(keyFor(d));
   }
 
+  /* District and Karnataka-wide event lists. Shared by Week rows and Home so both
+     read identically. dayKey makes each event a link to that day (Week only). */
+  function weekScopesHTML(dayKey, district, statewide) {
+    var row = function (r) { return pvRow(r, r.startTime || "", dayKey); };
+    return (district.length ? '<div class="week-scope district"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + district.map(row).join("") + '</ul></div>' : "") +
+      (statewide.length ? '<div class="week-scope statewide"><h4>ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + statewide.map(row).join("") + '</ul></div>' : "");
+  }
+
+  /* One row per day, like the printed calendar: heavy weekday name on the left,
+     big date on the right, events underneath. */
   function weekAgendaHTML(key) {
-    var d = parseKey(key), district = districtEventsFor(key).concat(culturalEventsFor(key)), statewide = stateEventsFor(key);
-    var content = '<h3 class="week-day-title"><button type="button" class="week-day-link" data-day="' + key + '">' +
-      '<span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span><span class="week-day-meta"><span class="week-day-date">' + kn(d.getDate()) + ' ' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</span></span></button></h3>';
-    if (!district.length && !statewide.length) return '<section class="week-day" data-day="' + key + '">' + content + '<p class="empty-note">ಈ ದಿನ ಯಾವುದೇ ವಿಶೇಷ ದಿನವಿಲ್ಲ.</p></section>';
-    return '<section class="week-day" data-day="' + key + '">' + content +
-      '<div class="week-scope district"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + (district.length ? district.map(function (r) { return pvRow(r, "", key); }).join("") : '<li class="empty-note">ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.</li>') + '</ul></div>' +
-      '<div class="week-scope statewide"><h4>ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + (statewide.length ? statewide.map(function (r) { return pvRow(r, "", key); }).join("") : '<li class="empty-note">ಈ ದಿನ ಯಾವುದೇ ಕರ್ನಾಟಕ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.</li>') + '</ul></div>' +
-      '</section>';
+    var d = parseKey(key), district = districtEventsFor(key).concat(culturalEventsFor(key)), statewide = stateEventsFor(key), today = key === keyFor(new Date());
+    var head = '<h3 class="week-day-title"><button type="button" class="week-day-link" data-day="' + key + '">' +
+      '<span class="week-day-label"><span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (today ? '<span class="today-pill">ಇಂದು</span>' : "") + '</span>' +
+      '<span class="week-day-date"><b>' + kn(d.getDate()) + '</b><small>' + MONTHS[d.getMonth()] + '</small></span></button></h3>';
+    var flags = (today ? ' data-today="1"' : "") + (d.getDay() === 0 ? ' data-sun="1"' : "");
+    if (!district.length && !statewide.length) return '<section class="week-day" data-day="' + key + '" data-empty="1"' + flags + '>' + head + '<p class="empty-note">ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ</p></section>';
+    return '<section class="week-day" data-day="' + key + '"' + flags + '>' + head +
+      weekScopesHTML(key, district, statewide) + '</section>';
+  }
+
+  /* A run of two or more event-free days collapses into one row of tappable day chips. */
+  function weekGapHTML(keys) {
+    return '<section class="week-day week-gap" data-empty="1"><div class="gap-days">' + keys.map(function (k) {
+      var d = parseKey(k);
+      return '<button type="button" class="gap-day" data-day="' + k + '" aria-label="' + WEEKDAYS[d.getDay()] + " " + kn(d.getDate()) + " " + MONTHS[d.getMonth()] + '"><span>' + WEEKDAYS_SHORT[d.getDay()] + '</span><b>' + kn(d.getDate()) + '</b></button>';
+    }).join("") + '</div><span class="gap-note">ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ</span></section>';
   }
 
   function weekBlockHTML(startKey) {
-    var start = parseKey(startKey), end = new Date(start);
+    var start = parseKey(startKey), end = new Date(start), todayKey = keyFor(new Date()), rows = [], run = [];
     end.setDate(end.getDate() + 6);
-    return '<section class="week-block" data-start="' + startKey + '"><h2 class="stream-period-title">' + periodLabel(start, end) + '</h2>' +
-      Array.from({ length: 7 }, function (_, i) {
-        var d = new Date(start); d.setDate(d.getDate() + i); return weekAgendaHTML(keyFor(d));
-      }).join("") + '</section>';
+    var flush = function () {
+      if (run.length > 1) rows.push(weekGapHTML(run));
+      else if (run.length === 1) rows.push(weekAgendaHTML(run[0]));
+      run = [];
+    };
+    for (var i = 0; i < 7; i++) {
+      var d = new Date(start); d.setDate(d.getDate() + i);
+      var k = keyFor(d);
+      /* Sundays and today keep their own row even when empty. */
+      var quiet = d.getDay() !== 0 && k !== todayKey && !districtEventsFor(k).length && !culturalEventsFor(k).length && !stateEventsFor(k).length;
+      if (quiet) run.push(k);
+      else { flush(); rows.push(weekAgendaHTML(k)); }
+    }
+    flush();
+    return '<section class="week-block" data-start="' + startKey + '"><h2 class="stream-period-title">' + periodLabel(start, end) + '</h2>' + rows.join("") + '</section>';
   }
 
   function weekKeyShift(key, weeks) {
@@ -816,7 +878,7 @@
       html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + '" data-day="' + k + '" type="button"' + (today ? ' title="ಇಂದು"' : "") + aria + '>' + kn(day) +
         (local || statewide ? '<span class="mday-dots" aria-hidden="true">' + (local ? '<i class="scope-dot district"></i><b class="date-count district">' + local + '</b>' : '') + (statewide ? '<i class="scope-dot state"></i><b class="date-count state">' + statewide + '</b>' : '') + '</span>' : '') + '</button>';
     }
-    return '<div class="week-row">' + WEEKDAYS.map(function (w) { return "<span>" + w.charAt(0) + "</span>"; }).join("") + '</div><div class="month-grid">' + html + '</div>';
+    return '<div class="week-row">' + WEEKDAYS.map(function (w, i) { return '<span title="' + w + '">' + WEEKDAYS_SHORT[i] + "</span>"; }).join("") + '</div><div class="month-grid">' + html + '</div>';
   }
 
   /* Month agenda: each PV source record listed once, with its date or inclusive
@@ -923,22 +985,25 @@
   }
 
   /* ---------------- Masthead ---------------- */
-  function periodLabel(start, end) {
+  function periodLabel(start, end, noYear) {
     var sameYear = start.getFullYear() === end.getFullYear();
+    if (sameYear && start.getMonth() === end.getMonth()) {
+      return MONTHS[start.getMonth()] + " " + kn(start.getDate()) + " – " + kn(end.getDate()) + (noYear ? "" : ", " + kn(end.getFullYear()));
+    }
     var left = MONTHS[start.getMonth()] + " " + kn(start.getDate());
     var right = MONTHS[end.getMonth()] + " " + kn(end.getDate());
     if (!sameYear) left += ", " + kn(start.getFullYear());
-    return left + " – " + right + ", " + kn(end.getFullYear());
+    return left + " – " + right + (noYear && sameYear ? "" : ", " + kn(end.getFullYear()));
   }
 
   function renderMasthead() {
     var dt = parseKey(state.key);
     var el = document.getElementById("mastheadDate");
-    var label = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + ", " + kn(dt.getFullYear()) + " · " + WEEKDAYS[dt.getDay()];
+    var label = WEEKDAYS[dt.getDay()] + ", " + MONTHS[dt.getMonth()] + " " + kn(dt.getDate());
     if (state.tab === "week") {
       var start = parseKey(state.weekHeader || weekStartKey(state.key)), end = new Date(start);
       end.setDate(end.getDate() + 6);
-      label = periodLabel(start, end);
+      label = periodLabel(start, end, true);
     } else if (state.tab === "month") {
       var month = state.monthHeader ? state.monthHeader.split("-") : [dt.getFullYear(), dt.getMonth()];
       label = MONTHS[+month[1]] + " " + kn(+month[0]);
@@ -984,8 +1049,10 @@
   function renderAll() { renderMasthead(); renderActive(); }
 
   /* ---------------- Init ---------------- */
-  function loadDistrict() { try { return sessionStorage.getItem("pvDistrict") || ""; } catch (e) { return ""; } }
-  function saveDistrict(d) { try { sessionStorage.setItem("pvDistrict", d); } catch (e) {} }
+  /* District is remembered across visits (localStorage); date and panchanga
+     mode stay per-session. */
+  function loadDistrict() { try { return localStorage.getItem("pvDistrict") || ""; } catch (e) { return ""; } }
+  function saveDistrict(d) { try { localStorage.setItem("pvDistrict", d); } catch (e) {} }
   function loadDate() { try { var key = sessionStorage.getItem("pvDate"); return validKey(key) ? key : DEFAULT_KEY; } catch (e) { return DEFAULT_KEY; } }
   function saveDate(key) { try { sessionStorage.setItem("pvDate", key); } catch (e) {} }
   function loadPanchangaPvOnly() { try { return sessionStorage.getItem("pvPanchangaPvOnly") !== "0"; } catch (e) { return true; } }
@@ -1017,11 +1084,25 @@
     var trigger = picker.querySelector(".district-trigger"), menu = picker.querySelector(".district-menu");
     if (!trigger || !menu) return;
     picker._districtBound = true;
-    var options = function () { return Array.prototype.slice.call(menu.querySelectorAll(".district-option")); };
+    var search = picker.querySelector(".district-search");
+    var options = function () { return Array.prototype.slice.call(menu.querySelectorAll(".district-option:not([hidden])")); };
+    /* Type to narrow the list (matches the Kannada label or the English name). */
+    var applyFilter = function () {
+      var q = (search ? search.value : "").trim().toLowerCase(), any = false;
+      Array.prototype.forEach.call(menu.querySelectorAll(".district-option"), function (o) {
+        var value = o.dataset.districtValue || "", label = (o.querySelector(".district-option-name") || o).textContent;
+        var show = !q || (!!value && (value + " " + label).toLowerCase().indexOf(q) !== -1);
+        o.hidden = !show;
+        if (show && value) any = true;
+      });
+      var empty = menu.querySelector(".district-empty");
+      if (empty) empty.hidden = !q || any;
+    };
     var setOpen = function (open, focusIndex) {
       trigger.setAttribute("aria-expanded", String(open));
       menu.hidden = !open;
       picker.classList.toggle("is-open", open);
+      if (open && search && search.value) { search.value = ""; applyFilter(); }
       if (open && focusIndex != null) {
         var items = options();
         if (items[focusIndex] && items[focusIndex].focus) items[focusIndex].focus();
@@ -1063,9 +1144,21 @@
       else if (key === "End" && open) { e.preventDefault(); moveTo(options().length - 1); }
     });
     picker.addEventListener("click", function (e) {
+      if (e.target === picker) { closeDistrictPicker(picker, true); return; } /* phone backdrop */
       var option = e.target && e.target.closest ? e.target.closest(".district-option") : null;
       if (option) choose(option);
     });
+    if (search) {
+      search.addEventListener("input", applyFilter);
+      search.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowDown") { e.preventDefault(); moveTo(0); }
+        else if (e.key === "Enter") {
+          e.preventDefault();
+          var first = options().filter(function (o) { return o.dataset.districtValue; })[0];
+          if (first) choose(first);
+        } else if (e.key === "Escape") { e.preventDefault(); closeDistrictPicker(picker, true); }
+      });
+    }
     menu.addEventListener("keydown", function (e) {
       var current = e.target && e.target.closest ? e.target.closest(".district-option") : null;
       if (!current) return;
