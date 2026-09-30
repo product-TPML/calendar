@@ -248,9 +248,9 @@ Filtering rules:
 - `app.js` — event index, filtering, date/view state, rendering, navigation
 - `index.html` — event-first navigation, masthead, view structure, source copy
 - `styles.css` — event layout, sticky states, responsive layout, accessibility
-- `app.test.js` — validation, filtering, persistence, navigation, rendering
+- `tests/app.test.js` — validation, filtering, persistence, navigation, rendering
 - `data/pv-calendar-data.json` — only for intentional editorial updates
-- `calendar-events-plan.md` — this product and implementation plan
+- `docs/calendar-events-plan.md` — this product and implementation plan
 
 No backend or build step is justified for the current 145-record dataset.
 

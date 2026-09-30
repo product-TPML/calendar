@@ -12,8 +12,9 @@ param(
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
-if (-not $OutputRoot) { $OutputRoot = Join-Path $PSScriptRoot 'ocr-zones' }
-if (-not $TessDataDir) { $TessDataDir = Join-Path $PSScriptRoot 'tessdata' }
+$RepoRoot = Split-Path -Parent $PSScriptRoot   # scripts/ lives one level below the repo root
+if (-not $OutputRoot) { $OutputRoot = Join-Path $RepoRoot 'ocr-zones' }
+if (-not $TessDataDir) { $TessDataDir = Join-Path $RepoRoot 'tessdata' }
 if (-not (Test-Path -LiteralPath $Magick)) { throw "ImageMagick not found: $Magick" }
 if (-not (Test-Path -LiteralPath $Tesseract)) { throw "Tesseract not found: $Tesseract" }
 

@@ -23,7 +23,7 @@ from datetime import date as dtdate
 
 import pymupdf
 
-PDF_PATH = "PDF Calendar PV.pdf"
+PDF_PATH = "source/PDF Calendar PV.pdf"   # run from the repo root
 
 # ---------------------------------------------------------------------------
 # Baked token -> Kannada name map.

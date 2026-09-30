@@ -1,11 +1,11 @@
 # Panchanga view vs PDF Calendar PV — field comparison
 
-Date: 2026-09-29 · Source PDF: `PDF Calendar PV.pdf` (12 pages, one per month, Prajavani 2026 wall calendar)
+Date: 2026-09-29 · Source PDF: `source/PDF Calendar PV.pdf` (12 pages, one per month, Prajavani 2026 wall calendar)
 
 ## Question
 
 Can every data point the calendar app's Panchanga view needs be extracted from
-`PDF Calendar PV.pdf`?
+`source/PDF Calendar PV.pdf`?
 
 **Answer: No.** The PDF fully covers tithi, nakshatra, weekday, calendar years
 (month-level), events, and 3 of the 5 kāla timings. Nine of the view's data
@@ -14,7 +14,7 @@ points are missing or only derivable with extra logic.
 ## Panchanga view data points (current source of truth)
 
 From `app.js` (`normalizeOCR`, `panchangaHTML`). The app fetches
-`ocr-zones/<date>/structured-ocr.json`, which is produced by `ocr_month.ps1`
+`ocr-zones/<date>/structured-ocr.json`, which is produced by `scripts/ocr_month.ps1`
 from the daily sheet photos in `data/2026/<month>/<date>.jpg`:
 
 | Field | Daily sheet zone |
@@ -122,19 +122,19 @@ Implemented and run on 2026-09-29.
 
 ### Scripts
 
-- `extract-pdf-panchanga.py` — extracts the PDF via its text layer only
+- `scripts/extract-pdf-panchanga.py` — extracts the PDF via its text layer only
   (no OCR): tithi/nakshatra name + end time (+ `fullDay` marker cells),
   samvatsara/shaka year per month, weekday kāla timings. Output:
   `data/pdf-panchanga-data.json` (365/365 dates, 0 unparsed times,
   0 unmapped tokens) + `data/pdf-extraction-report.txt`.
-- `merge-panchanga-pdf.js` — merges PDF values into the per-date OCR
+- `scripts/merge-panchanga-pdf.js` — merges PDF values into the per-date OCR
   records. **PDF wins** for `panchanga.tithi`, `panchanga.nakshatra` and
   `timings.rahuKala/gulikaKala/yamaganda`; everything else (paksha, yoga,
   karana, ayana, ritu, solarRashi, chandraEntryRashi, sunrise/sunset,
   arthaPrahara, shubhaSamaya, jathaka, events) keeps OCR values. OCR is
   snapshotted to `structured-ocr.ocr-source.json` before the first overwrite
   and always re-read from there, so the merge is idempotent. Dry-run by
-  default; `node merge-panchanga-pdf.js --apply` writes merged
+  default; `node scripts/merge-panchanga-pdf.js --apply` writes merged
   `ocr-zones/<date>/structured-ocr.json` (365 records, including 15 PDF-only
   dates that had no OCR photos: 30-05 and 18–31-12). Per-record provenance in
   `mergeSources`; report at `data/panchanga-merge-report.json`.
@@ -146,16 +146,16 @@ Only ~18% of dates agree within 30 minutes; the median absolute difference is
 dates). The monthly PDF and the daily sheets genuinely print different end
 times (verified against the printed pages). Per the stated policy, the merged
 data uses the PDF values; to prefer OCR for these instead, the merge policy in
-`merge-panchanga-pdf.js` is the one place to change (or restore from
+`scripts/merge-panchanga-pdf.js` is the one place to change (or restore from
 `structured-ocr.ocr-source.json`).
 
 ### Re-running
 
 ```powershell
-python extract-pdf-panchanga.py      # regenerate PDF data
-node merge-panchanga-pdf.js          # dry-run summary
-node merge-panchanga-pdf.js --apply  # write merged records
+python scripts/extract-pdf-panchanga.py      # regenerate PDF data
+node scripts/merge-panchanga-pdf.js          # dry-run summary
+node scripts/merge-panchanga-pdf.js --apply  # write merged records
 ```
 
-After regenerating OCR with `ocr_month.ps1`, delete the affected dates'
+After regenerating OCR with `scripts/ocr_month.ps1`, delete the affected dates'
 `structured-ocr.ocr-source.json` to re-snapshot, then merge again.

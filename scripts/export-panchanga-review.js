@@ -2,7 +2,7 @@
 // Exports the Panchanga tab data (only — no events) from every
 // ocr-zones/<date>/structured-ocr.json record into a flat one-row-per-date
 // CSV for review, with a data-source column per field group.
-// Node 18+, built-ins only. Run: node export-panchanga-review.js
+// Node 18+, built-ins only. Run: node scripts/export-panchanga-review.js
 //
 // The value cells mirror the app (app.js normalizeOCR / panchangaHTML /
 // buildOCRTimings / fixOCRTime / clockMinutes / panchangaEnd) exactly.
@@ -12,12 +12,12 @@
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = __dirname;
+const ROOT = path.join(__dirname, '..');
 const OCR_DIR = path.join(ROOT, 'ocr-zones');
 const OUT_DIR = path.join(ROOT, 'editorial');
 const OUT_FILE = path.join(OUT_DIR, 'panchanga-review.csv');
 
-// Canonical Kannada rashi names for the 12 jathaka columns (same list as export-editorial.js).
+// Canonical Kannada rashi names for the 12 jathaka columns (same list as scripts/export-editorial.js).
 const RASHI_NAMES = ['ಮೇಷ', 'ವೃಷಭ', 'ಮಿಥುನ', 'ಕರ್ಕಾಟಕ', 'ಸಿಂಹ', 'ಕನ್ಯಾ', 'ತುಲಾ', 'ವೃಶ್ಚಿಕ', 'ಧನಸ್ಸು', 'ಮಕರ', 'ಕುಂಭ', 'ಮೀನ'];
 const RASHI_CANONICAL = new Map(RASHI_NAMES.map((n) => [n, n]));
 
@@ -93,7 +93,7 @@ function buildTiming(raw) {
   return from + ' – ' + to;
 }
 
-/* ---- CSV plumbing (same as export-editorial.js) -------------------------- */
+/* ---- CSV plumbing (same as scripts/export-editorial.js) -------------------------- */
 function cell(v) {
   if (v === undefined || v === null) return '';
   return String(v);

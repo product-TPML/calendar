@@ -2,7 +2,7 @@
 
 `calendar-editorial.csv` is a flat, one-row-per-date export of every
 `ocr-zones/<date>/structured-ocr.json` file, produced by
-`node export-editorial.js` (run from the repo root).
+`node scripts/export-editorial.js` (run from the repo root).
 
 ## Purpose
 
@@ -90,13 +90,13 @@ can be regenerated.
 Regenerate the export any time with:
 
 ```
-node export-editorial.js
+node scripts/export-editorial.js
 ```
 
 ## Panchanga review sheet
 
 `panchanga-review.csv` is a flat, one-row-per-date export of the **Panchanga
-tab data only** (no events), produced by `node export-panchanga-review.js`
+tab data only** (no events), produced by `node scripts/export-panchanga-review.js`
 (run from the repo root). It covers all 365 dates of 2026 in chronological
 order.
 
@@ -142,5 +142,5 @@ mirrors exactly what the app's Panchanga view displays, plus a
 Regenerate the sheet any time with:
 
 ```
-node export-panchanga-review.js
+node scripts/export-panchanga-review.js
 ```

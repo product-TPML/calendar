@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 // Kannada calendar daily image downloader (Node 18+ built-ins only).
-// Usage: node download.js [--year 2026] [--output data] [--delay-ms 0] [--force]
+// Usage (from the repo root): node scripts/download.js [--year 2026] [--output data] [--delay-ms 0] [--force]
 
 const fs = require('node:fs/promises');
 const path = require('node:path');
 
 const opt = { year: 2026, output: 'data', delay: 0, force: false };
 
-const usage = () => console.log(`Usage: node download.js [options]
+const usage = () => console.log(`Usage (from the repo root): node scripts/download.js [options]
 
 Downloads every daily image of a year from kannadacalendar.in into:
   ${path.join('data', '<year>', 'MM', 'DD-MM-YYYY.jpg')}

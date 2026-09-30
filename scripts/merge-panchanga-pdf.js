@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-/* merge-panchanga-pdf.js
+/* scripts/merge-panchanga-pdf.js
    Merges PDF-extracted panchanga fields (data/pdf-panchanga-data.json) into the
    per-date OCR records in ocr-zones/<DD-MM-YYYY>/structured-ocr.json.
 
@@ -11,8 +11,8 @@
      so re-running is idempotent.
 
    Usage:
-     node merge-panchanga-pdf.js                # dry run (writes nothing)
-     node merge-panchanga-pdf.js --apply        # performs the writes
+     node scripts/merge-panchanga-pdf.js                # dry run (writes nothing)
+     node scripts/merge-panchanga-pdf.js --apply        # performs the writes
      --pdf <path>    PDF data json (default data/pdf-panchanga-data.json)
      --ocr-root <dir>  OCR root (default ocr-zones)
      --report <path>   report path (default data/panchanga-merge-report.json)

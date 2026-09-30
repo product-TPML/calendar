@@ -1,7 +1,7 @@
 ﻿#requires -version 5.1
 <#
 .SYNOPSIS
-Batch OCR of Kannada calendar images using the frozen zones from ocr-zones.md.
+Batch OCR of Kannada calendar images using the frozen zones from docs/ocr-zones.md.
 
 .DESCRIPTION
 For every image data\{Year}\{MM}\{DD-MM-YYYY}.jpg in the requested month, crops the
@@ -15,9 +15,9 @@ ocr-zones\{DD-MM-YYYY}\:
 Missing image dates are skipped and reported in the summary.
 
 .EXAMPLE
-.\ocr_month.ps1
-.\ocr_month.ps1 -Year 2026 -Month 5
-.\ocr_month.ps1 -Year 2026 -Month 8 -OnlyDate 05-08-2026
+.\scripts/ocr_month.ps1
+.\scripts/ocr_month.ps1 -Year 2026 -Month 5
+.\scripts/ocr_month.ps1 -Year 2026 -Month 8 -OnlyDate 05-08-2026
 #>
 [CmdletBinding()]
 param(
@@ -35,9 +35,10 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 # $PSScriptRoot is not populated in param-block defaults on PS 5.1, resolve here
-if (-not $DataRoot)   { $DataRoot   = Join-Path $PSScriptRoot 'data' }
-if (-not $OutputRoot) { $OutputRoot = Join-Path $PSScriptRoot 'ocr-zones' }
-if (-not $TessDataDir){ $TessDataDir = Join-Path $PSScriptRoot 'tessdata' }
+$RepoRoot = Split-Path -Parent $PSScriptRoot   # scripts/ lives one level below the repo root
+if (-not $DataRoot)   { $DataRoot   = Join-Path $RepoRoot 'data' }
+if (-not $OutputRoot) { $OutputRoot = Join-Path $RepoRoot 'ocr-zones' }
+if (-not $TessDataDir){ $TessDataDir = Join-Path $RepoRoot 'tessdata' }
 
 if ($Year -lt 1 -or $Year -gt 9999) { throw "Year out of range: $Year" }
 if ($Month -lt 1 -or $Month -gt 12) { throw "Month out of range: $Month" }
@@ -48,7 +49,7 @@ if (-not (Test-Path -LiteralPath (Join-Path $TessDataDir 'kan.traineddata'))) {
 }
 if ($OnlyDate -and ($OnlyDate -notmatch '^\d{2}-\d{2}-\d{4}$')) { throw "OnlyDate must look like DD-MM-YYYY: $OnlyDate" }
 
-# --- frozen zones (ocr-zones.md) -------------------------------------------------
+# --- frozen zones (docs/ocr-zones.md) -------------------------------------------------
 $zones = @(
     [pscustomobject]@{ Name = 'quote';          X = 327; Y = 129; W = 684; H = 59 },
     [pscustomobject]@{ Name = 'date_left';      X = 7;   Y = 199; W = 317; H = 204 },
@@ -330,7 +331,7 @@ function New-StructuredJson {
 
     # --- assembly ----------------------------------------------------------------
     $rel = $Image
-    $rootPrefix = $PSScriptRoot.TrimEnd('\') + '\'
+    $rootPrefix = $RepoRoot.TrimEnd('\') + '\'
     if ($Image.StartsWith($rootPrefix)) { $rel = $Image.Substring($rootPrefix.Length) }
 
     return [ordered]@{

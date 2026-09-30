@@ -5,7 +5,7 @@
    - date ranges are inclusive
    - Week and Month retain the shared event index
    - PV failure is explicit
-   Run: node app.test.js */
+   Run (from the repo root): node tests/app.test.js */
 "use strict";
 
 const fs = require("fs");
@@ -65,7 +65,7 @@ global.localStorage = {
   removeItem(k) { delete localStore[k]; },
 };
 
-const APP_PATH = path.join(__dirname, "app.js");
+const APP_PATH = path.join(__dirname, "..", "app.js");
 vm.runInThisContext(fs.readFileSync(APP_PATH, "utf8"), { filename: APP_PATH });
 
 const tick = () => new Promise((resolve) => setTimeout(resolve, 0));

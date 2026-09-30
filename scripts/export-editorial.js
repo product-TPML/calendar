@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 // Exports all ocr-zones/<date>/structured-ocr.json records into a single
 // flat CSV for editorial review/edit in Google Sheets.
-// Node 18+, built-ins only. Run: node export-editorial.js
+// Node 18+, built-ins only. Run: node scripts/export-editorial.js
 
 const fs = require('fs');
 const path = require('path');
 
-const ROOT = __dirname;
+const ROOT = path.join(__dirname, '..');
 const OCR_DIR = path.join(ROOT, 'ocr-zones');
 const OUT_DIR = path.join(ROOT, 'editorial');
 const OUT_FILE = path.join(OUT_DIR, 'calendar-editorial.csv');

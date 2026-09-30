@@ -1,6 +1,24 @@
-data/
-ocr-zones/
+# Large local data. Only what the app needs at runtime is tracked:
+#   data/pv-calendar-data.json and ocr-zones/<date>/structured-ocr.json
+data/*
+!data/pv-calendar-data.json
+ocr-zones/*
+!ocr-zones/*/
+ocr-zones/*/*
+!ocr-zones/*/structured-ocr.json
 tessdata/
 ocr-test-*.txt
 *.part
+
+# Source material kept locally (PDF, form responses, original logo)
+source/
+*.xlsx
+
+# Tool and editor state
+.claude/
+.deja/
 .playwright-mcp/
+
+# Python caches
+__pycache__/
+*.pyc
