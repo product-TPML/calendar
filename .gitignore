@@ -6,6 +6,22 @@ ocr-zones/*
 !ocr-zones/*/
 ocr-zones/*/*
 !ocr-zones/*/structured-ocr.json
+# Local-only OCR records that are intentionally not tracked
+ocr-zones/18-12-2026/
+ocr-zones/19-12-2026/
+ocr-zones/20-12-2026/
+ocr-zones/21-12-2026/
+ocr-zones/22-12-2026/
+ocr-zones/23-12-2026/
+ocr-zones/24-12-2026/
+ocr-zones/25-12-2026/
+ocr-zones/26-12-2026/
+ocr-zones/27-12-2026/
+ocr-zones/28-12-2026/
+ocr-zones/29-12-2026/
+ocr-zones/30-12-2026/
+ocr-zones/31-12-2026/
+ocr-zones/30-05-2026/
 tessdata/
 ocr-test-*.txt
 *.part
