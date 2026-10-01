@@ -475,7 +475,7 @@ body {
 .stream-period-title { margin: 0; padding: 4px 2px; font-family: var(--font-display); font-size: 21px; color: var(--verm); }
 .month-cal > .week-row {
   position: sticky; top: calc(var(--masthead-h, 64px) + var(--month-toolbar-h, 56px)); z-index: 10;
-  margin-bottom: 0; box-shadow: 0 5px 0 var(--paper);
+  box-shadow: 0 5px 0 var(--paper); /* fills the 5px margin gap only, so the first grid row keeps its top border */
 }
 .month-block + .month-block { padding-top: 8px; border-top: 2px solid var(--line); }
 .week-block + .week-block { margin-top: 8px; }
