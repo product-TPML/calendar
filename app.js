@@ -863,7 +863,7 @@
       html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + '" data-day="' + k + '" type="button"' + (today ? ' title="ಇಂದು"' : "") + aria + '>' + kn(day) +
         (local || statewide ? '<span class="mday-dots" aria-hidden="true">' + (local ? '<i class="scope-dot district"></i><b class="date-count district">' + local + '</b>' : '') + (statewide ? '<i class="scope-dot state"></i><b class="date-count state">' + statewide + '</b>' : '') + '</span>' : '') + '</button>';
     }
-    return '<div class="week-row">' + WEEKDAYS.map(function (w, i) { return '<span title="' + w + '">' + WEEKDAYS_SHORT[i] + "</span>"; }).join("") + '</div><div class="month-grid">' + html + '</div>';
+    return '<div class="month-cal"><div class="week-row">' + WEEKDAYS.map(function (w, i) { return '<span title="' + w + '">' + WEEKDAYS_SHORT[i] + "</span>"; }).join("") + '</div><div class="month-grid">' + html + '</div></div>';
   }
 
   /* Month agenda: each PV source record listed once, with its date or inclusive
