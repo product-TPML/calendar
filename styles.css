@@ -82,6 +82,14 @@ body {
   background: var(--card); border: 1px solid var(--line); border-radius: 0;
   cursor: pointer; transition: transform .12s ease, background .12s ease;
 }
+/* Chevrons are drawn, not typeset: the ‹ › glyphs sit off-centre in the font's line box. */
+#prevDay, #nextDay { font-size: 0; }
+#prevDay::before, #nextDay::before {
+  content: ""; width: 10px; height: 10px;
+  border: solid currentColor; border-width: 0 0 3px 3px;
+}
+#prevDay::before { transform: translateX(2px) rotate(45deg); }
+#nextDay::before { transform: translateX(-2px) rotate(-135deg); }
 .icon-btn:hover { background: var(--paper-deep); }
 .icon-btn:active { transform: scale(.92); }
 
