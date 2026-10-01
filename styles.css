@@ -21,6 +21,8 @@
   --green-soft: #e3f1e7;
   --red-soft: #f6e6e6;
   --amber-soft: #f1f1f1;
+  --pdf: #1d5fa8;
+  --pdf-soft: #e6eef8;
   --radius: 0;
   --shadow: 0 1px 2px rgba(17, 17, 17, .08), 0 4px 14px rgba(17, 17, 17, .05);
   --tabbar-h: 58px;
@@ -146,7 +148,7 @@ body {
 
 /* ---------- Panchanga ---------- */
 .sun-row { display: flex; justify-content: center; gap: 28px; margin: 12px 0 2px; font-size: 14.5px; font-weight: 600; color: var(--ink-soft); }
-.sun-row .sun-item { display: inline-flex; align-items: center; }
+.sun-row .sun-item { display: inline-flex; align-items: center; gap: 5px; }
 .sun-row .sunrise-item { color: #6f1d1d; }
 .sun-row .sunset-item { color: #444; }
 .sun-row .sun-ico { color: currentColor; font-weight: 700; }
@@ -399,6 +401,10 @@ body {
 }
 .scope-state .ev-mark { background: var(--green); }
 .scope-district .ev-mark { background: var(--verm); }
+/* Settings toggle: highlight events that come from the PV wall-calendar PDF */
+body.hl-pdf .ev-row.src-pdf { background: var(--pdf-soft); box-shadow: inset 3px 0 0 var(--pdf); }
+body.hl-pdf .ev-row.src-pdf:hover { background: var(--pdf-soft); }
+body.hl-pdf .ev-row.src-pdf .ev-mark { background: var(--pdf); }
 .ev-when { display: block; color: var(--ink-soft); font-size: .82em; font-family: var(--font-num); }
 .sr-only {
   position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;

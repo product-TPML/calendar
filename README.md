@@ -16,7 +16,8 @@ Open the app over HTTP, not `file://`, so the data files can load. See `AGENTS.m
 | Path | What it is |
 |---|---|
 | `index.html`, `app.js`, `styles.css`, `manifest.webmanifest`, `assets/` | The app (must stay at the repo root: the browser loads data by these paths) |
-| `data/pv-calendar-data.json` | Event data the app loads. Other files in `data/` are generated and ignored |
+| `data/pv-calendar-data.json` | District event data the app loads |
+| `data/pdf-events.json` | Day-level events from the PV wall-calendar PDF, shown as Karnataka-wide events. Regenerate with `scripts/extract-pdf-events.py` (see its docstring). Other files in `data/` are generated and ignored |
 | `ocr-zones/<DD-MM-YYYY>/structured-ocr.json` | Per-day Panchanga records the app loads lazily. Other files in these folders are OCR intermediates and are ignored |
 | `epaper/` | Cultural-event candidates (`cultural-event-candidates.json`) and the browser extension that collects them |
 | `editorial/` | Editorial CSV exports and the log of applied OCR corrections |

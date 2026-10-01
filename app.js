@@ -9,6 +9,7 @@
   /* ---------------- State & helpers ---------------- */
   var state = { key: DEFAULT_KEY, tab: "day", big: false, kn: false,
     pv: null, pvIndex: {}, pvRecords: [], pvError: false, pvPending: null, pvQA: [],
+    pdfRecords: null, pdfMerged: false,
     cultural: null, culturalIndex: {}, culturalRecords: [], culturalError: false, culturalPending: null,
     ocrData: {}, ocrPending: {}, homeMode: "events", district: "", panchangaPvOnly: false,
     weekFirst: null, weekLast: null, weekHeader: null, monthFirst: null, monthLast: null, monthHeader: null };
@@ -35,6 +36,7 @@
      (ISO "YYYY-MM-DD" in the JSON, DD-MM-YYYY keys in the app) with explicit
      conversion; no Date/timezone parsing of ISO dates. ---------------- */
   var PV_URL = "data/pv-calendar-data.json";
+  var PDF_EVENTS_URL = "data/pdf-events.json";
   var CULTURAL_URL = "epaper/cultural-event-candidates.json";
   var SKELETON = function (text) { return '<div class="skeleton" role="status" aria-live="polite"><span class="sr-only">' + text + '</span><i></i><i></i><i></i></div>'; };
   var PV_LOADING = SKELETON("ಘಟನೆ ದತ್ತಾಂಶ ಲೋಡ್ ಆಗುತ್ತಿದೆ…");
@@ -115,11 +117,47 @@
         state.pvIndex = idx.index;
         state.pvRecords = idx.records;
         state.pvQA = idx.qa;
+        state.pdfMerged = false;
+        mergePdfEvents();
         return json;
       })
       .catch(function () { state.pvError = true; return null; })
       .then(function (json) { delete state.pvPending; return json; });
     return state.pvPending;
+  }
+
+  /* Day-level event text printed in the PV wall-calendar PDF (data/pdf-events.json).
+     Shown as Karnataka-wide events, merged into the PV index so every view
+     (Day, Week, Month, counts) picks them up. Failure to load is silent: the
+     district event data stays usable without it. */
+  function mergePdfEvents() {
+    if (!state.pv || !state.pdfRecords || state.pdfMerged) return;
+    state.pdfMerged = true;
+    state.pdfRecords.forEach(function (r) {
+      state.pvRecords.push(r);
+      (state.pvIndex[isoToKey(r.dateStart)] = state.pvIndex[isoToKey(r.dateStart)] || []).push(r);
+    });
+  }
+
+  function fetchPdfEvents() {
+    return fetch(PDF_EVENTS_URL)
+      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
+      .then(function (json) {
+        var events = (json && json.events) || {};
+        state.pdfRecords = [];
+        Object.keys(events).forEach(function (key) {
+          if (!validKey(key)) return;
+          var iso = keyToIso(key), items = [].concat(events[key] || []);
+          items.forEach(function (title) {
+            title = String(title || "").trim();
+            if (!title) return;
+            state.pdfRecords.push({ sourceDistrict: "", dateStart: iso, dateEnd: iso, rawDate: iso, title: title,
+              place: "", scope: "Relevant for Karnataka", eventType: "religious", source: "pdf" });
+          });
+        });
+        mergePdfEvents();
+      })
+      .catch(function () { state.pdfRecords = null; });
   }
 
   var CULTURAL_DISTRICTS = {
@@ -270,7 +308,7 @@
 
   function pvRow(r, when, dayKey) {
     var place = r.place ? ' <span class="ev-place">' + esc(r.place) + '</span>' : "";
-    var scope = r.scope === "Relevant for Karnataka" ? "state" : "district";
+    var scope = (r.scope === "Relevant for Karnataka" ? "state" : "district") + (r.source === "pdf" ? " src-pdf" : "");
     var open = dayKey ? '<button type="button" class="event-link" data-day="' + dayKey + '">' : "";
     var close = dayKey ? '</button>' : "";
     return '<li class="ev-row event-row scope-' + scope + '">' + open + '<span class="ev-mark" aria-hidden="true"></span><span class="ev-text">' + esc(r.title) + place + (when ? ' <span class="ev-when">' + esc(when) + '</span>' : "") + '</span>' + close + '</li>';
@@ -1042,6 +1080,8 @@
      mode stay per-session. */
   function loadDistrict() { try { return localStorage.getItem("pvDistrict") || ""; } catch (e) { return ""; } }
   function saveDistrict(d) { try { localStorage.setItem("pvDistrict", d); } catch (e) {} }
+  function loadHlPdf() { try { return localStorage.getItem("pvHighlightPdf") === "1"; } catch (e) { return false; } }
+  function saveHlPdf(on) { try { localStorage.setItem("pvHighlightPdf", on ? "1" : "0"); } catch (e) {} }
   function loadDate() { try { var key = sessionStorage.getItem("pvDate"); return validKey(key) ? key : DEFAULT_KEY; } catch (e) { return DEFAULT_KEY; } }
   function saveDate(key) { try { sessionStorage.setItem("pvDate", key); } catch (e) {} }
   function loadPanchangaPvOnly() { try { return sessionStorage.getItem("pvPanchangaPvOnly") !== "0"; } catch (e) { return true; } }
@@ -1230,6 +1270,13 @@
       state.big = e.target.checked;
       if (document.body) document.body.classList.toggle("big", state.big);
     });
+    var hlPdf = document.getElementById("hlPdf");
+    hlPdf.checked = loadHlPdf();
+    if (document.body) document.body.classList.toggle("hl-pdf", hlPdf.checked);
+    hlPdf.addEventListener("change", function (e) {
+      saveHlPdf(e.target.checked);
+      if (document.body) document.body.classList.toggle("hl-pdf", e.target.checked);
+    });
     document.getElementById("knDigits").addEventListener("change", function (e) {
       state.kn = e.target.checked;
       renderAll();
@@ -1254,6 +1301,7 @@
       renderAll();
     });
     fetchCultural().then(function () { renderAll(); });
+    fetchPdfEvents().then(function () { renderAll(); });
     goto(state.key);
   }
 

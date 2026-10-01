@@ -142,10 +142,12 @@ function assert(cond, msg) {
   documentStub._init();
   assert(count("data/pv-calendar-data.json") === 1, "PV calendar fetched once");
   assert(count("epaper/cultural-event-candidates.json") === 1, "cultural event data fetched once");
+  assert(count("data/pdf-events.json") === 1, "PDF calendar events fetched once");
   assert(calls.every((url) => !url.startsWith("ocr-zones/")), "Day does not request OCR data");
   assert(els.todayContent.innerHTML.includes("ಘಟನೆ ದತ್ತಾಂಶ ಲೋಡ್ ಆಗುತ್ತಿದೆ"), "event loading state shown");
   resolveUrl("data/pv-calendar-data.json", mkPV());
   resolveUrl("epaper/cultural-event-candidates.json", mkCultural());
+  resolveUrl("data/pdf-events.json", { events: { [INITIAL]: ["PDF-Day-" + INITIAL, "PDF-Second-" + INITIAL], [NEXT]: "  ", "31-09-2026": "PDF-Invalid" } });
   await tick();
   await tick();
   assert(els.todayContent.innerHTML.includes("ಇಂದಿನ ಕಾರ್ಯಕ್ರಮಗಳು"), "Home today heading shown");
@@ -156,6 +158,8 @@ function assert(cond, msg) {
   assert(els.todayContent.innerHTML.includes('class="district-option-count"'), "district menu includes separated count badges");
   assert(sectionBody(els.todayContent.innerHTML, "homeEvents").includes("PV-Karnataka-" + INITIAL), "Karnataka event shown with empty district");
   assert(sectionBody(els.todayContent.innerHTML, "homeEvents").includes("ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ") && !sectionBody(els.todayContent.innerHTML, "homeEvents").includes("ಧಾರ್ಮಿಕ ಕಾರ್ಯಕ್ರಮಗಳು") && !sectionBody(els.todayContent.innerHTML, "homeEvents").includes("ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು"), "no-district empty state is preserved without event-type headings");
+  assert(sectionBody(els.todayContent.innerHTML, "homeEvents").includes("PDF-Day-" + INITIAL), "PDF calendar event shown as Karnataka-wide with empty district");
+  assert(sectionBody(els.todayContent.innerHTML, "homeEvents").includes("PDF-Second-" + INITIAL), "PDF day with several events shows each as its own row");
   assert(els.todayContent.innerHTML.includes(">ಬಾಗಲಕೋಟೆ (3)</option>"), "Day district count is contextual, in Kannada");
   assert(els.todayContent.innerHTML.includes(">ಬಳ್ಳಾರಿ (1)</option>"), "district count excludes Karnataka-wide rows");
   assert(els.todayContent.innerHTML.includes("ಮುಂದಿನ 7 ದಿನಗಳ ಕಾರ್ಯಕ್ರಮಗಳು"), "seven-day upcoming section shown");
