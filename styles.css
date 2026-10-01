@@ -83,7 +83,7 @@ body {
   cursor: pointer; transition: transform .12s ease, background .12s ease;
 }
 /* Chevrons are drawn, not typeset: the ‹ › glyphs sit off-centre in the font's line box. */
-#prevDay, #nextDay { font-size: 0; }
+#prevDay, #nextDay { font-size: 0; align-content: center; } /* the hidden text node is a 2nd grid row; centre the rows as a block */
 #prevDay::before, #nextDay::before {
   content: ""; width: 10px; height: 10px;
   border: solid currentColor; border-width: 0 0 3px 3px;
