@@ -998,7 +998,11 @@
     var unit = state.tab === "week" ? "ವಾರ" : state.tab === "month" ? "ತಿಂಗಳು" : "ದಿನ";
     prev.setAttribute("aria-label", "ಹಿಂದಿನ " + unit);
     next.setAttribute("aria-label", "ಮುಂದಿನ " + unit);
-    if (document.documentElement) document.documentElement.style.setProperty("--masthead-h", document.querySelector(".masthead").offsetHeight + "px");
+    if (document.documentElement) {
+      document.documentElement.style.setProperty("--masthead-h", document.querySelector(".masthead").offsetHeight + "px");
+      var monthToolbar = document.querySelector("#viewMonth .stream-toolbar");
+      if (monthToolbar && monthToolbar.offsetHeight) document.documentElement.style.setProperty("--month-toolbar-h", monthToolbar.offsetHeight + "px");
+    }
     document.title = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + " — ಕನ್ನಡ ಸಾಂಸ್ಕೃತಿಕ ಕ್ಯಾಲೆಂಡರ್";
   }
 

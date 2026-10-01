@@ -465,6 +465,10 @@ body {
 .week-block { display: grid; gap: 0; padding: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 0; box-shadow: var(--shadow); }
 .month-block { display: grid; gap: 12px; }
 .stream-period-title { margin: 0; padding: 4px 2px; font-family: var(--font-display); font-size: 21px; color: var(--verm); }
+.month-block > .week-row {
+  position: sticky; top: calc(var(--masthead-h, 64px) + var(--month-toolbar-h, 56px)); z-index: 10;
+  margin-bottom: 0; box-shadow: 0 5px 0 var(--paper);
+}
 .month-block + .month-block { padding-top: 8px; border-top: 2px solid var(--line); }
 .week-block + .week-block { margin-top: 8px; }
 .week-block .stream-period-title { font-size: 18px; }
