@@ -615,6 +615,13 @@
     }).join("") + '</div>' : '';
   }
 
+  var TONE_WORD = { good: "ಶುಭ", mid: "ಮಧ್ಯಮ", bad: "ಅಶುಭ" };
+
+  function durationLabel(minutes) {
+    var h = Math.floor(minutes / 60), m = minutes % 60;
+    return (h ? kn(h) + " ಗಂ" : "") + (h && m ? " " : "") + (m ? kn(m) + " ನಿ" : "");
+  }
+
   function panchangaTimingsHTML(record) {
     if (!record.timings.length) return '<p class="empty-note">ಈ ದಿನದ ಕಾಲ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
     var calendar = record.calendar;
@@ -646,7 +653,13 @@
     }).join("");
     var rows = ordered.map(function (timing) {
       var source = timing.source;
-      return '<li class="tl-row ' + source.tone + '"><span class="tone-dot timeline-node ' + source.tone + '" aria-hidden="true"></span><span class="tl-main timeline-card"><span class="tl-name">' + esc(source.name) + '</span><span class="t-time">' + kn(source.from) + ' – ' + kn(source.to) + '</span></span></li>';
+      /* Mobile card: name and tone word (so colour is not the only cue), time and length,
+         and a thin bar showing where it falls between the first start and the last end. */
+      var barLeft = span ? (timing.from - start) / span * 100 : 0, barWidth = span ? (timing.to - timing.from) / span * 100 : 0;
+      return '<li class="tl-row ' + source.tone + '"><span class="tone-dot timeline-node ' + source.tone + '" aria-hidden="true"></span><span class="tl-main timeline-card">' +
+        '<span class="tl-head"><span class="tl-name">' + esc(source.name) + '</span><span class="tl-tone">' + TONE_WORD[source.tone] + '</span></span>' +
+        '<span class="tl-when"><span class="t-time">' + kn(source.from) + ' – ' + kn(source.to) + '</span><span class="tl-dur">' + durationLabel(timing.to - timing.from) + '</span></span>' +
+        '<span class="tl-bar" aria-hidden="true"><i style="left:' + barLeft.toFixed(1) + '%;width:' + Math.max(barWidth, 2).toFixed(1) + '%"></i></span></span></li>';
     }).join("");
     var startLabel = clockLabel(start), endLabel = clockLabel(end);
     return '<div class="timeline" aria-label="ಕಾಲಗಳ ಸಮಯರೇಖೆ"><div class="tl-track" role="list" aria-label="ಕಾಲಗಳ ವ್ಯಾಪ್ತಿಗಳು">' + blocks + '</div><div class="tl-ends"><span class="tl-endpoint"><small>ಆರಂಭ</small><b class="t-time">' + kn(startLabel) + '</b></span><span class="tl-endpoint"><small>ಅಂತ್ಯ</small><b class="t-time">' + kn(endLabel) + '</b></span></div></div>' +
@@ -998,10 +1011,16 @@
       var local = groups[date].filter(function (r) { return r.scope !== "Relevant for Karnataka"; });
       var statewide = groups[date].filter(function (r) { return r.scope === "Relevant for Karnataka"; });
       var rows = function (records) { return records.map(function (r) {
-        var when = r.dateStart === r.dateEnd ? isoToKey(r.dateStart) : isoToKey(r.dateStart) + " – " + isoToKey(r.dateEnd);
+        /* The date heading already says the day; only a multi-day event needs its range. */
+        var when = r.dateStart === r.dateEnd ? "" : isoToKey(r.dateStart) + " – " + isoToKey(r.dateEnd);
         return pvRow(r, when);
       }).join(""); };
-      return '<section class="agenda-day"><h3><button type="button" class="agenda-day-link" data-day="' + isoToKey(date) + '">' + isoToKey(date) + '</button></h3>' +
+      /* Same day heading as the Week view: weekday on the left, big date on the right. */
+      var dayKey = isoToKey(date), d = parseKey(dayKey), isToday = dayKey === keyFor(new Date());
+      var head = '<h3 class="week-day-title"><button type="button" class="week-day-link" data-day="' + dayKey + '">' +
+        '<span class="week-day-label"><span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (isToday ? '<span class="today-pill">ಇಂದು</span>' : "") + '</span>' +
+        '<span class="week-day-date"><b>' + kn(d.getDate()) + '</b><small>' + MONTHS[d.getMonth()] + '</small></span></button></h3>';
+      return '<section class="agenda-day week-day"' + (isToday ? ' data-today="1"' : "") + (d.getDay() === 0 ? ' data-sun="1"' : "") + '>' + head +
         (local.length ? '<div class="agenda-scope"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + rows(local) + '</ul></div>' : '') +
         (statewide.length ? '<div class="agenda-scope statewide"><h4>ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + rows(statewide) + '</ul></div>' : '') + '</section>';
     }).join("") + "</div>";

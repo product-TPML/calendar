@@ -224,7 +224,18 @@ body {
   .timeline-mobile::before { content: ""; position: absolute; left: 6px; top: 18px; bottom: 18px; width: 2px; background: var(--line); }
   .timeline-mobile .tl-row { position: relative; display: grid; grid-template-columns: 14px minmax(0, 1fr); align-items: start; gap: 10px; padding: 8px 0; border-top: 0; }
   .timeline-mobile .timeline-node { position: relative; z-index: 1; width: 12px; height: 12px; margin-top: 15px; border: 3px solid var(--card); box-shadow: 0 0 0 1px var(--line); }
-  .timeline-mobile .timeline-card { display: flex; padding: 10px 12px; border: 1px solid var(--line); border-left-width: 4px; border-radius: 0; background: var(--card); box-shadow: 0 3px 10px rgba(17, 17, 17, .06); }
+  .timeline-mobile .timeline-card { display: flex; flex-direction: column; gap: 7px; padding: 11px 13px 12px; border: 1px solid var(--line); border-left-width: 4px; border-radius: 0; background: var(--card); box-shadow: 0 3px 10px rgba(17, 17, 17, .06); }
+  .timeline-mobile .tl-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+  .timeline-mobile .tl-name { font-size: 15px; font-weight: 700; }
+  .timeline-mobile .tl-tone { flex: none; padding: 1px 7px; color: #fff; font-size: 11.5px; font-weight: 800; line-height: 1.5; }
+  .timeline-mobile .tl-when { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
+  .timeline-mobile .t-time { font-family: var(--font-num); font-size: 20px; font-weight: 800; letter-spacing: .01em; }
+  .timeline-mobile .tl-dur { flex: none; color: var(--ink-soft); font-size: 12.5px; font-weight: 600; }
+  .timeline-mobile .tl-bar { position: relative; display: block; height: 5px; background: rgba(17, 17, 17, .09); }
+  .timeline-mobile .tl-bar i { position: absolute; top: 0; bottom: 0; }
+  .timeline-mobile .tl-row.good .tl-tone, .timeline-mobile .tl-row.good .tl-bar i { background: var(--green); }
+  .timeline-mobile .tl-row.mid .tl-tone, .timeline-mobile .tl-row.mid .tl-bar i { background: var(--amber); }
+  .timeline-mobile .tl-row.bad .tl-tone, .timeline-mobile .tl-row.bad .tl-bar i { background: var(--verm); }
   .timeline-mobile .tl-row.good .timeline-card { border-left-color: var(--green); background: var(--green-soft); }
   .timeline-mobile .tl-row.mid .timeline-card { border-left-color: var(--amber); background: var(--amber-soft); }
   .timeline-mobile .tl-row.bad .timeline-card { border-left-color: var(--verm); background: var(--red-soft); }
@@ -482,12 +493,12 @@ body {
 @media (prefers-reduced-motion: reduce) { .stream-toolbar { transition: none; } }
 .month-agenda-list { padding: 0 12px; }
 .agenda-day + .agenda-day { border-top: 1px dashed var(--line); }
-.agenda-day h3 { margin: 0; padding: 10px 2px 4px; font-size: 15px; }
+.agenda-day .week-day-title { padding: 0; }
 .agenda-scope { margin-top: 4px; }
 .agenda-scope + .agenda-scope { border-top: 1px dashed var(--line); }
 .agenda-scope h4 { margin: 7px 2px 0; color: var(--verm); font-size: 13px; }
 .agenda-scope.statewide h4 { color: var(--green); }
-.agenda-day-link, .week-day-link {
+.week-day-link {
   padding: 0; border: 0; background: none; color: var(--verm-deep); font: inherit; font-weight: 700; cursor: pointer;
 }
 .agenda-day .ev-row { padding-left: 4px; padding-right: 4px; }
@@ -573,7 +584,7 @@ body {
 .tab:focus-visible, .icon-btn:focus-visible, .mday:focus-visible, .card-heading:focus-visible {
   outline: 2px solid var(--verm); outline-offset: 2px; border-radius: 0;
 }
-.today-btn:focus-visible, .district-select:focus-visible, .week-day-link:focus-visible, .agenda-day-link:focus-visible {
+.today-btn:focus-visible, .district-select:focus-visible, .week-day-link:focus-visible {
   outline: 2px solid var(--verm); outline-offset: 2px;
 }
 
@@ -606,7 +617,7 @@ body.big .pm-value { font-size: 21px; }
 
 /* ---------- Dates and day names: always Noto Sans Kannada ---------- */
 .masthead-date, .ds-day, .home-date, .home-date *, .upcoming-date, .month-title,
-.stream-period-title, .agenda-day h3, .agenda-day-link, .week-row, .week-day-link, .week-day-link * {
+.stream-period-title, .week-row, .week-day-link, .week-day-link * {
   font-family: var(--font-num);
 }
 .masthead-date, .upcoming-date, .month-title, .stream-period-title { font-weight: 800; }

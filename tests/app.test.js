@@ -246,6 +246,9 @@ function assert(cond, msg) {
   assert((timings.match(/<li class="tl-row/g) || []).length === 4, "timings list has rahu, gulika, yamaganda and artha prahara");
   assert(timings.includes("ರಾಹು ಕಾಲ") && timings.includes("ಗುಳಿಕ ಕಾಲ") && timings.includes("ಯಮಗಂಡ") && timings.includes("ಅರ್ಥ ಪ್ರಹರ"), "all four timings are named");
   assert(timings.includes("ಬಾಗಲಕೋಟೆ"), "timings say which district they are for");
+  assert((timings.match(/class="tl-tone">ಅಶುಭ</g) || []).length === 3 && (timings.match(/class="tl-tone">ಮಧ್ಯಮ</g) || []).length === 1, "each timing card names its tone in words, not just colour");
+  assert(timings.includes('class="tl-dur">1 ಗಂ 30 ನಿ</span>'), "each timing card shows how long it lasts");
+  assert((timings.match(/class="tl-bar"/g) || []).length === 4 && timings.includes("left:0.0%;width:20.0%"), "each timing card has a bar showing where it falls in the day");
   assert(els.todayContent.innerHTML.includes('class="tl-ends"><span class="tl-endpoint"><small>ಆರಂಭ</small><b class="t-time">07:30'), "timeline starts at the first timing");
   assert(els.todayContent.innerHTML.includes('<span class="tl-endpoint"><small>ಅಂತ್ಯ</small><b class="t-time">15:00'), "timeline ends at the last timing");
   assert(!els.todayContent.innerHTML.includes('class="jr"') && els.todayContent.innerHTML.includes("ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ."), "horoscope is reported as not available");
@@ -270,6 +273,9 @@ function assert(cond, msg) {
   tabEls.month.click();
   assert(els.mastheadDate.textContent.includes("2026"), "Month masthead shows year");
   assert(els.monthScroller.innerHTML.includes("agenda-day"), "Month renders the dated agenda");
+  assert(els.monthScroller.innerHTML.includes('ev-when">' + INITIAL + " – " + DAY2), "a multi-day event keeps its date range in the month list");
+  assert(/<section class="agenda-day week-day"[^>]*><h3 class="week-day-title"><button[^>]*data-day="[^"]+"><span class="week-day-label"><span class="week-day-name">[^<]+<\/span>.*?<span class="week-day-date"><b>\d+<\/b><small>/.test(els.monthScroller.innerHTML), "month list dates use the Week view's weekday-and-big-date heading");
+  assert(!els.monthScroller.innerHTML.includes('ev-when">' + INITIAL + "<"), "a one-day event does not repeat the date its heading already shows");
   assert(els.monthScroller.innerHTML.includes('<details class="month-agenda">') && !els.monthScroller.innerHTML.includes('<details class="month-agenda" open'), "the month's event list is a collapsed, expandable section");
   assert(/<summary class="ev-section-title" id="monthAgenda-[^"]+"><span>ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿ<\/span><span class="agenda-count">\d+<\/span><\/summary>/.test(els.monthScroller.innerHTML), "the heading shows how many events the list holds");
   assert(els.monthScroller.innerHTML.includes("date-count"), "Month shows event counts in cells");
