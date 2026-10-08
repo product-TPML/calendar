@@ -452,7 +452,23 @@ body {
   border-radius: 0;
   box-shadow: var(--shadow);
 }
-.month-agenda .ev-section-title { margin-bottom: 10px; }
+/* The list is collapsed until the heading is tapped. */
+.month-agenda > summary {
+  display: flex; align-items: center; gap: 10px; cursor: pointer; list-style: none; margin: 0;
+}
+.month-agenda > summary::-webkit-details-marker { display: none; }
+.month-agenda > summary > span:first-child { flex: 1; }
+.month-agenda > summary::after {
+  content: ""; flex: none; padding: 3.5px; border: solid currentColor; border-width: 0 2px 2px 0;
+  transform: rotate(45deg) translateY(-2px); transition: transform .2s ease;
+}
+.month-agenda[open] > summary::after { transform: rotate(-135deg) translateY(-2px); }
+.month-agenda[open] > summary { margin-bottom: 10px; }
+.month-agenda > summary:focus-visible { outline: 2px solid var(--verm); outline-offset: 4px; }
+.agenda-count {
+  flex: none; min-width: 22px; padding: 1px 7px; border-radius: 0; text-align: center;
+  background: var(--verm); color: #fff; font-size: 12.5px; font-weight: 800; font-family: var(--font-num);
+}
 .toolbar-row { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; }
 .toolbar-row label { font-size: 13px; font-weight: 700; color: var(--ink-soft); white-space: nowrap; }
 .toolbar-row .district-select { max-width: none; }

@@ -973,16 +973,21 @@
 
   /* Month agenda: each PV source record listed once, with its date or inclusive
      date range. Overlaps the displayed month. */
-  function monthAgendaHTML(y, m) {
-    if (state.pvError) return PV_ERROR;
-    if (!state.pv) return PV_LOADING;
+  function monthAgendaRecords(y, m) {
     var monthStart = y + "-" + pad(m + 1) + "-01";
     var monthEnd = y + "-" + pad(m + 1) + "-" + pad(daysInMonth(y, m + 1));
-    var list = state.pvRecords.filter(function (r) {
+    return state.pvRecords.filter(function (r) {
       return visibleRecord(r) && r.dateEnd >= monthStart && r.dateStart <= monthEnd;
     }).concat(state.culturalRecords.filter(function (r) {
       return r.sourceDistrict === state.district && r.dateEnd >= monthStart && r.dateStart <= monthEnd;
     })).sort(function (a, b) { return a.dateStart < b.dateStart ? -1 : a.dateStart > b.dateStart ? 1 : 0; });
+  }
+
+  function monthAgendaHTML(y, m) {
+    if (state.pvError) return PV_ERROR;
+    if (!state.pv) return PV_LOADING;
+    var monthStart = y + "-" + pad(m + 1) + "-01";
+    var list = monthAgendaRecords(y, m);
     if (!list.length) return '<p class="empty-note">ಈ ತಿಂಗಳಲ್ಲಿ ಯಾವುದೇ ಘಟನೆ ಇಲ್ಲ.</p>';
     var groups = {};
     list.forEach(function (r) {
@@ -1006,7 +1011,7 @@
     var p = key.split("-"), y = +p[0], m = +p[1];
     return '<section class="month-block" data-month="' + key + '"><h2 class="stream-period-title">' + MONTHS[m] + " " + kn(y) + '</h2>' +
       monthCalendarHTML(y, m) + '<div class="scope-legend month-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ"><span><i class="scope-dot district"></i> ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span><span><i class="scope-dot state"></i> ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span></div>' +
-      '<section class="month-agenda" aria-labelledby="monthAgenda-' + key + '"><h3 class="ev-section-title" id="monthAgenda-' + key + '">ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿ</h3>' + monthAgendaHTML(y, m) + '</section></section>';
+      '<details class="month-agenda"><summary class="ev-section-title" id="monthAgenda-' + key + '"><span>ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿ</span>' + (state.pv && !state.pvError ? '<span class="agenda-count">' + kn(monthAgendaRecords(y, m).length) + '</span>' : "") + '</summary>' + monthAgendaHTML(y, m) + '</details></section>';
   }
 
   function bindMonthStream() {

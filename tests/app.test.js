@@ -270,6 +270,8 @@ function assert(cond, msg) {
   tabEls.month.click();
   assert(els.mastheadDate.textContent.includes("2026"), "Month masthead shows year");
   assert(els.monthScroller.innerHTML.includes("agenda-day"), "Month renders the dated agenda");
+  assert(els.monthScroller.innerHTML.includes('<details class="month-agenda">') && !els.monthScroller.innerHTML.includes('<details class="month-agenda" open'), "the month's event list is a collapsed, expandable section");
+  assert(/<summary class="ev-section-title" id="monthAgenda-[^"]+"><span>ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿ<\/span><span class="agenda-count">\d+<\/span><\/summary>/.test(els.monthScroller.innerHTML), "the heading shows how many events the list holds");
   assert(els.monthScroller.innerHTML.includes("date-count"), "Month shows event counts in cells");
   assert(els.monthScroller.innerHTML.includes("Cultural-Bagalkot-" + INITIAL), "Month agenda includes cultural events");
   assert(els.monthScroller.innerHTML.includes('date-count district">3</b>'), "Month date count includes cultural events");
