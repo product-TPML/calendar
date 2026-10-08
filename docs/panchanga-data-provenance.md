@@ -138,7 +138,7 @@ The day-level values (paksha, rashis, ayana, months) use Bengaluru's sunrise. Yo
 - NOAA solar algorithm: the Sun's upper edge on the horizon, standard refraction (zenith 90.833°), IST.
 - Computed at each district's headquarters (`DISTRICTS` in `scripts/compute-sun-times.py`).
 - The seconds are dropped (not rounded), as the printed calendar does. For Bengaluru this matches the printed daily photos to the minute.
-- **To verify:** the district coordinates are approximate, to two decimals, written from memory and **not yet checked against a map**. A change of 0.01° of longitude moves the times by about 2 seconds, so small errors do not matter, but a wrong city would.
+- **Coordinates.** Each district uses the headquarters town (Bengaluru Rural: Doddaballapura; Bengaluru South: Ramanagara; Dakshina Kannada: Mangaluru; Kodagu: Madikeri; Uttara Kannada: Karwar; Vijayanagara: Hosapete). The values (four decimals) were checked on 8 Oct 2026 against two independent lookups, the English Wikipedia article for the town and OpenStreetMap, and the mean is used. Where OpenStreetMap returned only a district-boundary centre (Chamarajanagar, Gadag, Haveri, Kolar, Koppal, Yadgir), the Wikipedia value alone is used. The earlier two-decimal values agreed with these to within 0.05°. The largest effect is Mangaluru (0.04° north of the new value), which moved sunrise and sunset by 8.5 seconds. Because the printed time drops the seconds, about 5–9% of the minute values in a district changed by one minute.
 
 ### 3.7 Rahu Kala, Gulika Kala, Yamaganda, Artha Prahara
 
@@ -195,7 +195,6 @@ To check one day by hand: open `data/panchanga.json`, find `"DD-MM-YYYY"`, and c
 | Shubha Samaya | No rule found. Shown as "ಲಭ್ಯವಿಲ್ಲ" |
 | Rashi bhavishya | No source. Shown as "ಲಭ್ಯವಿಲ್ಲ" |
 | Time the Moon enters the next rashi | Not calculated yet |
-| District coordinates | Approximate, to be checked |
 | Kala basis (real sunrise-sunset or the printed fixed day) | Real chosen; whether to also show the printed values is open |
 | Which almanac for tithi and nakshatra times | Source values shown; see the differences above |
 | Errors in the 2027 Word file | Listed in `docs/panchanga-2027-source-audit.md`; not corrected in the file |

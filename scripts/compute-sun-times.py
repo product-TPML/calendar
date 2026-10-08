@@ -46,39 +46,44 @@ KALAS_PATH = "data/kalas.json"
 YEARS = (2026, 2027)
 IST = 5.5
 
-# District headquarters (latitude, longitude).
+# District headquarters (latitude, longitude), four decimals (about 10 m).
+# Each is the mean of two independent lookups of the HQ town, checked 8 Oct 2026:
+# the English Wikipedia article's coordinates and OpenStreetMap (Nominatim). Where OpenStreetMap
+# returned only a district-boundary centre (Chamarajanagar, Gadag, Haveri, Kolar, Koppal, Yadgir)
+# the Wikipedia value alone is used. The earlier two-decimal values agreed with these to 0.05 degree;
+# the change moves sunrise and sunset by at most 9 seconds.
 DISTRICTS = {
-    "Bagalkot": (16.18, 75.70),
-    "Ballari": (15.14, 76.92),
-    "Belagavi": (15.85, 74.50),
-    "Bengaluru Rural": (13.30, 77.54),               # Doddaballapura
-    "Bengaluru South (Ramanagara)": (12.72, 77.28),  # Ramanagara
-    "Bengaluru Urban": (12.97, 77.59),
-    "Bidar": (17.91, 77.52),
-    "Chamarajanagar": (11.93, 76.94),
-    "Chikkaballapur": (13.44, 77.73),
-    "Chikkamagaluru": (13.32, 75.77),
-    "Chitradurga": (14.23, 76.40),
-    "Dakshina Kannada": (12.91, 74.86),              # Mangaluru
-    "Davanagere": (14.46, 75.92),
-    "Dharwad": (15.46, 75.01),
-    "Gadag": (15.42, 75.63),
-    "Hassan": (13.01, 76.10),
-    "Haveri": (14.79, 75.40),
-    "Kalaburagi": (17.33, 76.83),
-    "Kodagu": (12.42, 75.74),                        # Madikeri
-    "Kolar": (13.14, 78.13),
-    "Mandya": (12.52, 76.90),
-    "Mysuru": (12.30, 76.64),
-    "Koppal": (15.35, 76.15),
-    "Raichur": (16.21, 77.34),
-    "Shivamogga": (13.93, 75.57),
-    "Tumakuru": (13.34, 77.12),
-    "Udupi": (13.34, 74.74),
-    "Uttara Kannada": (14.81, 74.13),                # Karwar
-    "Vijayapura": (16.83, 75.71),
-    "Vijayanagara": (15.27, 76.39),                  # Hosapete
-    "Yadgir": (16.76, 77.14),
+    "Bagalkot": (16.1805, 75.6979),
+    "Ballari": (15.1215, 76.9170),
+    "Belagavi": (15.8536, 74.5035),
+    "Bengaluru Rural": (13.2925, 77.5431),   # Doddaballapura
+    "Bengaluru South (Ramanagara)": (12.7241, 77.2832),   # Ramanagara
+    "Bengaluru Urban": (12.9778, 77.5909),
+    "Bidar": (17.9143, 77.5157),
+    "Chamarajanagar": (11.9260, 76.9402),
+    "Chikkaballapur": (13.4382, 77.7279),
+    "Chikkamagaluru": (13.3216, 75.7831),
+    "Chitradurga": (14.2283, 76.4003),
+    "Dakshina Kannada": (12.8708, 74.8428),   # Mangaluru
+    "Davanagere": (14.4664, 75.9224),
+    "Dharwad": (15.4562, 75.0075),
+    "Gadag": (15.4167, 75.6167),   # Gadag-Betageri
+    "Hassan": (13.0053, 76.0998),
+    "Haveri": (14.7939, 75.4039),
+    "Kalaburagi": (17.3300, 76.8292),
+    "Kodagu": (12.4212, 75.7392),   # Madikeri
+    "Kolar": (13.1333, 78.1333),
+    "Koppal": (15.3500, 76.1500),
+    "Mandya": (12.5219, 76.8981),
+    "Mysuru": (12.3064, 76.6530),
+    "Raichur": (16.1992, 77.3614),
+    "Shivamogga": (13.9330, 75.5708),
+    "Tumakuru": (13.3400, 77.1003),
+    "Udupi": (13.3404, 74.7462),
+    "Uttara Kannada": (14.8061, 74.1312),   # Karwar
+    "Vijayanagara": (15.2677, 76.3891),   # Hosapete
+    "Vijayapura": (16.8285, 75.7138),
+    "Yadgir": (16.7700, 77.1300),
 }
 
 # Slot (1-8) of the daytime eighths, by weekday (0 = Monday ... 6 = Sunday).
