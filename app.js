@@ -11,7 +11,7 @@
     pv: null, pvIndex: {}, pvRecords: [], pvError: false, pvPending: null, pvQA: [],
     calRecords: null, calMerged: false,
     cultural: null, culturalIndex: {}, culturalRecords: [], culturalError: false, culturalPending: null,
-    ocrData: {}, ocrPending: {}, homeMode: "events", district: "", panchangaPvOnly: false,
+    panData: {}, panPending: {}, panCore: null, panCorePending: null, panDistricts: {}, homeMode: "events", district: "", panchangaPvOnly: false,
     weekFirst: null, weekLast: null, weekHeader: null, monthFirst: null, monthLast: null, monthHeader: null };
 
   var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
@@ -43,7 +43,7 @@
   var PV_ERROR = '<p class="empty-note">ಘಟನೆ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';
   var CULTURAL_LOADING = '<p class="empty-note">ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ…</p>';
   var CULTURAL_ERROR = '<p class="empty-note">ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';
-  var OCR_LOADING = SKELETON("ಪಂಚಾಂಗದ ವಿವರಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ…");
+  var PAN_LOADING = SKELETON("ಪಂಚಾಂಗದ ವಿವರಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ…");
 
   function daysInMonth(y, m) { /* m 1-12, no Date/timezone involved */
     return [31, (y % 4 === 0 && (y % 100 !== 0 || y % 400 === 0)) ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][m - 1];
@@ -216,74 +216,114 @@
     return state.culturalPending;
   }
 
-  function unavailableOCR(key) {
+  /* ---------------- Panchanga data (no OCR) ----------------
+     data/panchanga.json: one record per day, the same for every district.
+     data/panchanga/<district>.json: that district's sunrise, sunset, kalas, yoga and karana.
+     Anything missing is left empty and the tab says it is not available. */
+  var PAN_URL = "data/panchanga.json", PAN_DISTRICT_DIR = "data/panchanga/";
+  var NA = "ಲಭ್ಯವಿಲ್ಲ";
+
+  function unavailablePan(key) {
     return { key: key, unavailable: true, calendar: {}, panchanga: null, timings: [], jathaka: [] };
   }
 
-  function cleanWord(value) { return String(value || "").replace(/[^\u0C80-\u0CFF\u200C\u200D\s]/g, "").trim(); }
-  function numberValue(value) { var n = parseFloat(value); return isNaN(n) ? 0 : n; }
-
-  function buildOCRTimings(raw) {
-    if (!raw || typeof raw !== "object") return [];
-    var defs = [
-      { key: "rahuKala", name: "ರಾಹು ಕಾಲ", tone: "bad" },
-      { key: "gulikaKala", name: "ಗುಳಿಕ ಕಾಲ", tone: "bad" },
-      { key: "yamaganda", name: "ಯಮಗಂಡ", tone: "bad" },
-      { key: "arthaPrahara", name: "ಅರ್ಥ ಪ್ರಹರ", tone: "mid" },
-      { key: "shubhaSamaya", name: "ಶುಭ ಸಮಯ", tone: "good" }
-    ], out = [];
-    defs.forEach(function (def) {
-      var value = String(raw[def.key] || ""), times = value.match(/(\d{1,2})[.:](\d{2})/g);
-      if (!times || times.length < 2) return;
-      out.push({ name: def.name, tone: def.tone, from: fixOCRTime(times[0], value), to: fixOCRTime(times[1], value) });
-    });
-    return out;
+  /* "HH:MM" or "HH:MM+1" -> { ends: 26.10, nextDay: true }; anything else -> null */
+  function timeField(text) {
+    var m = String(text || "").match(/^(\d{1,2}):(\d{2})(?:\+(\d))?$/);
+    if (!m) return null;
+    var days = m[3] ? +m[3] : 0;
+    return { ends: (+m[1] + days * 24) + (+m[2]) / 100, nextDay: days > 0 };
   }
 
-  function fixOCRTime(value, raw) {
-    var parts = value.split(/[.:]/u), hour = +parts[0];
-    if (/ಮ/u.test(raw) && hour > 0 && hour < 9) hour += 12;
-    return pad(hour) + ":" + parts[1];
+  function namedEntry(entry) {
+    if (!entry || !entry.name) return { name: "", ends: 0, nextDay: false, full: false };
+    return { name: entry.name, ends: entry.ends ? +entry.ends : 0, nextDay: !!entry.ends && +entry.ends >= 24, full: !!entry.fullDay };
   }
 
-  function normalizeOCR(json, key) {
-    var content = (json && json.content) || {}, calendar = content.calendar || {}, pan = content.panchanga || {}, timings = content.timings || {};
-    var tithi = pan.tithi || {}, nakshatra = pan.nakshatra || {}, yoga = pan.yoga || {}, karana = pan.karana || {};
+  var KALA_DEFS = [
+    { index: 2, name: "ರಾಹು ಕಾಲ", tone: "bad" },
+    { index: 3, name: "ಗುಳಿಕ ಕಾಲ", tone: "bad" },
+    { index: 4, name: "ಯಮಗಂಡ", tone: "bad" },
+    { index: 5, name: "ಅರ್ಥ ಪ್ರಹರ", tone: "mid" }
+  ];
+
+  function buildPanchangaRecord(core, dist, key) {
+    var day = core && core.days && core.days[key];
+    if (!day) return unavailablePan(key);
+    var p = key.split("-"), year = p[2];
+    var dayOfYear = Math.round((Date.UTC(+p[2], +p[1] - 1, +p[0]) - Date.UTC(+p[2], 0, 1)) / 864e5);
+    var row = dist && dist[year] && dist[year][dayOfYear];
+    var yogaEnd = row ? timeField(row[7]) : null, karanaEnd = row ? timeField(row[9]) : null, nextEnd = row ? timeField(row[11]) : null;
+    var karana2 = row && core.karanaNames[row[10] - 1] ? { name: core.karanaNames[row[10] - 1], ends: nextEnd ? nextEnd.ends : 0, nextDay: !!(nextEnd && nextEnd.nextDay) } : null;
+    var timings = [];
+    if (row) {
+      KALA_DEFS.forEach(function (def) {
+        var m = String(row[def.index] || "").match(/^(\d{2}:\d{2})-(\d{2}:\d{2})$/);
+        if (m) timings.push({ name: def.name, tone: def.tone, from: m[1], to: m[2] });
+      });
+    }
+    var tithi = namedEntry(day.tithi);
+    tithi.paksha = day.paksha || "";
     return {
       key: key,
       calendar: {
-        months: (calendar.months || []).filter(function (month) { return String(month).trim() && String(month).trim() !== "—"; }),
-        samvatsara: String(calendar.samvatsara || "").trim(),
-        shakaYear: numberValue(calendar.shakaYear),
-        sunrise: String(calendar.sunrise || "").trim(),
-        sunset: String(calendar.sunset || "").trim()
+        months: day.months || [], samvatsara: day.samvatsara || "", shakaYear: day.shakaYear || 0,
+        sunrise: row ? row[0] : "", sunset: row ? row[1] : ""
       },
       panchanga: {
-        tithi: { name: cleanWord(tithi.name), paksha: cleanWord(pan.paksha), ends: numberValue(tithi.endsAt), nextDay: !!tithi.nextDay },
-        nakshatra: { name: cleanWord(nakshatra.name), ends: numberValue(nakshatra.endsAt), nextDay: !!nakshatra.nextDay },
-        yoga: { name: cleanWord(yoga.name), ends: numberValue(yoga.endsAt), nextDay: !!yoga.nextDay },
-        karana: { name: cleanWord(karana.name), ends: numberValue(karana.endsAt), nextDay: !!karana.nextDay },
-        ayana: cleanWord(pan.ayana), solarRashi: cleanWord(pan.solarRashi), chandraRashi: cleanWord(pan.chandraEntryRashi || pan.chandraRashi)
+        tithi: tithi, nakshatra: namedEntry(day.nakshatra),
+        yoga: row && core.yogaNames[row[6] - 1] ? { name: core.yogaNames[row[6] - 1], ends: yogaEnd ? yogaEnd.ends : 0, nextDay: !!(yogaEnd && yogaEnd.nextDay) } : { name: "", ends: 0, nextDay: false },
+        karana: row && core.karanaNames[row[8] - 1] ? { name: core.karanaNames[row[8] - 1], ends: karanaEnd ? karanaEnd.ends : 0, nextDay: !!(karanaEnd && karanaEnd.nextDay), then: karana2 } : { name: "", ends: 0, nextDay: false },
+        ayana: day.ayana || "", solarRashi: day.solarRashi || "", chandraRashi: day.chandraRashi || ""
       },
-      timings: buildOCRTimings(timings),
-      jathaka: Array.isArray(content.jathaka) && content.jathaka.length === 12
-        ? content.jathaka.map(function (item) { return [item.rashi, cleanWord(item.prediction)]; }) : []
+      timings: timings,
+      jathaka: []
     };
   }
 
-  function fetchOCR(key) {
-    if (Object.prototype.hasOwnProperty.call(state.ocrData, key)) return Promise.resolve(state.ocrData[key]);
-    if (state.ocrPending[key]) return state.ocrPending[key];
-    state.ocrPending[key] = fetch("ocr-zones/" + key + "/structured-ocr.json")
-      .then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); })
-      .then(function (json) { return normalizeOCR(json, key); })
-      .catch(function () { return unavailableOCR(key); })
-      .then(function (record) {
-        state.ocrData[key] = record;
-        delete state.ocrPending[key];
+  function fetchJSON(url) {
+    return fetch(url).then(function (r) { if (!r.ok) throw new Error("http " + r.status); return r.json(); });
+  }
+
+  function loadPanchangaCore() {
+    if (state.panCore) return Promise.resolve(state.panCore);
+    if (!state.panCorePending) {
+      state.panCorePending = fetchJSON(PAN_URL).then(function (json) { state.panCore = json; return json; })
+        .catch(function () { state.panCorePending = null; return null; });
+    }
+    return state.panCorePending;
+  }
+
+  function loadPanchangaDistrict(core) {
+    var name = state.district && core.districts && core.districts[state.district] ? state.district : core.defaultDistrict;
+    var slug = core.districts && core.districts[name];
+    if (!slug) return Promise.resolve({ name: name, rows: null });
+    if (state.panDistricts[slug]) return Promise.resolve(state.panDistricts[slug]);
+    return fetchJSON(PAN_DISTRICT_DIR + slug + ".json").then(function (json) {
+      return (state.panDistricts[slug] = { name: name, rows: json });
+    }).catch(function () { return { name: name, rows: null }; });
+  }
+
+  function panchangaCacheKey(key) { return key + "|" + (state.district || ""); }
+
+  function fetchPanchanga(key) {
+    var ck = panchangaCacheKey(key);
+    if (Object.prototype.hasOwnProperty.call(state.panData, ck)) return Promise.resolve(state.panData[ck]);
+    if (state.panPending[ck]) return state.panPending[ck];
+    state.panPending[ck] = loadPanchangaCore().then(function (core) {
+      if (!core) return unavailablePan(key);
+      return loadPanchangaDistrict(core).then(function (district) {
+        var record = buildPanchangaRecord(core, district.rows, key);
+        record.districtName = district.name;
+        record.districtMissing = !district.rows;
         return record;
       });
-    return state.ocrPending[key];
+    }).catch(function () { return unavailablePan(key); }).then(function (record) {
+      state.panData[ck] = record;
+      delete state.panPending[ck];
+      return record;
+    });
+    return state.panPending[ck];
   }
 
   function pvEventsFor(key) { return (state.pvIndex[key] || []).slice(); }
@@ -542,12 +582,33 @@
     return (nextDay ? '<span class="nd">ಮರುದಿನ ' : "") + pad(hour) + ":" + pad(minute) + (nextDay ? "</span>" : "");
   }
 
+  function endsSub(entry) {
+    if (!entry.name) return "";
+    if (entry.full) return "ದಿನಪೂರ್ತಿ";
+    if (!entry.ends) return "ಅಂತ್ಯ ಸಮಯ " + NA;
+    return "ಮುಗಿಯುವುದು " + panchangaEnd(entry.ends, entry.nextDay);
+  }
+
+  /* A karana lasts about six hours, so a day has two or three: show the one at sunrise and the next. */
+  function karanaSub(karana) {
+    var sub = endsSub(karana);
+    if (karana.then && karana.then.name) sub += " · ನಂತರ " + esc(karana.then.name) + " " + panchangaEnd(karana.then.ends, karana.then.nextDay);
+    return sub;
+  }
+
+  function districtNoteHTML(record) {
+    if (!record.districtName) return "";
+    var note = record.districtMissing ? "ಜಿಲ್ಲೆಯ ಸಮಯ " + NA : "ಸೂರ್ಯೋದಯ-ಸೂರ್ಯಾಸ್ತ ಆಧಾರಿತ ಲೆಕ್ಕಾಚಾರ · " + esc(districtLabel(record.districtName));
+    if (!state.district) note += " (ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿಲ್ಲ)";
+    return '<p class="src-note">' + note + '</p>';
+  }
+
   function panchangaCard(label, name, sub, featured, icon) {
     return '<div class="panga-card' + (featured ? " featured" : "") + '"><span class="panga-head">' + icon + '<span class="panga-label">' + label + '</span></span><span class="panga-name">' + esc(name || "—") + '</span><span class="panga-sub">' + sub + '</span></div>';
   }
 
   function panchangaMetaHTML(pan) {
-    var items = [["ಆಯನ", pan.ayana], ["ಸೂರ್ಯ ರಾಶಿ", pan.solarRashi], ["ಚಂದ್ರ ರಾಶಿ", pan.chandraRashi]].filter(function (item) { return item[1]; });
+    var items = [["ಆಯನ", pan.ayana || NA], ["ಸೂರ್ಯ ರಾಶಿ", pan.solarRashi || NA], ["ಚಂದ್ರ ರಾಶಿ", pan.chandraRashi || NA]];
     return items.length ? '<div class="panga-meta">' + items.map(function (item) {
       return '<div class="pm-item"><span class="pm-label">' + item[0] + '</span><span class="pm-value">' + esc(item[1]) + '</span></div>';
     }).join("") + '</div>' : '';
@@ -560,7 +621,7 @@
       return timing.name === "ರಾಹು ಕಾಲ" || timing.name === "ಗುಳಿಕ ಕಾಲ" || timing.name === "ಯಮಗಂಡ";
     }) : record.timings;
     if (!sourceTimings.length) return '<p class="empty-note">ಈ ದಿನದ ಕಾಲ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
-    /* Keep OCR normalization as-is, but only use complete, real clock ranges
+    /* Only use complete, real clock ranges
        for layout. In particular, do not turn an overnight-looking range into
        a next-day range here. */
     var ordered = sourceTimings.map(function (timing) {
@@ -618,13 +679,11 @@
 
   function panchangaHTML(key) {
     var pvOnly = state.panchangaPvOnly, inner = "";
-    if (state.ocrError) {
-      inner = '<p class="error-note">ಪಂಚಾಂಗದ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';
-    } else if (!Object.prototype.hasOwnProperty.call(state.ocrData, key)) {
-      fetchOCR(key).then(function () { if (state.key === key && state.homeMode === "panchanga") renderToday(); });
-      inner = OCR_LOADING;
+    if (!Object.prototype.hasOwnProperty.call(state.panData, panchangaCacheKey(key))) {
+      fetchPanchanga(key).then(function () { if (state.key === key && state.homeMode === "panchanga") renderToday(); });
+      inner = PAN_LOADING;
     } else {
-      var record = state.ocrData[key];
+      var record = state.panData[panchangaCacheKey(key)];
       if (record.unavailable) {
         inner = '<p class="empty-note">ಈ ದಿನದ ಪಂಚಾಂಗದ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
       } else {
@@ -633,17 +692,17 @@
         if (cal.samvatsara) meta.push(esc(cal.samvatsara) + " ನಾಮ ಸಂವತ್ಸರ");
         if (cal.shakaYear) meta.push("ಶಕ " + kn(cal.shakaYear));
         if (cal.months.length) meta.push(esc(cal.months.join("–")));
-        var tithiSub = "ಮುಗಿಯುವುದು " + panchangaEnd(pan.tithi.ends, pan.tithi.nextDay);
-        if (!pvOnly && pan.tithi.paksha) tithiSub = esc(pan.tithi.paksha) + " ಪಕ್ಷ · " + tithiSub;
+        var tithiSub = endsSub(pan.tithi);
+        if (!pvOnly && pan.tithi.paksha) tithiSub = esc(pan.tithi.paksha) + " ಪಕ್ಷ" + (tithiSub ? " · " + tithiSub : "");
         inner = '<section class="date-context" aria-label="ದಿನದ ಕಾಲದ ಸಂದರ್ಭ"><p>' + (meta.join(" · ") || "ದಿನದ ವಿವರ") + '</p></section>' +
           '<div id="panchangaSection" class="panga-grid' + (pvOnly ? " is-pv-only" : "") + '" tabindex="-1">' +
-            panchangaCard("ತಿಥಿ", pan.tithi.name, tithiSub, true, ICONS.tithi) +
-            panchangaCard("ನಕ್ಷತ್ರ", pan.nakshatra.name, "ಮುಗಿಯುವುದು " + panchangaEnd(pan.nakshatra.ends, pan.nakshatra.nextDay), true, ICONS.nakshatra) +
-            (pvOnly ? "" : panchangaCard("ಯೋಗ", pan.yoga.name, "ಮುಗಿಯುವುದು " + panchangaEnd(pan.yoga.ends, pan.yoga.nextDay), false, ICONS.yoga) + panchangaCard("ಕರಣ", pan.karana.name, "ಮುಗಿಯುವುದು " + panchangaEnd(pan.karana.ends, pan.karana.nextDay), false, ICONS.karana)) +
+            panchangaCard("ತಿಥಿ", pan.tithi.name || NA, tithiSub, true, ICONS.tithi) +
+            panchangaCard("ನಕ್ಷತ್ರ", pan.nakshatra.name || NA, endsSub(pan.nakshatra), true, ICONS.nakshatra) +
+            (pvOnly ? "" : panchangaCard("ಯೋಗ", pan.yoga.name || NA, endsSub(pan.yoga), false, ICONS.yoga) + panchangaCard("ಕರಣ", pan.karana.name || NA, karanaSub(pan.karana), false, ICONS.karana)) +
           '</div>' + (pvOnly ? "" : panchangaMetaHTML(pan)) +
-          (pvOnly ? "" : '<div class="sun-row"><span class="sun-item sunrise-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunrise + '</span> ಸೂರ್ಯೋದಯ <b>' + kn(cal.sunrise || "—") + '</b></span><span class="sun-item sunset-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunset + '</span> ಸೂರ್ಯಾಸ್ತ <b>' + kn(cal.sunset || "—") + '</b></span></div>') +
-          '<p class="src-note">' + (pvOnly ? "ಪಿವಿ ಕ್ಯಾಲೆಂಡರ್ ಆಧಾರದಲ್ಲಿ" : "ಕನ್ನಡ ಪಂಚಾಂಗದ ಆಧಾರದಲ್ಲಿ") + '</p>' +
-          card("ಸಮಯಗಳು — ಕಾಲ", panchangaTimingsHTML(record, pvOnly), "homeTimings", false) +
+          (pvOnly ? "" : '<div class="sun-row"><span class="sun-item sunrise-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunrise + '</span> ಸೂರ್ಯೋದಯ <b>' + (cal.sunrise ? kn(cal.sunrise) : NA) + '</b></span><span class="sun-item sunset-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunset + '</span> ಸೂರ್ಯಾಸ್ತ <b>' + (cal.sunset ? kn(cal.sunset) : NA) + '</b></span></div>') +
+          '<p class="src-note">' + (pvOnly ? "ಪಿವಿ ಕ್ಯಾಲೆಂಡರ್ ಆಧಾರದಲ್ಲಿ" : "ತಿಥಿ, ನಕ್ಷತ್ರ: ಕ್ಯಾಲೆಂಡರ್ ಆಧಾರದಲ್ಲಿ · ಉಳಿದವು: ಲೆಕ್ಕಾಚಾರದಿಂದ") + '</p>' +
+          card("ಸಮಯಗಳು — ಕಾಲ", panchangaTimingsHTML(record, pvOnly) + (pvOnly ? "" : '<p class="empty-note">ಶುಭ ಸಮಯ: ' + NA + '</p>') + districtNoteHTML(record), "homeTimings", false) +
           (pvOnly ? "" : card("ರಾಶಿ ಭವಿಷ್ಯ", panchangaJathakaHTML(record), "homeJathaka", false));
       }
     }

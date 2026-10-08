@@ -1,6 +1,6 @@
 /* Focused event-calendar test for app.js:
    - PV data is the only Day data source
-   - Events mode works without OCR files and Panchanga loads OCR lazily
+   - Events mode works without Panchanga files; Panchanga loads its data lazily and never touches OCR
    - district and Karnataka-wide filtering stays correct
    - date ranges are inclusive
    - Week and Month retain the shared event index
@@ -114,21 +114,30 @@ function mkCultural() {
     { date: iso(INITIAL), title: "Cultural-Bengaluru-" + INITIAL, location: "ಬೆಂಗಳೂರು", startTime: "20:00", source: { edition: "Bengaluru Urban", articleId: "culture-3", siteUrl: "https://example.test/culture-3" } }
   ] };
 }
-function mkOCR() {
-  return { content: {
-    calendar: { months: ["ಶ್ರಾವಣ"], samvatsara: "ಪರಾಭವ", shakaYear: 1948, sunrise: "06:08", sunset: "18:31" },
-    panchanga: {
-      tithi: { name: "ತೃತೀಯಾ", endsAt: "08.52" }, nakshatra: { name: "ರೇವತಿ", endsAt: "27.24", nextDay: true },
-      yoga: { name: "ಗಂಡ", endsAt: "25.51", nextDay: true }, karana: { name: "ಬವ", endsAt: "20.20" },
-      paksha: "ಕೃಷ್ಣ", ayana: "ದಕ್ಷಿಣಾಯನ", solarRashi: "ಸಿಂಹ", chandraEntryRashi: "ಮೀನ"
-    },
-    timings: {
-      rahuKala: "ಬೆ. 05:30 - 09:00.", gulikaKala: "ಬೆ. 13:30 - 15:00.",
-      yamaganda: "ಬೆ. 10:30 - 11:30.", arthaPrahara: "ಬೆ. 09:00 - 99:99.",
-      shubhaSamaya: "ಬೆ. 18:31 - 20:15."
-    },
-    jathaka: ["ಮೇಷ", "ವೃಷಭ", "ಮಿಥುನ", "ಕರ್ಕಾಟಕ", "ಸಿಂಹ", "ಕನ್ಯಾ", "ತುಲಾ", "ವೃಶ್ಚಿಕ", "ಧನಸ್ಸು", "ಮಕರ", "ಕುಂಭ", "ಮೀನ"].map((rashi) => ({ rashi, prediction: "ಮೆಚ್ಚುಗೆ" }))
-  } };
+function dayOfYear(key) {
+  const p = key.split("-");
+  return Math.round((Date.UTC(+p[2], +p[1] - 1, +p[0]) - Date.UTC(+p[2], 0, 1)) / 864e5);
+}
+function mkPanCore() {
+  const days = {};
+  days[DAY8] = {
+    tithi: { name: "ತದಿಗೆ", ends: 8.52 }, nakshatra: { name: "ರೇವತಿ", ends: 27.24 },
+    paksha: "ಕೃಷ್ಣ", ayana: "ದಕ್ಷಿಣಾಯನ", solarRashi: "ಸಿಂಹ", chandraRashi: "ಮೀನ",
+    months: ["ಶ್ರಾವಣ", "ಭಾದ್ರಪದ"], samvatsara: "ಪರಾಭವ", shakaYear: 1948
+  };
+  return {
+    defaultDistrict: "Bengaluru Urban",
+    districts: { Bagalkot: "bagalkot", "Bengaluru Urban": "bengaluru-urban", Ballari: "ballari" },
+    yogaNames: Array.from({ length: 27 }, (_, i) => "ಯೋಗ" + (i + 1)),
+    karanaNames: Array.from({ length: 60 }, (_, i) => "ಕರಣ" + (i + 1)),
+    days
+  };
+}
+function mkPanDistrict() {
+  const rows = Array.from({ length: 366 }, () => null);
+  rows[dayOfYear(DAY8)] = ["06:08", "18:31", "09:00-10:30", "13:30-15:00", "10:30-12:00", "07:30-09:00",
+    9, "23:38", 41, "14:04", 42, "02:56+1"];
+  return { [DAY8.slice(-4)]: rows };
 }
 
 let pass = 0, fail = 0;
@@ -203,17 +212,25 @@ function assert(cond, msg) {
   els.nextDay.click();
   assert(els.todayContent.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ."), "empty date shows one collapsed empty state");
 
-  console.log("4) Panchanga mode loads selected-date OCR lazily");
-  const ocrUrl = "ocr-zones/" + DAY8 + "/structured-ocr.json";
+  console.log("4) Panchanga mode loads its own data lazily, never OCR");
+  const coreUrl = "data/panchanga.json", distUrl = "data/panchanga/bagalkot.json";
+  assert(count(coreUrl) === 0, "Panchanga data is not requested before the tab is opened");
   els.homePanchangaMode.click();
-  assert(count(ocrUrl) === 1, "Panchanga requests OCR for the selected date");
+  assert(count(coreUrl) === 1, "Panchanga requests the day data once");
   assert(els.todayContent.innerHTML.includes("ಪಂಚಾಂಗದ ವಿವರಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ"), "Panchanga loading state shown");
-  resolveUrl(ocrUrl, mkOCR());
+  resolveUrl(coreUrl, mkPanCore());
   await tick();
-  assert(els.todayContent.innerHTML.includes("panga-grid"), "Panchanga cards render after OCR loads");
+  await tick();
+  assert(count(distUrl) === 1, "Panchanga requests the selected district's file");
+  resolveUrl(distUrl, mkPanDistrict());
+  await tick();
+  await tick();
+  assert(calls.every((url) => !url.startsWith("ocr-zones/")), "Panchanga never requests OCR data");
+  assert(els.todayContent.innerHTML.includes("panga-grid"), "Panchanga cards render after the data loads");
+  assert(els.todayContent.innerHTML.includes("ತದಿಗೆ") && els.todayContent.innerHTML.includes("ರೇವತಿ"), "tithi and nakshatra names render");
   assert(els.todayContent.innerHTML.includes('role="switch" checked aria-checked="true"'), "PV-only toggle is on by default");
   assert((els.todayContent.innerHTML.match(/class="panga-head"/g) || []).length === 2, "default shows exactly two Panchanga cards");
-  assert(!els.todayContent.innerHTML.includes("sun-row") && !els.todayContent.innerHTML.includes('id="homeJathaka"') && !els.todayContent.innerHTML.includes("panga-meta"), "default hides OCR-only sections");
+  assert(!els.todayContent.innerHTML.includes("sun-row") && !els.todayContent.innerHTML.includes('id="homeJathaka"') && !els.todayContent.innerHTML.includes("panga-meta"), "default hides the extra sections");
   assert(els.todayContent.innerHTML.includes("ಪಿವಿ ಕ್ಯಾಲೆಂಡರ್ ಆಧಾರದಲ್ಲಿ"), "default source note is the PV Calendar note");
   assert(els.todayContent.innerHTML.includes("class=\"timeline\""), "desktop timing timeline renders");
   assert(els.todayContent.innerHTML.includes("timeline-mobile timeline-rail") && els.todayContent.innerHTML.includes("timeline-node") && els.todayContent.innerHTML.includes("timeline-card"), "mobile timing markup includes a rail, nodes, and event cards");
@@ -222,25 +239,34 @@ function assert(cond, msg) {
   assert((pvTimings.match(/<li class="tl-row/g) || []).length === 3, "default timings list has exactly three rows");
   assert(pvTimings.includes("ರಾಹು ಕಾಲ") && pvTimings.includes("ಗುಳಿಕ ಕಾಲ") && pvTimings.includes("ಯಮಗಂಡ"), "default timings include rahu/gulika/yamaganda");
   assert(!pvTimings.includes("ಅರ್ಥ ಪ್ರಹರ") && !pvTimings.includes("ಶುಭ ಸಮಯ"), "default timings exclude artha/shubha");
+  assert(pvTimings.includes("ಬಾಗಲಕೋಟೆ"), "timings say which district they are for");
 
-  console.log("5) Panchanga toggle off restores full OCR content");
+  console.log("5) Panchanga toggle off shows the full tab, saying what is not available");
   assert(els.todayContent.innerHTML.includes('id="panchangaPvOnly"'), "PV-only toggle renders");
   els.panchangaPvOnly.checked = false;
   els.panchangaPvOnly.click("change");
   await tick();
   assert((els.todayContent.innerHTML.match(/class="panga-head"/g) || []).length === 4, "toggling off restores four Panchanga cards");
-  assert((els.todayContent.innerHTML.match(/class="jr"/g) || []).length === 12, "toggling off restores all twelve horoscope signs");
+  assert(els.todayContent.innerHTML.includes("ಯೋಗ9") && els.todayContent.innerHTML.includes("ಕರಣ41"), "yoga and karana names come from the district file");
+  assert(els.todayContent.innerHTML.includes("ನಂತರ ಕರಣ42"), "the next karana is shown too");
+  assert(!els.todayContent.innerHTML.includes('class="jr"') && els.todayContent.innerHTML.includes("ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ."), "horoscope is reported as not available");
+  assert(els.todayContent.innerHTML.includes("ಶುಭ ಸಮಯ: ಲಭ್ಯವಿಲ್ಲ"), "Shubha Samaya is reported as not available");
   assert(els.todayContent.innerHTML.includes("sun-row") && els.todayContent.innerHTML.includes("panga-meta"), "toggling off restores sun row and meta");
-  assert(els.todayContent.innerHTML.includes('class="tl-ends"><span class="tl-endpoint"><small>ಆರಂಭ</small><b class="t-time">05:30'), "timeline starts at the first timing before sunrise");
-  assert(els.todayContent.innerHTML.includes('<span class="tl-endpoint"><small>ಅಂತ್ಯ</small><b class="t-time">20:15'), "timeline ends at the last timing after sunset");
-  assert(!els.todayContent.innerHTML.includes("99:99"), "malformed timing endpoints are ignored");
-  assert(els.todayContent.innerHTML.includes("ಕನ್ನಡ ಪಂಚಾಂಗದ ಆಧಾರದಲ್ಲಿ"), "toggling off restores the OCR source note");
+  assert(els.todayContent.innerHTML.includes("06:08") && els.todayContent.innerHTML.includes("18:31"), "sunrise and sunset come from the district file");
+  assert(els.todayContent.innerHTML.includes('class="tl-ends"><span class="tl-endpoint"><small>ಆರಂಭ</small><b class="t-time">07:30'), "timeline starts at the first timing");
+  assert(els.todayContent.innerHTML.includes('<span class="tl-endpoint"><small>ಅಂತ್ಯ</small><b class="t-time">15:00'), "timeline ends at the last timing");
+  assert(els.todayContent.innerHTML.includes("ತಿಥಿ, ನಕ್ಷತ್ರ: ಕ್ಯಾಲೆಂಡರ್ ಆಧಾರದಲ್ಲಿ"), "toggling off shows the full-mode source note");
   assert(sessionStore.pvPanchangaPvOnly === "0", "off state persisted to sessionStorage");
   els.panchangaPvOnly.checked = true;
   els.panchangaPvOnly.click("change");
   await tick();
   assert((els.todayContent.innerHTML.match(/class="panga-head"/g) || []).length === 2 && els.todayContent.innerHTML.includes("ಪಿವಿ ಕ್ಯಾಲೆಂಡರ್ ಆಧಾರದಲ್ಲಿ"), "toggling back on reapplies PV-only content");
   assert(sessionStore.pvPanchangaPvOnly === "1", "on state persisted to sessionStorage");
+  els.nextDay.click();
+  await tick();
+  await tick();
+  assert(els.todayContent.innerHTML.includes("ಈ ದಿನದ ಪಂಚಾಂಗದ ವಿವರ ಲಭ್ಯವಿಲ್ಲ."), "a day with no Panchanga record says so");
+  assert(count(coreUrl) === 1 && count(distUrl) === 1, "the data files are fetched once, not per day");
 
   els.homeEventsMode.click();
   assert(els.todayContent.innerHTML.includes("homeEvents"), "Events mode switches back");

@@ -18,7 +18,8 @@ Open the app over HTTP, not `file://`, so the data files can load. See `AGENTS.m
 | `index.html`, `app.js`, `styles.css`, `manifest.webmanifest`, `assets/` | The app (must stay at the repo root: the browser loads data by these paths) |
 | `data/pv-calendar-data.json` | District event data the app loads |
 | `data/calendar-events.json` | Day-level events for 2026 and 2027, shown as Karnataka-wide events. Generated from the Word calendars in `data/` by `scripts/extract-docx-events.py` (see its docstring). Other files in `data/` are local and ignored |
-| `ocr-zones/<DD-MM-YYYY>/structured-ocr.json` | Per-day Panchanga records the app loads lazily. Other files in these folders are OCR intermediates and are ignored |
+| `data/panchanga.json`, `data/panchanga/<district>.json` | Panchanga tab data for 2026 and 2027, no OCR. `panchanga.json` has one record per day (tithi, nakshatra, paksha, lunar months, ayana, sun and moon rashi, samvatsara, Shaka year); each district file has that district's sunrise, sunset, Rahu/Gulika/Yamaganda/Artha Prahara, yoga and karana. Built by `python scripts/build-panchanga-data.py` (see its docstring for the sources). Shubha Samaya and the daily rashi bhavishya are not available and the tab says so |
+| `ocr-zones/` | Old OCR output. The app no longer reads it |
 | `epaper/` | Cultural-event candidates (`cultural-event-candidates.json`) and the browser extension that collects them |
 | `editorial/` | Editorial CSV exports and the log of applied OCR corrections |
 | `scripts/` | Data pipeline: image download, OCR, PDF extraction and merge, CSV exports. Run them from the repo root, for example `node scripts/export-editorial.js` |

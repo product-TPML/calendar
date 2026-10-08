@@ -1,8 +1,10 @@
 # Large local data. Only what the app needs at runtime is tracked:
-#   data/pv-calendar-data.json, data/calendar-events.json and ocr-zones/<date>/structured-ocr.json
+#   data/pv-calendar-data.json, data/calendar-events.json, data/panchanga.json and data/panchanga/
 data/*
 !data/pv-calendar-data.json
 !data/calendar-events.json
+!data/panchanga.json
+!data/panchanga/
 ocr-zones/*
 !ocr-zones/*/
 ocr-zones/*/*
