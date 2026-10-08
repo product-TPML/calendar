@@ -11,7 +11,7 @@
     pv: null, pvIndex: {}, pvRecords: [], pvError: false, pvPending: null, pvQA: [],
     calRecords: null, calMerged: false,
     cultural: null, culturalIndex: {}, culturalRecords: [], culturalError: false, culturalPending: null,
-    panData: {}, panPending: {}, panCore: null, panCorePending: null, panDistricts: {}, homeMode: "events", district: "", panchangaPvOnly: false,
+    panData: {}, panPending: {}, panCore: null, panCorePending: null, panDistricts: {}, homeMode: "events", district: "",
     weekFirst: null, weekLast: null, weekHeader: null, monthFirst: null, monthLast: null, monthHeader: null };
 
   var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
@@ -615,12 +615,10 @@
     }).join("") + '</div>' : '';
   }
 
-  function panchangaTimingsHTML(record, pvOnly) {
+  function panchangaTimingsHTML(record) {
     if (!record.timings.length) return '<p class="empty-note">ಈ ದಿನದ ಕಾಲ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
     var calendar = record.calendar;
-    var sourceTimings = pvOnly ? record.timings.filter(function (timing) {
-      return timing.name === "ರಾಹು ಕಾಲ" || timing.name === "ಗುಳಿಕ ಕಾಲ" || timing.name === "ಯಮಗಂಡ";
-    }) : record.timings;
+    var sourceTimings = record.timings;
     if (!sourceTimings.length) return '<p class="empty-note">ಈ ದಿನದ ಕಾಲ ವಿವರ ಲಭ್ಯವಿಲ್ಲ.</p>';
     /* Only use complete, real clock ranges
        for layout. In particular, do not turn an overnight-looking range into
@@ -673,13 +671,8 @@
     return minutes == null ? "—" : pad(Math.floor(minutes / 60)) + ":" + pad(minutes % 60);
   }
 
-  function panchangaToggleHTML() {
-    var on = state.panchangaPvOnly;
-    return '<div class="panga-toggle-wrap"><label class="panga-toggle"><input id="panchangaPvOnly" type="checkbox" role="switch"' + (on ? ' checked' : '') + ' aria-checked="' + (on ? "true" : "false") + '"><span class="panga-toggle-label">ಪಿವಿ ಕ್ಯಾಲೆಂಡರ್ ಮಾತ್ರ</span></label></div>';
-  }
-
   function panchangaHTML(key) {
-    var pvOnly = state.panchangaPvOnly, inner = "";
+    var inner = "";
     if (!Object.prototype.hasOwnProperty.call(state.panData, panchangaCacheKey(key))) {
       fetchPanchanga(key).then(function () { if (state.key === key && state.homeMode === "panchanga") renderToday(); });
       inner = PAN_LOADING;
@@ -694,20 +687,20 @@
         if (cal.shakaYear) meta.push("ಶಕ " + kn(cal.shakaYear));
         if (cal.months.length) meta.push(esc(cal.months.join("–")));
         var tithiSub = endsSub(pan.tithi);
-        if (!pvOnly && pan.tithi.paksha) tithiSub = esc(pan.tithi.paksha) + " ಪಕ್ಷ" + (tithiSub ? " · " + tithiSub : "");
+        if (pan.tithi.paksha) tithiSub = esc(pan.tithi.paksha) + " ಪಕ್ಷ" + (tithiSub ? " · " + tithiSub : "");
         inner = '<section class="date-context" aria-label="ದಿನದ ಕಾಲದ ಸಂದರ್ಭ"><p>' + (meta.join(" · ") || "ದಿನದ ವಿವರ") + '</p></section>' +
-          '<div id="panchangaSection" class="panga-grid' + (pvOnly ? " is-pv-only" : "") + '" tabindex="-1">' +
+          '<div id="panchangaSection" class="panga-grid" tabindex="-1">' +
             panchangaCard("ತಿಥಿ", pan.tithi.name || NA, tithiSub, true, ICONS.tithi) +
             panchangaCard("ನಕ್ಷತ್ರ", pan.nakshatra.name || NA, endsSub(pan.nakshatra), true, ICONS.nakshatra) +
-            (pvOnly ? "" : panchangaCard("ಯೋಗ", pan.yoga.name || NA, endsSub(pan.yoga), false, ICONS.yoga) + panchangaCard("ಕರಣ", pan.karana.name || NA, karanaSub(pan.karana), false, ICONS.karana)) +
-          '</div>' + (pvOnly ? "" : panchangaMetaHTML(pan)) +
-          (pvOnly ? "" : '<div class="sun-row"><span class="sun-item sunrise-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunrise + '</span> ಸೂರ್ಯೋದಯ <b>' + (cal.sunrise ? kn(cal.sunrise) : NA) + '</b></span><span class="sun-item sunset-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunset + '</span> ಸೂರ್ಯಾಸ್ತ <b>' + (cal.sunset ? kn(cal.sunset) : NA) + '</b></span></div>') +
-          '<p class="src-note">' + (pvOnly ? "ಪಿವಿ ಕ್ಯಾಲೆಂಡರ್ ಆಧಾರದಲ್ಲಿ" : "ತಿಥಿ, ನಕ್ಷತ್ರ: ಕ್ಯಾಲೆಂಡರ್ ಆಧಾರದಲ್ಲಿ · ಉಳಿದವು: ಲೆಕ್ಕಾಚಾರದಿಂದ") + '</p>' +
-          card("ಸಮಯಗಳು — ಕಾಲ", panchangaTimingsHTML(record, pvOnly) + (pvOnly ? "" : '<p class="empty-note">ಶುಭ ಸಮಯ: ' + NA + '</p>') + districtNoteHTML(record), "homeTimings", false) +
-          (pvOnly ? "" : card("ರಾಶಿ ಭವಿಷ್ಯ", panchangaJathakaHTML(record), "homeJathaka", false));
+            (panchangaCard("ಯೋಗ", pan.yoga.name || NA, endsSub(pan.yoga), false, ICONS.yoga) + panchangaCard("ಕರಣ", pan.karana.name || NA, karanaSub(pan.karana), false, ICONS.karana)) +
+          '</div>' + panchangaMetaHTML(pan) +
+          ('<div class="sun-row"><span class="sun-item sunrise-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunrise + '</span> ಸೂರ್ಯೋದಯ <b>' + (cal.sunrise ? kn(cal.sunrise) : NA) + '</b></span><span class="sun-item sunset-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunset + '</span> ಸೂರ್ಯಾಸ್ತ <b>' + (cal.sunset ? kn(cal.sunset) : NA) + '</b></span></div>') +
+          '<p class="src-note">' + "ತಿಥಿ, ನಕ್ಷತ್ರ: ಕ್ಯಾಲೆಂಡರ್ ಆಧಾರದಲ್ಲಿ · ಉಳಿದವು: ಲೆಕ್ಕಾಚಾರದಿಂದ" + '</p>' +
+          card("ಸಮಯಗಳು — ಕಾಲ", panchangaTimingsHTML(record) + '<p class="empty-note">ಶುಭ ಸಮಯ: ' + NA + '</p>' + districtNoteHTML(record), "homeTimings", false) +
+          card("ರಾಶಿ ಭವಿಷ್ಯ", panchangaJathakaHTML(record), "homeJathaka", false);
       }
     }
-    return '<div class="panchanga-view">' + panchangaToggleHTML() + inner + '</div>';
+    return '<div class="panchanga-view">' + inner + '</div>';
   }
 
   function homeTodayHTML(key) {
@@ -774,16 +767,6 @@
         renderToday();
       });
     });
-    var toggle = document.getElementById("panchangaPvOnly");
-    if (toggle && !toggle._pvToggleBound) {
-      toggle._pvToggleBound = true;
-      toggle.addEventListener("change", function () {
-        state.panchangaPvOnly = !!toggle.checked;
-        toggle.setAttribute("aria-checked", state.panchangaPvOnly ? "true" : "false");
-        savePanchangaPvOnly(state.panchangaPvOnly ? "1" : "0");
-        renderToday();
-      });
-    }
   }
 
   function renderToday() {
@@ -861,6 +844,29 @@
     return (masthead ? masthead.offsetHeight : 0) + (toolbar ? toolbar.offsetHeight : 0) + 12;
   }
 
+  /* The district bar in Week and Month slides away while scrolling down and
+     comes back as soon as the page is scrolled up (or is at the top). */
+  var SCROLL_SLOP = 6, lastScrollY = 0;
+
+  function setToolbarHidden(hidden) {
+    if (state.toolbarHidden === hidden) return;
+    state.toolbarHidden = hidden;
+    document.querySelectorAll(".stream-toolbar").forEach(function (bar) { bar.classList.toggle("is-hidden", hidden); });
+    if (document.documentElement) {
+      var bar = document.querySelector("#viewMonth .stream-toolbar");
+      document.documentElement.style.setProperty("--month-toolbar-h", hidden ? "0px" : ((bar && bar.offsetHeight ? bar.offsetHeight : 56) + "px"));
+    }
+  }
+
+  function updateToolbarOnScroll() {
+    var y = window.scrollY || window.pageYOffset || 0, dy = y - lastScrollY;
+    if (y <= 8) setToolbarHidden(false);
+    else if (document.querySelectorAll('.stream-toolbar .district-trigger[aria-expanded="true"]').length) return;
+    else if (dy > SCROLL_SLOP) setToolbarHidden(true);
+    else if (dy < -SCROLL_SLOP) setToolbarHidden(false);
+    if (y <= 8 || Math.abs(dy) > SCROLL_SLOP) lastScrollY = y;
+  }
+
   function scrollToStreamBlock(block, viewId) {
     var top = block.getBoundingClientRect ? block.getBoundingClientRect().top : (block.offsetTop || 0);
     var y = top + (window.pageYOffset || window.scrollY || 0) - streamTopOffset(viewId);
@@ -904,6 +910,7 @@
       state.weekFirst = previous;
       el.insertAdjacentHTML("afterbegin", weekBlockHTML(previous));
       window.scrollBy(0, el.offsetHeight - oldHeight);
+      lastScrollY = window.scrollY || window.pageYOffset || 0;
     }
     updateWeekHeader();
   }
@@ -1034,6 +1041,7 @@
       var previous = monthKeyShift(state.monthFirst, -1), oldHeight = el.offsetHeight;
       state.monthFirst = previous; el.insertAdjacentHTML("afterbegin", monthBlockHTML(previous));
       window.scrollBy(0, el.offsetHeight - oldHeight);
+      lastScrollY = window.scrollY || window.pageYOffset || 0;
     }
     updateMonthHeader();
   }
@@ -1100,7 +1108,7 @@
     if (document.documentElement) {
       document.documentElement.style.setProperty("--masthead-h", document.querySelector(".masthead").offsetHeight + "px");
       var monthToolbar = document.querySelector("#viewMonth .stream-toolbar");
-      if (monthToolbar && monthToolbar.offsetHeight) document.documentElement.style.setProperty("--month-toolbar-h", monthToolbar.offsetHeight + "px");
+      if (monthToolbar && monthToolbar.offsetHeight && !state.toolbarHidden) document.documentElement.style.setProperty("--month-toolbar-h", monthToolbar.offsetHeight + "px");
     }
     document.title = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + " — ಕನ್ನಡ ಸಾಂಸ್ಕೃತಿಕ ಕ್ಯಾಲೆಂಡರ್";
   }
@@ -1138,6 +1146,7 @@
     state.tab = name;
     if (name === "week" && previous !== "week") state.weekFirst = state.weekLast = state.weekHeader = null;
     if (name === "month" && previous !== "month") state.monthFirst = state.monthLast = state.monthHeader = null;
+    setToolbarHidden(false);
     renderMasthead();
     document.querySelectorAll(".view").forEach(function (v) { v.hidden = v.id !== VIEWS[name]; });
     document.querySelectorAll(".tab").forEach(function (t) {
@@ -1168,14 +1177,12 @@
   function saveDistrict(d) { try { localStorage.setItem("pvDistrict", d); } catch (e) {} }
   function loadDate() { try { var key = sessionStorage.getItem("pvDate"); return validKey(key) ? key : DEFAULT_KEY; } catch (e) { return DEFAULT_KEY; } }
   function saveDate(key) { try { sessionStorage.setItem("pvDate", key); } catch (e) {} }
-  function loadPanchangaPvOnly() { try { return sessionStorage.getItem("pvPanchangaPvOnly") !== "0"; } catch (e) { return true; } }
-  function savePanchangaPvOnly(v) { try { sessionStorage.setItem("pvPanchangaPvOnly", v); } catch (e) {} }
   function prepareSession() {
     try {
       if (sessionStorage.getItem("pvSessionVersion") !== SESSION_VERSION) {
         sessionStorage.removeItem("pvDate");
         sessionStorage.removeItem("pvDistrict");
-        sessionStorage.removeItem("pvPanchangaPvOnly");
+        sessionStorage.removeItem("pvPanchangaPvOnly");   /* setting removed; clear old stored values */
         sessionStorage.setItem("pvSessionVersion", SESSION_VERSION);
       }
     } catch (e) {}
@@ -1362,13 +1369,13 @@
     });
     state.key = loadDate();
     state.district = loadDistrict();
-    state.panchangaPvOnly = loadPanchangaPvOnly();
     bindDistrictSelectors();
     bindSwipe("mastheadDateBlock", function (n) { shiftPeriod(n); });
     bindSwipe("viewDay", function (n) { if (state.tab === "day") shiftDay(n); });
     bindSwipe("weekHead", function (n) { shiftWeek(n); });
     bindSwipe("monthHead", function (n) { shiftMonth(n); });
     if (window.addEventListener) window.addEventListener("scroll", function () {
+      updateToolbarOnScroll();
       lazyWeekScroll();
       lazyMonthScroll();
     }, { passive: true });

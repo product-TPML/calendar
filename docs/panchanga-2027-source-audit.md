@@ -16,7 +16,7 @@ Legend: ✅ explicitly present · 🟡 derivable · ❌ absent · ⚠️ present
 
 ## 1. What the Panchanga tab needs, and what the file has
 
-"PV" = shown in the default "ಪಿವಿ ಕ್ಯಾಲೆಂಡರ್ ಮಾತ್ರ" mode. "Full" = shown only when that toggle is off.
+"PV" = was shown in the old "ಪಿವಿ ಕ್ಯಾಲೆಂಡರ್ ಮಾತ್ರ" mode. "Full" = was shown only when that toggle was off. The toggle has since been removed and the tab always shows every field.
 
 | # | Field | Tab mode | Status | Source / how |
 |---|---|---|---|---|
