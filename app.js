@@ -222,6 +222,7 @@
      Anything missing is left empty and the tab says it is not available. */
   var PAN_URL = "data/panchanga.json", PAN_DISTRICT_DIR = "data/panchanga/";
   var NA = "ಲಭ್ಯವಿಲ್ಲ";
+  var HOROSCOPE_URL = "https://www.prajavani.net/horoscope";
 
   function unavailablePan(key) {
     return { key: key, unavailable: true, calendar: {}, panchanga: null, timings: [], jathaka: [] };
@@ -655,7 +656,7 @@
   }
 
   function panchangaJathakaHTML(record) {
-    if (!record.jathaka.length) return '<p class="empty-note">ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ.</p>';
+    if (!record.jathaka.length) return '<p class="empty-note">ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ.</p><a class="ext-link" href="' + HOROSCOPE_URL + '" target="_blank" rel="noopener noreferrer">ಪ್ರಜಾವಾಣಿಯಲ್ಲಿ ದೈನಂದಿನ ರಾಶಿ ಭವಿಷ್ಯ ನೋಡಿ ↗</a>';
     return '<div class="jathaka-list">' + record.jathaka.map(function (item) {
       return '<div class="jr"><span class="jr-name">' + esc(item[0]) + '</span><span class="jr-p">' + esc(item[1]) + '</span></div>';
     }).join('') + '</div>';
@@ -1091,6 +1092,7 @@
       label = MONTHS[+month[1]] + " " + kn(+month[0]);
     }
     el.textContent = label;
+    el.setAttribute("aria-label", label + " — ದಿನಾಂಕ ಆಯ್ಕೆ ಮಾಡಿ");
     var prev = document.getElementById("prevDay"), next = document.getElementById("nextDay");
     var unit = state.tab === "week" ? "ವಾರ" : state.tab === "month" ? "ತಿಂಗಳು" : "ದಿನ";
     prev.setAttribute("aria-label", "ಹಿಂದಿನ " + unit);
@@ -1101,6 +1103,31 @@
       if (monthToolbar && monthToolbar.offsetHeight) document.documentElement.style.setProperty("--month-toolbar-h", monthToolbar.offsetHeight + "px");
     }
     document.title = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + " — ಕನ್ನಡ ಸಾಂಸ್ಕೃತಿಕ ಕ್ಯಾಲೆಂಡರ್";
+  }
+
+  /* ---------------- Date picker (tap the date in the header) ---------------- */
+  /* The data covers 2026 and 2027, so the picker is limited to those years. */
+  var PICKER_MIN = "2026-01-01", PICKER_MAX = "2027-12-31";
+
+  function isoOfKey(key) { var p = key.split("-"); return p[2] + "-" + p[1] + "-" + p[0]; }
+
+  function openDatePicker() {
+    var input = document.getElementById("datePicker");
+    var iso = isoOfKey(state.key);
+    input.value = iso < PICKER_MIN ? PICKER_MIN : iso > PICKER_MAX ? PICKER_MAX : iso;
+    try {
+      if (input.showPicker) input.showPicker(); else { input.focus(); input.click(); }
+    } catch (e) { input.focus(); input.click(); }
+  }
+
+  function pickDate(value) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(value || "");
+    if (!m || value < PICKER_MIN || value > PICKER_MAX) return;
+    var key = m[3] + "-" + m[2] + "-" + m[1];
+    if (!validKey(key)) return;
+    state.weekFirst = state.weekLast = state.weekHeader = null;
+    state.monthFirst = state.monthLast = state.monthHeader = null;
+    goto(key);
   }
 
   /* ---------------- Tab switching ---------------- */
@@ -1322,6 +1349,8 @@
     });
     document.getElementById("prevDay").addEventListener("click", function () { shiftPeriod(-1); });
     document.getElementById("nextDay").addEventListener("click", function () { shiftPeriod(1); });
+    document.getElementById("mastheadDate").addEventListener("click", openDatePicker);
+    document.getElementById("datePicker").addEventListener("change", function () { pickDate(document.getElementById("datePicker").value); });
     document.getElementById("todayBtn").addEventListener("click", function () { openDay(keyFor(new Date())); });
     document.getElementById("fontBig").addEventListener("change", function (e) {
       state.big = e.target.checked;

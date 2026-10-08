@@ -22,7 +22,8 @@
     <div id="mastheadDateBlock" class="masthead-mid" aria-live="polite">
       <img class="brand-logo" src="assets/pv-logo-white.svg" alt="ಪ್ರಜಾವಾಣಿ">
       <span class="brand sr-only">ಕನ್ನಡ ಕಾರ್ಯಕ್ರಮಗಳು</span>
-      <span id="mastheadDate" class="masthead-date"></span>
+      <button id="mastheadDate" class="masthead-date" type="button" aria-haspopup="dialog" title="ದಿನಾಂಕ ಆಯ್ಕೆ ಮಾಡಿ"></button>
+      <input id="datePicker" class="date-picker-input" type="date" min="2026-01-01" max="2027-12-31" tabindex="-1" aria-hidden="true">
     </div>
     <button id="todayBtn" class="today-btn" type="button">ಇಂದು</button>
     <button id="nextDay" class="icon-btn" type="button" aria-label="ಮುಂದಿನ ದಿನ">›</button>

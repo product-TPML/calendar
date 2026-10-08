@@ -251,6 +251,7 @@ function assert(cond, msg) {
   assert(els.todayContent.innerHTML.includes("ನಂತರ ಕರಣ42"), "the next karana is shown too");
   assert(!els.todayContent.innerHTML.includes('class="jr"') && els.todayContent.innerHTML.includes("ಈ ದಿನದ ರಾಶಿ ಭವಿಷ್ಯ ಲಭ್ಯವಿಲ್ಲ."), "horoscope is reported as not available");
   assert(els.todayContent.innerHTML.includes("ಶುಭ ಸಮಯ: ಲಭ್ಯವಿಲ್ಲ"), "Shubha Samaya is reported as not available");
+  assert(els.todayContent.innerHTML.includes('href="https://www.prajavani.net/horoscope"') && els.todayContent.innerHTML.includes('rel="noopener noreferrer"'), "horoscope card links to the Prajavani horoscope page");
   assert(els.todayContent.innerHTML.includes("sun-row") && els.todayContent.innerHTML.includes("panga-meta"), "toggling off restores sun row and meta");
   assert(els.todayContent.innerHTML.includes("06:08") && els.todayContent.innerHTML.includes("18:31"), "sunrise and sunset come from the district file");
   assert(els.todayContent.innerHTML.includes('class="tl-ends"><span class="tl-endpoint"><small>ಆರಂಭ</small><b class="t-time">07:30'), "timeline starts at the first timing");
@@ -297,6 +298,31 @@ function assert(cond, msg) {
   assert(!els.weekAgenda.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") && !els.weekAgenda.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ವಿಶೇಷ ದಿನವಿಲ್ಲ."), "Week no longer repeats empty-scope notes");
   tabEls.day.click();
   assert(els.mastheadDate.textContent.includes(String(parseInt(INITIAL.slice(0, 2), 10))), "Day follows the date chosen in Month");
+
+  console.log("6b) Tapping the header date opens a date picker");
+  let pickerOpened = 0;
+  document.getElementById("datePicker").showPicker = () => { pickerOpened++; };
+  els.mastheadDate.click();
+  assert(pickerOpened === 1, "tapping the header date opens the picker");
+  assert(els.datePicker.value === iso(INITIAL) || els.datePicker.value === "2026-01-01" || els.datePicker.value === "2027-12-31", "picker opens on the selected date, inside the supported range");
+  els.datePicker.value = "2027-03-05";
+  els.datePicker.click("change");
+  assert(sessionStore.pvDate === "05-03-2027" && els.mastheadDate.textContent.includes("5"), "picking a date on Home jumps to it");
+  els.datePicker.value = "2030-01-01";
+  els.datePicker.click("change");
+  assert(sessionStore.pvDate === "05-03-2027", "a date outside 2026-2027 is ignored");
+  els.datePicker.value = "";
+  els.datePicker.click("change");
+  assert(sessionStore.pvDate === "05-03-2027", "clearing the picker changes nothing");
+  tabEls.week.click();
+  els.datePicker.value = "2026-11-18";
+  els.datePicker.click("change");
+  assert(sessionStore.pvDate === "18-11-2026" && els.mastheadDate.textContent.includes("–"), "in Week, picking a date shows the week containing it");
+  tabEls.month.click();
+  els.datePicker.value = "2027-07-04";
+  els.datePicker.click("change");
+  assert(sessionStore.pvDate === "04-07-2027" && els.mastheadDate.textContent.includes("2027"), "in Month, picking a date shows that month");
+  tabEls.day.click();
 
   console.log("7) PV load failure is explicit");
   for (const key in els) delete els[key];
