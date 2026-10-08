@@ -308,7 +308,7 @@
 
   function pvRow(r, when, dayKey) {
     var place = r.place ? ' <span class="ev-place">' + esc(r.place) + '</span>' : "";
-    var scope = (r.scope === "Relevant for Karnataka" ? "state" : "district") + (r.source === "calendar" ? " src-cal" : "");
+    var scope = r.scope === "Relevant for Karnataka" ? "state" : "district";
     var open = dayKey ? '<button type="button" class="event-link" data-day="' + dayKey + '">' : "";
     var close = dayKey ? '</button>' : "";
     return '<li class="ev-row event-row scope-' + scope + '">' + open + '<span class="ev-mark" aria-hidden="true"></span><span class="ev-text">' + esc(r.title) + place + (when ? ' <span class="ev-when">' + esc(when) + '</span>' : "") + '</span>' + close + '</li>';
@@ -1080,8 +1080,6 @@
      mode stay per-session. */
   function loadDistrict() { try { return localStorage.getItem("pvDistrict") || ""; } catch (e) { return ""; } }
   function saveDistrict(d) { try { localStorage.setItem("pvDistrict", d); } catch (e) {} }
-  function loadHlCal() { try { return localStorage.getItem("pvHighlightCal") === "1"; } catch (e) { return false; } }
-  function saveHlCal(on) { try { localStorage.setItem("pvHighlightCal", on ? "1" : "0"); } catch (e) {} }
   function loadDate() { try { var key = sessionStorage.getItem("pvDate"); return validKey(key) ? key : DEFAULT_KEY; } catch (e) { return DEFAULT_KEY; } }
   function saveDate(key) { try { sessionStorage.setItem("pvDate", key); } catch (e) {} }
   function loadPanchangaPvOnly() { try { return sessionStorage.getItem("pvPanchangaPvOnly") !== "0"; } catch (e) { return true; } }
@@ -1269,13 +1267,6 @@
     document.getElementById("fontBig").addEventListener("change", function (e) {
       state.big = e.target.checked;
       if (document.body) document.body.classList.toggle("big", state.big);
-    });
-    var hlCal = document.getElementById("hlCal");
-    hlCal.checked = loadHlCal();
-    if (document.body) document.body.classList.toggle("hl-cal", hlCal.checked);
-    hlCal.addEventListener("change", function (e) {
-      saveHlCal(e.target.checked);
-      if (document.body) document.body.classList.toggle("hl-cal", e.target.checked);
     });
     document.getElementById("knDigits").addEventListener("change", function (e) {
       state.kn = e.target.checked;

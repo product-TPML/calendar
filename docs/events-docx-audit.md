@@ -79,7 +79,7 @@ Only differences inside the docx files are shown here. Nothing was corrected.
 
 - [x] `data/calendar-events.json`: new, 730 days, 2,750 events
 - [x] `scripts/extract-docx-events.py`: new
-- [x] `app.js`, `index.html`, `styles.css`: the event loader now reads `data/calendar-events.json`. The Settings highlight toggle ("ಪಿವಿ ಕ್ಯಾಲೆಂಡರ್ ಕಾರ್ಯಕ್ರಮ ಹೈಲೈಟ್") now highlights these events. Its saved on/off setting is stored under a new key, so anyone who had it on will find it off once
+- [x] `app.js`: the event loader now reads `data/calendar-events.json`. The Settings toggle that highlighted PV calendar events was removed afterwards (`index.html`, `app.js`, `styles.css`)
 - [x] `tests/app.test.js`: updated to the new file name (89 passed, 0 failed)
 - [x] `README.md`, `.gitignore`: point to the new file
 - [x] Removed `data/pdf-events.json` and `scripts/extract-pdf-events.py`
