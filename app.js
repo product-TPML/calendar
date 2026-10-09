@@ -347,12 +347,64 @@
       (state.district && r.sourceDistrict === state.district && r.scope !== "Relevant for Karnataka");
   }
 
+  var ICO_CAL_ADD = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="ico" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.5" width="16" height="14.5" rx="1.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4M12 12.8v4.4M9.8 15h4.4"/></svg>';
+
+  /* Rows that open a day (Week) are one big button; elsewhere a row gets an add-to-calendar button. */
+  function calButton(r) {
+    return '<button type="button" class="ev-cal" aria-label="ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಸೇರಿಸಿ" title="ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಸೇರಿಸಿ" data-start="' + esc(r.dateStart) + '" data-end="' + esc(r.dateEnd) +
+      '" data-title="' + esc(r.title) + '" data-place="' + esc(r.place) + '">' + ICO_CAL_ADD + '</button>';
+  }
+
   function pvRow(r, when, dayKey) {
     var place = r.place ? ' <span class="ev-place">' + esc(r.place) + '</span>' : "";
     var scope = r.scope === "Relevant for Karnataka" ? "state" : "district";
     var open = dayKey ? '<button type="button" class="event-link" data-day="' + dayKey + '">' : "";
     var close = dayKey ? '</button>' : "";
-    return '<li class="ev-row event-row scope-' + scope + '">' + open + '<span class="ev-mark" aria-hidden="true"></span><span class="ev-text">' + esc(r.title) + place + (when ? ' <span class="ev-when">' + esc(when) + '</span>' : "") + '</span>' + close + '</li>';
+    return '<li class="ev-row event-row scope-' + scope + '">' + open + '<span class="ev-mark" aria-hidden="true"></span><span class="ev-text">' + esc(r.title) + place + (when ? ' <span class="ev-when">' + esc(when) + '</span>' : "") + '</span>' + close + (dayKey ? "" : calButton(r)) + '</li>';
+  }
+
+  /* Add-to-calendar sheet: Google Calendar link or an .ics download (Apple, Outlook, others). */
+  function closeCalSheet() {
+    var sheet = document.getElementById("calSheet");
+    if (sheet) sheet.hidden = true;
+  }
+
+  function openCalSheet(btn) {
+    var tools = window.CalendarExport;
+    if (!tools) return;
+    var ev = { start: btn.dataset.start, end: btn.dataset.end, title: btn.dataset.title, place: btn.dataset.place };
+    var sheet = document.getElementById("calSheet");
+    if (!sheet) {
+      sheet = document.createElement("div");
+      sheet.id = "calSheet";
+      sheet.className = "cal-sheet";
+      sheet.addEventListener("click", function (e) {
+        var t = e.target;
+        if (t === sheet || (t.closest && t.closest(".cal-close"))) closeCalSheet();
+        else if (t.closest && t.closest(".cal-google")) setTimeout(closeCalSheet, 0);
+        else if (t.closest && t.closest(".cal-ics")) {
+          var cur = sheet._ev, blob = new Blob([tools.ics(cur)], { type: "text/calendar;charset=utf-8" });
+          var a = document.createElement("a");
+          a.href = URL.createObjectURL(blob);
+          a.download = tools.icsFilename(cur);
+          document.body.appendChild(a);
+          a.click();
+          a.remove();
+          setTimeout(function () { URL.revokeObjectURL(a.href); }, 4000);
+          closeCalSheet();
+        }
+      });
+      document.body.appendChild(sheet);
+    }
+    sheet._ev = ev;
+    sheet.innerHTML = '<div class="cal-panel" role="dialog" aria-modal="true" aria-label="ಕ್ಯಾಲೆಂಡರ್‌ಗೆ ಸೇರಿಸಿ">' +
+      '<p class="cal-title">' + esc(ev.title) + '</p>' +
+      '<a class="cal-opt cal-google" href="' + esc(tools.googleUrl(ev)) + '" target="_blank" rel="noopener">ಗೂಗಲ್ ಕ್ಯಾಲೆಂಡರ್</a>' +
+      '<button type="button" class="cal-opt cal-ics">ಇತರ ಕ್ಯಾಲೆಂಡರ್ (.ics ಫೈಲ್)</button>' +
+      '<button type="button" class="cal-opt cal-close">ಮುಚ್ಚು</button></div>';
+    sheet.hidden = false;
+    var first = sheet.querySelector(".cal-google");
+    if (first && first.focus) first.focus();
   }
 
   /* Compact/expand list for the new district/state containers (unique ids). */
@@ -360,10 +412,10 @@
   function pvListHTML(records) {
     if (!records.length) return '<p class="empty-note">ಈ ದಿನ ಯಾವುದೇ ವಿಶೇಷ ದಿನವಿಲ್ಲ.</p>';
     var limit = 3, hidden = records.slice(limit);
-    var out = '<div class="ev-panel"><ul class="ev-list">' + records.slice(0, limit).map(pvRow).join("") + "</ul>";
+    var out = '<div class="ev-panel"><ul class="ev-list">' + records.slice(0, limit).map(function (r) { return pvRow(r); }).join("") + "</ul>";
     if (hidden.length) {
       var id = "pvx-" + (++pvSeq);
-      out += '<ul class="ev-list" id="' + id + '" hidden>' + hidden.map(pvRow).join("") + "</ul>" +
+      out += '<ul class="ev-list" id="' + id + '" hidden>' + hidden.map(function (r) { return pvRow(r); }).join("") + "</ul>" +
         '<div class="ev-more"><button class="chip-more" id="btn-' + id + '" type="button" aria-expanded="false">ಮತ್ತೆ +' + hidden.length + '</button></div>';
     }
     return out + "</div>";
@@ -1403,6 +1455,11 @@
       lazyWeekScroll();
       lazyMonthScroll();
     }, { passive: true });
+    document.addEventListener("click", function (e) {
+      var btn = e.target && e.target.closest && e.target.closest(".ev-cal");
+      if (btn) openCalSheet(btn);
+    });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeCalSheet(); });
     fetchPV().then(function () {
       if (state.pv && state.district && !state.pv.sheets[state.district]) {
         state.district = "";

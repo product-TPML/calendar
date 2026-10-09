@@ -190,7 +190,7 @@ function assert(cond, msg) {
   assert(!sectionBody(els.todayContent.innerHTML, "homeEvents").includes("ಧಾರ್ಮಿಕ ಕಾರ್ಯಕ್ರಮಗಳು") && !sectionBody(els.todayContent.innerHTML, "homeEvents").includes("ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳು"), "selected Home has no separate event-type headings");
   assert(els.todayContent.innerHTML.includes(">ಬೆಂಗಳೂರು ನಗರ (1)</option>"), "Home district count includes cultural events");
   assert(els.todayContent.innerHTML.includes("PV-Range"), "range event shown on its start date");
-  assert((sectionBody(els.todayContent.innerHTML, "homeEvents").match(/PV-Bagalkot-/g) || []).length === 1, "local event is not duplicated in merged sections");
+  assert((sectionBody(els.todayContent.innerHTML, "homeEvents").replace(/<button[^>]*ev-cal[^>]*>/g, "").match(/PV-Bagalkot-/g) || []).length === 1, "local event is not duplicated in merged sections");
   assert(sectionBody(els.todayContent.innerHTML, "upcomingEvents1").includes("PV-Bagalkot-" + NEXT) && sectionBody(els.todayContent.innerHTML, "upcomingEvents1").includes("Cultural-Bagalkot-" + NEXT), "upcoming PV and cultural events share one section");
   assert(!sectionBody(els.todayContent.innerHTML, "upcomingEvents1").includes("ધાર್ಮಿಕ ಕಾರ್ಯಕ್ರಮಗಳು") && !sectionBody(els.todayContent.innerHTML, "upcomingEvents1").includes("ಸಾಂસ્કૃતિક ಕಾರ್ಯಕ್ರಮಗಳು"), "upcoming has no separate event-type headings");
   assert(els.homeDistrictSelect.value === "Bagalkot", "district selection persists");
@@ -339,6 +339,22 @@ function assert(cond, msg) {
   assert(toolbarEls.every((bar) => !bar.hidden), "switching tabs shows it");
   global.window.scrollY = 0;
   tabEls.day.click();
+
+  console.log("8) Add to calendar");
+  const cal = require("../calendar-export.js");
+  const ev = { start: "2026-10-31", end: "2026-11-02", title: "ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ, ವಿಶೇಷ; ದಿನ", place: "ಬೆಂಗಳೂರು" };
+  const g = cal.googleUrl(ev);
+  assert(g.startsWith("https://calendar.google.com/calendar/render?action=TEMPLATE"), "google link targets the template action");
+  assert(g.includes("dates=20261031/20261103"), "google end date is exclusive (next day), across a month boundary");
+  assert(g.includes("location=" + encodeURIComponent("ಬೆಂಗಳೂರು")), "google link carries the place");
+  const ics = cal.ics(ev, new Date("2026-01-01T00:00:00Z"));
+  assert(ics.includes("DTSTART;VALUE=DATE:20261031") && ics.includes("DTEND;VALUE=DATE:20261103"), "ics all-day range, end exclusive");
+  assert(ics.includes("DTSTAMP:20260101T000000Z"), "ics has a UTC stamp");
+  assert(ics.split("\r\n").every((line) => Buffer.byteLength(line) <= 75), "ics lines folded to 75 octets");
+  const unfolded = ics.replace(/\r\n /g, "");
+  assert(unfolded.includes("SUMMARY:ಕನ್ನಡ ರಾಜ್ಯೋತ್ಸವ\\, ವಿಶೇಷ\\; ದಿನ"), "ics escapes commas and semicolons and keeps Kannada intact after unfolding");
+  assert(cal.ics({ start: "2026-02-28", title: "x" }).includes("DTEND;VALUE=DATE:20260301"), "single-day event ends the next day");
+  assert(cal.icsFilename(ev) === "event-2026-10-31.ics", "ascii filename");
 
   console.log("7) PV load failure is explicit");
   for (const key in els) delete els[key];
