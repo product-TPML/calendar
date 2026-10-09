@@ -21,7 +21,7 @@ Output shape:
 The arrays are indexed by day of the year (index 0 = 1 January).
 
 The file also holds "weekdayTimings": Rahu Kala, Gulika Kala, Yamaganda and
-Artha Prahara for each weekday. Each is one eighth (1.5 h) of a FIXED
+Ardha Prahara for each weekday. Each is one eighth (1.5 h) of a FIXED
 06:00-18:00 day, exactly as the printed calendar does, so they do not depend on
 the district or on the real sunrise and sunset. (Open decision: dividing the
 real sunrise-to-sunset day instead; kalas() supports that, see the audit docs.)
@@ -91,7 +91,7 @@ KALA_SLOT = {
     "rahuKala":     (2, 7, 5, 6, 4, 3, 8),
     "gulikaKala":   (6, 5, 4, 3, 2, 1, 7),
     "yamaganda":    (4, 3, 2, 1, 7, 6, 5),
-    "arthaPrahara": (3, 2, 1, 7, 6, 5, 4),
+    "ardhaPrahara": (3, 2, 1, 7, 6, 5, 4),
 }
 FIXED_DAY = (6 * 60, 18 * 60)        # the printed calendar's day, in minutes
 WEEKDAYS = ("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday")
@@ -188,7 +188,7 @@ def build():
 
 
 def build_kalas():
-    """{district: {year: [[rahu, gulika, yamaganda, artha] per day]}}, each "HH:MM-HH:MM"
+    """{district: {year: [[rahu, gulika, yamaganda, ardha] per day]}}, each "HH:MM-HH:MM"
     from the district's real sunrise and sunset (unrounded) on that day."""
     out = {}
     for name, (lat, lon) in sorted(DISTRICTS.items()):
@@ -239,9 +239,9 @@ def check(districts):
     # The printed calendar's weekday table, spot-checked cell by cell.
     wt = weekday_timings()
     for day, key, want in (("Thursday", "rahuKala", "13:30 - 15:00"), ("Thursday", "gulikaKala", "09:00 - 10:30"),
-                           ("Thursday", "yamaganda", "06:00 - 07:30"), ("Monday", "arthaPrahara", "09:00 - 10:30"),
-                           ("Wednesday", "arthaPrahara", "06:00 - 07:30"), ("Sunday", "rahuKala", "16:30 - 18:00"),
-                           ("Friday", "yamaganda", "15:00 - 16:30"), ("Thursday", "arthaPrahara", "15:00 - 16:30")):
+                           ("Thursday", "yamaganda", "06:00 - 07:30"), ("Monday", "ardhaPrahara", "09:00 - 10:30"),
+                           ("Wednesday", "ardhaPrahara", "06:00 - 07:30"), ("Sunday", "rahuKala", "16:30 - 18:00"),
+                           ("Friday", "yamaganda", "15:00 - 16:30"), ("Thursday", "ardhaPrahara", "15:00 - 16:30")):
         ok(wt[day][key] == want, "%s %s is %s" % (day, key, want))
     ok(len(wt) == 7 and all(len(v) == 4 for v in wt.values()), "7 weekdays x 4 timings")
     return n

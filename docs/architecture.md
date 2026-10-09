@@ -6,7 +6,7 @@ The tab reads no OCR. `scripts/build-panchanga-data.py` writes `data/panchanga.j
 
 - 2026 tithi and nakshatra with end times: `data/pdf-panchanga-data.json`, extracted from the PV wall-calendar PDF by `scripts/extract-pdf-panchanga.py`.
 - 2027 tithi and nakshatra: `data/Calander 2027.docx`, Table 1.
-- Computed in `scripts/compute-panchanga.py` and `scripts/compute-sun-times.py`: paksha, lunar months, ayana, sun and moon rashi, yoga, karana (the one at sunrise and the next), sunrise, sunset, Rahu/Gulika/Yamaganda/Artha Prahara.
+- Computed in `scripts/compute-panchanga.py` and `scripts/compute-sun-times.py`: paksha, lunar months, ayana, sun and moon rashi, yoga, karana (the one at sunrise and the next), sunrise, sunset, Rahu/Gulika/Yamaganda/Ardha Prahara.
 - A value that cannot be read or fails the cross-check is left out and the tab shows "ಲಭ್ಯವಿಲ್ಲ". Shubha Samaya and the daily rashi bhavishya have no source and always show it.
 - See `docs/panchanga-2027-source-audit.md` for the Word-file audit.
 

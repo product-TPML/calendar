@@ -342,7 +342,7 @@ def main():
                 ki = bisect.bisect_right(ends["karana"], off + rise)
                 rows.append([
                     S.hhmm(rs, truncate=True), S.hhmm(ss, truncate=True)] +
-                    ["%s-%s" % kal[k] for k in ("rahuKala", "gulikaKala", "yamaganda", "arthaPrahara")] + [
+                    ["%s-%s" % kal[k] for k in ("rahuKala", "gulikaKala", "yamaganda", "ardhaPrahara")] + [
                     (first["yoga"] + yi) % 27 + 1, fmt(ends["yoga"][yi], off),
                     (first["karana"] + ki) % 60 + 1, fmt(ends["karana"][ki], off),
                     (first["karana"] + ki + 1) % 60 + 1, fmt(ends["karana"][ki + 1], off)])
@@ -350,7 +350,7 @@ def main():
             out[str(year)] = rows
         with open(os.path.join(ROOT, DISTRICT_DIR, slug + ".json"), "w", encoding="utf8") as f:
             json.dump({"district": name, "lat": dlat, "lon": dlon,
-                       "columns": ["sunrise", "sunset", "rahuKala", "gulikaKala", "yamaganda", "arthaPrahara",
+                       "columns": ["sunrise", "sunset", "rahuKala", "gulikaKala", "yamaganda", "ardhaPrahara",
                                    "yoga", "yogaEnds", "karana", "karanaEnds", "nextKarana", "nextKaranaEnds"],
                        "note": "one row per day, index 0 = 1 January. Times are IST; +1 means the next day. "
                                "Yoga 1-27, karana 1-60: names are in data/panchanga.json. Kalas divide the district's real sunrise-sunset day into eight",

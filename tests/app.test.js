@@ -243,8 +243,8 @@ function assert(cond, msg) {
   assert(els.todayContent.innerHTML.includes("timeline-mobile timeline-rail") && els.todayContent.innerHTML.includes("timeline-node") && els.todayContent.innerHTML.includes("timeline-card"), "mobile timing markup includes a rail, nodes, and event cards");
   assert(els.todayContent.innerHTML.includes("timing-legend"), "timing color legend renders");
   var timings = sectionBody(els.todayContent.innerHTML, "body-homeTimings");
-  assert((timings.match(/<li class="tl-row/g) || []).length === 4, "timings list has rahu, gulika, yamaganda and artha prahara");
-  assert(timings.includes("ರಾಹು ಕಾಲ") && timings.includes("ಗುಳಿಕ ಕಾಲ") && timings.includes("ಯಮಗಂಡ") && timings.includes("ಅರ್ಥ ಪ್ರಹರ"), "all four timings are named");
+  assert((timings.match(/<li class="tl-row/g) || []).length === 4, "timings list has rahu, gulika, yamaganda and ardha prahara");
+  assert(timings.includes("ರಾಹು ಕಾಲ") && timings.includes("ಗುಳಿಕ ಕಾಲ") && timings.includes("ಯಮಗಂಡ") && timings.includes("ಅರ್ಧ ಪ್ರಹರ"), "all four timings are named");
   assert(timings.includes("ಬಾಗಲಕೋಟೆ"), "timings say which district they are for");
   assert((timings.match(/class="tl-tone">ಅಶುಭ</g) || []).length === 3 && (timings.match(/class="tl-tone">ಮಧ್ಯಮ</g) || []).length === 1, "each timing card names its tone in words, not just colour");
   assert(timings.includes('class="tl-dur">1 ಗಂ 30 ನಿ</span>'), "each timing card shows how long it lasts");

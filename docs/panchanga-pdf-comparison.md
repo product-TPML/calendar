@@ -29,7 +29,7 @@ from the daily sheet photos in `data/2026/<month>/<date>.jpg`:
 | chandra rashi | bottom_table_3 (`ಚಂದ್ರ ರಾಶಿಯಲ್ಲಿ ಪ್ರವೇಶ`) + date_right_1 |
 | samvatsara, shaka year, months | date_left |
 | sunrise, sunset | date_right_2 |
-| timings: rahu, gulika, yamaganda, artha prahara, shubha samaya | bottom_table_2 |
+| timings: rahu, gulika, yamaganda, ardha prahara, shubha samaya | bottom_table_2 |
 | jathaka (12 rashi predictions) | jathaka panel |
 
 ## What the PDF contains
@@ -68,7 +68,7 @@ Legend: ✅ present · ⚠️ partial/derivable · ❌ absent
 | solar rashi | ❌ | only via Sankranti event dates (`ಮಕರ ಸಂಕ್ರಾಂತಿ`) |
 | chandra rashi | ❌ | 0 occurrences |
 | sunrise / sunset | ❌ | neither `ಸೂರ್ಯೋದಯ` nor `ಸೂರ್ಯಾಸ್ತ` anywhere |
-| artha prahara | ❌ | not printed |
+| ardha prahara | ❌ | not printed |
 | shubha samaya | ❌ | not printed |
 | jathaka (12 rashi predictions) | ❌ | zero rashi names (ಮೇಷ etc.) in the whole file |
 
@@ -77,7 +77,7 @@ Legend: ✅ present · ⚠️ partial/derivable · ❌ absent
 - **Extractable:** tithi, nakshatra, weekday, samvatsara, shaka year, masa,
   rahu/gulika/yamaganda, events.
 - **Missing:** paksha, yoga, karana, chandra rashi, per-date solar rashi,
-  per-date ayana, sunrise/sunset, artha prahara, shubha samaya, jathaka.
+  per-date ayana, sunrise/sunset, ardha prahara, shubha samaya, jathaka.
 - **PDF-only extras** (if ever wanted): ಸೌರ (Sauramana) date, Hijri date,
   Vikrama shaka, rain nakshatras, special-days list.
 

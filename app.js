@@ -245,7 +245,7 @@
     { index: 2, name: "ರಾಹು ಕಾಲ", tone: "bad" },
     { index: 3, name: "ಗುಳಿಕ ಕಾಲ", tone: "bad" },
     { index: 4, name: "ಯಮಗಂಡ", tone: "bad" },
-    { index: 5, name: "ಅರ್ಥ ಪ್ರಹರ", tone: "mid" }
+    { index: 5, name: "ಅರ್ಧ ಪ್ರಹರ", tone: "mid" }
   ];
 
   function buildPanchangaRecord(core, dist, key) {

@@ -28,7 +28,7 @@ The tab reads no OCR. The data is built by `python scripts/build-panchanga-data.
 | Yoga and its end time | Calculated | Sun plus Moon longitude |
 | Karana, the next karana, and end times | Calculated | Moon minus Sun longitude |
 | Sunrise and sunset, per district | Calculated | NOAA solar algorithm at the district headquarters |
-| Rahu Kala, Gulika Kala, Yamaganda, Artha Prahara, per district | Calculated | Eight equal parts of the district's sunrise-to-sunset day |
+| Rahu Kala, Gulika Kala, Yamaganda, Ardha Prahara, per district | Calculated | Eight equal parts of the district's sunrise-to-sunset day |
 | Shubha Samaya | Not available | Rule unknown |
 | Rashi bhavishya (12 daily predictions) | Not available | Editorial content, no source |
 
@@ -140,7 +140,7 @@ The day-level values (paksha, rashis, ayana, months) use Bengaluru's sunrise. Yo
 - The seconds are dropped (not rounded), as the printed calendar does. For Bengaluru this matches the printed daily photos to the minute.
 - **Coordinates.** Each district uses the headquarters town (Bengaluru Rural: Doddaballapura; Bengaluru South: Ramanagara; Dakshina Kannada: Mangaluru; Kodagu: Madikeri; Uttara Kannada: Karwar; Vijayanagara: Hosapete). The values (four decimals) were checked on 8 Oct 2026 against two independent lookups, the English Wikipedia article for the town and OpenStreetMap, and the mean is used. Where OpenStreetMap returned only a district-boundary centre (Chamarajanagar, Gadag, Haveri, Kolar, Koppal, Yadgir), the Wikipedia value alone is used. The earlier two-decimal values agreed with these to within 0.05°. The largest effect is Mangaluru (0.04° north of the new value), which moved sunrise and sunset by 8.5 seconds. Because the printed time drops the seconds, about 5–9% of the minute values in a district changed by one minute.
 
-### 3.7 Rahu Kala, Gulika Kala, Yamaganda, Artha Prahara
+### 3.7 Rahu Kala, Gulika Kala, Yamaganda, Ardha Prahara
 
 - Each district's day, from its own sunrise to its own sunset (unrounded), is split into **eight equal parts**.
 - Each weekday uses one part, by this table (parts numbered from sunrise):
@@ -150,7 +150,7 @@ The day-level values (paksha, rashis, ayana, months) use Bengaluru's sunrise. Yo
   | Rahu Kala | 2 | 7 | 5 | 6 | 4 | 3 | 8 |
   | Gulika Kala | 6 | 5 | 4 | 3 | 2 | 1 | 7 |
   | Yamaganda | 4 | 3 | 2 | 1 | 7 | 6 | 5 |
-  | Artha Prahara | 3 | 2 | 1 | 7 | 6 | 5 | 4 |
+  | Ardha Prahara | 3 | 2 | 1 | 7 | 6 | 5 | 4 |
 
 - Start and end are rounded to the nearest minute.
 - **Difference from the printed calendar.** The printed calendar divides a fixed 06:00 to 18:00 day, so every place and date gets the same times. The values here differ from it by about 19 minutes on average and by up to about an hour. The printed table is kept in `data/sun-times.json` (`weekdayTimings`) for comparison. This was chosen on 8 Oct 2026; whether to show the printed values as well is open.

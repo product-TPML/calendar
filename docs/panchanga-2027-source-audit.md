@@ -37,7 +37,7 @@ Legend: ✅ explicitly present · 🟡 derivable · ❌ absent · ⚠️ present
 | 15 | Solar rashi | Full | ✅ | Table 2: rashi named on the sankramana day, running until the next one |
 | 16 | Chandra rashi | Full | 🟡 | Derivable from nakshatra and its end time, with the moon's rashi at the nakshatra boundary. Not written in the file |
 | 17 | Sunrise / sunset | Full | 🟡 | Done: computed per district for 2026 and 2027, `data/sun-times.json` (`scripts/compute-sun-times.py`) |
-| 18 | Artha Prahara | Full | 🟡 | Same file as Rahu (district-wise). The printed calendar uses a fixed weekday table (Mon 09:00-10:30, Tue 07:30-09:00, Wed 06:00-07:30, Thu 15:00-16:30, Fri 13:30-15:00, Sat 12:00-13:30, Sun 10:30-12:00) |
+| 18 | Ardha Prahara | Full | 🟡 | Same file as Rahu (district-wise). The printed calendar uses a fixed weekday table (Mon 09:00-10:30, Tue 07:30-09:00, Wed 06:00-07:30, Thu 15:00-16:30, Fri 13:30-15:00, Sat 12:00-13:30, Sun 10:30-12:00) |
 | 19 | Shubha Samaya | Full | ❌ | Source rule unknown; the 2026 values are OCR from the image |
 | 20 | Rashi bhavishya (12 predictions) | Full | ❌ | Editorial content; cannot be computed |
 | - | Hijri date | not shown | ✅ | Table 2. Present, but the tab does not display it |
@@ -66,7 +66,7 @@ Totals: 5 of 8 PV-mode fields present (the 3 kalas are missing). 8 of 20 fields 
 - [ ] Ayana: Dakshinayana for Jan 1-14, Uttarayana from Makara sankramana (Jan 15), Dakshinayana from Karka sankramana (Jul 17)
 - [ ] Chandra rashi: from nakshatra and end time, or an ephemeris
 - [x] Sunrise and sunset: computed per district, `data/sun-times.json`
-- [x] Rahu Kala, Gulika Kala, Yamaganda, Artha Prahara: computed district-wise from real sunrise and sunset (`data/kalas.json`). The fixed-day weekday table as printed is kept in `weekdayTimings` of `data/sun-times.json`
+- [x] Rahu Kala, Gulika Kala, Yamaganda, Ardha Prahara: computed district-wise from real sunrise and sunset (`data/kalas.json`). The fixed-day weekday table as printed is kept in `weekdayTimings` of `data/sun-times.json`
 - [ ] 24-hour times and next-day flags for the tab (`endsAt`, `nextDay`): from the markers, using sunrise to resolve "ಬೆ" and "ದಿ.ಪೂ"
 
 ## 4. Absent (not in the file, not derivable from it)
@@ -151,7 +151,7 @@ Time markers that look wrong (a "ರಾ" (night) marker at 6-7 o'clock; "ಸಾ"
 ## 6. Decisions needed
 
 1. **Yoga and karana: decided.** Computed from astronomy per district (`data/yoga-karana.json`), and the tab shows both karanas of the day. The Word files and the printed calendar do not state either. Still to check: the computed tithi/nakshatra times differ from the docx by a median of about 30 minutes (the daily photos agree with the computation), so which almanac the tab should follow is open.
-2. **Shubha Samaya and rashi bhavishya:** source them separately, or drop them for 2027? (Artha Prahara is a fixed weekday table and needs no source.)
+2. **Shubha Samaya and rashi bhavishya:** source them separately, or drop them for 2027? (Ardha Prahara is a fixed weekday table and needs no source.)
 3. **Corrections:** who verifies the errors in section 5 against the printed 2027 calendar before parsing?
 4. **Data path: done.** The tab no longer reads OCR. `scripts/build-panchanga-data.py` builds `data/panchanga.json` and `data/panchanga/<district>.json` from this file (2027), the PV PDF data (2026) and the computed values. Fields with no source (Shubha Samaya, rashi bhavishya) or a source error show "ಲಭ್ಯವಿಲ್ಲ" in the tab.
-5. **Basis for Rahu, Gulika, Yamaganda and Artha Prahara: decided, district-wise.** The data now divides each district's real sunrise-to-sunset day into eight parts (`data/kalas.json`), so the values differ from the printed calendar, which uses a fixed 06:00-18:00 day for every place and date. The printed 2026 values in the photos all follow the fixed table. Open: whether the tab should show the district-wise values only, or also the printed fixed ones.
+5. **Basis for Rahu, Gulika, Yamaganda and Ardha Prahara: decided, district-wise.** The data now divides each district's real sunrise-to-sunset day into eight parts (`data/kalas.json`), so the values differ from the printed calendar, which uses a fixed 06:00-18:00 day for every place and date. The printed 2026 values in the photos all follow the fixed table. Open: whether the tab should show the district-wise values only, or also the printed fixed ones.
