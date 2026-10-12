@@ -19,6 +19,7 @@ Open the app over HTTP, not `file://`, so the data files can load. See `AGENTS.m
 | `data/pv-calendar-data.json` | District event data the app loads |
 | `data/calendar-events.json` | Day-level events for 2026 and 2027, shown as Karnataka-wide events. Generated from the Word calendars in `data/` by `scripts/extract-docx-events.py` (see its docstring). Other files in `data/` are local and ignored |
 | `data/panchanga.json`, `data/panchanga/<district>.json` | Panchanga tab data for 2026 and 2027, no OCR. `panchanga.json` has one record per day (tithi, nakshatra, paksha, lunar months, ayana, sun and moon rashi, samvatsara, Shaka year); each district file has that district's sunrise, sunset, Rahu/Gulika/Yamaganda/Ardha Prahara, yoga and karana. Built by `python scripts/build-panchanga-data.py` (see its docstring for the sources). Shubha Samaya and the daily rashi bhavishya are not available and the tab says so |
+| `data/utility-notices.dummy.json` | Made-up district notices (power cut, water supply, public work, railway) for the Home page's ಸೂಚನೆ tab, on by default until Settings turns them off. The real feed would be `data/utility-notices.json`, which does not exist yet |
 | `ocr-zones/` | Old OCR output. The app no longer reads it |
 | `epaper/` | Cultural-event candidates (`cultural-event-candidates.json`) and the browser extension that collects them |
 | `editorial/` | Editorial CSV exports and the log of applied OCR corrections |
