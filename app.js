@@ -809,9 +809,8 @@
     return days.length ? '<div class="upcoming-list">' + days.join("") + '</div>' : '<p class="empty-note">ಮುಂದಿನ 7 ದಿನಗಳಲ್ಲಿ ಯಾವುದೇ ಕಾರ್ಯಕ್ರಮಗಳಿಲ್ಲ.</p>';
   }
 
-  /* Same wording and dots as the Month legend: round = district, square = Karnataka-wide. */
   function stripLegendHTML() {
-    return '<div class="scope-legend strip-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ"><span><i class="scope-dot district"></i> ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span><span><i class="scope-dot state"></i> ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span>' + noticeLegendHTML() + '</div>';
+    return '<div class="scope-legend strip-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ">' + legendItemsHTML() + '</div>';
   }
 
   /* Sunday-first week around the selected day, so any date this week is one tap away. */
@@ -824,7 +823,7 @@
       out += '<button type="button" class="ds-day' + (k === key ? " sel" : "") + (k === todayKey ? " today" : "") + (d.getDay() === 0 ? " sun" : "") + '" data-day="' + k + '"' + (k === key ? ' aria-current="date"' : "") +
         ' aria-label="' + WEEKDAYS[d.getDay()] + " " + kn(d.getDate()) + " " + MONTHS[d.getMonth()] + '">' +
         '<span class="ds-wd">' + WEEKDAYS_SHORT[d.getDay()] + '</span><span class="ds-num">' + kn(d.getDate()) + '</span>' +
-        '<span class="ds-dots" aria-hidden="true">' + (local ? '<i class="scope-dot district"></i>' : "") + (wide ? '<i class="scope-dot state"></i>' : "") + dayAlertHTML(k) + '</span></button>';
+        '<span class="ds-dots" aria-hidden="true">' + (local ? markHTML("district") : "") + (wide ? markHTML("state") : "") + dayAlertHTML(k) + '</span></button>';
     }
     return out + '</nav>';
   }
@@ -855,7 +854,7 @@
     return dayStripHTML(key) + stripLegendHTML() + '<section class="home-header" aria-labelledby="homeDateTitle">' +
       '<div class="home-date"' + (d.getDay() === 0 ? ' data-sun="1"' : "") + '><div class="home-day-line"><div class="home-day-label"><span class="home-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (key === keyFor(new Date()) ? '<span class="today-pill">ಇಂದು</span>' : "") + '</div><div class="home-day-date"><strong id="homeDateTitle">' + kn(d.getDate()) + '</strong><small>' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</small></div></div></div>' +
       '<label class="home-district"><span id="homeDistrictLabel">ಜಿಲ್ಲೆ</span>' + districtControlHTML("homeDistrictSelect", current === "notices" ? "notices" : "day", "homeDistrict") + '</label>' + '</section>' +
-      '<div class="home-switch" role="tablist" aria-label="ಮುಖಪುಟದ ವಿಷಯ">' + mode("homeEventsMode", "events", ICONS.diya, "ಕಾರ್ಯಕ್ರಮಗಳು") +
+      '<div class="home-switch" role="tablist" aria-label="ಮುಖಪುಟದ ವಿಷಯ">' + mode("homeEventsMode", "events", ICONS.diya, "ಕಾರ್ಯಕ್ರಮ") +
         (homeNoticesAvailable(key) ? mode("homeNoticesMode", "notices", '<span class="switch-alert' + (noticeCount ? " is-live" : "") + '">' + ICO_NOTICE + '</span>',
           "ಸೂಚನೆ" + (noticeCount ? ' <span class="switch-count" aria-label="' + noticeCount + ' ಸೂಚನೆಗಳು">' + kn(noticeCount) + '</span>' : "")) : "") +
         mode("homePanchangaMode", "panchanga", ICONS.tithi, "ಪಂಚಾಂಗ") + '</div>';
@@ -900,7 +899,8 @@
 
   /* ---------------- Notices (power, water, public work, railway) ----------------
      District notices for the selected day and the days after it, shown as the
-     middle option of the Home switch. The Settings switch swaps in the dummy file. */
+     middle option of the Home switch. The dummy file is used by default; the Settings
+     switch turns it off. */
   var NOTICES_URL = "data/utility-notices.json", NOTICES_DUMMY_URL = "data/utility-notices.dummy.json";
   var NOTICE_DAYS = 14;
   var NOTICE_CATS = [
@@ -924,7 +924,8 @@
     return null;
   }
 
-  function loadDummyNotices() { try { return localStorage.getItem("pvDummyNotices") === "1"; } catch (e) { return false; } }
+  /* Dummy notices are on until the Settings switch is turned off, while there is no real feed. */
+  function loadDummyNotices() { try { return localStorage.getItem("pvDummyNotices") !== "0"; } catch (e) { return true; } }
   function saveDummyNotices(on) { try { localStorage.setItem("pvDummyNotices", on ? "1" : "0"); } catch (e) {} }
   function noticesUrl() { return state.noticesDummy ? NOTICES_DUMMY_URL : NOTICES_URL; }
 
@@ -999,15 +1000,24 @@
     return ((state.notices && state.notices[district]) || []).filter(function (n) { return noticeActiveOn(n, iso); });
   }
 
-  /* Marker for a day that has a notice: the same triangle in the Home strip, Week and Month. */
-  function dayAlertHTML(key, className) {
-    if (!state.district || !noticesOn(state.district, keyToIso(key)).length) return "";
-    return '<i class="scope-dot alert' + (className ? " " + className : "") + '" title="ಸೂಚನೆ ಇದೆ"></i>';
+  /* Markers use the same icons as the Home tabs: the lamp for events (maroon for
+     the district, green for Karnataka-wide) and the warning sign for notices. */
+  var ICO_WARNING = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="ico"><path d="M12 3.5 2.5 20h19z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 9.5v5M12 17.7v.1" fill="none" stroke="var(--mark-cut, #fff)" stroke-width="2.2" stroke-linecap="round"/></svg>';
+
+  function markHTML(type, extra) {
+    return '<i class="mark mark-' + type + '"' + (extra || "") + '>' + (type === "alert" ? ICO_WARNING : ICONS.diya) + '</i>';
   }
 
-  /* The legend explains the triangle only once notices have loaded. */
-  function noticeLegendHTML() {
-    return state.notices ? '<span><i class="scope-dot alert"></i> ಸೂಚನೆಗಳು</span>' : "";
+  /* Marker for a day that has a notice, in the Home strip, Week and Month. */
+  function dayAlertHTML(key) {
+    if (!state.district || !noticesOn(state.district, keyToIso(key)).length) return "";
+    return markHTML("alert", ' title="ಸೂಚನೆ ಇದೆ"');
+  }
+
+  /* The notices entry joins the legend only once notices have loaded. */
+  function legendItemsHTML() {
+    return '<span>' + markHTML("district") + ' ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span><span>' + markHTML("state") + ' ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span>' +
+      (state.notices ? '<span>' + markHTML("alert") + ' ಸೂಚನೆಗಳು</span>' : "");
   }
 
   function noticeOrder(a, b) {
@@ -1245,7 +1255,7 @@
       cursor = weekKeyShift(cursor, 1);
     }
     document.getElementById("weekAgenda").innerHTML = pages.join("");
-    document.getElementById("weekNoticeLegend").hidden = !state.notices;
+    document.getElementById("weekLegend").innerHTML = legendItemsHTML();
     renderDistrictPicker("weekDistrictSelect", "week");
     bindWeekStream();
     if (!state.weekHeader) {
@@ -1269,12 +1279,14 @@
     for (var day = 1; day <= days; day++) {
       var k = keyFor(new Date(y, m, day)), sel = k === state.key, today = k === keyFor(new Date());
       var local = districtEventsFor(k).length + culturalEventsFor(k).length, statewide = stateEventsFor(k).length;
-      var alert = dayAlertHTML(k, "mday-alert");
+      var alert = dayAlertHTML(k);
       var parts = (local ? ["ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು " + local] : []).concat(statewide ? ["ಕರ್ನಾಟಕ ಕಾರ್ಯಕ್ರಮಗಳು " + statewide] : [], alert ? ["ಸೂಚನೆ ಇದೆ"] : []);
       var aria = parts.length ? ' aria-label="' + kn(day) + ': ' + parts.join(", ") + '"' : '';
-      html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + '" data-day="' + k + '" type="button"' + (today ? ' title="ಇಂದು"' : "") + aria + '>' + kn(day) + alert +
-        (local || statewide ? '<span class="mday-dots" aria-hidden="true">' + (local ? '<i class="scope-dot district"></i><b class="date-count district">' + local + '</b>' : '') + (statewide ? '<i class="scope-dot state"></i><b class="date-count state">' + statewide + '</b>' : '') + '</span>' : '') + '</button>';
+      html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + '" data-day="' + k + '" type="button"' + (today ? ' title="ಇಂದು"' : "") + aria + '>' + kn(day) +
+        (local || statewide || alert ? '<span class="mday-dots" aria-hidden="true">' + (local ? markHTML("district") : '') + (statewide ? markHTML("state") : '') + alert + '</span>' : '') + '</button>';
     }
+    /* Fill the last week, so the grid closes as a full rectangle. */
+    for (var rest = (lead + days) % 7; rest && rest < 7; rest++) html += '<span class="mday blank" aria-hidden="true"></span>';
     return '<div class="month-cal"><div class="week-row">' + WEEKDAYS.map(function (w, i) { return '<span title="' + w + '">' + WEEKDAYS_SHORT[i] + "</span>"; }).join("") + '</div><div class="month-grid">' + html + '</div></div>';
   }
 
@@ -1323,7 +1335,7 @@
   function monthBlockHTML(key) {
     var p = key.split("-"), y = +p[0], m = +p[1];
     return '<section class="month-block" data-month="' + key + '"><div class="stream-head"><h2 class="stream-period-title">' + MONTHS[m] + " " + kn(y) + '</h2>' + districtLinkHTML("monthDistrictSelect") + '</div>' +
-      monthCalendarHTML(y, m) + '<div class="scope-legend month-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ"><span><i class="scope-dot district"></i> ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span><span><i class="scope-dot state"></i> ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span>' + noticeLegendHTML() + '</div>' +
+      monthCalendarHTML(y, m) + '<div class="scope-legend month-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ">' + legendItemsHTML() + '</div>' +
       '<details class="month-agenda"><summary class="ev-section-title" id="monthAgenda-' + key + '"><span>ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿ</span>' + (state.pv && !state.pvError ? '<span class="agenda-count">' + kn(monthAgendaRecords(y, m).length) + '</span>' : "") + '</summary>' + monthAgendaHTML(y, m) + '</details></section>';
   }
 

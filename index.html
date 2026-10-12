@@ -9,7 +9,7 @@
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="description" content="ಕನ್ನಡ ಧಾರ್ಮಿಕ ಮತ್ತು ಸಾಂಸ್ಕೃತಿಕ ಕಾರ್ಯಕ್ರಮಗಳ ಕ್ಯಾಲೆಂಡರ್ — ಹಬ್ಬಗಳು, ಜಾತ್ರೆಗಳು, ಮೇಳಗಳು ಮತ್ತು ಸ್ಥಳೀಯ ಕಾರ್ಯಕ್ರಮಗಳು">
 <title>ಕನ್ನಡ ಸಾಂಸ್ಕೃತಿಕ ಕ್ಯಾಲೆಂಡರ್ — Kannada Cultural Calendar</title>
-<link rel="stylesheet" href="styles.css?v=45">
+<link rel="stylesheet" href="styles.css?v=49">
 </head>
 <body>
 <div class="app">
@@ -39,11 +39,7 @@
         <button id="nextWeek" class="icon-btn" type="button" aria-label="ಮುಂದಿನ ವಾರ">›</button>
       </div>
       <div class="district-anchor"><select id="weekDistrictSelect" class="district-select" name="weekDistrict" aria-label="ಜಿಲ್ಲೆ"></select></div>
-      <div class="scope-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ">
-        <span><i class="scope-dot district"></i> ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span>
-        <span><i class="scope-dot state"></i> ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span>
-        <span id="weekNoticeLegend" hidden><i class="scope-dot alert"></i> ಸೂಚನೆಗಳು</span>
-      </div>
+      <div id="weekLegend" class="scope-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ"></div>
       <div id="weekAgenda" class="week-agenda"></div>
     </section>
 
@@ -97,6 +93,6 @@
 </div>
 <noscript><p style="padding:1rem">ಈ ಆ್ಯಪ್ JavaScript ಬಳಸುತ್ತದೆ — ದಯವಿಟ್ಟು ಸಕ್ರಿಯಗೊಳಿಸಿ.</p></noscript>
 <script src="calendar-export.js?v=1"></script>
-<script src="app.js?v=25"></script>
+<script src="app.js?v=30"></script>
 </body>
 </html>

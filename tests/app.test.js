@@ -194,7 +194,7 @@ function assert(cond, msg) {
   assert(els.homeDistrictSelect.value === "Bagalkot", "district selection persists");
   assert(localStore.pvDistrict === "Bagalkot" && !("pvDistrict" in sessionStore), "district is remembered across visits (localStorage), not per session");
   assert((els.todayContent.innerHTML.match(/class="ds-day/g) || []).length === 7, "Home shows a seven-day strip");
-  assert(els.todayContent.innerHTML.includes('class="scope-legend strip-legend"') && els.todayContent.innerHTML.includes('scope-dot state'), "Home explains the strip dots with a legend");
+  assert(els.todayContent.innerHTML.includes('class="scope-legend strip-legend"') && els.todayContent.innerHTML.includes('class="mark mark-state"'), "Home explains the strip markers with a legend");
   assert(els.todayContent.innerHTML.includes("ds-day sel today") || els.todayContent.innerHTML.includes("ds-day today sel") || els.todayContent.innerHTML.includes('class="ds-day sel'), "strip marks the selected day");
   assert(!els.todayContent.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ.") && !els.todayContent.innerHTML.includes("ಈ ದಿನ ಯಾವುದೇ ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ."), "Home no longer repeats per-scope empty notes");
 
@@ -276,9 +276,10 @@ function assert(cond, msg) {
   assert(!els.monthScroller.innerHTML.includes('ev-when">' + INITIAL + "<"), "a one-day event does not repeat the date its heading already shows");
   assert(els.monthScroller.innerHTML.includes('<details class="month-agenda">') && !els.monthScroller.innerHTML.includes('<details class="month-agenda" open'), "the month's event list is a collapsed, expandable section");
   assert(/<summary class="ev-section-title" id="monthAgenda-[^"]+"><span>ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿ<\/span><span class="agenda-count">\d+<\/span><\/summary>/.test(els.monthScroller.innerHTML), "the heading shows how many events the list holds");
-  assert(els.monthScroller.innerHTML.includes("date-count"), "Month shows event counts in cells");
+  assert(els.monthScroller.innerHTML.includes('class="mday-dots"') && !els.monthScroller.innerHTML.includes("date-count"), "Month cells show markers, not counts");
+  assert(els.monthScroller.innerHTML.split('<div class="month-grid">').slice(1).every((grid) => (grid.split("</div>")[0].match(/class="mday[ "]/g) || []).length % 7 === 0), "every month grid is padded to full weeks");
   assert(els.monthScroller.innerHTML.includes("Cultural-Bagalkot-" + INITIAL), "Month agenda includes cultural events");
-  assert(els.monthScroller.innerHTML.includes('date-count district">3</b>'), "Month date count includes cultural events");
+  assert(/aria-label="\d+: ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು 3[,"]/.test(els.monthScroller.innerHTML), "the cell's label still gives the count, including cultural events");
   assert(els.monthDistrictSelect.innerHTML.includes(">ಬಾಗಲಕೋಟೆ (7)</option>"), "Month district count includes cultural events");
   assert(els.monthScroller.innerHTML.includes(">ಶು</span>") && els.monthScroller.innerHTML.includes(">ಶ</span>"), "Month weekday chips tell Friday (ಶು) and Saturday (ಶ) apart");
   const tapped = INITIAL;
@@ -343,18 +344,21 @@ function assert(cond, msg) {
   const REAL_NOTICES = "data/utility-notices.json", DUMMY_NOTICES = "data/utility-notices.dummy.json";
   const homeHtml = () => els.todayContent.innerHTML;
   const homeClick = (selector, dataset) => els.todayContent._handlers.click.forEach((cb) => cb({ target: { closest: (s) => (s === selector ? { dataset } : null) } }));
-  assert(count(REAL_NOTICES) === 1 && count(DUMMY_NOTICES) === 0, "with the switch off the app requests the real notices file");
+  assert(count(DUMMY_NOTICES) === 1 && count(REAL_NOTICES) === 0 && els.dummyNotices.checked === true, "dummy notices are on by default");
   els.todayBtn.click();
   els.homeDistrictSelect.value = "Bagalkot";
   els.homeDistrictSelect.click("change");
   assert(!homeHtml().includes('id="homeNoticesMode"'), "the notices option is hidden while notices have not loaded");
+  els.dummyNotices.checked = false;
+  els.dummyNotices.click("change");
+  assert(count(REAL_NOTICES) === 1 && localStore.pvDummyNotices === "0", "switching dummy data off requests the real file");
   failUrl(REAL_NOTICES);
   await tick();
   assert(!homeHtml().includes('id="homeNoticesMode"') && homeHtml().includes('id="body-homeToday"'), "without notice data there is no notices option");
   els.dummyNotices.checked = true;
   els.dummyNotices.click("change");
   assert(localStore.pvDummyNotices === "1", "the dummy switch is remembered");
-  assert(count(DUMMY_NOTICES) === 1 && count(REAL_NOTICES) === 1, "switching it on requests the dummy file");
+  assert(count(DUMMY_NOTICES) === 2 && count(REAL_NOTICES) === 1, "switching it back on requests the dummy file");
   resolveUrl(DUMMY_NOTICES, { dummy: true, districts: {
     Bagalkot: [
       { category: "Power Cut", type: "", start: iso(INITIAL), end: iso(INITIAL), dates: [], time: "10:00-16:00", text: "N-Today\n\nN-Today-Rest" },
@@ -381,7 +385,7 @@ function assert(cond, msg) {
   assert(homeHtml().includes("N-Later") && homeHtml().includes("ರೈಲು ರದ್ದು"), "a later notice is listed under the coming days with its type");
   assert(["N-Expired", "N-BadDate", "N-Far", "N-Ballari"].every((t) => !homeHtml().includes(t)), "expired, undated, far-off and other-district notices are left out");
   assert(homeHtml().includes(">ಬಾಗಲಕೋಟೆ (3)</option>") && homeHtml().includes(">ಬಳ್ಳಾರಿ (1)</option>"), "in notices mode the district list counts current notices");
-  assert(homeHtml().includes('scope-dot alert" title=') && homeHtml().includes('<i class="scope-dot alert"></i> ಸೂಚನೆಗಳು'), "days with notices get a marker in the strip, explained in the legend");
+  assert(homeHtml().includes('class="mark mark-alert" title=') && /class="mark mark-alert"><svg[^]*?<\/svg><\/i> ಸೂಚನೆಗಳು/.test(homeHtml()), "days with notices get a marker in the strip, explained in the legend");
   homeClick(".notice-chip", { cat: "Railway" });
   assert(homeHtml().includes("N-Later") && !homeHtml().includes("N-Today"), "a category chip filters the notices");
   homeClick(".notice-chip", { cat: "" });
@@ -403,9 +407,9 @@ function assert(cond, msg) {
   assert(homeHtml().includes('id="body-homeToday"') && !homeHtml().includes("N-Later") && homeHtml().includes("PV-Bagalkot-" + DAY3), "Events mode shows the events again");
   els.todayBtn.click();
   tabEls.week.click();
-  assert(els.weekAgenda.innerHTML.includes('data-day="' + INITIAL + '"') && (els.weekAgenda.innerHTML.match(/scope-dot alert/g) || []).length === 6 && els.weekNoticeLegend.hidden === false, "Week marks each day that has a notice, past ones included, and explains the marker");
+  assert(els.weekAgenda.innerHTML.includes('data-day="' + INITIAL + '"') && (els.weekAgenda.innerHTML.match(/class="mark mark-alert"/g) || []).length === 6 && els.weekLegend.innerHTML.includes("ಸೂಚನೆಗಳು") && els.weekLegend.innerHTML.includes('class="mark mark-district"'), "Week marks each day that has a notice, past ones included, and explains the marker");
   tabEls.month.click();
-  assert((els.monthScroller.innerHTML.match(/mday-alert/g) || []).length === 7 && els.monthScroller.innerHTML.includes("ಸೂಚನೆ ಇದೆ") && els.monthScroller.innerHTML.includes('<i class="scope-dot alert"></i> ಸೂಚನೆಗಳು'), "Month marks the same days and explains the marker");
+  assert((els.monthScroller.innerHTML.match(/<span class="mday-dots"[^>]*>(?:(?!<\/span>)[^])*class="mark mark-alert"/g) || []).length === 7 && els.monthScroller.innerHTML.includes("ಸೂಚನೆ ಇದೆ") && /class="mark mark-alert"><svg[^]*?<\/svg><\/i> ಸೂಚನೆಗಳು/.test(els.monthScroller.innerHTML), "Month marks the same days and explains the marker");
   tabEls.day.click();
   els.dummyNotices.checked = false;
   els.dummyNotices.click("change");

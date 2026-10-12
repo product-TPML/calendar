@@ -118,28 +118,26 @@ body {
 @keyframes view-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 
 /* ---------- Home ---------- */
-.day-strip { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; margin: 0 0 8px; }
+/* The week strip follows the Month calendar: one grid, cells sharing their lines, weekday band on top. */
+.day-strip { display: grid; grid-template-columns: repeat(7, 1fr); margin: 0 0 8px; border: 1px solid var(--line); border-right: 0; }
 .strip-legend { margin: 0 0 12px; font-size: 12.5px; }
 .ds-day {
-  position: relative; display: flex; flex-direction: column; align-items: center; gap: 1px;
-  padding: 7px 0 11px; border: 1px solid var(--line); border-radius: 0;
-  background: var(--card); color: var(--ink); font: inherit; cursor: pointer;
-  transition: transform .1s ease, background .1s ease;
+  position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 3px;
+  padding: 0 0 21px; border: 0; border-right: 1px solid var(--line); border-radius: 0;
+  background: var(--card); color: var(--ink); font: inherit; text-align: center; cursor: pointer;
+  transition: background .1s ease;
 }
-.ds-day:hover { background: var(--paper-deep); }
-.ds-day:active { transform: scale(.95); }
-.ds-day:focus-visible { outline: 2px solid var(--verm); outline-offset: 2px; }
-.ds-wd { font-size: 12.5px; font-weight: 800; color: var(--ink-soft); }
+.ds-day:hover, .ds-day:active { background: var(--paper-deep); }
+.ds-day:focus-visible { outline: 2px solid var(--verm); outline-offset: -3px; }
+.ds-wd { padding: 3px 0; background: var(--ink); color: #fff; font-size: 12.5px; font-weight: 800; }
+.ds-day.sun .ds-wd { background: var(--verm); }
 .ds-num { font-family: var(--font-num); font-weight: 900; font-size: 19px; line-height: 1.2; }
-.ds-day.sun .ds-num, .ds-day.sun .ds-wd { color: var(--verm); }
-.ds-dots { position: absolute; left: 0; right: 0; bottom: 3px; display: flex; justify-content: center; gap: 3px; min-height: 6px; }
-.ds-dots .scope-dot { width: 6px; height: 6px; }
+.ds-day.sun .ds-num { color: var(--verm); }
+.ds-dots { position: absolute; left: 0; right: 0; bottom: 5px; display: flex; justify-content: center; align-items: center; gap: 3px; min-height: 12px; }
 .ds-day.today { box-shadow: inset 0 0 0 2px var(--ink); }
-.ds-day.sel { background: var(--verm); border-color: var(--verm); }
-.ds-day.sel .ds-num, .ds-day.sel .ds-wd { color: #fff; }
-.ds-day.sel .scope-dot { box-shadow: 0 0 0 1px #fff; }
-.ds-day.sel .scope-dot:not(.state) { background: #fff; }
-.ds-day.sel.today { box-shadow: inset 0 0 0 2px #fff, 0 0 0 2px var(--ink); }
+.ds-day.sel { background: var(--verm); }
+.ds-day.sel .ds-num { color: #fff; }
+.ds-day.sel.today { box-shadow: inset 0 0 0 2px var(--ink), inset 0 0 0 4px #fff; }
 .home-header {
   display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 14px 18px;
   padding: 16px; background: var(--card); border: 1px solid var(--line);
@@ -157,10 +155,10 @@ body {
 .home-district > span { color: var(--ink-soft); font-size: 13px; font-weight: 700; }
 /* The switch sits outside the header card, flush on top of the content it controls. */
 .home-switch { display: flex; gap: 4px; margin-top: 14px; border-bottom: 3px solid var(--verm); }
-.home-switch button { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 56px; padding: 7px 4px; white-space: nowrap; border: 1px solid var(--line); border-bottom: 0; border-radius: 0; background: var(--paper-deep); color: var(--ink-soft); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+.home-switch button { flex: 1; display: flex; align-items: center; justify-content: center; gap: 6px; min-height: 48px; padding: 8px 4px; white-space: nowrap; border: 1px solid var(--line); border-bottom: 0; border-radius: 0; background: var(--paper-deep); color: var(--ink-soft); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
 .home-switch button.is-active { border-color: var(--verm); background: var(--verm); color: #fff; }
 .home-switch button.is-active .switch-count { background: #fff; color: var(--verm); }
-.home-switch .ico { display: block; width: 20px; height: 20px; }
+.home-switch .ico { display: block; flex: none; width: 18px; height: 18px; }
 .switch-alert { display: block; }
 .switch-alert.is-live { color: var(--verm); }
 /* The icon blinks when the selected day itself has a notice, until its tab is opened. */
@@ -437,30 +435,37 @@ body {
 .period-head, .month-head { position: sticky; top: 0; z-index: 2; background: var(--paper); }
 .month-head { display: flex; align-items: center; gap: 8px; margin: 2px 0 10px; }
 .month-title { flex: 1; text-align: center; margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 21px; }
-.week-row, .month-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
-.week-row { font-size: 13px; font-weight: 800; color: #fff; text-align: center; margin-bottom: 5px; }
+/* A plain calendar grid: cells share their lines, with no gaps between them. */
+.week-row, .month-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
+.month-grid { border-left: 1px solid var(--line); }
+.week-row { font-size: 13px; font-weight: 800; color: #fff; text-align: center; }
 .week-row > * { background: var(--ink); border-radius: 0; padding: 4px 0; }
 .week-row > :first-child { background: var(--verm); }
 .month-grid > .mday:nth-child(7n+1) { color: var(--verm); }
 .mday {
-  aspect-ratio: 1 / 1; border: 1px solid var(--line); border-radius: 0;
+  aspect-ratio: 1 / 1; padding: 0 0 15px; border: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 0;
   background: var(--card); font-family: var(--font-num); font-weight: 900; font-size: 17px;
   color: var(--ink); cursor: pointer; position: relative;
-  transition: transform .1s ease, background .1s ease;
+  transition: background .1s ease;
 }
-.mday:hover { background: var(--paper-deep); }
-.mday:active { transform: scale(.94); }
-.mday.blank { background: transparent; border-color: transparent; cursor: default; }
-.month-grid > .mday.sel { background: var(--verm); color: #fff; border-color: var(--verm); }
+.mday:hover, .mday:active { background: var(--paper-deep); }
+.mday.blank { background: #fafafa; cursor: default; }
+.month-grid > .mday.sel { background: var(--verm); color: #fff; }
 .mday.today { box-shadow: inset 0 0 0 2px var(--ink); }
-.mday.sel.today { box-shadow: inset 0 0 0 2px #fff, 0 0 0 2px var(--ink); }
-.mday-dots { position: absolute; left: 0; right: 0; bottom: 4px; display: flex; justify-content: center; gap: 4px; }
-.scope-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--verm); }
-.scope-dot.state { background: var(--green); border-radius: 0; } /* square, so it differs from the round district dot without relying on colour */
-.date-count { font-size: 11.5px; font-weight: 800; line-height: 1; color: var(--verm-deep); }
-.date-count.state { color: var(--green); }
-.mday.sel .date-count, .mday.sel .date-count.state { color: #fff; }
-.mday.sel .scope-dot { box-shadow: 0 0 0 1px #fff; }
+.mday.sel.today { box-shadow: inset 0 0 0 2px var(--ink), inset 0 0 0 4px #fff; }
+.mday:focus-visible { outline-offset: -3px; }
+.mday-dots { position: absolute; left: 0; right: 0; bottom: 5px; display: flex; justify-content: center; align-items: center; gap: 3px; }
+/* Markers: the Home tab icons at a small size. Lamp = events (maroon for the district, green for Karnataka-wide), warning sign = notices. */
+.mark { flex: none; display: inline-flex; width: 12px; height: 12px; color: var(--verm); }
+.mark .ico { display: block; width: 100%; height: 100%; }
+.mark:not(.mark-alert) .ico { stroke-width: 2.6; } /* a heavier line keeps the lamp readable when small */
+.mark-state { color: var(--green); }
+.mark-alert { color: #8f5d00; }
+/* In the Month grid the Karnataka-wide lamp is grey: it is on most days, so the district lamp and the warning sign are the ones to notice. */
+.month-cal .mark-state, .month-legend .mark-state { color: #8c8c8c; }
+.ds-day.sel .mark, .mday.sel .mark { color: #fff; --mark-cut: var(--verm); }
+.scope-legend .mark { width: 16px; height: 16px; }
+.week-day-label .mark { width: 22px; height: 22px; }
 .month-note { text-align: center; font-size: 13px; color: var(--ink-soft); margin-top: 12px; }
 .dot-legend {
   display: inline-block; width: 8px; height: 8px; border-radius: 0;
@@ -512,7 +517,6 @@ body {
 .stream-period-title { margin: 0; padding: 4px 2px; font-family: var(--font-display); font-size: 21px; color: var(--verm); }
 .month-cal > .week-row {
   position: sticky; top: var(--masthead-h, 64px); z-index: 10;
-  box-shadow: 0 5px 0 var(--paper); /* fills the 5px margin gap only, so the first grid row keeps its top border */
 }
 /* Week and Month: the district name in each period heading opens the view's one picker. */
 .stream-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
@@ -653,14 +657,11 @@ body.big .pm-value { font-size: 21px; }
 .cal-google { background: var(--verm); border-color: var(--verm); color: #fff; }
 .cal-google:hover { background: var(--verm-deep); }
 
-.week-day-label .scope-dot.alert { flex: none; width: 12px; height: 12px; transform: none; }
-.mday-alert { position: absolute; top: 5px; right: 5px; }
-.mday.sel .scope-dot.alert { background: #fff; }
 
 /* ---------- Notices on the Home page (power, water, public work, railway) ---------- */
 .notices-view { margin-top: 14px; }
 .switch-count { display: inline-block; min-width: 20px; margin-left: 4px; padding: 0 5px; background: var(--verm); color: #fff; font-family: var(--font-num); font-size: 12px; line-height: 20px; text-align: center; }
-.scope-dot.alert { transform: scale(1.3); border-radius: 0; background: #8f5d00; clip-path: polygon(50% 0, 100% 100%, 0 100%); } /* triangle: a third shape beside the round and square dots */
+
 .notice-dummy { margin: 0 0 12px; padding: 8px 12px; border: 1px dashed var(--amber); background: #fff7d6; color: #5c4300; font-size: 13.5px; font-weight: 700; text-align: center; }
 .notice-empty { margin-top: 18px; text-align: center; }
 .notice-chips { display: flex; flex-wrap: wrap; gap: 8px; }
