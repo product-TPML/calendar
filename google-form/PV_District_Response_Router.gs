@@ -110,7 +110,86 @@ function onOpen() {
     .addItem('Install edit-tracking trigger', 'installDistrictEditTrigger')
     .addSeparator()
     .addItem('Validate configuration', 'validateDistrictRouting')
+    .addSeparator()
+    .addItem('TEST RESET: clear district tabs only', 'clearDistrictTabsOnly')
+    .addItem('TEST RESET: delete ALL events (tabs + responses)', 'deleteAllEvents')
     .addToUi();
+}
+
+/**
+ * Testing aids. Clears district tabs and Unmapped but keeps Form Responses 1.
+ * A later backfill WILL copy the responses back, so use deleteAllEvents for a
+ * true reset.
+ */
+function clearDistrictTabsOnly() {
+  resetEvents_(false);
+}
+
+/** Clears district tabs and Unmapped AND deletes every row in Form Responses 1. */
+function deleteAllEvents() {
+  resetEvents_(true);
+}
+
+function resetEvents_(includeMaster) {
+  const ui = SpreadsheetApp.getUi();
+  const answer = ui.prompt(
+    includeMaster ? 'Delete ALL events?' : 'Clear district tabs?',
+    (includeMaster
+      ? 'This permanently deletes every response row in Form Responses 1 and every event in all district tabs and Unmapped.'
+      : 'This clears every event in all district tabs and Unmapped. Form Responses 1 is kept, so a backfill would copy them back.') +
+      '\n\nThis cannot be undone. Type DELETE to continue.',
+    ui.ButtonSet.OK_CANCEL
+  );
+  if (answer.getSelectedButton() !== ui.Button.OK || answer.getResponseText().trim() !== 'DELETE') {
+    SpreadsheetApp.getActiveSpreadsheet().toast('Cancelled. Nothing was deleted.', 'District Routing', 5);
+    return;
+  }
+
+  const lock = LockService.getDocumentLock();
+  lock.waitLock(30000);
+  try {
+    const ss = SpreadsheetApp.getActiveSpreadsheet();
+    const context = getValidatedContext_(ss);
+    let cleared = 0;
+
+    [...context.accessMap.keys(), ROUTER_CONFIG.unmappedSheet].forEach((name) => {
+      const sheet = ss.getSheetByName(name);
+      if (!sheet) return;
+      // Drop the per-row editable-range protections; they are rebuilt on sync.
+      sheet.getProtections(SpreadsheetApp.ProtectionType.RANGE)
+        .filter((item) => item.getDescription().startsWith(ROUTER_CONFIG.editableProtectionPrefix))
+        .forEach((item) => item.remove());
+      const rows = sheet.getMaxRows() - 1;
+      if (rows > 0) {
+        cleared += Math.max(sheet.getLastRow() - 1, 0);
+        sheet.getRange(2, 1, rows, sheet.getMaxColumns()).clear();
+      }
+    });
+
+    let deleted = 0;
+    if (includeMaster) {
+      const master = context.master;
+      deleted = Math.max(master.getLastRow() - 1, 0);
+      if (deleted > 0) {
+        // A sheet must keep at least one non-frozen row.
+        if (master.getMaxRows() <= master.getLastRow()) master.insertRowsAfter(master.getMaxRows(), 1);
+        master.deleteRows(2, deleted);
+      }
+    }
+
+    syncDistrictPermissions_(context);
+    appendLog_(ss, {
+      action: includeMaster ? 'RESET_ALL' : 'RESET_TABS',
+      sourceRow: '',
+      district: '',
+      targetSheet: '',
+      status: 'SUCCESS',
+      details: `Cleared ${cleared} district-tab rows; deleted ${deleted} response rows.`,
+    });
+    ss.toast(`Cleared ${cleared} district rows, deleted ${deleted} responses.`, 'District Routing', 10);
+  } finally {
+    lock.releaseLock();
+  }
 }
 
 /**
@@ -747,6 +826,13 @@ function getValidatedContext_(ss) {
     .getDisplayValues()[0]
     .map(normalizeText_);
   const masterHeaderMap = headerMap_(masterHeaders);
+
+  // The form question is titled "District.  ಜಿಲ್ಲೆ", so the response column is
+  // not exactly "District". Accept any header that starts with the word.
+  if (masterHeaderMap[ROUTER_CONFIG.districtHeader] === undefined) {
+    const districtIndex = masterHeaders.findIndex((header) => /^district\b/i.test(header));
+    if (districtIndex !== -1) masterHeaderMap[ROUTER_CONFIG.districtHeader] = districtIndex;
+  }
 
   requireHeaders_(ROUTER_CONFIG.masterSheet, masterHeaderMap, [
     ROUTER_CONFIG.districtHeader,
