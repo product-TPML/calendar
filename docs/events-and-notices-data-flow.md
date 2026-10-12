@@ -240,6 +240,51 @@ The build and Worker numbers were read from Cloudflare's limits pages on 12 Octo
 2. **How the build reads the sheets:** service account or keyed Apps Script endpoint.
 3. **Whether the app shows the extra event fields** (time, description, map link). Event cards show only name and place today.
 
+## Setup steps
+
+Steps marked "to be written" need code that does not exist yet. The rest need the Google, Cloudflare and CMS accounts.
+
+Settle the three [open decisions](#open-decisions) first. The steps assume a Google service account; the fallback is a keyed Apps Script endpoint if the Workspace admin will not allow a Cloud project.
+
+### A. The notices spreadsheet
+
+1. Create a Google Form with the questions listed under [Notices spreadsheet](#notices-spreadsheet-to-be-created). Start each question title with the English word, for example "Date from  ಆರಂಭ ದಿನಾಂಕ".
+2. Link the form to a new spreadsheet, and set that spreadsheet's locale to India (File > Settings).
+3. Copy the `Edit Access` tab across from the events spreadsheet.
+4. Open Extensions > Apps Script, paste the notices version of the router (to be written), and run `setupDistrictRouting`.
+5. Submit one test notice and confirm it lands on the right district tab.
+
+### B. Read access for the build
+
+6. In Google Cloud Console, create a project and enable the Google Sheets API.
+7. Create a service account in that project and download its JSON key.
+8. Share both spreadsheets (events and notices) with the service account's email address as Viewer.
+
+### C. The data project on Cloudflare
+
+9. Create a new GitHub repository for the data project. It holds the build script and a headers file (both to be written).
+10. In the Cloudflare dashboard, create a Pages project connected to that repository, with the build command and output folder the build script needs.
+11. Add the project's encrypted settings: the service account key, the two spreadsheet IDs, and the site's domain.
+12. Run the first build, then open the published `utility-notices.json` and `events.json` in a browser. Check that the data is right and that no email addresses or edit history appear.
+13. Create a deploy hook in the project's build settings and copy its address.
+
+### D. The daily run and "Publish now"
+
+14. Create a standalone Apps Script, owned by the administrator and not attached to either spreadsheet, with a daily timer that calls the deploy hook (to be written).
+15. Add a "Publish now" menu item to both router scripts that calls the same hook (to be written).
+
+### E. The app
+
+16. Change the app to load its data from a configurable address and to read events from the new file (to be written).
+17. Ask the CMS provider whether pages may fetch from the Cloudflare Pages domain, and have it allowed if not.
+18. Publish the app on the CMS with the data address set to the Pages project.
+19. Test end to end: submit a notice, press "Publish now", and confirm it appears on the site within about ten minutes. Cancel it on the district tab, publish again, and confirm it disappears.
+20. Turn the dummy-notices default off.
+
+### Order that avoids rework
+
+Part A can start straight away, since it only needs the form. Parts B to D can be built and tested against the existing events sheet before the notices form has real data. Part E comes last, because it depends on the CMS answer in step 17.
+
 ## Not built yet
 
 - The notices form and spreadsheet, and the router adapted for it.
