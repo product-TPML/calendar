@@ -5,6 +5,7 @@
    - date ranges are inclusive
    - Week and Month retain the shared event index
    - PV failure is explicit
+   - the Home notices option filters by district, day and category, and the Settings switch swaps in dummy data
    Run (from the repo root): node tests/app.test.js */
 "use strict";
 
@@ -339,6 +340,66 @@ function assert(cond, msg) {
   assert(toolbarEls.every((bar) => !bar.hidden), "switching tabs shows it");
   global.window.scrollY = 0;
   tabEls.day.click();
+
+  console.log("9) Home notices option and the dummy-data switch");
+  const REAL_NOTICES = "data/utility-notices.json", DUMMY_NOTICES = "data/utility-notices.dummy.json";
+  const homeHtml = () => els.todayContent.innerHTML;
+  const homeClick = (selector, dataset) => els.todayContent._handlers.click.forEach((cb) => cb({ target: { closest: (s) => (s === selector ? { dataset } : null) } }));
+  assert(count(REAL_NOTICES) === 1 && count(DUMMY_NOTICES) === 0, "with the switch off the app requests the real notices file");
+  els.todayBtn.click();
+  els.homeDistrictSelect.value = "Bagalkot";
+  els.homeDistrictSelect.click("change");
+  assert(!homeHtml().includes('id="homeNoticesMode"'), "the notices option is hidden while notices have not loaded");
+  failUrl(REAL_NOTICES);
+  await tick();
+  assert(!homeHtml().includes('id="homeNoticesMode"') && homeHtml().includes('id="body-homeToday"'), "without notice data there is no notices option");
+  els.dummyNotices.checked = true;
+  els.dummyNotices.click("change");
+  assert(localStore.pvDummyNotices === "1", "the dummy switch is remembered");
+  assert(count(DUMMY_NOTICES) === 1 && count(REAL_NOTICES) === 1, "switching it on requests the dummy file");
+  resolveUrl(DUMMY_NOTICES, { dummy: true, districts: {
+    Bagalkot: [
+      { category: "Power Cut", type: "", start: iso(INITIAL), end: iso(INITIAL), dates: [], time: "10:00-16:00", text: "N-Today\n\nN-Today-Rest" },
+      { category: "Water Supply", start: iso(INITIAL), end: iso(DAY3), dates: [iso(INITIAL), iso(DAY2)], text: "N-Scattered" },
+      { category: "Railway", type: "Train cancelled", start: iso(DAY3), end: iso(DAY3), text: "N-Later" },
+      { category: "Public Work", start: iso(dayKey(-3)), end: iso(dayKey(-1)), text: "N-Expired" },
+      { category: "Power Cut", start: "12-10-2026", text: "N-BadDate" },
+      { category: "Power Cut", start: iso(dayKey(30)), end: iso(dayKey(30)), text: "N-Far" }
+    ],
+    Ballari: [{ category: "Power Cut", start: iso(INITIAL), end: iso(INITIAL), text: "N-Ballari" }]
+  } });
+  await tick();
+  assert(homeHtml().indexOf('id="homeEventsMode"') < homeHtml().indexOf('id="homeNoticesMode"') && homeHtml().indexOf('id="homeNoticesMode"') < homeHtml().indexOf('id="homePanchangaMode"'), "on a day with notices the option appears, before Panchanga");
+  assert(/class="switch-count"[^>]*>2</.test(homeHtml()) && homeHtml().includes('class="switch-alert"'), "it shows the day's count and the alert icon");
+  assert(homeHtml().includes('id="body-homeToday"'), "the notices option appearing does not switch away from Events");
+  els.homeNoticesMode.click();
+  assert(!homeHtml().includes('id="body-homeToday"'), "opening it replaces the event cards");
+  let todayNotices = sectionBody(homeHtml(), "body-noticesToday");
+  assert(homeHtml().includes("ಮಾದರಿ ದತ್ತಾಂಶ"), "dummy data is labelled as dummy");
+  assert(todayNotices.includes("N-Today") && todayNotices.includes("N-Scattered") && !todayNotices.includes("N-Later"), "the day card lists only notices active that day");
+  assert(todayNotices.includes("10:00 – 16:00") && todayNotices.includes("ವಿದ್ಯುತ್ ವ್ಯತ್ಯಯ"), "a notice shows its time and category label");
+  assert(todayNotices.includes("N-Today-Rest") && todayNotices.includes("ಪೂರ್ತಿ ಓದಿ"), "text after the first paragraph sits behind a read-more button");
+  assert(homeHtml().includes("N-Later") && homeHtml().includes("ರೈಲು ರದ್ದು"), "a later notice is listed under the coming days with its type");
+  assert(["N-Expired", "N-BadDate", "N-Far", "N-Ballari"].every((t) => !homeHtml().includes(t)), "expired, undated, far-off and other-district notices are left out");
+  assert(homeHtml().includes(">ಬಾಗಲಕೋಟೆ (3)</option>") && homeHtml().includes(">ಬಳ್ಳಾರಿ (1)</option>"), "in notices mode the district list counts current notices");
+  assert(homeHtml().includes('<i class="scope-dot alert"></i></span></button>') && homeHtml().includes('<i class="scope-dot alert"></i> ಸೂಚನೆಗಳು'), "days with notices get a marker in the strip, explained in the legend");
+  homeClick(".notice-chip", { cat: "Railway" });
+  assert(homeHtml().includes("N-Later") && !homeHtml().includes("N-Today"), "a category chip filters the notices");
+  homeClick(".notice-chip", { cat: "" });
+  assert(homeHtml().includes('week-day-link" data-day="' + DAY3 + '"'), "the later notice sits under its own date");
+  els.nextDay.click();
+  assert(!homeHtml().includes('id="homeNoticesMode"') && homeHtml().includes("PV-Bagalkot-" + NEXT) && !homeHtml().includes("N-Scattered"), "a day without notices has no notices option and shows Events");
+  els.nextDay.click();
+  todayNotices = sectionBody(homeHtml(), "body-noticesToday");
+  assert(todayNotices.includes("N-Scattered") && !todayNotices.includes("N-Today"), "the next day with a notice opens in notices again, on its scattered date");
+  els.homeEventsMode.click();
+  assert(homeHtml().includes('id="body-homeToday"') && !homeHtml().includes("N-Scattered") && homeHtml().includes("PV-Bagalkot-" + DAY2), "Events mode shows the events again");
+  els.dummyNotices.checked = false;
+  els.dummyNotices.click("change");
+  assert(count(REAL_NOTICES) === 2 && localStore.pvDummyNotices === "0", "switching dummy data off goes back to the real file");
+  failUrl(REAL_NOTICES);
+  await tick();
+  els.todayBtn.click();
 
   console.log("8) Add to calendar");
   const cal = require("../calendar-export.js");

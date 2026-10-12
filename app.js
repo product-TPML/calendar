@@ -12,6 +12,7 @@
     calRecords: null, calMerged: false,
     cultural: null, culturalIndex: {}, culturalRecords: [], culturalError: false, culturalPending: null,
     panData: {}, panPending: {}, panCore: null, panCorePending: null, panDistricts: {}, homeMode: "events", district: "",
+    notices: null, noticesError: false, noticesPending: null, noticesDummy: false, noticeCat: "",
     weekFirst: null, weekLast: null, weekHeader: null, monthFirst: null, monthLast: null, monthHeader: null };
 
   var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
@@ -460,6 +461,7 @@
 
   function districtEventCount(name, mode) {
     mode = mode || "all";
+    if (mode === "notices") return currentNotices(name, keyToIso(state.key)).length;
     var range = rangeFor(mode);
     var count = state.pvRecords.filter(function (r) {
       return r.sourceDistrict === name && r.scope !== "Relevant for Karnataka" && (mode === "all" || (r.dateStart <= range.end && r.dateEnd >= range.start));
@@ -792,7 +794,11 @@
   }
 
   /* Same wording and dots as the Month legend: round = district, square = Karnataka-wide. */
-  var STRIP_LEGEND = '<div class="scope-legend strip-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ"><span><i class="scope-dot district"></i> ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span><span><i class="scope-dot state"></i> ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span></div>';
+  /* The triangle for notices joins the legend only once notices have loaded. */
+  function stripLegendHTML() {
+    return '<div class="scope-legend strip-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ"><span><i class="scope-dot district"></i> ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span><span><i class="scope-dot state"></i> ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span>' +
+      (state.notices ? '<span><i class="scope-dot alert"></i> ಸೂಚನೆಗಳು</span>' : "") + '</div>';
+  }
 
   /* Sunday-first week around the selected day, so any date this week is one tap away. */
   function dayStripHTML(key) {
@@ -801,33 +807,50 @@
     for (var i = 0; i < 7; i++) {
       var d = new Date(start); d.setDate(start.getDate() + i);
       var k = keyFor(d), local = state.pv ? districtEventsFor(k).length + culturalEventsFor(k).length : 0, wide = state.pv ? stateEventsFor(k).length : 0;
+      var notices = state.district ? noticesOn(state.district, keyToIso(k)).length : 0;
       out += '<button type="button" class="ds-day' + (k === key ? " sel" : "") + (k === todayKey ? " today" : "") + (d.getDay() === 0 ? " sun" : "") + '" data-day="' + k + '"' + (k === key ? ' aria-current="date"' : "") +
         ' aria-label="' + WEEKDAYS[d.getDay()] + " " + kn(d.getDate()) + " " + MONTHS[d.getMonth()] + '">' +
         '<span class="ds-wd">' + WEEKDAYS_SHORT[d.getDay()] + '</span><span class="ds-num">' + kn(d.getDate()) + '</span>' +
-        '<span class="ds-dots" aria-hidden="true">' + (local ? '<i class="scope-dot district"></i>' : "") + (wide ? '<i class="scope-dot state"></i>' : "") + '</span></button>';
+        '<span class="ds-dots" aria-hidden="true">' + (local ? '<i class="scope-dot district"></i>' : "") + (wide ? '<i class="scope-dot state"></i>' : "") + (notices ? '<i class="scope-dot alert"></i>' : "") + '</span></button>';
     }
     return out + '</nav>';
   }
 
+  function homeNoticeCount(key) {
+    return state.district ? noticesOn(state.district, keyToIso(key)).length : 0;
+  }
+
+  /* The notices option exists only on days that have a notice, so a day without
+     one shows Events even if notices were open on the previous day. */
+  function homeMode() {
+    return state.homeMode === "notices" && !homeNoticeCount(state.key) ? "events" : state.homeMode;
+  }
+
+  var ICO_NOTICE = '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><path d="M12 4.5 3.5 19.5h17z"/><path d="M12 10.5v4.2M12 17.2v.1"/></svg>';
+
   function homeHeaderHTML(key) {
-    var d = parseKey(key);
-    return dayStripHTML(key) + STRIP_LEGEND + '<section class="home-header" aria-labelledby="homeDateTitle">' +
+    var d = parseKey(key), noticeCount = homeNoticeCount(key), current = homeMode();
+    var mode = function (id, name, icon, label) {
+      return '<button id="' + id + '" type="button" role="tab" aria-selected="' + (current === name) + '" class="' + (current === name ? "is-active" : "") + '">' + icon + '<span class="switch-label">' + label + '</span></button>';
+    };
+    return dayStripHTML(key) + stripLegendHTML() + '<section class="home-header" aria-labelledby="homeDateTitle">' +
       '<div class="home-date"' + (d.getDay() === 0 ? ' data-sun="1"' : "") + '><div class="home-day-line"><div class="home-day-label"><span class="home-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (key === keyFor(new Date()) ? '<span class="today-pill">ಇಂದು</span>' : "") + '</div><div class="home-day-date"><strong id="homeDateTitle">' + kn(d.getDate()) + '</strong><small>' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</small></div></div></div>' +
-      '<label class="home-district"><span id="homeDistrictLabel">ಜಿಲ್ಲೆ</span>' + districtControlHTML("homeDistrictSelect", "day", "homeDistrict") + '</label>' +
-      '<div class="home-switch" role="tablist" aria-label="ಮುಖಪುಟದ ವಿಷಯ"><button id="homeEventsMode" type="button" role="tab" aria-selected="' + (state.homeMode === "events") + '" class="' + (state.homeMode === "events" ? "is-active" : "") + '">ಕಾರ್ಯಕ್ರಮಗಳು</button><button id="homePanchangaMode" type="button" role="tab" aria-selected="' + (state.homeMode === "panchanga") + '" class="' + (state.homeMode === "panchanga" ? "is-active" : "") + '">ಪಂಚಾಂಗ</button></div>' +
-      '</section>';
+      '<label class="home-district"><span id="homeDistrictLabel">ಜಿಲ್ಲೆ</span>' + districtControlHTML("homeDistrictSelect", current === "notices" ? "notices" : "day", "homeDistrict") + '</label>' + '</section>' +
+      '<div class="home-switch" role="tablist" aria-label="ಮುಖಪುಟದ ವಿಷಯ">' + mode("homeEventsMode", "events", ICONS.diya, "ಕಾರ್ಯಕ್ರಮಗಳು") +
+        (noticeCount ? mode("homeNoticesMode", "notices", '<span class="switch-alert">' + ICO_NOTICE + '</span>', 'ಸೂಚನೆ <span class="switch-count" aria-label="' + noticeCount + ' ಸೂಚನೆಗಳು">' + kn(noticeCount) + '</span>') : "") +
+        mode("homePanchangaMode", "panchanga", ICONS.tithi, "ಪಂಚಾಂಗ") + '</div>';
   }
 
   function bindHomeModeUI() {
     document.querySelectorAll(".ds-day, .upcoming-day .week-day-link").forEach(function (button) {
       button.addEventListener("click", function () { goto(button.dataset.day); });
     });
-    [["homeEventsMode", "events"], ["homePanchangaMode", "panchanga"]].forEach(function (item) {
+    [["homeEventsMode", "events"], ["homeNoticesMode", "notices"], ["homePanchangaMode", "panchanga"]].forEach(function (item) {
       var button = document.getElementById(item[0]);
       if (!button || button._homeModeBound) return;
       button._homeModeBound = true;
       button.addEventListener("click", function () {
-        if (state.homeMode === item[1]) return;
+        if (homeMode() === item[1]) return;
         state.homeMode = item[1];
         renderToday();
       });
@@ -836,10 +859,12 @@
 
   function renderToday() {
     var title = state.key === DEFAULT_KEY ? "ಇಂದಿನ ಕಾರ್ಯಕ್ರಮಗಳು" : "ಈ ದಿನದ ಕಾರ್ಯಕ್ರಮಗಳು";
-    var body = state.homeMode === "panchanga" ? panchangaHTML(state.key) : homeTodayHTML(state.key);
-    document.getElementById("todayContent").innerHTML = homeHeaderHTML(state.key) +
-      card(state.homeMode === "panchanga" ? "ಇಂದಿನ ಪಂಚಾಂಗ" : title, body, "homeToday", false, ICONS.diya) +
-      (state.homeMode === "panchanga" ? "" : card("ಮುಂದಿನ 7 ದಿನಗಳ ಕಾರ್ಯಕ್ರಮಗಳು", upcomingHTML(state.key), "homeUpcoming", false));
+    var el = document.getElementById("todayContent"), current = homeMode(), content;
+    if (current === "notices") content = noticesViewHTML();
+    else if (current === "panchanga") content = card("ಇಂದಿನ ಪಂಚಾಂಗ", panchangaHTML(state.key), "homeToday", false, ICONS.diya);
+    else content = card(title, homeTodayHTML(state.key), "homeToday", false, ICONS.diya) + card("ಮುಂದಿನ 7 ದಿನಗಳ ಕಾರ್ಯಕ್ರಮಗಳು", upcomingHTML(state.key), "homeUpcoming", false);
+    el.innerHTML = homeHeaderHTML(state.key) + content;
+    bindNotices(el);
     bindHomeModeUI();
     bindEventCardUI();
   }
@@ -851,6 +876,211 @@
     return '<section class="card">' +
       '<h2 class="card-heading" id="toggle-' + id + '" tabindex="-1">' + head + '</h2>' +
       '<div class="card-body" id="body-' + id + '">' + body + '</div></section>';
+  }
+
+  /* ---------------- Notices (power, water, public work, railway) ----------------
+     District notices for the selected day and the days after it, shown as the
+     middle option of the Home switch. The Settings switch swaps in the dummy file. */
+  var NOTICES_URL = "data/utility-notices.json", NOTICES_DUMMY_URL = "data/utility-notices.dummy.json";
+  var NOTICE_DAYS = 14;
+  var NOTICE_CATS = [
+    { key: "Power Cut", cls: "power", label: "ವಿದ್ಯುತ್ ವ್ಯತ್ಯಯ", short: "ವಿದ್ಯುತ್",
+      icon: '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M13.5 2.5 5 13.5h5.5l-1 8L18.5 10H13z"/></svg>' },
+    { key: "Water Supply", cls: "water", label: "ನೀರು ಪೂರೈಕೆ ವ್ಯತ್ಯಯ", short: "ನೀರು",
+      icon: '<svg ' + ICO_ATTR + ' ' + ICO_SOLID + '><path d="M12 2.8c3.4 4.3 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 2.6-6.7 6-11z"/></svg>' },
+    { key: "Public Work", cls: "work", label: "ಕಾಮಗಾರಿ", short: "ಕಾಮಗಾರಿ",
+      icon: '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><path d="M9.5 4h5l4 15.5h-13z"/><path d="M8.2 10h7.6M6.9 15h10.2M3.5 19.5h17"/></svg>' },
+    { key: "Railway", cls: "rail", label: "ರೈಲು", short: "ರೈಲು",
+      icon: '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><rect x="6" y="3.5" width="12" height="13" rx="2"/><path d="M6 10.5h12M9.5 13.6h.01M14.5 13.6h.01M8.5 16.5l-2 4M15.5 16.5l2 4"/></svg>' }
+  ];
+  var NOTICE_TYPES = {
+    "Road closure": "ರಸ್ತೆ ಸಂಚಾರ ನಿರ್ಬಂಧ", "Traffic diversion (marathon)": "ಸಂಚಾರ ಮಾರ್ಗ ಬದಲಾವಣೆ",
+    "Train cancelled": "ರೈಲು ರದ್ದು", "Train partly cancelled": "ರೈಲು ಭಾಗಶಃ ರದ್ದು", "Train delayed": "ರೈಲು ವಿಳಂಬ",
+    "Special train extended": "ವಿಶೇಷ ರೈಲು ವಿಸ್ತರಣೆ", "Temporary halt": "ತಾತ್ಕಾಲಿಕ ನಿಲುಗಡೆ"
+  };
+
+  function noticeCat(key) {
+    for (var i = 0; i < NOTICE_CATS.length; i++) if (NOTICE_CATS[i].key === key) return NOTICE_CATS[i];
+    return null;
+  }
+
+  function loadDummyNotices() { try { return localStorage.getItem("pvDummyNotices") === "1"; } catch (e) { return false; } }
+  function saveDummyNotices(on) { try { localStorage.setItem("pvDummyNotices", on ? "1" : "0"); } catch (e) {} }
+  function noticesUrl() { return state.noticesDummy ? NOTICES_DUMMY_URL : NOTICES_URL; }
+
+  /* Keep only notices with usable dates. "dates" lists the active days when they
+     are not every day from start to end. */
+  function indexNotices(json) {
+    var out = {}, districts = (json && json.districts) || {};
+    Object.keys(districts).forEach(function (district) {
+      out[district] = [];
+      (districts[district] || []).forEach(function (rec) {
+        var start = String(rec.start || "").trim(), end = String(rec.end || rec.start || "").trim();
+        if (!isValidIso(start) || !isValidIso(end) || end < start) return;
+        out[district].push({
+          category: String(rec.category || ""), type: String(rec.type || ""), start: start, end: end,
+          dates: [].concat(rec.dates || []).map(String).filter(isValidIso).sort(),
+          time: String(rec.time || ""), text: String(rec.text || "").trim()
+        });
+      });
+    });
+    return out;
+  }
+
+  function fetchNotices() {
+    if (state.notices || state.noticesError) return Promise.resolve(state.notices);
+    if (state.noticesPending) return state.noticesPending;
+    var url = noticesUrl();
+    var pending = state.noticesPending = fetchJSON(url)
+      .then(function (json) { return { data: indexNotices(json) }; })
+      .catch(function () { return { data: null }; })
+      .then(function (result) {
+        if (state.noticesPending !== pending) return state.notices;   /* the dummy switch changed meanwhile */
+        state.noticesPending = null;
+        state.notices = result.data;
+        state.noticesError = !result.data;
+        return state.notices;
+      });
+    return pending;
+  }
+
+  function setDummyNotices(on) {
+    state.noticesDummy = on;
+    saveDummyNotices(on);
+    state.notices = null;
+    state.noticesError = false;
+    state.noticesPending = null;
+  }
+
+  function noticeActiveOn(n, iso) {
+    return n.dates.length ? n.dates.indexOf(iso) !== -1 : n.start <= iso && iso <= n.end;
+  }
+
+  /* The first active day after iso, or "" when the notice does not start again. */
+  function noticeNextAfter(n, iso) {
+    if (!n.dates.length) return n.start > iso ? n.start : "";
+    for (var i = 0; i < n.dates.length; i++) if (n.dates[i] > iso) return n.dates[i];
+    return "";
+  }
+
+  /* A district's notices that are active on iso or start within the next NOTICE_DAYS. */
+  function currentNotices(district, iso) {
+    var list = (state.notices && state.notices[district]) || [], limit = addDaysIso(iso, NOTICE_DAYS);
+    return list.filter(function (n) {
+      if (state.noticeCat && n.category !== state.noticeCat) return false;
+      var next = noticeNextAfter(n, iso);
+      return noticeActiveOn(n, iso) || (next && next <= limit);
+    });
+  }
+
+  function noticesOn(district, iso) {
+    return ((state.notices && state.notices[district]) || []).filter(function (n) { return noticeActiveOn(n, iso); });
+  }
+
+  function noticeOrder(a, b) {
+    var cats = NOTICE_CATS.map(function (c) { return c.key; });
+    return (cats.indexOf(a.category) - cats.indexOf(b.category)) || (a.time < b.time ? -1 : a.time > b.time ? 1 : 0);
+  }
+
+  function isoDate(iso) { return parseKey(isoToKey(iso)); }
+
+  function noticeWhen(n) {
+    if (!n.dates.length) {
+      return n.start === n.end ? MONTHS[isoDate(n.start).getMonth()] + " " + kn(isoDate(n.start).getDate()) : periodLabel(isoDate(n.start), isoDate(n.end), true);
+    }
+    var months = [], days = {};
+    n.dates.forEach(function (iso) {
+      var d = isoDate(iso), m = d.getMonth();
+      if (!days[m]) { days[m] = []; months.push(m); }
+      days[m].push(kn(d.getDate()));
+    });
+    return months.map(function (m) { return MONTHS[m] + " " + days[m].join(", "); }).join("; ");
+  }
+
+  function noticeTime(time) {
+    var range = /^(\d{1,2}:\d{2})-(\d{1,2}:\d{2})$/.exec(time);
+    return range ? kn(range[1]) + " – " + kn(range[2]) : esc(time);
+  }
+
+  function noticeParasHTML(paras) {
+    return paras.map(function (p) { return '<p>' + esc(p).replace(/\n/g, "<br>") + '</p>'; }).join("");
+  }
+
+  var noticeSeq = 0;
+  function noticeHTML(n) {
+    var cat = noticeCat(n.category), paras = n.text.split(/\n\n+/), rest = paras.slice(1);
+    var type = NOTICE_TYPES[n.type] || n.type;
+    var out = '<li class="notice cat-' + (cat ? cat.cls : "other") + '">' +
+      '<div class="notice-head"><span class="notice-cat">' + (cat ? cat.icon : "") + esc(cat ? cat.label : n.category || "ಸೂಚನೆ") + '</span>' +
+      (type ? '<span class="notice-type">' + esc(type) + '</span>' : "") + '</div>' +
+      '<div class="notice-meta"><span class="notice-when">' + noticeWhen(n) + '</span>' + (n.time ? '<span class="notice-time">' + noticeTime(n.time) + '</span>' : "") + '</div>' +
+      '<div class="notice-text">' + noticeParasHTML(paras.slice(0, 1)) + '</div>';
+    if (rest.length) {
+      var id = "ntx-" + (++noticeSeq);
+      out += '<div class="notice-text" id="' + id + '" hidden>' + noticeParasHTML(rest) + '</div>' +
+        '<button type="button" class="notice-more" aria-expanded="false" aria-controls="' + id + '">ಪೂರ್ತಿ ಓದಿ</button>';
+    }
+    return out + '</li>';
+  }
+
+  function noticeListHTML(list) {
+    return '<ul class="notice-list">' + list.slice().sort(noticeOrder).map(noticeHTML).join("") + '</ul>';
+  }
+
+  function noticeChipsHTML() {
+    var all = [{ key: "", short: "ಎಲ್ಲಾ" }].concat(NOTICE_CATS);
+    return '<div class="notice-chips" role="group" aria-label="ಸೂಚನೆಯ ವಿಧ">' + all.map(function (cat) {
+      var on = state.noticeCat === cat.key;
+      return '<button type="button" class="notice-chip' + (on ? " is-active" : "") + (cat.cls ? " cat-" + cat.cls : "") + '" data-cat="' + esc(cat.key) + '" aria-pressed="' + on + '">' + (cat.icon || "") + cat.short + '</button>';
+    }).join("") + '</div>';
+  }
+
+  function noticesBodyHTML() {
+    if (!state.notices && !state.noticesError) return SKELETON("ಸೂಚನೆಗಳು ಲೋಡ್ ಆಗುತ್ತಿವೆ…");
+    if (state.noticesError) return '<p class="empty-note notice-empty">ಸೂಚನೆಗಳ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ.</p>';
+    if (!state.district) return '<p class="empty-note notice-empty">ಸೂಚನೆಗಳನ್ನು ನೋಡಲು ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ.</p>';
+    var iso = keyToIso(state.key), list = currentNotices(state.district, iso), today = [], later = {}, laterDays = [];
+    list.forEach(function (n) {
+      if (noticeActiveOn(n, iso)) { today.push(n); return; }
+      var next = noticeNextAfter(n, iso);
+      if (!later[next]) { later[next] = []; laterDays.push(next); }
+      later[next].push(n);
+    });
+    var todayTitle = (state.key === keyFor(new Date()) ? "ಇಂದಿನ ಸೂಚನೆಗಳು" : "ಈ ದಿನದ ಸೂಚನೆಗಳು") + " (" + kn(today.length) + ")";
+    var upcoming = laterDays.sort().map(function (dayIso) {
+      var key = isoToKey(dayIso), day = parseKey(key);
+      return '<section class="upcoming-day"' + (day.getDay() === 0 ? ' data-sun="1"' : "") + '><h3 class="upcoming-date"><button type="button" class="week-day-link" data-day="' + key + '">' +
+        '<span class="week-day-label"><span class="week-day-name">' + WEEKDAYS[day.getDay()] + '</span></span>' +
+        '<span class="week-day-date"><b>' + kn(day.getDate()) + '</b><small>' + MONTHS[day.getMonth()] + '</small></span></button></h3>' +
+        noticeListHTML(later[dayIso]) + '</section>';
+    }).join("");
+    return noticeChipsHTML() +
+      card(todayTitle, today.length ? noticeListHTML(today) : '<p class="empty-note">ಈ ದಿನ ಯಾವುದೇ ಸೂಚನೆ ಇಲ್ಲ.</p>', "noticesToday", false) +
+      card("ಮುಂದಿನ " + kn(NOTICE_DAYS) + " ದಿನಗಳ ಸೂಚನೆಗಳು", upcoming ? '<div class="upcoming-list">' + upcoming + '</div>' : '<p class="empty-note">ಮುಂದಿನ ' + kn(NOTICE_DAYS) + ' ದಿನಗಳಲ್ಲಿ ಯಾವುದೇ ಸೂಚನೆ ಇಲ್ಲ.</p>', "noticesUpcoming", false);
+  }
+
+  function bindNotices(el) {
+    if (el._noticesBound) return;
+    el._noticesBound = true;
+    el.addEventListener("click", function (e) {
+      var target = e.target && e.target.closest ? e.target : null;
+      if (!target) return;
+      var more = target.closest(".notice-more"), chip = target.closest(".notice-chip");
+      if (more) {
+        var rest = document.getElementById(more.getAttribute("aria-controls")), open = rest.hidden;
+        rest.hidden = !open;
+        more.setAttribute("aria-expanded", String(open));
+        more.textContent = open ? "ಮುಚ್ಚು" : "ಪೂರ್ತಿ ಓದಿ";
+      } else if (chip) {
+        state.noticeCat = chip.dataset.cat || "";
+        renderToday();
+      }
+    });
+  }
+
+  function noticesViewHTML() {
+    var banner = state.noticesDummy ? '<p class="notice-dummy" role="note">ಮಾದರಿ ದತ್ತಾಂಶ — ಇವು ನಿಜವಾದ ಸೂಚನೆಗಳಲ್ಲ.</p>' : "";
+    return '<div class="notices-view">' + banner + noticesBodyHTML() + '</div>';
   }
 
   /* ---------------- Render: Week ---------------- */
@@ -1443,6 +1673,12 @@
       state.kn = e.target.checked;
       renderAll();
     });
+    state.noticesDummy = loadDummyNotices();
+    document.getElementById("dummyNotices").checked = state.noticesDummy;
+    document.getElementById("dummyNotices").addEventListener("change", function () {
+      setDummyNotices(document.getElementById("dummyNotices").checked);
+      fetchNotices().then(function () { renderAll(); });
+    });
     state.key = loadDate();
     state.district = loadDistrict();
     bindDistrictSelectors();
@@ -1469,6 +1705,7 @@
     });
     fetchCultural().then(function () { renderAll(); });
     fetchCalendarEvents().then(function () { renderAll(); });
+    fetchNotices().then(function () { renderAll(); });
     goto(state.key);
   }
 

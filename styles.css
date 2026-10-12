@@ -155,9 +155,19 @@ body {
 .home-date[data-sun] .home-day-name, .home-date[data-sun] strong { color: var(--verm); }
 .home-district { display: flex; flex-direction: column; flex: 1 1 100%; gap: 4px; min-width: 0; }
 .home-district > span { color: var(--ink-soft); font-size: 13px; font-weight: 700; }
-.home-switch { display: flex; flex: 1 1 100%; padding: 3px; background: var(--gold-soft); border: 1px solid rgba(148, 42, 42, .4); border-radius: 0; }
-.home-switch button { flex: 1; padding: 9px 12px; border: 0; border-radius: 0; background: transparent; color: var(--ink-soft); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
-.home-switch button.is-active { background: var(--card); color: var(--verm); box-shadow: 0 1px 3px rgba(17, 17, 17, .12); }
+/* The switch sits outside the header card, flush on top of the content it controls. */
+.home-switch { display: flex; gap: 4px; margin-top: 14px; border-bottom: 3px solid var(--verm); }
+.home-switch button { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; min-height: 56px; padding: 7px 4px; white-space: nowrap; border: 1px solid var(--line); border-bottom: 0; border-radius: 0; background: var(--paper-deep); color: var(--ink-soft); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+.home-switch button.is-active { border-color: var(--verm); background: var(--verm); color: #fff; }
+.home-switch button.is-active .switch-count { background: #fff; color: var(--verm); }
+.home-switch .ico { display: block; width: 20px; height: 20px; }
+.switch-alert { display: block; color: var(--verm); }
+/* The notice icon blinks until its tab is opened. */
+.home-switch button:not(.is-active) .switch-alert { animation: notice-blink 1s ease-in-out infinite; }
+.home-switch button.is-active .switch-alert { color: #fff; }
+@keyframes notice-blink { 0%, 100% { opacity: 1; } 50% { opacity: .15; } }
+.home-switch + .card { margin-top: 0; border-top: 0; }
+.home-switch + .notices-view { margin-top: 12px; }
 .home-switch button:focus-visible { outline: 2px solid var(--verm); outline-offset: 2px; }
 
 /* ---------- Panchanga ---------- */
@@ -644,3 +654,34 @@ body.big .pm-value { font-size: 21px; }
 .cal-opt:focus-visible { outline: 2px solid var(--verm); outline-offset: 2px; }
 .cal-google { background: var(--verm); border-color: var(--verm); color: #fff; }
 .cal-google:hover { background: var(--verm-deep); }
+
+/* ---------- Notices on the Home page (power, water, public work, railway) ---------- */
+.notices-view { margin-top: 14px; }
+.switch-count { display: inline-block; min-width: 20px; margin-left: 4px; padding: 0 5px; background: var(--verm); color: #fff; font-family: var(--font-num); font-size: 12px; line-height: 20px; text-align: center; }
+.scope-dot.alert { transform: scale(1.3); border-radius: 0; background: #8f5d00; clip-path: polygon(50% 0, 100% 100%, 0 100%); } /* triangle: a third shape beside the round and square dots */
+.notice-dummy { margin: 0 0 12px; padding: 8px 12px; border: 1px dashed var(--amber); background: #fff7d6; color: #5c4300; font-size: 13.5px; font-weight: 700; text-align: center; }
+.notice-empty { margin-top: 18px; text-align: center; }
+.notice-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.notice-chip { flex: none; display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 7px 14px; border: 1px solid var(--line); background: var(--card); color: var(--ink); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+.notice-chip .ico { width: 16px; height: 16px; color: var(--cat, var(--ink-soft)); }
+.notice-chip.is-active { border-color: var(--verm); background: var(--verm); color: #fff; }
+.notice-chip.is-active .ico { color: #fff; }
+.notice-chip:focus-visible, .notice-more:focus-visible { outline: 2px solid var(--verm); outline-offset: 2px; }
+.notice-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.upcoming-date + .notice-list { margin-top: 8px; }
+.notice { --cat: var(--ink-soft); padding: 12px 14px; border: 1px solid var(--line); border-left: 4px solid var(--cat); background: #fafafa; }
+/* Category colours back up the icon and label; they are never the only cue. */
+.cat-power { --cat: #8f5d00; }
+.cat-water { --cat: #1f5f99; }
+.cat-work { --cat: #4a4a4a; }
+.cat-rail { --cat: var(--verm); }
+.notice-head { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 10px; }
+.notice-cat { display: inline-flex; align-items: center; gap: 6px; color: var(--cat); font-size: .95em; font-weight: 800; }
+.notice-cat .ico { width: 18px; height: 18px; flex: none; }
+.notice-type { padding: 1px 8px; border: 1px solid var(--line); background: var(--card); color: var(--ink-soft); font-size: 13px; font-weight: 700; }
+.notice-meta { display: flex; flex-wrap: wrap; gap: 2px 12px; margin-top: 6px; font-family: var(--font-num); font-weight: 800; }
+.notice-time { color: var(--ink-soft); font-weight: 700; }
+.notice-text { margin-top: 8px; font-size: .95em; overflow-wrap: anywhere; }
+.notice-text p { margin: 0 0 8px; }
+.notice-text p:last-child { margin-bottom: 0; }
+.notice-more { min-height: 36px; margin-top: 6px; padding: 4px 0; border: 0; background: none; color: var(--verm); font: inherit; font-size: 14px; font-weight: 800; text-decoration: underline; cursor: pointer; }
