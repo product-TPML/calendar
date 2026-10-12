@@ -111,9 +111,101 @@ function onOpen() {
     .addSeparator()
     .addItem('Validate configuration', 'validateDistrictRouting')
     .addSeparator()
+    .addItem('Editorial text for a date', 'showEditorialSidebar')
+    .addSeparator()
     .addItem('TEST RESET: clear district tabs only', 'clearDistrictTabsOnly')
     .addItem('TEST RESET: delete ALL events (tabs + responses)', 'deleteAllEvents')
     .addToUi();
+}
+
+/** Opens a sidebar: pick a district and date, then copy that day's editorial text. */
+function showEditorialSidebar() {
+  const options = EXPECTED_DISTRICTS
+    .map((name) => `<option value="${name}">${name}</option>`)
+    .join('');
+  const html = HtmlService.createHtmlOutput(
+    `<style>
+       body{font-family:Arial,sans-serif;font-size:13px;margin:12px}
+       label{display:block;margin:10px 0 4px;font-weight:bold}
+       select,input,textarea{width:100%;box-sizing:border-box;font-size:13px;padding:6px}
+       textarea{height:340px;margin-top:10px}
+       button{margin-top:12px;padding:8px 12px;font-size:13px;cursor:pointer}
+       #msg{margin-top:8px;color:#555}
+     </style>
+     <label for="d">District</label>
+     <select id="d">${options}</select>
+     <label for="t">Date</label>
+     <input id="t" type="date">
+     <button onclick="go()">Get editorial text</button>
+     <button onclick="copyText()">Copy</button>
+     <div id="msg"></div>
+     <textarea id="out" readonly></textarea>
+     <script>
+       function go(){
+         var t=document.getElementById('t').value;
+         if(!t){msg('Pick a date.');return;}
+         msg('Loading...');
+         google.script.run
+           .withSuccessHandler(function(r){
+             document.getElementById('out').value=r.text;
+             msg(r.count+' event(s)');
+           })
+           .withFailureHandler(function(e){msg('Error: '+e.message);})
+           .getEditorialText(document.getElementById('d').value,t);
+       }
+       function copyText(){
+         var o=document.getElementById('out');
+         o.select();
+         document.execCommand('copy');
+         msg('Copied.');
+       }
+       function msg(m){document.getElementById('msg').textContent=m;}
+     </script>`
+  ).setTitle('Editorial text');
+  SpreadsheetApp.getUi().showSidebar(html);
+}
+
+/** Returns the editorial text of non-cancelled events for a district on a date (yyyy-MM-dd). */
+function getEditorialText(district, dateIso) {
+  if (EXPECTED_DISTRICTS.indexOf(district) === -1) throw new Error('Unknown district.');
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  const sheet = ss.getSheetByName(district);
+  if (!sheet) throw new Error(`Missing tab: ${district}`);
+  if (sheet.getLastRow() < 2) return { text: '', count: 0 };
+
+  const tz = Session.getScriptTimeZone();
+  const headers = sheet.getRange(1, 1, 1, sheet.getLastColumn()).getDisplayValues()[0]
+    .map(normalizeText_);
+  const dateCol = headers.findIndex((h) => /^date\b/i.test(h));
+  const timeCol = headers.findIndex((h) => /^time\b/i.test(h));
+  const textCol = headers.indexOf('Editorial Text');
+  const statusCol = headers.indexOf(ROUTER_CONFIG.statusHeader);
+  if (dateCol === -1 || textCol === -1) {
+    throw new Error(`${district}: Date or Editorial Text column not found.`);
+  }
+
+  const minutes = (value) => {
+    if (value instanceof Date) {
+      const [h, m] = Utilities.formatDate(value, tz, 'HH:mm').split(':').map(Number);
+      return h * 60 + m;
+    }
+    return Number.MAX_SAFE_INTEGER;
+  };
+
+  const rows = sheet.getRange(2, 1, sheet.getLastRow() - 1, sheet.getLastColumn()).getValues()
+    .filter((row) => {
+      const value = row[dateCol];
+      const day = value instanceof Date ? Utilities.formatDate(value, tz, 'yyyy-MM-dd') : '';
+      return day === dateIso &&
+        normalizeText_(row[textCol]) &&
+        (statusCol === -1 || normalizeText_(row[statusCol]) !== 'Cancelled');
+    })
+    .sort((a, b) => timeCol === -1 ? 0 : minutes(a[timeCol]) - minutes(b[timeCol]));
+
+  return {
+    text: rows.map((row) => normalizeText_(row[textCol])).join('\n\n'),
+    count: rows.length,
+  };
 }
 
 /**
