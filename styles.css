@@ -161,9 +161,10 @@ body {
 .home-switch button.is-active { border-color: var(--verm); background: var(--verm); color: #fff; }
 .home-switch button.is-active .switch-count { background: #fff; color: var(--verm); }
 .home-switch .ico { display: block; width: 20px; height: 20px; }
-.switch-alert { display: block; color: var(--verm); }
-/* The notice icon blinks until its tab is opened. */
-.home-switch button:not(.is-active) .switch-alert { animation: notice-blink 1s ease-in-out infinite; }
+.switch-alert { display: block; }
+.switch-alert.is-live { color: var(--verm); }
+/* The icon blinks when the selected day itself has a notice, until its tab is opened. */
+.home-switch button:not(.is-active) .switch-alert.is-live { animation: notice-blink 1s ease-in-out infinite; }
 .home-switch button.is-active .switch-alert { color: #fff; }
 @keyframes notice-blink { 0%, 100% { opacity: 1; } 50% { opacity: .15; } }
 .home-switch + .card { margin-top: 0; border-top: 0; }
@@ -404,7 +405,6 @@ body {
   font-size: 13px; font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums;
 }
 .district-empty { margin: 0; padding: 18px 12px; text-align: center; color: var(--ink-soft); font-size: 14px; }
-.stream-toolbar:has(.district-picker.is-open) { z-index: 60; }
 
 /* Phones: the list opens as a bottom sheet with a dimmed backdrop. */
 @media (max-width: 759px) {
@@ -493,17 +493,6 @@ body {
   flex: none; min-width: 22px; padding: 1px 7px; border-radius: 0; text-align: center;
   background: var(--verm); color: #fff; font-size: 12.5px; font-weight: 800; font-family: var(--font-num);
 }
-.toolbar-row { display: flex; align-items: center; gap: 10px; margin: 0 0 12px; }
-.toolbar-row label { font-size: 13px; font-weight: 700; color: var(--ink-soft); white-space: nowrap; }
-.toolbar-row .district-select { max-width: none; }
-.stream-toolbar {
-  position: sticky; top: var(--masthead-h, 64px); z-index: 15;
-  margin: -14px -14px 12px; padding: 10px 14px;
-  background: var(--paper); border-bottom: 1px solid var(--line);
-}
-.stream-toolbar { transition: transform .22s ease; }
-.stream-toolbar.is-hidden { transform: translateY(-100%); pointer-events: none; }
-@media (prefers-reduced-motion: reduce) { .stream-toolbar { transition: none; } }
 .month-agenda-list { padding: 0 12px; }
 .agenda-day + .agenda-day { border-top: 1px dashed var(--line); }
 .agenda-day .week-day-title { padding: 0; }
@@ -522,9 +511,19 @@ body {
 .month-block { display: grid; gap: 12px; }
 .stream-period-title { margin: 0; padding: 4px 2px; font-family: var(--font-display); font-size: 21px; color: var(--verm); }
 .month-cal > .week-row {
-  position: sticky; top: calc(var(--masthead-h, 64px) + var(--month-toolbar-h, 56px)); z-index: 10;
-  transition: top .22s ease; /* follows the district bar as it hides and returns */
+  position: sticky; top: var(--masthead-h, 64px); z-index: 10;
   box-shadow: 0 5px 0 var(--paper); /* fills the 5px margin gap only, so the first grid row keeps its top border */
+}
+/* Week and Month: the district name in each period heading opens the view's one picker. */
+.stream-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+.district-link { flex: none; display: inline-flex; align-items: center; gap: 4px; max-width: 55%; min-height: 36px; padding: 4px 2px; border: 0; background: none; color: var(--ink-soft); font: inherit; font-size: 14px; font-weight: 700; cursor: pointer; }
+.district-link span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; border-bottom: 1px dotted currentColor; }
+.district-link .district-pin { width: 16px; height: 16px; }
+.district-link:hover { color: var(--verm); }
+.district-link:focus-visible { outline: 2px solid var(--verm); outline-offset: 2px; }
+.district-anchor .district-trigger { display: none; }
+@media (min-width: 760px) {
+  .district-anchor .district-panel { position: fixed; top: calc(var(--masthead-h, 64px) + 12px); left: 50%; right: auto; width: 420px; transform: translateX(-50%); z-index: 45; }
 }
 .month-block + .month-block { padding-top: 8px; border-top: 2px solid var(--line); }
 .week-block + .week-block { margin-top: 8px; }
@@ -616,7 +615,6 @@ body.big .pm-value { font-size: 21px; }
   .app { max-width: none; }
   .masthead { padding-left: max(20px, calc((100% - 760px) / 2 + 20px)); padding-right: max(20px, calc((100% - 760px) / 2 + 20px)); }
   .main { width: 100%; max-width: 760px; margin: 0 auto; padding-left: 20px; padding-right: 20px; border-left: 1px solid rgba(148, 42, 42, .28); border-right: 1px solid rgba(148, 42, 42, .28); }
-  .stream-toolbar { margin-left: -20px; margin-right: -20px; padding-left: 20px; padding-right: 20px; }
   .panga-grid { gap: 12px; }
   .tabbar { left: 0; right: 0; width: auto; max-width: none; transform: none; border-left: 0; border-right: 0; padding-left: max(0px, calc((100% - 760px) / 2)); padding-right: max(0px, calc((100% - 760px) / 2)); }
 }
@@ -654,6 +652,10 @@ body.big .pm-value { font-size: 21px; }
 .cal-opt:focus-visible { outline: 2px solid var(--verm); outline-offset: 2px; }
 .cal-google { background: var(--verm); border-color: var(--verm); color: #fff; }
 .cal-google:hover { background: var(--verm-deep); }
+
+.week-day-label .scope-dot.alert { flex: none; width: 12px; height: 12px; transform: none; }
+.mday-alert { position: absolute; top: 5px; right: 5px; }
+.mday.sel .scope-dot.alert { background: #fff; }
 
 /* ---------- Notices on the Home page (power, water, public work, railway) ---------- */
 .notices-view { margin-top: 14px; }

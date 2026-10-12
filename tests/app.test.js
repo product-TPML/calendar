@@ -25,8 +25,6 @@ function makeEl(id) {
   return el;
 }
 
-const toolbarEls = [0, 1].map(() => ({ hidden: false, classList: { toggle(name, on) { this.owner.hidden = !!on; } } }));
-toolbarEls.forEach((bar) => { bar.classList.owner = bar; });
 const els = {}, tabEls = {}, viewIds = ["viewDay", "viewWeek", "viewMonth", "viewMore"];
 const documentStub = {
   title: "", _init: null,
@@ -40,7 +38,6 @@ const documentStub = {
       return tab;
     });
     if (selector === ".view") return viewIds.map((id) => documentStub.getElementById(id));
-    if (selector === ".stream-toolbar") return toolbarEls;
     return [];
   },
   querySelector() { return { scrollTop: 0 }; },
@@ -285,7 +282,7 @@ function assert(cond, msg) {
   assert(els.monthDistrictSelect.innerHTML.includes(">ಬಾಗಲಕೋಟೆ (7)</option>"), "Month district count includes cultural events");
   assert(els.monthScroller.innerHTML.includes(">ಶು</span>") && els.monthScroller.innerHTML.includes(">ಶ</span>"), "Month weekday chips tell Friday (ಶು) and Saturday (ಶ) apart");
   const tapped = INITIAL;
-  els.monthScroller._handlers.click[0]({ target: { closest: () => ({ dataset: { day: tapped } }) } });
+  els.monthScroller._handlers.click[0]({ target: { closest: (sel) => (sel === "[data-day]" ? { dataset: { day: tapped } } : null) } });
   assert(els.viewDay.hidden === false && els.viewMonth.hidden === true, "tapping a Month day redirects to Home");
   assert(sessionStore.pvDate === tapped && els.mastheadDate.textContent.includes(String(parseInt(tapped.slice(0, 2), 10))), "Home opens with the tapped day selected");
   tabEls.week.click();
@@ -321,24 +318,25 @@ function assert(cond, msg) {
   assert(sessionStore.pvDate === "04-07-2027" && els.mastheadDate.textContent.includes("2027"), "in Month, picking a date shows that month");
   tabEls.day.click();
 
-  console.log("6c) The district bar hides when scrolling down and returns when scrolling up");
+  console.log("6c) Week and Month show the district in each period heading, with no sticky bar");
+  const pageHtml = fs.readFileSync(path.join(__dirname, "..", "index.html"), "utf8");
+  assert(!pageHtml.includes("stream-toolbar") && pageHtml.includes('id="weekDistrictSelect"') && pageHtml.includes('id="monthDistrictSelect"'), "the sticky district bars are gone; each view keeps one picker");
+  els.homeDistrictSelect.value = "Bagalkot";
+  els.homeDistrictSelect.click("change");
   tabEls.week.click();
-  const scrollTo = (y) => { global.window.scrollY = y; scrollHandlers.forEach((cb) => cb()); };
-  assert(toolbarEls.every((bar) => !bar.hidden), "district bar is visible at the top");
-  scrollTo(120);
-  assert(toolbarEls.every((bar) => bar.hidden), "scrolling down hides the district bar");
-  scrollTo(124);
-  assert(toolbarEls.every((bar) => bar.hidden), "small movements keep it hidden");
-  scrollTo(90);
-  assert(toolbarEls.every((bar) => !bar.hidden), "scrolling up shows the district bar again");
-  scrollTo(400);
-  assert(toolbarEls.every((bar) => bar.hidden), "scrolling down again hides it");
-  scrollTo(0);
-  assert(toolbarEls.every((bar) => !bar.hidden), "back at the top it is visible");
-  scrollTo(300);
+  const weekLinks = els.weekAgenda.innerHTML.match(/class="district-link" data-picker="weekDistrictSelect"[^>]*>.*?<\/button>/g) || [];
+  assert(weekLinks.length === (els.weekAgenda.innerHTML.match(/class="week-block"/g) || []).length && weekLinks.every((link) => link.includes("ಬಾಗಲಕೋಟೆ")), "every week heading names the district");
+  let openedDay = false;
+  els.weekDistrictSelectTrigger = makeEl("weekDistrictSelectTrigger");
+  els.weekDistrictSelectTrigger.addEventListener("click", () => { openedDay = true; });
+  els.weekAgenda._handlers.click.forEach((cb) => cb({ stopPropagation() {}, target: { closest: (sel) => (sel === ".district-link" ? { dataset: { picker: "weekDistrictSelect" } } : null) } }));
+  assert(openedDay && els.viewWeek.hidden === false, "tapping the district name opens the picker and does not leave Week");
   tabEls.month.click();
-  assert(toolbarEls.every((bar) => !bar.hidden), "switching tabs shows it");
-  global.window.scrollY = 0;
+  const monthLinks = els.monthScroller.innerHTML.match(/class="district-link" data-picker="monthDistrictSelect"/g) || [];
+  assert(monthLinks.length === (els.monthScroller.innerHTML.match(/class="month-block"/g) || []).length && monthLinks.length > 0, "every month heading names the district");
+  els.homeDistrictSelect.value = "";
+  els.homeDistrictSelect.click("change");
+  assert(els.monthScroller.innerHTML.includes("ಜಿಲ್ಲೆ ಆಯ್ಕೆ ಮಾಡಿ</span></button>"), "with no district chosen the heading invites choosing one");
   tabEls.day.click();
 
   console.log("9) Home notices option and the dummy-data switch");
@@ -370,7 +368,8 @@ function assert(cond, msg) {
   } });
   await tick();
   assert(homeHtml().indexOf('id="homeEventsMode"') < homeHtml().indexOf('id="homeNoticesMode"') && homeHtml().indexOf('id="homeNoticesMode"') < homeHtml().indexOf('id="homePanchangaMode"'), "on a day with notices the option appears, before Panchanga");
-  assert(/class="switch-count"[^>]*>2</.test(homeHtml()) && homeHtml().includes('class="switch-alert"'), "it shows the day's count and the alert icon");
+  assert(/class="switch-count"[^>]*>2</.test(homeHtml()) && homeHtml().includes("switch-alert"), "it shows the day's count and the alert icon");
+  assert(homeHtml().includes('class="switch-alert is-live"'), "the icon is live on a day that has a notice");
   assert(homeHtml().includes('id="body-homeToday"'), "the notices option appearing does not switch away from Events");
   els.homeNoticesMode.click();
   assert(!homeHtml().includes('id="body-homeToday"'), "opening it replaces the event cards");
@@ -382,18 +381,32 @@ function assert(cond, msg) {
   assert(homeHtml().includes("N-Later") && homeHtml().includes("ರೈಲು ರದ್ದು"), "a later notice is listed under the coming days with its type");
   assert(["N-Expired", "N-BadDate", "N-Far", "N-Ballari"].every((t) => !homeHtml().includes(t)), "expired, undated, far-off and other-district notices are left out");
   assert(homeHtml().includes(">ಬಾಗಲಕೋಟೆ (3)</option>") && homeHtml().includes(">ಬಳ್ಳಾರಿ (1)</option>"), "in notices mode the district list counts current notices");
-  assert(homeHtml().includes('<i class="scope-dot alert"></i></span></button>') && homeHtml().includes('<i class="scope-dot alert"></i> ಸೂಚನೆಗಳು'), "days with notices get a marker in the strip, explained in the legend");
+  assert(homeHtml().includes('scope-dot alert" title=') && homeHtml().includes('<i class="scope-dot alert"></i> ಸೂಚನೆಗಳು'), "days with notices get a marker in the strip, explained in the legend");
   homeClick(".notice-chip", { cat: "Railway" });
   assert(homeHtml().includes("N-Later") && !homeHtml().includes("N-Today"), "a category chip filters the notices");
   homeClick(".notice-chip", { cat: "" });
   assert(homeHtml().includes('week-day-link" data-day="' + DAY3 + '"'), "the later notice sits under its own date");
   els.nextDay.click();
-  assert(!homeHtml().includes('id="homeNoticesMode"') && homeHtml().includes("PV-Bagalkot-" + NEXT) && !homeHtml().includes("N-Scattered"), "a day without notices has no notices option and shows Events");
+  todayNotices = sectionBody(homeHtml(), "body-noticesToday");
+  assert(homeHtml().includes('id="homeNoticesMode"') && !homeHtml().includes("switch-count") && !homeHtml().includes("is-live"), "a day with only upcoming notices keeps the option, without count or blinking");
+  assert(todayNotices.includes("ಈ ದಿನ ಯಾವುದೇ ಸೂಚನೆ ಇಲ್ಲ") && !todayNotices.includes("N-Scattered"), "a notice on scattered dates is not active on the days between");
+  assert(homeHtml().includes("N-Scattered") && homeHtml().includes('week-day-link" data-day="' + DAY2 + '"'), "it is listed under its next date");
   els.nextDay.click();
   todayNotices = sectionBody(homeHtml(), "body-noticesToday");
-  assert(todayNotices.includes("N-Scattered") && !todayNotices.includes("N-Today"), "the next day with a notice opens in notices again, on its scattered date");
+  assert(todayNotices.includes("N-Scattered") && homeHtml().includes("is-live"), "on its next date it is active again");
+  els.nextDay.click();
+  els.nextDay.click();
+  assert(!homeHtml().includes('id="homeNoticesMode"') && homeHtml().includes('id="body-homeToday"'), "with nothing that day or in the next 14 days there is no notices option and Events show");
+  els.prevDay.click();
+  assert(homeHtml().includes('id="homeNoticesMode"') && !homeHtml().includes('id="body-homeToday"'), "going back to a day with notices opens them again");
   els.homeEventsMode.click();
-  assert(homeHtml().includes('id="body-homeToday"') && !homeHtml().includes("N-Scattered") && homeHtml().includes("PV-Bagalkot-" + DAY2), "Events mode shows the events again");
+  assert(homeHtml().includes('id="body-homeToday"') && !homeHtml().includes("N-Later") && homeHtml().includes("PV-Bagalkot-" + DAY3), "Events mode shows the events again");
+  els.todayBtn.click();
+  tabEls.week.click();
+  assert(els.weekAgenda.innerHTML.includes('data-day="' + INITIAL + '"') && (els.weekAgenda.innerHTML.match(/scope-dot alert/g) || []).length === 6 && els.weekNoticeLegend.hidden === false, "Week marks each day that has a notice, past ones included, and explains the marker");
+  tabEls.month.click();
+  assert((els.monthScroller.innerHTML.match(/mday-alert/g) || []).length === 7 && els.monthScroller.innerHTML.includes("ಸೂಚನೆ ಇದೆ") && els.monthScroller.innerHTML.includes('<i class="scope-dot alert"></i> ಸೂಚನೆಗಳು'), "Month marks the same days and explains the marker");
+  tabEls.day.click();
   els.dummyNotices.checked = false;
   els.dummyNotices.click("change");
   assert(count(REAL_NOTICES) === 2 && localStore.pvDummyNotices === "0", "switching dummy data off goes back to the real file");

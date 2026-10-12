@@ -556,6 +556,22 @@
     }
   }
 
+  /* Week and Month keep one picker each, with no visible trigger. The district
+     name in every period heading opens it, so the district stays in view
+     wherever the stream is scrolled to. */
+  function districtLinkHTML(pickerId) {
+    return '<button type="button" class="district-link" data-picker="' + pickerId + '" aria-label="ಜಿಲ್ಲೆ ಬದಲಿಸಿ: ' + esc(districtPickerLabel()) + '">' + ICON_PIN + '<span>' + esc(districtPickerLabel()) + '</span></button>';
+  }
+
+  function openDistrictFromLink(e) {
+    var link = e.target && e.target.closest ? e.target.closest(".district-link") : null;
+    if (!link) return false;
+    if (e.stopPropagation) e.stopPropagation();   /* or the document click handler closes the picker again */
+    var trigger = document.getElementById(link.dataset.picker + "Trigger");
+    if (trigger) trigger.click();
+    return true;
+  }
+
   function eventGroupHTML(id, title, records, stateGroup, headingExtra) {
     return '<section class="ev-section' + (stateGroup ? " state" : "") + '" aria-labelledby="' + id + 'Title">' +
       '<div class="ev-section-head"><h3 class="ev-section-title" id="' + id + 'Title" tabindex="-1">' + title + '</h3>' + (headingExtra || "") + '</div>' +
@@ -794,10 +810,8 @@
   }
 
   /* Same wording and dots as the Month legend: round = district, square = Karnataka-wide. */
-  /* The triangle for notices joins the legend only once notices have loaded. */
   function stripLegendHTML() {
-    return '<div class="scope-legend strip-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ"><span><i class="scope-dot district"></i> ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span><span><i class="scope-dot state"></i> ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span>' +
-      (state.notices ? '<span><i class="scope-dot alert"></i> ಸೂಚನೆಗಳು</span>' : "") + '</div>';
+    return '<div class="scope-legend strip-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ"><span><i class="scope-dot district"></i> ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span><span><i class="scope-dot state"></i> ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span>' + noticeLegendHTML() + '</div>';
   }
 
   /* Sunday-first week around the selected day, so any date this week is one tap away. */
@@ -807,11 +821,10 @@
     for (var i = 0; i < 7; i++) {
       var d = new Date(start); d.setDate(start.getDate() + i);
       var k = keyFor(d), local = state.pv ? districtEventsFor(k).length + culturalEventsFor(k).length : 0, wide = state.pv ? stateEventsFor(k).length : 0;
-      var notices = state.district ? noticesOn(state.district, keyToIso(k)).length : 0;
       out += '<button type="button" class="ds-day' + (k === key ? " sel" : "") + (k === todayKey ? " today" : "") + (d.getDay() === 0 ? " sun" : "") + '" data-day="' + k + '"' + (k === key ? ' aria-current="date"' : "") +
         ' aria-label="' + WEEKDAYS[d.getDay()] + " " + kn(d.getDate()) + " " + MONTHS[d.getMonth()] + '">' +
         '<span class="ds-wd">' + WEEKDAYS_SHORT[d.getDay()] + '</span><span class="ds-num">' + kn(d.getDate()) + '</span>' +
-        '<span class="ds-dots" aria-hidden="true">' + (local ? '<i class="scope-dot district"></i>' : "") + (wide ? '<i class="scope-dot state"></i>' : "") + (notices ? '<i class="scope-dot alert"></i>' : "") + '</span></button>';
+        '<span class="ds-dots" aria-hidden="true">' + (local ? '<i class="scope-dot district"></i>' : "") + (wide ? '<i class="scope-dot state"></i>' : "") + dayAlertHTML(k) + '</span></button>';
     }
     return out + '</nav>';
   }
@@ -820,10 +833,16 @@
     return state.district ? noticesOn(state.district, keyToIso(key)).length : 0;
   }
 
-  /* The notices option exists only on days that have a notice, so a day without
-     one shows Events even if notices were open on the previous day. */
+  /* The notices option exists while the district has a notice on the day or in
+     the days after it. Without one the day shows Events, even if notices were
+     open on the previous day. */
+  function homeNoticesAvailable(key) {
+    var iso = keyToIso(key);
+    return !!state.district && ((state.notices && state.notices[state.district]) || []).some(function (n) { return noticeCurrent(n, iso); });
+  }
+
   function homeMode() {
-    return state.homeMode === "notices" && !homeNoticeCount(state.key) ? "events" : state.homeMode;
+    return state.homeMode === "notices" && !homeNoticesAvailable(state.key) ? "events" : state.homeMode;
   }
 
   var ICO_NOTICE = '<svg ' + ICO_ATTR + ' ' + ICO_STROKE + '><path d="M12 4.5 3.5 19.5h17z"/><path d="M12 10.5v4.2M12 17.2v.1"/></svg>';
@@ -837,7 +856,8 @@
       '<div class="home-date"' + (d.getDay() === 0 ? ' data-sun="1"' : "") + '><div class="home-day-line"><div class="home-day-label"><span class="home-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (key === keyFor(new Date()) ? '<span class="today-pill">ಇಂದು</span>' : "") + '</div><div class="home-day-date"><strong id="homeDateTitle">' + kn(d.getDate()) + '</strong><small>' + MONTHS[d.getMonth()] + ' ' + kn(d.getFullYear()) + '</small></div></div></div>' +
       '<label class="home-district"><span id="homeDistrictLabel">ಜಿಲ್ಲೆ</span>' + districtControlHTML("homeDistrictSelect", current === "notices" ? "notices" : "day", "homeDistrict") + '</label>' + '</section>' +
       '<div class="home-switch" role="tablist" aria-label="ಮುಖಪುಟದ ವಿಷಯ">' + mode("homeEventsMode", "events", ICONS.diya, "ಕಾರ್ಯಕ್ರಮಗಳು") +
-        (noticeCount ? mode("homeNoticesMode", "notices", '<span class="switch-alert">' + ICO_NOTICE + '</span>', 'ಸೂಚನೆ <span class="switch-count" aria-label="' + noticeCount + ' ಸೂಚನೆಗಳು">' + kn(noticeCount) + '</span>') : "") +
+        (homeNoticesAvailable(key) ? mode("homeNoticesMode", "notices", '<span class="switch-alert' + (noticeCount ? " is-live" : "") + '">' + ICO_NOTICE + '</span>',
+          "ಸೂಚನೆ" + (noticeCount ? ' <span class="switch-count" aria-label="' + noticeCount + ' ಸೂಚನೆಗಳು">' + kn(noticeCount) + '</span>' : "")) : "") +
         mode("homePanchangaMode", "panchanga", ICONS.tithi, "ಪಂಚಾಂಗ") + '</div>';
   }
 
@@ -964,17 +984,30 @@
   }
 
   /* A district's notices that are active on iso or start within the next NOTICE_DAYS. */
+  function noticeCurrent(n, iso) {
+    var next = noticeNextAfter(n, iso);
+    return noticeActiveOn(n, iso) || (!!next && next <= addDaysIso(iso, NOTICE_DAYS));
+  }
+
   function currentNotices(district, iso) {
-    var list = (state.notices && state.notices[district]) || [], limit = addDaysIso(iso, NOTICE_DAYS);
-    return list.filter(function (n) {
-      if (state.noticeCat && n.category !== state.noticeCat) return false;
-      var next = noticeNextAfter(n, iso);
-      return noticeActiveOn(n, iso) || (next && next <= limit);
+    return ((state.notices && state.notices[district]) || []).filter(function (n) {
+      return (!state.noticeCat || n.category === state.noticeCat) && noticeCurrent(n, iso);
     });
   }
 
   function noticesOn(district, iso) {
     return ((state.notices && state.notices[district]) || []).filter(function (n) { return noticeActiveOn(n, iso); });
+  }
+
+  /* Marker for a day that has a notice: the same triangle in the Home strip, Week and Month. */
+  function dayAlertHTML(key, className) {
+    if (!state.district || !noticesOn(state.district, keyToIso(key)).length) return "";
+    return '<i class="scope-dot alert' + (className ? " " + className : "") + '" title="ಸೂಚನೆ ಇದೆ"></i>';
+  }
+
+  /* The legend explains the triangle only once notices have loaded. */
+  function noticeLegendHTML() {
+    return state.notices ? '<span><i class="scope-dot alert"></i> ಸೂಚನೆಗಳು</span>' : "";
   }
 
   function noticeOrder(a, b) {
@@ -1111,7 +1144,7 @@
   function weekAgendaHTML(key) {
     var d = parseKey(key), district = districtEventsFor(key).concat(culturalEventsFor(key)), statewide = stateEventsFor(key), today = key === keyFor(new Date());
     var head = '<h3 class="week-day-title"><button type="button" class="week-day-link" data-day="' + key + '">' +
-      '<span class="week-day-label"><span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (today ? '<span class="today-pill">ಇಂದು</span>' : "") + '</span>' +
+      '<span class="week-day-label"><span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (today ? '<span class="today-pill">ಇಂದು</span>' : "") + dayAlertHTML(key) + '</span>' +
       '<span class="week-day-date"><b>' + kn(d.getDate()) + '</b><small>' + MONTHS[d.getMonth()] + '</small></span></button></h3>';
     var flags = (today ? ' data-today="1"' : "") + (d.getDay() === 0 ? ' data-sun="1"' : "");
     if (!district.length && !statewide.length) return '<section class="week-day" data-day="' + key + '" data-empty="1"' + flags + '>' + head + '<p class="empty-note">ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ</p></section>';
@@ -1123,7 +1156,7 @@
     var start = parseKey(startKey), end = new Date(start);
     end.setDate(end.getDate() + 6);
     /* Every day gets the same row; days without events just have no list under them. */
-    return '<section class="week-block" data-start="' + startKey + '"><h2 class="stream-period-title">' + periodLabel(start, end) + '</h2>' +
+    return '<section class="week-block" data-start="' + startKey + '"><div class="stream-head"><h2 class="stream-period-title">' + periodLabel(start, end) + '</h2>' + districtLinkHTML("weekDistrictSelect") + '</div>' +
       Array.from({ length: 7 }, function (_, i) {
         var d = new Date(start); d.setDate(d.getDate() + i); return weekAgendaHTML(keyFor(d));
       }).join("") + '</section>';
@@ -1133,38 +1166,14 @@
     var d = parseKey(key); d.setDate(d.getDate() + weeks * 7); return keyFor(d);
   }
 
-  function streamTopOffset(viewId) {
+  function streamTopOffset() {
     var masthead = document.querySelector(".masthead");
-    var toolbar = document.querySelector(viewId + " .stream-toolbar");
-    return (masthead ? masthead.offsetHeight : 0) + (toolbar ? toolbar.offsetHeight : 0) + 12;
+    return (masthead ? masthead.offsetHeight : 0) + 12;
   }
 
-  /* The district bar in Week and Month slides away while scrolling down and
-     comes back as soon as the page is scrolled up (or is at the top). */
-  var SCROLL_SLOP = 6, lastScrollY = 0;
-
-  function setToolbarHidden(hidden) {
-    if (state.toolbarHidden === hidden) return;
-    state.toolbarHidden = hidden;
-    document.querySelectorAll(".stream-toolbar").forEach(function (bar) { bar.classList.toggle("is-hidden", hidden); });
-    if (document.documentElement) {
-      var bar = document.querySelector("#viewMonth .stream-toolbar");
-      document.documentElement.style.setProperty("--month-toolbar-h", hidden ? "0px" : ((bar && bar.offsetHeight ? bar.offsetHeight : 56) + "px"));
-    }
-  }
-
-  function updateToolbarOnScroll() {
-    var y = window.scrollY || window.pageYOffset || 0, dy = y - lastScrollY;
-    if (y <= 8) setToolbarHidden(false);
-    else if (document.querySelectorAll('.stream-toolbar .district-trigger[aria-expanded="true"]').length) return;
-    else if (dy > SCROLL_SLOP) setToolbarHidden(true);
-    else if (dy < -SCROLL_SLOP) setToolbarHidden(false);
-    if (y <= 8 || Math.abs(dy) > SCROLL_SLOP) lastScrollY = y;
-  }
-
-  function scrollToStreamBlock(block, viewId) {
+  function scrollToStreamBlock(block) {
     var top = block.getBoundingClientRect ? block.getBoundingClientRect().top : (block.offsetTop || 0);
-    var y = top + (window.pageYOffset || window.scrollY || 0) - streamTopOffset(viewId);
+    var y = top + (window.pageYOffset || window.scrollY || 0) - streamTopOffset();
     window.scrollTo(0, Math.max(0, y));
   }
 
@@ -1173,13 +1182,14 @@
     if (!el || el._streamBound) return;
     el._streamBound = true;
     el.addEventListener("click", function (e) {
+      if (openDistrictFromLink(e)) return;
       var target = e.target && e.target.closest ? e.target.closest("[data-day]") : null;
       if (target && target.dataset.day) openDay(target.dataset.day);
     });
   }
 
   function updateWeekHeader() {
-    var blocks = document.querySelectorAll("#weekAgenda .week-block"), chosen = null, edge = streamTopOffset("#viewWeek") + 1;
+    var blocks = document.querySelectorAll("#weekAgenda .week-block"), chosen = null, edge = streamTopOffset() + 1;
     blocks.forEach(function (block) {
       if (block.getBoundingClientRect().top <= edge) chosen = block;
     });
@@ -1205,7 +1215,6 @@
       state.weekFirst = previous;
       el.insertAdjacentHTML("afterbegin", weekBlockHTML(previous));
       window.scrollBy(0, el.offsetHeight - oldHeight);
-      lastScrollY = window.scrollY || window.pageYOffset || 0;
     }
     updateWeekHeader();
   }
@@ -1236,11 +1245,12 @@
       cursor = weekKeyShift(cursor, 1);
     }
     document.getElementById("weekAgenda").innerHTML = pages.join("");
+    document.getElementById("weekNoticeLegend").hidden = !state.notices;
     renderDistrictPicker("weekDistrictSelect", "week");
     bindWeekStream();
     if (!state.weekHeader) {
       var selectedBlock = document.querySelector('#weekAgenda .week-block[data-start="' + start + '"]');
-      if (selectedBlock) scrollToStreamBlock(selectedBlock, "#viewWeek");
+      if (selectedBlock) scrollToStreamBlock(selectedBlock);
     }
     updateWeekHeader();
     bindDistrictSelectors();
@@ -1259,8 +1269,10 @@
     for (var day = 1; day <= days; day++) {
       var k = keyFor(new Date(y, m, day)), sel = k === state.key, today = k === keyFor(new Date());
       var local = districtEventsFor(k).length + culturalEventsFor(k).length, statewide = stateEventsFor(k).length;
-      var aria = local || statewide ? ' aria-label="' + kn(day) + ': ' + (local ? "ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು " + local : "") + (local && statewide ? ", " : "") + (statewide ? "ಕರ್ನಾಟಕ ಕಾರ್ಯಕ್ರಮಗಳು " + statewide : "") + '"' : '';
-      html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + '" data-day="' + k + '" type="button"' + (today ? ' title="ಇಂದು"' : "") + aria + '>' + kn(day) +
+      var alert = dayAlertHTML(k, "mday-alert");
+      var parts = (local ? ["ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು " + local] : []).concat(statewide ? ["ಕರ್ನಾಟಕ ಕಾರ್ಯಕ್ರಮಗಳು " + statewide] : [], alert ? ["ಸೂಚನೆ ಇದೆ"] : []);
+      var aria = parts.length ? ' aria-label="' + kn(day) + ': ' + parts.join(", ") + '"' : '';
+      html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + '" data-day="' + k + '" type="button"' + (today ? ' title="ಇಂದು"' : "") + aria + '>' + kn(day) + alert +
         (local || statewide ? '<span class="mday-dots" aria-hidden="true">' + (local ? '<i class="scope-dot district"></i><b class="date-count district">' + local + '</b>' : '') + (statewide ? '<i class="scope-dot state"></i><b class="date-count state">' + statewide + '</b>' : '') + '</span>' : '') + '</button>';
     }
     return '<div class="month-cal"><div class="week-row">' + WEEKDAYS.map(function (w, i) { return '<span title="' + w + '">' + WEEKDAYS_SHORT[i] + "</span>"; }).join("") + '</div><div class="month-grid">' + html + '</div></div>';
@@ -1300,7 +1312,7 @@
       /* Same day heading as the Week view: weekday on the left, big date on the right. */
       var dayKey = isoToKey(date), d = parseKey(dayKey), isToday = dayKey === keyFor(new Date());
       var head = '<h3 class="week-day-title"><button type="button" class="week-day-link" data-day="' + dayKey + '">' +
-        '<span class="week-day-label"><span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (isToday ? '<span class="today-pill">ಇಂದು</span>' : "") + '</span>' +
+        '<span class="week-day-label"><span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (isToday ? '<span class="today-pill">ಇಂದು</span>' : "") + dayAlertHTML(dayKey) + '</span>' +
         '<span class="week-day-date"><b>' + kn(d.getDate()) + '</b><small>' + MONTHS[d.getMonth()] + '</small></span></button></h3>';
       return '<section class="agenda-day week-day"' + (isToday ? ' data-today="1"' : "") + (d.getDay() === 0 ? ' data-sun="1"' : "") + '>' + head +
         (local.length ? '<div class="agenda-scope"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + rows(local) + '</ul></div>' : '') +
@@ -1310,8 +1322,8 @@
 
   function monthBlockHTML(key) {
     var p = key.split("-"), y = +p[0], m = +p[1];
-    return '<section class="month-block" data-month="' + key + '"><h2 class="stream-period-title">' + MONTHS[m] + " " + kn(y) + '</h2>' +
-      monthCalendarHTML(y, m) + '<div class="scope-legend month-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ"><span><i class="scope-dot district"></i> ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span><span><i class="scope-dot state"></i> ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span></div>' +
+    return '<section class="month-block" data-month="' + key + '"><div class="stream-head"><h2 class="stream-period-title">' + MONTHS[m] + " " + kn(y) + '</h2>' + districtLinkHTML("monthDistrictSelect") + '</div>' +
+      monthCalendarHTML(y, m) + '<div class="scope-legend month-legend" aria-label="ಕಾರ್ಯಕ್ರಮದ ವ್ಯಾಪ್ತಿ"><span><i class="scope-dot district"></i> ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span><span><i class="scope-dot state"></i> ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span>' + noticeLegendHTML() + '</div>' +
       '<details class="month-agenda"><summary class="ev-section-title" id="monthAgenda-' + key + '"><span>ತಿಂಗಳ ವೇಳಾಪಟ್ಟಿ</span>' + (state.pv && !state.pvError ? '<span class="agenda-count">' + kn(monthAgendaRecords(y, m).length) + '</span>' : "") + '</summary>' + monthAgendaHTML(y, m) + '</details></section>';
   }
 
@@ -1320,13 +1332,14 @@
     if (!el || el._streamBound) return;
     el._streamBound = true;
     el.addEventListener("click", function (e) {
+      if (openDistrictFromLink(e)) return;
       var target = e.target && e.target.closest ? e.target.closest("[data-day]") : null;
       if (target && target.dataset.day) openDay(target.dataset.day);
     });
   }
 
   function updateMonthHeader() {
-    var blocks = document.querySelectorAll("#monthScroller .month-block"), chosen = null, edge = streamTopOffset("#viewMonth") + 1;
+    var blocks = document.querySelectorAll("#monthScroller .month-block"), chosen = null, edge = streamTopOffset() + 1;
     blocks.forEach(function (block) { if (block.getBoundingClientRect().top <= edge) chosen = block; });
     if (!chosen && blocks.length) chosen = blocks[0];
     if (chosen) {
@@ -1347,7 +1360,6 @@
       var previous = monthKeyShift(state.monthFirst, -1), oldHeight = el.offsetHeight;
       state.monthFirst = previous; el.insertAdjacentHTML("afterbegin", monthBlockHTML(previous));
       window.scrollBy(0, el.offsetHeight - oldHeight);
-      lastScrollY = window.scrollY || window.pageYOffset || 0;
     }
     updateMonthHeader();
   }
@@ -1373,7 +1385,7 @@
       bindMonthStream();
       if (!state.monthHeader) {
         var selectedMonth = document.querySelector('#monthScroller .month-block[data-month="' + center + '"]');
-        if (selectedMonth) scrollToStreamBlock(selectedMonth, "#viewMonth");
+        if (selectedMonth) scrollToStreamBlock(selectedMonth);
       }
       updateMonthHeader();
     }
@@ -1413,8 +1425,6 @@
     next.setAttribute("aria-label", "ಮುಂದಿನ " + unit);
     if (document.documentElement) {
       document.documentElement.style.setProperty("--masthead-h", document.querySelector(".masthead").offsetHeight + "px");
-      var monthToolbar = document.querySelector("#viewMonth .stream-toolbar");
-      if (monthToolbar && monthToolbar.offsetHeight && !state.toolbarHidden) document.documentElement.style.setProperty("--month-toolbar-h", monthToolbar.offsetHeight + "px");
     }
     document.title = MONTHS[dt.getMonth()] + " " + kn(dt.getDate()) + " — ಕನ್ನಡ ಸಾಂಸ್ಕೃತಿಕ ಕ್ಯಾಲೆಂಡರ್";
   }
@@ -1452,7 +1462,6 @@
     state.tab = name;
     if (name === "week" && previous !== "week") state.weekFirst = state.weekLast = state.weekHeader = null;
     if (name === "month" && previous !== "month") state.monthFirst = state.monthLast = state.monthHeader = null;
-    setToolbarHidden(false);
     renderMasthead();
     document.querySelectorAll(".view").forEach(function (v) { v.hidden = v.id !== VIEWS[name]; });
     document.querySelectorAll(".tab").forEach(function (t) {
@@ -1687,7 +1696,6 @@
     bindSwipe("weekHead", function (n) { shiftWeek(n); });
     bindSwipe("monthHead", function (n) { shiftMonth(n); });
     if (window.addEventListener) window.addEventListener("scroll", function () {
-      updateToolbarOnScroll();
       lazyWeekScroll();
       lazyMonthScroll();
     }, { passive: true });
