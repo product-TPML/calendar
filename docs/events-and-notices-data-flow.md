@@ -248,10 +248,10 @@ Settle the three [open decisions](#open-decisions) first. The steps assume a Goo
 
 ### A. The notices spreadsheet
 
-1. Create a Google Form with the questions listed under [Notices spreadsheet](#notices-spreadsheet-to-be-created). Start each question title with the English word, for example "Date from  ಆರಂಭ ದಿನಾಂಕ".
-2. Link the form to a new spreadsheet, and set that spreadsheet's locale to India (File > Settings).
+1. Create a new blank spreadsheet. Open Extensions > Apps Script, paste `google-form/PV_Notices_Form_Builder.gs` and `google-form/PV_Notices_Response_Router.gs` as two files, and run `createNoticesForm`. It builds the form from the table under [Notices spreadsheet](#notices-spreadsheet-to-be-created) and links it to the spreadsheet.
+2. Set the spreadsheet's locale to India (File > Settings).
 3. Copy the `Edit Access` tab across from the events spreadsheet.
-4. Open Extensions > Apps Script, paste the notices version of the router (to be written), and run `setupDistrictRouting`.
+4. Run `setupDistrictRouting` (menu: District Routing > Run complete setup).
 5. Submit one test notice and confirm it lands on the right district tab.
 
 ### B. Read access for the build
@@ -287,7 +287,7 @@ Part A can start straight away, since it only needs the form. Parts B to D can b
 
 ## Not built yet
 
-- The notices form and spreadsheet, and the router adapted for it.
+- Running the notices form builder and router in a real spreadsheet (the scripts are written, untested in Google).
 - The Cloudflare Pages data project, its build script, the daily trigger and "Publish now".
 - The credential for reading the sheets.
 - The app's data-address setting, and reading events from the new file.

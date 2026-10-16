@@ -12,7 +12,7 @@
     calRecords: null, calMerged: false,
     cultural: null, culturalIndex: {}, culturalRecords: [], culturalError: false, culturalPending: null,
     panData: {}, panPending: {}, panCore: null, panCorePending: null, panDistricts: {}, homeMode: "events", district: "",
-    notices: null, noticesError: false, noticesPending: null, noticesDummy: false, noticeCat: "",
+    notices: null, noticesError: false, noticesPending: null, noticesDummy: false, noticesShown: false, noticeCat: "",
     weekFirst: null, weekLast: null, weekHeader: null, monthFirst: null, monthLast: null, monthHeader: null };
 
   var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
@@ -927,6 +927,9 @@
   /* Dummy notices are on until the Settings switch is turned off, while there is no real feed. */
   function loadDummyNotices() { try { return localStorage.getItem("pvDummyNotices") !== "0"; } catch (e) { return true; } }
   function saveDummyNotices(on) { try { localStorage.setItem("pvDummyNotices", on ? "1" : "0"); } catch (e) {} }
+  /* Notices are hidden until the Settings switch turns them on. */
+  function loadShowNotices() { try { return localStorage.getItem("pvShowNotices") === "1"; } catch (e) { return false; } }
+  function saveShowNotices(on) { try { localStorage.setItem("pvShowNotices", on ? "1" : "0"); } catch (e) {} }
   function noticesUrl() { return state.noticesDummy ? NOTICES_DUMMY_URL : NOTICES_URL; }
 
   /* Keep only notices with usable dates. "dates" lists the active days when they
@@ -949,6 +952,7 @@
   }
 
   function fetchNotices() {
+    if (!state.noticesShown) return Promise.resolve(null);
     if (state.notices || state.noticesError) return Promise.resolve(state.notices);
     if (state.noticesPending) return state.noticesPending;
     var url = noticesUrl();
@@ -965,9 +969,19 @@
     return pending;
   }
 
+  function setShowNotices(on) {
+    state.noticesShown = on;
+    saveShowNotices(on);
+    resetNotices();
+  }
+
   function setDummyNotices(on) {
     state.noticesDummy = on;
     saveDummyNotices(on);
+    resetNotices();
+  }
+
+  function resetNotices() {
     state.notices = null;
     state.noticesError = false;
     state.noticesPending = null;
@@ -1692,6 +1706,17 @@
     });
     document.getElementById("knDigits").addEventListener("change", function (e) {
       state.kn = e.target.checked;
+      renderAll();
+    });
+    var dummyRow = document.getElementById("dummyNoticesRow");
+    function syncNoticeSettings() { if (dummyRow) dummyRow.hidden = !state.noticesShown; }
+    state.noticesShown = loadShowNotices();
+    syncNoticeSettings();
+    document.getElementById("showNotices").checked = state.noticesShown;
+    document.getElementById("showNotices").addEventListener("change", function () {
+      setShowNotices(document.getElementById("showNotices").checked);
+      syncNoticeSettings();
+      fetchNotices().then(function () { renderAll(); });
       renderAll();
     });
     state.noticesDummy = loadDummyNotices();

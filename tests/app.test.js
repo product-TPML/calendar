@@ -344,7 +344,10 @@ function assert(cond, msg) {
   const REAL_NOTICES = "data/utility-notices.json", DUMMY_NOTICES = "data/utility-notices.dummy.json";
   const homeHtml = () => els.todayContent.innerHTML;
   const homeClick = (selector, dataset) => els.todayContent._handlers.click.forEach((cb) => cb({ target: { closest: (s) => (s === selector ? { dataset } : null) } }));
-  assert(count(DUMMY_NOTICES) === 1 && count(REAL_NOTICES) === 0 && els.dummyNotices.checked === true, "dummy notices are on by default");
+  assert(count(DUMMY_NOTICES) === 0 && count(REAL_NOTICES) === 0 && els.showNotices.checked === false && els.dummyNotices.checked === true, "notices are hidden by default and nothing is fetched");
+  els.showNotices.checked = true;
+  els.showNotices.click("change");
+  assert(localStore.pvShowNotices === "1" && count(DUMMY_NOTICES) === 1 && count(REAL_NOTICES) === 0, "the Settings switch shows notices and fetches the dummy file");
   els.todayBtn.click();
   els.homeDistrictSelect.value = "Bagalkot";
   els.homeDistrictSelect.click("change");
