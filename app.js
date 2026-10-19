@@ -13,6 +13,7 @@
     cultural: null, culturalIndex: {}, culturalRecords: [], culturalError: false, culturalPending: null,
     panData: {}, panPending: {}, panCore: null, panCorePending: null, panDistricts: {}, homeMode: "events", district: "",
     notices: null, noticesError: false, noticesPending: null, noticesDummy: false, noticesShown: false, noticeCat: "",
+    rainNak: null, rainNakPending: null, rainNakShown: false,
     weekFirst: null, weekLast: null, weekHeader: null, monthFirst: null, monthLast: null, monthHeader: null };
 
   var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
@@ -754,6 +755,46 @@
     return minutes == null ? "—" : pad(Math.floor(minutes / 60)) + ":" + pad(minutes % 60);
   }
 
+  /* ---------------- Rain nakshatras (ಮಳೆ ನಕ್ಷತ್ರ) ----------------
+     data/rain-nakshatras.json: the date and time the Sun enters each nakshatra, as printed in the almanac.
+     Off until the Settings switch turns it on; the file is only fetched then. */
+  var RAIN_NAK_URL = "data/rain-nakshatras.json";
+  function loadShowRainNak() { try { return localStorage.getItem("pvShowRainNak") === "1"; } catch (e) { return false; } }
+  function saveShowRainNak(on) { try { localStorage.setItem("pvShowRainNak", on ? "1" : "0"); } catch (e) {} }
+
+  function fetchRainNak() {
+    if (!state.rainNakShown) return Promise.resolve(null);
+    if (state.rainNak) return Promise.resolve(state.rainNak);
+    if (state.rainNakPending) return state.rainNakPending;
+    var pending = state.rainNakPending = fetchJSON(RAIN_NAK_URL)
+      .then(function (json) { return (json && json.entries) || null; })
+      .catch(function () { return null; })
+      .then(function (entries) {
+        if (state.rainNakPending === pending) state.rainNakPending = null;
+        state.rainNak = entries;
+        return entries;
+      });
+    return pending;
+  }
+
+  function rainNakEntryText(e) {
+    var d = isoDate(e.date);
+    return MONTHS[d.getMonth()] + " " + kn(d.getDate()) + " (" + kn(e.time) + ")";
+  }
+
+  function rainNakHTML(key) {
+    var list = state.rainNakShown && state.rainNak;
+    if (!list || !list.length) return "";
+    var p = key.split("-"), iso = p[2] + "-" + p[1] + "-" + p[0], cur = -1;
+    list.forEach(function (e, i) { if (e.date <= iso) cur = i; });
+    if (cur < 0) return "";
+    var e = list[cur], next = list[cur + 1];
+    var body = '<p class="rain-nak"><b>' + esc(e.name) + '</b> · ' + rainNakEntryText(e) + ' ರಿಂದ' + (e.date === iso ? ' · <span class="rain-today">ಇಂದು ಪ್ರವೇಶ</span>' : "") + '</p>' +
+      (next ? '<p class="src-note">ಮುಂದಿನದು: ' + esc(next.name) + " · " + rainNakEntryText(next) + '</p>' : "") +
+      '<p class="src-note">ಸೂರ್ಯನ ನಕ್ಷತ್ರ ಪ್ರವೇಶ · ಪಂಚಾಂಗದಲ್ಲಿ ಮುದ್ರಿತವಾದಂತೆ</p>';
+    return card("ಮಳೆ ನಕ್ಷತ್ರ", body, "homeRainNak", false);
+  }
+
   function panchangaHTML(key) {
     var inner = "";
     if (!Object.prototype.hasOwnProperty.call(state.panData, panchangaCacheKey(key))) {
@@ -779,6 +820,7 @@
           '</div>' + panchangaMetaHTML(pan) +
           ('<div class="sun-row"><span class="sun-item sunrise-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunrise + '</span> ಸೂರ್ಯೋದಯ <b>' + (cal.sunrise ? kn(cal.sunrise) : NA) + '</b></span><span class="sun-item sunset-item"><span class="sun-ico" aria-hidden="true">' + ICONS.sunset + '</span> ಸೂರ್ಯಾಸ್ತ <b>' + (cal.sunset ? kn(cal.sunset) : NA) + '</b></span></div>') +
           '<p class="src-note">' + "ತಿಥಿ, ನಕ್ಷತ್ರ: ಕ್ಯಾಲೆಂಡರ್ ಆಧಾರದಲ್ಲಿ · ಉಳಿದವು: ಲೆಕ್ಕಾಚಾರದಿಂದ" + '</p>' +
+          rainNakHTML(key) +
           card("ಸಮಯಗಳು — ಕಾಲ", panchangaTimingsHTML(record) + '<p class="empty-note">ಶುಭ ಸಮಯ: ' + NA + '</p>' + districtNoteHTML(record), "homeTimings", false) +
           card("ರಾಶಿ ಭವಿಷ್ಯ", panchangaJathakaHTML(record), "homeJathaka", false);
       }
@@ -1688,7 +1730,33 @@
     }, { passive: true });
   }
 
+  /* Query parameters open a particular view or flip a setting for this visit only; nothing is saved
+     except the date, which the session already remembers.
+       tab=day|week|month|more   mode=events|notices|panchanga   date=YYYY-MM-DD   district=<name>
+       big, kn, notices, dummy, rainNak = 1|0 */
+  function queryParams() {
+    var out = {};
+    try {
+      var sp = new URLSearchParams(window.location.search);
+      ["tab", "mode", "date", "district", "big", "kn", "notices", "dummy", "rainNak"].forEach(function (k) {
+        if (sp.has(k)) out[k] = sp.get(k);
+      });
+    } catch (e) {}
+    return out;
+  }
+  function queryFlag(value, fallback) {
+    if (value === "1" || value === "true") return true;
+    if (value === "0" || value === "false") return false;
+    return fallback;
+  }
+  function queryDate(value) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(value || ""));
+    var key = m ? m[3] + "-" + m[2] + "-" + m[1] : String(value || "");
+    return validKey(key) ? key : null;
+  }
+
   function init() {
+    var q = queryParams();
     prepareSession();
     document.querySelectorAll(".tab").forEach(function (t) {
       t.addEventListener("click", function () {
@@ -1710,7 +1778,7 @@
     });
     var dummyRow = document.getElementById("dummyNoticesRow");
     function syncNoticeSettings() { if (dummyRow) dummyRow.hidden = !state.noticesShown; }
-    state.noticesShown = loadShowNotices();
+    state.noticesShown = queryFlag(q.notices, loadShowNotices());
     syncNoticeSettings();
     document.getElementById("showNotices").checked = state.noticesShown;
     document.getElementById("showNotices").addEventListener("change", function () {
@@ -1719,14 +1787,28 @@
       fetchNotices().then(function () { renderAll(); });
       renderAll();
     });
-    state.noticesDummy = loadDummyNotices();
+    state.rainNakShown = queryFlag(q.rainNak, loadShowRainNak());
+    document.getElementById("showRainNak").checked = state.rainNakShown;
+    document.getElementById("showRainNak").addEventListener("change", function () {
+      state.rainNakShown = document.getElementById("showRainNak").checked;
+      saveShowRainNak(state.rainNakShown);
+      fetchRainNak().then(function () { renderAll(); });
+      renderAll();
+    });
+    state.noticesDummy = queryFlag(q.dummy, loadDummyNotices());
     document.getElementById("dummyNotices").checked = state.noticesDummy;
     document.getElementById("dummyNotices").addEventListener("change", function () {
       setDummyNotices(document.getElementById("dummyNotices").checked);
       fetchNotices().then(function () { renderAll(); });
     });
-    state.key = loadDate();
-    state.district = loadDistrict();
+    state.big = queryFlag(q.big, state.big);
+    document.getElementById("fontBig").checked = state.big;
+    if (document.body) document.body.classList.toggle("big", state.big);
+    state.kn = queryFlag(q.kn, state.kn);
+    document.getElementById("knDigits").checked = state.kn;
+    state.key = queryDate(q.date) || loadDate();
+    state.district = q.district || loadDistrict();
+    if (q.mode === "events" || q.mode === "notices" || q.mode === "panchanga") state.homeMode = q.mode;
     bindDistrictSelectors();
     bindSwipe("mastheadDateBlock", function (n) { shiftPeriod(n); });
     bindSwipe("viewDay", function (n) { if (state.tab === "day") shiftDay(n); });
@@ -1751,7 +1833,9 @@
     fetchCultural().then(function () { renderAll(); });
     fetchCalendarEvents().then(function () { renderAll(); });
     fetchNotices().then(function () { renderAll(); });
+    fetchRainNak().then(function () { renderAll(); });
     goto(state.key);
+    if (VIEWS[q.tab] && q.tab !== state.tab) setTab(q.tab);
   }
 
   function shiftDay(n) {

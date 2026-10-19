@@ -688,3 +688,6 @@ body.big .pm-value { font-size: 21px; }
 .notice-text p { margin: 0 0 8px; }
 .notice-text p:last-child { margin-bottom: 0; }
 .notice-more { min-height: 36px; margin-top: 6px; padding: 4px 0; border: 0; background: none; color: var(--verm); font: inherit; font-size: 14px; font-weight: 800; text-decoration: underline; cursor: pointer; }
+
+.rain-nak { margin: 0 0 4px; font-size: 16px; }
+.rain-today { color: var(--verm); font-weight: 800; }

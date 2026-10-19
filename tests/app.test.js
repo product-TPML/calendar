@@ -437,6 +437,25 @@ function assert(cond, msg) {
   assert(cal.ics({ start: "2026-02-28", title: "x" }).includes("DTEND;VALUE=DATE:20260301"), "single-day event ends the next day");
   assert(cal.icsFilename(ev) === "event-2026-10-31.ics", "ascii filename");
 
+  console.log("8) Rain nakshatras switch (off by default)");
+  const RAIN_URL = "data/rain-nakshatras.json";
+  assert(els.showRainNak.checked === false && count(RAIN_URL) === 0 && !("pvShowRainNak" in localStore), "rain nakshatras are off by default and nothing is fetched");
+  els.showRainNak.checked = true;
+  els.showRainNak.click("change");
+  assert(localStore.pvShowRainNak === "1" && count(RAIN_URL) === 1, "the Settings switch turns them on and fetches the file");
+  const d8 = DAY8.split("-"), isoOf = (n) => { const d = new Date(+d8[2], +d8[1] - 1, +d8[0] + n); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
+  resolveUrl(RAIN_URL, { entries: [{ date: isoOf(-6), name: "ಪೂರ್ವಾಭಾದ್ರ", time: "ರಾ.9.27" }, { date: isoOf(6), name: "ಉತ್ತರಾಭಾದ್ರ", time: "ಸಾ.6.46" }] });
+  await tick();
+  els.homePanchangaMode.click();
+  els.datePicker.value = isoOf(0);
+  els.datePicker.click("change");
+  await tick();
+  await tick();
+  assert(els.todayContent.innerHTML.includes('id="body-homeRainNak"') && els.todayContent.innerHTML.includes("ಪೂರ್ವಾಭಾದ್ರ") && els.todayContent.innerHTML.includes("ಮುಂದಿನದು: ಉತ್ತರಾಭಾದ್ರ"), "the Panchanga view shows the current and next rain nakshatra");
+  els.showRainNak.checked = false;
+  els.showRainNak.click("change");
+  assert(localStore.pvShowRainNak === "0" && !els.todayContent.innerHTML.includes('id="body-homeRainNak"'), "switching off hides the card");
+
   console.log("7) PV load failure is explicit");
   for (const key in els) delete els[key];
   for (const key in tabEls) delete tabEls[key];
@@ -450,6 +469,27 @@ function assert(cond, msg) {
   await tick();
   assert(els.todayContent.innerHTML.includes("ಘಟನೆ ದತ್ತಾಂಶ ಲಭ್ಯವಿಲ್ಲ"), "PV failure shows event-data error");
   assert(calls.every((url) => !url.startsWith("ocr-zones/")), "PV failure does not fall back to OCR");
+
+  console.log("10) Query parameters open a view or flip a setting for one visit");
+  const reboot = (search) => {
+    for (const key in els) delete els[key];
+    for (const key in tabEls) delete tabEls[key];
+    calls.length = 0;
+    for (const key in pending) delete pending[key];
+    delete localStore.pvShowRainNak; delete localStore.pvShowNotices;
+    global.window.location = { search };
+    vm.runInThisContext(fs.readFileSync(APP_PATH, "utf8"), { filename: APP_PATH });
+    documentStub._init();
+  };
+  reboot("?tab=more&rainNak=1&kn=1&big=1&notices=1&dummy=0&date=2027-03-10&mode=panchanga");
+  assert(els.showRainNak.checked === true && count("data/rain-nakshatras.json") === 1, "rainNak=1 turns the switch on and fetches the file");
+  assert(els.knDigits.checked === true && els.fontBig.checked === true && els.showNotices.checked === true && els.dummyNotices.checked === false, "kn, big, notices and dummy are applied");
+  assert(!("pvShowRainNak" in localStore) && !("pvShowNotices" in localStore), "parameters are not saved as settings");
+  assert(els.viewMore.hidden === false && els.viewDay.hidden === true, "tab=more opens Settings");
+  assert(sessionStore.pvDate === "10-03-2027", "date=2027-03-10 selects that day");
+  reboot("?tab=bogus&date=nonsense&rainNak=maybe");
+  assert(els.showRainNak.checked === false && count("data/rain-nakshatras.json") === 0 && els.viewDay.hidden === false, "invalid values are ignored");
+  global.window.location = undefined;
 
   console.log("\n" + pass + " passed, " + fail + " failed");
   if (fail) process.exit(1);
