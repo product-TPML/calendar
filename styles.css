@@ -691,3 +691,15 @@ body.big .pm-value { font-size: 21px; }
 
 .rain-nak { margin: 0 0 4px; font-size: 16px; }
 .rain-today { color: var(--verm); font-weight: 800; }
+.mark-rain { color: #2d6a8f; }
+.rain-prog { display: flex; align-items: center; gap: 10px; margin: 8px 0 4px; }
+.rain-bar { position: relative; flex: 1; height: 5px; background: rgba(17, 17, 17, .09); }
+.rain-bar i { position: absolute; left: 0; top: 0; bottom: 0; background: #2d6a8f; }
+.rain-days { flex: none; font-family: var(--font-num); font-size: 13px; font-weight: 800; color: var(--ink-soft); }
+.rain-strip { display: grid; gap: 2px; margin-top: 12px; }
+.rain-seg { height: 26px; min-width: 0; padding: 0; border: 1px solid var(--line); border-radius: 0; background: var(--paper-deep); cursor: pointer; }
+.rain-seg.past { border-color: transparent; background: rgba(45, 106, 143, .35); }
+.rain-seg.now { border-color: var(--verm); background: var(--verm); }
+.rain-seg[aria-pressed="true"] { outline: 2px solid var(--ink); outline-offset: 1px; }
+.rain-seg:focus-visible { outline: 2px solid var(--verm); outline-offset: 2px; }
+.rain-pick { margin: 8px 0 0; font-size: 14px; }

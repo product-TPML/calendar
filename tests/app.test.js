@@ -444,14 +444,16 @@ function assert(cond, msg) {
   els.showRainNak.click("change");
   assert(localStore.pvShowRainNak === "1" && count(RAIN_URL) === 1, "the Settings switch turns them on and fetches the file");
   const d8 = DAY8.split("-"), isoOf = (n) => { const d = new Date(+d8[2], +d8[1] - 1, +d8[0] + n); return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0"); };
-  resolveUrl(RAIN_URL, { entries: [{ date: isoOf(-6), name: "ಪೂರ್ವಾಭಾದ್ರ", time: "ರಾ.9.27" }, { date: isoOf(6), name: "ಉತ್ತರಾಭಾದ್ರ", time: "ಸಾ.6.46" }] });
+  resolveUrl(RAIN_URL, { entries: [{ date: isoOf(-6), name: "ಪೂರ್ವಾಭಾದ್ರ", time: "ರಾ.9.27" }, { date: isoOf(0), name: "ಶತಭಿಷ", time: "ರಾ.3.46" }, { date: isoOf(6), name: "ಉತ್ತರಾಭಾದ್ರ", time: "ಸಾ.6.46" }] });
   await tick();
   els.homePanchangaMode.click();
   els.datePicker.value = isoOf(0);
   els.datePicker.click("change");
   await tick();
   await tick();
-  assert(els.todayContent.innerHTML.includes('id="body-homeRainNak"') && els.todayContent.innerHTML.includes("ಪೂರ್ವಾಭಾದ್ರ") && els.todayContent.innerHTML.includes("ಮುಂದಿನದು: ಉತ್ತರಾಭಾದ್ರ"), "the Panchanga view shows the current and next rain nakshatra");
+  assert(els.todayContent.innerHTML.includes('id="body-homeRainNak"') && els.todayContent.innerHTML.includes("ಶತಭಿಷ") && els.todayContent.innerHTML.includes("ಮುಂದಿನದು: ಉತ್ತರಾಭಾದ್ರ"), "the Panchanga view shows the current and next rain nakshatra");
+  assert(els.todayContent.innerHTML.includes("ದಿನ 1 / 6") && (els.todayContent.innerHTML.match(/class="rain-seg/g) || []).length === 3, "the card shows progress through the current nakshatra and a strip with one segment per entry");
+  assert(els.todayContent.innerHTML.includes("mark mark-rain") && els.todayContent.innerHTML.includes("ಮಳೆ ನಕ್ಷತ್ರ ಪ್ರವೇಶ"), "the entry day is marked in the Home strip, with a legend");
   els.showRainNak.checked = false;
   els.showRainNak.click("change");
   assert(localStore.pvShowRainNak === "0" && !els.todayContent.innerHTML.includes('id="body-homeRainNak"'), "switching off hides the card");

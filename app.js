@@ -13,7 +13,7 @@
     cultural: null, culturalIndex: {}, culturalRecords: [], culturalError: false, culturalPending: null,
     panData: {}, panPending: {}, panCore: null, panCorePending: null, panDistricts: {}, homeMode: "events", district: "",
     notices: null, noticesError: false, noticesPending: null, noticesDummy: false, noticesShown: false, noticeCat: "",
-    rainNak: null, rainNakPending: null, rainNakShown: false,
+    rainNak: null, rainNakPending: null, rainNakShown: false, rainNakPick: null,
     weekFirst: null, weekLast: null, weekHeader: null, monthFirst: null, monthLast: null, monthHeader: null };
 
   var WEEKDAYS = ["ಭಾನುವಾರ", "ಸೋಮವಾರ", "ಮಂಗಳವಾರ", "ಬುಧವಾರ", "ಗುರುವಾರ", "ಶುಕ್ರವಾರ", "ಶನಿವಾರ"];
@@ -621,6 +621,7 @@
   /* ---------------- Date navigation ---------------- */
   function goto(key) {
     state.key = key;
+    state.rainNakPick = null;
     saveDate(key);
     renderMasthead();
     renderActive();
@@ -782,6 +783,8 @@
     return MONTHS[d.getMonth()] + " " + kn(d.getDate()) + " (" + kn(e.time) + ")";
   }
 
+  function dayDiff(fromIso, key) { return Math.round((parseKey(key) - isoDate(fromIso)) / 864e5); }
+
   function rainNakHTML(key) {
     var list = state.rainNakShown && state.rainNak;
     if (!list || !list.length) return "";
@@ -789,9 +792,19 @@
     list.forEach(function (e, i) { if (e.date <= iso) cur = i; });
     if (cur < 0) return "";
     var e = list[cur], next = list[cur + 1];
-    var body = '<p class="rain-nak"><b>' + esc(e.name) + '</b> · ' + rainNakEntryText(e) + ' ರಿಂದ' + (e.date === iso ? ' · <span class="rain-today">ಇಂದು ಪ್ರವೇಶ</span>' : "") + '</p>' +
-      (next ? '<p class="src-note">ಮುಂದಿನದು: ' + esc(next.name) + " · " + rainNakEntryText(next) + '</p>' : "") +
-      '<p class="src-note">ಸೂರ್ಯನ ನಕ್ಷತ್ರ ಪ್ರವೇಶ · ಪಂಚಾಂಗದಲ್ಲಿ ಮುದ್ರಿತವಾದಂತೆ</p>';
+    var body = '<p class="rain-nak"><b>' + esc(e.name) + '</b> · ' + rainNakEntryText(e) + ' ರಿಂದ' + (e.date === iso ? ' · <span class="rain-today">ಇಂದು ಪ್ರವೇಶ</span>' : "") + '</p>';
+    if (next) {
+      var total = Math.round((isoDate(next.date) - isoDate(e.date)) / 864e5), day = dayDiff(e.date, key) + 1;
+      body += '<div class="rain-prog"><span class="rain-bar" aria-hidden="true"><i style="width:' + Math.min(100, day / total * 100).toFixed(1) + '%"></i></span>' +
+        '<span class="rain-days">ದಿನ ' + kn(day) + ' / ' + kn(total) + '</span></div>' +
+        '<p class="src-note">ಮುಂದಿನದು: ' + esc(next.name) + " · " + rainNakEntryText(next) + '</p>';
+    }
+    var pick = state.rainNakPick != null && list[state.rainNakPick] ? state.rainNakPick : cur;
+    body += '<div class="rain-strip" role="group" aria-label="ವರ್ಷದ ಮಳೆ ನಕ್ಷತ್ರಗಳು" style="grid-template-columns:repeat(' + list.length + ',1fr)">' + list.map(function (x, i) {
+      return '<button type="button" class="rain-seg' + (i < cur ? " past" : i === cur ? " now" : "") + '" data-i="' + i + '" aria-pressed="' + (i === pick) + '" aria-label="' + esc(x.name) + ", " + rainNakEntryText(x) + '"></button>';
+    }).join("") + '</div>';
+    if (pick !== cur) body += '<p class="rain-pick"><b>' + esc(list[pick].name) + '</b> · ' + rainNakEntryText(list[pick]) + ' ರಿಂದ</p>';
+    body += '<p class="src-note">ಸೂರ್ಯನ ನಕ್ಷತ್ರ ಪ್ರವೇಶ · ಪಂಚಾಂಗದಲ್ಲಿ ಮುದ್ರಿತವಾದಂತೆ</p>';
     return card("ಮಳೆ ನಕ್ಷತ್ರ", body, "homeRainNak", false);
   }
 
@@ -865,7 +878,7 @@
       out += '<button type="button" class="ds-day' + (k === key ? " sel" : "") + (k === todayKey ? " today" : "") + (d.getDay() === 0 ? " sun" : "") + '" data-day="' + k + '"' + (k === key ? ' aria-current="date"' : "") +
         ' aria-label="' + WEEKDAYS[d.getDay()] + " " + kn(d.getDate()) + " " + MONTHS[d.getMonth()] + '">' +
         '<span class="ds-wd">' + WEEKDAYS_SHORT[d.getDay()] + '</span><span class="ds-num">' + kn(d.getDate()) + '</span>' +
-        '<span class="ds-dots" aria-hidden="true">' + (local ? markHTML("district") : "") + (wide ? markHTML("state") : "") + dayAlertHTML(k) + '</span></button>';
+        '<span class="ds-dots" aria-hidden="true">' + (local ? markHTML("district") : "") + (wide ? markHTML("state") : "") + dayAlertHTML(k) + dayRainHTML(k) + '</span></button>';
     }
     return out + '</nav>';
   }
@@ -903,6 +916,9 @@
   }
 
   function bindHomeModeUI() {
+    document.querySelectorAll(".rain-seg").forEach(function (button) {
+      button.addEventListener("click", function () { state.rainNakPick = +button.dataset.i; renderToday(); });
+    });
     document.querySelectorAll(".ds-day, .upcoming-day .week-day-link").forEach(function (button) {
       button.addEventListener("click", function () { goto(button.dataset.day); });
     });
@@ -1060,8 +1076,10 @@
      the district, green for Karnataka-wide) and the warning sign for notices. */
   var ICO_WARNING = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="ico"><path d="M12 3.5 2.5 20h19z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M12 9.5v5M12 17.7v.1" fill="none" stroke="var(--mark-cut, #fff)" stroke-width="2.2" stroke-linecap="round"/></svg>';
 
+  var ICO_DROP = '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false" class="ico"><path d="M12 3.5c3.4 4.3 5.5 7.4 5.5 10.2a5.5 5.5 0 0 1-11 0c0-2.8 2.1-5.9 5.5-10.2z" fill="currentColor"/></svg>';
+
   function markHTML(type, extra) {
-    return '<i class="mark mark-' + type + '"' + (extra || "") + '>' + (type === "alert" ? ICO_WARNING : ICONS.diya) + '</i>';
+    return '<i class="mark mark-' + type + '"' + (extra || "") + '>' + (type === "alert" ? ICO_WARNING : type === "rain" ? ICO_DROP : ICONS.diya) + '</i>';
   }
 
   /* Marker for a day that has a notice, in the Home strip, Week and Month. */
@@ -1070,10 +1088,23 @@
     return markHTML("alert", ' title="ಸೂಚನೆ ಇದೆ"');
   }
 
+  /* Marker for a day the Sun enters a new nakshatra, once the Settings switch is on and the table has loaded. */
+  function rainNakEntry(key) {
+    if (!state.rainNakShown || !state.rainNak) return null;
+    var p = key.split("-"), iso = p[2] + "-" + p[1] + "-" + p[0];
+    for (var i = 0; i < state.rainNak.length; i++) if (state.rainNak[i].date === iso) return state.rainNak[i];
+    return null;
+  }
+  function dayRainHTML(key) {
+    var e = rainNakEntry(key);
+    return e ? markHTML("rain", ' title="ಮಳೆ ನಕ್ಷತ್ರ ಪ್ರವೇಶ: ' + esc(e.name) + '"') : "";
+  }
+
   /* The notices entry joins the legend only once notices have loaded. */
   function legendItemsHTML() {
     return '<span>' + markHTML("district") + ' ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</span><span>' + markHTML("state") + ' ಕರ್ನಾಟಕದ ಕಾರ್ಯಕ್ರಮಗಳು</span>' +
-      (state.notices ? '<span>' + markHTML("alert") + ' ಸೂಚನೆಗಳು</span>' : "");
+      (state.notices ? '<span>' + markHTML("alert") + ' ಸೂಚನೆಗಳು</span>' : "") +
+      (state.rainNakShown && state.rainNak ? '<span>' + markHTML("rain") + ' ಮಳೆ ನಕ್ಷತ್ರ ಪ್ರವೇಶ</span>' : "");
   }
 
   function noticeOrder(a, b) {
@@ -1210,7 +1241,7 @@
   function weekAgendaHTML(key) {
     var d = parseKey(key), district = districtEventsFor(key).concat(culturalEventsFor(key)), statewide = stateEventsFor(key), today = key === keyFor(new Date());
     var head = '<h3 class="week-day-title"><button type="button" class="week-day-link" data-day="' + key + '">' +
-      '<span class="week-day-label"><span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (today ? '<span class="today-pill">ಇಂದು</span>' : "") + dayAlertHTML(key) + '</span>' +
+      '<span class="week-day-label"><span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (today ? '<span class="today-pill">ಇಂದು</span>' : "") + dayAlertHTML(key) + dayRainHTML(key) + '</span>' +
       '<span class="week-day-date"><b>' + kn(d.getDate()) + '</b><small>' + MONTHS[d.getMonth()] + '</small></span></button></h3>';
     var flags = (today ? ' data-today="1"' : "") + (d.getDay() === 0 ? ' data-sun="1"' : "");
     if (!district.length && !statewide.length) return '<section class="week-day" data-day="' + key + '" data-empty="1"' + flags + '>' + head + '<p class="empty-note">ಕಾರ್ಯಕ್ರಮವಿಲ್ಲ</p></section>';
@@ -1335,8 +1366,8 @@
     for (var day = 1; day <= days; day++) {
       var k = keyFor(new Date(y, m, day)), sel = k === state.key, today = k === keyFor(new Date());
       var local = districtEventsFor(k).length + culturalEventsFor(k).length, statewide = stateEventsFor(k).length;
-      var alert = dayAlertHTML(k);
-      var parts = (local ? ["ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು " + local] : []).concat(statewide ? ["ಕರ್ನಾಟಕ ಕಾರ್ಯಕ್ರಮಗಳು " + statewide] : [], alert ? ["ಸೂಚನೆ ಇದೆ"] : []);
+      var alert = dayAlertHTML(k) + dayRainHTML(k);
+      var parts = (local ? ["ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು " + local] : []).concat(statewide ? ["ಕರ್ನಾಟಕ ಕಾರ್ಯಕ್ರಮಗಳು " + statewide] : [], dayAlertHTML(k) ? ["ಸೂಚನೆ ಇದೆ"] : [], rainNakEntry(k) ? ["ಮಳೆ ನಕ್ಷತ್ರ ಪ್ರವೇಶ"] : []);
       var aria = parts.length ? ' aria-label="' + kn(day) + ': ' + parts.join(", ") + '"' : '';
       html += '<button class="mday' + (sel ? " sel" : "") + (today ? " today" : "") + '" data-day="' + k + '" type="button"' + (today ? ' title="ಇಂದು"' : "") + aria + '>' + kn(day) +
         (local || statewide || alert ? '<span class="mday-dots" aria-hidden="true">' + (local ? markHTML("district") : '') + (statewide ? markHTML("state") : '') + alert + '</span>' : '') + '</button>';
@@ -1380,7 +1411,7 @@
       /* Same day heading as the Week view: weekday on the left, big date on the right. */
       var dayKey = isoToKey(date), d = parseKey(dayKey), isToday = dayKey === keyFor(new Date());
       var head = '<h3 class="week-day-title"><button type="button" class="week-day-link" data-day="' + dayKey + '">' +
-        '<span class="week-day-label"><span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (isToday ? '<span class="today-pill">ಇಂದು</span>' : "") + dayAlertHTML(dayKey) + '</span>' +
+        '<span class="week-day-label"><span class="week-day-name">' + WEEKDAYS[d.getDay()] + '</span>' + (isToday ? '<span class="today-pill">ಇಂದು</span>' : "") + dayAlertHTML(dayKey) + dayRainHTML(dayKey) + '</span>' +
         '<span class="week-day-date"><b>' + kn(d.getDate()) + '</b><small>' + MONTHS[d.getMonth()] + '</small></span></button></h3>';
       return '<section class="agenda-day week-day"' + (isToday ? ' data-today="1"' : "") + (d.getDay() === 0 ? ' data-sun="1"' : "") + '>' + head +
         (local.length ? '<div class="agenda-scope"><h4>ಜಿಲ್ಲಾ ಕಾರ್ಯಕ್ರಮಗಳು</h4><ul class="ev-list">' + rows(local) + '</ul></div>' : '') +
