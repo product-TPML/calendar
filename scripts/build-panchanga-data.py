@@ -13,6 +13,7 @@ Sources
   Ugadi dates (samvatsara / Shaka change)  data/calendar-events.json      (from the event Word files)
   everything else is computed              scripts/compute-panchanga.py, scripts/compute-sun-times.py
       paksha, lunar months, ayana, sun rashi, moon rashi, yoga, karana, sunrise, sunset, kalas
+  2027 yoga and karana names                data/Yoga karana 2027.docx   (override: wins over the calculation)
 
 A value that cannot be read or fails a check is left out (null). The tab shows "ಲಭ್ಯವಿಲ್ಲ" for it.
 Nothing is guessed: the report printed at the end lists every such day.
@@ -32,6 +33,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CORE_PATH = "data/panchanga.json"
 DISTRICT_DIR = "data/panchanga"
 DOCX_2027 = "data/Calander 2027.docx"
+DOCX_YK_2027 = "data/Yoga karana 2027.docx"
 PDF_JSON = "data/pdf-panchanga-data.json"
 EVENTS_JSON = "data/calendar-events.json"
 YEARS = (2026, 2027)
@@ -157,6 +159,30 @@ def docx_rows(path):
     return rows
 
 
+YOGA_KN = {"ವಿಷ್ಕಂಭ": 1, "ಪ್ರೀತಿ": 2, "ಆಯುಷ್ಮಾನ್": 3, "ಆಯಷ್ಮಾನ್": 3, "ಸೌಭಾಗ್ಯ": 4, "ಶೋಭನ": 5, "ಶೋಧನ": 5, "ಅತಿಗಂಡ": 6,
+           "ಸುಕರ್ಮಾ": 7, "ಸುಕರ್ಮ": 7, "ಧೃತಿ": 8, "ಶೂಲ": 9, "ಗಂಡ": 10, "ವೃದ್ಧಿ": 11, "ಧ್ರುವ": 12, "ವ್ಯಾಘಾತ": 13, "ಹರ್ಷಣ": 14,
+           "ವಜ್ರ": 15, "ವಜ್ರಾ": 15, "ಸಿದ್ಧಿ": 16, "ಸಿದ್ದಿ": 16, "ವ್ಯತಿಪಾತ": 17, "ವ್ಯತೀಪಾತ": 17, "ವರಿಯಾನ್": 18, "ವರೀಯಾನ್": 18,
+           "ಪರಿಘ": 19, "ಶಿವ": 20, "ಸಿದ್ಧ": 21, "ಸಿದ್ದ": 21, "ಸಾಧ್ಯ": 22, "ಶುಭ": 23, "ಶುಕ್ಲ": 24, "ಶುಕ್ಲಾ": 24, "ಬ್ರಹ್ಮ": 25,
+           "ಐಂದ್ರ": 26, "ವೈಧೃತಿ": 27, "ವೈದೃತಿ": 27}
+KARANA_KN = {"ಬವ": "ಬವ", "ಬಾಲವ": "ಬಾಲವ", "ಕೌಲವ": "ಕೌಲವ", "ತೈತಿಲ": "ತೈತಿಲ", "ತೈತುಲ": "ತೈತಿಲ", "ಗರಜ": "ಗರಜ", "ವಣಿಕ್": "ವಣಿಜ",
+             "ಭದ್ರಾ": "ವಿಷ್ಟಿ", "ಭದ್ರ": "ವಿಷ್ಟಿ", "ಕಿಂಸ್ತುಘ್ನ": "ಕಿಂಸ್ತುಘ್ನ", "ಶಕುನಿ": "ಶಕುನಿ", "ಚತುಷ್ಪಾತ್": "ಚತುಷ್ಪಾದ",
+             "ನಾಗವಾನ್": "ನಾಗವ"}
+
+
+def docx_yoga_karana(path):
+    """Yoga karana.docx -> 365 (yoga numbers tuple, karana name) pairs, one per day of 2027. A 'A+B' yoga cell gives two numbers."""
+    xml = zipfile.ZipFile(os.path.join(ROOT, path)).read("word/document.xml").decode("utf8")
+    out = []
+    for p in re.findall(r"<w:p[ >].*?</w:p>", xml, flags=re.S):
+        line = "".join(re.findall(r"<w:t[^>]*>([^<]*)</w:t>", p)).replace("‌", "").replace("‍", "")
+        line = re.sub(r"^[\d೦-೯.\s]+", "", line.strip())
+        w = line.split()
+        if len(w) >= 3 and w[0] in WEEKDAYS_KN:
+            out.append((w[0], tuple(YOGA_KN[y] for y in w[1].split("+")), KARANA_KN[w[2]]))
+    assert len(out) == 365, "expected 365 yoga/karana rows, got %d" % len(out)
+    return out
+
+
 def docx_day(row, sunrise):
     """-> (tithi, nakshatra) each {"name", "ends" (minutes) or None, "full"} or None."""
     tithi = nak = None
@@ -232,6 +258,8 @@ def main():
 
     lat, lon = S.DISTRICTS["Bengaluru Urban"]
     rows27 = docx_rows(DOCX_2027)
+    yk27 = docx_yoga_karana(DOCX_YK_2027)
+    overridden = {"yoga": 0, "karana": 0}
     assert len(rows27) == 365, "expected 365 docx rows, got %d" % len(rows27)
 
     days_total = 365 * 2
@@ -340,12 +368,31 @@ def main():
                 rise = int(rs)
                 yi = bisect.bisect_right(ends["yoga"], off + rise)
                 ki = bisect.bisect_right(ends["karana"], off + rise)
+                yoga, y_end = (first["yoga"] + yi) % 27 + 1, fmt(ends["yoga"][yi], off)
+                kar, k_end = (first["karana"] + ki) % 60 + 1, fmt(ends["karana"][ki], off)
+                nxt, n_end = (first["karana"] + ki + 1) % 60 + 1, fmt(ends["karana"][ki + 1], off)
+                if year == 2027:
+                    # Yoga karana.docx is the truth. Where it disagrees with the calculation, take its name; an end time is
+                    # kept only if the calculation has one for that name still ahead of sunrise, otherwise it is left blank.
+                    _, doc_yogas, doc_karana = yk27[(d - datetime.date(2027, 1, 1)).days]
+                    if yoga not in doc_yogas:
+                        yoga = doc_yogas[0]
+                        y_end = next((fmt(e, off) for j, e in enumerate(ends["yoga"][yi:yi + 3], yi)
+                                      if (first["yoga"] + j) % 27 + 1 == yoga), "")
+                        overridden["yoga"] += 1
+                    if KARANA_NAMES[kar - 1] != doc_karana and KARANA_NAMES[nxt - 1] != doc_karana:
+                        cands = [n for n in range(1, 61) if KARANA_NAMES[n - 1] == doc_karana]
+                        kar = min(cands, key=lambda n: min((n - kar) % 60, (kar - n) % 60))
+                        k_end = next((fmt(e, off) for j, e in enumerate(ends["karana"][ki:ki + 4], ki)
+                                      if (first["karana"] + j) % 60 + 1 == kar), "")
+                        nxt = kar % 60 + 1
+                        n_end = next((fmt(e, off) for j, e in enumerate(ends["karana"][ki:ki + 5], ki)
+                                      if (first["karana"] + j) % 60 + 1 == nxt), "")
+                        overridden["karana"] += 1
                 rows.append([
                     S.hhmm(rs, truncate=True), S.hhmm(ss, truncate=True)] +
                     ["%s-%s" % kal[k] for k in ("rahuKala", "gulikaKala", "yamaganda", "ardhaPrahara")] + [
-                    (first["yoga"] + yi) % 27 + 1, fmt(ends["yoga"][yi], off),
-                    (first["karana"] + ki) % 60 + 1, fmt(ends["karana"][ki], off),
-                    (first["karana"] + ki + 1) % 60 + 1, fmt(ends["karana"][ki + 1], off)])
+                    yoga, y_end, kar, k_end, nxt, n_end])
                 d += datetime.timedelta(days=1)
             out[str(year)] = rows
         with open(os.path.join(ROOT, DISTRICT_DIR, slug + ".json"), "w", encoding="utf8") as f:
@@ -363,6 +410,7 @@ def main():
                    "unavailable": ["shubhaSamaya", "rashiBhavishya"],
                    "days": core}, f, ensure_ascii=False, separators=(",", ":"))
 
+    print("doc overrides per district-day: %s" % overridden)
     print("wrote %s (%d days) and %d files in %s/" % (CORE_PATH, len(core), len(slugs), DISTRICT_DIR))
     print("%d notes:" % len(report))
     for line in report:
